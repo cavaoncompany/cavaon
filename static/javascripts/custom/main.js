@@ -222,7 +222,7 @@ $(document).ready(function() {
         autoHeight: true,
       });
       
-    $("#about-carousel").owlCarousel({
+    $("#projects-carousel").owlCarousel({
         navigation : false,
         pagination: true,
         responsive: true,

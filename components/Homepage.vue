@@ -10,9 +10,6 @@
     <nav class="mobile-nav hidden-lg">
       <ul class="slimmenu">
         <li>
-          <a class="scroll" href="#about">about</a>
-        </li>
-        <li>
           <a class="scroll" href="#projects">projects</a>
         </li>
         <li>
@@ -25,7 +22,10 @@
           <a class="scroll" href="#team">team</a>
         </li>
         <li>
-          <a class="scroll" href="#contact">contact</a>
+          <a class="scroll" href="#about">about</a>
+        </li>
+        <li>
+          <a class="scroll" href="#contact-form">contact</a>
         </li>
         <li>
           <a class="scroll" href="#quote">Get a Quote</a>
@@ -38,20 +38,20 @@
     <section id="mastwrap">
       <section id="intro" class="intro trans-dark">
         <!-- masthead-section (this nav bar is visible only on home page) : starts -->
-        <header id="intro-header" class="intro-header visible-lg">
+        <header id="intro-header" class="intro-header visible-lg scroll">
           <div class="container">
             <div class="row">
               <article class="col-md-2 text-left">
-                <a href="#intro-header"><img data-no-retina alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="~/assets/images/Logo-white.png"></a>
+                <a href="#intro-header"><img data-no-retina alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive scroll" src="~/assets/images/Logo-white.png"></a>
               </article>
               <article class="col-md-10 text-right">
                 <ul class="standard-nav  standard-nav-white-text visible-lg">
-                  <li><a href="#about" class="scroll">About</a></li>
                   <li><a href="#projects" class="scroll">Projects</a></li>
                   <li><a href="#services" class="scroll">Services</a></li>
                   <li><a href="#caseStudies" class="scroll">Case Studies</a></li>
                   <li><a href="#team" class="scroll">Team</a></li>
-                  <li><a href="#contact" class="scroll">Contact</a></li>
+                  <li><a href="#about" class="scroll">About</a></li>
+                  <li><a href="#contact-form" class="scroll">Contact</a></li>
                   <li><a href="#quote" class="scroll">Get a Quote</a></li>
                 </ul>
               </article>
@@ -72,7 +72,7 @@
         </div>
         <!-- valign:ends -->
 
-        <a class="scroll" href="#about">
+        <a class="scroll" href="#projects">
           <div class="mouse-icon white hidden-xs" style="opacity: 1;">
             <div class="wheel" />
           </div>
@@ -87,12 +87,12 @@
             </article>
             <article class="col-md-10 text-right">
               <ul class="standard-nav standard-nav-dark-text visible-lg">
-                <li><a id="about-linker" href="#about" class="scroll">About</a></li>
                 <li><a id="projects-linker" href="#projects" class="scroll">Projects</a></li>
                 <li><a id="services-linker" href="#services" class="scroll">Services</a></li>
                 <li><a id="case-studies-linker" href="#caseStudies" class="scroll">Case Studies</a></li>
                 <li><a id="team-linker" href="#team">Team</a></li>
-                <li><a id="contact-linker" href="#contact" class="scroll">Contact</a></li>
+                <li><a id="about-linker" href="#about" class="scroll">About</a></li>
+                <li><a id="contact-linker" href="#contact-form" class="scroll">Contact</a></li>
                 <li><a id="quote-linker" href="#quote" class="scroll">Get a Quote</a></li>
               </ul>
             </article>
@@ -100,7 +100,7 @@
         </div>
       </header>
       <!-- masthead-section:ends -->
-      <section id="about" class="page about white-bg">
+      <section id="projects" class="page about white-bg">
         <div class="container">
           <div class="item about-carousel-item">
             <div class="row">
@@ -278,7 +278,7 @@
                 <article class="text-center">
                   <h3>Development</h3>
                   <p class="dark">
-                    Build your travel platform with the ability to connect your customers via mobile or desktop. 
+                    Build your travel platform with the ability to connect your customers via mobile or desktop.
                   </p>
                 </article>
               </li>
@@ -351,9 +351,9 @@
                 <!-- item:ends -->
 
                 <!-- item:starts -->
-                <div class="item client-carousel-item client-stage">
+                <!-- <div class="item client-carousel-item client-stage">
                   <img data-no-retina alt="Inspiring Vacations" title="Inspiring Vacations" src="~/assets/images/Client-Logo-Inspiring-Vacations.png">
-                </div>
+                </div> -->
                 <!-- item:ends -->
               </div>
               <!-- carousel:ends -->
@@ -516,93 +516,109 @@
           <div class="container">
             <div class="row">
               <!-- item:starts -->
-                <article class="col-md-3 text-left">
-                    <div class="item team-carousel-item team-stage">
-                        <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
-                        <h3 class="dark">
-                        Luis Heinz
-                        </h3>
-                        <h6><span>Founder / Director</span></h6>
-                    </div>
-                </article>
+              <article class="col-md-3 text-left">
+                <div class="item team-carousel-item team-stage">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <h3 class="dark">
+                    Luis Heinz
+                  </h3>
+                  <h6>
+                    <span>Founder / Director</span>
+                  </h6>
+                </div>
+              </article>
+              <!-- item:ends -->
+              <!-- item:starts -->
+              <article class="col-md-3 text-left">
+                <div class="item team-carousel-item team-stage">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <h3 class="dark">
+                    Luis Heinz
+                  </h3>
+                  <h6>
+                    <span>Web Architect</span>
+                  </h6>
+                </div>
+              </article>
+              <!-- item:ends -->
+              <!-- item:starts -->
+              <article class="col-md-3 text-left">
+                <div class="item team-carousel-item team-stage">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <h3 class="dark">
+                    Luis Heinz
+                  </h3>
+                  <h6>
+                    <span>Marketing Guy</span>
+                  </h6>
+                </div>
+              </article>
+              <!-- item:ends -->
+              <!-- item:starts -->
+              <article class="col-md-3 text-left">
+                <div class="item team-carousel-item team-stage">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <h3 class="dark">
+                    Luis Heinz
+                  </h3>
+                  <h6>
+                    <span>Founder / Director</span>
+                  </h6>
+                </div>
+              </article>
+              <!-- item:ends -->
+              <!-- item:starts -->
+              <article class="col-md-3 text-left">
+                <div class="item team-carousel-item team-stage">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <h3 class="dark">
+                    Amy Lee
+                  </h3>
+                  <h6>
+                    <span>Founder / Director</span>
+                  </h6>
+                </div>
+              </article>
+              <!-- item:ends -->
+              <!-- item:starts -->
+              <article class="col-md-3 text-left">
+                <div class="item team-carousel-item team-stage">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <h3 class="dark">
+                    Luis Heinz
+                  </h3>
+                  <h6>
+                    <span>Founder / Director</span>
+                  </h6>
+                </div>
+              </article>
+              <!-- item:ends -->
+              <!-- item:starts -->
+              <article class="col-md-3 text-left">
+                <div class="item team-carousel-item team-stage">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <h3 class="dark">
+                    Luis Heinz
+                  </h3>
+                  <h6>
+                    <span>Founder / Director</span>
+                  </h6>
+                </div>
+              </article>
+              <!-- item:ends -->
+              <!-- item:starts -->
+              <article class="col-md-3 text-left">
+                <div class="item team-carousel-item team-stage">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <h3 class="dark">
+                    Luis Heinz
+                  </h3>
+                  <h6>
+                    <span>Founder / Director</span>
+                  </h6>
+                </div>
                 <!-- item:ends -->
-                <!-- item:starts -->
-                <article class="col-md-3 text-left">
-                    <div class="item team-carousel-item team-stage">
-                        <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
-                        <h3 class="dark">
-                        Luis Heinz
-                        </h3>
-                        <h6><span>Web Architect</span></h6>
-                    </div>
-                </article>
-                <!-- item:ends -->
-                <!-- item:starts -->
-                <article class="col-md-3 text-left">
-                    <div class="item team-carousel-item team-stage">
-                        <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
-                        <h3 class="dark">
-                        Luis Heinz
-                        </h3>
-                        <h6><span>Marketing Guy</span></h6>
-                    </div>
-                </article>
-                <!-- item:ends -->
-                <!-- item:starts -->
-                <article class="col-md-3 text-left">
-                    <div class="item team-carousel-item team-stage">
-                        <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
-                        <h3 class="dark">
-                        Luis Heinz
-                        </h3>
-                        <h6><span>Founder / Director</span></h6>
-                    </div>
-                </article>
-                <!-- item:ends -->
-                <!-- item:starts -->
-                <article class="col-md-3 text-left">
-                    <div class="item team-carousel-item team-stage">
-                        <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
-                        <h3 class="dark">
-                        Amy Lee
-                        </h3>
-                        <h6><span>Founder / Director</span></h6>
-                    </div>
-                </article>
-                <!-- item:ends -->
-                <!-- item:starts -->
-                <article class="col-md-3 text-left">
-                    <div class="item team-carousel-item team-stage">
-                        <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
-                        <h3 class="dark">
-                        Luis Heinz
-                        </h3>
-                        <h6><span>Founder / Director</span></h6>
-                    </div>
-                </article>
-                <!-- item:ends -->
-                <!-- item:starts -->
-                <article class="col-md-3 text-left">
-                    <div class="item team-carousel-item team-stage">
-                        <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
-                        <h3 class="dark">
-                        Luis Heinz
-                        </h3>
-                        <h6><span>Founder / Director</span></h6>
-                    </div>
-                </article>
-                <!-- item:ends -->
-                <!-- item:starts -->
-                <article class="col-md-3 text-left">
-                    <div class="item team-carousel-item team-stage">
-                        <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
-                        <h3 class="dark">
-                        Luis Heinz
-                        </h3>
-                        <h6><span>Founder / Director</span></h6>
-                    </div>
-                    <!-- item:ends -->
-                </article>
+              </article>
             </div>
           </div>
         </section>
@@ -611,7 +627,7 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="contact" class="contact page intermediate-section full-height parallax">
+      <section id="about" class="contact page intermediate-section full-height parallax">
         <div class="container valign">
           <div class="row">
             <article class="col-md-8 col-md-offset-2 main-caps text-center">
@@ -709,48 +725,48 @@
 <script>
 import ProjectWithSlider from './ProjectWithSlider'
 export default {
-  data() {
-      return {
-          caseStudies: [
-              {
-                  projectTitle: 'Travel Dream',
-                  typeOfProject: 'Web / Brand',
-                  projectImage:'images/Case-Studies-Travel-Dream',
-                  topImage: 'images/Case-Studies-Travel-Dream1',
-                  logo: 'images/Case-Studies-Travel-Dream2',
-                  intro: 'Traveldream is a new online Travel agent launched in Aug 2018 with a focus on domestic deals, international tours and cruise. They offer amazing world-wide holiday deals including airfares, accommodation and premium experiences at prices that will break the internet, not the budget.',
-                  challenge: 'To develop a website quickly and on budget with increasing functional complexity',
-                  centreImage: 'images/Case-Studies-Travel-Dream3',
-                  result1: 'It has enabled us to quickly add new products, transact and manage large volumes of orders. It has also been able to scale with the team and continuing demands of the business',
-                  result2: 'Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work.',
-                  font:'images/Case-Studies-Travel-Dream4',
-                  info1: '',
-                  info2: '',
-                  screenshot1: 'images/Case-Studies-Travel-Dream5',
-                  screenshot2: ''
-              },
-              {
-                  projectTitle: "Let's Travel",
-                  typeOfProject: 'Web / Brand',
-                  projectImage: 'images/Case-studies-Lets-Travel',
-                  topImage: 'images/Case-Studies-Lets-Travel1',
-                  logo: 'images/Case-Studies-Lets-Travel2',
-                  intro: "Let's Travel Pty Ltd was founded in Sydney in 2015, focusing on operating small group day tours, charter tours and providing transfer services in Sydney and Melbourne.",
-                  challenge: 'As a tour operator, they need to process bookings from travel agents (data entry), assign coaches and tour guides everyday. As business growth, one of the biggest challenges they faced was increasing workload on data entry, issuing invoices and tour vouchers. Also, accuracy was getting harder to maintain.',
-                  centreImage: 'images/Case-Studies-Lets-Travel3',
-                  result1: 'The B2B online booking system Cavaon tailor-made has dramatically improved efficiency, accuracy and helped in increase sales. Now, travel agents make bookings directly via the system, which has streamlined they manual data entry and reduced errors. Invoices and tour vouchers are all automatically generated in just one click. The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which without a doubt drives up sales.',
-                  result2: '',
-                  font:'images/Case-Studies-Lets-Travel4',
-                  info1: 'Cavaon provides us peace of mind daily IT support, maintenance and consulting. With several years of experience in Australia travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes were always satisfied.',
-                  info2: 'We have been using the booking system for more than one year. Compared with before, sales has increased by 62.7%.',
-                  screenshot1: 'images/Case-Studies-Lets-Travel5',
-                  screenshot2: 'images/Case-Studies-Lets-Travel6'
-              }
-          ]
-      }
-  },
   components: {
-      ProjectWithSlider
+    ProjectWithSlider
+  },
+  data() {
+    return {
+      caseStudies: [
+        {
+          projectTitle: 'Travel Dream',
+          typeOfProject: 'Web / Brand',
+          projectImage: 'images/Case-Studies-Travel-Dream',
+          topImage: 'images/Case-Studies-Travel-Dream1',
+          logo: 'images/Case-Studies-Travel-Dream2',
+          intro: 'Traveldream is a new online Travel agent launched in Aug 2018 with a focus on domestic deals, international tours and cruise. They offer amazing world-wide holiday deals including airfares, accommodation and premium experiences at prices that will break the internet, not the budget.',
+          challenge: 'To develop a website quickly and on budget with increasing functional complexity',
+          centreImage: 'images/Case-Studies-Travel-Dream3',
+          result1: 'It has enabled us to quickly add new products, transact and manage large volumes of orders. It has also been able to scale with the team and continuing demands of the business',
+          result2: 'Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work.',
+          font: 'images/Case-Studies-Travel-Dream4',
+          info1: '',
+          info2: '',
+          screenshot1: 'images/Case-Studies-Travel-Dream5',
+          screenshot2: ''
+        },
+        {
+          projectTitle: "Let's Travel",
+          typeOfProject: 'Web / Brand',
+          projectImage: 'images/Case-studies-Lets-Travel',
+          topImage: 'images/Case-Studies-Lets-Travel1',
+          logo: 'images/Case-Studies-Lets-Travel2',
+          intro: "Let's Travel Pty Ltd was founded in Sydney in 2015, focusing on operating small group day tours, charter tours and providing transfer services in Sydney and Melbourne.",
+          challenge: 'As a tour operator, they need to process bookings from travel agents (data entry), assign coaches and tour guides everyday. As business growth, one of the biggest challenges they faced was increasing workload on data entry, issuing invoices and tour vouchers. Also, accuracy was getting harder to maintain.',
+          centreImage: 'images/Case-Studies-Lets-Travel3',
+          result1: 'The B2B online booking system Cavaon tailor-made has dramatically improved efficiency, accuracy and helped in increase sales. Now, travel agents make bookings directly via the system, which has streamlined they manual data entry and reduced errors. Invoices and tour vouchers are all automatically generated in just one click. The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which without a doubt drives up sales.',
+          result2: '',
+          font: 'images/Case-Studies-Lets-Travel4',
+          info1: 'Cavaon provides us peace of mind daily IT support, maintenance and consulting. With several years of experience in Australia travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes were always satisfied.',
+          info2: 'We have been using the booking system for more than one year. Compared with before, sales has increased by 62.7%.',
+          screenshot1: 'images/Case-Studies-Lets-Travel5',
+          screenshot2: 'images/Case-Studies-Lets-Travel6'
+        }
+      ]
+    }
   }
 }
 </script>
