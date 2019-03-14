@@ -1,0 +1,1600 @@
+/*MAIN.CSS*/
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/*This is main CSS file that contains custom style rules used in this template*/
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* Template Name: ODIN.*/
+/* Author: Designova.*/
+/* Website: http://www.designova.net */
+/* Copyright: (C) 2015 */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+/*==========================*/
+/*ALL DEVICE OPTIMIZATION*/
+/*===========================*/
+
+
+/*Huge Displays*/
+@media (min-width: 3000px) {
+	.container, .features-details {
+	    max-width: 960px;
+	}
+	div#portfolio_thumbs ul li{
+	width: 20%;
+	}
+
+}
+
+/*Projector Screens and Ver Large Monitors*/
+@media (min-width: 2561px) {
+	.container, .features-details {
+	    max-width: 960px;
+	}
+	div#portfolio_thumbs ul li{
+	width: 20%;
+	}
+}
+
+/*iMac 27, HD Screens and Large Monitors*/
+@media (min-width: 1921px) and (max-width: 2560px) {
+	.container, .features-details {
+	    max-width: 960px;
+	}
+	div#portfolio_thumbs ul li{
+	width: 20%;
+	}
+
+}
+
+/*Large Widescreen Monitors*/
+@media (max-width: 1920px) {
+	.container, .features-details {
+	    max-width: 960px;
+	}
+	div#portfolio_thumbs ul li{
+	width: 20%;
+	}
+}
+
+/*Medium Widescreen Monitors*/
+@media (max-width: 1680px) {
+	.container, .features-details {
+	    max-width: 960px;
+	}
+	div#portfolio_thumbs ul li{
+	width: 20%;
+	}
+}
+
+/*Large Widescreen Laptops*/
+@media (max-width: 1440px) {
+	.container, .features-details {
+	    max-width: 960px;
+	}
+	div#portfolio_thumbs ul li{
+	width: 25%;
+	}
+}
+
+/*Common Widescreen Laptops*/
+@media (max-width: 1366px) {
+	.container, .features-details {
+	    max-width: 960px;
+	}
+	div#portfolio_thumbs ul li{
+	width: 25%;
+	}
+}
+
+
+/*Very Large Tablets and Medium Laptops*/
+@media (max-width: 1280px) {
+	.container, .features-details {
+	    max-width: 960px;
+	}
+	div#portfolio_thumbs ul li{
+	width: 25%;
+	}
+}
+
+/*Notebooks and Small Laptops*/
+@media (max-width: 1152px) {
+	.container, .features-details {
+	    max-width: 960px;
+	}
+	.standard-header{
+		display: none !important;
+	}
+	div#portfolio_thumbs ul li{
+	width: 33%;
+	}
+}
+
+/*iPad Landscape Mode and Large Tablets */
+@media (max-width: 1024px) {
+	.container, .features-details {
+	    max-width: 800px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.btn{
+		width: 100%;
+	}
+	div#portfolio_thumbs ul li{
+	width: 33%;
+	}
+	.standard-header{
+		display: none !important;
+	}
+}
+
+/*Small Desktop and Very Small Notebook */
+@media (max-width: 980px) {
+	.container, .features-details {
+	    max-width: 800px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	div#portfolio_thumbs ul li{
+	width: 33%;
+	}
+	.standard-header{
+		display: none !important;
+	}
+	
+}
+
+/*Medium Tablets */
+@media (max-width: 800px) {
+	
+	.container, .features-details {
+	    max-width: 668px;
+	}
+	
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	ul#portfolioFilter li{
+	width: 47%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 50%;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 32px;
+	    line-height: 39px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 64px;
+	    line-height: 71px;
+	}
+	.hero-caps h6 {
+	    font-size: 36px;
+	    line-height: 43px;
+	}
+	.hero-caps h5 {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.hero-caps h5 > span{
+	    border:none !important;
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 48px;
+	    line-height: 55px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 32px;
+	    line-height: 39px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 36px;
+	    line-height: 43px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.standard-header{
+		display: none !important;
+	}
+	
+}
+
+
+/*iPad Portrait Mode, iPad Mini and Small Tablets */
+@media (max-width: 768px) {
+	
+	.container, .features-details {
+	    max-width: 668px;
+	}
+	
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	ul#portfolioFilter li{
+	width: 47%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 50%;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 32px;
+	    line-height: 39px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 64px;
+	    line-height: 71px;
+	}
+	.hero-caps h6 {
+	    font-size: 36px;
+	    line-height: 43px;
+	}
+	.hero-caps h5 {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.hero-caps h5 > span{
+	    padding: 0;
+	    border:none !important;
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 48px;
+	    line-height: 55px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 32px;
+	    line-height: 39px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 36px;
+	    line-height: 43px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.standard-header{
+		display: none !important;
+	}
+	.news-post{
+		margin-top: 20px;
+	}
+	
+}
+
+
+/*iPhone 6Plus Landscape Mode*/
+@media screen and (max-width: 736px) {
+
+	.container, .features-details {
+	    max-width: 636px;
+	    padding-left:50px;
+	    padding-right:50px;
+	}
+	
+	.add-top-half{
+		padding-top: 35px;
+	}
+	.add-bottom-half{
+		padding-bottom: 35px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	img.img-responsive{
+		display: inline-block;
+	}
+	.main-caps > h3 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.promo-text h3 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.promo-text p {
+	    font-size: 14px;
+	    letter-spacing: 2px;
+	    line-height: 21px;
+	}
+	.service-name-wrap a {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.service-details h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.action-text h1 > span {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.action-text h3 > span {
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	ul#portfolioFilter li{
+	width: 47%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 50%;
+	}
+	.testimonial-carousel {
+	    padding-top: 40px;
+	}
+	.testimonial-wrap > h6 {
+	    font-size: 14px;
+	    line-height: 21px;
+	    padding: 0 20px;
+	}
+	.remove-pad-bottom{
+	padding-bottom: 0 !important;
+	 }
+	 .team-stage h3 {
+	    font-size: 22px;
+	    line-height: 29px;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 24px;
+	    line-height: 31px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 48px;
+	    line-height: 55px;
+	}
+	.hero-caps h6 {
+	    font-size: 24px;
+	    line-height: 31px;
+	}
+	.hero-caps h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h5 > span{
+	    padding: 0;
+	    border:none !important;
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 32px;
+	    line-height: 39px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 20px;
+	    line-height: 27px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 24px;
+	    line-height: 31px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.standard-header{
+		display: none !important;
+	}
+	.news-post{
+		margin-top: 20px;
+	}
+}
+
+/*iPhone 6 Landscape Mode*/
+@media screen and (max-width: 667px) {
+	
+	.container, .features-details {
+	    max-width: 567px;
+	    padding-left:50px;
+	    padding-right:50px;
+	}
+	
+	.add-top-half{
+		padding-top: 35px;
+	}
+	.add-bottom-half{
+		padding-bottom: 35px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	img.img-responsive{
+		display: inline-block;
+	}
+	.main-caps > h3 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.promo-text h3 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.promo-text p {
+	    font-size: 14px;
+	    letter-spacing: 2px;
+	    line-height: 21px;
+	}
+	.service-name-wrap a {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.service-details h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.action-text h1 > span {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.action-text h3 > span {
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	ul#portfolioFilter li{
+	width: 47%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 50%;
+	}
+	.testimonial-carousel {
+	    padding-top: 40px;
+	}
+	.testimonial-wrap > h6 {
+	    font-size: 14px;
+	    line-height: 21px;
+	    padding: 0 20px;
+	}
+	.remove-pad-bottom{
+	padding-bottom: 0 !important;
+	 }
+	 .team-stage h3 {
+	    font-size: 22px;
+	    line-height: 29px;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 24px;
+	    line-height: 31px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 48px;
+	    line-height: 55px;
+	}
+	.hero-caps h6 {
+	    font-size: 24px;
+	    line-height: 31px;
+	}
+	.hero-caps h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h5 > span{
+	    padding: 0;
+	    border:none !important;
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 32px;
+	    line-height: 39px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 20px;
+	    line-height: 27px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 24px;
+	    line-height: 31px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.standard-header{
+		display: none !important;
+	}
+	.news-post{
+		margin-top: 20px;
+	}
+}
+
+/*Medium Smart Phones v2*/
+@media screen and (max-width: 640px) {
+	
+	.container, .features-details {
+	    max-width: 540px;
+	    padding-left:50px;
+	    padding-right:50px;
+	}
+	
+	.add-top-half{
+		padding-top: 35px;
+	}
+	.add-bottom-half{
+		padding-bottom: 35px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	img.img-responsive{
+		display: inline-block;
+	}
+	.main-caps > h3 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.promo-text h3 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.promo-text p {
+	    font-size: 14px;
+	    letter-spacing: 2px;
+	    line-height: 21px;
+	}
+	.service-name-wrap a {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.service-details h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.action-text h1 > span {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.action-text h3 > span {
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	ul#portfolioFilter li{
+	width: 47%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 50%;
+	}
+	.testimonial-carousel {
+	    padding-top: 40px;
+	}
+	.testimonial-wrap > h6 {
+	    font-size: 14px;
+	    line-height: 21px;
+	    padding: 0 20px;
+	}
+	.remove-pad-bottom{
+	padding-bottom: 0 !important;
+	 }
+	 .team-stage h3 {
+	    font-size: 22px;
+	    line-height: 29px;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 24px;
+	    line-height: 31px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 48px;
+	    line-height: 55px;
+	}
+	.hero-caps h6 {
+	    font-size: 24px;
+	    line-height: 31px;
+	}
+	.hero-caps h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h5 > span{
+	    padding: 0;
+	    border:none !important;
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 32px;
+	    line-height: 39px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 20px;
+	    line-height: 27px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 24px;
+	    line-height: 31px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.standard-header{
+		display: none !important;
+	}
+	.news-post{
+		margin-top: 20px;
+	}
+}
+	
+
+/*Google Nexus and Other Large Smart Phones v1*/
+@media screen and (max-width: 600px) {
+	
+	.container, .features-details {
+	    max-width: 500px;
+	    padding-left:50px;
+	    padding-right:50px;
+	}
+	.add-top-half{
+		padding-top: 35px;
+	}
+	.add-bottom-half{
+		padding-bottom: 35px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	img.img-responsive{
+		display: inline-block;
+	}
+	.main-caps > h3 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.promo-text h3 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.promo-text p {
+	    font-size: 14px;
+	    letter-spacing: 2px;
+	    line-height: 21px;
+	}
+	.service-name-wrap a {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.service-details h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.action-text h1 > span {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.action-text h3 > span {
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	ul#portfolioFilter li{
+	width: 47%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 50%;
+	}
+	.testimonial-carousel {
+	    padding-top: 40px;
+	}
+	.testimonial-wrap > h6 {
+	    font-size: 14px;
+	    line-height: 21px;
+	    padding: 0 20px;
+	}
+	.remove-pad-bottom{
+	padding-bottom: 0 !important;
+	 }
+	 .team-stage h3 {
+	    font-size: 22px;
+	    line-height: 29px;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 24px;
+	    line-height: 31px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 48px;
+	    line-height: 55px;
+	}
+	.hero-caps h6 {
+	    font-size: 24px;
+	    line-height: 31px;
+	}
+	.hero-caps h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h5 > span{
+	    padding: 0;
+	    border:none !important;
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 32px;
+	    line-height: 39px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 20px;
+	    line-height: 27px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 24px;
+	    line-height: 31px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.standard-header{
+		display: none !important;
+	}
+	.news-post{
+		margin-top: 20px;
+	}
+}
+	
+
+/*iPhone Landscape Mode and Mediium Smart Phones*/
+@media screen and (max-width: 480px) {
+	
+	.container, .features-details {
+	    max-width: 420px;
+	    padding-left: 30px;
+	    padding-right: 30px;
+	}
+	.add-top-half{
+		padding-top: 35px;
+	}
+	.add-bottom-half{
+		padding-bottom: 35px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	img.img-responsive{
+		display: inline-block;
+	}
+	.main-caps > h3 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.promo-text h3 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.promo-text p {
+	    font-size: 14px;
+	    letter-spacing: 2px;
+	    line-height: 21px;
+	}
+	.service-name-wrap a {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.service-details h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.action-text h1 > span {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.action-text h3 > span {
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	ul#portfolioFilter li{
+	width: 47%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 50%;
+	}
+	.testimonial-carousel {
+	    padding-top: 40px;
+	}
+	.testimonial-wrap > h6 {
+	    font-size: 14px;
+	    line-height: 21px;
+	    padding: 0 20px;
+	}
+	.remove-pad-bottom{
+	padding-bottom: 0 !important;
+	 }
+	 .team-stage h3 {
+	    font-size: 22px;
+	    line-height: 29px;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 24px;
+	    line-height: 31px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 48px;
+	    line-height: 55px;
+	}
+	.hero-caps h6 {
+	    font-size: 24px;
+	    line-height: 31px;
+	}
+	.hero-caps h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h5 > span{
+	    padding: 0;
+	    border:none !important;
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 32px;
+	    line-height: 39px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 20px;
+	    line-height: 27px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 24px;
+	    line-height: 31px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.standard-header{
+		display: none !important;
+	}
+	.about{
+		padding: 40px 0;
+	}
+	.news-post{
+		margin-top: 20px;
+	}
+}
+
+
+
+/*iPhone 6Plus Portrait Mode*/
+@media screen and (max-width: 414px) {
+	
+	.container, .features-details {
+	    max-width: 374px;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+	.add-top-half{
+		padding-top: 35px;
+	}
+	.add-bottom-half{
+		padding-bottom: 35px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	.page-section, .separator-section{
+		padding: 40px 0;
+	}
+	img.img-responsive{
+		display: inline-block;
+	}
+	.main-caps > h3 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.promo-text h3 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.promo-text p {
+	    font-size: 14px;
+	    letter-spacing: 2px;
+	    line-height: 21px;
+	}
+	.service-name-wrap a {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.service-details h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.action-text h1 > span {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.action-text h3 > span {
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	ul#portfolioFilter li{
+	width: 100%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 100%;
+	}
+	.testimonial-carousel {
+	    padding-top: 40px;
+	}
+	.testimonial-wrap > h6 {
+	    font-size: 14px;
+	    line-height: 21px;
+	    padding: 0 20px;
+	}
+	.remove-pad-bottom{
+	padding-bottom: 0 !important;
+	 }
+	 .team-stage h3 {
+	    font-size: 20px;
+	    line-height: 27px;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 20px;
+	    line-height: 27px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 36px;
+	    line-height: 43px;
+	}
+	.hero-caps h6 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.hero-caps h5 {
+	    font-size: 12px;
+	    line-height: 19px;
+	}
+	.hero-caps h5 > span{
+	    padding: 0;
+	    border:none !important;
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 24px;
+	    line-height: 31px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.news-post{
+		margin-top: 20px;
+	}
+}
+
+
+
+/*iPhone 6 Portrait Mode*/
+@media screen and (max-width: 375px) {
+	
+	.container, .features-details {
+	    max-width: 335px;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+	.add-top-half{
+		padding-top: 35px;
+	}
+	.add-bottom-half{
+		padding-bottom: 35px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	.page-section, .separator-section{
+		padding: 40px 0;
+	}
+	img.img-responsive{
+		display: inline-block;
+	}
+	.main-caps > h3 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.promo-text h3 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.promo-text p {
+	    font-size: 14px;
+	    letter-spacing: 2px;
+	    line-height: 21px;
+	}
+	.service-name-wrap a {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.service-details h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.action-text h1 > span {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.action-text h3 > span {
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	ul#portfolioFilter li{
+	width: 100%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 100%;
+	}
+	.testimonial-carousel {
+	    padding-top: 40px;
+	}
+	.testimonial-wrap > h6 {
+	    font-size: 14px;
+	    line-height: 21px;
+	    padding: 0 20px;
+	}
+	.remove-pad-bottom{
+	padding-bottom: 0 !important;
+	 }
+	 .team-stage h3 {
+	    font-size: 20px;
+	    line-height: 27px;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 20px;
+	    line-height: 27px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 36px;
+	    line-height: 43px;
+	}
+	.hero-caps h6 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.hero-caps h5 {
+	    font-size: 12px;
+	    line-height: 19px;
+	}
+	.hero-caps h5 > span{
+	    padding: 0;
+	    border:none !important;
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 24px;
+	    line-height: 31px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.news-post{
+		margin-top: 20px;
+	}
+}
+
+/*Other Major Small Smart Phones*/
+@media screen and (max-width: 360px) {
+	
+	.container, .features-details {
+	    max-width: 320px;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+	.add-top-half{
+		padding-top: 35px;
+	}
+	.add-bottom-half{
+		padding-bottom: 35px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	.page-section, .separator-section{
+		padding: 40px 0;
+	}
+	img.img-responsive{
+		display: inline-block;
+	}
+	.main-caps > h3 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.promo-text h3 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.promo-text p {
+	    font-size: 14px;
+	    letter-spacing: 2px;
+	    line-height: 21px;
+	}
+	.service-name-wrap a {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.service-details h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.action-text h1 > span {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.action-text h3 > span {
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	ul#portfolioFilter li{
+	width: 100%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 100%;
+	}
+	.testimonial-carousel {
+	    padding-top: 40px;
+	}
+	.testimonial-wrap > h6 {
+	    font-size: 14px;
+	    line-height: 21px;
+	    padding: 0 20px;
+	}
+	.remove-pad-bottom{
+	padding-bottom: 0 !important;
+	 }
+	 .team-stage h3 {
+	    font-size: 20px;
+	    line-height: 27px;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 20px;
+	    line-height: 27px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 36px;
+	    line-height: 43px;
+	}
+	.hero-caps h6 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.hero-caps h5 {
+	    font-size: 12px;
+	    line-height: 19px;
+	}
+	.hero-caps h5 > span{
+	    padding: 0;
+	    border:none !important;
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 24px;
+	    line-height: 31px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.news-post{
+		margin-top: 20px;
+	}
+}
+
+/*iPhone Portrait Mode and Very Small Mobile Phones*/
+@media screen and (max-width: 320px) {
+	
+	.container, .features-details {
+	    max-width: 280px;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+	.add-top-half{
+		padding-top: 35px;
+	}
+	.add-bottom-half{
+		padding-bottom: 35px;
+	}
+	.mob-center{
+		text-align: center;
+	}
+	.mob-add-top{
+		margin-top: 30px;
+	}
+	.mob-add-bottom{
+		margin-bottom:30px;
+	}
+	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+		text-align: center;
+	}
+	.btn{
+		width: 100%;
+	}
+	.page-section, .separator-section{
+		padding: 40px 0;
+	}
+	img.img-responsive{
+		display: inline-block;
+	}
+	.main-caps > h3 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.promo-text h3 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.promo-text p {
+	    font-size: 14px;
+	    letter-spacing: 2px;
+	    line-height: 21px;
+	}
+	.service-name-wrap a {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.service-details h5 {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.action-text h1 > span {
+	    font-size: 28px;
+	    line-height: 35px;
+	}
+	.action-text h3 > span {
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	ul#portfolioFilter li{
+	width: 100%;
+	margin-bottom: 3px;
+	text-align: center;
+	}
+	div#portfolio_thumbs ul li{
+	width: 100%;
+	}
+	.testimonial-carousel {
+	    padding-top: 40px;
+	}
+	.testimonial-wrap > h6 {
+	    font-size: 14px;
+	    line-height: 21px;
+	    padding: 0 20px;
+	}
+	.remove-pad-bottom{
+	padding-bottom: 0 !important;
+	 }
+	 .team-stage h3 {
+	    font-size: 20px;
+	    line-height: 27px;
+	}
+	.owl-buttons{
+		display: none !important;
+	}
+	.hero-caps h6.minimal.white > span {
+	    border:none !important;
+	    font-size: 20px;
+	    line-height: 27px;
+	    padding: 0;
+	}
+	.hero-caps h1 {
+	    font-size: 36px;
+	    line-height: 43px;
+	}
+	.hero-caps h6 {
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.hero-caps h5 {
+	    font-size: 12px;
+	    line-height: 19px;
+	}
+	.hero-caps h5 > span{
+	    padding: 0;
+	    border:none !important;
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+	.hero-caps h2, .hero-caps h2 > span {
+	    font-size: 24px;
+	    line-height: 31px;
+	    border:none !important;
+	}
+	.hero-caps h6 > span {
+	    border:none !important;
+	    font-size: 16px;
+	    line-height: 23px;
+	}
+	.hero-caps h4 > span {
+	    font-size: 18px;
+	    line-height: 25px;
+	}
+	.hero-caps h2{
+	margin-bottom: 30px;
+	}
+	.hero-caps h2 > span{
+	padding-top: 0px;
+	}
+	.news-post{
+		margin-top: 20px;
+	}
+}
+
+
+

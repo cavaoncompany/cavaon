@@ -1,0 +1,39 @@
+/*--------------------------------------------------------------------------*/
+/*This is main CSS file that intializes BG Images used in this template*/
+/*--------------------------------------------------------------------------*/
+
+
+.promo-section{
+	background-image: url('http://placehold.it/1500x1050');
+}
+.contact{
+	background-image: url('~assets/images/About.png');
+}
+.photography-carousel-item-01{
+	background-image: url('http://placehold.it/1500x1050');
+}
+
+.photography-carousel-item-02{
+	background-image: url('http://placehold.it/1500x1050');
+}
+
+.photography-carousel-item-03{
+	background-image: url('http://placehold.it/1500x1050');
+}
+
+.agency-carousel-item-01{
+	background-image: url('http://placehold.it/1500x1050');
+}
+
+.agency-carousel-item-02{
+	background-image: url('http://placehold.it/1500x1050');
+}
+
+.agency-carousel-item-03{
+	background-image: url('http://placehold.it/1500x1050');
+}
+
+/*Mobile Menu Logo*/
+.menu-collapser {
+    background-image: url('../images/logo-dark.png');
+}

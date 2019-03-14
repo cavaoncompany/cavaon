@@ -1,0 +1,36 @@
+
+.parallax{
+	height: 100%;
+	width: 100%;
+	  background-position: 50% 50%;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	overflow-x: hidden !important;
+}
+/*this class will be activated on mobile devices in order to switch off the parallax effect*/
+.parallax-off {
+	background-attachment:scroll !important;
+	background-size:cover !important;
+}
+.parallax-rescale{
+	background-position: 0 -10px !important;
+	background-attachment:scroll !important;
+	background-size:cover !important;
+}
+.overlay{
+	height: 100%;
+	width:100%;
+}
+
+.intro-slide{
+	background-size: cover !important;
+}
+.intro-slide01 {
+	background-image: url(../images/parallax/01.jpg);
+}
+.intro-slide02 {
+	background-image: url(../images/parallax/02.jpg);
+}
+.intro-slide03 {
+	background-image: url(../images/parallax/03.jpg);
+}
