@@ -961,8 +961,7 @@ div#portfolio_thumbs ul {
 
 div#portfolio_thumbs ul li {
     background:#fff;
-    float: left;
-   display: inline-block;
+    display: inline-block;
     width: 25%;
     position: relative;
     padding: 0px;
@@ -1477,7 +1476,7 @@ font-family: 'Open Sans', sans-serif; font-weight:300;
 	background: transparent url(~assets/images/prev-dark.png) no-repeat center center !important;
 }
 .client-stage > img{
-	margin-top: 25px;
+	margin-top: 12px;
 }
 
 
@@ -1685,9 +1684,6 @@ fieldset h1 {
 .foot-top{
 	padding: 50px 0;
 }
-.foot-logos > .foot-badge{
-	width: 
-}
 .credits{
 	margin-top: 10px;
 	font-size: 12px;
@@ -1720,6 +1716,3 @@ font-family: 'Open Sans', sans-serif; font-weight:300;
     opacity: 0.5;
     transition: all 0.8s linear 0s;
 }
-
-
-
