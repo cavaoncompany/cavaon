@@ -23,6 +23,9 @@ module.exports = {
       }
     ],
     script: [
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+      },
       { src: '/bootstrap/js/bootstrap.js' },
       { src: '/less/less-1.5.0.min.js' },
       { src: '/javascripts/libs/common.js' },
