@@ -33,7 +33,7 @@
           </article>
         </div>
 
-        <section id="about" class="page about remove-pad-top remove-pad-bottom white-bg">
+        <section id="about-portfolio-item" class="page about remove-pad-top remove-pad-bottom white-bg">
           <div class="container pad-top-half pad-bottom-half">
             <div class="item about-carousel-item">
               <div class="row">
@@ -106,13 +106,13 @@ export default {
 </script>
 
 <style>
-  #about img {
-      max-width: 100%;
-      margin-bottom: 15px;
-      margin-top: 15px;
+  #about-portfolio-item img {
+    max-width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
   }
 
-  #about p {
+  #about-portfolio-item p {
     padding-top: 15px;
     padding-bottom: 15px;
     line-height: 1.5rem;

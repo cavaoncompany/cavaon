@@ -799,6 +799,10 @@ export default {
   .testimonial-wrap-right {
     padding-left: 40px;
   }
+  #about p {
+    line-height: 1.5rem;
+    padding-top: 10px;
+  }
   .contact {
     position: relative;
   }
@@ -809,5 +813,8 @@ export default {
     top: 0;
     bottom: 0;
     background-color: rgba(1,1,1,0.8);
+  }
+  .contact-form h4 {
+    margin-top: 80px;
   }
 </style>
