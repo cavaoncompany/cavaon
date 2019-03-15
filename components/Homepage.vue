@@ -456,7 +456,7 @@
       <!-- page-section : starts -->
       <section id="team" class="page testimonials page-section remove-pad-bottom white-bg">
         <!-- inner-section:starts -->
-        <section class="inner-section promo-text">
+        <section class="inner-section promo-text silver-bg row">
           <div class="container">
             <div class="row">
               <article class="col-md-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
@@ -470,15 +470,16 @@
         <!-- inner-section:ends -->
 
         <!-- inner-section : starts -->
-        <section class="inner-section text-center silver-bg pad-bottom">
-          <div id="testimonial-carousel" class="testimonial-carousel owl-carousel">
-            <div class="item stats-carousel-item testimonial-wrap">
+        <section class="inner-section text-center silver-bg pad-bottom row">
+          <!-- <div id="testimonial-carousel" class="testimonial-carousel owl-carousel"> -->
+          <div class="col-md-8 col-md-offset-2">
+            <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-left col-md-6">
               <h6 class="dark">
                 Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work.
               </h6>
               <p><span>Paul Mercuri / <i>Founder and Managing Director of Travel Dream</i></span></p>
             </div>
-            <div class="item stats-carousel-item testimonial-wrap">
+            <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-right col-md-6">
               <h6 class="dark">
                 With Cavaon years of experience in building platform for travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes are always satisfied.
               </h6>
@@ -628,29 +629,25 @@
 
       <!-- page-section : starts -->
       <section id="about" class="contact page intermediate-section full-height parallax">
-        <div class="container valign">
-          <div class="row">
-            <article class="col-md-8 col-md-offset-2 main-caps text-center">
-              <h3 class="white">
-                <span>A little more about us</span>
-              </h3>
-              <div class="liner color-bg" />
-              <h4 class="white">
-                info@cavaon.com.au
-              </h4>
-              <p class="white">
-                L1, 403 Elizabeth St.<br>Surry Hills NSW 2010
-              </p>
-              <p class="white">
-                We are a digital business & platform solutions company, based in Sydney. Vision Every business can change life of turning into a digital. Mission Helping businesses to find the perfect and most successful digital solution.
-              </p>
-              <p class="white">
-                We’ve been very successful in building online booking systems, tour management systems and ecommerce travel platform for travel companies.
-              </p>
-              <p class="white">
-                Passionate, Professional, Innovative and Opportunities are Cavaon team core values. We are young, full of energy, motivated and likes challenges. We care about our customers and focus on increase business values.
-              </p>
-            </article>
+        <div class="overlay">
+          <div class="container valign">
+            <div class="row">
+              <article class="col-md-8 col-md-offset-2 main-caps text-center">
+                <h3 class="white">
+                  <span>A little more about us</span>
+                </h3>
+                <div class="liner color-bg" />
+                <p class="white">
+                  We are a digital business & platform solutions company, based in Sydney. Vision Every business can change life of turning into a digital. Mission Helping businesses to find the perfect and most successful digital solution.
+                </p>
+                <p class="white">
+                  We’ve been very successful in building online booking systems, tour management systems and ecommerce travel platform for travel companies.
+                </p>
+                <p class="white">
+                  Passionate, Professional, Innovative and Opportunities are Cavaon team core values. We are young, full of energy, motivated and likes challenges. We care about our customers and focus on increase business values.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -685,6 +682,12 @@
                     </div>
                   </article>
                 </form>
+                <h4 class="white">
+                    info@cavaon.com.au
+                </h4>
+                <p class="white">
+                  L1, 403 Elizabeth St.<br>Surry Hills NSW 2010
+                </p>
               </div>
             </article>
           </div>
@@ -724,6 +727,7 @@
 
 <script>
 import ProjectWithSlider from './ProjectWithSlider'
+
 export default {
   components: {
     ProjectWithSlider
@@ -777,6 +781,22 @@ export default {
         this.projectDetails = this.caseStudies[1]
       }
     }
+  },
+  created() {
+    if (process.client) {
+      let backstretchScript = document.createElement('script')
+      backstretchScript.innerHTML = '$.backstretch(["/images/Banner-Branding.png", "/images/Banner-Logo.png", "/images/Banner-Marketing.png", "/images/Banner-Platform.png", "/images/Banner-WebDesign.png", "/images/Banner-Consultation.png"], {duration: 3000, fade: 750})'
+      document.body.appendChild(backstretchScript)
+    }
   }
 }
 </script>
+
+<style>
+  .testimonial-wrap-left {
+    padding-right: 40px;
+  }
+  .testimonial-wrap-right {
+    padding-left: 40px; 
+  }
+</style>

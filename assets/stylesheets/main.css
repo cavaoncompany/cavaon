@@ -1420,9 +1420,12 @@ font-family: 'Open Sans', sans-serif; font-weight:300;
 
 /*TESTIMONIAL*/
 .testimonial-wrap{
-	max-width: 600px;
 	margin-left: auto;
 	margin-right: auto;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 210px;
 }
 .testimonial-wrap > h6{
 	margin-top: 30px;
