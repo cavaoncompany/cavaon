@@ -340,13 +340,13 @@
               <div id="client-carousel" class="clients-carousel owl-carousel owl-nav-sticky-extra-wide owl-theme">
                 <!-- item:starts -->
                 <div class="item client-carousel-item client-stage">
-                  <img data-no-retina alt="Let's Travel" title="Let's Travel" src="~/assets/images/Client-Logo-Lets-Travel.png">
+                  <img data-no-retina alt="Let's Travel" title="Let's Travel" src="~/assets/images/Client-logo-lets-travel.png">
                 </div>
                 <!-- item:ends -->
 
                 <!-- item:starts -->
                 <div class="item client-carousel-item client-stage">
-                  <img data-no-retina alt="Travel Dream" title="Travel Dream" src="~/assets/images/Client-Logo-Travel-Dream.png">
+                  <img data-no-retina alt="Travel Dream" title="Travel Dream" src="~/assets/images/Client-logo-traveldream.png">
                 </div>
                 <!-- item:ends -->
 
