@@ -433,7 +433,7 @@
                 <li class="folio-thumb mix category2">
                   <a href="projects/project-slider.html" class="more_info" @click="updateProjectDetails('travelDream')">
                     <!-- Thumbnail -->
-                    <img data-no-retina alt="odin" title="odin" src="~/assets/images/Case-studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
+                    <img data-no-retina alt="odin" title="odin" src="~/assets/images/Case-Studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
                     <!-- Info -->
                     <div class="item_info">
                       <div class="valign">
@@ -755,7 +755,7 @@ export default {
         {
           projectTitle: "Let's Travel",
           typeOfProject: 'Web / Brand',
-          projectImage: 'images/Case-studies-Lets-Travel.png',
+          projectImage: 'images/Case-Studies-Lets-Travel.png',
           topImage: 'images/Case-Studies-Lets-Travel1.png',
           logo: 'images/Case-Studies-Lets-Travel2.png',
           intro: "Let's Travel Pty Ltd was founded in Sydney in 2015, focusing on operating small group day tours, charter tours and providing transfer services in Sydney and Melbourne.",
