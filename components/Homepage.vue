@@ -318,15 +318,17 @@
       <!-- page-section : ends -->
 
       <div class="promo-section intermediate-section action-text parallax">
-        <div class="container">
-          <div class="row">
-            <article class="col-md-12 text-center">
-              <h1><span class="color">12,538</span></h1>
-              <h2><span>Code that we've written so far</span></h2>
-              <div class="welcome-button">
-                <a class="btn btn-odin btn-odin-color" href="#">Get a Quote</a>
-              </div>
-            </article>
+        <div class="overlay">
+          <div class="container">
+            <div class="row">
+              <article class="promo-article col-md-12 text-center">
+                <h1><span class="color">12,538</span></h1>
+                <h2><span>Code that we've written so far</span></h2>
+                <div class="welcome-button">
+                  <a class="btn btn-odin btn-odin-color" href="#">Get a Quote</a>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </div>
@@ -806,13 +808,19 @@ export default {
   .contact {
     position: relative;
   }
+  .promo-section {
+    position: relative;
+  }
   .overlay {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(1,1,1,0.8);
+    background-color: rgba(1,1,1,0.75);
+  }
+  .promo-article {
+    margin-top: 90px;
   }
   .contact-form h4 {
     margin-top: 80px;
