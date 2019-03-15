@@ -346,7 +346,7 @@
 
                 <!-- item:starts -->
                 <div class="item client-carousel-item client-stage">
-                  <img data-no-retina alt="Travel Dream" title="Travel Dream" src="~/assets/images/Client-logo-traveldream.png">
+                  <img data-no-retina alt="Travel Dream" title="Travel Dream" src="~/assets/images/Client-Logo-Travel-Dream.png">
                 </div>
                 <!-- item:ends -->
 
