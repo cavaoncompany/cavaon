@@ -1,8 +1,8 @@
 <template>
   <div>
-    <no-ssr placeholder="loading...">
+    <!-- <no-ssr placeholder="loading..."> -->
       <Homepage />
-    </no-ssr>
+    <!-- </no-ssr> -->
   </div>
 </template>
 

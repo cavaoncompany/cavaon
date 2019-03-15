@@ -164,7 +164,7 @@
             </a>
           </div>
           <div class="item">
-            <a class="venobox" data-gall="thumb-gallery" href="http://placehold.it/700x700">
+            <a class="venobox" data-gall="thumb-gallery" href="~/assets/images/Project-Wireframe.jpg">
               <img data-no-retina alt="Wireframe" title="Wireframe" class="img-responsive" src="~/assets/images/Project-Wireframe.jpg">
               <div class="thumb-title"><h5><span>Wireframe</span></h5></div>
             </a>
@@ -386,7 +386,7 @@
           <div id="item_container" class="clearfix" />
         </section>
         <!-- inner-section:ends -->
-        <ProjectWithSlider />
+        <ProjectWithSlider :projectDetails="projectDetails" />
         <!-- inner-section : starts -->
         <section class="inner-section add-top-quarter">
           <!-- Filter -->
@@ -416,14 +416,14 @@
               <ul id="grid" class="sortablePortfolio clearfix">
                 <!-- 1st thumb -->
                 <li class="folio-thumb mix category1">
-                  <a href="projects/project-slider.html" class="more_info">
+                  <a href="projects/project-slider.html" class="more_info" @click="updateProjectDetails('letsTravel')">
                     <!-- Thumbnail -->
-                    <img data-no-retina alt="odin" title="odin" src="~/assets/images/Case-studies-Lets-Travel.png">
+                    <img data-no-retina alt="odin" title="odin" src="~/assets/images/Case-studies-Lets-Travel.png" @click="updateProjectDetails('letsTravel')">
                     <!-- Info -->
                     <div class="item_info">
-                      <div class="valign">
-                        <h3><span>Let's Travel</span></h3>
-                        <p><span>Let's Travel</span></p>
+                      <div class="valign" @click="updateProjectDetails('letsTravel')">
+                        <h3><span @click="updateProjectDetails('letsTravel')">Let's Travel</span></h3>
+                        <p><span @click="updateProjectDetails('letsTravel')">Let's Travel</span></p>
                       </div>
                     </div>
                   </a>
@@ -431,14 +431,14 @@
 
                 <!-- 2nd thumb -->
                 <li class="folio-thumb mix category2">
-                  <a href="projects/project-slider.html" class="more_info">
+                  <a href="projects/project-slider.html" class="more_info" @click="updateProjectDetails('travelDream')">
                     <!-- Thumbnail -->
-                    <img data-no-retina alt="odin" title="odin" src="~/assets/images/Case-studies-Travel-Dream.png">
+                    <img data-no-retina alt="odin" title="odin" src="~/assets/images/Case-studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
                     <!-- Info -->
                     <div class="item_info">
                       <div class="valign">
-                        <h3><span>Travel Dream</span></h3>
-                        <p><span>Traveldream</span></p>
+                        <h3><span @click="updateProjectDetails('travelDream')">Travel Dream</span></h3>
+                        <p><span @click="updateProjectDetails('travelDream')">Traveldream</span></p>
                       </div>
                     </div>
                   </a>
@@ -734,38 +734,48 @@ export default {
         {
           projectTitle: 'Travel Dream',
           typeOfProject: 'Web / Brand',
-          projectImage: 'images/Case-Studies-Travel-Dream',
-          topImage: 'images/Case-Studies-Travel-Dream1',
-          logo: 'images/Case-Studies-Travel-Dream2',
+          projectImage: 'images/Case-Studies-Travel-Dream.png',
+          topImage: 'images/Case-Studies-Travel-Dream1.png',
+          logo: 'images/Case-Studies-Travel-Dream2.png',
           intro: 'Traveldream is a new online Travel agent launched in Aug 2018 with a focus on domestic deals, international tours and cruise. They offer amazing world-wide holiday deals including airfares, accommodation and premium experiences at prices that will break the internet, not the budget.',
           challenge: 'To develop a website quickly and on budget with increasing functional complexity',
-          centreImage: 'images/Case-Studies-Travel-Dream3',
+          centreImage: 'images/Case-Studies-Travel-Dream3.png',
           result1: 'It has enabled us to quickly add new products, transact and manage large volumes of orders. It has also been able to scale with the team and continuing demands of the business',
           result2: 'Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work.',
-          font: 'images/Case-Studies-Travel-Dream4',
+          font: 'images/Case-Studies-Travel-Dream4.png',
           info1: '',
           info2: '',
-          screenshot1: 'images/Case-Studies-Travel-Dream5',
+          screenshot1: 'images/Case-Studies-Travel-Dream5.png',
           screenshot2: ''
         },
         {
           projectTitle: "Let's Travel",
           typeOfProject: 'Web / Brand',
-          projectImage: 'images/Case-studies-Lets-Travel',
-          topImage: 'images/Case-Studies-Lets-Travel1',
-          logo: 'images/Case-Studies-Lets-Travel2',
+          projectImage: 'images/Case-studies-Lets-Travel.png',
+          topImage: 'images/Case-Studies-Lets-Travel1.png',
+          logo: 'images/Case-Studies-Lets-Travel2.png',
           intro: "Let's Travel Pty Ltd was founded in Sydney in 2015, focusing on operating small group day tours, charter tours and providing transfer services in Sydney and Melbourne.",
           challenge: 'As a tour operator, they need to process bookings from travel agents (data entry), assign coaches and tour guides everyday. As business growth, one of the biggest challenges they faced was increasing workload on data entry, issuing invoices and tour vouchers. Also, accuracy was getting harder to maintain.',
-          centreImage: 'images/Case-Studies-Lets-Travel3',
+          centreImage: 'images/Case-Studies-Lets-Travel3.png',
           result1: 'The B2B online booking system Cavaon tailor-made has dramatically improved efficiency, accuracy and helped in increase sales. Now, travel agents make bookings directly via the system, which has streamlined they manual data entry and reduced errors. Invoices and tour vouchers are all automatically generated in just one click. The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which without a doubt drives up sales.',
           result2: '',
-          font: 'images/Case-Studies-Lets-Travel4',
+          font: 'images/Case-Studies-Lets-Travel4.png',
           info1: 'Cavaon provides us peace of mind daily IT support, maintenance and consulting. With several years of experience in Australia travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes were always satisfied.',
           info2: 'We have been using the booking system for more than one year. Compared with before, sales has increased by 62.7%.',
-          screenshot1: 'images/Case-Studies-Lets-Travel5',
-          screenshot2: 'images/Case-Studies-Lets-Travel6'
+          screenshot1: 'images/Case-Studies-Lets-Travel5.png',
+          screenshot2: 'images/Case-Studies-Lets-Travel6.png'
         }
-      ]
+      ],
+      projectDetails: Object
+    }
+  },
+  methods: {
+    updateProjectDetails: function (project) {
+      if (project === 'travelDream') {
+        this.projectDetails = this.caseStudies[0]
+      } else if (project === 'letsTravel') {
+        this.projectDetails = this.caseStudies[1]
+      }
     }
   }
 }

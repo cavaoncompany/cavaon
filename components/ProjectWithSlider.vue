@@ -9,10 +9,10 @@
               <article class="col-md-8 col-md-offset-2 text-center">
                 <div class="project-page-caps remove-pad-top remove-pad-bottom  add-top-quarter text-center">
                   <h2 class="dark">
-                    Project with Slider
+                    {{ projectDetails.projectTitle }}
                   </h2>
                   <h3 class="dark">
-                    <span>web / brand</span>
+                    <span>{{ projectDetails.typeOfProject }}</span>
                   </h3>
                 </div>
               </article>
@@ -27,9 +27,7 @@
             <!-- Slider -->
             <div id="item_slider" class="top-frame">
               <ul class="slides">
-                <li><img src="http://placehold.it/1500x1050"></li>
-                <li><img src="http://placehold.it/1500x1050"></li>
-                <li><img src="http://placehold.it/1500x1050"></li>
+                <li><img :src="projectDetails.projectImage"></li>
               </ul>
             </div>
           </article>
@@ -40,13 +38,40 @@
             <div class="item about-carousel-item">
               <div class="row">
                 <article class="col-md-8 col-md-offset-2 main-caps text-center">
-                  <h3 class="grey">
-                    project highlight text goes here like this
-                  </h3>
+                  <h2 class="grey">
+                    Project Overview
+                  </h2>
                   <div class="liner color-bg" />
-                  <h6 class="dark">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at malesuada mauris. Curabitur ut nisi efficitur, eleifend quam eu, fermentum turpis. Praesent volutpat cursus ornare. Aliquam luctus nisl quis sapien tristique, scelerisque consequat magna condimentum. Nunc nec dui quis est sollicitudin ornare. Mauris justo libero, dapibus vitae massa quis, posuere euismod quam. Donec sed orci augue. Morbi cursus risus sed sollicitudin varius. Duis eu volutpat.
-                  </h6>
+                  <p class="dark">
+                    {{ projectDetails.intro }}
+                  </p>
+                  <img :src="projectDetails.topImage" :alt="projectDetails.projectTitle">
+                  <img :src="projectDetails.logo" :alt="projectDetails.projectTitle">
+                  <h2 class="dark">
+                    The Challenge
+                  </h2>
+                  <p class="dark">
+                      {{ projectDetails.challenge }}
+                  </p>
+                  <img :src="projectDetails.centreImage" :alt="projectDetails.projectTitle">
+                  <h2 class="dark">
+                    The Solution
+                  </h2>
+                  <p class="dark">
+                      {{ projectDetails.result1 }}
+                  </p>
+                  <p class="dark">
+                      {{ projectDetails.result2 }}
+                  </p>
+                  <img :src="projectDetails.font" :alt="projectDetails.projectTitle">
+                  <p class="dark">
+                      {{ projectDetails.info1 }}
+                  </p>
+                  <p class="dark">
+                      {{ projectDetails.info2 }}
+                  </p>
+                  <img :src="projectDetails.screenshot1" :alt="projectDetails.projectTitle">
+                  <img v-if="projectDetails.screenshot2 !== ''" :src="projectDetails.screenshot2" :alt="projectDetails.projectTitle">
                 </article>
               </div>
             </div>
@@ -58,9 +83,9 @@
         <article class="col-md-12 text-center">
           <!-- Control buttons -->
           <div id="control_buttons" class="clearfix">
-            <a id="prev" href="projects/project-vimeo.html">&lt;</a>
+            <!-- <a id="prev" href="projects/project-vimeo.html">&lt;</a> -->
             <a id="close" href="#">x</a>
-            <a id="next" href="projects/project-youtube.html">&gt;</a>
+            <!-- <a id="next" href="projects/project-youtube.html">&gt;</a> -->
           </div>
         </article>
       </div>
@@ -72,6 +97,24 @@
 export default {
   props: {
     projectDetails: Object
+  },
+  created() {
+    // eslint-disable-next-line no-console
+    console.log(this.projectDetails)
   }
 }
 </script>
+
+<style>
+  #about img {
+      max-width: 100%;
+      margin-bottom: 15px;
+      margin-top: 15px;
+  }
+
+  #about p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 1.5rem;
+  }
+</style>
