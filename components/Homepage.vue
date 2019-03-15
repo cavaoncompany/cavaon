@@ -42,7 +42,7 @@
           <div class="container">
             <div class="row">
               <article class="col-md-2 text-left">
-                <a href="#intro-header"><img data-no-retina alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive scroll" src="~/assets/images/Logo-white.png"></a>
+                <a href="#intro-header"><img data-no-retina alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive scroll" src="~/assets/images/logo-white.png"></a>
               </article>
               <article class="col-md-10 text-right">
                 <ul class="standard-nav  standard-nav-white-text visible-lg">
