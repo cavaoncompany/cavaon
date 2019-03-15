@@ -8,6 +8,7 @@
 }
 .contact{
 	background-image: url('~assets/images/About.png');
+	background-size: cover;
 }
 .photography-carousel-item-01{
 	background-image: url('http://placehold.it/1500x1050');

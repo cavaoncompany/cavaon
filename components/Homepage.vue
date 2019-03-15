@@ -683,7 +683,7 @@
                   </article>
                 </form>
                 <h4 class="white">
-                    info@cavaon.com.au
+                  info@cavaon.com.au
                 </h4>
                 <p class="white">
                   L1, 403 Elizabeth St.<br>Surry Hills NSW 2010
@@ -773,6 +773,13 @@ export default {
       projectDetails: Object
     }
   },
+  created() {
+    if (process.client) {
+      const backstretchScript = document.createElement('script')
+      backstretchScript.innerHTML = '$.backstretch(["/images/Banner-Branding.png", "/images/Banner-Logo.png", "/images/Banner-Marketing.png", "/images/Banner-Platform.png", "/images/Banner-WebDesign.png", "/images/Banner-Consultation.png"], {duration: 3000, fade: 750})'
+      document.body.appendChild(backstretchScript)
+    }
+  },
   methods: {
     updateProjectDetails: function (project) {
       if (project === 'travelDream') {
@@ -780,13 +787,6 @@ export default {
       } else if (project === 'letsTravel') {
         this.projectDetails = this.caseStudies[1]
       }
-    }
-  },
-  created() {
-    if (process.client) {
-      let backstretchScript = document.createElement('script')
-      backstretchScript.innerHTML = '$.backstretch(["/images/Banner-Branding.png", "/images/Banner-Logo.png", "/images/Banner-Marketing.png", "/images/Banner-Platform.png", "/images/Banner-WebDesign.png", "/images/Banner-Consultation.png"], {duration: 3000, fade: 750})'
-      document.body.appendChild(backstretchScript)
     }
   }
 }
@@ -797,6 +797,17 @@ export default {
     padding-right: 40px;
   }
   .testimonial-wrap-right {
-    padding-left: 40px; 
+    padding-left: 40px;
+  }
+  .contact {
+    position: relative;
+  }
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(1,1,1,0.8);
   }
 </style>
