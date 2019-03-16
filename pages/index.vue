@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <no-ssr placeholder="loading..."> -->
-      <Homepage />
+    <Homepage />
     <!-- </no-ssr> -->
   </div>
 </template>

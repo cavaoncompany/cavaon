@@ -4,10 +4,10 @@
 
 
 .promo-section{
-	background-image: url('~assets/images/Code.png');
+	background-image: url('~assets/images/Code.jpg');
 }
 .contact{
-	background-image: url('~assets/images/About.png');
+	background-image: url('~assets/images/About.jpg');
 	background-size: cover;
 }
 .photography-carousel-item-01{
@@ -36,5 +36,5 @@
 
 /*Mobile Menu Logo*/
 .menu-collapser {
-    background-image: url('~assets/images/Logo-black.png');
+    background-image: url('~assets/images/Logo-colour.png');
 }

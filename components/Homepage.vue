@@ -1,11 +1,5 @@
 <template>
   <div>
-    <!-- Preloader
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <!-- <div id="preloader">
-      <div id="status" />
-    </div> -->
-
     <!-- mobile only navigation : starts -->
     <nav class="mobile-nav hidden-lg">
       <ul class="slimmenu">
@@ -777,8 +771,10 @@ export default {
   },
   created() {
     if (process.client) {
+      // eslint-disable-next-line
       const backstretchScript = document.createElement('script')
       backstretchScript.innerHTML = '$.backstretch(["/images/Banner-Branding.png", "/images/Banner-Logo.png", "/images/Banner-Marketing.png", "/images/Banner-Platform.png", "/images/Banner-WebDesign.png", "/images/Banner-Consultation.png"], {duration: 3000, fade: 750})'
+      // eslint-disable-next-line
       document.body.appendChild(backstretchScript)
     }
   },

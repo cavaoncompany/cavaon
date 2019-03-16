@@ -51,24 +51,24 @@
                     The Challenge
                   </h2>
                   <p class="dark">
-                      {{ projectDetails.challenge }}
+                    {{ projectDetails.challenge }}
                   </p>
                   <img :src="projectDetails.centreImage" :alt="projectDetails.projectTitle">
                   <h2 class="dark">
                     The Solution
                   </h2>
                   <p class="dark">
-                      {{ projectDetails.result1 }}
+                    {{ projectDetails.result1 }}
                   </p>
                   <p class="dark">
-                      {{ projectDetails.result2 }}
+                    {{ projectDetails.result2 }}
                   </p>
                   <img :src="projectDetails.font" :alt="projectDetails.projectTitle">
                   <p class="dark">
-                      {{ projectDetails.info1 }}
+                    {{ projectDetails.info1 }}
                   </p>
                   <p class="dark">
-                      {{ projectDetails.info2 }}
+                    {{ projectDetails.info2 }}
                   </p>
                   <img :src="projectDetails.screenshot1" :alt="projectDetails.projectTitle">
                   <img v-if="projectDetails.screenshot2 !== ''" :src="projectDetails.screenshot2" :alt="projectDetails.projectTitle">
@@ -98,7 +98,7 @@ export default {
   props: {
     projectDetails: Object
   },
-  created() {
+  mounted() {
     // eslint-disable-next-line no-console
     console.log(this.projectDetails)
   }
