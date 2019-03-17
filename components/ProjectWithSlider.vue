@@ -97,10 +97,6 @@
 export default {
   props: {
     projectDetails: Object
-  },
-  mounted() {
-    // eslint-disable-next-line no-console
-    console.log(this.projectDetails)
   }
 }
 </script>

@@ -316,8 +316,8 @@
           <div class="container">
             <div class="row">
               <article class="promo-article col-md-12 text-center">
-                <h1><span class="color">12,538</span></h1>
-                <h2><span>Code that we've written so far</span></h2>
+                <h1><span class="color">{{ linesOfCode }}</span></h1>
+                <h2><span class="white">Code that we've written so far</span></h2>
                 <div class="welcome-button">
                   <a class="btn btn-odin btn-odin-color" href="#">Get a Quote</a>
                 </div>
@@ -766,7 +766,8 @@ export default {
           screenshot2: 'images/Case-Studies-Lets-Travel6.png'
         }
       ],
-      projectDetails: Object
+      projectDetails: Object,
+      linesOfCode: '12,538'
     }
   },
   created() {
@@ -777,6 +778,9 @@ export default {
       // eslint-disable-next-line
       document.body.appendChild(backstretchScript)
     }
+    const date = new Date()
+    let randomnumber = this.convertToMinutes(date)
+    this.linesOfCode = Number(randomnumber-25868512).toLocaleString()
   },
   methods: {
     updateProjectDetails: function (project) {
@@ -785,7 +789,10 @@ export default {
       } else if (project === 'letsTravel') {
         this.projectDetails = this.caseStudies[1]
       }
-    }
+    },
+    convertToMinutes: function(duration) {
+      return Math.floor(duration / (1000 * 60))
+    } 
   }
 }
 </script>
