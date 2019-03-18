@@ -1432,7 +1432,7 @@ font-family: 'Montserrat', sans-serif; font-weight:300;
 	line-height: 25px;
 }
 .testimonial-wrap > p{
-	margin-top: 20px;
+	margin-top: 5px;
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
@@ -1451,7 +1451,7 @@ font-family: 'Montserrat', sans-serif; font-weight:300;
 	font-family: 'Montserrat', sans-serif; font-weight:300;
 	font-size: 12px;
     letter-spacing: 0px;
-    line-height: 45px;
+    line-height: 20px;
     text-transform: none;
 }
 
