@@ -5,7 +5,7 @@
 // Template Name: ODIN.
 // Author: Designova.
 // Website: http://www.designova.net 
-// Copyright: (C) 2016 
+// Copyright: (C) 2016
 // -------------------------------------------------------------------------------------------------------------------------------
 
 /*global $:false */
@@ -94,32 +94,21 @@ $(document).ready(function() {
             var this_item = $(this).children('.rotator-wrap');
             var text_rotator_content_split = text_rotator_content.split(',');
             var item_size = text_rotator_content_split.length;
-            nova_text_rotator(text_rotator_content_split, this_item, item_size);
+            nova_text_rotator(text_rotator_content_split, this_item, item_size, 0);
         });
         
         function nova_text_rotator(item_array, this_item, item_size, my_index){
-            console.log(my_index)
-            if(my_index == undefined)
-                
-                var my_index = -1;
-            my_index++
-            if(my_index < item_size)
+            if(my_index >= item_size)
             {
-
-                this_item.fadeOut(800, function(){
-                    this_item.html('<span>'+ item_array[my_index] +'</span>');
-                    this_item.fadeIn(800);
-                    
-                });
+               my_index = 0;
             }
-            else
-            {
-              console.log('here', my_index)
-                my_index = 0;
-            }
-
+            this_item.fadeOut(800, function(){
+              this_item.html('<span>'+ item_array[my_index] +'</span>');
+              this_item.fadeIn(800);
+              
+            });
             setTimeout(function() {
-                 nova_text_rotator(item_array, this_item, item_size, my_index);
+                 nova_text_rotator(item_array, this_item, item_size, my_index + 1);
             }, 3750);
         }
     });  
