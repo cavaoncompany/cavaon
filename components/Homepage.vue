@@ -328,22 +328,22 @@
       </div>
 
       <!-- inner-section:starts -->
-      <section class="inner-section clients-wrap black-bg">
+      <!-- <section class="inner-section clients-wrap black-bg">
         <div class="container">
           <div class="row">
-            <article class="col-md-12 text-center">
+            <article class="col-md-12 text-center"> -->
               <!-- carousel:starts -->
-              <div id="client-carousel" class="clients-carousel owl-carousel owl-nav-sticky-extra-wide owl-theme">
+              <!-- <div id="client-carousel" class="clients-carousel owl-carousel owl-nav-sticky-extra-wide owl-theme"> -->
                 <!-- item:starts -->
-                <div class="item client-carousel-item client-stage">
+                <!-- <div class="item client-carousel-item client-stage">
                   <img data-no-retina alt="Let's Travel" title="Let's Travel" src="~/assets/images/Client-logo-lets-travel.png">
-                </div>
+                </div> -->
                 <!-- item:ends -->
 
                 <!-- item:starts -->
-                <div class="item client-carousel-item client-stage">
+                <!-- <div class="item client-carousel-item client-stage">
                   <img data-no-retina alt="Travel Dream" title="Travel Dream" src="~/assets/images/Client-Logo-Travel-Dream.png">
-                </div>
+                </div> -->
                 <!-- item:ends -->
 
                 <!-- item:starts -->
@@ -351,12 +351,12 @@
                   <img data-no-retina alt="Inspiring Vacations" title="Inspiring Vacations" src="~/assets/images/Client-Logo-Inspiring-Vacations.png">
                 </div> -->
                 <!-- item:ends -->
-              </div>
+              <!-- </div> -->
               <!-- carousel:ends -->
-            </article>
+            <!-- </article>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- inner-section:ends -->
 
       <!-- page-section : starts -->
@@ -386,9 +386,9 @@
         <!-- inner-section : starts -->
         <section class="inner-section add-top-quarter">
           <!-- Filter -->
-          <!-- <div id="filter" class="clearfix">
+          <div id="filter" class="clearfix">
             <div id="filter_wrapper">
-              <ul id="portfolioFilter">
+              <!-- <ul id="portfolioFilter">
                 <li class="filter" data-filter="all">
                   All
                 </li>
@@ -398,9 +398,9 @@
                 <li class="filter" data-filter="category2">
                   Travel Dream
                 </li>
-              </ul>
+              </ul> -->
             </div>
-          </div> -->
+          </div>
           <!-- End: Filter -->
 
           <section id="portfolio-wrap">
@@ -506,7 +506,7 @@
         <!-- inner-section:ends -->
 
         <!-- inner-section:starts -->
-        <section id="team" class="inner-section team-wrap add-top-half pad-bottom">
+        <section id="team" class="inner-section team-wrap pad-bottom">
           <div class="container">
             <div class="row">
               <!-- item:starts -->
@@ -648,6 +648,21 @@
       <section id="contact-form" class="contact-form black-bg page-section">
         <div class="container">
           <div class="row">
+            <div class="main-caps text-center">
+              <h3 class="white">
+                <span>Say hello</span>
+              </h3>
+              <div class="liner color-bg" />
+            </div>        
+            <div class="contact-info text-center">
+              <p class="white contact-info-text">+61 2 8379 7424</p>
+              <p class="white contact-info-text">
+                info@cavaon.com.au
+              </p>
+              <p class="white">
+                L1, 403 Elizabeth St.<br>Surry Hills NSW 2010
+              </p>
+            </div>
             <article class="col-md-8 col-md-offset-2 main-caps text-center">
               <div class="contact-item pad-common ">
                 <div id="fname" class="alert alert-error error ">
@@ -675,12 +690,6 @@
                     </div>
                   </article>
                 </form>
-                <h4 class="white">
-                  info@cavaon.com.au
-                </h4>
-                <p class="white">
-                  L1, 403 Elizabeth St.<br>Surry Hills NSW 2010
-                </p>
               </div>
             </article>
           </div>
@@ -816,15 +825,21 @@ export default {
     background-color: rgba(1,1,1,0.75);
   }
   .promo-article {
-    margin-top: 90px;
-  }
-  .contact-form h4 {
-    margin-top: 80px;
+    margin-top: 30%;
   }
   .avatar {
     width: 58px;
   }
   .testimonial-name {
     border: 1px solid #ffc716;
+  }
+  .contact-form ::placeholder {
+    color: #FFF;
+  }
+  .contact-info-text {
+    line-height: 30px;
+  }
+  .contact-info {
+    margin-bottom: 60px;
   }
 </style>
