@@ -825,7 +825,7 @@ export default {
     background-color: rgba(1,1,1,0.75);
   }
   .promo-article {
-    margin-top: 30%;
+    margin-top: 25%;
   }
   .avatar {
     width: 58px;

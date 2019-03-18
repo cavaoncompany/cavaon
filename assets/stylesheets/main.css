@@ -329,7 +329,7 @@ font-family: 'Raleway', sans-serif; font-weight:600;
 }
 .action-text h2{
 	margin: 0;
-	padding: 0;
+	padding: 25px 0;
 	font-size: 18px;
 	line-height: 25px;
 }
