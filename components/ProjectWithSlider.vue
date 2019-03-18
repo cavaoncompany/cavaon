@@ -38,25 +38,25 @@
             <div class="item about-carousel-item">
               <div class="row">
                 <article class="col-md-8 col-md-offset-2 main-caps text-center">
-                  <h2 class="grey">
-                    Project Overview
-                  </h2>
+                  <h3 class="dark">
+                    <span>Project Overview</span>
+                  </h3>
                   <div class="liner color-bg" />
                   <p class="dark">
                     {{ projectDetails.intro }}
                   </p>
                   <img :src="projectDetails.topImage" :alt="projectDetails.projectTitle">
                   <img :src="projectDetails.logo" :alt="projectDetails.projectTitle">
-                  <h2 class="dark">
-                    The Challenge
-                  </h2>
+                  <h3 class="dark">
+                    <span>Challenge</span>
+                  </h3>
                   <p class="dark">
                     {{ projectDetails.challenge }}
                   </p>
                   <img :src="projectDetails.centreImage" :alt="projectDetails.projectTitle">
-                  <h2 class="dark">
-                    The Solution
-                  </h2>
+                  <h3 class="dark">
+                    <span>The Solution</span>
+                  </h3>
                   <p class="dark">
                     {{ projectDetails.result1 }}
                   </p>

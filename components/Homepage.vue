@@ -108,7 +108,7 @@
                   Digital Business & Platform Solutions
                 </h6>
                 <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#">Start a project</a>
+                  <a class="btn btn-odin btn-odin-color" href="#contact-form">Start a project</a>
                 </div>
               </article>
             </div>
@@ -655,7 +655,7 @@
               <div class="liner color-bg" />
             </div>        
             <div class="contact-info text-center">
-              <p class="white contact-info-text">+61 2 8379 7424</p>
+              <a href="tel:+61283797424" class="white contact-info-text">+61 2 8379 7424</a>
               <p class="white contact-info-text">
                 info@cavaon.com.au
               </p>
@@ -841,5 +841,9 @@ export default {
   }
   .contact-info {
     margin-bottom: 60px;
+    margin-top: 15px;
+  }
+  .contact-info a:hover {
+    color: #ffc716;
   }
 </style>
