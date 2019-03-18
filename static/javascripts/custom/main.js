@@ -98,12 +98,11 @@ $(document).ready(function() {
         });
         
         function nova_text_rotator(item_array, this_item, item_size, my_index){
-            
+            console.log(my_index)
             if(my_index == undefined)
+                
                 var my_index = -1;
-
             my_index++
-
             if(my_index < item_size)
             {
 
@@ -115,7 +114,8 @@ $(document).ready(function() {
             }
             else
             {
-                my_index = -1;
+              console.log('here', my_index)
+                my_index = 0;
             }
 
             setTimeout(function() {

@@ -41,7 +41,6 @@
                   <h3 class="dark">
                     <span>Project Overview</span>
                   </h3>
-                  <div class="liner color-bg" />
                   <p class="dark">
                     {{ projectDetails.intro }}
                   </p>
