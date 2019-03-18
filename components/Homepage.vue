@@ -473,13 +473,13 @@
               <h6 class="dark">
                 Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work.
               </h6>
-              <p><span>Paul Mercuri / <i>Founder and Managing Director of Travel Dream</i></span></p>
+              <p><span>Paul Mercuri <br> <i>Founder and Managing Director of Travel Dream</i></span></p>
             </div>
             <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-right col-md-6">
               <h6 class="dark">
                 With Cavaon years of experience in building platform for travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes are always satisfied.
               </h6>
-              <p><span>Suey / <i>Founder and Managing Director of Let's Travel</i></span></p>
+              <p><span>Suey <br> <i>Founder and Managing Director of Let's Travel</i></span></p>
             </div>
           </div>
           <!-- carousel:ends -->
@@ -798,12 +798,6 @@ export default {
 </script>
 
 <style>
-  .testimonial-wrap-left {
-    padding-right: 40px;
-  }
-  .testimonial-wrap-right {
-    padding-left: 40px;
-  }
   #about p {
     line-height: 1.5rem;
     padding-top: 10px;

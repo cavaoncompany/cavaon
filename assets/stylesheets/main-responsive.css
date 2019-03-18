@@ -132,6 +132,12 @@
 	.standard-header{
 		display: none !important;
 	}
+	.testimonial-wrap-left {
+		padding-right: 40px;
+	}
+	.testimonial-wrap-right {
+		padding-left: 40px;
+	}
 }
 
 /*Small Desktop and Very Small Notebook */
@@ -160,7 +166,12 @@
 	.standard-header{
 		display: none !important;
 	}
-	
+	.testimonial-wrap-left {
+		padding-right: 15px;
+	}
+	.testimonial-wrap-right {
+		padding-left: 15px;
+	}
 }
 
 /*Medium Tablets */
@@ -1276,7 +1287,7 @@
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 36px;
+	    font-size: 1rem;
 	    line-height: 43px;
 	}
 	.hero-caps h6 {
