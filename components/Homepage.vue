@@ -13,6 +13,9 @@
           <a class="scroll" href="#caseStudies">case studies</a>
         </li>
         <li>
+          <a class="scroll" href="#testimonials">Testimonials</a>
+        </li>
+        <li>
           <a class="scroll" href="#team">team</a>
         </li>
         <li>
@@ -20,9 +23,6 @@
         </li>
         <li>
           <a class="scroll" href="#contact-form">contact</a>
-        </li>
-        <li>
-          <a class="scroll" href="#quote">Get a Quote</a>
         </li>
       </ul>
     </nav>
@@ -43,10 +43,10 @@
                   <li><a href="#projects" class="scroll">Projects</a></li>
                   <li><a href="#services" class="scroll">Services</a></li>
                   <li><a href="#caseStudies" class="scroll">Case Studies</a></li>
+                  <li><a href="#testimonials" class="scroll">Testimonials</a></li>
                   <li><a href="#team" class="scroll">Team</a></li>
                   <li><a href="#about" class="scroll">About</a></li>
                   <li><a href="#contact-form" class="scroll">Contact</a></li>
-                  <li><a href="#quote" class="scroll">Get a Quote</a></li>
                 </ul>
               </article>
             </div>
@@ -84,10 +84,10 @@
                 <li><a id="projects-linker" href="#projects" class="scroll">Projects</a></li>
                 <li><a id="services-linker" href="#services" class="scroll">Services</a></li>
                 <li><a id="case-studies-linker" href="#caseStudies" class="scroll">Case Studies</a></li>
+                <li><a id="testimonials-linker" href="#testimonials" class="scroll">Testimonials</a></li>
                 <li><a id="team-linker" href="#team">Team</a></li>
                 <li><a id="about-linker" href="#about" class="scroll">About</a></li>
                 <li><a id="contact-linker" href="#contact-form" class="scroll">Contact</a></li>
-                <li><a id="quote-linker" href="#quote" class="scroll">Get a Quote</a></li>
               </ul>
             </article>
           </div>
@@ -99,7 +99,7 @@
           <div class="item about-carousel-item">
             <div class="row">
               <article class="col-md-8 col-md-offset-2 main-caps text-center">
-                <img alt="Cavaon Logo" title="Cavaon Logo" src="~/assets/images/Avatar.png">
+                <img class="avatar" alt="Cavaon Logo" title="Cavaon Logo" src="~/assets/images/Avatar.png">
                 <h3>
                   A Whole New Way To<br>Run Your Business
                 </h3>
@@ -386,7 +386,7 @@
         <!-- inner-section : starts -->
         <section class="inner-section add-top-quarter">
           <!-- Filter -->
-          <div id="filter" class="clearfix">
+          <!-- <div id="filter" class="clearfix">
             <div id="filter_wrapper">
               <ul id="portfolioFilter">
                 <li class="filter" data-filter="all">
@@ -398,12 +398,9 @@
                 <li class="filter" data-filter="category2">
                   Travel Dream
                 </li>
-                <!--<li class="filter" data-filter="category3">Ajax Vimeo</li>
-                                  <li class="filter" data-filter="category4">Lightbox Photos</li>
-                                  <li class="filter" data-filter="category5">Lightbox Video</li>-->
               </ul>
             </div>
-          </div>
+          </div> -->
           <!-- End: Filter -->
 
           <section id="portfolio-wrap">
@@ -450,7 +447,7 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="team" class="page testimonials page-section remove-pad-bottom white-bg">
+      <section id="testimonials" class="page testimonials page-section remove-pad-bottom white-bg">
         <!-- inner-section:starts -->
         <section class="inner-section promo-text silver-bg row">
           <div class="container">
@@ -473,13 +470,13 @@
               <h6 class="dark">
                 Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work.
               </h6>
-              <p><span>Paul Mercuri <br> <i>Founder and Managing Director of Travel Dream</i></span></p>
+              <p><span class="testimonial-name">Paul Mercuri</span><br><span><i>Founder and Managing Director of Travel Dream</i></span></p>
             </div>
             <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-right col-md-6">
               <h6 class="dark">
                 With Cavaon years of experience in building platform for travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes are always satisfied.
               </h6>
-              <p><span>Suey <br> <i>Founder and Managing Director of Let's Travel</i></span></p>
+              <p><span class="testimonial-name">Suey</span><br><span><i>Founder and Managing Director of Let's Travel</i></span></p>
             </div>
           </div>
           <!-- carousel:ends -->
@@ -509,7 +506,7 @@
         <!-- inner-section:ends -->
 
         <!-- inner-section:starts -->
-        <section class="inner-section team-wrap add-top-half pad-bottom">
+        <section id="team" class="inner-section team-wrap add-top-half pad-bottom">
           <div class="container">
             <div class="row">
               <!-- item:starts -->
@@ -777,6 +774,8 @@ export default {
       backstretchScript.innerHTML = '$.backstretch(["/images/Banner-Branding.png", "/images/Banner-Logo.png", "/images/Banner-Marketing.png", "/images/Banner-Platform.png", "/images/Banner-WebDesign.png", "/images/Banner-Consultation.png"], {duration: 3000, fade: 750})'
       // eslint-disable-next-line
       document.body.appendChild(backstretchScript)
+
+      document.getElementById('__layout')
     }
     const date = new Date()
     let randomnumber = this.convertToMinutes(date)
@@ -821,5 +820,11 @@ export default {
   }
   .contact-form h4 {
     margin-top: 80px;
+  }
+  .avatar {
+    width: 58px;
+  }
+  .testimonial-name {
+    border: 1px solid #ffc716;
   }
 </style>
