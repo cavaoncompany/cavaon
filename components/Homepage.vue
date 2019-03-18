@@ -846,4 +846,8 @@ export default {
   .contact-info a:hover {
     color: #ffc716;
   }
+  #testimonials .inner-section {
+    width: 100%;
+    margin-left: 0;
+  }
 </style>
