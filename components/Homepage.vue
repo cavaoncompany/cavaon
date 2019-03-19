@@ -463,21 +463,23 @@
         <!-- inner-section:ends -->
 
         <!-- inner-section : starts -->
-        <section class="inner-section text-center silver-bg pad-bottom row">
+        <section class="inner-section text-center silver-bg row">
           <!-- <div id="testimonial-carousel" class="testimonial-carousel owl-carousel"> -->
           <div class="container">
-            <div class="row">
-              <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-left col-md-6">
+            <div class="testimonial-wrapper">
+              <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-right">
+                <h3 class="main-caps">Always quick to understand requirements and outcomes</h3>
+                <h6 class="dark">
+                  "Cavaon provides us peace of mind, daily IT support, maintenance and consulting. With several years of experience in Australia's travel industry, every time we request new functionalities or upgrades to the system, they understood the requirements quickly and outcomes were always satisfying."
+                </h6>
+                <p><span class="testimonial-name">Charles</span><br><span><i>Founder and Managing Director<br>Let's Travel</i></span></p>
+              </div>
+              <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-left">
+                <h3 class="main-caps">Much quicker than other providers</h3>
                 <h6 class="dark">
                   "Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work."
                 </h6>
-                <p><span class="testimonial-name">Paul Mercuri</span><br><span><i>Founder and Managing Director of Travel Dream</i></span></p>
-              </div>
-              <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-right col-md-6">
-                <h6 class="dark">
-                  "With Cavaon years of experience in building platform for travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes are always satisfied."
-                </h6>
-                <p><span class="testimonial-name">Suey</span><br><span><i>Founder and Managing Director of Let's Travel</i></span></p>
+                <p><span class="testimonial-name">Paul Mercuri</span><br><span><i>Founder and Managing Director<br>Travel Dream</i></span></p>
               </div>
             </div>
           </div>
@@ -883,9 +885,6 @@ export default {
   .avatar {
     width: 58px;
   }
-  .testimonial-name {
-    border: 1px solid #ffc716;
-  }
   .contact-form ::placeholder {
     color: #FFF;
   }
@@ -902,5 +901,18 @@ export default {
   #testimonials .inner-section {
     width: 100%;
     margin-left: 0;
+  }
+  .testimonial-wrapper {
+    display: flex;
+  }
+  .stats-carousel-item h3 {
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    color: #ffc716;
+    text-transform: uppercase;
+    line-height: 20px;
+  }
+  .stats-carousel-item h6 {
+    font-size: 15px;
   }
 </style>
