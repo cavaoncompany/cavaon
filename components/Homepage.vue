@@ -202,40 +202,40 @@
               <article class="col-md-12">
                 <div class="row">
                   <article id="features-01" class="features-icon current col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="1"><img data-no-retina alt="Logo" title="Logo" src="~/assets/images/icons/Services-Logo.png"></a>
+                    <a class="customLink" data-target="1"><img data-no-retina alt="Logo" title="Logo" src="~/assets/images/icons/Services-Logo.png">
                     <h5 class="dark">
                       Logo
-                    </h5>
+                    </h5></a>
                   </article>
                   <article id="features-02" class="features-icon col-md-2 text-center animated" data-fx="fadeInUp">
-                    <a class="customLink" data-target="2"><img data-no-retina alt="Web Design" title="Web Design" src="~/assets/images/icons/Services-WebDesign.png"></a>
+                    <a class="customLink" data-target="2"><img data-no-retina alt="Web Design" title="Web Design" src="~/assets/images/icons/Services-WebDesign.png">
                     <h5 class="dark">
                       Web Design
-                    </h5>
+                    </h5></a>
                   </article>
                   <article id="features-03" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="3"><img data-no-retina alt="Development" title="Development" src="~/assets/images/icons/Services-Development.png"></a>
+                    <a class="customLink" data-target="3"><img data-no-retina alt="Development" title="Development" src="~/assets/images/icons/Services-Development.png">
                     <h5 class="dark">
                       Development
-                    </h5>
+                    </h5></a>
                   </article>
                   <article id="features-04" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="4"><img alt="Consultation" title="Consultation" src="~/assets/images/icons/Services-Consultation.png"></a>
+                    <a class="customLink" data-target="4"><img alt="Consultation" title="Consultation" src="~/assets/images/icons/Services-Consultation.png">
                     <h5 class="dark">
                       Consultation
-                    </h5>
+                    </h5></a>
                   </article>
                   <article id="features-05" class="features-icon col-md-2 text-center animated" data-fx="fadeInUp">
-                    <a class="customLink" data-target="5"><img alt="Ongoing Support" title="Ongoing Support" src="~/assets/images/icons/Services-OngoingSupport.png"></a>
+                    <a class="customLink" data-target="5"><img alt="Ongoing Support" title="Ongoing Support" src="~/assets/images/icons/Services-OngoingSupport.png">
                     <h5 class="dark">
                       Ongoing Support
-                    </h5>
+                    </h5></a>
                   </article>
                   <article id="features-06" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="6"><img alt="Marketing" title="Marketing" src="~/assets/images/icons/Services-Marketing.png"></a>
+                    <a class="customLink" data-target="6"><img alt="Marketing" title="Marketing" src="~/assets/images/icons/Services-Marketing.png">
                     <h5 class="dark">
                       Marketing
-                    </h5>
+                    </h5></a>
                   </article>
                 </div>
               </article>
@@ -316,16 +316,18 @@
           <div class="container">
             <div class="row">
               <article class="promo-article col-md-12 text-center">
-                <h1 id="number-mobile"><span class="color">{{ linesOfCode.toLocaleString() }}</span></h1>
+                <h1 id="number-mobile">
+                  <span class="color">{{ linesOfCode.toLocaleString() }}</span>
+                </h1>
                 <count-to
                   id="number-desktop"
+                  ref="codecounter"
                   class="color counter"
-                  ref='codecounter'
                   :startVal="0"
                   :endVal="linesOfCode"
                   :autoplay="false"
-                  :duration=3000>
-                </count-to>
+                  :duration="3000"
+                />
                 <h2><span class="white">Code that we've written so far</span></h2>
                 <div class="welcome-button">
                   <a class="btn btn-odin btn-odin-color" href="#">Get a Quote</a>
@@ -477,14 +479,18 @@
           <div class="container">
             <div class="testimonial-wrapper">
               <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-right">
-                <h3 class="main-caps">Always quick to understand requirements and outcomes</h3>
+                <h3 class="main-caps">
+                  Always quick to understand requirements and outcomes
+                </h3>
                 <h6 class="dark">
                   "Cavaon provides us peace of mind, daily IT support, maintenance and consulting. With several years of experience in Australia's travel industry, every time we request new functionalities or upgrades to the system, they understood the requirements quickly and outcomes were always satisfying."
                 </h6>
                 <p><span class="testimonial-name">Charles</span><br><span><i>Founder and Managing Director<br>Let's Travel</i></span></p>
               </div>
               <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-left">
-                <h3 class="main-caps">Much quicker than other providers</h3>
+                <h3 class="main-caps">
+                  Much quicker than other providers
+                </h3>
                 <h6 class="dark">
                   "Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work."
                 </h6>
@@ -527,12 +533,13 @@
                 <div class="item team-carousel-item team-stage">
                   <img
                     data-no-retina
-                    alt="Team"
+                    alt="John Ho"
                     title="John Ho"
                     class="img-responsive"
                     :src="john"
                     @mouseover="teamMouseOver('john')"
-                    @mouseleave="teamMouseOver('john')">
+                    @mouseleave="teamMouseOver('john')"
+                  >
                   <h3 class="dark">
                     John<br>Ho
                   </h3>
@@ -547,12 +554,13 @@
                 <div class="item team-carousel-item team-stage">
                   <img
                     data-no-retina
-                    alt="Team"
+                    alt="Wayne Wen"
                     title="Wayne Wen"
                     class="img-responsive"
                     :src="wayne"
                     @mouseover="teamMouseOver('wayne')"
-                    @mouseleave="teamMouseOver('wayne')">
+                    @mouseleave="teamMouseOver('wayne')"
+                  >
                   <h3 class="dark">
                     Wayne Wen
                   </h3>
@@ -567,12 +575,13 @@
                 <div class="item team-carousel-item team-stage">
                   <img
                     data-no-retina
-                    alt="Team"
+                    alt="Ruby Zhang"
                     title="Ruby Zhang"
                     class="img-responsive"
                     :src="ruby"
                     @mouseover="teamMouseOver('ruby')"
-                    @mouseleave="teamMouseOver('ruby')">
+                    @mouseleave="teamMouseOver('ruby')"
+                  >
                   <h3 class="dark">
                     Ruby Zhang
                   </h3>
@@ -587,12 +596,13 @@
                 <div class="item team-carousel-item team-stage">
                   <img
                     data-no-retina
-                    alt="Team"
+                    alt="Madeline Hui"
                     title="Madeline Hui"
                     class="img-responsive"
                     :src="madeline"
                     @mouseover="teamMouseOver('madeline')"
-                    @mouseleave="teamMouseOver('madeline')">
+                    @mouseleave="teamMouseOver('madeline')"
+                  >
                   <h3 class="dark">
                     Madeline Hui
                   </h3>
@@ -607,12 +617,13 @@
                 <div class="item team-carousel-item team-stage">
                   <img
                     data-no-retina
-                    alt="Team"
+                    alt="Daniel Shen"
                     title="Daniel Shen"
                     class="img-responsive"
                     :src="daniel"
                     @mouseover="teamMouseOver('daniel')"
-                    @mouseleave="teamMouseOver('daniel')">
+                    @mouseleave="teamMouseOver('daniel')"
+                  >
                   <h3 class="dark">
                     Daniel Shen
                   </h3>
@@ -627,12 +638,13 @@
                 <div class="item team-carousel-item team-stage">
                   <img
                     data-no-retina
-                    alt="Team"
+                    alt="Joe Situ"
                     title="Joe Situ"
                     class="img-responsive"
                     :src="joe"
                     @mouseover="teamMouseOver('joe')"
-                    @mouseleave="teamMouseOver('joe')">
+                    @mouseleave="teamMouseOver('joe')"
+                  >
                   <h3 class="dark">
                     Joe<br>Situ
                   </h3>
@@ -647,12 +659,13 @@
                 <div class="item team-carousel-item team-stage">
                   <img
                     data-no-retina
-                    alt="Team"
+                    alt="Cornelia Schulz"
                     title="Cornelia Schulz"
                     class="img-responsive"
                     :src="cornelia"
                     @mouseover="teamMouseOver('cornelia')"
-                    @mouseleave="teamMouseOver('cornelia')">
+                    @mouseleave="teamMouseOver('cornelia')"
+                  >
                   <h3 class="dark">
                     Cornelia Schulz
                   </h3>
@@ -707,16 +720,16 @@
                   <span>A little more about us</span>
                 </h3>
                 <div class="liner color-bg" />
-                <p class='white'>
+                <p class="white">
                   We are a young, energetic, and motivated digital business and platform solutions company based in Sydney. We care about our customers and are focused on increasing your business value.
                 </p>
-                <p class='white vision'>
+                <p class="white vision">
                   Our vision : Every business can change its success by turning digital.
                 </p>
-                <p class='white mission'>
+                <p class="white mission">
                   Our mission : Helping businesses to find the perfect and most successful digital solution
                 </p>
-                <!-- <p class='white values'>
+                <!-- <p class="white values">
                   Our core values : Passionate, Professional, Innovative, Opportunity.
                 </p> -->
               </article>

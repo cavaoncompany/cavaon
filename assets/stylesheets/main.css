@@ -729,7 +729,7 @@ font-family: 'Montserrat', sans-serif; font-weight:300;
 .features-icon{
 	cursor: pointer;
 }
-.features-icon > h5{
+.features-icon > a > h5{
 	margin-top: 10px;
     display: block;
     font-family: 'Montserrat', sans-serif; font-weight:400;

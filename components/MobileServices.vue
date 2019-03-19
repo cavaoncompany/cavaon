@@ -1,11 +1,13 @@
 <template>
   <section id="mobile-services" class="container">
-    <div class="card" v-for="(service, index) in services" :key="index">
+    <div v-for="(service, index) in services" :key="index" class="card">
       <img data-no-retina alt="Logo" class="card-img-top" title="Logo" :src="service.image">
       <div class="card-body">
         <article class="text-center">
           <h3>{{ service.caption }}</h3>
-          <p class="dark">{{ service.description }}</p>
+          <p class="dark">
+            {{ service.description }}
+          </p>
         </article>
       </div>
     </div>
