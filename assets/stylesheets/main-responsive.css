@@ -63,6 +63,15 @@
 	.promo-section {
 		min-height: 750px
 	}
+	.testimonial-wrap {
+		margin-left: 20px;
+		margin-right: 20px;
+		width: 50%;
+		min-height: 438px;
+	}
+	.testimonial-wrapper {
+		flex-direction: row;
+	}
 }
 
 /*Medium Widescreen Monitors*/
@@ -142,11 +151,7 @@
 	.standard-header{
 		display: none !important;
 	}
-	.testimonial-wrap-left {
-		padding-right: 40px;
-	}
 	.testimonial-wrap-right {
-		padding-left: 40px;
 		padding-top: 0;
 	}
 }
@@ -177,11 +182,7 @@
 	.standard-header{
 		display: none !important;
 	}
-	.testimonial-wrap-left {
-		padding-right: 15px;
-	}
 	.testimonial-wrap-right {
-		padding-left: 15px;
 		padding-top: 30px;
 	}
 }
@@ -354,6 +355,13 @@
 	.promo-section {
 		max-height: 550px;
 		min-height: 550px;
+	}
+	.testimonial-wrap {
+		width: 100%;
+		min-height: 0px;
+	}
+	.testimonial-wrapper {
+		flex-direction: column;
 	}
 }
 
