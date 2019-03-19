@@ -43,6 +43,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '~/assets/bootstrap/css/bootstrap4.css',
     '~/assets/bootstrap/css/bootstrap.css',
     '~/assets/fonts/fonts.css',
     '~/assets/stylesheets/animate.css',

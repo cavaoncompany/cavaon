@@ -193,7 +193,7 @@
           </div>
         </section>
         <!-- inner-section:ends -->
-
+        <MobileServices />
         <!-- inner-section : starts -->
         <section class="inner-section add-top-half pad-top-half pad-bottom-half silver-bg ">
           <!-- container : starts -->
@@ -733,10 +733,12 @@
 
 <script>
 import ProjectWithSlider from './ProjectWithSlider'
+import MobileServices from './MobileServices'
 
 export default {
   components: {
-    ProjectWithSlider
+    ProjectWithSlider,
+    MobileServices
   },
   data() {
     return {
