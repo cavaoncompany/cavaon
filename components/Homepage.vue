@@ -55,13 +55,13 @@
         <!-- masthead-section:ends -->
 
         <div class="valign">
-          <div class="hero-caps  text-center">
-            <h6 class="text-rotator minimal white">
+          <div class="hero-caps text-rotator text-center">
+            <!-- <h6 class="text-rotator minimal white">
               We create, we create, we provide, we create, we create, we provide
             </h6>
             <h1 class="text-rotator white">
               <span>branding, logos, marketing, platforms, web design, consultation</span>
-            </h1>
+            </h1> -->
           </div>
         </div>
         <!-- valign:ends -->
@@ -116,7 +116,7 @@
           <!-- item:ends -->
         </div>
       </section>
-
+      <MobileProjects />
       <!-- inner-section : starts -->
       <section id="thumb-carousel-wrap" class="inner-section thumb-carousel-wrap">
         <!-- thumb-carousel : starts -->
@@ -317,7 +317,15 @@
             <div class="row">
               <article class="promo-article col-md-12 text-center">
                 <h1 id="number-mobile"><span class="color">{{ linesOfCode.toLocaleString() }}</span></h1>
-                <count-to id="number-desktop" class="color counter" ref='codecounter' :startVal="0" :endVal="linesOfCode" :autoplay="false" :duration=3000></count-to>
+                <count-to
+                  id="number-desktop"
+                  class="color counter"
+                  ref='codecounter'
+                  :startVal="0"
+                  :endVal="linesOfCode"
+                  :autoplay="false"
+                  :duration=3000>
+                </count-to>
                 <h2><span class="white">Code that we've written so far</span></h2>
                 <div class="welcome-button">
                   <a class="btn btn-odin btn-odin-color" href="#">Get a Quote</a>
@@ -517,7 +525,14 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="John Ho" class="img-responsive" :src="john" @mouseover="teamMouseOver('john')" @mouseleave="teamMouseOver('john')">
+                  <img
+                    data-no-retina
+                    alt="Team"
+                    title="John Ho"
+                    class="img-responsive"
+                    :src="john"
+                    @mouseover="teamMouseOver('john')"
+                    @mouseleave="teamMouseOver('john')">
                   <h3 class="dark">
                     John<br>Ho
                   </h3>
@@ -530,7 +545,14 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Wayne Wen" class="img-responsive" :src="wayne" @mouseover="teamMouseOver('wayne')" @mouseleave="teamMouseOver('wayne')">
+                  <img
+                    data-no-retina
+                    alt="Team"
+                    title="Wayne Wen"
+                    class="img-responsive"
+                    :src="wayne"
+                    @mouseover="teamMouseOver('wayne')"
+                    @mouseleave="teamMouseOver('wayne')">
                   <h3 class="dark">
                     Wayne Wen
                   </h3>
@@ -543,7 +565,14 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Ruby Zhang" class="img-responsive" :src="ruby" @mouseover="teamMouseOver('ruby')" @mouseleave="teamMouseOver('ruby')">
+                  <img
+                    data-no-retina
+                    alt="Team"
+                    title="Ruby Zhang"
+                    class="img-responsive"
+                    :src="ruby"
+                    @mouseover="teamMouseOver('ruby')"
+                    @mouseleave="teamMouseOver('ruby')">
                   <h3 class="dark">
                     Ruby Zhang
                   </h3>
@@ -556,7 +585,14 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Madeline Hui" class="img-responsive" :src="madeline" @mouseover="teamMouseOver('madeline')" @mouseleave="teamMouseOver('madeline')">
+                  <img
+                    data-no-retina
+                    alt="Team"
+                    title="Madeline Hui"
+                    class="img-responsive"
+                    :src="madeline"
+                    @mouseover="teamMouseOver('madeline')"
+                    @mouseleave="teamMouseOver('madeline')">
                   <h3 class="dark">
                     Madeline Hui
                   </h3>
@@ -569,7 +605,14 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Daniel Shen" class="img-responsive" :src="daniel" @mouseover="teamMouseOver('daniel')" @mouseleave="teamMouseOver('daniel')">
+                  <img
+                    data-no-retina
+                    alt="Team"
+                    title="Daniel Shen"
+                    class="img-responsive"
+                    :src="daniel"
+                    @mouseover="teamMouseOver('daniel')"
+                    @mouseleave="teamMouseOver('daniel')">
                   <h3 class="dark">
                     Daniel Shen
                   </h3>
@@ -582,7 +625,14 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Joe Situ" class="img-responsive" :src="joe" @mouseover="teamMouseOver('joe')" @mouseleave="teamMouseOver('joe')">
+                  <img
+                    data-no-retina
+                    alt="Team"
+                    title="Joe Situ"
+                    class="img-responsive"
+                    :src="joe"
+                    @mouseover="teamMouseOver('joe')"
+                    @mouseleave="teamMouseOver('joe')">
                   <h3 class="dark">
                     Joe<br>Situ
                   </h3>
@@ -595,7 +645,14 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Cornelia Schulz" class="img-responsive" :src="cornelia" @mouseover="teamMouseOver('cornelia')" @mouseleave="teamMouseOver('cornelia')"> 
+                  <img
+                    data-no-retina
+                    alt="Team"
+                    title="Cornelia Schulz"
+                    class="img-responsive"
+                    :src="cornelia"
+                    @mouseover="teamMouseOver('cornelia')"
+                    @mouseleave="teamMouseOver('cornelia')">
                   <h3 class="dark">
                     Cornelia Schulz
                   </h3>
@@ -630,13 +687,13 @@
         <div class="overlay">
           <div class="container valign">
             <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center about-us-desktop">
                 <h3 class="white">
                   <span>A little more about us</span>
                 </h3>
                 <div class="liner color-bg" />
                 <p class="white">
-                  We are a digital business & platform solutions company, based in Sydney. Our vision: Every business can change its success by turning into a digital. Our mission: Helping businesses to find the perfect and most successful digital solution.
+                  We are a digital business & platform solutions company, based in Sydney. Our vision: Every business can change its success by turning digital. Our mission: Helping businesses to find the perfect and most successful digital solution.
                 </p>
                 <p class="white">
                   We’ve been very successful in building online booking systems, tour management systems and ecommerce travel platforms for travel companies.
@@ -644,6 +701,24 @@
                 <p class="white">
                   Passionate, Professional, Innovative and Opportunities are Cavaon's team core values. We are young, full of energy, motivated and like challenges. We care about our customers and focus on increasing your business values.
                 </p>
+              </article>
+              <article class="col-md-12 about-us-mobile text-center">
+                <h3 class="white">
+                  <span>A little more about us</span>
+                </h3>
+                <div class="liner color-bg" />
+                <p class='white'>
+                  We are a young, energetic, and motivated digital business and platform solutions company based in Sydney. We care about our customers and are focused on increasing your business value.
+                </p>
+                <p class='white vision'>
+                  Our vision : Every business can change its success by turning digital.
+                </p>
+                <p class='white mission'>
+                  Our mission : Helping businesses to find the perfect and most successful digital solution
+                </p>
+                <!-- <p class='white values'>
+                  Our core values : Passionate, Professional, Innovative, Opportunity.
+                </p> -->
               </article>
             </div>
           </div>
@@ -728,55 +803,58 @@
 </template>
 
 <script>
+import countTo from 'vue-count-to'
 import ProjectWithSlider from './ProjectWithSlider'
 import MobileServices from './MobileServices'
-import countTo from 'vue-count-to'
+import MobileProjects from './MobileProjects'
 
 export default {
   components: {
     ProjectWithSlider,
     MobileServices,
-    countTo
+    countTo,
+    MobileProjects
   },
   data() {
+    const cs = [
+      {
+        projectTitle: 'Travel Dream',
+        typeOfProject: 'Web / Brand',
+        projectImage: 'images/Case-Studies-Travel-Dream.png',
+        topImage: 'images/Case-Studies-Travel-Dream1.png',
+        logo: 'images/Case-Studies-Travel-Dream2.png',
+        intro: 'Traveldream is a new online Travel agent launched in Aug 2018 with a focus on domestic deals, international tours and cruise. They offer amazing world-wide holiday deals including airfares, accommodation and premium experiences at prices that will break the internet, not the budget.',
+        challenge: 'To develop a website quickly and on budget with increasing functional complexity',
+        centreImage: 'images/Case-Studies-Travel-Dream3.png',
+        result1: 'It has enabled us to quickly add new products, transact and manage large volumes of orders. It has also been able to scale with the team and continuing demands of the business',
+        result2: 'Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work.',
+        font: 'images/Case-Studies-Travel-Dream4.png',
+        info1: '',
+        info2: '',
+        screenshot1: 'images/Case-Studies-Travel-Dream5.png',
+        screenshot2: ''
+      },
+      {
+        projectTitle: "Let's Travel",
+        typeOfProject: 'Web / Brand',
+        projectImage: 'images/Case-Studies-Lets-Travel.png',
+        topImage: 'images/Case-Studies-Lets-Travel1.png',
+        logo: 'images/Case-Studies-Lets-Travel2.png',
+        intro: "Let's Travel Pty Ltd was founded in Sydney in 2015, focusing on operating small group day tours, charter tours and providing transfer services in Sydney and Melbourne.",
+        challenge: 'As a tour operator, they need to process bookings from travel agents (data entry), assign coaches and tour guides everyday. As business growth, one of the biggest challenges they faced was increasing workload on data entry, issuing invoices and tour vouchers. Also, accuracy was getting harder to maintain.',
+        centreImage: 'images/Case-Studies-Lets-Travel3.png',
+        result1: 'The B2B online booking system Cavaon tailor-made has dramatically improved efficiency, accuracy and helped in increase sales. Now, travel agents make bookings directly via the system, which has streamlined they manual data entry and reduced errors. Invoices and tour vouchers are all automatically generated in just one click. The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which without a doubt drives up sales.',
+        result2: '',
+        font: 'images/Case-Studies-Lets-Travel4.png',
+        info1: 'Cavaon provides us peace of mind daily IT support, maintenance and consulting. With several years of experience in Australia travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes were always satisfied.',
+        info2: 'We have been using the booking system for more than one year. Compared with before, sales has increased by 62.7%.',
+        screenshot1: 'images/Case-Studies-Lets-Travel5.png',
+        screenshot2: 'images/Case-Studies-Lets-Travel6.png'
+      }
+    ]
     return {
-      caseStudies: [
-        {
-          projectTitle: 'Travel Dream',
-          typeOfProject: 'Web / Brand',
-          projectImage: 'images/Case-Studies-Travel-Dream.png',
-          topImage: 'images/Case-Studies-Travel-Dream1.png',
-          logo: 'images/Case-Studies-Travel-Dream2.png',
-          intro: 'Traveldream is a new online Travel agent launched in Aug 2018 with a focus on domestic deals, international tours and cruise. They offer amazing world-wide holiday deals including airfares, accommodation and premium experiences at prices that will break the internet, not the budget.',
-          challenge: 'To develop a website quickly and on budget with increasing functional complexity',
-          centreImage: 'images/Case-Studies-Travel-Dream3.png',
-          result1: 'It has enabled us to quickly add new products, transact and manage large volumes of orders. It has also been able to scale with the team and continuing demands of the business',
-          result2: 'Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work.',
-          font: 'images/Case-Studies-Travel-Dream4.png',
-          info1: '',
-          info2: '',
-          screenshot1: 'images/Case-Studies-Travel-Dream5.png',
-          screenshot2: ''
-        },
-        {
-          projectTitle: "Let's Travel",
-          typeOfProject: 'Web / Brand',
-          projectImage: 'images/Case-Studies-Lets-Travel.png',
-          topImage: 'images/Case-Studies-Lets-Travel1.png',
-          logo: 'images/Case-Studies-Lets-Travel2.png',
-          intro: "Let's Travel Pty Ltd was founded in Sydney in 2015, focusing on operating small group day tours, charter tours and providing transfer services in Sydney and Melbourne.",
-          challenge: 'As a tour operator, they need to process bookings from travel agents (data entry), assign coaches and tour guides everyday. As business growth, one of the biggest challenges they faced was increasing workload on data entry, issuing invoices and tour vouchers. Also, accuracy was getting harder to maintain.',
-          centreImage: 'images/Case-Studies-Lets-Travel3.png',
-          result1: 'The B2B online booking system Cavaon tailor-made has dramatically improved efficiency, accuracy and helped in increase sales. Now, travel agents make bookings directly via the system, which has streamlined they manual data entry and reduced errors. Invoices and tour vouchers are all automatically generated in just one click. The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which without a doubt drives up sales.',
-          result2: '',
-          font: 'images/Case-Studies-Lets-Travel4.png',
-          info1: 'Cavaon provides us peace of mind daily IT support, maintenance and consulting. With several years of experience in Australia travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes were always satisfied.',
-          info2: 'We have been using the booking system for more than one year. Compared with before, sales has increased by 62.7%.',
-          screenshot1: 'images/Case-Studies-Lets-Travel5.png',
-          screenshot2: 'images/Case-Studies-Lets-Travel6.png'
-        }
-      ],
-      projectDetails: Object,
+      caseStudies: cs,
+      projectDetails: cs[0],
       linesOfCode: 12538,
       john: '/images/Team-John-1.png',
       john1: '/images/Team-John-1.png',
@@ -811,7 +889,7 @@ export default {
       backstretchScript.innerHTML = '$.backstretch(["/images/Banner-Branding.png", "/images/Banner-Logo.png", "/images/Banner-Marketing.png", "/images/Banner-Platform.png", "/images/Banner-WebDesign.png", "/images/Banner-Consultation.png"], {duration: 3000, fade: 750})'
       // eslint-disable-next-line
       document.body.appendChild(backstretchScript)
-
+      // eslint-disable-next-line
       this.windowWidth = window.innerWidth || document.documentElement.clientWidth
       if (this.windowWidth < 576) { this.isMobile = true }
     }
@@ -831,7 +909,6 @@ export default {
       return Math.floor(duration / (1000 * 60))
     },
     counterMouseOver: function () {
-      console.log('here')
       this.$refs.codecounter.start()
     },
     teamMouseOver: function (name) {
@@ -850,7 +927,7 @@ export default {
       } else if (name === 'madeline') {
         if (this.madeline === this.madeline1) {
           this.madeline = this.madeline2
-        } else { this.madeline = this.madeline1}
+        } else { this.madeline = this.madeline1 }
       } else if (name === 'daniel') {
         if (this.daniel === this.daniel1) {
           this.daniel = this.daniel2

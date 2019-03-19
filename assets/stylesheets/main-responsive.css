@@ -84,6 +84,18 @@
 	.featuress-expansion {
 		display: block;
 	}
+	#mobile-projects {
+		display: none;
+	}
+	.about-us-mobile {
+		display: none;
+	}
+	.about-us-desktop {
+		display: block;
+	}
+	#thumb-carousel-wrap {
+		display: block;
+	}
 }
 
 /*Medium Widescreen Monitors*/
@@ -294,6 +306,18 @@
 		display: block;
 	}
 	#number-desktop {
+		display: none;
+	}
+	#mobile-projects {
+		display: flex;
+	}
+	#thumb-carousel-wrap {
+		display: none;
+	}
+	.about-us-mobile {
+		display: block;
+	}
+	.about-us-desktop {
 		display: none;
 	}
 	.container, .features-details {

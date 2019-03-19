@@ -42,7 +42,7 @@ $(function ($) {
         let maxHeight = -1
 
         $('.equal-height-one').each(function () {
-          maxHeight = maxHeight > $(this).height() ? maxHeight: $(this).height()
+          maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height()
         })
 
         $('.equal-height-one').each(function () {
@@ -74,21 +74,53 @@ $(function ($) {
     // Text Ticker
     $(window).load(function () {
       $('.text-rotator').each(function () {
-        const text_rotator_content = $(this).html()
+        // const text_rotator_content = $(this).html()
         $(this).empty()
         $(this).html('<div class="rotator-wrap"></div>')
         const this_item = $(this).children('.rotator-wrap')
-        const text_rotator_content_split = text_rotator_content.split(',')
-        const item_size = text_rotator_content_split.length
-        nova_text_rotator(text_rotator_content_split, this_item, item_size, 0)
+        // add text in here
+        const text_rotator_content_array = [
+          {
+            top: 'WE CREATE',
+            bottom: 'BRANDING'
+          },
+          {
+            top: 'WE CREATE',
+            bottom: 'LOGOS'
+          },
+          {
+            top: 'WE PROVIDE',
+            bottom: 'MARKETING'
+          },
+          {
+            top: 'WE CREATE',
+            bottom: 'PLATFORMS'
+          },
+          {
+            top: 'WE CREATE',
+            bottom: 'WEB DESIGN'
+          },
+          {
+            top: 'WE PROVIDE',
+            bottom: 'CONSULTATION'
+          }
+        ]
+        console.log(text_rotator_content_array)
+        // const text_rotator_content_split = text_rotator_content.split(',')
+        // const item_size = text_rotator_content_split.length
+        const item_size = text_rotator_content_array.length
+        // nova_text_rotator(text_rotator_content_split, this_item, item_size, 0)
+        nova_text_rotator(text_rotator_content_array, this_item, item_size, 0)
       })
 
       function nova_text_rotator(item_array, this_item, item_size, my_index) {
         if (my_index >= item_size) {
           my_index = 0
         }
+        console.log(my_index, item_array[my_index].top)
         this_item.fadeOut(800, function () {
-          this_item.html('<span>' + item_array[my_index] + '</span>')
+          // this_item.html('<span>' + item_array[my_index] + '</span>')
+          this_item.html('<h6 class="minimal white">' + item_array[my_index].top + '</h6><h1 class="white"><span>' + item_array[my_index].bottom + '</span></h1>')
           this_item.fadeIn(800)
         })
         setTimeout(function () {

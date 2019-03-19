@@ -6038,12 +6038,14 @@ if ( typeof Object.create !== "function" ) {
 		});
 
 		$(document).ready(function(){	
-			var ulMarginLeft = 0;
+            var ulMarginLeft = 0;
 			var sudoSlider = $("#features-slider").sudoSlider({
 				continuous: true,
 				customLink:'a.customLink',
-				prevNext:false,
-				ease: "kineticOut",
+                prevNext:false,
+                // effect: "fade",
+                // speed : 150,
+                // pause: '2000',
                 			useCSS: false // My custom easing doesn't work with css animations. // TODO: Use CSS timing-function instead.
 			});
 			$("#features-slider").swipe({
