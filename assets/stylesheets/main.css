@@ -1378,23 +1378,24 @@ div#portfolio_thumbs ul li a:hover{
 .team-stage h6 > span{
 	font-size: 42px;
 	line-height: 49px;
-font-family: 'Raleway', sans-serif; font-weight:700;
+    font-family: 'Raleway', sans-serif; font-weight:700;
 }
 .team-stage h3{
 	font-size: 20px;
 	line-height: 27px;
-font-family: 'Montserrat', sans-serif; font-weight:400;
-letter-spacing: 4px;
-text-transform: uppercase;
-margin-top: 20px;
+	font-family: 'Montserrat', sans-serif; font-weight:400;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	margin-top: 20px;
 }
 .team-stage p{
-font-family: 'Montserrat', sans-serif; font-weight:300;
+	font-family: 'Montserrat', sans-serif; font-weight:300;
 	font-size: 14px;
 	line-height:21px;
 }
 .team-stage > h6{
 	margin-bottom: 20px;
+	border: 1px solid #FFC716
 }
 .team-stage > h6 > span{
 	font-family: 'Montserrat', sans-serif; font-weight:400;
@@ -1402,7 +1403,6 @@ font-family: 'Montserrat', sans-serif; font-weight:300;
     letter-spacing: 2px;
     line-height: 17px;
     text-transform: uppercase;
-    border:solid 1px;
     padding:5px;
 }
 

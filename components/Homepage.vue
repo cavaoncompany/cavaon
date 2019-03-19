@@ -382,7 +382,7 @@
           <div id="item_container" class="clearfix" />
         </section>
         <!-- inner-section:ends -->
-        <ProjectWithSlider :projectDetails="projectDetails" />
+      <ProjectWithSlider :projectDetails="projectDetails" />
         <!-- inner-section : starts -->
         <section class="inner-section add-top-quarter">
           <!-- Filter -->
@@ -468,13 +468,13 @@
           <div class="col-md-8 col-md-offset-2">
             <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-left col-md-6">
               <h6 class="dark">
-                Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work.
+                "Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work."
               </h6>
               <p><span class="testimonial-name">Paul Mercuri</span><br><span><i>Founder and Managing Director of Travel Dream</i></span></p>
             </div>
             <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-right col-md-6">
               <h6 class="dark">
-                With Cavaon years of experience in building platform for travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes are always satisfied.
+                "With Cavaon years of experience in building platform for travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes are always satisfied."
               </h6>
               <p><span class="testimonial-name">Suey</span><br><span><i>Founder and Managing Director of Let's Travel</i></span></p>
             </div>
@@ -512,12 +512,12 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="john" @mouseover="teamMouseOver('john')" @mouseleave="teamMouseOver('john')">
                   <h3 class="dark">
-                    Luis Heinz
+                    John<br>Ho
                   </h3>
                   <h6>
-                    <span>Founder / Director</span>
+                    <span>Co-founder & Managing Director</span>
                   </h6>
                 </div>
               </article>
@@ -525,12 +525,12 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="wayne" @mouseover="teamMouseOver('wayne')" @mouseleave="teamMouseOver('wayne')">
                   <h3 class="dark">
-                    Luis Heinz
+                    Wayne Wen
                   </h3>
                   <h6>
-                    <span>Web Architect</span>
+                    <span>Co-founder & Chief System Architect</span>
                   </h6>
                 </div>
               </article>
@@ -538,12 +538,12 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="ruby" @mouseover="teamMouseOver('ruby')" @mouseleave="teamMouseOver('ruby')">
                   <h3 class="dark">
-                    Luis Heinz
+                    Ruby Zhang
                   </h3>
                   <h6>
-                    <span>Marketing Guy</span>
+                    <span>UX & UI<br>Designer</span>
                   </h6>
                 </div>
               </article>
@@ -551,12 +551,12 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="madeline" @mouseover="teamMouseOver('madeline')" @mouseleave="teamMouseOver('madeline')">
                   <h3 class="dark">
-                    Luis Heinz
+                    Madeline Hui
                   </h3>
                   <h6>
-                    <span>Founder / Director</span>
+                    <span>Graphic & Digital Designer</span>
                   </h6>
                 </div>
               </article>
@@ -564,12 +564,12 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="daniel" @mouseover="teamMouseOver('daniel')" @mouseleave="teamMouseOver('daniel')">
                   <h3 class="dark">
-                    Amy Lee
+                    Daniel Shen
                   </h3>
                   <h6>
-                    <span>Founder / Director</span>
+                    <span>Senior<br>Developer</span>
                   </h6>
                 </div>
               </article>
@@ -577,12 +577,12 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="joe" @mouseover="teamMouseOver('joe')" @mouseleave="teamMouseOver('joe')">
                   <h3 class="dark">
-                    Luis Heinz
+                    Joe<br>Situ
                   </h3>
                   <h6>
-                    <span>Founder / Director</span>
+                    <span>Full Stack Developer</span>
                   </h6>
                 </div>
               </article>
@@ -590,28 +590,28 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="cornelia" @mouseover="teamMouseOver('cornelia')" @mouseleave="teamMouseOver('cornelia')"> 
                   <h3 class="dark">
-                    Luis Heinz
+                    Cornelia Schulz
                   </h3>
                   <h6>
-                    <span>Founder / Director</span>
-                  </h6>
-                </div>
-              </article>
-              <!-- item:ends -->
-              <!-- item:starts -->
-              <article class="col-md-3 text-left">
-                <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
-                  <h3 class="dark">
-                    Luis Heinz
-                  </h3>
-                  <h6>
-                    <span>Founder / Director</span>
+                    <span>Front-end Developer</span>
                   </h6>
                 </div>
                 <!-- item:ends -->
+                <!-- item:starts -->
+                <!-- <article class="col-md-3 text-left">
+                  <div class="item team-carousel-item team-stage">
+                    <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                    <h3 class="dark">
+                      Luis Heinz
+                    </h3>
+                    <h6>
+                      <span>Founder / Director</span>
+                    </h6>
+                  </div>
+                </article> -->
+              <!-- item:ends -->
               </article>
             </div>
           </div>
@@ -653,7 +653,7 @@
                 <span>Say hello</span>
               </h3>
               <div class="liner color-bg" />
-            </div>        
+            </div>
             <div class="contact-info text-center">
               <a href="tel:+61283797424" class="white contact-info-text">+61 2 8379 7424</a>
               <p class="white contact-info-text">
@@ -773,7 +773,29 @@ export default {
         }
       ],
       projectDetails: Object,
-      linesOfCode: '12,538'
+      linesOfCode: '12,538',
+      john: '/images/Team-John-1.png',
+      john1: '/images/Team-John-1.png',
+      john2: '/images/Team-John-2.png',
+      wayne: '/images/Team-Wayne-1.png',
+      wayne1: '/images/Team-Wayne-1.png',
+      wayne2: '/images/Team-Wayne-2.png',
+      ruby: '/images/Team-Ruby-1.png',
+      ruby1: '/images/Team-Ruby-1.png',
+      ruby2: '/images/Team-Ruby-2.png',
+      madeline: '/images/Team-Madeline-1.png',
+      madeline1: '/images/Team-Madeline-1.png',
+      madeline2: '/images/Team-Madeline-2.png',
+      daniel: '/images/Team-Daniel-1.png',
+      daniel1: '/images/Team-Daniel-1.png',
+      daniel2: '/images/Team-Daniel-2.png',
+      joe: '/images/Team-Joe-1.png',
+      joe1: '/images/Team-Joe-1.png',
+      joe2: '/images/Team-Joe-2.png',
+      cornelia: '/images/Team-Cornelia-1.png',
+      cornelia1: '/images/Team-Cornelia-1.png',
+      cornelia2: '/images/Team-Cornelia-2.png',
+
     }
   },
   created() {
@@ -783,12 +805,10 @@ export default {
       backstretchScript.innerHTML = '$.backstretch(["/images/Banner-Branding.png", "/images/Banner-Logo.png", "/images/Banner-Marketing.png", "/images/Banner-Platform.png", "/images/Banner-WebDesign.png", "/images/Banner-Consultation.png"], {duration: 3000, fade: 750})'
       // eslint-disable-next-line
       document.body.appendChild(backstretchScript)
-
-      document.getElementById('__layout')
     }
     const date = new Date()
-    let randomnumber = this.convertToMinutes(date)
-    this.linesOfCode = Number(randomnumber-25868512).toLocaleString()
+    const randomnumber = this.convertToMinutes(date)
+    this.linesOfCode = Number(randomnumber - 25868512).toLocaleString()
   },
   methods: {
     updateProjectDetails: function (project) {
@@ -798,9 +818,40 @@ export default {
         this.projectDetails = this.caseStudies[1]
       }
     },
-    convertToMinutes: function(duration) {
+    convertToMinutes: function (duration) {
       return Math.floor(duration / (1000 * 60))
-    } 
+    },
+    teamMouseOver: function (name) {
+      if (name === 'john') {
+        if (this.john === this.john1) {
+          this.john = this.john2
+        } else { this.john = this.john1 }
+      } else if (name === 'wayne') {
+        if (this.wayne === this.wayne1) {
+          this.wayne = this.wayne2
+        } else { this.wayne = this.wayne1 }
+      } else if (name === 'ruby') {
+        if (this.ruby === this.ruby1) {
+          this.ruby = this.ruby2
+        } else { this.ruby = this.ruby1 }
+      } else if (name === 'madeline') {
+        if (this.madeline === this.madeline1) {
+          this.madeline = this.madeline2
+        } else { this.madeline = this.madeline1}
+      } else if (name === 'daniel') {
+        if (this.daniel === this.daniel1) {
+          this.daniel = this.daniel2
+        } else { this.daniel = this.daniel1 }
+      } else if (name === 'joe') {
+        if (this.joe === this.joe1) {
+          this.joe = this.joe2
+        } else { this.joe = this.joe1 }
+      } else if (name === 'cornelia') {
+        if (this.cornelia === this.cornelia1) {
+          this.cornelia = this.cornelia2
+        } else { this.cornelia = this.cornelia1 }
+      }
+    }
   }
 }
 </script>
