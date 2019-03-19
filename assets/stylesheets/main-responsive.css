@@ -359,6 +359,8 @@
 	.testimonial-wrap {
 		width: 100%;
 		min-height: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
 	}
 	.testimonial-wrapper {
 		flex-direction: column;
