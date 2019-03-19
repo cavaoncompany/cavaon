@@ -75,6 +75,12 @@
 	#mobile-services {
 		display: none;
 	}
+	#number-mobile {
+		display: none;
+	}
+	#number-desktop {
+		display: block;
+	}
 	.featuress-expansion {
 		display: block;
 	}
@@ -282,6 +288,12 @@
 		display: block;
 	}
 	.featuress-expansion {
+		display: none;
+	}
+	#number-mobile {
+		display: block;
+	}
+	#number-desktop {
 		display: none;
 	}
 	.container, .features-details {

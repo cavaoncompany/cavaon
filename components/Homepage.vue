@@ -311,12 +311,13 @@
       </section>
       <!-- page-section : ends -->
 
-      <div class="promo-section intermediate-section action-text parallax">
+      <div class="promo-section intermediate-section action-text parallax" @mouseenter.once="counterMouseOver()">
         <div class="overlay">
           <div class="container">
             <div class="row">
               <article class="promo-article col-md-12 text-center">
-                <h1><span class="color">{{ linesOfCode }}</span></h1>
+                <h1 id="number-mobile"><span class="color">{{ linesOfCode.toLocaleString() }}</span></h1>
+                <count-to id="number-desktop" class="color counter" ref='codecounter' :startVal="0" :endVal="linesOfCode" :autoplay="false" :duration=3000></count-to>
                 <h2><span class="white">Code that we've written so far</span></h2>
                 <div class="welcome-button">
                   <a class="btn btn-odin btn-odin-color" href="#">Get a Quote</a>
@@ -729,11 +730,13 @@
 <script>
 import ProjectWithSlider from './ProjectWithSlider'
 import MobileServices from './MobileServices'
+import countTo from 'vue-count-to'
 
 export default {
   components: {
     ProjectWithSlider,
-    MobileServices
+    MobileServices,
+    countTo
   },
   data() {
     return {
@@ -774,7 +777,7 @@ export default {
         }
       ],
       projectDetails: Object,
-      linesOfCode: '12,538',
+      linesOfCode: 12538,
       john: '/images/Team-John-1.png',
       john1: '/images/Team-John-1.png',
       john2: '/images/Team-John-2.png',
@@ -798,6 +801,7 @@ export default {
       cornelia2: '/images/Team-Cornelia-2.png',
       windowWidth: 0,
       isMobile: false,
+      startVal: 0
     }
   },
   created() {
@@ -813,7 +817,7 @@ export default {
     }
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
-    this.linesOfCode = Number(randomnumber - 25868512).toLocaleString()
+    this.linesOfCode = Number(randomnumber - 25868512)
   },
   methods: {
     updateProjectDetails: function (project) {
@@ -825,6 +829,10 @@ export default {
     },
     convertToMinutes: function (duration) {
       return Math.floor(duration / (1000 * 60))
+    },
+    counterMouseOver: function () {
+      console.log('here')
+      this.$refs.codecounter.start()
     },
     teamMouseOver: function (name) {
       if (name === 'john') {
@@ -915,5 +923,11 @@ export default {
   }
   .stats-carousel-item h6 {
     font-size: 15px;
+  }
+  .counter {
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 200;
+    font-size: 72px;
+    letter-spacing: 12px;
   }
 </style>
