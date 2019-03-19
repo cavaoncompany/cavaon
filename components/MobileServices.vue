@@ -2,12 +2,9 @@
     <section id="mobile-services" class="container">
         <div class="card" v-for="(service, index) in services" :key="index">
             <img data-no-retina alt="Logo" class="card-img-top" title="Logo" :src="service.image">
-            <h5 class="dark">
-                {{ service.caption }}
-            </h5>
             <div class="card-body">
                 <article class="text-center">
-                  <h3>{{ service.title }}</h3>
+                  <h3>{{ service.caption }}</h3>
                   <p class="dark">
                     {{ service.description }}
                   </p>
@@ -75,5 +72,11 @@ export default {
       width: 100px;
       margin-left: auto;
       margin-right: auto;
+  }
+  .card-body h3 {
+      text-transform: uppercase;
+      font-family: 'Raleway', sans-serif; font-weight:600;
+      letter-spacing: 4px;
+      font-size: 18px;
   }
 </style>

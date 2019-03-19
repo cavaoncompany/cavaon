@@ -98,7 +98,7 @@
         <div class="container">
           <div class="item about-carousel-item">
             <div class="row">
-              <article class="col-md-8 col-md-offset-2 main-caps text-center">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
                 <img class="avatar" alt="Cavaon Logo" title="Cavaon Logo" src="~/assets/images/Avatar.png">
                 <h3>
                   A Whole New Way To<br>Run Your Business
@@ -180,7 +180,7 @@
         <section class="inner-section promo-text">
           <div class="container">
             <div class="row">
-              <article class="col-md-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
                   <span>Our Services</span>
                 </h3>
@@ -195,7 +195,7 @@
         <!-- inner-section:ends -->
         <MobileServices />
         <!-- inner-section : starts -->
-        <section class="inner-section add-top-half pad-top-half pad-bottom-half silver-bg ">
+        <section class="inner-section add-top-half pad-top-half pad-bottom-half silver-bg featuress-expansion">
           <!-- container : starts -->
           <section class="container">
             <div class="row featuress-icon-wrap  featuress-icon-wrap-green">
@@ -365,7 +365,7 @@
         <section class="inner-section promo-text">
           <div class="container">
             <div class="row">
-              <article class="col-md-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
                   <span>Case Studies</span>
                 </h3>
@@ -452,7 +452,7 @@
         <section class="inner-section promo-text silver-bg row">
           <div class="container">
             <div class="row">
-              <article class="col-md-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
                   <span>Testimonials</span>
                 </h3>
@@ -495,14 +495,14 @@
         <section class="inner-section promo-text">
           <div class="container">
             <div class="row">
-              <article class="col-md-8 col-md-offset-2 text-center animated" data-fx="fadeInDown">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInDown">
                 <h3 class="dark">
                   <span>The Team</span>
                 </h3>
                 <div class="liner color-bg" />
-                <p class="grey">
+                <!-- <p class="grey">
                   Cavaon is a ditial business and platform solution company from Sydney.
-                </p>
+                </p> -->
               </article>
             </div>
           </div>
@@ -516,7 +516,7 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="john" @mouseover="teamMouseOver('john')" @mouseleave="teamMouseOver('john')">
+                  <img data-no-retina alt="Team" title="John Ho" class="img-responsive" :src="john" @mouseover="teamMouseOver('john')" @mouseleave="teamMouseOver('john')">
                   <h3 class="dark">
                     John<br>Ho
                   </h3>
@@ -529,7 +529,7 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="wayne" @mouseover="teamMouseOver('wayne')" @mouseleave="teamMouseOver('wayne')">
+                  <img data-no-retina alt="Team" title="Wayne Wen" class="img-responsive" :src="wayne" @mouseover="teamMouseOver('wayne')" @mouseleave="teamMouseOver('wayne')">
                   <h3 class="dark">
                     Wayne Wen
                   </h3>
@@ -542,7 +542,7 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="ruby" @mouseover="teamMouseOver('ruby')" @mouseleave="teamMouseOver('ruby')">
+                  <img data-no-retina alt="Team" title="Ruby Zhang" class="img-responsive" :src="ruby" @mouseover="teamMouseOver('ruby')" @mouseleave="teamMouseOver('ruby')">
                   <h3 class="dark">
                     Ruby Zhang
                   </h3>
@@ -555,7 +555,7 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="madeline" @mouseover="teamMouseOver('madeline')" @mouseleave="teamMouseOver('madeline')">
+                  <img data-no-retina alt="Team" title="Madeline Hui" class="img-responsive" :src="madeline" @mouseover="teamMouseOver('madeline')" @mouseleave="teamMouseOver('madeline')">
                   <h3 class="dark">
                     Madeline Hui
                   </h3>
@@ -568,7 +568,7 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="daniel" @mouseover="teamMouseOver('daniel')" @mouseleave="teamMouseOver('daniel')">
+                  <img data-no-retina alt="Team" title="Daniel Shen" class="img-responsive" :src="daniel" @mouseover="teamMouseOver('daniel')" @mouseleave="teamMouseOver('daniel')">
                   <h3 class="dark">
                     Daniel Shen
                   </h3>
@@ -581,7 +581,7 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="joe" @mouseover="teamMouseOver('joe')" @mouseleave="teamMouseOver('joe')">
+                  <img data-no-retina alt="Team" title="Joe Situ" class="img-responsive" :src="joe" @mouseover="teamMouseOver('joe')" @mouseleave="teamMouseOver('joe')">
                   <h3 class="dark">
                     Joe<br>Situ
                   </h3>
@@ -594,7 +594,7 @@
               <!-- item:starts -->
               <article class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
-                  <img data-no-retina alt="Team" title="Team" class="img-responsive" :src="cornelia" @mouseover="teamMouseOver('cornelia')" @mouseleave="teamMouseOver('cornelia')"> 
+                  <img data-no-retina alt="Team" title="Cornelia Schulz" class="img-responsive" :src="cornelia" @mouseover="teamMouseOver('cornelia')" @mouseleave="teamMouseOver('cornelia')"> 
                   <h3 class="dark">
                     Cornelia Schulz
                   </h3>
@@ -629,7 +629,7 @@
         <div class="overlay">
           <div class="container valign">
             <div class="row">
-              <article class="col-md-8 col-md-offset-2 main-caps text-center">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
                 <h3 class="white">
                   <span>A little more about us</span>
                 </h3>
@@ -652,22 +652,19 @@
       <section id="contact-form" class="contact-form black-bg page-section">
         <div class="container">
           <div class="row">
-            <div class="main-caps text-center">
+            <div class="main-caps text-center col-md-12 col-lg-8 col-lg-offset-2">
               <h3 class="white">
                 <span>Say hello</span>
               </h3>
               <div class="liner color-bg" />
             </div>
-            <div class="contact-info text-center">
+            <div class="contact-info text-center col-md-12 col-lg-8 col-lg-offset-2">
               <a href="tel:+61283797424" class="white contact-info-text">+61 2 8379 7424</a>
-              <p class="white contact-info-text">
-                info@cavaon.com.au
-              </p>
               <p class="white">
                 L1, 403 Elizabeth St.<br>Surry Hills NSW 2010
               </p>
             </div>
-            <article class="col-md-8 col-md-offset-2 main-caps text-center">
+            <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
               <div class="contact-item pad-common ">
                 <div id="fname" class="alert alert-error error ">
                   <p>Name must not be empty</p>
@@ -708,10 +705,8 @@
             <div class="row">
               <article class="col-md-12 text-center">
                 <ul class="foot-social">
-                  <li><a href="#"><img data-no-retina alt="Twitter" title="Twitter" src="~/assets/images/social/01.png"></a></li>
-                  <li><a href="#"><img data-no-retina alt="social" title="social" src="~/assets/images/social/02.png"></a></li>
-                  <li><a href="#"><img data-no-retina alt="Facebook" title="Facebook" src="~/assets/images/social/03.png"></a></li>
-                  <li><a href="#"><img data-no-retina alt="social" title="social" src="~/assets/images/social/04.png"></a></li>
+                  <li><a href="#"><img data-no-retina alt="Cavaon on Facebook" title="Facebook" src="~/assets/images/social/03.png"></a></li>
+                  <li><a href="#"><img data-no-retina alt="Cavaon on LinkedIn" title="LinkedIn" src="~/assets/images/social/05.png"></a></li>
                 </ul>
               </article>
             </div>
@@ -801,7 +796,8 @@ export default {
       cornelia: '/images/Team-Cornelia-1.png',
       cornelia1: '/images/Team-Cornelia-1.png',
       cornelia2: '/images/Team-Cornelia-2.png',
-
+      windowWidth: 0,
+      isMobile: false,
     }
   },
   created() {
@@ -811,6 +807,9 @@ export default {
       backstretchScript.innerHTML = '$.backstretch(["/images/Banner-Branding.png", "/images/Banner-Logo.png", "/images/Banner-Marketing.png", "/images/Banner-Platform.png", "/images/Banner-WebDesign.png", "/images/Banner-Consultation.png"], {duration: 3000, fade: 750})'
       // eslint-disable-next-line
       document.body.appendChild(backstretchScript)
+
+      this.windowWidth = window.innerWidth || document.documentElement.clientWidth
+      if (this.windowWidth < 576) { this.isMobile = true }
     }
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)

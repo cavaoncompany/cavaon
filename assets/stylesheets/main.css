@@ -277,7 +277,7 @@ div#preloader {
 	font-weight:normal; 
 }
 .promo-text  h3 > span, #about-portfolio-item h3 > span{
-font-family: 'Raleway', sans-serif; font-weight:600;
+    font-family: 'Raleway', sans-serif; font-weight:600;
 	text-transform: uppercase;
 	letter-spacing: 4px;
 	font-size: 24px;
@@ -429,6 +429,7 @@ font-family: 'Raleway', sans-serif; font-weight:600;
 }
 .hero-caps{
 	padding:  10%;
+	overflow: hidden;
 }
 .hero-caps.one-half{
 	max-width: 50%;
@@ -1423,7 +1424,7 @@ div#portfolio_thumbs ul li a:hover{
     flex-direction: column;
     justify-content: space-between;
 	margin-bottom: 50px;
-	border: 3px solid #ffc716;
+	border: 1px solid #ffc716;
 	padding-top: 40px;
 	padding-bottom: 34px;
 	margin-top: 25px;

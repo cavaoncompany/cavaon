@@ -72,6 +72,12 @@
 	.testimonial-wrapper {
 		flex-direction: row;
 	}
+	#mobile-services {
+		display: none;
+	}
+	.featuress-expansion {
+		display: block;
+	}
 }
 
 /*Medium Widescreen Monitors*/
@@ -272,7 +278,12 @@
 
 /*iPad Portrait Mode, iPad Mini and Small Tablets */
 @media (max-width: 768px) {
-	
+	#mobile-services {
+		display: block;
+	}
+	.featuress-expansion {
+		display: none;
+	}
 	.container, .features-details {
 	    max-width: 668px;
 	}
@@ -882,7 +893,7 @@
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 36px;
+	    font-size: 22px;
 	    line-height: 55px;
 	}
 	.hero-caps h6 {
@@ -1449,7 +1460,7 @@
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 10px;
+	    font-size: 12px;
 	    line-height: 43px;
 	}
 	.hero-caps h6 {
