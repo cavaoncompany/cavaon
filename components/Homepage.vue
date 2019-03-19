@@ -636,13 +636,13 @@
                 </h3>
                 <div class="liner color-bg" />
                 <p class="white">
-                  We are a digital business & platform solutions company, based in Sydney. Vision Every business can change life of turning into a digital. Mission Helping businesses to find the perfect and most successful digital solution.
+                  We are a digital business & platform solutions company, based in Sydney. Our vision: Every business can change its success by turning into a digital. Our mission: Helping businesses to find the perfect and most successful digital solution.
                 </p>
                 <p class="white">
-                  We’ve been very successful in building online booking systems, tour management systems and ecommerce travel platform for travel companies.
+                  We’ve been very successful in building online booking systems, tour management systems and ecommerce travel platforms for travel companies.
                 </p>
                 <p class="white">
-                  Passionate, Professional, Innovative and Opportunities are Cavaon team core values. We are young, full of energy, motivated and likes challenges. We care about our customers and focus on increase business values.
+                  Passionate, Professional, Innovative and Opportunities are Cavaon's team core values. We are young, full of energy, motivated and like challenges. We care about our customers and focus on increasing your business values.
                 </p>
               </article>
             </div>
