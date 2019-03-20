@@ -105,7 +105,6 @@ $(function ($) {
             bottom: 'CONSULTATION'
           }
         ]
-        console.log(text_rotator_content_array)
         // const text_rotator_content_split = text_rotator_content.split(',')
         // const item_size = text_rotator_content_split.length
         const item_size = text_rotator_content_array.length
@@ -117,7 +116,6 @@ $(function ($) {
         if (my_index >= item_size) {
           my_index = 0
         }
-        console.log(my_index, item_array[my_index].top)
         this_item.fadeOut(800, function () {
           // this_item.html('<span>' + item_array[my_index] + '</span>')
           this_item.html('<h6 class="minimal white">' + item_array[my_index].top + '</h6><h1 class="white"><span>' + item_array[my_index].bottom + '</span></h1>')

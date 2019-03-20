@@ -1,59 +1,10 @@
 <template>
   <div>
-    <!-- mobile only navigation : starts -->
-    <nav class="mobile-nav hidden-lg">
-      <ul class="slimmenu">
-        <li>
-          <a class="scroll" href="#projects">projects</a>
-        </li>
-        <li>
-          <a class="scroll" href="#services">services</a>
-        </li>
-        <li>
-          <a class="scroll" href="#caseStudies">case studies</a>
-        </li>
-        <li>
-          <a class="scroll" href="#testimonials">Testimonials</a>
-        </li>
-        <li>
-          <a class="scroll" href="#team">team</a>
-        </li>
-        <li>
-          <a class="scroll" href="#about">about</a>
-        </li>
-        <li>
-          <a class="scroll" href="#contact-form">contact</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- mobile only navigation : ends -->
-
+    <HeaderMobile />
     <!-- Master Wrap : starts -->
     <section id="mastwrap">
       <section id="intro" class="intro trans-dark">
-        <!-- masthead-section (this nav bar is visible only on home page) : starts -->
-        <header id="intro-header" class="intro-header visible-lg scroll">
-          <div class="container">
-            <div class="row">
-              <article class="col-md-2 text-left">
-                <a href="#intro-header"><img data-no-retina alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive scroll" src="~/assets/images/logo-white.png"></a>
-              </article>
-              <article class="col-md-10 text-right">
-                <ul class="standard-nav  standard-nav-white-text visible-lg">
-                  <li><a href="#projects" class="scroll">Projects</a></li>
-                  <li><a href="#services" class="scroll">Services</a></li>
-                  <li><a href="#caseStudies" class="scroll">Case Studies</a></li>
-                  <li><a href="#testimonials" class="scroll">Testimonials</a></li>
-                  <li><a href="#team" class="scroll">Team</a></li>
-                  <li><a href="#about" class="scroll">About</a></li>
-                  <li><a href="#contact-form" class="scroll">Contact</a></li>
-                </ul>
-              </article>
-            </div>
-          </div>
-        </header>
-        <!-- masthead-section:ends -->
-
+        <HeaderTop />
         <div class="valign">
           <div class="hero-caps text-rotator text-center">
             <!-- <h6 class="text-rotator minimal white">
@@ -65,35 +16,13 @@
           </div>
         </div>
         <!-- valign:ends -->
-
         <a class="scroll" href="#projects">
           <div class="mouse-icon white hidden-xs" style="opacity: 1;">
             <div class="wheel" />
           </div>
         </a>
       </section>
-      <!-- masthead-section (this nav bar is initially hidden but will be visible only on inner pages) : starts -->
-      <header id="standard-header" class="standard-header">
-        <div class="container">
-          <div class="row">
-            <article class="col-md-2 text-left">
-              <a href="#intro-header"><img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="~/assets/images/Logo-colour.png"></a>
-            </article>
-            <article class="col-md-10 text-right">
-              <ul class="standard-nav standard-nav-dark-text visible-lg">
-                <li><a id="projects-linker" href="#projects" class="scroll">Projects</a></li>
-                <li><a id="services-linker" href="#services" class="scroll">Services</a></li>
-                <li><a id="case-studies-linker" href="#caseStudies" class="scroll">Case Studies</a></li>
-                <li><a id="testimonials-linker" href="#testimonials" class="scroll">Testimonials</a></li>
-                <li><a id="team-linker" href="#team">Team</a></li>
-                <li><a id="about-linker" href="#about" class="scroll">About</a></li>
-                <li><a id="contact-linker" href="#contact-form" class="scroll">Contact</a></li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </header>
-      <!-- masthead-section:ends -->
+      <HeaderStandard />
       <section id="projects" class="page about white-bg">
         <div class="container">
           <div class="item about-carousel-item">
@@ -108,7 +37,7 @@
                   Digital Business & Platform Solutions
                 </h6>
                 <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#contact-form">Start a project</a>
+                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">Start a project</a>
                 </div>
               </article>
             </div>
@@ -203,39 +132,45 @@
                 <div class="row">
                   <article id="features-01" class="features-icon current col-md-2 text-center animated" data-fx="fadeInDown">
                     <a class="customLink" data-target="1"><img data-no-retina alt="Logo" title="Logo" src="~/assets/images/icons/Services-Logo.png">
-                    <h5 class="dark">
-                      Logo
-                    </h5></a>
+                      <h5 class="dark">
+                        Logo
+                      </h5>
+                    </a>
                   </article>
                   <article id="features-02" class="features-icon col-md-2 text-center animated" data-fx="fadeInUp">
                     <a class="customLink" data-target="2"><img data-no-retina alt="Web Design" title="Web Design" src="~/assets/images/icons/Services-WebDesign.png">
-                    <h5 class="dark">
-                      Web Design
-                    </h5></a>
+                      <h5 class="dark">
+                        Web Design
+                      </h5>
+                    </a>
                   </article>
                   <article id="features-03" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
                     <a class="customLink" data-target="3"><img data-no-retina alt="Development" title="Development" src="~/assets/images/icons/Services-Development.png">
-                    <h5 class="dark">
-                      Development
-                    </h5></a>
+                      <h5 class="dark">
+                        Development
+                      </h5>
+                    </a>
                   </article>
                   <article id="features-04" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
                     <a class="customLink" data-target="4"><img alt="Consultation" title="Consultation" src="~/assets/images/icons/Services-Consultation.png">
-                    <h5 class="dark">
-                      Consultation
-                    </h5></a>
+                      <h5 class="dark">
+                        Consultation
+                      </h5>
+                    </a>
                   </article>
                   <article id="features-05" class="features-icon col-md-2 text-center animated" data-fx="fadeInUp">
                     <a class="customLink" data-target="5"><img alt="Ongoing Support" title="Ongoing Support" src="~/assets/images/icons/Services-OngoingSupport.png">
-                    <h5 class="dark">
-                      Ongoing Support
-                    </h5></a>
+                      <h5 class="dark">
+                        Ongoing Support
+                      </h5>
+                    </a>
                   </article>
                   <article id="features-06" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
                     <a class="customLink" data-target="6"><img alt="Marketing" title="Marketing" src="~/assets/images/icons/Services-Marketing.png">
-                    <h5 class="dark">
-                      Marketing
-                    </h5></a>
+                      <h5 class="dark">
+                        Marketing
+                      </h5>
+                    </a>
                   </article>
                 </div>
               </article>
@@ -328,9 +263,9 @@
                   :autoplay="false"
                   :duration="3000"
                 />
-                <h2><span class="white">Code that we've written so far</span></h2>
+                <h2><span class="white">Lines of code that we've written so far</span></h2>
                 <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#">Get a Quote</a>
+                  <a class="btn btn-odin btn-odin-color" href="#start-a-project"  @click="openStartAProjectForm">Get a Quote</a>
                 </div>
               </article>
             </div>
@@ -343,28 +278,28 @@
         <div class="container">
           <div class="row">
             <article class="col-md-12 text-center"> -->
-              <!-- carousel:starts -->
-              <!-- <div id="client-carousel" class="clients-carousel owl-carousel owl-nav-sticky-extra-wide owl-theme"> -->
-                <!-- item:starts -->
-                <!-- <div class="item client-carousel-item client-stage">
-                  <img data-no-retina alt="Let's Travel" title="Let's Travel" src="~/assets/images/Client-logo-lets-travel.png">
-                </div> -->
-                <!-- item:ends -->
+      <!-- carousel:starts -->
+      <!-- <div id="client-carousel" class="clients-carousel owl-carousel owl-nav-sticky-extra-wide owl-theme"> -->
+      <!-- item:starts -->
+      <!-- <div class="item client-carousel-item client-stage">
+        <img data-no-retina alt="Let's Travel" title="Let's Travel" src="~/assets/images/Client-logo-lets-travel.png">
+      </div> -->
+      <!-- item:ends -->
 
-                <!-- item:starts -->
-                <!-- <div class="item client-carousel-item client-stage">
-                  <img data-no-retina alt="Travel Dream" title="Travel Dream" src="~/assets/images/Client-Logo-Travel-Dream.png">
-                </div> -->
-                <!-- item:ends -->
+      <!-- item:starts -->
+      <!-- <div class="item client-carousel-item client-stage">
+        <img data-no-retina alt="Travel Dream" title="Travel Dream" src="~/assets/images/Client-Logo-Travel-Dream.png">
+      </div> -->
+      <!-- item:ends -->
 
-                <!-- item:starts -->
-                <!-- <div class="item client-carousel-item client-stage">
-                  <img data-no-retina alt="Inspiring Vacations" title="Inspiring Vacations" src="~/assets/images/Client-Logo-Inspiring-Vacations.png">
-                </div> -->
-                <!-- item:ends -->
-              <!-- </div> -->
-              <!-- carousel:ends -->
-            <!-- </article>
+      <!-- item:starts -->
+      <!-- <div class="item client-carousel-item client-stage">
+        <img data-no-retina alt="Inspiring Vacations" title="Inspiring Vacations" src="~/assets/images/Client-Logo-Inspiring-Vacations.png">
+      </div> -->
+      <!-- item:ends -->
+      <!-- </div> -->
+      <!-- carousel:ends -->
+      <!-- </article>
           </div>
         </div>
       </section> -->
@@ -393,7 +328,7 @@
           <div id="item_container" class="clearfix" />
         </section>
         <!-- inner-section:ends -->
-      <ProjectWithSlider :projectDetails="projectDetails" />
+        <ProjectWithSlider :projectDetails="projectDetails" />
         <!-- inner-section : starts -->
         <section class="inner-section add-top-quarter">
           <!-- Filter -->
@@ -737,7 +672,6 @@
           </div>
         </div>
       </section>
-
       <section id="contact-form" class="contact-form black-bg page-section">
         <div class="container">
           <div class="row">
@@ -785,31 +719,8 @@
           </div>
         </div>
       </section>
-
-      <!-- page-section : starts -->
-      <footer id="mastfoot" class="mastfoot white-bg">
-        <!-- inner-section:starts -->
-        <section class="inner-section foot-top">
-          <div class="container">
-            <div class="row">
-              <article class="col-md-12 text-center">
-                <ul class="foot-social">
-                  <li><a href="#"><img data-no-retina alt="Cavaon on Facebook" title="Facebook" src="~/assets/images/social/03.png"></a></li>
-                  <li><a href="#"><img data-no-retina alt="Cavaon on LinkedIn" title="LinkedIn" src="~/assets/images/social/05.png"></a></li>
-                </ul>
-              </article>
-            </div>
-            <div class="row">
-              <article class="col-md-12 text-center foot-logos">
-                <p class="credits">
-                  &copy; 2019 Cavaon. All rights reserved
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-      <!-- inner-section:ends -->
-      </footer>
+      <StartAProjectForm v-if="projectFormOpen === true" />
+      <Footer />
     </section>
     <!-- Master Wrap : ends -->
   </div>
@@ -817,16 +728,26 @@
 
 <script>
 import countTo from 'vue-count-to'
+import HeaderMobile from './HeaderMobile'
+import HeaderTop from './HeaderTop'
+import HeaderStandard from './HeaderStandard'
 import ProjectWithSlider from './ProjectWithSlider'
 import MobileServices from './MobileServices'
 import MobileProjects from './MobileProjects'
+import StartAProjectForm from './StartAProjectForm'
+import Footer from './Footer'
 
 export default {
   components: {
+    HeaderMobile,
+    HeaderTop,
+    HeaderStandard,
     ProjectWithSlider,
     MobileServices,
     countTo,
-    MobileProjects
+    MobileProjects,
+    StartAProjectForm,
+    Footer
   },
   data() {
     const cs = [
@@ -892,7 +813,8 @@ export default {
       cornelia2: '/images/Team-Cornelia-2.png',
       windowWidth: 0,
       isMobile: false,
-      startVal: 0
+      startVal: 0,
+      projectFormOpen: false
     }
   },
   created() {
@@ -954,6 +876,12 @@ export default {
           this.cornelia = this.cornelia2
         } else { this.cornelia = this.cornelia1 }
       }
+    },
+    openStartAProjectForm: function() {
+      this.projectFormOpen = true
+    },
+    closeStartAProjectForm: function() {
+      this.projectFormOpen = false
     }
   }
 }
@@ -1019,5 +947,8 @@ export default {
     font-weight: 200;
     font-size: 72px;
     letter-spacing: 12px;
+  }
+  .inner-section {
+    margin: 0 auto;
   }
 </style>

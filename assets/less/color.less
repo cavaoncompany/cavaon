@@ -138,13 +138,10 @@ ul#portfolioFilter li.active-filter {
 	background:@color;
 	color:@dark;
 }
-
 div#portfolio_thumbs ul li div.item_info {
 	background:@black;
 	color:@dark;
 }
-
-
 div#portfolio_thumbs ul li div.item_info h3  > span{
     border-color:@white;
 	color:@white;
@@ -216,4 +213,28 @@ div#portfolio_thumbs ul li div.item_info p  > span{
 }
 .news-post:hover{
 	border-color: @color;
+}
+.project-contact-info input {
+	border-color: @grey !important;
+}
+.service {
+	border-color: @grey !important;
+}
+.service:active, .service:focus, .service:hover, .projectSelected {
+    border-color: @color !important;
+    color: @color;
+}
+#start-a-project input::placeholder {
+    color: @grey !important;
+  }
+#start-a-project input:focus, #start-a-project:active {
+	border-color: @color !important;
+	outline: none;
+	color: @black !important;
+}
+#start-a-project input {
+	color: @black !important;
+}
+#start-a-project {
+    background: @white;
 }

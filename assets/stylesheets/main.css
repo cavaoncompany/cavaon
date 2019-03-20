@@ -786,9 +786,6 @@ font-family: 'Montserrat', sans-serif; font-weight:300;
 }
 
 /*SERVICES*/
-
-.services{
-}
 .service-list ul{
 	list-style: none;
 	padding: 0;
@@ -1571,7 +1568,8 @@ input {
 			transition: all .8s linear;
 }
 input:focus, textarea:focus {
-    border-bottom: solid 1px #fff !important;
+	border-bottom: solid 1px #FFC716 !important;
+	outline: none;
     color: #fff !important;
 	-webkit-transition: all .8s linear;
 	   -moz-transition: all .8s linear;
