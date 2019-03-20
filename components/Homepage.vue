@@ -475,8 +475,11 @@
                     @mouseover="teamMouseOver('john')"
                     @mouseleave="teamMouseOver('john')"
                   >
-                  <h3 class="dark">
+                  <h3 class="dark team-desktop">
                     John<br>Ho
+                  </h3>
+                  <h3 class="team-mobile">
+                    John Ho
                   </h3>
                   <h6>
                     <span>Co-founder & Managing Director</span>
@@ -521,7 +524,8 @@
                     Ruby Zhang
                   </h3>
                   <h6>
-                    <span>UX & UI<br>Designer</span>
+                    <span class="team-desktop">UX & UI<br>Designer</span>
+                    <span class="team-mobile">UX & UI Designer</span>
                   </h6>
                 </div>
               </article>
@@ -562,8 +566,11 @@
                   <h3 class="dark">
                     Daniel Shen
                   </h3>
-                  <h6>
+                  <h6 class="team-desktop">
                     <span>Senior<br>Developer</span>
+                  </h6>
+                  <h6 class="team-mobile">
+                    Senior Developer
                   </h6>
                 </div>
               </article>
@@ -580,8 +587,11 @@
                     @mouseover="teamMouseOver('joe')"
                     @mouseleave="teamMouseOver('joe')"
                   >
-                  <h3 class="dark">
+                  <h3 class="dark team-desktop">
                     Joe<br>Situ
+                  </h3>
+                  <h3 class="dark team-mobile">
+                    Joe Situ
                   </h3>
                   <h6>
                     <span>Full Stack Developer</span>

@@ -166,6 +166,12 @@
 	.about-us-desktop {
 		display: block;
 	}
+	.team-desktop {
+		display: block;
+	}
+	.team-mobile {
+		display: none;
+	}
 	#thumb-carousel-wrap {
 		display: block;
 	}
@@ -393,6 +399,12 @@
 	}
 	.about-us-desktop {
 		display: none;
+	}
+	.team-desktop {
+		display: none;
+	}
+	.team-mobile {
+		display: block;
 	}
 	.service {
 		width: 46%;
