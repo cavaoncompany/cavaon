@@ -9,8 +9,9 @@
           <div class="liner color-bg" />
           <p class="grey fill-form">Please fill in this form. We will contact you promptly to discuss the next steps.</p>
         </div>
-        <form id="startAProjectForm" action="/success" netlify-honeypot="bot-field" name="startAProject" method="post" netlify="true" data-netlify="true" class="col-md-12 col-lg-10 col-lg-offset-1">
+        <form id="startAProjectForm" action="/success" netlify-honeypot="bot-field" name="startAProject" method="post" data-netlify="true" class="col-md-12 col-lg-10 col-lg-offset-1">
           <section>
+            <input type="hidden" name="startAProject" value="startAProject" />
             <p class="hidden">
               <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
             </p>
@@ -83,10 +84,9 @@
           </section>
           <article>
             <div class="btn-wrap  text-center">
-              <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit" @click="submit()">
+              <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
                 Submit
               </button>
-              <input type="hidden" name="startAProject" value="startAProject" />
             </div>
           </article>
         </form>
