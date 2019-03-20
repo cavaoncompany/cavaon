@@ -70,6 +70,8 @@
 	}
 	.service {
 		width: 31%;
+		padding: 20px;
+		margin: 8px;
 	}
 	.project-contact-info article {
 		width: 50%;
@@ -131,6 +133,8 @@
 	}
 	.service {
 		width: 31%;
+		padding: 20px;
+		margin: 8px;
 	}
 	.project-contact-info article {
 		width: 50%;
@@ -391,7 +395,9 @@
 		display: none;
 	}
 	.service {
-		width: 45%;
+		width: 46%;
+		padding: 5px;
+		margin: 5px;
 	}
 	.project-contact-info article {
 		width: 100%;
@@ -1679,6 +1685,9 @@
 	.service-details h5 {
 	    font-size: 18px;
 	    line-height: 25px;
+	}
+	.service {
+		width: 100%;
 	}
 	.action-text h1 > span {
 	    font-size: 28px;

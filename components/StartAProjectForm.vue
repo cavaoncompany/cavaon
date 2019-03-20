@@ -210,8 +210,6 @@ export default {
   }
   .service {
     border: 1px solid;
-    margin: 8px;
-    padding: 20px;
   }
   
   .service img {
