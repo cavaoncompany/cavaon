@@ -1,10 +1,10 @@
 <template>
   <div>
-    <HeaderMobile />
+    <HeaderMobile :projectFormOpen="projectFormOpen" />
     <!-- Master Wrap : starts -->
     <section id="mastwrap">
       <section id="intro" class="intro trans-dark">
-        <HeaderTop />
+        <HeaderTop :projectFormOpen="projectFormOpen" />
         <div class="valign">
           <div class="hero-caps text-rotator text-center">
             <!-- <h6 class="text-rotator minimal white">
@@ -22,7 +22,7 @@
           </div>
         </a>
       </section>
-      <HeaderStandard />
+      <HeaderStandard :projectFormOpen="projectFormOpen" />
       <section id="projects" class="page about white-bg">
         <div class="container">
           <div class="item about-carousel-item">
@@ -265,7 +265,7 @@
                 />
                 <h2><span class="white">Lines of code that we've written so far</span></h2>
                 <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#start-a-project"  @click="openStartAProjectForm">Get a Quote</a>
+                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">Get a Quote</a>
                 </div>
               </article>
             </div>
@@ -641,13 +641,16 @@
                 </h3>
                 <div class="liner color-bg" />
                 <p class="white">
-                  We are a digital business & platform solutions company, based in Sydney. Our vision: Every business can change its success by turning digital. Our mission: Helping businesses to find the perfect and most successful digital solution.
+                  We are a Sydney based digital business & platform solutions company specialised in building digital plans and products for clients who need help in reinventing their business model and move rapidly from ideas to plans which turn into competitive advantages.
                 </p>
                 <p class="white">
-                  We’ve been very successful in building online booking systems, tour management systems and ecommerce travel platforms for travel companies.
+                  With over 6 years experience of building digital platforms for international travel companies, Co-founders John & Wayne manage to have extensive insights of the travel industry and a team of developers with professional skills and experience to practice the most up to the minute digital building techniques.
                 </p>
                 <p class="white">
-                  Passionate, Professional, Innovative and Opportunities are Cavaon's team core values. We are young, full of energy, motivated and like challenges. We care about our customers and focus on increasing your business values.
+                  The team have been very successful in building digital platforms for travel companies such as online booking systems, tour management systems and e-commerce travel platform. Moving forward, Cavaon is now became an integrated “one stop shop agency offering additional digital marketing, design, branding services.
+                </p>
+                <p class="white">
+                  We are a team of enthusiastic and motivated young developers who love to champion creative ideas and take down challenges. The core values of the Cavaon team are to be Professional, Passionate and Innovative.
                 </p>
               </article>
               <article class="col-md-12 about-us-mobile text-center">
@@ -732,6 +735,7 @@
 
 <script>
 import countTo from 'vue-count-to'
+import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
 import HeaderStandard from './HeaderStandard'
@@ -761,14 +765,14 @@ export default {
         projectImage: 'images/Case-Studies-Travel-Dream.png',
         topImage: 'images/Case-Studies-Travel-Dream1.png',
         logo: 'images/Case-Studies-Travel-Dream2.png',
-        intro: 'Traveldream is a new online Travel agent launched in Aug 2018 with a focus on domestic deals, international tours and cruise. They offer amazing world-wide holiday deals including airfares, accommodation and premium experiences at prices that will break the internet, not the budget.',
-        challenge: 'To develop a website quickly and on budget with increasing functional complexity',
+        intro: 'TravelDream is an online Travel agent launched in August 2018 with a focus on domestic deals, international tours and cruises.',
+        challenge: 'To create a website with time and budget constraints, with the goal of increasing functional complexity over time.',
         centreImage: 'images/Case-Studies-Travel-Dream3.png',
-        result1: 'It has enabled us to quickly add new products, transact and manage large volumes of orders. It has also been able to scale with the team and continuing demands of the business',
-        result2: 'Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work.',
+        result1: 'It has enabled us to quickly add new products, transact and manage large volumes of orders.',
+        result2: 'It has also been able to scale with the team and continuing demands of the business.',
         font: 'images/Case-Studies-Travel-Dream4.png',
-        info1: '',
-        info2: '',
+        info1: 'Working with Cavaon and the team has enabled us to get to market much quicker than with other providers.',
+        info2: 'Their deep understanding of the travel industry is obvious and really shows in their work.',
         screenshot1: 'images/Case-Studies-Travel-Dream5.png',
         screenshot2: ''
       },
@@ -779,13 +783,14 @@ export default {
         topImage: 'images/Case-Studies-Lets-Travel1.png',
         logo: 'images/Case-Studies-Lets-Travel2.png',
         intro: "Let's Travel Pty Ltd was founded in Sydney in 2015, focusing on operating small group day tours, charter tours and providing transfer services in Sydney and Melbourne.",
-        challenge: 'As a tour operator, they need to process bookings from travel agents (data entry), assign coaches and tour guides everyday. As business growth, one of the biggest challenges they faced was increasing workload on data entry, issuing invoices and tour vouchers. Also, accuracy was getting harder to maintain.',
+        challenge: 'The challenge was keeping up standards to handle daily operations, we were losing clients because of bad procedures. The company came to a point where future growth wasn\'t possible because of the existing technical infrastructure',
+        challenge1: 'Let’s Travel has finally got to a point with the software that they were using which was limiting their growth and a high level of manual labour was necessarey for data entry, issuing invoices and vouchers which in turn starting causing accuracy issues.',
         centreImage: 'images/Case-Studies-Lets-Travel3.png',
-        result1: 'The B2B online booking system Cavaon tailor-made has dramatically improved efficiency, accuracy and helped in increase sales. Now, travel agents make bookings directly via the system, which has streamlined they manual data entry and reduced errors. Invoices and tour vouchers are all automatically generated in just one click. The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which without a doubt drives up sales.',
-        result2: '',
+        result1: 'Cavaon tailor made an online booking system that dramatically improved the efficiency and accuracy and helped increase sales. Now travel agents make bookings directly through the system and cut out any manual data entry that produced errors and therefore increased customer satisfaction. Processes were streamlined and the multi step manual entry system was turned into a one click system, increasing staff efficiency and productivity.',
+        result2: 'The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which has a direct impact on sales.',
         font: 'images/Case-Studies-Lets-Travel4.png',
-        info1: 'Cavaon provides us peace of mind daily IT support, maintenance and consulting. With several years of experience in Australia travel industry, every time we requested for adding new functions or upgrading the system, they could understand the requirements quickly and the outcomes were always satisfied.',
-        info2: 'We have been using the booking system for more than one year. Compared with before, sales has increased by 62.7%.',
+        info1: 'Since using the new booking system, sales increased by 62.7% over the last 12 months.',
+        info2: '',
         screenshot1: 'images/Case-Studies-Lets-Travel5.png',
         screenshot2: 'images/Case-Studies-Lets-Travel6.png'
       }
@@ -832,6 +837,10 @@ export default {
       this.windowWidth = window.innerWidth || document.documentElement.clientWidth
       if (this.windowWidth < 576) { this.isMobile = true }
     }
+    EventBus.$on('closeStartAProjectForm', (formOpen) => {
+      console.log('çlosing form')
+      this.closeStartAProjectForm()
+    })
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
@@ -881,10 +890,10 @@ export default {
         } else { this.cornelia = this.cornelia1 }
       }
     },
-    openStartAProjectForm: function() {
+    openStartAProjectForm: function () {
       this.projectFormOpen = true
     },
-    closeStartAProjectForm: function() {
+    closeStartAProjectForm: function () {
       this.projectFormOpen = false
     }
   }

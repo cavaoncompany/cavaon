@@ -491,8 +491,7 @@
 		margin-top: 20px;
 	}
 	.promo-section {
-		max-height: 550px;
-		min-height: 550px;
+		min-height: 750px;
 	}
 	.testimonial-wrap {
 		width: 100%;
