@@ -9,7 +9,7 @@
           <div class="liner color-bg" />
           <p class="grey fill-form">Please fill in this form. We will contact you promptly to discuss the next steps.</p>
         </div>
-        <form id="startAProjectForm" name="startAProject" action="" enctype="multipart/form-data" method="post" netlify class="col-md-12 col-lg-10 col-lg-offset-1">
+        <form id="startAProjectForm" name="startAProject" action="/" enctype="multipart/form-data" method="post" data-netlify="true" class="col-md-12 col-lg-10 col-lg-offset-1">
           <section>
             <h3>
               1 Hello, nice to meet you!
