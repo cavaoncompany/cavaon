@@ -25,11 +25,6 @@ $(function ($) {
     $('.rs-bg-img').css('max-height', vH)
     $('.rs-bg-img').css('max-width', vW)
 
-    // percentage
-    // const wrapWidth = vW;
-    // const h1 = (wrapWidth * 17 / 100).toFixed(2);
-    // $('.hero-caps h1').css('font-size',h1+'px');
-
     // Equi-heigh Divs
     $(document).ready(function () {
       let folioThumbHeight

@@ -220,9 +220,15 @@ div#portfolio_thumbs ul li div.item_info p  > span{
 .service {
 	border-color: @grey !important;
 }
-.service:active, .service:focus, .service:hover, .projectSelected {
+.projectSelected {
     border-color: @color !important;
-    color: @color;
+	color: @color;
+	outline: none;
+}
+.service:focus, .service:active, .projectDeselected  {
+	border-color: @grey !important;
+	outline: none;
+	color: @black;
 }
 #start-a-project input::placeholder {
     color: @grey !important;

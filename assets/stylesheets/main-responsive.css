@@ -321,7 +321,8 @@
 	}
 	.hero-caps h1 {
 	    font-size: 54px;
-	    line-height: 71px;
+		line-height: 71px;
+		letter-spacing: 16px;
 	}
 	.hero-caps h6 {
 	    font-size: 36px;
@@ -390,7 +391,7 @@
 		display: none;
 	}
 	.service {
-		width: 100%;
+		width: 45%;
 	}
 	.project-contact-info article {
 		width: 100%;
@@ -1580,8 +1581,9 @@
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 12px;
-	    line-height: 43px;
+	    font-size: 16px;
+		line-height: 43px;
+		letter-spacing: 8px;
 	}
 	.hero-caps h6 {
 	    font-size: 16px;
@@ -1719,8 +1721,9 @@
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 10px;
-	    line-height: 43px;
+	    font-size: 16px;
+		line-height: 43px;
+		letter-spacing: 8px;
 	}
 	.hero-caps h6 {
 	    font-size: 16px;

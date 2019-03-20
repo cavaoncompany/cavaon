@@ -146,10 +146,12 @@ export default {
           this.projectType.splice(index, 1);
         }
         document.getElementById(service).classList.remove('projectSelected')
+        document.getElementById(service).classList.add('projectDeselected')
       }
       else { 
         this.projectType.push(service)
         console.log(e.target.value)
+        document.getElementById(service).classList.remove('projectDeselected')
         document.getElementById(service).classList.add('projectSelected')
         }
     },

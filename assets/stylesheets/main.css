@@ -285,13 +285,14 @@ div#preloader {
 	padding-top: 11px;
 	padding-bottom: 8px;
 }
-.promo-text  p{
+.promo-text p{
 	margin-top: 25px;
 	letter-spacing: 8px;
 	font-family: 'Montserrat', sans-serif; font-weight:200;
 	text-transform: uppercase;
 	font-size: 14px;
 	line-height:21px;
+	margin-bottom: 50px;
 }
 
 
@@ -442,7 +443,6 @@ div#preloader {
 	text-transform: uppercase;
 	font-size: 100px;
 	line-height: 207px;
-	letter-spacing: 16px;
 }
 .hero-caps h6{
 	margin-top: 20px;
