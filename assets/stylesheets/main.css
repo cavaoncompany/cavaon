@@ -1546,13 +1546,13 @@ div#portfolio_thumbs ul li a:hover{
 
 input {
     background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid #656565 !important;
+    border: none;
+    border-bottom: 1px solid #656565;
     border-radius: 0px !important;
     box-shadow: none !important;
     color: #fff;
     font-family: 'Montserrat', sans-serif !important; font-weight:300 !important;
-    height: 50px !important;
+    height: 50px;
     font-size: 14px !important;
     line-height: 21px !important;
     margin-bottom: 10px !important;
@@ -1568,7 +1568,7 @@ input {
 			transition: all .8s linear;
 }
 input:focus, textarea:focus {
-	border-bottom: solid 1px #FFC716 !important;
+	border-bottom: solid 1px #FFC716;
 	outline: none;
     color: #fff;
 	-webkit-transition: all .8s linear;
@@ -1583,7 +1583,7 @@ textarea {
     border-bottom: 1px solid #656565 !important;
     border-radius: 0px !important;
     box-shadow: none !important;
-    color: #fff !important;
+    color: #fff;
     font-family: 'Montserrat', sans-serif !important; font-weight:300 !important;
     font-size: 14px !important;
     line-height: 21px !important;

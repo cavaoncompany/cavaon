@@ -273,7 +273,7 @@ export default {
     margin-top: 17px;
   }
   .project-contact-info input {
-    height: 60px!important;
+    height: 60px;
     margin-top: 15px;
   }
   .project-services {
