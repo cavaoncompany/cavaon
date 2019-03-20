@@ -10,11 +10,11 @@
           <ul class="standard-nav standard-nav-dark-text visible-lg">
             <li><a id="projects-linker" href="#projects" class="scroll">Projects</a></li>
             <li><a id="services-linker" href="#services" class="scroll">Services</a></li>
-            <li><a id="case-studies-linker" href="#caseStudies" class="scroll">Case Studies</a></li>
+            <li><a id="caseStudies-linker" href="#caseStudies" class="scroll">Case Studies</a></li>
             <li><a id="testimonials-linker" href="#testimonials" class="scroll">Testimonials</a></li>
             <li><a id="team-linker" href="#team">Team</a></li>
             <li><a id="about-linker" href="#about" class="scroll">About</a></li>
-            <li><a id="contact-linker" href="#contact-form" class="scroll">Contact</a></li>
+            <li><a id="contactForm-linker" href="#contactForm" class="scroll">Contact</a></li>
           </ul>
         </article>
       </div>

@@ -21,7 +21,7 @@
         <a class="scroll" href="#about">about</a>
       </li>
       <li>
-        <a class="scroll" href="#contact-form">contact</a>
+        <a class="scroll" href="#contactForm">contact</a>
       </li>
     </ul>
   </nav>

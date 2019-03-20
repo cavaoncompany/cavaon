@@ -672,7 +672,7 @@
           </div>
         </div>
       </section>
-      <section id="contact-form" class="contact-form black-bg page-section">
+      <section id="contactForm" class="contact-form black-bg page page-section">
         <div class="container">
           <div class="row">
             <div class="main-caps text-center col-md-12 col-lg-8 col-lg-offset-2">

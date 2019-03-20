@@ -14,7 +14,7 @@
             <li><a href="#testimonials" class="scroll">Testimonials</a></li>
             <li><a href="#team" class="scroll">Team</a></li>
             <li><a href="#about" class="scroll">About</a></li>
-            <li><a href="#contact-form" class="scroll">Contact</a></li>
+            <li><a href="#contactForm" class="scroll">Contact</a></li>
           </ul>
         </article>
       </div>
