@@ -1,0 +1,81 @@
+<form id="startAProjectForm" action="/success" netlify-honeypot="bot-field" name="startAProject" method="post" data-netlify="true" class="col-md-12 col-lg-10 col-lg-offset-1 hidden">
+    <section>
+      <input type="hidden" name="startAProject" value="startAProject" />
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+      <h3>
+        1 Hello, nice to meet you!
+      </h3>
+      <div class="project-contact-info">
+        <article class="left" >
+          <input id="projectCompany" v-model="company" type="text" placeholder="Company" name="company" size="100">
+        </article>
+        <article class="right">
+          <input id="projectEmail" v-model="email" type="text" placeholder="Email Address" name="email" size="100">
+        </article>
+        <article class="left">
+          <input id="projectName" v-model="name" type="text" placeholder="Your Name" name="name" size="100">
+        </article>
+        <article class="right">
+          <input id="projectPhone" v-model="phone" type="text" placeholder="Contact Number" name="phone" size="30">
+        </article>
+        <article class="left">
+          <input id="projectWebsite" v-model="website" type="text" placeholder="Website" name="website" size="100">
+        </article>
+      </div>
+    </section>
+    <section>
+      <h3>
+        2 What is the scope of your project?
+      </h3>
+      <div class="project-services">
+        <div v-for="(service, index) in services" :key="index" :id="service.title" class="service text-center" @click="addProjectType(service.title, $event)">
+          <img :src="service.icon" :alt="service.title">
+          <h4>{{ service.title }}</h4>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h3>
+        3 When do you need the project to be completed?
+      </h3>
+      <input type="radio" v-model="timeframe" id="t1" name="timeframe" value="In a week">
+      <label for="t1">In a week</label><br>
+      <input type="radio" v-model="timeframe" id="t2" name="timeframe" value="In a month">
+      <label for="t2">In a month</label><br>
+      <input type="radio" v-model="timeframe" id="t3" name="timeframe" value="3 months +">
+      <label for="t3">3 months+</label><br>
+    </section>
+    <section>
+      <h3>
+        4 Tell us about your company and the goal of the project
+      </h3>
+      <article>
+        <textarea id="projectMessage" placeholder="In less than 500 characters" name="message" cols="40" rows="4" />
+      </article>
+    </section>
+    <section>
+      <h3>
+        5 How did you hear about us?
+      </h3>
+      <input type="radio" v-model="hearAboutUs" id="h1" name="hearAboutUs" value="Google">
+      <label for="h1">Google</label><br>
+      <input type="radio" v-model="hearAboutUs" id="h2" name="hearAboutUs" value="Referral">
+      <label for="h2">Referral from a friend</label><br>
+      <input type="radio" v-model="hearAboutUs" id="h3" name="hearAboutUs" value="Facebook">
+      <label for="h3">Facebook</label><br>
+      <input type="radio" v-model="hearAboutUs" id="h4" name="hearAboutUs" value="LinkedIn">
+      <label for="h4">LinkedIn</label><br>
+      <input type="radio" v-model="hearAboutUs" id="h5" name="hearAboutUs" value="Other" @change="otherSelected = !otherSelected">
+      <label for="h5">Other</label><br>
+      <input id="hearAboutUs" v-model="hearAboutUsOther" v-if="otherSelected" type="text" placeholder="Other" name="hearAboutUs" size="100">
+    </section>
+    <article>
+      <div class="btn-wrap  text-center">
+        <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
+          Submit
+        </button>
+      </div>
+    </article>
+  </form>
