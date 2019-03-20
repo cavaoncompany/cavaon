@@ -9,8 +9,11 @@
           <div class="liner color-bg" />
           <p class="grey fill-form">Please fill in this form. We will contact you promptly to discuss the next steps.</p>
         </div>
-        <form id="startAProjectForm" action="/" name="startAProject" method="post" data-netlify="true" class="col-md-12 col-lg-10 col-lg-offset-1">
+        <form id="startAProjectForm" action="/" netlify-honeypot="bot-field" name="startAProject" method="post" data-netlify="true" class="col-md-12 col-lg-10 col-lg-offset-1">
           <section>
+            <p class="hidden">
+              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            </p>
             <h3>
               1 Hello, nice to meet you!
             </h3>
