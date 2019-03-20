@@ -698,7 +698,11 @@
                 <div id="fmsg" class="alert alert-error  error">
                   <p>Message should not be empty</p>
                 </div>
-                <form id="contactForm" name="myform" action="sendcontact.php" enctype="multipart/form-data" method="post">
+                <form id="contactForm" name="contact" action="/" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                  <input type="hidden" name="form-name" value="contact" />
+                  <p class="hidden">
+                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                  </p>
                   <article>
                     <input id="name" type="text" placeholder="Your Name" name="name" size="100">
                   </article>
