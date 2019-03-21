@@ -112,6 +112,9 @@
 	#thumb-carousel-wrap {
 		display: block;
 	}
+	.promo-article {
+		margin-top: 25%;
+	}
 }
 
 /*Large Widescreen Monitors*/
@@ -124,6 +127,9 @@
 	}
 	.promo-section {
 		min-height: 750px
+	}
+	.promo-article {
+		margin-top: 25%;
 	}
 	.testimonial-wrap {
 		margin-left: 20px;
@@ -411,6 +417,9 @@
 	}
 	.team-mobile {
 		display: block;
+	}
+	.promo-article {
+		margin-top: 35%;
 	}
 	.service {
 		width: 46%;
@@ -1105,6 +1114,9 @@
 	}
 	.mob-add-bottom{
 		margin-bottom:30px;
+	}
+	.promo-article {
+		margin-top: 60%;
 	}
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;

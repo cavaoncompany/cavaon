@@ -32,16 +32,16 @@
 import EventBus from '../event-bus.js'
 
 export default {
+  props: {
+    projectFormOpen: Boolean
+  },
   data() {
     return {
       projectForm: this.projectFormOpen
     }
-  }, 
-  props: {
-    projectFormOpen: Boolean
   },
   methods: {
-    closeForm: function() {
+    closeForm: function () {
       this.projectForm = false
       EventBus.$emit('closeStartAProjectForm', this.projectForm)
     }

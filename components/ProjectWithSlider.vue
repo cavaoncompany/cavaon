@@ -95,7 +95,10 @@
 <script>
 export default {
   props: {
-    projectDetails: Object
+    projectDetails: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>

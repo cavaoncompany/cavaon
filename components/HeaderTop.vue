@@ -4,7 +4,16 @@
     <div class="container">
       <div class="row">
         <article class="col-md-2 text-left">
-          <a href="#intro-header"><img data-no-retina alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive scroll" src="~/assets/images/logo-white.png" @click="closeForm()"></a>
+          <a href="#intro-header">
+            <img
+              data-no-retina
+              alt="Cavaon Logo"
+              title="Cavaon Logo"
+              class="main-logo img-responsive scroll"
+              src="~/assets/images/logo-white.png"
+              @click="closeForm()"
+            >
+          </a>
         </article>
         <article class="col-md-10 text-right">
           <ul class="standard-nav  standard-nav-white-text visible-lg">
@@ -27,16 +36,16 @@
 import EventBus from '../event-bus.js'
 
 export default {
+  props: {
+    projectFormOpen: Boolean
+  },
   data() {
     return {
       projectForm: this.projectFormOpen
     }
-  }, 
-  props: {
-    projectFormOpen: Boolean
   },
   methods: {
-    closeForm: function() {
+    closeForm: function () {
       this.projectForm = false
       EventBus.$emit('closeStartAProjectForm', this.projectForm)
     }

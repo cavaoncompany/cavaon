@@ -96,11 +96,29 @@
             <h3>
               3 When do you need the project to be completed?
             </h3>
-            <input v-model="timeframe" id="t1" type="radio" name="timeframe" value="In a week">
+            <input
+              id="t1"
+              v-model="timeframe"
+              type="radio"
+              name="timeframe"
+              value="In a week"
+            >
             <label for="t1">In a week</label><br>
-            <input v-model="timeframe" id="t2" type="radio" name="timeframe" value="In a month">
+            <input
+              id="t2"
+              v-model="timeframe"
+              type="radio"
+              name="timeframe"
+              value="In a month"
+            >
             <label for="t2">In a month</label><br>
-            <input v-model="timeframe" id="t3" type="radio" name="timeframe" value="3 months +">
+            <input
+              id="t3"
+              v-model="timeframe"
+              type="radio"
+              name="timeframe"
+              value="3 months +"
+            >
             <label for="t3">3 months+</label><br>
           </section>
           <section>
@@ -115,44 +133,51 @@
             <h3>
               5 How did you hear about us?
             </h3>
-            <input type="radio"
-              v-model="hearAboutUs"
+            <input
               id="h1"
+              v-model="hearAboutUs"
+              type="radio"
               name="hearAboutUs"
               value="Google"
             >
             <label for="h1">Google</label><br>
-            <input type="radio"
-              v-model="hearAboutUs"
+            <input
               id="h2"
+              v-model="hearAboutUs"
+              type="radio"
               name="hearAboutUs"
               value="Referral"
             >
             <label for="h2">Referral from a friend</label><br>
-            <input type="radio"
-              v-model="hearAboutUs"
+            <input
               id="h3"
+              v-model="hearAboutUs"
+              type="radio"
               name="hearAboutUs"
               value="Facebook"
-             >
+            >
             <label for="h3">Facebook</label><br>
-            <input type="radio"
-              v-model="hearAboutUs"
+            <input
               id="h4"
+              v-model="hearAboutUs"
+              type="radio"
               name="hearAboutUs"
               value="LinkedIn"
             >
             <label for="h4">LinkedIn</label><br>
-            <input type="radio"
-              v-model="hearAboutUs"
+            <input
               id="h5"
+              v-model="hearAboutUs"
+              type="radio"
               name="hearAboutUs"
               value="Other"
-              @change="otherSelected = !otherSelected">
+              @change="otherSelected = !otherSelected"
+            >
             <label for="h5">Other</label><br>
-            <input id="hearAboutUs"
-              v-model="hearAboutUsOther"
+            <input
               v-if="otherSelected"
+              id="hearAboutUs"
+              v-model="hearAboutUsOther"
               type="text"
               placeholder="Other"
               name="hearAboutUs"

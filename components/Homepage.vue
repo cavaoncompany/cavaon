@@ -711,10 +711,17 @@
                 <div id="fmsg" class="alert alert-error  error">
                   <p>Message should not be empty</p>
                 </div>
-                <form id="contactForm" name="contact" action="/success" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-                  <input type="hidden" name="form-name" value="contact" />
+                <form
+                  id="contactForm"
+                  name="contact"
+                  action="/success"
+                  method="POST"
+                  netlify-honeypot="bot-field"
+                  data-netlify="true"
+                >
+                  <input type="hidden" name="form-name" value="contact">
                   <p class="hidden">
-                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                    <label>Don’t fill this out if you're human: <input name="bot-field"></label>
                   </p>
                   <article>
                     <input id="name" type="text" placeholder="Your Name" name="name" size="100">
@@ -848,7 +855,6 @@ export default {
       if (this.windowWidth < 576) { this.isMobile = true }
     }
     EventBus.$on('closeStartAProjectForm', (formOpen) => {
-      console.log('çlosing form')
       this.closeStartAProjectForm()
     })
     const date = new Date()
@@ -928,9 +934,6 @@ export default {
     top: 0;
     bottom: 0;
     background-color: rgba(1,1,1,0.75);
-  }
-  .promo-article {
-    margin-top: 25%;
   }
   .avatar {
     width: 58px;
