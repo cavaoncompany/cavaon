@@ -105,9 +105,11 @@ export default {
 
 <style>
   #about-portfolio-item img {
+    width: auto;
     max-width: 100%;
     margin-bottom: 15px;
     margin-top: 15px;
+    height: auto;
   }
 
   #about-portfolio-item p {

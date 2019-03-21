@@ -1181,8 +1181,10 @@ font-family: 'Montserrat', sans-serif; font-weight:300;
 }
 
 #item_slider .slides img {
+	display: block;
+	width: auto;
     max-width: 100%;
-    display: block;
+    height: auto;
 }
 
 #item_slider {
