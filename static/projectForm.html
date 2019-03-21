@@ -76,7 +76,8 @@
             </h3>
             <div class="project-services">
               <div v-for="(service, index) in services" :id="service.title" :key="index" class="service text-center" @click="addProjectType(service.title, $event)">
-                <input type="image" :id="'startAProject' + service.title" :src="service.icon" :alt="service.title">
+                <input type="hidden" :name="service.title" :value="service.title">
+                <input type="image" :id="'startAProject' + service.title" :src="service.icon" :alt="service.title" :name="service.title">
                 <h4>{{ service.title }}</h4>
               </div>
             </div>
