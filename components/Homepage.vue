@@ -16,7 +16,7 @@
           </div>
         </div>
         <!-- valign:ends -->
-        <a class="scroll" href="#projects"  aria-label="Scroll to Projects">
+        <a class="scroll" href="#projects" aria-label="Scroll to Projects">
           <div class="mouse-icon white hidden-xs" style="opacity: 1;">
             <div class="wheel" />
           </div>
@@ -729,7 +729,14 @@
                   </article>
                   <article>
                     <label class="hidden" for="email">Email</label>
-                    <input id="email" type="email" placeholder="Your Email" name="email" size="30" required>
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="Your Email"
+                      name="email"
+                      size="30"
+                      required
+                    >
                   </article>
                   <article>
                     <label for="msg" class="hidden">Message</label>
