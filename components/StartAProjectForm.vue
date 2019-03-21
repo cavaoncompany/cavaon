@@ -43,10 +43,11 @@
                 <input
                   id="projectEmail"
                   v-model="email"
-                  type="text"
-                  placeholder="Email Address"
+                  type="email"
+                  placeholder="Email Address*"
                   name="email"
                   size="100"
+                  required
                 >
               </article>
               <article class="left">
@@ -54,26 +55,28 @@
                   id="projectName"
                   v-model="name"
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="Your Name*"
                   name="name"
                   size="100"
+                  required
                 >
               </article>
               <article class="right">
                 <input
                   id="projectPhone"
                   v-model="phone"
-                  type="text"
-                  placeholder="Contact Number"
+                  type="tel"
+                  placeholder="Contact Number*"
                   name="phone"
                   size="30"
+                  required
                 >
               </article>
               <article class="left">
                 <input
                   id="projectWebsite"
                   v-model="website"
-                  type="text"
+                  type="url"
                   placeholder="Website"
                   name="website"
                   size="100"
@@ -87,7 +90,7 @@
             </h3>
             <div class="project-services">
               <div v-for="(service, index) in services" :id="service.title" :key="index" class="service text-center" @click="addProjectType(service.title, $event)">
-                <img :src="service.icon" :alt="service.title">
+                <input type="image" :id="'startAProject' + service.title" :src="service.icon" :alt="service.title">
                 <h4>{{ service.title }}</h4>
               </div>
             </div>
@@ -265,13 +268,6 @@ export default {
     padding-top: 70px;
     padding-bottom: 30px;
   }
-  #start-a-project input[type="radio"] {
-    width: 20px;
-    height: 20px !important;
-    margin-top: 8px;
-    vertical-align: middle;
-    margin-right: 10px
-  }
   #start-a-project label {
     margin-bottom: 12px;
     font-weight: 500;
@@ -311,14 +307,37 @@ export default {
   .service:hover {
     cursor: pointer;
   }
-  .service img {
+  .service input[type="image"] {
     margin-left: auto;
     margin-right: auto;
     width: 100px;
+    height: 100px;
+    border: none;
   }
   .service h4 {
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+  }
+  #start-a-project input[type="radio"] {
+    width: 0px;
+    margin-top: 8px;
+    vertical-align: middle;
+    visibility: hidden;
+    position: absolute;
+  }
+  input[type=radio] + label:before {
+    height:12px;
+    width:12px;
+    margin-right: 2px;
+    content: " ";
+    display:inline-block;
+    vertical-align: baseline;
+    border:1px solid #777;
+    border-radius:50%;
+    margin-right: 10px;
+  }
+  input[type=radio]:checked + label:before {
+    background:#FFC716;
   }
 </style>

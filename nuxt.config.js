@@ -11,7 +11,7 @@ module.exports = {
     title: 'Cavaon',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
@@ -26,7 +26,7 @@ module.exports = {
       {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
       },
-      { src: '/bootstrap/js/bootstrap.js' },
+      { src: '/bootstrap/js/bootstrap.min.js' },
       { src: '/less/less-1.5.0.min.js' },
       { src: '/javascripts/libs/common.js' },
       { src: '/javascripts/custom/main.js' },
@@ -44,7 +44,7 @@ module.exports = {
   */
   css: [
     '~/assets/bootstrap/css/bootstrap4.css',
-    '~/assets/bootstrap/css/bootstrap.css',
+    '~/assets/bootstrap/css/bootstrap.min.css',
     '~/assets/fonts/fonts.css',
     '~/assets/stylesheets/animate.css',
     '~/assets/stylesheets/slimmenu.css',

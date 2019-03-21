@@ -16,7 +16,7 @@
           </div>
         </div>
         <!-- valign:ends -->
-        <a class="scroll" href="#projects">
+        <a class="scroll" href="#projects"  aria-label="Scroll to Projects">
           <div class="mouse-icon white hidden-xs" style="opacity: 1;">
             <div class="wheel" />
           </div>
@@ -440,7 +440,7 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="team" class="page team page-section remove-pad-bottom white-bg">
+      <section id="team-container" class="page team page-section remove-pad-bottom white-bg">
         <!-- inner-section:starts -->
         <section class="inner-section promo-text">
           <div class="container">
@@ -712,7 +712,7 @@
                   <p>Message should not be empty</p>
                 </div>
                 <form
-                  id="contactForm"
+                  id="contact-form"
                   name="contact"
                   action="/success"
                   method="POST"
@@ -724,12 +724,15 @@
                     <label>Don’t fill this out if you're human: <input name="bot-field"></label>
                   </p>
                   <article>
+                    <label class="hidden" for="name">Name</label>
                     <input id="name" type="text" placeholder="Your Name" name="name" size="100">
                   </article>
                   <article>
-                    <input id="email" type="text" placeholder="Your Email" name="email" size="30">
+                    <label class="hidden" for="email">Email</label>
+                    <input id="email" type="email" placeholder="Your Email" name="email" size="30" required>
                   </article>
                   <article>
+                    <label for="msg" class="hidden">Message</label>
                     <textarea id="msg" placeholder="Your Message" name="message" cols="40" rows="3" />
                     <div class="btn-wrap  text-center">
                       <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
