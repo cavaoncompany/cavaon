@@ -427,7 +427,7 @@
                   Much quicker than other providers
                 </h3>
                 <h6 class="dark">
-                  "Working with Cavaon and the team has enabled us to get to market much quicker than other providers. Their deep travel experience is obvious in the functionalities of their work."
+                  "Working with Cavaon and the team has enabled us to get to market much quicker than with other providers. Their deep understanding of the travel industry is obvious and really shows in their work."
                 </h6>
                 <p><span class="testimonial-name">Paul Mercuri</span><br><span><i>Founder and Managing Director<br>Travel Dream</i></span></p>
               </div>
@@ -711,7 +711,7 @@
                 <div id="fmsg" class="alert alert-error  error">
                   <p>Message should not be empty</p>
                 </div>
-                <form id="contactForm" name="contact" action="/" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                <form id="contactForm" name="contact" action="/success" method="POST" netlify-honeypot="bot-field" data-netlify="true">
                   <input type="hidden" name="form-name" value="contact" />
                   <p class="hidden">
                     <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
@@ -973,5 +973,8 @@ export default {
   }
   .inner-section {
     margin: 0 auto;
+  }
+  .featuress-expansion .container {
+    padding-top: 50px;
   }
 </style>

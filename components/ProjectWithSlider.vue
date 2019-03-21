@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <!-- page-section : starts -->
     <div id="portfolio_item" class="add-top-half">
       <section class="folio-head silver-bg">

@@ -272,6 +272,9 @@ div#preloader {
 .intermediate-section{
 	padding: 240px 0;
 }
+.promo-text {
+	padding-bottom: 40px;
+}
 .promo-text  h3{
 	margin-top: 20px;
 	font-weight:normal; 
@@ -294,8 +297,6 @@ div#preloader {
 	line-height:21px;
 	margin-bottom: 50px;
 }
-
-
 .promo-text-side  h3{
 	margin-top: 15px;
 }

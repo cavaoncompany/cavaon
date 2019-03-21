@@ -68,6 +68,12 @@
 	#mobile-services {
 		display: none;
 	}
+	.team-desktop {
+		display: block;
+	}
+	.team-mobile {
+		display: none;
+	}
 	.service {
 		width: 31%;
 		padding: 20px;
