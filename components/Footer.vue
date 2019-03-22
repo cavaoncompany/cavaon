@@ -7,8 +7,8 @@
         <div class="row">
           <article class="col-md-12 text-center">
             <ul class="foot-social">
-              <li><a href="https://www.facebook.com/Tomato-Technologies-1663772093657548/"><img data-no-retina alt="Cavaon on Facebook" title="Facebook" src="~/assets/images/social/03.png"></a></li>
-              <li><a href="https://www.linkedin.com/company/cavaon"><img data-no-retina alt="Cavaon on LinkedIn" title="LinkedIn" src="~/assets/images/social/05.png"></a></li>
+              <li><a href="https://www.facebook.com/Tomato-Technologies-1663772093657548/"><img data-no-retina alt="Cavaon on Facebook" title="Facebook" src="/images/social/03.png"></a></li>
+              <li><a href="https://www.linkedin.com/company/cavaon"><img data-no-retina alt="Cavaon on LinkedIn" title="LinkedIn" src="/images/social/05.png"></a></li>
             </ul>
           </article>
         </div>

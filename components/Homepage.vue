@@ -16,7 +16,7 @@
           </div>
         </div>
         <!-- valign:ends -->
-        <a class="scroll" href="#projects"  aria-label="Scroll to Projects">
+        <a class="scroll" href="#projects" aria-label="Scroll to Projects">
           <div class="mouse-icon white hidden-xs" style="opacity: 1;">
             <div class="wheel" />
           </div>
@@ -28,7 +28,7 @@
           <div class="item about-carousel-item">
             <div class="row">
               <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
-                <img class="avatar" alt="Cavaon Logo" title="Cavaon Logo" src="~/assets/images/Avatar.png">
+                <img class="avatar" alt="Cavaon Logo" title="Cavaon Logo" src="/images/Avatar.png">
                 <h3>
                   A Whole New Way To<br>Run Your Business
                 </h3>
@@ -52,49 +52,49 @@
         <div id="thumb-carousel" class="owl-carousel">
           <div class="item">
             <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Ecommerce.jpg">
-              <img data-no-retina alt="Ecommerce" title="Ecommerce" class="img-responsive" src="~/assets/images/Project-Ecommerce.jpg">
+              <img data-no-retina alt="Ecommerce" title="Ecommerce" class="img-responsive" src="/images/Project-Ecommerce.jpg">
               <div class="thumb-title"><h5><span>Ecommerce</span></h5></div>
             </a>
           </div>
           <div class="item">
             <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Logo.jpg">
-              <img data-no-retina alt="Logo" title="Logo" class="img-responsive" src="~/assets/images/Project-Logo.jpg">
+              <img data-no-retina alt="Logo" title="Logo" class="img-responsive" src="/images/Project-Logo.jpg">
               <div class="thumb-title"><h5><span>Logo</span></h5></div>
             </a>
           </div>
           <div class="item">
             <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Responsive.jpg">
-              <img data-no-retina alt="Responsive" title="Responsive" class="img-responsive" src="~/assets/images/Project-Responsive.jpg">
+              <img data-no-retina alt="Responsive" title="Responsive" class="img-responsive" src="/images/Project-Responsive.jpg">
               <div class="thumb-title"><h5><span>Responsive</span></h5></div>
             </a>
           </div>
           <div class="item">
             <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Branding.jpg">
-              <img data-no-retina alt="Branding" title="Branding" class="img-responsive" src="~/assets/images/Project-Branding.jpg">
+              <img data-no-retina alt="Branding" title="Branding" class="img-responsive" src="/images/Project-Branding.jpg">
               <div class="thumb-title"><h5><span>Branding</span></h5></div>
             </a>
           </div>
           <div class="item">
             <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Management.jpg">
-              <img data-no-retina alt="Management" title="Management" class="img-responsive" src="~/assets/images/Project-Management.jpg">
+              <img data-no-retina alt="Management" title="Management" class="img-responsive" src="/images/Project-Management.jpg">
               <div class="thumb-title"><h5><span>Management</span></h5></div>
             </a>
           </div>
           <div class="item">
             <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Brochure.jpg">
-              <img data-no-retina alt="Brochure" title="Brochure" class="img-responsive" src="~/assets/images/Project-Brochure.jpg">
+              <img data-no-retina alt="Brochure" title="Brochure" class="img-responsive" src="/images/Project-Brochure.jpg">
               <div class="thumb-title"><h5><span>Brochure</span></h5></div>
             </a>
           </div>
           <div class="item">
             <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Wireframe.jpg">
-              <img data-no-retina alt="Wireframe" title="Wireframe" class="img-responsive" src="~/assets/images/Project-Wireframe.jpg">
+              <img data-no-retina alt="Wireframe" title="Wireframe" class="img-responsive" src="/images/Project-Wireframe.jpg">
               <div class="thumb-title"><h5><span>Wireframe</span></h5></div>
             </a>
           </div>
           <div class="item">
             <a class="venobox" data-gall="thumb-gallery" href="/images/Project-BusinessCard.jpg">
-              <img data-no-retina alt="Business Card" title="Business Card" class="img-responsive" src="~/assets/images/Project-BusinessCard.jpg">
+              <img data-no-retina alt="Business Card" title="Business Card" class="img-responsive" src="/images/Project-BusinessCard.jpg">
               <div class="thumb-title"><h5><span>Business Card</span></h5></div>
             </a>
           </div>
@@ -131,42 +131,42 @@
               <article class="col-md-12">
                 <div class="row">
                   <article id="features-01" class="features-icon current col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="1"><img data-no-retina alt="Logo" title="Logo" src="~/assets/images/icons/Services-Logo.png">
+                    <a class="customLink" data-target="1"><img data-no-retina alt="Logo" title="Logo" src="/images/icons/Services-Logo.png">
                       <h5 class="dark">
                         Logo
                       </h5>
                     </a>
                   </article>
                   <article id="features-02" class="features-icon col-md-2 text-center animated" data-fx="fadeInUp">
-                    <a class="customLink" data-target="2"><img data-no-retina alt="Web Design" title="Web Design" src="~/assets/images/icons/Services-WebDesign.png">
+                    <a class="customLink" data-target="2"><img data-no-retina alt="Web Design" title="Web Design" src="/images/icons/Services-WebDesign.png">
                       <h5 class="dark">
                         Web Design
                       </h5>
                     </a>
                   </article>
                   <article id="features-03" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="3"><img data-no-retina alt="Development" title="Development" src="~/assets/images/icons/Services-Development.png">
+                    <a class="customLink" data-target="3"><img data-no-retina alt="Development" title="Development" src="/images/icons/Services-Development.png">
                       <h5 class="dark">
                         Development
                       </h5>
                     </a>
                   </article>
                   <article id="features-04" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="4"><img alt="Consultation" title="Consultation" src="~/assets/images/icons/Services-Consultation.png">
+                    <a class="customLink" data-target="4"><img alt="Consultation" title="Consultation" src="/images/icons/Services-Consultation.png">
                       <h5 class="dark">
                         Consultation
                       </h5>
                     </a>
                   </article>
                   <article id="features-05" class="features-icon col-md-2 text-center animated" data-fx="fadeInUp">
-                    <a class="customLink" data-target="5"><img alt="Ongoing Support" title="Ongoing Support" src="~/assets/images/icons/Services-OngoingSupport.png">
+                    <a class="customLink" data-target="5"><img alt="Ongoing Support" title="Ongoing Support" src="/images/icons/Services-OngoingSupport.png">
                       <h5 class="dark">
                         Ongoing Support
                       </h5>
                     </a>
                   </article>
                   <article id="features-06" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="6"><img alt="Marketing" title="Marketing" src="~/assets/images/icons/Services-Marketing.png">
+                    <a class="customLink" data-target="6"><img alt="Marketing" title="Marketing" src="/images/icons/Services-Marketing.png">
                       <h5 class="dark">
                         Marketing
                       </h5>
@@ -282,19 +282,19 @@
       <!-- <div id="client-carousel" class="clients-carousel owl-carousel owl-nav-sticky-extra-wide owl-theme"> -->
       <!-- item:starts -->
       <!-- <div class="item client-carousel-item client-stage">
-        <img data-no-retina alt="Let's Travel" title="Let's Travel" src="~/assets/images/Client-logo-lets-travel.png">
+        <img data-no-retina alt="Let's Travel" title="Let's Travel" src="/images/Client-logo-lets-travel.png">
       </div> -->
       <!-- item:ends -->
 
       <!-- item:starts -->
       <!-- <div class="item client-carousel-item client-stage">
-        <img data-no-retina alt="Travel Dream" title="Travel Dream" src="~/assets/images/Client-Logo-Travel-Dream.png">
+        <img data-no-retina alt="Travel Dream" title="Travel Dream" src="/images/Client-Logo-Travel-Dream.png">
       </div> -->
       <!-- item:ends -->
 
       <!-- item:starts -->
       <!-- <div class="item client-carousel-item client-stage">
-        <img data-no-retina alt="Inspiring Vacations" title="Inspiring Vacations" src="~/assets/images/Client-Logo-Inspiring-Vacations.png">
+        <img data-no-retina alt="Inspiring Vacations" title="Inspiring Vacations" src="/images/Client-Logo-Inspiring-Vacations.png">
       </div> -->
       <!-- item:ends -->
       <!-- </div> -->
@@ -357,7 +357,7 @@
                 <li class="folio-thumb mix category1">
                   <a href="projects/project-slider.html" class="more_info" @click="updateProjectDetails('letsTravel')">
                     <!-- Thumbnail -->
-                    <img data-no-retina alt="odin" title="odin" src="~/assets/images/Case-studies-Lets-Travel.png" @click="updateProjectDetails('letsTravel')">
+                    <img data-no-retina alt="odin" title="odin" src="/images/Case-studies-Lets-Travel.png" @click="updateProjectDetails('letsTravel')">
                     <!-- Info -->
                     <div class="item_info">
                       <div class="valign" @click="updateProjectDetails('letsTravel')">
@@ -372,7 +372,7 @@
                 <li class="folio-thumb mix category2">
                   <a href="projects/project-slider.html" class="more_info" @click="updateProjectDetails('travelDream')">
                     <!-- Thumbnail -->
-                    <img data-no-retina alt="odin" title="odin" src="~/assets/images/Case-Studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
+                    <img data-no-retina alt="odin" title="odin" src="/images/Case-Studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
                     <!-- Info -->
                     <div class="item_info">
                       <div class="valign">
@@ -614,15 +614,18 @@
                   <h3 class="dark">
                     Cornelia Schulz
                   </h3>
-                  <h6>
-                    <span>Front-end Developer</span>
+                  <h6 class="team-desktop">
+                    <span>Front-end<br>Developer</span>
+                  </h6>
+                  <h6 class="team-mobile">
+                    Front-end Developer
                   </h6>
                 </div>
                 <!-- item:ends -->
                 <!-- item:starts -->
                 <!-- <article class="col-md-3 text-left">
                   <div class="item team-carousel-item team-stage">
-                    <img data-no-retina alt="Team" title="Team" class="img-responsive" src="~/assets/images/Team.png">
+                    <img data-no-retina alt="Team" title="Team" class="img-responsive" src="/images/Team.png">
                     <h3 class="dark">
                       Luis Heinz
                     </h3>
@@ -729,7 +732,14 @@
                   </article>
                   <article>
                     <label class="hidden" for="email">Email</label>
-                    <input id="email" type="email" placeholder="Your Email" name="email" size="30" required>
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="Your Email"
+                      name="email"
+                      size="30"
+                      required
+                    >
                   </article>
                   <article>
                     <label for="msg" class="hidden">Message</label>

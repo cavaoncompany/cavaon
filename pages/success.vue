@@ -2,7 +2,7 @@
   <div class="container message-sent text-center">
     <header class="row">
       <article class="col-md-2 text-left">
-        <a href="/"><img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="~/assets/images/Logo-colour.png" @click="closeForm()"></a>
+        <a href="/"><img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="/images/Logo-colour.png" @click="closeForm()"></a>
       </article>
     </header>
     <h3 class="dark">

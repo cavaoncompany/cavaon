@@ -15,7 +15,7 @@
           id="startAProjectForm"
           action="/success"
           netlify-honeypot="bot-field"
-          name="startAProject"
+          name="start-a-project"
           method="post"
           data-netlify="true"
           class="col-md-12 col-lg-10 col-lg-offset-1"
@@ -84,15 +84,53 @@
               </article>
             </div>
           </section>
-          <section>
+          <!-- <section>
             <h3>
               2 What is the scope of your project?
             </h3>
             <div class="project-services">
               <div v-for="(service, index) in services" :id="service.title" :key="index" class="service text-center" @click="addProjectType(service.title, $event)">
-                <input type="image" :id="'startAProject' + service.title" :src="service.icon" :alt="service.title">
+                <input type="hidden" :name="service.title" :value="service.title">
+                <input type="image" :id="'startAProject' + service.title" :src="service.icon" :alt="service.title" :name="service.title">
                 <h4>{{ service.title }}</h4>
               </div>
+            </div>
+          </section> -->
+          <section>
+            <h3>
+              2 What is the scope of your project?
+            </h3>
+            <div class="project-services">
+              <div id="project-form-logo" class="service text-center" @click="addProjectType('project-form-logo', $event)">
+                <input type="checkbox" id="form-logo" name="Scope" value="Logo">
+                <label for="form-logo"><img src="/images/icons/Services-Logo.png" alt="Logo" name="Logo" @click="addProjectType('project-form-logo', $event)"></label>
+                <h4>LOGO</h4>
+              </div>
+              <div id="project-form-branding" class="service text-center" @click="addProjectType('project-form-branding', $event)">
+                <input type="checkbox" id="form-branding" name="Scope" value="Branding">
+                <label for="form-branding"><img src="/images/icons/Services-Branding.png" alt="Branding" name="Branding" @click="addProjectType('project-form-branding', $event)"></label>
+                <h4>BRANDING</h4>
+              </div>
+              <div id="project-form-webDesign" class="service text-center" @click="addProjectType('project-form-webDesign', $event)">
+                <input type="checkbox" id="form-webdesign" name="Scope" value="Web Design">
+                <label for="form-webdesign"><img src="/images/icons/Services-WebDesign.png" alt="Web Design" name="Web Design" @click="addProjectType('project-form-webDesign', $event)"></label>
+                <h4>WEB DESIGN</h4>
+              </div>
+              <div id="project-form-development" class="service text-center" @click="addProjectType('project-form-development', $event)">
+                <input type="checkbox" id="form-development" name="Scope" value="Development">
+                <label for="form-development"><img src="/images/icons/Services-Development.png" alt="Development" name="Development" @click="addProjectType('project-form-development', $event)"></label>
+              <h4>DEVELOPMENT</h4>
+              </div>
+              <div id="project-form-printDesign" class="service text-center" @click="addProjectType('project-form-printDesign', $event)">
+                <input type="checkbox" id="form-printdesign" name="Scope" value="Print Design">
+                <label for="form-printdesign"><img src="/images/icons/Services-PrintDesign.png" alt="Print Design" name="Print Design" @click="addProjectType('project-form-printDesign', $event)"></label>
+                <h4>PRINT DESIGN</h4>
+              </div>
+              <div id="project-form-consultation" class="service text-center" @click="addProjectType('project-form-consultation', $event)">
+                <input type="checkbox" id="form-consultation" name="Scope" value="Consultation">
+                <label for="form-consultation"><img src="/images/icons/Services-Consultation.png" alt="Consultation" name="Consultation" @click="addProjectType('project-form-consultation', $event)"></label>
+                <h4>CONSULTATION</h4>
+            </div>
             </div>
           </section>
           <section>
@@ -307,12 +345,16 @@ export default {
   .service:hover {
     cursor: pointer;
   }
-  .service input[type="image"] {
+  .service img {
     margin-left: auto;
     margin-right: auto;
     width: 100px;
     height: 100px;
     border: none;
+  }
+  #start-a-project input[type="checkbox"] {
+    width: 0;
+    visibility: hidden;
   }
   .service h4 {
     font-size: 14px;
