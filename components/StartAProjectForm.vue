@@ -84,7 +84,7 @@
               </article>
             </div>
           </section>
-          <section>
+          <!-- <section>
             <h3>
               2 What is the scope of your project?
             </h3>
@@ -94,6 +94,43 @@
                 <input type="image" :id="'startAProject' + service.title" :src="service.icon" :alt="service.title" :name="service.title">
                 <h4>{{ service.title }}</h4>
               </div>
+            </div>
+          </section> -->
+          <section>
+            <h3>
+              2 What is the scope of your project?
+            </h3>
+            <div class="project-services">
+              <div id="project-form-logo" class="service text-center" @click="addProjectType(service.title, $event)">
+                <input type="hidden" name="scope" value="Logo">
+                <input type="image" id="startAProjectLogo" src="/images/icons/Services-Logo.png" alt="Logo" name="Logo">
+                <h4>LOGO</h4>
+              </div>
+              <div id="project-form-branding" class="service text-center" @click="addProjectType(service.title, $event)">
+                <input type="hidden" name="scope" value="Branding">
+                <input type="image" id="startAProjectBranding" src="/images/icons/Services-Branding.png" alt="Branding" name="Branding">
+                <h4>BRANDING</h4>
+              </div>
+              <div id="project-form-webDesign" class="service text-center" @click="addProjectType(service.title, $event)">
+                <input type="hidden" name="scope" value="Web Design">
+                <input type="image" id="startAProjectwebDesign" src="/images/icons/Services-WebDesign.png" alt="Web Design" name="Web Design">
+                <h4>WEB DESIGN</h4>
+              </div>
+              <div id="project-form-development" class="service text-center" @click="addProjectType(service.title, $event)">
+                  <input type="hidden" name="scope" value="Development">
+                  <input type="image" id="startAProjectDevelopment" src="/images/icons/Services-Development.png" alt="Development" name="Development">
+              <h4>DEVELOPMENT/h4>
+              </div>
+              <div id="project-form-printDesign" class="service text-center" @click="addProjectType(service.title, $event)">
+                <input type="hidden" name="scope" value="Print Design">
+                <input type="image" id="startAProjectLogo" src="/images/icons/Services-PrintDesign.png" alt="Print Design" name="Print Design">
+                <h4>PRINT DESIGN</h4>
+              </div>
+              <div id="project-form-consultation" class="service text-center" @click="addProjectType(service.title, $event)">
+                <input type="hidden" name="scope" value="Consultation">
+                <input type="image" id="startAProjectConsultation" src="/images/icons/Services-Consultation.png" alt="Consultation" name="Consultation">
+                <h4>CONSULTATION</h4>
+            </div>
             </div>
           </section>
           <section>
