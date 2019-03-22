@@ -614,8 +614,11 @@
                   <h3 class="dark">
                     Cornelia Schulz
                   </h3>
-                  <h6>
-                    <span>Front-end Developer</span>
+                  <h6 class="team-desktop">
+                    <span>Front-end<br>Developer</span>
+                  </h6>
+                  <h6 class="team-mobile">
+                    Front-end Developer
                   </h6>
                 </div>
                 <!-- item:ends -->
