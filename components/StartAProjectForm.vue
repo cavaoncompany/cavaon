@@ -15,7 +15,7 @@
           id="startAProjectForm"
           action="/success"
           netlify-honeypot="bot-field"
-          name="startAProject"
+          name="start-a-project"
           method="post"
           data-netlify="true"
           class="col-md-12 col-lg-10 col-lg-offset-1"
