@@ -10,7 +10,7 @@
               alt="Cavaon Logo"
               title="Cavaon Logo"
               class="main-logo img-responsive scroll"
-              src="~/assets/images/logo-white.png"
+              src="/images/logo-white.png"
               @click="closeForm()"
             >
           </a>
