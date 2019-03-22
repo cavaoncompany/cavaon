@@ -61,7 +61,9 @@ module.exports = {
       lang: 'less'
     }
   ],
-
+  serverMiddleware: [
+    '~/api/index.js'
+  ],
   /*
   ** Plugins to load before mounting the App
   */
@@ -73,13 +75,12 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/dotenv'
   ],
-
   googleAnalytics: {
     id: 'UA-136678258-1'
   },
-
   /*
   ** Build configuration
   */
