@@ -1,17 +1,7 @@
 const { Router } = require('express')
 const router = Router()
 const mongodb = require('mongodb')
-// const MongoClient = require('mongodb').MongoClient
-// const uri = 'mongodb+srv://cornelia_01:</password>@cluster0-ghuem.mongodb.net/test?retryWrites=true'
-// const client = new MongoClient(uri, { useNewUrlParser: true })
-// // eslint-disable-next-line handle-callback-err
-// client.connect((err) => {
-//   const collection = client.db('test').collection('devices')
-//   // perform actions on the collection object
-//   client.close()
-// })
-
-// console.log(process.env.mongopw)
+require('dotenv').config()
 
 router.get('/team', async function (req, res) {
   const team = await loadTeamCollection()
@@ -37,7 +27,7 @@ router.delete('/team/:id', async (req, res) => {
 })
 
 async function loadTeamCollection() {
-  const client = await mongodb.MongoClient.connect('mongodb+srv://<user>:<password>@cluster0-ghuem.mongodb.net/cavaon?retryWrites=true', {
+  const client = await mongodb.MongoClient.connect('mongodb+srv://' + process.env.mongouser + ':' + process.env.mongopw + '@cluster0-ghuem.mongodb.net/cavaon?retryWrites=true', {
     useNewUrlParser: true
   })
   return client.db('cavaon').collection('team')
