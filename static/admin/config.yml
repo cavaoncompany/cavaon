@@ -9,6 +9,38 @@ collections:
   - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
     name: "Homepage"
     files:
+      - label: "Banner"
+        name: "banner"
+        format: "json"
+        file: "/content/banner.json"
+        fields:
+          - label: "Test"
+            name: "test"
+            widget: "string"
+      - label: "Projects"
+        name: "projects"
+        format: "json"
+        file: "/content/projects.json"
+        fields:
+          - label: "Test"
+            name: "test"
+            widget: "string"
+      - label: "Services"
+        name: "services"
+        format: "json"
+        file: "/content/services.json"
+        fields:
+          - label: "Test"
+            name: "test"
+            widget: "string"
+      - label: "Case Studies"
+        name: "casestudies"
+        format: "json"
+        file: "/content/casestudies.json"
+        fields:
+          - label: "Test"
+            name: "test"
+            widget: "string"
       - label: "Team"
         name: "team"
         format: "json"
@@ -22,12 +54,4 @@ collections:
               - {label: Img1, name: img1, widget: image,default: "/logo.png"}
               - {label: Img2, name: img2, widget: string}
               - {label: Title, name: title, widget: string}
-      - label: "Banner"
-        name: "banner"
-        format: "json"
-        file: "/content/banner.json"
-        fields:
-          - label: "Test"
-            name: "test"
-            widget: "string"
               
