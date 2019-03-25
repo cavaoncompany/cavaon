@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+publish_mode: editorial_workflow # This is a special workflow with approval before going live
+media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
+collections: 
+  - label: "team" # Used in routes, e.g., /admin/collections/blog
+    name: "Team"
+    files:
+      - label: "team"
+        name: "team"
+        format: "json"
+        file: "content/team.json"
+        fields: 
+          - label: "Team"
+            name: "string"
+            img1: "string"
+            img2: "string"
+            title: "Title"
