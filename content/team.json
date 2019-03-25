@@ -1,0 +1,18 @@
+[
+    {
+        "_id": "5c94830678de641768398230",
+        "name": "John Ho",
+        "img1": "/images/Team-John-Ho-1.png",
+        "img2": "/images/Team-John-Ho-2.png",
+        "title": "CO-FOUNDER & MANAGING DIRECTOR",
+        "createdAt": "2019-03-22T06:39:02.605Z"
+    },
+    {
+        "_id": "5c94838778de641768398231",
+        "name": "Wayne Wen",
+        "img1": "/images/Team-Wayne-Wen-1.png",
+        "img2": "/images/Team-Wayne-Wen-2.png",
+        "title": "CO-FOUNDER & CHIEF SYSTEM ARCHITECT",
+        "createdAt": "2019-03-22T06:41:11.971Z"
+    }
+]
