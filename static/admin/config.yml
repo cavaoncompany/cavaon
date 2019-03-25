@@ -1,19 +1,33 @@
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
-publish_mode: editorial_workflow # This is a special workflow with approval before going live
-media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
+  branch: test # Branch to update (optional; defaults to master)
+media_library:
+  name: uploadcare
+  config:
+    publicKey: 9b954d23a1102d31c3f8 # replace with your Public API key or use for testing env only
 collections: 
-  - label: "team" # Used in routes, e.g., /admin/collections/blog
-    name: "Team"
+  - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
+    name: "Homepage"
     files:
-      - label: "team"
+      - label: "Team"
         name: "team"
         format: "json"
-        file: "content/team.json"
+        file: "/content/team.json"
         fields: 
-          - label: "Team"
-            name: "string"
-            img1: "string"
-            img2: "string"
-            title: "Title"
+          - label: Team
+            name: team
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Img1, name: img1, widget: image,default: "/logo.png"}
+              - {label: Img2, name: img2, widget: string}
+              - {label: Title, name: title, widget: string}
+      - label: "Banner"
+        name: "banner"
+        format: "json"
+        file: "/content/banner.json"
+        fields:
+          - label: "Test"
+            name: "test"
+            widget: "string"
+              
