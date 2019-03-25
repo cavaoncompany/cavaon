@@ -1,10 +1,11 @@
 backend:
   name: git-gateway
   branch: test # Branch to update (optional; defaults to master)
-media_library:
-  name: uploadcare
-  config:
-    publicKey: 9b954d23a1102d31c3f8 # replace with your Public API key or use for testing env only
+# media_library:
+#   name: uploadcare
+#   config:
+#     publicKey: 9b954d23a1102d31c3f8 # replace with your Public API key or use for testing env only
+media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
 collections: 
   - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
     name: "Homepage"
@@ -14,53 +15,143 @@ collections:
         format: "json"
         file: "/content/banner.json"
         fields:
-          - label: "Test"
-            name: "test"
-            widget: "string"
+          - label: "Banners"
+            name: "banners"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Top line", name: "top", widget: "string"}
+              - {label: "Bottom line", name: "bottom", widget: "string"}
       - label: "Projects"
         name: "projects"
         format: "json"
         file: "/content/projects.json"
         fields:
-          - label: "Test"
-            name: "test"
+          - label: "Title"
+            name: "title"
             widget: "string"
+          - label: "Motto"
+            name: "motto"
+            widget: "string"
+          - label: "Subtitle"
+            name: "subtitle"
+            widget: "string"
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
       - label: "Services"
         name: "services"
         format: "json"
         file: "/content/services.json"
         fields:
-          - label: "Test"
-            name: "test"
+          - label: "Title"
+            name: "title"
             widget: "string"
+          - label: "Tagline"
+            name: "tagline"
+            widget: "string"
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Image title", name: "imageTitle", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
       - label: "Case Studies"
         name: "casestudies"
         format: "json"
         file: "/content/casestudies.json"
         fields:
-          - label: "Test"
-            name: "test"
+          - label: "Title"
+            name: "title"
             widget: "string"
+          - label: "Case Studies"
+            name: "caseStudies"
+            widget: "list"
+            fields:
+              - {label: "Project title", name: "projectTitle", widget: "string"}
+              - {label: "Subtitle", name: "subTitle", widget: "string"}
+              - {label: "Type of project", name: "typeOfProject", widget: "string"}
+              - {label: "Project image", name: "projectImage", widget: "image"}
+              - {label: "Top image", name: "topImage", widget: "image"}
+              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "Intro", name: "ingro", widget: "string"}
+              - {label: "Challenge 1", name: "challenge", widget: "string"}
+              - {label: "Challenge 2", name: "challenge1", widget: "string"}
+              - {label: "Centre image", name: "centreImage", widget: "image"}
+              - {label: "Result 1", name: "result1", widget: "string"}
+              - {label: "Result 2", name: "result2", widget: "string"}
+              - {label: "Font", name: "font", widget: "image"}
+              - {label: "Info 1", name: "info1", widget: "string"}
+              - {label: "Info 2", name: "info2", widget: "string"}
+              - {label: "Screenshot 1", name: "screenshot1", widget: "image"}
+              - {label: Screenshot 2", name: "screenshot2", widget: "image"}
+      - label: "Testimonials"
+        name: "testimonials"
+        format: "json"
+        file: "/content/testimonials.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Testimonial", name: "testimonial", widget: "string"}
+              - {label: "Name", name: "name", widget: string}
+              - {label: "Job title", name: "jobtitle", widget: "string"}
+              - {label: "Company", name: "company", widget: "string"}
       - label: "Team"
         name: "team"
         format: "json"
         file: "/content/team.json"
-        fields: 
-          - label: Team
-            name: team
-            widget: list
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Team"
+            name: "team"
+            widget: "list"
             fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Img1, name: img1, widget: image,default: "/logo.png"}
-              - {label: Img2, name: img2, widget: string}
-              - {label: Title, name: title, widget: string}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Image", name: "img1", widget: "image"}
+              - {label: "Hover image", name: "img2", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
       - label: "About"
         name: "about"
         format: "json"
         file: "/content/about.json"
         fields:
-          - label: "Test"
-            name: "test"
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Desktop Section 1"
+            name: "desktopSection1"
+            widget: "string"
+          - label: "Desktop Section 2"
+            name: "desktopSection2"
+            widget: "string"
+          - label: "Desktop Section 3"
+            name: "desktopSection3"
+            widget: "string"
+          - label: "Desktop Section 4"
+            name: "desktopSection4"
+            widget: "string"
+          - label: "Mobile Section 1"
+            name: "mobileSection1"
+            widget: "string"
+          - label: "Mobile Section 2"
+            name: "mobileSection2"
+            widget: "string"
+          - label: "Mobile Section 3"
+            name: "mobileSection3"
             widget: "string"
       - label: "Contact"
         name: "contact"
