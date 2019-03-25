@@ -54,4 +54,56 @@ collections:
               - {label: Img1, name: img1, widget: image,default: "/logo.png"}
               - {label: Img2, name: img2, widget: string}
               - {label: Title, name: title, widget: string}
+      - label: "About"
+        name: "about"
+        format: "json"
+        file: "/content/about.json"
+        fields:
+          - label: "Test"
+            name: "test"
+            widget: "string"
+      - label: "Contact"
+        name: "contact"
+        format: "json"
+        file: "/content/contact.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Telephone"
+            name: "telephone"
+            widget: "string"
+          - label: "Address line 1"
+            name: "addressLine1"
+            widget: "string"
+          - label: "Address line 2"
+            name: "addressLine2"
+            widget: "string"
+          - label: "Name placeholder"
+            name: "namePlaceholder"
+            widget: "string"
+          - label: "Email placeholder"
+            name: "emailPlaceholder"
+            widget: "string"
+          - label: "Message placeholder"
+            name: "messagePlaceholder"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+      - label: "Footer"
+        name: "footer"
+        format: "json"
+        file: "/content/footer.json"
+        fields:
+          - label: "Social Icons"
+            name: "socialIcons"
+            widget: "list"
+            fields:
+              - {label: Image, name: image, widget: image}
+              - {label: Description, name: description, widget: string}
+              - {label: Link, name: link, widget: string}
+          - label: "Copyright"
+            name: "copyright"
+            widget: "string"
               

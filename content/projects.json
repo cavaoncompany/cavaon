@@ -1,3 +1,47 @@
 {
-    "test": "test"
+    "name":"Projects",
+    "title": "A Whole New Way To Run Your Business",
+    "subtitle": "Digital Business & Platform Solutions",
+    "projects": [
+        {
+            "image": "/images/Project-Ecommerce.jpg",
+            "title": "Ecommerce",
+            "description": "Ecommerce"
+        },
+        {
+            "image": "/images/Project-Logo.jpg",
+            "title": "Logo",
+            "description": "Logo"
+        },
+        {
+            "image": "/images/Project-Responsive.jpg",
+            "title": "Responsive",
+            "description": "Responsive"
+        },
+        {
+            "image": "/images/Project-Branding.jpg",
+            "title": "Branding",
+            "description": "Branding"
+        },
+        {
+            "image": "/images/Project-Management.jpg",
+            "title": "Management",
+            "description": "Management"
+        },
+        {
+            "image": "/images/Project-Brochure.jpg",
+            "title": "Brochure",
+            "description": "Brochure"
+        },
+        {
+            "image": "/images/Project-Wireframe.jpg",
+            "title": "Wireframe",
+            "description": "Wireframe"
+        },
+        {
+            "image": "/images/Project-BusinessCard.jpg",
+            "title": "Business Card",
+            "description": "Business Card"
+        }
+    ]
 }

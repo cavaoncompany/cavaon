@@ -675,10 +675,10 @@
                   We are a young, energetic, and motivated digital business and platform solutions company based in Sydney. We care about our customers and are focused on increasing your business value.
                 </p>
                 <p class="white vision">
-                  Our vision : Every business can change its success by turning digital.
+                  Our vision: Every business can change its success by turning digital.
                 </p>
                 <p class="white mission">
-                  Our mission : Helping businesses to find the perfect and most successful digital solution
+                  Our mission: Helping businesses to find the perfect and most successful digital solution
                 </p>
                 <!-- <p class="white values">
                   Our core values : Passionate, Professional, Innovative, Opportunity.

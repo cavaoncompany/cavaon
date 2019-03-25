@@ -1,0 +1,10 @@
+{
+    "title": "SAY HELLO",
+    "telephone": "+61 2 8379 7424",
+    "addressLine1": "L1, 403 Elizabeth St.",
+    "addressLine2": "Surry Hills NSW 2010",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "Your message",
+    "buttonText": "Send Message"
+}
