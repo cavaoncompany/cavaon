@@ -1,3 +1,42 @@
 {
-  "test": "test123"
+    "title": "Our Services",
+    "tagline": "Cavaon is a ditial business and platform solutions company from Sydney.",
+    "services": [
+        {
+            "imageTitle": "Logo",
+            "image": "/images/icons/Services-Logo.png",
+            "title": "Logo & Branding",
+            "description": "Make a great impression on your customers with a good logo and branding"
+        },
+        {
+            "imageTitle": "Web Design",
+            "image": "/images/icons/Services-WebDesign.png",
+            "title": "Amazing Web Design",
+            "description": "Build a successful website beginning with good web design - From layout to customer experience."
+        },
+        {
+            "imageTitle": "Development",
+            "image": "/images/icons/Services-Development.png",
+            "title": "Development",
+            "description": "Build your travel platform with the ability to connect your customers via mobile or desktop."
+        },
+        {
+            "imageTitle": "Consultation",
+            "image": "/images/icons/Services-Consultation.png",
+            "title": "Consultation",
+            "description": "We give you a hand brainstorming for ideas and overcoming business challenges. Transform them into a digital business any way you want."
+        },
+        {
+            "imageTitle": "Ongoing Support",
+            "image": "/images/icons/Services-OngoingSupport.png",
+            "title": "Ongoing Support",
+            "description": "You are not alone. We are here to coniously support all our clients for growth and the future of their business."
+        },
+        {
+            "imageTitle": "Marketing",
+            "image": "/images/icons/Services-Marketing.png",
+            "title": "Marketing",
+            "description": "Tell the world you are here to provide them with products and services. Digital marketing is essential to get traffic to your website."
+        }
+    ]
 }
