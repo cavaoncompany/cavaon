@@ -1,0 +1,16 @@
+{
+    "team": [
+        {
+            "name": "John Ho",
+            "img1": "/images/Team-John-Ho-1.png",
+            "img2": "/images/Team-John-Ho-2.png",
+            "title": "CO-FOUNDER & MANAGING DIRECTOR"
+        },
+        {
+            "name": "Wayne Wen",
+            "img1": "/images/Team-Wayne-Wen-1.png",
+            "img2": "/images/Team-Wayne-Wen-2.png",
+            "title": "CO-FOUNDER & CHIEF SYSTEM ARCHITECT"
+        }
+    ]
+}

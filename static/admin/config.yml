@@ -1,0 +1,49 @@
+backend:
+  name: git-gateway
+  branch: test # Branch to update (optional; defaults to master)
+media_folder: assets/images/uploads # Media files will be stored in the repo under images/uploads
+collections: 
+  - label: 'Setup'
+    name: 'setup'
+    files:
+    - label: 'Site Info'
+      name: 'info'
+      file: '/content/info.json'
+      fields:
+        - {label: 'Site Name', name: 'sitename', widget: 'string'}
+        - {label: 'Site Description', name: 'sitedescription', widget: 'string'}
+        - {label: Site Icon (Must be 512x512 or larger square PNG), name: siteicon, widget: image,default: "/icon.png"}
+        - {label: Show Icon in Menu, name: showmenu, widget: boolean}
+        - {label: Email Newsletter Signup, name: emailsignup, widget: boolean}
+        - label: Menu Links
+          name: menu
+          widget: list
+          fields:
+            - {label: Name, name: name, widget: string}
+            - {label: Position, name: position, widget: string}
+            - {label: Link, name: link, widget: string}
+  - label: "Index" # Used in routes, e.g., /admin/collections/blog
+    name: "Homepage"
+    files:
+      - label: "Team"
+        name: "team"
+        format: "json"
+        file: "/content/team.json"
+        fields: 
+          - label: Team
+            name: team
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Img1, name: img1, widget: image,default: "/logo.png"}
+              - {label: Img2, name: img2, widget: string}
+              - {label: Title, name: title, widget: string}
+      - label: "Test"
+        name: "test"
+        format: "json"
+        file: "/content/test.json"
+        fields:
+          - label: "Test"
+            name: "test"
+            widget: "string"
+              

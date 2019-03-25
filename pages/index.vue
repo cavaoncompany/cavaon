@@ -10,6 +10,19 @@ import Homepage from '../components/Homepage.vue'
 export default {
   components: {
     Homepage
+  },
+  created() {
+    if(process.client) {
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    }
   }
 }
 </script>
