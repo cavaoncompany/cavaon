@@ -650,39 +650,36 @@
             <div class="row">
               <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center about-us-desktop">
                 <h3 class="white">
-                  <span>A little more about us</span>
+                  <span>{{ about.title }}</span>
                 </h3>
                 <div class="liner color-bg" />
                 <p class="white">
-                  We are a Sydney based digital business & platform solutions company specialised in building digital plans and products for clients who need help in reinventing their business model and move rapidly from ideas to plans which turn into competitive advantages.
+                  {{ about.desktopSection1 }}
                 </p>
                 <p class="white">
-                  With over 6 years experience of building digital platforms for international travel companies, Co-founders John & Wayne manage to have extensive insights of the travel industry and a team of developers with professional skills and experience to practice the most up to the minute digital building techniques.
+                  {{ about.desktopSection2 }}
                 </p>
                 <p class="white">
-                  The team have been very successful in building digital platforms for travel companies such as online booking systems, tour management systems and e-commerce travel platform. Moving forward, Cavaon is now became an integrated “one stop shop agency offering additional digital marketing, design, branding services.
+                  {{ about.desktopSection3 }}
                 </p>
                 <p class="white">
-                  We are a team of enthusiastic and motivated young developers who love to champion creative ideas and take down challenges. The core values of the Cavaon team are to be Professional, Passionate and Innovative.
+                  {{ about.desktopSection4 }}
                 </p>
               </article>
               <article class="col-md-12 about-us-mobile text-center">
                 <h3 class="white">
-                  <span>A little more about us</span>
+                  <span>{{ about.title }}</span>
                 </h3>
                 <div class="liner color-bg" />
                 <p class="white">
-                  We are a young, energetic, and motivated digital business and platform solutions company based in Sydney. We care about our customers and are focused on increasing your business value.
+                  {{ about.mobileSection1 }}
                 </p>
                 <p class="white vision">
-                  Our vision: Every business can change its success by turning digital.
+                  {{ about.mobileSection2 }}
                 </p>
                 <p class="white mission">
-                  Our mission: Helping businesses to find the perfect and most successful digital solution
+                  {{ about.mobileSection3 }}
                 </p>
-                <!-- <p class="white values">
-                  Our core values : Passionate, Professional, Innovative, Opportunity.
-                </p> -->
               </article>
             </div>
           </div>
@@ -693,14 +690,14 @@
           <div class="row">
             <div class="main-caps text-center col-md-12 col-lg-8 col-lg-offset-2">
               <h3 class="white">
-                <span>Say hello</span>
+                <span>{{ contact.title }}</span>
               </h3>
               <div class="liner color-bg" />
             </div>
             <div class="contact-info text-center col-md-12 col-lg-8 col-lg-offset-2">
-              <a href="tel:+61283797424" class="white contact-info-text">+61 2 8379 7424</a>
+              <a href="tel:+61283797424" class="white contact-info-text">{{ contact.telephone }}</a>
               <p class="white">
-                L1, 403 Elizabeth St.<br>Surry Hills NSW 2010
+                {{ contact.addressLine1 }}<br>{{ contact.addressLine2 }}
               </p>
             </div>
             <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
@@ -728,14 +725,14 @@
                   </p>
                   <article>
                     <label class="hidden" for="name">Name</label>
-                    <input id="name" type="text" placeholder="Your Name" name="name" size="100">
+                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" size="100">
                   </article>
                   <article>
                     <label class="hidden" for="email">Email</label>
                     <input
                       id="email"
                       type="email"
-                      placeholder="Your Email"
+                      :placeholder="contact.emailPlaceholder"
                       name="email"
                       size="30"
                       required
@@ -743,10 +740,10 @@
                   </article>
                   <article>
                     <label for="msg" class="hidden">Message</label>
-                    <textarea id="msg" placeholder="Your Message" name="message" cols="40" rows="3" />
+                    <textarea id="msg" :placeholder="contact.messagePlaceholder" name="message" cols="40" rows="3" />
                     <div class="btn-wrap  text-center">
                       <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
-                        Send Message
+                        {{ contact.buttonText }}
                       </button>
                     </div>
                   </article>
@@ -774,6 +771,9 @@ import MobileServices from './MobileServices'
 import MobileProjects from './MobileProjects'
 import StartAProjectForm from './StartAProjectForm'
 import Footer from './Footer'
+import contact from '../content/contact.json'
+import caseStudies from '../content/casestudies.json'
+import about from '../content/about.json'
 
 export default {
   components: {
@@ -828,6 +828,8 @@ export default {
     return {
       caseStudies: cs,
       projectDetails: cs[0],
+      contact: contact,
+      about: about,
       linesOfCode: 12538,
       john: '/images/Team-John-1.png',
       john1: '/images/Team-John-1.png',

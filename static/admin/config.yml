@@ -1,10 +1,6 @@
 backend:
   name: git-gateway
   branch: test # Branch to update (optional; defaults to master)
-# media_library:
-#   name: uploadcare
-#   config:
-#     publicKey: 9b954d23a1102d31c3f8 # replace with your Public API key or use for testing env only
 media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
 collections: 
   - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
