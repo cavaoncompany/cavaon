@@ -546,9 +546,9 @@ export default {
   methods: {
     updateProjectDetails: function (project) {
       if (project === 'travelDream') {
-        this.projectDetails = this.caseStudies[0]
+        this.projectDetails = this.caseStudies.caseStudies[0]
       } else if (project === 'letsTravel') {
-        this.projectDetails = this.caseStudies[1]
+        this.projectDetails = this.caseStudies.caseStudies[1]
       }
     },
     convertToMinutes: function (duration) {
