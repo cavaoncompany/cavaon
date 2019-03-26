@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import footer from '../content/footer.json'
+import footer from '../static/content/footer.json'
 
 export default {
   data() {

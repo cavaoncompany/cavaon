@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import services from '../content/services.json'
+import services from '../static/content/services.json'
 
 export default {
   data() {

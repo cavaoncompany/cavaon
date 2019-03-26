@@ -7,7 +7,7 @@
         <HeaderTop :projectFormOpen="projectFormOpen" />
         <div class="valign">
           <div class="hero-caps text-rotator text-center">
-            <!-- content generated in main.js -->
+            <!-- content generated in common.js -->
           </div>
         </div>
         <!-- valign:ends -->
@@ -83,7 +83,7 @@
             <div class="row featuress-icon-wrap  featuress-icon-wrap-green">
               <article class="col-md-12">
                 <div class="row">
-                  <article v-for="(service, index) in services.services" :key="index" :id="'features-' + index" class="features-icon col-md-2 text-center animated" :data-fx="service.animation">
+                  <article v-for="(service, index) in services.services" :id="'features-' + index" :key="index" class="features-icon col-md-2 text-center animated" :data-fx="service.animation">
                     <a class="customLink" :data-target="index + 1"><img data-no-retina :alt="service.imageTitle" :title="service.imageTitle" :src="service.image">
                       <h5 class="dark">
                         {{ service.imageTitle }}
@@ -477,14 +477,15 @@
 
 <script>
 import countTo from 'vue-count-to'
-import contact from '../content/contact.json'
-import caseStudies from '../content/casestudies.json'
-import about from '../content/about.json'
-import team from '../content/team.json'
-import testimonials from '../content/testimonials.json'
-import services from '../content/services.json'
-import projects from '../content/projects.json'
-import promo from '../content/promo.json'
+import banner from '../static/content/banner.json'
+import contact from '../static/content/contact.json'
+import caseStudies from '../static/content/casestudies.json'
+import about from '../static/content/about.json'
+import team from '../static/content/team.json'
+import testimonials from '../static//content/testimonials.json'
+import services from '../static/content/services.json'
+import projects from '../static/content/projects.json'
+import promo from '../static/content/promo.json'
 import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
@@ -518,6 +519,7 @@ export default {
       services: services,
       projects: projects,
       promo: promo,
+      banner: banner,
       linesOfCode: 12538,
       windowWidth: 0,
       isMobile: false,
@@ -529,7 +531,15 @@ export default {
     if (process.client) {
       // eslint-disable-next-line
       const backstretchScript = document.createElement('script')
-      backstretchScript.innerHTML = '$.backstretch(["/images/Banner-Branding.png", "/images/Banner-Logo.png", "/images/Banner-Marketing.png", "/images/Banner-Platform.png", "/images/Banner-WebDesign.png", "/images/Banner-Consultation.png"], {duration: 3000, fade: 750})'
+      let banners = ''
+      for (let i = 0; i < this.banner.banners.length; i++) {
+        if (i < this.banner.banners.length - 1) {
+          banners += '"' + this.banner.banners[i].image + '",'
+        } else {
+          banners += '"' + this.banner.banners[i].image + '"'
+        }
+      }
+      backstretchScript.innerHTML = '$.backstretch([' + banners + '], {duration: 3000, fade: 750})'
       // eslint-disable-next-line
       document.body.appendChild(backstretchScript)
       // eslint-disable-next-line

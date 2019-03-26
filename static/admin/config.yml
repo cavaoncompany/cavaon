@@ -9,7 +9,7 @@ collections:
       - label: "Banner"
         name: "banner"
         format: "json"
-        file: "/content/banner.json"
+        file: "/static/content/banner.json"
         fields:
           - label: "Banners"
             name: "banners"
@@ -21,7 +21,7 @@ collections:
       - label: "Projects"
         name: "projects"
         format: "json"
-        file: "/content/projects.json"
+        file: "/static/content/projects.json"
         fields:
           - label: "Title"
             name: "title"
@@ -48,7 +48,7 @@ collections:
       - label: "Services"
         name: "services"
         format: "json"
-        file: "/content/services.json"
+        file: "/static/content/services.json"
         fields:
           - label: "Title"
             name: "title"
@@ -68,7 +68,7 @@ collections:
       - label: "Promo Text"
         name: "promo"
         format: "json"
-        file: "/content/promo.json"
+        file: "/static/content/promo.json"
         fields:
           - label: "Promo text"
             name: "promoText"
@@ -79,7 +79,7 @@ collections:
       - label: "Case Studies"
         name: "casestudies"
         format: "json"
-        file: "/content/casestudies.json"
+        file: "/static/content/casestudies.json"
         fields:
           - label: "Title"
             name: "title"
@@ -108,7 +108,7 @@ collections:
       - label: "Testimonials"
         name: "testimonials"
         format: "json"
-        file: "/content/testimonials.json"
+        file: "/static/content/testimonials.json"
         fields:
           - label: "Title"
             name: "title"
@@ -125,7 +125,7 @@ collections:
       - label: "Team"
         name: "team"
         format: "json"
-        file: "/content/team.json"
+        file: "/static/content/team.json"
         fields:
           - label: "Title"
             name: "title"
@@ -142,7 +142,7 @@ collections:
       - label: "About"
         name: "about"
         format: "json"
-        file: "/content/about.json"
+        file: "/static/content/about.json"
         fields:
           - label: "Title"
             name: "title"
@@ -171,7 +171,7 @@ collections:
       - label: "Contact"
         name: "contact"
         format: "json"
-        file: "/content/contact.json"
+        file: "/static/content/contact.json"
         fields:
           - label: "Title"
             name: "title"
@@ -200,7 +200,7 @@ collections:
       - label: "Footer"
         name: "footer"
         format: "json"
-        file: "/content/footer.json"
+        file: "/static/content/footer.json"
         fields:
           - label: "Social Icons"
             name: "socialIcons"
@@ -218,7 +218,7 @@ collections:
       - label: "Start a project form"
         name: "startaprojectform"
         format: "json"
-        file: "/content/startaprojectform.json"
+        file: "/static/content/startaprojectform.json"
         fields:
           - label: "Title"
             name: "title"
@@ -280,7 +280,7 @@ collections:
       - label: "Thank you"
         name: "success"
         format: "json"
-        file: "/content/success.json"
+        file: "/static/content/success.json"
         fields:
           - label: "Title"
             name: "title"

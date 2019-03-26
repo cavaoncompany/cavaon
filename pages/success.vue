@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import success from '../content/success.json'
+import success from '../static/content/success.json'
 import Footer from '../components/Footer'
 
 export default {

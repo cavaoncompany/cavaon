@@ -158,37 +158,11 @@
 </template>
 
 <script>
-import startaprojectform from '../content/startaprojectform.json'
+import startaprojectform from '../static/content/startaprojectform.json'
 
 export default {
   data() {
     return {
-      services: [
-        {
-          icon: '/images/icons/Services-Logo.png',
-          title: 'LOGO'
-        },
-        {
-          icon: '/images/icons/Services-Branding.png',
-          title: 'BRANDING'
-        },
-        {
-          icon: '/images/icons/Services-WebDesign.png',
-          title: 'WEB DESIGN'
-        },
-        {
-          icon: '/images/icons/Services-Development.png',
-          title: 'DEVELOPMENT'
-        },
-        {
-          icon: '/images/icons/Services-PrintDesign.png',
-          title: 'PRINT DESIGN'
-        },
-        {
-          icon: '/images/icons/Services-Consultation.png',
-          title: 'CONSULTATION'
-        }
-      ],
       startaprojectform: startaprojectform,
       company: '',
       email: '',
