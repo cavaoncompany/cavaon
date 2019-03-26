@@ -69,42 +69,16 @@ $(function ($) {
     // Text Ticker
     $(window).load(function () {
       $('.text-rotator').each(function () {
-        // const text_rotator_content = $(this).html()
         $(this).empty()
         $(this).html('<div class="rotator-wrap"></div>')
         const this_item = $(this).children('.rotator-wrap')
-        // add text in here
-        const text_rotator_content_array = [
-          {
-            top: 'WE CREATE',
-            bottom: 'BRANDING'
-          },
-          {
-            top: 'WE CREATE',
-            bottom: 'LOGOS'
-          },
-          {
-            top: 'WE PROVIDE',
-            bottom: 'MARKETING'
-          },
-          {
-            top: 'WE CREATE',
-            bottom: 'PLATFORMS'
-          },
-          {
-            top: 'WE CREATE',
-            bottom: 'WEB DESIGN'
-          },
-          {
-            top: 'WE PROVIDE',
-            bottom: 'CONSULTATION'
-          }
-        ]
-        // const text_rotator_content_split = text_rotator_content.split(',')
-        // const item_size = text_rotator_content_split.length
-        const item_size = text_rotator_content_array.length
-        // nova_text_rotator(text_rotator_content_split, this_item, item_size, 0)
-        nova_text_rotator(text_rotator_content_array, this_item, item_size, 0)
+        $.getJSON('../content/banner.json', function (result) {
+          const text_rotator_content_array = result.banners.map(function (banner) {
+            return banner
+          })
+          const item_size = text_rotator_content_array.length
+          nova_text_rotator(text_rotator_content_array, this_item, item_size, 0)
+        })        
       })
 
       function nova_text_rotator(item_array, this_item, item_size, my_index) {
@@ -112,7 +86,6 @@ $(function ($) {
           my_index = 0
         }
         this_item.fadeOut(800, function () {
-          // this_item.html('<span>' + item_array[my_index] + '</span>')
           this_item.html('<h6 class="minimal white">' + item_array[my_index].top + '</h6><h1 class="white"><span>' + item_array[my_index].bottom + '</span></h1>')
           this_item.fadeIn(800)
         })

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import projects from '../content/projects.json'
+import projects from '../static/content/projects.json'
 
 export default {
   data() {
