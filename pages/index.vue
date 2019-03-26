@@ -41,7 +41,7 @@ export default {
         {
         hid: `description`,
         name: 'description',
-        content: `Find your perfect tour to ${this.metadata.homepageDescription}`
+        content: `${this.metadata.homepageDescription}`
       }
       ]
     }

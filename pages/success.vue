@@ -39,7 +39,7 @@ export default {
         {
         hid: `description`,
         name: 'description',
-        content: `Find your perfect tour to ${this.metadata.thankYouDescription}`
+        content: `${this.metadata.thankYouDescription}`
       }
       ]
     }
