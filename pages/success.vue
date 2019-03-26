@@ -6,23 +6,29 @@
       </article>
     </header>
     <h3 class="dark">
-      <span>THANK YOU!</span>
+      <span>{{ success.title }}</span>
     </h3>
     <div class="liner color-bg" />
-    <p>Your message has been sent and we will be in touch with you shortly.</p>
+    <p>{{ success.message }}</p>
     <button id="returnHome" class="btn btn-odin btn-odin-color" name="submit" type="submit">
-      <a href="/">Return to Homepage</a>
+      <a href="/">{{ success.buttonText }}</a>
     </button>
     <Footer />
   </div>
 </template>
 
 <script>
+import success from '../content/success.json'
 import Footer from '../components/Footer'
 
 export default {
   components: {
     Footer
+  },
+  data() {
+    return {
+      success: success
+    }
   }
 }
 </script>

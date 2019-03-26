@@ -1,10 +1,6 @@
 backend:
   name: git-gateway
   branch: test # Branch to update (optional; defaults to master)
-# media_library:
-#   name: uploadcare
-#   config:
-#     publicKey: 9b954d23a1102d31c3f8 # replace with your Public API key or use for testing env only
 media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
 collections: 
   - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
@@ -30,11 +26,17 @@ collections:
           - label: "Title"
             name: "title"
             widget: "string"
-          - label: "Motto"
-            name: "motto"
+          - label: "Motto top line"
+            name: "mottoTop"
+            widget: "string"
+          - label: "Motto bottom line"
+            name: "mottoBottom"
             widget: "string"
           - label: "Subtitle"
             name: "subtitle"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
             widget: "string"
           - label: "Projects"
             name: "projects"
@@ -62,6 +64,18 @@ collections:
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
+              - {label: "Animation", name: "animation", widget: "string"}
+      - label: "Promo Text"
+        name: "promo"
+        format: "json"
+        file: "/content/promo.json"
+        fields:
+          - label: "Promo text"
+            name: "promoText"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
       - label: "Case Studies"
         name: "casestudies"
         format: "json"
@@ -120,7 +134,8 @@ collections:
             name: "team"
             widget: "list"
             fields:
-              - {label: "Name", name: "name", widget: "string"}
+              - {label: "First name", name: "firstname", widget: "string"}
+              - {label: "Last name", name: "lastname", widget: "string"}
               - {label: "Image", name: "img1", widget: "image"}
               - {label: "Hover image", name: "img2", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
@@ -197,4 +212,82 @@ collections:
           - label: "Copyright"
             name: "copyright"
             widget: "string"
-              
+  - label: "Start a project form"
+    name: "startaprojectform"
+    files:
+      - label: "Start a project form"
+        name: "startaprojectform"
+        format: "json"
+        file: "/content/startaprojectform.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Instruction"
+            name: "instruction"
+            widget: "string"
+          - label: "Contact title"
+            name: "contactTitle"
+            widget: "string"
+          - label: "Company placeholder"
+            name: "companyPlaceholder"
+            widget: "string"
+          - label: "Email placeholder"
+            name: "emailPlaceholder"
+            widget: "string"
+          - label: "Name placeholder"
+            name: "namePlaceholder"
+            widget: "string"
+          - label: "Telephone placeholder"
+            name: "telPlaceholder"
+            widget: "string"
+          - label: "Website placeholder"
+            name: "websitePlaceholder"
+            widget: "string"
+          - label: "Project scope title"
+            name: "projectScopeTitle"
+            widget: "string"
+          - label: "Services to choose"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Icon", name: "icon", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+          - label: "Timeframe title"
+            name: "timeframeTitle"
+            widget: "string"
+          - label: "Timeframe"
+            name: "timeframe"
+            widget: "list"
+          - label: "Goal title"
+            name: "goalTitle"
+            widget: "string"
+          - label: "Goal placeholder"
+            name: "goalPlaceholder"
+            widget: "string"
+          - label: "How did you hear about us title"
+            name: "hearAboutUsTitle"
+            widget: "string"
+          - label: "How did you hear about us"
+            name: "hearAboutUs"
+            widget: "list"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+  - label: "Thank you" # Used in routes, e.g., /admin/collections/blog
+    name: "success"
+    files:
+      - label: "Thank you"
+        name: "success"
+        format: "json"
+        file: "/content/success.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Message"
+            name: "message"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"

@@ -1,7 +1,9 @@
 {
     "title":"Projects",
-    "motto": "A Whole New Way To Run Your Business",
+    "mottoTop": "A WHOLE NEW WAY",
+    "mottoBottom": "TO RUN YOUR BUSINESS",
     "subtitle": "Digital Business & Platform Solutions",
+    "buttonText": "Start a project",
     "projects": [
         {
             "image": "/images/Project-Ecommerce.jpg",
