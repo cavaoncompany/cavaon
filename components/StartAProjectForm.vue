@@ -84,53 +84,16 @@
               </article>
             </div>
           </section>
-          <!-- <section>
-            <h3>
-              2 What is the scope of your project?
-            </h3>
-            <div class="project-services">
-              <div v-for="(service, index) in services" :id="service.title" :key="index" class="service text-center" @click="addProjectType(service.title, $event)">
-                <input type="hidden" :name="service.title" :value="service.title">
-                <input type="image" :id="'startAProject' + service.title" :src="service.icon" :alt="service.title" :name="service.title">
-                <h4>{{ service.title }}</h4>
-              </div>
-            </div>
-          </section> -->
           <section>
             <h3>
               {{ startaprojectform.projectScopeTitle }}
             </h3>
             <div class="project-services">
-              <div v-for="(service, index) in startaprojectform.services" :key="index" :id="'project-form-' + service.title" class="service text-center" @click="addProjectType('project-form-' + service.title, $event)">
-                <input type="checkbox" :id="'form-' + service.title" name="Scope" :value="service.title">
+              <div v-for="(service, index) in startaprojectform.services" :id="'project-form-' + service.title" :key="index" class="service text-center" @click="addProjectType('project-form-' + service.title, $event)">
+                <input :id="'form-' + service.title" type="checkbox" name="Scope" :value="service.title">
                 <label :for="'form-' + service.title"><img :src="service.icon" :alt="service.title" :name="service.title" @click="addProjectType('project-form-' + service.title, $event)"></label>
                 <h4>{{ service.title }}</h4>
               </div>
-              <!-- <div id="project-form-branding" class="service text-center" @click="addProjectType('project-form-branding', $event)">
-                <input type="checkbox" id="form-branding" name="Scope" value="Branding">
-                <label for="form-branding"><img src="/images/icons/Services-Branding.png" alt="Branding" name="Branding" @click="addProjectType('project-form-branding', $event)"></label>
-                <h4>BRANDING</h4>
-              </div>
-              <div id="project-form-webDesign" class="service text-center" @click="addProjectType('project-form-webDesign', $event)">
-                <input type="checkbox" id="form-webdesign" name="Scope" value="Web Design">
-                <label for="form-webdesign"><img src="/images/icons/Services-WebDesign.png" alt="Web Design" name="Web Design" @click="addProjectType('project-form-webDesign', $event)"></label>
-                <h4>WEB DESIGN</h4>
-              </div>
-              <div id="project-form-development" class="service text-center" @click="addProjectType('project-form-development', $event)">
-                <input type="checkbox" id="form-development" name="Scope" value="Development">
-                <label for="form-development"><img src="/images/icons/Services-Development.png" alt="Development" name="Development" @click="addProjectType('project-form-development', $event)"></label>
-              <h4>DEVELOPMENT</h4>
-              </div>
-              <div id="project-form-printDesign" class="service text-center" @click="addProjectType('project-form-printDesign', $event)">
-                <input type="checkbox" id="form-printdesign" name="Scope" value="Print Design">
-                <label for="form-printdesign"><img src="/images/icons/Services-PrintDesign.png" alt="Print Design" name="Print Design" @click="addProjectType('project-form-printDesign', $event)"></label>
-                <h4>PRINT DESIGN</h4>
-              </div>
-              <div id="project-form-consultation" class="service text-center" @click="addProjectType('project-form-consultation', $event)">
-                <input type="checkbox" id="form-consultation" name="Scope" value="Consultation">
-                <label for="form-consultation"><img src="/images/icons/Services-Consultation.png" alt="Consultation" name="Consultation" @click="addProjectType('project-form-consultation', $event)"></label>
-                <h4>CONSULTATION</h4>
-            </div> -->
             </div>
           </section>
           <section>
