@@ -136,9 +136,9 @@
                   :autoplay="false"
                   :duration="3000"
                 />
-                <h2><span class="white">Lines of code that we've written so far</span></h2>
+                <h2><span class="white">{{ promo.promoText }}</span></h2>
                 <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">Get a Quote</a>
+                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ promo.buttonText }}</a>
                 </div>
               </article>
             </div>
@@ -484,6 +484,7 @@ import team from '../content/team.json'
 import testimonials from '../content/testimonials.json'
 import services from '../content/services.json'
 import projects from '../content/projects.json'
+import promo from '../content/promo.json'
 import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
@@ -516,6 +517,7 @@ export default {
       testimonials: testimonials,
       services: services,
       projects: projects,
+      promo: promo,
       linesOfCode: 12538,
       windowWidth: 0,
       isMobile: false,
