@@ -83,7 +83,7 @@
             <div class="row featuress-icon-wrap  featuress-icon-wrap-green">
               <article class="col-md-12">
                 <div class="row">
-                  <article v-for="(service, index) in services.services" :key="index" :id="'features-' + index" class="features-icon current col-md-2 text-center animated" :data-fx="service.animation">
+                  <article v-for="(service, index) in services.services" :key="index" :id="'features-' + index" class="features-icon col-md-2 text-center animated" :data-fx="service.animation">
                     <a class="customLink" :data-target="index + 1"><img data-no-retina :alt="service.imageTitle" :title="service.imageTitle" :src="service.image">
                       <h5 class="dark">
                         {{ service.imageTitle }}
