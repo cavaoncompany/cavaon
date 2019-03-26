@@ -19,6 +19,7 @@
 
 <script>
 import success from '../static/content/success.json'
+import metadata from '../static/content/metadata.json'
 import Footer from '../components/Footer'
 
 export default {
@@ -27,7 +28,20 @@ export default {
   },
   data() {
     return {
-      success: success
+      success: success,
+      metadata: metadata
+    }
+  },
+  head () {   
+    return {
+      title: `${this.metadata.thankYouTitle}`,
+      meta: [
+        {
+        hid: `description`,
+        name: 'description',
+        content: `Find your perfect tour to ${this.metadata.thankYouDescription}`
+      }
+      ]
     }
   }
 }

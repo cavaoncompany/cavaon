@@ -5,11 +5,17 @@
 </template>
 
 <script>
+import metadata from '../static/content/metadata.json'
 import Homepage from '../components/Homepage.vue'
 
 export default {
   components: {
     Homepage
+  },
+  data() {
+    return {
+      metadata: metadata
+    }
   },
   created() {
     if (process.client) {
@@ -26,6 +32,18 @@ export default {
           }
         })
       }
+    }
+  },
+  head () {   
+    return {
+      title: `${this.metadata.homepageTitle}`,
+      meta: [
+        {
+        hid: `description`,
+        name: 'description',
+        content: `Find your perfect tour to ${this.metadata.homepageDescription}`
+      }
+      ]
     }
   }
 }
