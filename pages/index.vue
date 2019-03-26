@@ -5,23 +5,45 @@
 </template>
 
 <script>
+import metadata from '../static/content/metadata.json'
 import Homepage from '../components/Homepage.vue'
 
 export default {
   components: {
     Homepage
   },
+  data() {
+    return {
+      metadata: metadata
+    }
+  },
   created() {
-    if(process.client) {
+    if (process.client) {
+      // eslint-disable-next-line
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
+        // eslint-disable-next-line
+        window.netlifyIdentity.on('init', user => {
           if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
+            // eslint-disable-next-line
+            window.netlifyIdentity.on('login', () => {
+              // eslint-disable-next-line
+              document.location.href = '/admin/'
+            })
           }
-        });
+        })
       }
+    }
+  },
+  head () {   
+    return {
+      title: `${this.metadata.homepageTitle}`,
+      meta: [
+        {
+        hid: `description`,
+        name: 'description',
+        content: `${this.metadata.homepageDescription}`
+      }
+      ]
     }
   }
 }

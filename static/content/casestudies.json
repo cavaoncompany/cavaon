@@ -1,0 +1,46 @@
+{
+    "title": "CASE STUDIES",
+    "introTitle": "COMPANY BACKGROUND",
+    "challengeTitle": "CHALLENGES OF YOUR COMPANY",
+    "resultTitle": "HOW THE SYSTEM WE BUILT FOR YOU RESOLVED YOUR PROBLEMS",
+    "caseStudies": [
+        {
+            "projectTitle": "Travel Dream",
+            "subTitle": "Travel Dream",
+            "typeOfProject": "Web / Brand",
+            "projectImage": "images/Case-Studies-Travel-Dream.png",
+            "topImage": "images/Case-Studies-Travel-Dream1.png",
+            "logo": "images/Case-Studies-Travel-Dream2.png",
+            "intro": "TravelDream is an online Travel agent launched in August 2018 with a focus on domestic deals, international tours and cruises.",
+            "challenge": "To create a website with time and budget constraints, with the goal of increasing functional complexity over time.",
+            "challenge1": "",
+            "centreImage": "images/Case-Studies-Travel-Dream3.png",
+            "result1": "It has enabled us to quickly add new products, transact and manage large volumes of orders.",
+            "result2": "It has also been able to scale with the team and continuing demands of the business.",
+            "font": "images/Case-Studies-Travel-Dream4.png",
+            "info1": "Working with Cavaon and the team has enabled us to get to market much quicker than with other providers.",
+            "info2": "Their deep understanding of the travel industry is obvious and really shows in their work.",
+            "screenshot1": "images/Case-Studies-Travel-Dream5.png",
+            "screenshot2": ""
+          },
+          {
+            "projectTitle": "Let's Travel",
+            "subTitle": "Let's Travel",
+            "typeOfProject": "Web / Brand",
+            "projectImage": "images/Case-Studies-Lets-Travel.png",
+            "topImage": "images/Case-Studies-Lets-Travel1.png",
+            "logo": "images/Case-Studies-Lets-Travel2.png",
+            "intro": "Let's Travel Pty Ltd was founded in Sydney in 2015, focusing on operating small group day tours, charter tours and providing transfer services in Sydney and Melbourne.",
+            "challenge": "The challenge was keeping up standards to handle daily operations, we were losing clients because of bad procedures. The company came to a point where future growth wasn't possible because of the existing technical infrastructure",
+            "challenge1": "Let’s Travel has finally got to a point with the software that they were using which was limiting their growth and a high level of manual labour was necessarey for data entry, issuing invoices and vouchers which in turn starting causing accuracy issues.",
+            "centreImage": "images/Case-Studies-Lets-Travel3.png",
+            "result1": "Cavaon tailor made an online booking system that dramatically improved the efficiency and accuracy and helped increase sales. Now travel agents make bookings directly through the system and cut out any manual data entry that produced errors and therefore increased customer satisfaction. Processes were streamlined and the multi step manual entry system was turned into a one click system, increasing staff efficiency and productivity.",
+            "result2": "The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which has a direct impact on sales.",
+            "font": "images/Case-Studies-Lets-Travel4.png",
+            "info1": "Since using the new booking system, sales increased by 62.7% over the last 12 months.",
+            "info2": "",
+            "screenshot1": "images/Case-Studies-Lets-Travel5.png",
+            "screenshot2": "images/Case-Studies-Lets-Travel6.png"
+          }
+    ]
+}

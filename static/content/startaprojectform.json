@@ -1,0 +1,53 @@
+{
+  "goalPlaceholder": "In less than 500 characters",
+  "timeframe": [
+    "In a week",
+    "In a month",
+    "3 months +"
+  ],
+  "goalTitle": "4 Tell us about your company and the goal of the project",
+  "namePlaceholder": "Your Name*",
+  "instruction": "Please fill in this form. We will contact you shortly to discuss the next steps.",
+  "companyPlaceholder": "Company",
+  "emailPlaceholder": "Email Address*",
+  "websitePlaceholder": "Website",
+  "contactTitle": "1 Hello, nice to meet you!",
+  "title": "START A PROJECT",
+  "telPlaceholder": "Contact Number*",
+  "timeframeTitle": "3 When do you need the project to be completed?",
+  "hearAboutUsTitle": "5 How did you hear about us?",
+  "projectScopeTitle": "2 What is the scope of your project?",
+  "hearAboutUs": [
+    "Google",
+    "Referral from a friend",
+    "Facebook",
+    "LinkedIn"
+  ],
+  "services": [
+    {
+      "icon": "/images/icons/Services-Logo.png",
+      "title": "LOGO"
+    },
+    {
+      "icon": "/images/icons/Services-Branding.png",
+      "title": "BRANDING"
+    },
+    {
+      "icon": "/images/icons/Services-WebDesign.png",
+      "title": "WEB DESIGN"
+    },
+    {
+      "icon": "/images/icons/Services-Development.png",
+      "title": "DEVELOPMENT"
+    },
+    {
+      "icon": "/images/icons/Services-PrintDesign.png",
+      "title": "PRINT DESIGN"
+    },
+    {
+      "icon": "/images/icons/Services-Consultation.png",
+      "title": "CONSULTATION"
+    }
+  ],
+  "buttonText": "SUBMIT"
+}
