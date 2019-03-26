@@ -2,45 +2,52 @@
     "title": "The Team",
     "team": [
         {
-            "name": "John Ho",
-            "img1": "/images/Team-John-Ho-1.png",
-            "img2": "/images/Team-John-Ho-2.png",
+            "firstname": "John",
+            "lastname": "Ho",
+            "img1": "/images/Team-John-1.png",
+            "img2": "/images/Team-John-2.png",
             "title": "CO-FOUNDER & MANAGING DIRECTOR"
         },
         {
-            "name": "Wayne Wen",
-            "img1": "/images/Team-Wayne-Wen-1.png",
-            "img2": "/images/Team-Wayne-Wen-2.png",
+            "firstname": "Wayne",
+            "lastname": "Wen",
+            "img1": "/images/Team-Wayne-1.png",
+            "img2": "/images/Team-Wayne-2.png",
             "title": "CO-FOUNDER & CHIEF SYSTEM ARCHITECT"
         },
         {
-            "name": "Ruby Zhang",
-            "img1": "/images/Team-Ruby-Zhang-1.png",
-            "img2": "/images/Team-Ruby-Zhang-2.png",
+            "firstname": "Ruby",
+            "lastname": "Zhang",
+            "img1": "/images/Team-Ruby-1.png",
+            "img2": "/images/Team-Ruby-2.png",
             "title": "UX & UI DESIGNER"
         },
         {
-            "name": "Madeline Hui",
-            "img1": "/images/Team-Madeline-Hui-1.png",
-            "img2": "/images/Team-Madeline-Hui-2.png",
+            "firstname": "Madeline",
+            "lastname": "Hui",
+            "img1": "/images/Team-Madeline-1.png",
+            "img2": "/images/Team-Madeline-2.png",
             "title": "GRPHIC & DIGITAL DESIGNER"
         },
         {
-            "name": "Daniel Shen",
-            "img1": "/images/Team-Daniel-Shen-1.png",
-            "img2": "/images/Team-Daniel-Shen-2.png",
+            "firstname": "Daniel",
+            "lastname": "Shen",
+            "img1": "/images/Team-Daniel-1.png",
+            "img2": "/images/Team-Daniel-2.png",
             "title": "SENIOR DEVELOPER"
         },
         {
-            "name": "Joe Situ",
-            "img1": "/images/Team-Joe-Situ-1.png",
-            "img2": "/images/Team-Joe-Situ-2.png",
+            "firstname": "Joe",
+            "lastname": "Situ",
+            "img1": "/images/Team-Joe-1.png",
+            "img2": "/images/Team-Joe-2.png",
             "title": "FULL STACK DEVELOPER"
         },
         {
-            "name": "Cornelia Schulz",
-            "img1": "/images/Team-Cornelia-Schulz-1.png",
-            "img2": "/images/Team-Cornelia-Schulz-2.png",
+            "firstname": "Cornelia",
+            "lastname": "Schulz",
+            "img1": "/images/Team-Cornelia-1.png",
+            "img2": "/images/Team-Cornelia-2.png",
             "title": "FRONT-END DEVELOPER"
         }
     ]

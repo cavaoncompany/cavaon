@@ -26,11 +26,17 @@ collections:
           - label: "Title"
             name: "title"
             widget: "string"
-          - label: "Motto"
-            name: "motto"
+          - label: "Motto top line"
+            name: "mottoTop"
+            widget: "string"
+          - label: "Motto bottom line"
+            name: "mottoBottom"
             widget: "string"
           - label: "Subtitle"
             name: "subtitle"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
             widget: "string"
           - label: "Projects"
             name: "projects"
@@ -58,6 +64,7 @@ collections:
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
+              - {label: "Animation", name: "animation", widget: "string"}
       - label: "Case Studies"
         name: "casestudies"
         format: "json"
@@ -116,7 +123,8 @@ collections:
             name: "team"
             widget: "list"
             fields:
-              - {label: "Name", name: "name", widget: "string"}
+              - {label: "First name", name: "firstname", widget: "string"}
+              - {label: "Last name", name: "lastname", widget: "string"}
               - {label: "Image", name: "img1", widget: "image"}
               - {label: "Hover image", name: "img2", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}

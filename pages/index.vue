@@ -12,15 +12,19 @@ export default {
     Homepage
   },
   created() {
-    if(process.client) {
+    if (process.client) {
+      // eslint-disable-next-line
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
+        // eslint-disable-next-line
+        window.netlifyIdentity.on('init', user => {
           if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
+            // eslint-disable-next-line
+            window.netlifyIdentity.on('login', () => {
+              // eslint-disable-next-line
+              document.location.href = '/admin/'
+            })
           }
-        });
+        })
       }
     }
   }
