@@ -32,15 +32,15 @@ export default {
       metadata: metadata
     }
   },
-  head () {   
+  head() {
     return {
       title: `${this.metadata.thankYouTitle}`,
       meta: [
         {
-        hid: `description`,
-        name: 'description',
-        content: `${this.metadata.thankYouDescription}`
-      }
+          hid: `description`,
+          name: 'description',
+          content: `${this.metadata.thankYouDescription}`
+        }
       ]
     }
   }

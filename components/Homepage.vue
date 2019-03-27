@@ -229,7 +229,7 @@
               <ul id="grid" class="sortablePortfolio clearfix">
                 <!-- 1st thumb -->
                 <li class="folio-thumb mix category1">
-                  <a href="projects/project-slider.html" class="more_info" @click="updateProjectDetails('letsTravel')">
+                  <a href="#portfolio_item" class="more_info" @click="updateProjectDetails('letsTravel')">
                     <!-- Thumbnail -->
                     <img data-no-retina alt="odin" title="odin" src="/images/Case-studies-Lets-Travel.png" @click="updateProjectDetails('letsTravel')">
                     <!-- Info -->
@@ -244,7 +244,7 @@
 
                 <!-- 2nd thumb -->
                 <li class="folio-thumb mix category2">
-                  <a href="projects/project-slider.html" class="more_info" @click="updateProjectDetails('travelDream')">
+                  <a href="#portfolio_item" class="more_info" @click="updateProjectDetails('travelDream')">
                     <!-- Thumbnail -->
                     <img data-no-retina alt="odin" title="odin" src="/images/Case-Studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
                     <!-- Info -->

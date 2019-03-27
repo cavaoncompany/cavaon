@@ -35,9 +35,7 @@ module.exports = {
       { rel: 'apple-touch-startup-image', href: 'LaunchImage-Portrait@2x~ipad_1668x2224.png', sizes: '1668x2224' }     
     ],
     script: [
-      {
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
-      },
+      { src: '/javascripts/custom/jquery-2.2.4.min.js' },
       { src: '/bootstrap/js/bootstrap.min.js' },
       { src: '/less/less-1.5.0.min.js' },
       { src: '/javascripts/libs/common-min.js' },
@@ -98,6 +96,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    // analyze: true,
     plugins: [
       new webpack.ProvidePlugin({
         '$': 'jquery'

@@ -1379,7 +1379,7 @@ div#portfolio_thumbs ul li a:hover{
 }
 .team-stage > img{
 	padding: 0 40px;
-	border-radius:100%;
+	border-radius: 50%;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
