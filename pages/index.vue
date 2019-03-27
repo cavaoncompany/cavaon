@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Homepage />
+    <Homepage :showInstallMessage="showInstallMessage" />
   </div>
 </template>
 
@@ -14,7 +14,8 @@ export default {
   },
   data() {
     return {
-      metadata: metadata
+      metadata: metadata,
+      showInstallMessage: false
     }
   },
   created() {
@@ -32,6 +33,22 @@ export default {
           }
         })
       }
+
+       // Detects if device is on iOS 
+        const isIos = () => {
+        // eslint-disable-next-line
+        const userAgent = window.navigator.userAgent.toLowerCase()
+           return /iphone|ipad|ipod/.test( userAgent )
+        }
+        console.log(isIos())
+        // Detects if device is in standalone mode
+        // eslint-disable-next-line
+        const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone)
+
+        // Checks if should display install popup notification:
+        if (isIos() && !isInStandaloneMode()) {
+          this.showInstallMessage = true
+        }
     }
   },
   head () {   

@@ -317,3 +317,14 @@ collections:
           - label: "Start a project form meta description"
             name: "startaprojectformDescription"
             widget: "string"
+  - label: "Messages"
+    name: "messages"
+    files: 
+      - label: "Messages"
+        name: "messages"
+        format: "json"
+        file: "/static/content/messages.json"
+        fields:
+          - label: "Install web app on iOS"
+            name: "installWebApp"
+            widget: "string"

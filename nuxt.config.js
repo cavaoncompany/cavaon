@@ -35,6 +35,9 @@ module.exports = {
       { rel: 'apple-touch-startup-image', href: 'LaunchImage-Portrait@2x~ipad_1668x2224.png', sizes: '1668x2224' }     
     ],
     script: [
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+      },
       { src: '/bootstrap/js/bootstrap.min.js' },
       { src: '/less/less-1.5.0.min.js' },
       { src: '/javascripts/libs/common-min.js' },

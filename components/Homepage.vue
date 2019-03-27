@@ -1,6 +1,7 @@
 <template>
   <div>
     <HeaderMobile :projectFormOpen="projectFormOpen" />
+    <div id="iosMessage"></div>
     <!-- Master Wrap : starts -->
     <section id="mastwrap">
       <section id="intro" class="intro trans-dark">
@@ -486,6 +487,7 @@ import testimonials from '../static//content/testimonials.json'
 import services from '../static/content/services.json'
 import projects from '../static/content/projects.json'
 import promo from '../static/content/promo.json'
+import messages from '../static/content/messages.json'
 import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
@@ -508,6 +510,9 @@ export default {
     StartAProjectForm,
     Footer
   },
+  props: {
+    showInstallMessage: Boolean
+  },
   data() {
     return {
       caseStudies: caseStudies,
@@ -518,6 +523,7 @@ export default {
       testimonials: testimonials,
       services: services,
       projects: projects,
+      messages: messages,
       promo: promo,
       banner: banner,
       linesOfCode: 12538,
