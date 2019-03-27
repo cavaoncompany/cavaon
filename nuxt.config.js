@@ -20,7 +20,19 @@ module.exports = {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Raleway:400,300,700,900%7COpen+Sans:400,300,700,800%7CMontserrat:400,500,700'
-      }
+      },
+      { rel: 'apple-touch-icon', href: '/apple-icon-180x180.png', sizes: '180x180' },
+      { rel: 'apple-touch-icon', href: '/apple-icon-152x152.png', sizes: '152x152' },
+      { rel: 'apple-touch-icon', href: '/apple-icon-57x57.png', sizes: '57x57' },
+      { rel: 'apple-touch-icon', href: '/apple-icon-76x76.png', sizes: '76x76' },
+      { rel: 'apple-touch-icon', href: '/apple-icon-120x120.png', sizes: '120x120' },
+      { rel: 'apple-touch-startup-image', href: 'LaunchImage-568h@2x~iphone_640x1136.png', sizes: '640x1136' },
+      { rel: 'apple-touch-startup-image', href: 'LaunchImage-1242@3x~iphone6s-portrait_1242x2208.png', sizes: '1242x2208' },
+      { rel: 'apple-touch-startup-image', href: 'LaunchImage-1125@3x~iphoneX-portrait_1125x2436.png', sizes: '1125x2436' },
+      { rel: 'apple-touch-startup-image', href: 'LaunchImage-750@2x~iphone6-portrait_750x1334.png', sizes: '750x1334' },
+      { rel: 'apple-touch-startup-image', href: 'LaunchImage-Portrait@2x~ipad_1536x2048.png', sizes: '1536x2048' },
+      { rel: 'apple-touch-startup-image', href: ' LaunchImage-Portrait@2x~ipad_2048x2732.png', sizes: '2048x2732' },
+      { rel: 'apple-touch-startup-image', href: 'LaunchImage-Portrait@2x~ipad_1668x2224.png', sizes: '1668x2224' }     
     ],
     script: [
       {
@@ -28,7 +40,7 @@ module.exports = {
       },
       { src: '/bootstrap/js/bootstrap.min.js' },
       { src: '/less/less-1.5.0.min.js' },
-      { src: '/javascripts/libs/common.js' },
+      { src: '/javascripts/libs/common-min.js' },
       { src: '/javascripts/custom/main.js' },
       { src: '/javascripts/custom/custom-init.js' }
     ]
