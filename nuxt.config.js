@@ -19,7 +19,7 @@ module.exports = {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Raleway:400,300,700,900%7COpen+Sans:400,300,700,800%7CMontserrat:400,500,700'
+          'https://fonts.googleapis.com/css?family=Raleway:400,300,700%7COpen+Sans:400,300,700%7CMontserrat:400,500,700'
       },
       { rel: 'apple-touch-icon', href: '/apple-icon-180x180.png', sizes: '180x180' },
       { rel: 'apple-touch-icon', href: '/apple-icon-152x152.png', sizes: '152x152' },
@@ -35,9 +35,6 @@ module.exports = {
       { rel: 'apple-touch-startup-image', href: 'LaunchImage-Portrait@2x~ipad_1668x2224.png', sizes: '1668x2224' }     
     ],
     script: [
-      {
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
-      },
       { src: '/bootstrap/js/bootstrap.min.js' },
       { src: '/less/less-1.5.0.min.js' },
       { src: '/javascripts/libs/common-min.js' },
@@ -57,7 +54,6 @@ module.exports = {
   css: [
     '~/assets/bootstrap/css/bootstrap4.css',
     '~/assets/bootstrap/css/bootstrap.min.css',
-    '~/assets/fonts/fonts.css',
     '~/assets/stylesheets/animate.css',
     '~/assets/stylesheets/slimmenu.css',
     '~/assets/stylesheets/owl.carousel.css',
