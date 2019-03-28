@@ -1,10 +1,7 @@
 backend:
   name: git-gateway
   branch: test # Branch to update (optional; defaults to master)
-media_library:
-  name: uploadcare
-  config:
-    publicKey: 9b954d23a1102d31c3f8 # replace with your Public API key or use for testing env only
+media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
 collections: 
   - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
     name: "Homepage"
@@ -12,46 +9,322 @@ collections:
       - label: "Banner"
         name: "banner"
         format: "json"
-        file: "/content/banner.json"
+        file: "/static/content/banner.json"
         fields:
-          - label: "Test"
-            name: "test"
-            widget: "string"
+          - label: "Banners"
+            name: "banners"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Top line", name: "top", widget: "string"}
+              - {label: "Bottom line", name: "bottom", widget: "string"}
       - label: "Projects"
         name: "projects"
         format: "json"
-        file: "/content/projects.json"
+        file: "/static/content/projects.json"
         fields:
-          - label: "Test"
-            name: "test"
+          - label: "Title"
+            name: "title"
             widget: "string"
+          - label: "Motto top line"
+            name: "mottoTop"
+            widget: "string"
+          - label: "Motto bottom line"
+            name: "mottoBottom"
+            widget: "string"
+          - label: "Subtitle"
+            name: "subtitle"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
       - label: "Services"
         name: "services"
         format: "json"
-        file: "/content/services.json"
+        file: "/static/content/services.json"
         fields:
-          - label: "Test"
-            name: "test"
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Tagline"
+            name: "tagline"
+            widget: "string"
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Image title", name: "imageTitle", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "Animation", name: "animation", widget: "string"}
+      - label: "Promo Text"
+        name: "promo"
+        format: "json"
+        file: "/static/content/promo.json"
+        fields:
+          - label: "Promo text"
+            name: "promoText"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
             widget: "string"
       - label: "Case Studies"
         name: "casestudies"
         format: "json"
-        file: "/content/casestudies.json"
+        file: "/static/content/casestudies.json"
         fields:
-          - label: "Test"
-            name: "test"
+          - label: "Title"
+            name: "title"
             widget: "string"
+          - label: "Case Studies"
+            name: "caseStudies"
+            widget: "list"
+            fields:
+              - {label: "Project title", name: "projectTitle", widget: "string"}
+              - {label: "Subtitle", name: "subTitle", widget: "string"}
+              - {label: "Type of project", name: "typeOfProject", widget: "string"}
+              - {label: "Project image", name: "projectImage", widget: "image"}
+              - {label: "Top image", name: "topImage", widget: "image"}
+              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "Intro", name: "ingro", widget: "string"}
+              - {label: "Challenge 1", name: "challenge", widget: "string"}
+              - {label: "Challenge 2", name: "challenge1", widget: "string"}
+              - {label: "Centre image", name: "centreImage", widget: "image"}
+              - {label: "Result 1", name: "result1", widget: "string"}
+              - {label: "Result 2", name: "result2", widget: "string"}
+              - {label: "Font", name: "font", widget: "image"}
+              - {label: "Info 1", name: "info1", widget: "string"}
+              - {label: "Info 2", name: "info2", widget: "string"}
+              - {label: "Screenshot 1", name: "screenshot1", widget: "image"}
+              - {label: Screenshot 2", name: "screenshot2", widget: "image"}
+      - label: "Testimonials"
+        name: "testimonials"
+        format: "json"
+        file: "/static/content/testimonials.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Testimonial", name: "testimonial", widget: "string"}
+              - {label: "Name", name: "name", widget: string}
+              - {label: "Job title", name: "jobtitle", widget: "string"}
+              - {label: "Company", name: "company", widget: "string"}
       - label: "Team"
         name: "team"
         format: "json"
-        file: "/content/team.json"
-        fields: 
-          - label: Team
-            name: team
-            widget: list
+        file: "/static/content/team.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Team"
+            name: "team"
+            widget: "list"
             fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Img1, name: img1, widget: image,default: "/logo.png"}
-              - {label: Img2, name: img2, widget: string}
-              - {label: Title, name: title, widget: string}
-              
+              - {label: "First name", name: "firstname", widget: "string"}
+              - {label: "Last name", name: "lastname", widget: "string"}
+              - {label: "Image", name: "img1", widget: "image"}
+              - {label: "Hover image", name: "img2", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+      - label: "About"
+        name: "about"
+        format: "json"
+        file: "/static/content/about.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Desktop Section 1"
+            name: "desktopSection1"
+            widget: "string"
+          - label: "Desktop Section 2"
+            name: "desktopSection2"
+            widget: "string"
+          - label: "Desktop Section 3"
+            name: "desktopSection3"
+            widget: "string"
+          - label: "Desktop Section 4"
+            name: "desktopSection4"
+            widget: "string"
+          - label: "Mobile Section 1"
+            name: "mobileSection1"
+            widget: "string"
+          - label: "Mobile Section 2"
+            name: "mobileSection2"
+            widget: "string"
+          - label: "Mobile Section 3"
+            name: "mobileSection3"
+            widget: "string"
+      - label: "Contact"
+        name: "contact"
+        format: "json"
+        file: "/static/content/contact.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Telephone"
+            name: "telephone"
+            widget: "string"
+          - label: "Address line 1"
+            name: "addressLine1"
+            widget: "string"
+          - label: "Address line 2"
+            name: "addressLine2"
+            widget: "string"
+          - label: "Name placeholder"
+            name: "namePlaceholder"
+            widget: "string"
+          - label: "Email placeholder"
+            name: "emailPlaceholder"
+            widget: "string"
+          - label: "Message placeholder"
+            name: "messagePlaceholder"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+      - label: "Footer"
+        name: "footer"
+        format: "json"
+        file: "/static/content/footer.json"
+        fields:
+          - label: "Social Icons"
+            name: "socialIcons"
+            widget: "list"
+            fields:
+              - {label: Image, name: image, widget: image}
+              - {label: Description, name: description, widget: string}
+              - {label: Link, name: link, widget: string}
+          - label: "Copyright"
+            name: "copyright"
+            widget: "string"
+  - label: "Start a project form"
+    name: "startaprojectform"
+    files:
+      - label: "Start a project form"
+        name: "startaprojectform"
+        format: "json"
+        file: "/static/content/startaprojectform.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Instruction"
+            name: "instruction"
+            widget: "string"
+          - label: "Contact title"
+            name: "contactTitle"
+            widget: "string"
+          - label: "Company placeholder"
+            name: "companyPlaceholder"
+            widget: "string"
+          - label: "Email placeholder"
+            name: "emailPlaceholder"
+            widget: "string"
+          - label: "Name placeholder"
+            name: "namePlaceholder"
+            widget: "string"
+          - label: "Telephone placeholder"
+            name: "telPlaceholder"
+            widget: "string"
+          - label: "Website placeholder"
+            name: "websitePlaceholder"
+            widget: "string"
+          - label: "Project scope title"
+            name: "projectScopeTitle"
+            widget: "string"
+          - label: "Services to choose"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Icon", name: "icon", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+          - label: "Timeframe title"
+            name: "timeframeTitle"
+            widget: "string"
+          - label: "Timeframe"
+            name: "timeframe"
+            widget: "list"
+          - label: "Goal title"
+            name: "goalTitle"
+            widget: "string"
+          - label: "Goal placeholder"
+            name: "goalPlaceholder"
+            widget: "string"
+          - label: "How did you hear about us title"
+            name: "hearAboutUsTitle"
+            widget: "string"
+          - label: "How did you hear about us"
+            name: "hearAboutUs"
+            widget: "list"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+  - label: "Thank you" # Used in routes, e.g., /admin/collections/blog
+    name: "success"
+    files:
+      - label: "Thank you"
+        name: "success"
+        format: "json"
+        file: "/static/content/success.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Message"
+            name: "message"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+  - label: "Meta data"
+    name: "metadata"
+    files: 
+      - label: "Meta data"
+        name: "metadata"
+        format: "json"
+        file: "/static/content/metadata.json"
+        fields:
+          - label: "Homepage meta title"
+            name: "homepageTitle"
+            widget: "string"
+          - label: "Homepage meta description"
+            name: "homepageDescription"
+            widget: "string"
+          - label: "Thank you meta title"
+            name: "thankYouTitle"
+            widget: "string"
+          - label: "Thank you meta description"
+            name: "thankYouDescription"
+            widget: "string"
+          - label: "Start a project form meta title"
+            name: "startaprojectformTitle"
+            widget: "string"
+          - label: "Start a project form meta description"
+            name: "startaprojectformDescription"
+            widget: "string"
+  - label: "Messages"
+    name: "messages"
+    files: 
+      - label: "Messages"
+        name: "messages"
+        format: "json"
+        file: "/static/content/messages.json"
+        fields:
+          - label: "Install web app on iOS"
+            name: "installWebApp"
+            widget: "string"

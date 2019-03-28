@@ -1,27 +1,65 @@
 <template>
   <div>
-    <Homepage />
+    <Homepage :showInstallMessage="showInstallMessage" />
   </div>
 </template>
 
 <script>
+import metadata from '../static/content/metadata.json'
 import Homepage from '../components/Homepage.vue'
 
 export default {
   components: {
     Homepage
   },
+  data() {
+    return {
+      metadata: metadata,
+      showInstallMessage: false
+    }
+  },
   created() {
-    if(process.client) {
+    if (process.client) {
+      // eslint-disable-next-line
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
+        // eslint-disable-next-line
+        window.netlifyIdentity.on('init', user => {
           if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
+            // eslint-disable-next-line
+            window.netlifyIdentity.on('login', () => {
+              // eslint-disable-next-line
+              document.location.href = '/admin/'
+            })
           }
-        });
+        })
       }
+
+      // Detects if device is on iOS
+      const isIos = () => {
+      // eslint-disable-next-line
+      const userAgent = window.navigator.userAgent.toLowerCase()
+        return /iphone|ipad|ipod/.test(userAgent)
+      }
+      // Detects if device is in standalone mode
+      // eslint-disable-next-line
+      const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone)
+
+      // Checks if should display install popup notification:
+      if (isIos() && !isInStandaloneMode()) {
+        this.showInstallMessage = true
+      }
+    }
+  },
+  head() {
+    return {
+      title: `${this.metadata.homepageTitle}`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${this.metadata.homepageDescription}`
+        }
+      ]
     }
   }
 }

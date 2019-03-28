@@ -39,7 +39,7 @@
               <div class="row">
                 <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
                   <h3 class="dark">
-                    <span>Company Background</span>
+                    <span>{{ caseStudies.introTitle }}</span>
                   </h3>
                   <p class="dark">
                     {{ projectDetails.intro }}
@@ -47,14 +47,14 @@
                   <img :src="projectDetails.topImage" :alt="projectDetails.projectTitle">
                   <img :src="projectDetails.logo" :alt="projectDetails.projectTitle">
                   <h3 class="dark">
-                    <span>Challenges of your company</span>
+                    <span>{{ caseStudies.challengeTitle }}</span>
                   </h3>
                   <p class="dark">
                     {{ projectDetails.challenge }}
                   </p>
                   <img :src="projectDetails.centreImage" :alt="projectDetails.projectTitle">
                   <h3 class="dark">
-                    <span>How the system we built for you resolved your problems</span>
+                    <span>{{ caseStudies.resultTitle }}</span>
                   </h3>
                   <p class="dark">
                     {{ projectDetails.result1 }}
@@ -93,11 +93,18 @@
 </template>
 
 <script>
+import caseStudies from '../static/content/casestudies.json'
+
 export default {
   props: {
     projectDetails: {
       type: Object,
       required: true
+    }
+  },
+  data() {
+    return {
+      caseStudies: caseStudies
     }
   }
 }

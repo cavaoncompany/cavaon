@@ -7,15 +7,16 @@
         <div class="row">
           <article class="col-md-12 text-center">
             <ul class="foot-social">
-              <li><a href="https://www.facebook.com/Tomato-Technologies-1663772093657548/"><img data-no-retina alt="Cavaon on Facebook" title="Facebook" src="/images/social/03.png"></a></li>
-              <li><a href="https://www.linkedin.com/company/cavaon"><img data-no-retina alt="Cavaon on LinkedIn" title="LinkedIn" src="/images/social/05.png"></a></li>
+              <li v-for="(info, index) in footer.socialIcons" :key="index">
+                <a :href="info.link"><img data-no-retina :alt="info.description" :title="info.description" :src="info.image"></a>
+              </li>
             </ul>
           </article>
         </div>
         <div class="row">
           <article class="col-md-12 text-center foot-logos">
             <p class="credits">
-              &copy; 2019 Cavaon. All rights reserved
+              &copy; {{ footer.copyright }}
             </p>
           </article>
         </div>
@@ -27,7 +28,14 @@
 </template>
 
 <script>
+import footer from '../static/content/footer.json'
+
 export default {
+  data() {
+    return {
+      footer: footer
+    }
+  }
 }
 </script>
 

@@ -1,18 +1,14 @@
 <template>
   <div>
     <HeaderMobile :projectFormOpen="projectFormOpen" />
+    <div id="iosMessage"></div>
     <!-- Master Wrap : starts -->
     <section id="mastwrap">
       <section id="intro" class="intro trans-dark">
         <HeaderTop :projectFormOpen="projectFormOpen" />
         <div class="valign">
           <div class="hero-caps text-rotator text-center">
-            <!-- <h6 class="text-rotator minimal white">
-              We create, we create, we provide, we create, we create, we provide
-            </h6>
-            <h1 class="text-rotator white">
-              <span>branding, logos, marketing, platforms, web design, consultation</span>
-            </h1> -->
+            <!-- content generated in common.js -->
           </div>
         </div>
         <!-- valign:ends -->
@@ -30,14 +26,14 @@
               <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
                 <img class="avatar" alt="Cavaon Logo" title="Cavaon Logo" src="/images/Avatar.png">
                 <h3>
-                  A Whole New Way To<br>Run Your Business
+                  {{ projects.mottoTop }}<br>{{ projects.mottoBottom }}
                 </h3>
                 <!-- <div class="liner color-bg" /> -->
                 <h6 class="dark">
-                  Digital Business & Platform Solutions
+                  {{ projects.subtitle }}
                 </h6>
                 <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">Start a project</a>
+                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ projects.buttonText }}</a>
                 </div>
               </article>
             </div>
@@ -50,52 +46,10 @@
       <section id="thumb-carousel-wrap" class="inner-section thumb-carousel-wrap">
         <!-- thumb-carousel : starts -->
         <div id="thumb-carousel" class="owl-carousel">
-          <div class="item">
-            <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Ecommerce.jpg">
-              <img data-no-retina alt="Ecommerce" title="Ecommerce" class="img-responsive" src="/images/Project-Ecommerce.jpg">
-              <div class="thumb-title"><h5><span>Ecommerce</span></h5></div>
-            </a>
-          </div>
-          <div class="item">
-            <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Logo.jpg">
-              <img data-no-retina alt="Logo" title="Logo" class="img-responsive" src="/images/Project-Logo.jpg">
-              <div class="thumb-title"><h5><span>Logo</span></h5></div>
-            </a>
-          </div>
-          <div class="item">
-            <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Responsive.jpg">
-              <img data-no-retina alt="Responsive" title="Responsive" class="img-responsive" src="/images/Project-Responsive.jpg">
-              <div class="thumb-title"><h5><span>Responsive</span></h5></div>
-            </a>
-          </div>
-          <div class="item">
-            <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Branding.jpg">
-              <img data-no-retina alt="Branding" title="Branding" class="img-responsive" src="/images/Project-Branding.jpg">
-              <div class="thumb-title"><h5><span>Branding</span></h5></div>
-            </a>
-          </div>
-          <div class="item">
-            <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Management.jpg">
-              <img data-no-retina alt="Management" title="Management" class="img-responsive" src="/images/Project-Management.jpg">
-              <div class="thumb-title"><h5><span>Management</span></h5></div>
-            </a>
-          </div>
-          <div class="item">
-            <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Brochure.jpg">
-              <img data-no-retina alt="Brochure" title="Brochure" class="img-responsive" src="/images/Project-Brochure.jpg">
-              <div class="thumb-title"><h5><span>Brochure</span></h5></div>
-            </a>
-          </div>
-          <div class="item">
-            <a class="venobox" data-gall="thumb-gallery" href="/images/Project-Wireframe.jpg">
-              <img data-no-retina alt="Wireframe" title="Wireframe" class="img-responsive" src="/images/Project-Wireframe.jpg">
-              <div class="thumb-title"><h5><span>Wireframe</span></h5></div>
-            </a>
-          </div>
-          <div class="item">
-            <a class="venobox" data-gall="thumb-gallery" href="/images/Project-BusinessCard.jpg">
-              <img data-no-retina alt="Business Card" title="Business Card" class="img-responsive" src="/images/Project-BusinessCard.jpg">
-              <div class="thumb-title"><h5><span>Business Card</span></h5></div>
+          <div v-for="(project, index) in projects.projects" :key="index" class="item">
+            <a class="venobox" data-gall="thumb-gallery" :href="project.image">
+              <img data-no-retina :alt="project.title" :title="project.title" class="img-responsive" :src="project.image">
+              <div class="thumb-title"><h5><span>{{ project.title }}</span></h5></div>
             </a>
           </div>
         </div>
@@ -111,11 +65,11 @@
             <div class="row">
               <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
-                  <span>Our Services</span>
+                  <span>{{ services.title }}</span>
                 </h3>
                 <div class="liner color-bg" />
                 <p>
-                  Cavaon is a ditial business and platform solutions company from Sydney.
+                  {{ services.tagline }}
                 </p>
               </article>
             </div>
@@ -130,45 +84,10 @@
             <div class="row featuress-icon-wrap  featuress-icon-wrap-green">
               <article class="col-md-12">
                 <div class="row">
-                  <article id="features-01" class="features-icon current col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="1"><img data-no-retina alt="Logo" title="Logo" src="/images/icons/Services-Logo.png">
+                  <article v-for="(service, index) in services.services" :id="'features-' + index" :key="index" class="features-icon col-md-2 text-center animated" :data-fx="service.animation">
+                    <a class="customLink" :data-target="index + 1"><img data-no-retina :alt="service.imageTitle" :title="service.imageTitle" :src="service.image">
                       <h5 class="dark">
-                        Logo
-                      </h5>
-                    </a>
-                  </article>
-                  <article id="features-02" class="features-icon col-md-2 text-center animated" data-fx="fadeInUp">
-                    <a class="customLink" data-target="2"><img data-no-retina alt="Web Design" title="Web Design" src="/images/icons/Services-WebDesign.png">
-                      <h5 class="dark">
-                        Web Design
-                      </h5>
-                    </a>
-                  </article>
-                  <article id="features-03" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="3"><img data-no-retina alt="Development" title="Development" src="/images/icons/Services-Development.png">
-                      <h5 class="dark">
-                        Development
-                      </h5>
-                    </a>
-                  </article>
-                  <article id="features-04" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="4"><img alt="Consultation" title="Consultation" src="/images/icons/Services-Consultation.png">
-                      <h5 class="dark">
-                        Consultation
-                      </h5>
-                    </a>
-                  </article>
-                  <article id="features-05" class="features-icon col-md-2 text-center animated" data-fx="fadeInUp">
-                    <a class="customLink" data-target="5"><img alt="Ongoing Support" title="Ongoing Support" src="/images/icons/Services-OngoingSupport.png">
-                      <h5 class="dark">
-                        Ongoing Support
-                      </h5>
-                    </a>
-                  </article>
-                  <article id="features-06" class="features-icon col-md-2 text-center animated" data-fx="fadeInDown">
-                    <a class="customLink" data-target="6"><img alt="Marketing" title="Marketing" src="/images/icons/Services-Marketing.png">
-                      <h5 class="dark">
-                        Marketing
+                        {{ service.imageTitle }}
                       </h5>
                     </a>
                   </article>
@@ -185,56 +104,11 @@
           <!-- container : starts -->
           <section class="container">
             <ul id="features-slider">
-              <li class="features-details default" data-features-active-hover="features-01">
+              <li v-for="(service, index) in services.services" :key="index" class="features-details default" :data-features-active-hover="'features-' + index">
                 <article class="text-center">
-                  <h3>Logo & Branding</h3>
+                  <h3>{{ service.title }}</h3>
                   <p class="dark">
-                    Make a great impression on your customers with a good logo and branding
-                  </p>
-                </article>
-              </li>
-
-              <li class="features-details default" data-features-active-hover="features-02">
-                <article class="text-center">
-                  <h3>Amazing Web Design</h3>
-                  <p class="dark">
-                    Build a successful website beginning with good web design - From layout to customer experience.
-                  </p>
-                </article>
-              </li>
-
-              <li class="features-details default" data-features-active-hover="features-03">
-                <article class="text-center">
-                  <h3>Development</h3>
-                  <p class="dark">
-                    Build your travel platform with the ability to connect your customers via mobile or desktop.
-                  </p>
-                </article>
-              </li>
-
-              <li class="features-details default" data-features-active-hover="features-04">
-                <article class="text-center">
-                  <h3>Consultation</h3>
-                  <p class="dark">
-                    We give you a hand brainstorming for ideas and overcoming business challenges. Transform them into a digital business any way you want.
-                  </p>
-                </article>
-              </li>
-
-              <li class="features-details default" data-features-active-hover="features-05">
-                <article class="text-center">
-                  <h3>Ongoing Support</h3>
-                  <p class="dark">
-                    You are not alone. We are here to coniously support all our clients for growth and the future of their business.
-                  </p>
-                </article>
-              </li>
-
-              <li class="features-details default" data-features-active-hover="features-06">
-                <article class="text-center">
-                  <h3>Marketing</h3>
-                  <p class="dark">
-                    Tell the world you are here to provide them with products and services. Digital marketing is essential to get traffic to your website.
+                    {{ service.description }}
                   </p>
                 </article>
               </li>
@@ -263,9 +137,9 @@
                   :autoplay="false"
                   :duration="3000"
                 />
-                <h2><span class="white">Lines of code that we've written so far</span></h2>
+                <h2><span class="white">{{ promo.promoText }}</span></h2>
                 <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">Get a Quote</a>
+                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ promo.buttonText }}</a>
                 </div>
               </article>
             </div>
@@ -313,7 +187,7 @@
             <div class="row">
               <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
-                  <span>Case Studies</span>
+                  <span>{{ caseStudies.title }}</span>
                 </h3>
                 <div class="liner color-bg" />
               </article>
@@ -355,7 +229,7 @@
               <ul id="grid" class="sortablePortfolio clearfix">
                 <!-- 1st thumb -->
                 <li class="folio-thumb mix category1">
-                  <a href="projects/project-slider.html" class="more_info" @click="updateProjectDetails('letsTravel')">
+                  <a href="#portfolio_item" class="more_info" @click="updateProjectDetails('letsTravel')">
                     <!-- Thumbnail -->
                     <img data-no-retina alt="odin" title="odin" src="/images/Case-studies-Lets-Travel.png" @click="updateProjectDetails('letsTravel')">
                     <!-- Info -->
@@ -370,7 +244,7 @@
 
                 <!-- 2nd thumb -->
                 <li class="folio-thumb mix category2">
-                  <a href="projects/project-slider.html" class="more_info" @click="updateProjectDetails('travelDream')">
+                  <a href="#portfolio_item" class="more_info" @click="updateProjectDetails('travelDream')">
                     <!-- Thumbnail -->
                     <img data-no-retina alt="odin" title="odin" src="/images/Case-Studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
                     <!-- Info -->
@@ -400,7 +274,7 @@
             <div class="row">
               <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
-                  <span>Testimonials</span>
+                  <span>{{ testimonials.title }}</span>
                 </h3>
               </article>
             </div>
@@ -413,23 +287,14 @@
           <!-- <div id="testimonial-carousel" class="testimonial-carousel owl-carousel"> -->
           <div class="container">
             <div class="testimonial-wrapper">
-              <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-right">
+              <div v-for="(testimonial, index) in testimonials.testimonials" :key="index" class="item stats-carousel-item testimonial-wrap testimonial-wrap-right">
                 <h3 class="main-caps">
-                  Always quick to understand requirements and outcomes
+                  {{ testimonial.title }}
                 </h3>
                 <h6 class="dark">
-                  "Cavaon provides us peace of mind, daily IT support, maintenance and consulting. With several years of experience in Australia's travel industry, every time we request new functionalities or upgrades to the system, they understood the requirements quickly and outcomes were always satisfying."
+                  {{ testimonial.testimonial }}
                 </h6>
-                <p><span class="testimonial-name">Charles</span><br><span><i>Founder and Managing Director<br>Let's Travel</i></span></p>
-              </div>
-              <div class="item stats-carousel-item testimonial-wrap testimonial-wrap-left">
-                <h3 class="main-caps">
-                  Much quicker than other providers
-                </h3>
-                <h6 class="dark">
-                  "Working with Cavaon and the team has enabled us to get to market much quicker than with other providers. Their deep understanding of the travel industry is obvious and really shows in their work."
-                </h6>
-                <p><span class="testimonial-name">Paul Mercuri</span><br><span><i>Founder and Managing Director<br>Travel Dream</i></span></p>
+                <p><span class="testimonial-name">{{ testimonial.name }}</span><br><span><i>{{ testimonial.jobtitle }}<br>{{ testimonial.company }}</i></span></p>
               </div>
             </div>
           </div>
@@ -447,7 +312,7 @@
             <div class="row">
               <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInDown">
                 <h3 class="dark">
-                  <span>The Team</span>
+                  <span>{{ team.title }}</span>
                 </h3>
                 <div class="liner color-bg" />
                 <!-- <p class="grey">
@@ -464,177 +329,28 @@
           <div class="container">
             <div class="row">
               <!-- item:starts -->
-              <article class="col-md-3 text-left">
+              <article v-for="(member, index) in team.team" :key="index" class="col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
                   <img
+                    :id="member.firstname"
                     data-no-retina
-                    alt="John Ho"
-                    title="John Ho"
+                    :alt="member.firstname + ' ' + member.lastname"
+                    :title="member.firstname + ' ' + member.lastname"
                     class="img-responsive"
-                    :src="john"
-                    @mouseover="teamMouseOver('john')"
-                    @mouseleave="teamMouseOver('john')"
+                    :src="member.img1"
+                    @mouseover="teamMouseOver(member.firstname, member.img2)"
+                    @mouseleave="teamMouseOver(member.firstname, member.img1)"
                   >
                   <h3 class="dark team-desktop">
-                    John<br>Ho
+                    {{ member.firstname }}<br>{{ member.lastname }}
                   </h3>
                   <h3 class="team-mobile">
-                    John Ho
+                    {{ member.firstname }} {{ member.lastname }}
                   </h3>
                   <h6>
-                    <span>Co-founder & Managing Director</span>
+                    <span>{{ member.title }}</span>
                   </h6>
                 </div>
-              </article>
-              <!-- item:ends -->
-              <!-- item:starts -->
-              <article class="col-md-3 text-left">
-                <div class="item team-carousel-item team-stage">
-                  <img
-                    data-no-retina
-                    alt="Wayne Wen"
-                    title="Wayne Wen"
-                    class="img-responsive"
-                    :src="wayne"
-                    @mouseover="teamMouseOver('wayne')"
-                    @mouseleave="teamMouseOver('wayne')"
-                  >
-                  <h3 class="dark">
-                    Wayne Wen
-                  </h3>
-                  <h6>
-                    <span>Co-founder & Chief System Architect</span>
-                  </h6>
-                </div>
-              </article>
-              <!-- item:ends -->
-              <!-- item:starts -->
-              <article class="col-md-3 text-left">
-                <div class="item team-carousel-item team-stage">
-                  <img
-                    data-no-retina
-                    alt="Ruby Zhang"
-                    title="Ruby Zhang"
-                    class="img-responsive"
-                    :src="ruby"
-                    @mouseover="teamMouseOver('ruby')"
-                    @mouseleave="teamMouseOver('ruby')"
-                  >
-                  <h3 class="dark">
-                    Ruby Zhang
-                  </h3>
-                  <h6>
-                    <span class="team-desktop">UX & UI<br>Designer</span>
-                    <span class="team-mobile">UX & UI Designer</span>
-                  </h6>
-                </div>
-              </article>
-              <!-- item:ends -->
-              <!-- item:starts -->
-              <article class="col-md-3 text-left">
-                <div class="item team-carousel-item team-stage">
-                  <img
-                    data-no-retina
-                    alt="Madeline Hui"
-                    title="Madeline Hui"
-                    class="img-responsive"
-                    :src="madeline"
-                    @mouseover="teamMouseOver('madeline')"
-                    @mouseleave="teamMouseOver('madeline')"
-                  >
-                  <h3 class="dark">
-                    Madeline Hui
-                  </h3>
-                  <h6>
-                    <span>Graphic & Digital Designer</span>
-                  </h6>
-                </div>
-              </article>
-              <!-- item:ends -->
-              <!-- item:starts -->
-              <article class="col-md-3 text-left">
-                <div class="item team-carousel-item team-stage">
-                  <img
-                    data-no-retina
-                    alt="Daniel Shen"
-                    title="Daniel Shen"
-                    class="img-responsive"
-                    :src="daniel"
-                    @mouseover="teamMouseOver('daniel')"
-                    @mouseleave="teamMouseOver('daniel')"
-                  >
-                  <h3 class="dark">
-                    Daniel Shen
-                  </h3>
-                  <h6 class="team-desktop">
-                    <span>Senior<br>Developer</span>
-                  </h6>
-                  <h6 class="team-mobile">
-                    Senior Developer
-                  </h6>
-                </div>
-              </article>
-              <!-- item:ends -->
-              <!-- item:starts -->
-              <article class="col-md-3 text-left">
-                <div class="item team-carousel-item team-stage">
-                  <img
-                    data-no-retina
-                    alt="Joe Situ"
-                    title="Joe Situ"
-                    class="img-responsive"
-                    :src="joe"
-                    @mouseover="teamMouseOver('joe')"
-                    @mouseleave="teamMouseOver('joe')"
-                  >
-                  <h3 class="dark team-desktop">
-                    Joe<br>Situ
-                  </h3>
-                  <h3 class="dark team-mobile">
-                    Joe Situ
-                  </h3>
-                  <h6>
-                    <span>Full Stack Developer</span>
-                  </h6>
-                </div>
-              </article>
-              <!-- item:ends -->
-              <!-- item:starts -->
-              <article class="col-md-3 text-left">
-                <div class="item team-carousel-item team-stage">
-                  <img
-                    data-no-retina
-                    alt="Cornelia Schulz"
-                    title="Cornelia Schulz"
-                    class="img-responsive"
-                    :src="cornelia"
-                    @mouseover="teamMouseOver('cornelia')"
-                    @mouseleave="teamMouseOver('cornelia')"
-                  >
-                  <h3 class="dark">
-                    Cornelia Schulz
-                  </h3>
-                  <h6 class="team-desktop">
-                    <span>Front-end<br>Developer</span>
-                  </h6>
-                  <h6 class="team-mobile">
-                    Front-end Developer
-                  </h6>
-                </div>
-                <!-- item:ends -->
-                <!-- item:starts -->
-                <!-- <article class="col-md-3 text-left">
-                  <div class="item team-carousel-item team-stage">
-                    <img data-no-retina alt="Team" title="Team" class="img-responsive" src="/images/Team.png">
-                    <h3 class="dark">
-                      Luis Heinz
-                    </h3>
-                    <h6>
-                      <span>Founder / Director</span>
-                    </h6>
-                  </div>
-                </article> -->
-              <!-- item:ends -->
               </article>
             </div>
           </div>
@@ -650,39 +366,36 @@
             <div class="row">
               <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center about-us-desktop">
                 <h3 class="white">
-                  <span>A little more about us</span>
+                  <span>{{ about.title }}</span>
                 </h3>
                 <div class="liner color-bg" />
                 <p class="white">
-                  We are a Sydney based digital business & platform solutions company specialised in building digital plans and products for clients who need help in reinventing their business model and move rapidly from ideas to plans which turn into competitive advantages.
+                  {{ about.desktopSection1 }}
                 </p>
                 <p class="white">
-                  With over 6 years experience of building digital platforms for international travel companies, Co-founders John & Wayne manage to have extensive insights of the travel industry and a team of developers with professional skills and experience to practice the most up to the minute digital building techniques.
+                  {{ about.desktopSection2 }}
                 </p>
                 <p class="white">
-                  The team have been very successful in building digital platforms for travel companies such as online booking systems, tour management systems and e-commerce travel platform. Moving forward, Cavaon is now became an integrated “one stop shop agency offering additional digital marketing, design, branding services.
+                  {{ about.desktopSection3 }}
                 </p>
                 <p class="white">
-                  We are a team of enthusiastic and motivated young developers who love to champion creative ideas and take down challenges. The core values of the Cavaon team are to be Professional, Passionate and Innovative.
+                  {{ about.desktopSection4 }}
                 </p>
               </article>
               <article class="col-md-12 about-us-mobile text-center">
                 <h3 class="white">
-                  <span>A little more about us</span>
+                  <span>{{ about.title }}</span>
                 </h3>
                 <div class="liner color-bg" />
                 <p class="white">
-                  We are a young, energetic, and motivated digital business and platform solutions company based in Sydney. We care about our customers and are focused on increasing your business value.
+                  {{ about.mobileSection1 }}
                 </p>
                 <p class="white vision">
-                  Our vision : Every business can change its success by turning digital.
+                  {{ about.mobileSection2 }}
                 </p>
                 <p class="white mission">
-                  Our mission : Helping businesses to find the perfect and most successful digital solution
+                  {{ about.mobileSection3 }}
                 </p>
-                <!-- <p class="white values">
-                  Our core values : Passionate, Professional, Innovative, Opportunity.
-                </p> -->
               </article>
             </div>
           </div>
@@ -693,14 +406,14 @@
           <div class="row">
             <div class="main-caps text-center col-md-12 col-lg-8 col-lg-offset-2">
               <h3 class="white">
-                <span>Say hello</span>
+                <span>{{ contact.title }}</span>
               </h3>
               <div class="liner color-bg" />
             </div>
             <div class="contact-info text-center col-md-12 col-lg-8 col-lg-offset-2">
-              <a href="tel:+61283797424" class="white contact-info-text">+61 2 8379 7424</a>
+              <a href="tel:+61283797424" class="white contact-info-text">{{ contact.telephone }}</a>
               <p class="white">
-                L1, 403 Elizabeth St.<br>Surry Hills NSW 2010
+                {{ contact.addressLine1 }}<br>{{ contact.addressLine2 }}
               </p>
             </div>
             <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
@@ -728,14 +441,14 @@
                   </p>
                   <article>
                     <label class="hidden" for="name">Name</label>
-                    <input id="name" type="text" placeholder="Your Name" name="name" size="100">
+                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" size="100">
                   </article>
                   <article>
                     <label class="hidden" for="email">Email</label>
                     <input
                       id="email"
                       type="email"
-                      placeholder="Your Email"
+                      :placeholder="contact.emailPlaceholder"
                       name="email"
                       size="30"
                       required
@@ -743,10 +456,10 @@
                   </article>
                   <article>
                     <label for="msg" class="hidden">Message</label>
-                    <textarea id="msg" placeholder="Your Message" name="message" cols="40" rows="3" />
+                    <textarea id="msg" :placeholder="contact.messagePlaceholder" name="message" cols="40" rows="3" />
                     <div class="btn-wrap  text-center">
                       <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
-                        Send Message
+                        {{ contact.buttonText }}
                       </button>
                     </div>
                   </article>
@@ -765,6 +478,16 @@
 
 <script>
 import countTo from 'vue-count-to'
+import banner from '../static/content/banner.json'
+import contact from '../static/content/contact.json'
+import caseStudies from '../static/content/casestudies.json'
+import about from '../static/content/about.json'
+import team from '../static/content/team.json'
+import testimonials from '../static//content/testimonials.json'
+import services from '../static/content/services.json'
+import projects from '../static/content/projects.json'
+import promo from '../static/content/promo.json'
+import messages from '../static/content/messages.json'
 import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
@@ -787,69 +510,23 @@ export default {
     StartAProjectForm,
     Footer
   },
+  props: {
+    showInstallMessage: Boolean
+  },
   data() {
-    const cs = [
-      {
-        projectTitle: 'Travel Dream',
-        typeOfProject: 'Web / Brand',
-        projectImage: 'images/Case-Studies-Travel-Dream.png',
-        topImage: 'images/Case-Studies-Travel-Dream1.png',
-        logo: 'images/Case-Studies-Travel-Dream2.png',
-        intro: 'TravelDream is an online Travel agent launched in August 2018 with a focus on domestic deals, international tours and cruises.',
-        challenge: 'To create a website with time and budget constraints, with the goal of increasing functional complexity over time.',
-        centreImage: 'images/Case-Studies-Travel-Dream3.png',
-        result1: 'It has enabled us to quickly add new products, transact and manage large volumes of orders.',
-        result2: 'It has also been able to scale with the team and continuing demands of the business.',
-        font: 'images/Case-Studies-Travel-Dream4.png',
-        info1: 'Working with Cavaon and the team has enabled us to get to market much quicker than with other providers.',
-        info2: 'Their deep understanding of the travel industry is obvious and really shows in their work.',
-        screenshot1: 'images/Case-Studies-Travel-Dream5.png',
-        screenshot2: ''
-      },
-      {
-        projectTitle: "Let's Travel",
-        typeOfProject: 'Web / Brand',
-        projectImage: 'images/Case-Studies-Lets-Travel.png',
-        topImage: 'images/Case-Studies-Lets-Travel1.png',
-        logo: 'images/Case-Studies-Lets-Travel2.png',
-        intro: "Let's Travel Pty Ltd was founded in Sydney in 2015, focusing on operating small group day tours, charter tours and providing transfer services in Sydney and Melbourne.",
-        challenge: 'The challenge was keeping up standards to handle daily operations, we were losing clients because of bad procedures. The company came to a point where future growth wasn\'t possible because of the existing technical infrastructure',
-        challenge1: 'Let’s Travel has finally got to a point with the software that they were using which was limiting their growth and a high level of manual labour was necessarey for data entry, issuing invoices and vouchers which in turn starting causing accuracy issues.',
-        centreImage: 'images/Case-Studies-Lets-Travel3.png',
-        result1: 'Cavaon tailor made an online booking system that dramatically improved the efficiency and accuracy and helped increase sales. Now travel agents make bookings directly through the system and cut out any manual data entry that produced errors and therefore increased customer satisfaction. Processes were streamlined and the multi step manual entry system was turned into a one click system, increasing staff efficiency and productivity.',
-        result2: 'The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which has a direct impact on sales.',
-        font: 'images/Case-Studies-Lets-Travel4.png',
-        info1: 'Since using the new booking system, sales increased by 62.7% over the last 12 months.',
-        info2: '',
-        screenshot1: 'images/Case-Studies-Lets-Travel5.png',
-        screenshot2: 'images/Case-Studies-Lets-Travel6.png'
-      }
-    ]
     return {
-      caseStudies: cs,
-      projectDetails: cs[0],
+      caseStudies: caseStudies,
+      projectDetails: caseStudies.caseStudies[0],
+      contact: contact,
+      about: about,
+      team: team,
+      testimonials: testimonials,
+      services: services,
+      projects: projects,
+      messages: messages,
+      promo: promo,
+      banner: banner,
       linesOfCode: 12538,
-      john: '/images/Team-John-1.png',
-      john1: '/images/Team-John-1.png',
-      john2: '/images/Team-John-2.png',
-      wayne: '/images/Team-Wayne-1.png',
-      wayne1: '/images/Team-Wayne-1.png',
-      wayne2: '/images/Team-Wayne-2.png',
-      ruby: '/images/Team-Ruby-1.png',
-      ruby1: '/images/Team-Ruby-1.png',
-      ruby2: '/images/Team-Ruby-2.png',
-      madeline: '/images/Team-Madeline-1.png',
-      madeline1: '/images/Team-Madeline-1.png',
-      madeline2: '/images/Team-Madeline-2.png',
-      daniel: '/images/Team-Daniel-1.png',
-      daniel1: '/images/Team-Daniel-1.png',
-      daniel2: '/images/Team-Daniel-2.png',
-      joe: '/images/Team-Joe-1.png',
-      joe1: '/images/Team-Joe-1.png',
-      joe2: '/images/Team-Joe-2.png',
-      cornelia: '/images/Team-Cornelia-1.png',
-      cornelia1: '/images/Team-Cornelia-1.png',
-      cornelia2: '/images/Team-Cornelia-2.png',
       windowWidth: 0,
       isMobile: false,
       startVal: 0,
@@ -860,7 +537,15 @@ export default {
     if (process.client) {
       // eslint-disable-next-line
       const backstretchScript = document.createElement('script')
-      backstretchScript.innerHTML = '$.backstretch(["/images/Banner-Branding.png", "/images/Banner-Logo.png", "/images/Banner-Marketing.png", "/images/Banner-Platform.png", "/images/Banner-WebDesign.png", "/images/Banner-Consultation.png"], {duration: 3000, fade: 750})'
+      let banners = ''
+      for (let i = 0; i < this.banner.banners.length; i++) {
+        if (i < this.banner.banners.length - 1) {
+          banners += '"' + this.banner.banners[i].image + '",'
+        } else {
+          banners += '"' + this.banner.banners[i].image + '"'
+        }
+      }
+      backstretchScript.innerHTML = '$.backstretch([' + banners + '], {duration: 3000, fade: 750})'
       // eslint-disable-next-line
       document.body.appendChild(backstretchScript)
       // eslint-disable-next-line
@@ -877,9 +562,9 @@ export default {
   methods: {
     updateProjectDetails: function (project) {
       if (project === 'travelDream') {
-        this.projectDetails = this.caseStudies[0]
+        this.projectDetails = this.caseStudies.caseStudies[0]
       } else if (project === 'letsTravel') {
-        this.projectDetails = this.caseStudies[1]
+        this.projectDetails = this.caseStudies.caseStudies[1]
       }
     },
     convertToMinutes: function (duration) {
@@ -888,36 +573,8 @@ export default {
     counterMouseOver: function () {
       this.$refs.codecounter.start()
     },
-    teamMouseOver: function (name) {
-      if (name === 'john') {
-        if (this.john === this.john1) {
-          this.john = this.john2
-        } else { this.john = this.john1 }
-      } else if (name === 'wayne') {
-        if (this.wayne === this.wayne1) {
-          this.wayne = this.wayne2
-        } else { this.wayne = this.wayne1 }
-      } else if (name === 'ruby') {
-        if (this.ruby === this.ruby1) {
-          this.ruby = this.ruby2
-        } else { this.ruby = this.ruby1 }
-      } else if (name === 'madeline') {
-        if (this.madeline === this.madeline1) {
-          this.madeline = this.madeline2
-        } else { this.madeline = this.madeline1 }
-      } else if (name === 'daniel') {
-        if (this.daniel === this.daniel1) {
-          this.daniel = this.daniel2
-        } else { this.daniel = this.daniel1 }
-      } else if (name === 'joe') {
-        if (this.joe === this.joe1) {
-          this.joe = this.joe2
-        } else { this.joe = this.joe1 }
-      } else if (name === 'cornelia') {
-        if (this.cornelia === this.cornelia1) {
-          this.cornelia = this.cornelia2
-        } else { this.cornelia = this.cornelia1 }
-      }
+    teamMouseOver: function (name, image) {
+      document.getElementById(name).src = image
     },
     openStartAProjectForm: function () {
       this.projectFormOpen = true
