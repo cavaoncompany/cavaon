@@ -67,19 +67,19 @@ $(function ($) {
     })
 
     // Text Ticker
-    $(window).load(function () {
-      $('.text-rotator').each(function () {
-        $(this).empty()
-        $(this).html('<div class="rotator-wrap"></div>')
-        const this_item = $(this).children('.rotator-wrap')
-        $.getJSON('../content/banner.json', function (result) {
-          const text_rotator_content_array = result.banners.map(function (banner) {
-            return banner
-          })
-          const item_size = text_rotator_content_array.length
-          nova_text_rotator(text_rotator_content_array, this_item, item_size, 0)
-        })        
-      })
+    // $(window).load(function () {
+    //   $('.text-rotator').each(function () {
+    //     $(this).empty()
+    //     $(this).html('<div class="rotator-wrap"></div>')
+    //     const this_item = $(this).children('.rotator-wrap')
+    //     $.getJSON('../content/banner.json', function (result) {
+    //       const text_rotator_content_array = result.banners.map(function (banner) {
+    //         return banner
+    //       })
+    //       const item_size = text_rotator_content_array.length
+    //       nova_text_rotator(text_rotator_content_array, this_item, item_size, 0)
+    //     })        
+    //   })
 
       function nova_text_rotator(item_array, this_item, item_size, my_index) {
         if (my_index >= item_size) {

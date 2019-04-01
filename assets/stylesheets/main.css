@@ -162,6 +162,14 @@ h1,h2,h3,h4,h5,h6{
   	-o-transform: translateY(-50%);
   	transform: translateY(-50%);
 }
+.valignBanner {
+	position: relative;
+  	top: 40%;
+  	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	-o-transform: translateY(-50%);
+  	transform: translateY(-50%);
+}
 .parallax{
   background-repeat: repeat-y;
   background-size: cover;
@@ -451,16 +459,14 @@ div#preloader {
 }
 .hero-caps h1{
 	font-family: 'Montserrat', sans-serif; font-weight:700;
-	text-transform: uppercase;
-	font-size: 100px;
-	line-height: 207px;
+	font-size: 64px;
+    line-height: 87px;
 }
 .hero-caps h6{
 	margin-top: 20px;
-	letter-spacing: 12px;
+	letter-spacing: 6px;
 	font-family: 'Raleway', sans-serif; font-weight:300;
-	text-transform: uppercase;
-	font-size: 20px;
+	font-size: 24px;
 	line-height: 30px;
 }
 .hero-caps h6.dark > span{
@@ -475,11 +481,11 @@ div#preloader {
 
 .hero-caps h6.minimal{
 	margin-top: 20px;
-	letter-spacing: 8px;
+	letter-spacing: 3px;
 	font-family: 'Montserrat', sans-serif; font-weight:700;
-	text-transform: uppercase;
-	font-size: 32px;
+	font-size: 24px;
 	line-height: 39px;
+	margin-bottom: 90px;
 }
 .hero-caps h6.minimal > span{
 	padding: 20px;
