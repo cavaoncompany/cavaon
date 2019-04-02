@@ -6,7 +6,7 @@
         <article class="col-md-2 text-left">
           <a href="#intro-header">
             <img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="/images/Logo-colour.png" @click="closeForm()">
-            </a>
+          </a>
         </article>
         <article class="col-md-10 text-right">
           <ul class="standard-nav standard-nav-dark-text visible-lg">

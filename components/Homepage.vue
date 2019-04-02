@@ -1,15 +1,20 @@
 <template>
   <div>
     <HeaderMobile :projectFormOpen="projectFormOpen" />
-    <div id="iosMessage"></div>
+    <div id="iosMessage" />
     <!-- Master Wrap : starts -->
     <section id="mastwrap">
       <section id="intro" class="intro">
         <HeaderTop :projectFormOpen="projectFormOpen" />
         <div class="valignBanner">
           <div class="hero-caps text-rotator text-center">
-            <h1 class="white"><span>{{ banner.titleTop }}</span><br>{{ banner.titleBottom }}</h1>
-            <h6 class="minimal white">{{ banner.subHeader }}</h6>
+            <h1 class="white">
+              <span>{{ banner.titleTop }}</span>
+              <br>{{ banner.titleBottom }}
+            </h1>
+            <h6 class="minimal white">
+              {{ banner.subHeader }}
+            </h6>
             <div class="welcome-button">
               <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ banner.buttonText }}</a>
             </div>
@@ -23,29 +28,7 @@
         </a>
       </section>
       <HeaderStandard :projectFormOpen="projectFormOpen" />
-      <section id="projects" class="page about white-bg">
-        <div class="container">
-          <div class="item about-carousel-item">
-            <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
-                <img class="avatar" alt="Cavaon Logo" title="Cavaon Logo" src="/images/Avatar.png">
-                <h3>
-                  {{ projects.mottoTop }}<br>{{ projects.mottoBottom }}
-                </h3>
-                <!-- <div class="liner color-bg" /> -->
-                <h6 class="dark">
-                  {{ projects.subtitle }}
-                </h6>
-                <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ projects.buttonText }}</a>
-                </div>
-              </article>
-            </div>
-          </div>
-          <!-- item:ends -->
-        </div>
-      </section>
-      <MobileProjects />
+      <Flowchart />
       <!-- inner-section : starts -->
       <section id="thumb-carousel-wrap" class="inner-section thumb-carousel-wrap">
         <!-- thumb-carousel : starts -->
@@ -437,10 +420,10 @@ import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
 import HeaderStandard from './HeaderStandard'
+import Flowchart from './Flowchart'
 import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
 // import MobileServices from './MobileServices'
-import MobileProjects from './MobileProjects'
 import StartAProjectForm from './StartAProjectForm'
 import Footer from './Footer'
 
@@ -449,11 +432,11 @@ export default {
     HeaderMobile,
     HeaderTop,
     HeaderStandard,
+    Flowchart,
     Services,
     ProjectWithSlider,
     // MobileServices,
     countTo,
-    MobileProjects,
     StartAProjectForm,
     Footer
   },
