@@ -118,6 +118,13 @@
             <article>
               <textarea id="projectMessage" :placeholder="startaprojectform.goalPlaceholder" name="message" cols="40" rows="4" />
             </article>
+            <input 
+              type="file"
+              id="brief"
+              name="brief"
+            >
+            <label for="brief"><i class="fa fa-upload"></i>Upload project brief</label>
+            <p>File size max: 5mb</p>
           </section>
           <section>
             <h3>
@@ -217,6 +224,8 @@ export default {
   }
   #start-a-project h2 {
     font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 500;
   }
   #start-a-project h3 {
     margin-bottom: 35px;
@@ -293,4 +302,28 @@ export default {
   #projectMessage {
     border-color: #E2E2E2;
   }
+  #brief {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  #brief + label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    background-color: transparent;
+    border: 1px solid #FFC716;
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px;
+}
+
+  #brief:focus + label,
+  #brief + label:hover {
+    background-color: #FFC716;
+    color: #FFF;
+}
 </style>
