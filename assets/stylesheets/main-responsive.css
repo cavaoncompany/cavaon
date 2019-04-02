@@ -86,7 +86,7 @@
 	.team-mobile {
 		display: none;
 	}
-	.service {
+	.form-service {
 		width: 31%;
 		padding: 20px;
 		margin: 8px;
@@ -167,7 +167,7 @@
 	#mobile-services {
 		display: none;
 	}
-	.service {
+	.form-service {
 		width: 31%;
 		padding: 20px;
 		margin: 8px;
@@ -456,7 +456,7 @@
 	.promo-article {
 		margin-top: 35%;
 	}
-	.service {
+	.form-service {
 		width: 46%;
 		padding: 5px;
 		margin: 5px;
@@ -1747,7 +1747,7 @@
 	    font-size: 18px;
 	    line-height: 25px;
 	}
-	.service {
+	.form-service {
 		width: 100%;
 	}
 	.action-text h1 > span {

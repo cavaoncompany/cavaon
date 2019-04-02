@@ -1585,17 +1585,17 @@ input:focus, textarea:focus {
 			transition: all .8s linear;
 }
 textarea {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid #656565 !important;
-    border-radius: 0px !important;
-    box-shadow: none !important;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #656565;
+    border-radius: 0px;
+    box-shadow: none;
     color: #fff;
-    font-family: 'Montserrat', sans-serif !important; font-weight:300 !important;
-    font-size: 14px !important;
-    line-height: 21px !important;
+    font-family: 'Montserrat', sans-serif; font-weight:300;
+    font-size: 14px;
+    line-height: 21px;
     margin-top: 0;
-    padding: 10px 0 !important;
+    padding: 10px 0;
     resize: none;
     width: 100%;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */

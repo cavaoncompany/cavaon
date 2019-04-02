@@ -89,7 +89,7 @@
               {{ startaprojectform.projectScopeTitle }}
             </h3>
             <div class="project-services">
-              <div v-for="(service, index) in startaprojectform.services" :id="'project-form-' + service.title" :key="index" class="service text-center" @click="addProjectType('project-form-' + service.title, $event)">
+              <div v-for="(service, index) in startaprojectform.services" :id="'project-form-' + service.title" :key="index" class="form-service text-center" @click="addProjectType('project-form-' + service.title, $event)">
                 <input :id="'form-' + service.title" type="checkbox" name="Scope" :value="service.title">
                 <label :for="'form-' + service.title"><img :src="service.icon" :alt="service.title" :name="service.title" @click="addProjectType('project-form-' + service.title, $event)"></label>
                 <h4>{{ service.title }}</h4>
@@ -130,17 +130,17 @@
                 type="radio"
                 name="hearAboutUs"
                 :value="hear"
+                @change="checkIfOther(hear)"
               >
-              <label for="'h' + index">{{ hear }}</label><br>
+              <label :for="'h' + index">{{ hear }}</label><br>
             </div>
-            <label for="h5">Other</label><br>
             <input
               v-if="otherSelected"
               id="hearAboutUs"
               v-model="hearAboutUsOther"
               type="text"
               placeholder="Other"
-              name="hearAboutUs"
+              name="hearAboutUsOther"
               size="100"
             >
           </section>
@@ -191,6 +191,14 @@ export default {
         document.getElementById(service).classList.remove('projectDeselected')
         document.getElementById(service).classList.add('projectSelected')
       }
+    },
+    checkIfOther: function (value) {
+      if (value.toLowerCase() === "other") {
+        this.otherSelected = true
+      }
+      else {
+        this.otherSelected = false
+      }
     }
   }
 }
@@ -214,6 +222,7 @@ export default {
     margin-bottom: 35px;
     font-size: 18px;
     font-weight: 500;
+    text-align: left;
   }
   #start-a-project section {
     margin-top: 35px;
@@ -235,13 +244,13 @@ export default {
     display: flex;
     flex-wrap: wrap;
   }
-  .service {
-    border: 1px solid;
+  .form-service {
+    border: 1px solid #E2E2E2;
   }
-  .service:hover {
+  .form-service:hover {
     cursor: pointer;
   }
-  .service img {
+  .form-service img {
     margin-left: auto;
     margin-right: auto;
     width: 100px;
@@ -252,7 +261,7 @@ export default {
     width: 0;
     visibility: hidden;
   }
-  .service h4 {
+  .form-service h4 {
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -271,11 +280,17 @@ export default {
     content: " ";
     display:inline-block;
     vertical-align: baseline;
-    border:1px solid #777;
+    border:1px solid #E2E2E2;
     border-radius:50%;
     margin-right: 10px;
   }
   input[type=radio]:checked + label:before {
     background:#FFC716;
+  }
+  #hearAboutUs {
+    border-color: #E2E2E2;
+  }
+  #projectMessage {
+    border-color: #E2E2E2;
   }
 </style>
