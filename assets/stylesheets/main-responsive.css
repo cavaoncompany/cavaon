@@ -139,6 +139,9 @@
 	#flowchart {
 		display: block;
 	}
+	.hero-caps h6.minimal {
+	    margin-bottom: 90px;
+	}
 }
 
 /*Large Widescreen Monitors*/
@@ -222,6 +225,9 @@
 	}
 	#flowchart {
 		display: block;
+	}
+	.hero-caps h6.minimal {
+	    margin-bottom: 90px;
 	}
 }
 
@@ -380,6 +386,7 @@
 	    font-size: 64px;
 		line-height: 87px;
 		letter-spacing: 16px;
+		margin-top: 200px;
 	}
 	.hero-caps h6 {
 	    font-size: 24px;
@@ -509,7 +516,8 @@
 	}
 	.hero-caps h1 {
 	    font-size: 64px;
-	    line-height: 87px;
+		line-height: 87px;
+		margin-top: 200px;
 	}
 	.hero-caps h6 {
 	    font-size: 36px;
@@ -668,6 +676,7 @@
 	    font-size: 25px;
 		line-height: 38px;
 		letter-spacing: 7px;
+		margin-top: 200px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -808,6 +817,7 @@
 	    font-size: 25px;
 		line-height: 38px;
 		letter-spacing: 7px;
+		margin-top: 200px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -948,10 +958,14 @@
 	    font-size: 25px;
 		line-height: 38px;
 		letter-spacing: 7px;
+		margin-top: 190px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
 		line-height: 33px;
+	}
+	.hero-caps h6.minimal {
+		margin-bottom: 0;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -1088,6 +1102,7 @@
 	    font-size: 25px;
 		line-height: 38px;
 		letter-spacing: 7px;
+		margin-top: 190px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -1231,6 +1246,7 @@
 	    font-size: 25px;
 		line-height: 38px;
 		letter-spacing: 7px;
+		margin-top: 190px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -1378,7 +1394,7 @@
 	    font-size: 25px;
 		line-height: 38px;
 		letter-spacing: 7px;
-		margin-top: 40px;
+		margin-top: 190px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -1402,7 +1418,8 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 16px;
-	    line-height: 23px;
+		line-height: 23px;
+		margin-bottom: 0;
 	}
 	.hero-caps h4 > span {
 	    font-size: 18px;
