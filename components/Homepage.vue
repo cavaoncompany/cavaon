@@ -1,123 +1,56 @@
 <template>
   <div>
     <HeaderMobile :projectFormOpen="projectFormOpen" />
-    <div id="iosMessage"></div>
+    <div id="iosMessage" />
     <!-- Master Wrap : starts -->
     <section id="mastwrap">
-      <section id="intro" class="intro trans-dark">
+      <section id="intro" class="intro">
         <HeaderTop :projectFormOpen="projectFormOpen" />
-        <div class="valign">
+        <div class="valignBanner">
           <div class="hero-caps text-rotator text-center">
-            <!-- content generated in common.js -->
+            <h1 class="white">
+              <span>{{ banner.titleTop }}</span>
+              <br>{{ banner.titleBottom }}
+            </h1>
+            <h6 class="minimal white">
+              <span>{{ banner.subHeader }}</span>
+            </h6>
+            <div class="welcome-button">
+              <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ banner.buttonText }}</a>
+            </div>
           </div>
         </div>
-        <!-- valign:ends -->
-        <a class="scroll" href="#projects" aria-label="Scroll to Projects">
+        <!-- valignBanner:ends -->
+        <a class="scroll" href="#flowchart" aria-label="Scroll to Projects">
           <div class="mouse-icon white hidden-xs" style="opacity: 1;">
             <div class="wheel" />
           </div>
         </a>
       </section>
+      <svg
+        version="1.0"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1281.000000 272.000000"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <g
+          transform="translate(0.000000,272.000000) scale(0.100000,-0.100000)"
+          fill="#582C87"
+          stroke="none"
+        >
+          <path
+            d="M10 1374 c0 -1277 1 -1345 18 -1340 930 291 1857 460 3092 565 736
+            63 1316 86 2530 101 956 12 1423 30 2060 81 2201 174 3760 608 4590 1276 116
+            93 255 235 334 341 66 87 166 271 166 305 0 16 -311 17 -6395 17 l-6395 0 0
+            -1346z"
+          />
+        </g>
+      </svg>
       <HeaderStandard :projectFormOpen="projectFormOpen" />
-      <section id="projects" class="page about white-bg">
-        <div class="container">
-          <div class="item about-carousel-item">
-            <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
-                <img class="avatar" alt="Cavaon Logo" title="Cavaon Logo" src="/images/Avatar.png">
-                <h3>
-                  {{ projects.mottoTop }}<br>{{ projects.mottoBottom }}
-                </h3>
-                <!-- <div class="liner color-bg" /> -->
-                <h6 class="dark">
-                  {{ projects.subtitle }}
-                </h6>
-                <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ projects.buttonText }}</a>
-                </div>
-              </article>
-            </div>
-          </div>
-          <!-- item:ends -->
-        </div>
-      </section>
-      <MobileProjects />
-      <!-- inner-section : starts -->
-      <section id="thumb-carousel-wrap" class="inner-section thumb-carousel-wrap">
-        <!-- thumb-carousel : starts -->
-        <div id="thumb-carousel" class="owl-carousel">
-          <div v-for="(project, index) in projects.projects" :key="index" class="item">
-            <a class="venobox" data-gall="thumb-gallery" :href="project.image">
-              <img data-no-retina :alt="project.title" :title="project.title" class="img-responsive" :src="project.image">
-              <div class="thumb-title"><h5><span>{{ project.title }}</span></h5></div>
-            </a>
-          </div>
-        </div>
-        <!-- thumb-carousel : ends -->
-      </section>
-      <!-- inner-section : ends -->
-
+      <Flowchart />
+      <FlowchartMobile />
       <!-- page-section : starts -->
-      <section id="services" class="page page-section services white-bg">
-        <!-- inner-section:starts -->
-        <section class="inner-section promo-text">
-          <div class="container">
-            <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
-                <h3 class="dark">
-                  <span>{{ services.title }}</span>
-                </h3>
-                <div class="liner color-bg" />
-                <p>
-                  {{ services.tagline }}
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-        <!-- inner-section:ends -->
-        <MobileServices />
-        <!-- inner-section : starts -->
-        <section class="inner-section add-top-half pad-top-half pad-bottom-half silver-bg featuress-expansion">
-          <!-- container : starts -->
-          <section class="container">
-            <div class="row featuress-icon-wrap  featuress-icon-wrap-green">
-              <article class="col-md-12">
-                <div class="row">
-                  <article v-for="(service, index) in services.services" :id="'features-' + index" :key="index" class="features-icon col-md-2 text-center animated" :data-fx="service.animation">
-                    <a class="customLink" :data-target="index + 1"><img data-no-retina :alt="service.imageTitle" :title="service.imageTitle" :src="service.image">
-                      <h5 class="dark">
-                        {{ service.imageTitle }}
-                      </h5>
-                    </a>
-                  </article>
-                </div>
-              </article>
-            </div>
-          </section>
-        <!-- container : ends -->
-        </section>
-        <!-- inner-section : ends -->
-
-        <!-- inner-section : starts -->
-        <section class="inner-section featuress-expansion">
-          <!-- container : starts -->
-          <section class="container">
-            <ul id="features-slider">
-              <li v-for="(service, index) in services.services" :key="index" class="features-details default" :data-features-active-hover="'features-' + index">
-                <article class="text-center">
-                  <h3>{{ service.title }}</h3>
-                  <p class="dark">
-                    {{ service.description }}
-                  </p>
-                </article>
-              </li>
-            </ul>
-          </section>
-        <!-- container : ends -->
-        </section>
-        <!-- inner-section : ends -->
-      </section>
+      <Services />
       <!-- page-section : ends -->
 
       <div class="promo-section intermediate-section action-text parallax" @mouseenter.once="counterMouseOver()">
@@ -492,9 +425,11 @@ import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
 import HeaderStandard from './HeaderStandard'
+import Flowchart from './Flowchart'
+import FlowchartMobile from './FlowchartMobile'
+import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
-import MobileServices from './MobileServices'
-import MobileProjects from './MobileProjects'
+// import MobileServices from './MobileServices'
 import StartAProjectForm from './StartAProjectForm'
 import Footer from './Footer'
 
@@ -503,10 +438,12 @@ export default {
     HeaderMobile,
     HeaderTop,
     HeaderStandard,
+    Flowchart,
+    FlowchartMobile,
+    Services,
     ProjectWithSlider,
-    MobileServices,
+    // MobileServices,
     countTo,
-    MobileProjects,
     StartAProjectForm,
     Footer
   },
@@ -534,24 +471,24 @@ export default {
     }
   },
   created() {
-    if (process.client) {
-      // eslint-disable-next-line
-      const backstretchScript = document.createElement('script')
-      let banners = ''
-      for (let i = 0; i < this.banner.banners.length; i++) {
-        if (i < this.banner.banners.length - 1) {
-          banners += '"' + this.banner.banners[i].image + '",'
-        } else {
-          banners += '"' + this.banner.banners[i].image + '"'
-        }
-      }
-      backstretchScript.innerHTML = '$.backstretch([' + banners + '], {duration: 3000, fade: 750})'
-      // eslint-disable-next-line
-      document.body.appendChild(backstretchScript)
-      // eslint-disable-next-line
-      this.windowWidth = window.innerWidth || document.documentElement.clientWidth
-      if (this.windowWidth < 576) { this.isMobile = true }
-    }
+    // if (process.client) {
+    //   // eslint-disable-next-line
+    //   const backstretchScript = document.createElement('script')
+    //   let banners = ''
+    //   for (let i = 0; i < this.banner.banners.length; i++) {
+    //     if (i < this.banner.banners.length - 1) {
+    //       banners += '"' + this.banner.banners[i].image + '",'
+    //     } else {
+    //       banners += '"' + this.banner.banners[i].image + '"'
+    //     }
+    //   }
+    //   backstretchScript.innerHTML = '$.backstretch([' + banners + '], {duration: 3000, fade: 750})'
+    //   // eslint-disable-next-line
+    //   document.body.appendChild(backstretchScript)
+    //   // eslint-disable-next-line
+    //   this.windowWidth = window.innerWidth || document.documentElement.clientWidth
+    //   if (this.windowWidth < 576) { this.isMobile = true }
+    // }
     EventBus.$on('closeStartAProjectForm', (formOpen) => {
       this.closeStartAProjectForm()
     })
@@ -649,5 +586,13 @@ export default {
   }
   .featuress-expansion .container {
     padding-top: 50px;
+  }
+  svg {
+    margin-top: -2px;
+    width: 100%;
+    margin-left: -2px;
+  }
+  #intro {
+    background-color: #582C87;
   }
 </style>

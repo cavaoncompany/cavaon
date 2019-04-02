@@ -38,3 +38,8 @@
 .menu-collapser {
     background-image: url('/images/Logo-colour.png');
 }
+
+.intro {
+	/* background-image: url('/images/top-banner.png'); */
+	background-size: cover;
+}
