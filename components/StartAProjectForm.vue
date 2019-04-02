@@ -123,8 +123,8 @@
               type="file"
               name="brief"
             >
-            <label for="brief"><i class="fa fa-upload" />Upload project brief</label>
-            <p>File size max: 5mb</p>
+            <label for="brief"><i class="fa fa-upload" />{{ startaprojectform.goalUploadButtonText }}</label>
+            <p>{{ startaprojectform.goalMaxLength }}</p>
           </section>
           <section>
             <h3>
