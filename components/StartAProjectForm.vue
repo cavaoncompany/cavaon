@@ -118,12 +118,12 @@
             <article>
               <textarea id="projectMessage" :placeholder="startaprojectform.goalPlaceholder" name="message" cols="40" rows="4" />
             </article>
-            <input 
-              type="file"
+            <input
               id="brief"
+              type="file"
               name="brief"
             >
-            <label for="brief"><i class="fa fa-upload"></i>Upload project brief</label>
+            <label for="brief"><i class="fa fa-upload" />Upload project brief</label>
             <p>File size max: 5mb</p>
           </section>
           <section>
@@ -200,10 +200,9 @@ export default {
       }
     },
     checkIfOther: function (value) {
-      if (value.toLowerCase() === "other") {
+      if (value.toLowerCase() === 'other') {
         this.otherSelected = true
-      }
-      else {
+      } else {
         this.otherSelected = false
       }
     }
