@@ -62,66 +62,7 @@
       <!-- inner-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="services" class="page page-section services white-bg">
-        <!-- inner-section:starts -->
-        <section class="inner-section promo-text">
-          <div class="container">
-            <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
-                <h3 class="dark">
-                  <span>{{ services.title }}</span>
-                </h3>
-                <div class="liner color-bg" />
-                <p>
-                  {{ services.tagline }}
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-        <!-- inner-section:ends -->
-        <MobileServices />
-        <!-- inner-section : starts -->
-        <section class="inner-section add-top-half pad-top-half pad-bottom-half silver-bg featuress-expansion">
-          <!-- container : starts -->
-          <section class="container">
-            <div class="row featuress-icon-wrap  featuress-icon-wrap-green">
-              <article class="col-md-12">
-                <div class="row">
-                  <article v-for="(service, index) in services.services" :id="'features-' + index" :key="index" class="features-icon col-md-2 text-center animated" :data-fx="service.animation">
-                    <a class="customLink" :data-target="index + 1"><img data-no-retina :alt="service.imageTitle" :title="service.imageTitle" :src="service.image">
-                      <h5 class="dark">
-                        {{ service.imageTitle }}
-                      </h5>
-                    </a>
-                  </article>
-                </div>
-              </article>
-            </div>
-          </section>
-        <!-- container : ends -->
-        </section>
-        <!-- inner-section : ends -->
-
-        <!-- inner-section : starts -->
-        <section class="inner-section featuress-expansion">
-          <!-- container : starts -->
-          <section class="container">
-            <ul id="features-slider">
-              <li v-for="(service, index) in services.services" :key="index" class="features-details default" :data-features-active-hover="'features-' + index">
-                <article class="text-center">
-                  <h3>{{ service.title }}</h3>
-                  <p class="dark">
-                    {{ service.description }}
-                  </p>
-                </article>
-              </li>
-            </ul>
-          </section>
-        <!-- container : ends -->
-        </section>
-        <!-- inner-section : ends -->
-      </section>
+      <Services />
       <!-- page-section : ends -->
 
       <div class="promo-section intermediate-section action-text parallax" @mouseenter.once="counterMouseOver()">
@@ -496,8 +437,9 @@ import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
 import HeaderStandard from './HeaderStandard'
+import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
-import MobileServices from './MobileServices'
+// import MobileServices from './MobileServices'
 import MobileProjects from './MobileProjects'
 import StartAProjectForm from './StartAProjectForm'
 import Footer from './Footer'
@@ -507,8 +449,9 @@ export default {
     HeaderMobile,
     HeaderTop,
     HeaderStandard,
+    Services,
     ProjectWithSlider,
-    MobileServices,
+    // MobileServices,
     countTo,
     MobileProjects,
     StartAProjectForm,
