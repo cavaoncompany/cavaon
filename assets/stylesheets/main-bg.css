@@ -40,7 +40,6 @@
 }
 
 .intro {
-	background-image: url('/images/top-banner.png');
+	/* background-image: url('/images/top-banner.png'); */
 	background-size: cover;
-	height: 827px;
 }

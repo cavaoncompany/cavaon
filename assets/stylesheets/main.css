@@ -458,7 +458,8 @@ div#preloader {
 .hero-caps h1{
 	font-family: 'Montserrat', sans-serif; font-weight:700;
 	font-size: 64px;
-    line-height: 87px;
+	line-height: 87px;
+	margin-top: 20%;
 }
 .hero-caps h6{
 	margin-top: 20px;
@@ -479,7 +480,6 @@ div#preloader {
 	letter-spacing: 3px;
 	font-family: 'Montserrat', sans-serif; font-weight:700;
 	line-height: 39px;
-	margin-bottom: 90px;
 	border: none;
 }
 .hero-caps h6.minimal > span{

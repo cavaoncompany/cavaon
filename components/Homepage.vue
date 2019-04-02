@@ -21,7 +21,7 @@
           </div>
         </div>
         <!-- valignBanner:ends -->
-        <a class="scroll" href="#projects" aria-label="Scroll to Projects">
+        <a class="scroll" href="#flowchart" aria-label="Scroll to Projects">
           <div class="mouse-icon white hidden-xs" style="opacity: 1;">
             <div class="wheel" />
           </div>
@@ -35,7 +35,7 @@
       >
         <g 
           transform="translate(0.000000,272.000000) scale(0.100000,-0.100000)"
-          fill="#633792"
+          fill="#582C87"
           stroke="none">
           <path
             d="M10 1374 c0 -1277 1 -1345 18 -1340 930 291 1857 460 3092 565 736
@@ -587,8 +587,11 @@ export default {
     padding-top: 50px;
   }
   svg {
-    margin-top: -35px;
+    margin-top: -2px;
     width: 101%;
     margin-left: -2px;
+  }
+  #intro {
+    background-color: #582C87;
   }
 </style>
