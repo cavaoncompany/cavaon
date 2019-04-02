@@ -10,11 +10,11 @@
         </article>
         <article class="col-md-10 text-right">
           <ul class="standard-nav standard-nav-dark-text visible-lg">
-            <li><a id="projects-linker" href="#projects" class="scroll" aria-label="Scroll to Projects" @click="closeForm()">Projects</a></li>
-            <li><a id="services-linker" href="#services" class="scroll" aria-label="Scroll to Services" @click="closeForm()">Services</a></li>
+            <li><a id="projects-linker" href="#flowchart" class="scroll" aria-label="Scroll to Projects" @click="closeForm()">Projects</a></li>
+            <!-- <li><a id="services-linker" href="#services" class="scroll" aria-label="Scroll to Services" @click="closeForm()">Services</a></li> -->
             <li><a id="caseStudies-linker" href="#caseStudies" class="scroll" aria-label="Scroll to Case Studies" @click="closeForm()">Case Studies</a></li>
-            <li><a id="testimonials-linker" href="#testimonials" class="scroll" aria-label="Scroll to Testimonials" @click="closeForm()">Testimonials</a></li>
-            <li><a id="team-container-linker" href="#team-container" class="scroll" aria-label="Scroll to Team" @click="closeForm()">Team</a></li>
+            <!-- <li><a id="testimonials-linker" href="#testimonials" class="scroll" aria-label="Scroll to Testimonials" @click="closeForm()">Testimonials</a></li>
+            <li><a id="team-container-linker" href="#team-container" class="scroll" aria-label="Scroll to Team" @click="closeForm()">Team</a></li> -->
             <li><a id="about-linker" href="#about" class="scroll" aria-label="Scroll to About" @click="closeForm()">About</a></li>
             <li><a id="contactForm-linker" href="#contactForm" class="scroll" aria-label="Scroll to Contact Form" @click="closeForm()">Contact</a></li>
           </ul>

@@ -24,6 +24,12 @@
 	.promo-section {
 		min-height: 750px
 	}
+	.service-card {
+		height: 300px;
+	}
+	.service-card-container {
+	    margin-top: 60px;
+	}
 }
 
 /*Projector Screens and Ver Large Monitors*/
@@ -36,6 +42,12 @@
 	}
 	.promo-section {
 		min-height: 750px
+	}
+	.service-card {
+		height: 300px;
+	}
+	.service-card-container {
+	    margin-top: 60px;
 	}
 }
 
@@ -115,6 +127,18 @@
 	.promo-article {
 		margin-top: 25%;
 	}
+	.service-card {
+		height: 300px;
+	}
+	.service-card-container {
+	    margin-top: 60px;
+	}
+	#flowchart-mobile {
+		display: none
+	}
+	#flowchart {
+		display: block;
+	}
 }
 
 /*Large Widescreen Monitors*/
@@ -185,6 +209,18 @@
 		display: none;
 	}
 	#thumb-carousel-wrap {
+		display: block;
+	}
+	.service-card {
+		height: 300px;
+	}
+	.service-card-container {
+	    margin-top: 60px;
+	}
+	#flowchart-mobile {
+		display: none
+	}
+	#flowchart {
 		display: block;
 	}
 }
@@ -336,7 +372,6 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 32px;
 	    line-height: 39px;
 	    padding: 0;
@@ -347,8 +382,8 @@
 		letter-spacing: 16px;
 	}
 	.hero-caps h6 {
-	    font-size: 36px;
-	    line-height: 43px;
+	    font-size: 24px;
+		line-height: 39px;
 	}
 	.hero-caps h5 {
 	    font-size: 28px;
@@ -468,7 +503,6 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 32px;
 	    line-height: 39px;
 	    padding: 0;
@@ -528,6 +562,12 @@
 	}
 	.testimonial-wrapper {
 		flex-direction: column;
+	}
+	#flowchart-mobile {
+		display: block
+	}
+	#flowchart {
+		display: none;
 	}
 }
 
@@ -620,18 +660,18 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 24px;
 	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 36px;
-	    line-height: 41px;
+	    font-size: 25px;
+		line-height: 38px;
+		letter-spacing: 7px;
 	}
 	.hero-caps h6 {
-	    font-size: 24px;
-	    line-height: 31px;
+		font-size: 20px;
+		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -760,18 +800,18 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 24px;
 	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 36px;
-	    line-height: 41px;
+	    font-size: 25px;
+		line-height: 38px;
+		letter-spacing: 7px;
 	}
 	.hero-caps h6 {
-	    font-size: 24px;
-	    line-height: 31px;
+		font-size: 20px;
+		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -900,18 +940,18 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 24px;
 	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 36px;
-	    line-height: 41px;
+	    font-size: 25px;
+		line-height: 38px;
+		letter-spacing: 7px;
 	}
 	.hero-caps h6 {
-	    font-size: 24px;
-	    line-height: 31px;
+		font-size: 20px;
+		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -1040,18 +1080,18 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 24px;
 	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 22px;
-	    line-height: 30px;
+	    font-size: 25px;
+		line-height: 38px;
+		letter-spacing: 7px;
 	}
 	.hero-caps h6 {
-	    font-size: 24px;
-	    line-height: 31px;
+		font-size: 20px;
+		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -1183,18 +1223,18 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 24px;
 	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 36px;
-	    line-height: 41px;
+	    font-size: 25px;
+		line-height: 38px;
+		letter-spacing: 7px;
 	}
 	.hero-caps h6 {
-	    font-size: 24px;
-	    line-height: 31px;
+		font-size: 20px;
+		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -1330,18 +1370,19 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 20px;
 	    line-height: 27px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 16px;
-	    line-height: 25px;
+	    font-size: 25px;
+		line-height: 38px;
+		letter-spacing: 7px;
+		margin-top: 40px;
 	}
 	.hero-caps h6 {
-	    font-size: 16px;
-	    line-height: 23px;
+		font-size: 20px;
+		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 12px;
@@ -1375,6 +1416,12 @@
 	}
 	.news-post{
 		margin-top: 20px;
+	}
+	.service-card {
+		height: auto;
+	}
+	.service-card-container {
+	    margin-top: 10px;
 	}
 }
 
@@ -1471,18 +1518,13 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 20px;
 	    line-height: 27px;
 	    padding: 0;
 	}
-	.hero-caps h1 {
-	    font-size: 16px;
-	    line-height: 25px;
-	}
 	.hero-caps h6 {
-	    font-size: 16px;
-	    line-height: 23px;
+		font-size: 20px;
+		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 12px;
@@ -1610,19 +1652,9 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 20px;
 	    line-height: 27px;
 	    padding: 0;
-	}
-	.hero-caps h1 {
-	    font-size: 16px;
-		line-height: 25px;
-		letter-spacing: 8px;
-	}
-	.hero-caps h6 {
-	    font-size: 16px;
-	    line-height: 23px;
 	}
 	.hero-caps h5 {
 	    font-size: 12px;
@@ -1753,19 +1785,9 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 20px;
 	    line-height: 27px;
 	    padding: 0;
-	}
-	.hero-caps h1 {
-	    font-size: 16px;
-		line-height: 25px;
-		letter-spacing: 8px;
-	}
-	.hero-caps h6 {
-	    font-size: 16px;
-	    line-height: 23px;
 	}
 	.hero-caps h5 {
 	    font-size: 12px;

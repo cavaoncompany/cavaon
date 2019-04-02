@@ -38,7 +38,6 @@ export default {
   margin-bottom: 60px;
 }
 .service-card {
-  height: 300px;
   margin: 30px 0px;
 }
 .service-card h3 {

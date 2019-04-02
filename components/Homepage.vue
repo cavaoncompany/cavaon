@@ -13,7 +13,7 @@
               <br>{{ banner.titleBottom }}
             </h1>
             <h6 class="minimal white">
-              {{ banner.subHeader }}
+              <span>{{ banner.subHeader }}</span>
             </h6>
             <div class="welcome-button">
               <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ banner.buttonText }}</a>
@@ -27,23 +27,27 @@
           </div>
         </a>
       </section>
+      <svg
+        version="1.0"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1281.000000 272.000000"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <g 
+          transform="translate(0.000000,272.000000) scale(0.100000,-0.100000)"
+          fill="#5C2C88"
+          stroke="none">
+          <path
+            d="M10 1374 c0 -1277 1 -1345 18 -1340 930 291 1857 460 3092 565 736
+            63 1316 86 2530 101 956 12 1423 30 2060 81 2201 174 3760 608 4590 1276 116
+            93 255 235 334 341 66 87 166 271 166 305 0 16 -311 17 -6395 17 l-6395 0 0
+            -1346z"
+          />
+        </g>
+      </svg>
       <HeaderStandard :projectFormOpen="projectFormOpen" />
       <Flowchart />
-      <!-- inner-section : starts -->
-      <section id="thumb-carousel-wrap" class="inner-section thumb-carousel-wrap">
-        <!-- thumb-carousel : starts -->
-        <div id="thumb-carousel" class="owl-carousel">
-          <div v-for="(project, index) in projects.projects" :key="index" class="item">
-            <a class="venobox" data-gall="thumb-gallery" :href="project.image">
-              <img data-no-retina :alt="project.title" :title="project.title" class="img-responsive" :src="project.image">
-              <div class="thumb-title"><h5><span>{{ project.title }}</span></h5></div>
-            </a>
-          </div>
-        </div>
-        <!-- thumb-carousel : ends -->
-      </section>
-      <!-- inner-section : ends -->
-
+      <FlowchartMobile />
       <!-- page-section : starts -->
       <Services />
       <!-- page-section : ends -->
@@ -421,6 +425,7 @@ import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
 import HeaderStandard from './HeaderStandard'
 import Flowchart from './Flowchart'
+import FlowchartMobile from './FlowchartMobile'
 import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
 // import MobileServices from './MobileServices'
@@ -433,6 +438,7 @@ export default {
     HeaderTop,
     HeaderStandard,
     Flowchart,
+    FlowchartMobile,
     Services,
     ProjectWithSlider,
     // MobileServices,
@@ -579,5 +585,10 @@ export default {
   }
   .featuress-expansion .container {
     padding-top: 50px;
+  }
+  svg {
+    margin-top: -35px;
+    width: 101%;
+    margin-left: -2px;
   }
 </style>
