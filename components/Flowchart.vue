@@ -46,7 +46,6 @@ export default {
 <style>
   #flowchart {
     margin-top: 40px;
-    margin-bottom: 130px;
   }
   #flowchart article {
     border-left: 1px solid #FFC716;

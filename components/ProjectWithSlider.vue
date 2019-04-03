@@ -93,6 +93,7 @@
 </template>
 
 <script>
+import EventBus from '../event-bus.js'
 import caseStudies from '../static/content/casestudies.json'
 
 export default {
