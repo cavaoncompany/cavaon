@@ -130,6 +130,12 @@
 	.promo-article {
 		margin-top: 25%;
 	}
+	.mobile {
+		display: none;
+	}
+	.desktop {
+		display: block;
+	}
 	.service-card {
 		height: 300px;
 	}

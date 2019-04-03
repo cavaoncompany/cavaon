@@ -17,7 +17,7 @@
         </article>
         <article class="col-md-10 text-right">
           <ul class="standard-nav  standard-nav-white-text visible-lg">
-            <li><a href="#projects" class="scroll" aria-label="Scroll to Projects" @click="closeForm()">Projects</a></li>
+            <li><a href="#flowchart" class="scroll" aria-label="Scroll to Projects" @click="closeForm()">Projects</a></li>
             <!-- <li><a href="#services" class="scroll" aria-label="Scroll to Services" @click="closeForm()">Services</a></li> -->
             <li><a href="#caseStudies" class="scroll" aria-label="Scroll to Case Studies" @click="closeForm()">Case Studies</a></li>
             <!-- <li><a href="#testimonials" class="scroll" aria-label="Scroll to Testimonials" @click="closeForm()">Testimonials</a></li> -->
