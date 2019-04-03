@@ -211,6 +211,12 @@
 	.about-us-mobile {
 		display: none;
 	}
+	.mobile {
+		display: none;
+	}
+	.desktop {
+		display: block;
+	}
 	.about-us-desktop {
 		display: block;
 	}
@@ -518,8 +524,8 @@
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 50px;
-		line-height: 53px;
+	    font-size: 48px;
+    	line-height: 56px;
 	}
 	.hero-caps h6 {
 	    font-size: 36px;
@@ -552,6 +558,12 @@
 	}
 	.hero-caps h2 > span{
 	padding-top: 0px;
+	}
+	.mobile {
+		display: block;
+	}
+	.desktop {
+		display: none;
 	}
 	.standard-header{
 		display: none !important;
