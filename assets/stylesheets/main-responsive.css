@@ -80,6 +80,9 @@
 	#mobile-services {
 		display: none;
 	}
+	#team {
+		padding-bottom: 120px;
+	}
 	.team-desktop {
 		display: block;
 	}
@@ -204,6 +207,9 @@
 	}
 	.about-us-desktop {
 		display: block;
+	}
+	#team {
+		padding-bottom: 120px;
 	}
 	.team-desktop {
 		display: block;
@@ -454,6 +460,9 @@
 	.about-us-desktop {
 		display: none;
 	}
+	#team {
+		padding-bottom: 60px;
+	}
 	.team-desktop {
 		display: none;
 	}
@@ -461,7 +470,7 @@
 		display: block;
 	}
 	.promo-article {
-		margin-top: 35%;
+		margin-top: 20%;
 	}
 	.form-service {
 		width: 46%;
@@ -515,9 +524,10 @@
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 64px;
+	    font-size: 50px;
 		line-height: 87px;
 		margin-top: 200px;
+		letter-spacing: 5px;
 	}
 	.hero-caps h6 {
 	    font-size: 36px;
@@ -560,7 +570,7 @@
 		margin-top: 20px;
 	}
 	.promo-section {
-		min-height: 750px;
+		min-height: 450px;
 	}
 	.testimonial-wrap {
 		width: 100%;
@@ -571,11 +581,14 @@
 	.testimonial-wrapper {
 		flex-direction: column;
 	}
-	#flowchart-mobile {
-		display: block
+	.service-card {
+		text-align: center;
 	}
-	#flowchart {
-		display: none;
+	#flowchart .flowchart-left img {
+		opacity: 0;
+	}
+	.btn-odin-color {
+		width: fit-content;
 	}
 }
 
@@ -1144,6 +1157,12 @@
 	.news-post{
 		margin-top: 20px;
 	}
+	#flowchart-mobile {
+		display: block
+	}
+	#flowchart {
+		display: none;
+	}
 }
 	
 
@@ -1171,7 +1190,7 @@
 		margin-bottom:30px;
 	}
 	.promo-article {
-		margin-top: 70%;
+		margin-top: 25%;
 	}
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
@@ -1246,7 +1265,7 @@
 	    font-size: 25px;
 		line-height: 38px;
 		letter-spacing: 7px;
-		margin-top: 190px;
+		margin-top: 160px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -1394,7 +1413,7 @@
 	    font-size: 25px;
 		line-height: 38px;
 		letter-spacing: 7px;
-		margin-top: 190px;
+		margin-top: 160px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -1802,8 +1821,8 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    font-size: 20px;
-	    line-height: 27px;
+	    font-size: 16px;
+	    line-height: 22px;
 	    padding: 0;
 	}
 	.hero-caps h5 {

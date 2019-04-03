@@ -123,8 +123,8 @@
               type="file"
               name="brief"
             >
-            <label for="brief"><i class="fa fa-upload" />Upload project brief</label>
-            <p>File size max: 5mb</p>
+            <label for="brief"><i class="fa fa-upload" />{{ startaprojectform.goalUploadButtonText }}</label>
+            <p class="inline">{{ startaprojectform.goalMaxLength }}</p>
           </section>
           <section>
             <h3>
@@ -318,11 +318,15 @@ export default {
     display: inline-block;
     cursor: pointer;
     padding: 8px;
+    margin-top: 10px;
 }
 
   #brief:focus + label,
   #brief + label:hover {
     background-color: #FFC716;
     color: #FFF;
+}
+.inline {
+  display: inline;
 }
 </style>

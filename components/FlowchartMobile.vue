@@ -2,21 +2,21 @@
   <section id="flowchart-mobile">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-4 flowchart-left-mobile">
+        <div class="col-12 col-lg-4 flowchart-left-mobile">
           <article class="title">
             <h2>{{ flowchart.title }}</h2>
           </article>
-          <img :src="flowchart.leftImage" alt="timeline">
+          <!-- <img :src="flowchart.leftImage" alt="timeline"> -->
         </div>
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-lg-8">
           <div class="row flowchart-items-mobile">
             <div v-for="(item, index) in flowchart.steps" :key="index">
-              <div class="col-12 col-md-6">
+              <div class="col-12">
                 <h3>{{ item.id }}</h3>
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.description }}</p>
               </div>
-              <div class="col-12 col-md-6">
+              <div class="col-12">
                 <img :src="item.image" :alt="item.title">
               </div>
               <div v-if="item.id < flowchart.steps.length" class="timeline-mobile" />
@@ -43,12 +43,12 @@ export default {
 <style>
   #flowchart-mobile {
     margin-top: 40px;
-    margin-bottom: 130px;
+    margin-bottom: 100px;
   }
   #flowchart-mobile article {
     border-left: 1px solid #FFC716;
     margin-top: -45px;
-    padding-top: 118px;
+    padding-top: 60px;
     padding-left: 15px;
     margin-bottom: 25px;
   }
