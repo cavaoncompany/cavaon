@@ -1,209 +1,114 @@
-<form
-          action="/success"
-          netlify-honeypot="bot-field"
-          name="start-a-project"
-          method="post"
-          data-netlify="true"
-          class="col-md-12 col-lg-10 col-lg-offset-1"
-        >
-          <section>
-            <input type="hidden" name="form-name" value="startAProject">
-            <p class="hidden">
-              <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-            </p>
-            <h3>
-              1 Hello, nice to meet you!
-            </h3>
-            <div class="project-contact-info">
-              <article class="left">
-                <input
-                  id="projectCompany"
-                  v-model="company"
-                  type="text"
-                  placeholder="Company"
-                  name="company"
-                  size="100"
-                >
-              </article>
-              <article class="right">
-                <input
-                  id="projectEmail"
-                  v-model="email"
-                  type="email"
-                  placeholder="Email Address*"
-                  name="email"
-                  size="100"
-                  required
-                >
-              </article>
-              <article class="left">
-                <input
-                  id="projectName"
-                  v-model="name"
-                  type="text"
-                  placeholder="Your Name*"
-                  name="name"
-                  size="100"
-                  required
-                >
-              </article>
-              <article class="right">
-                <input
-                  id="projectPhone"
-                  v-model="phone"
-                  type="tel"
-                  placeholder="Contact Number*"
-                  name="phone"
-                  size="30"
-                  required
-                >
-              </article>
-              <article class="left">
-                <input
-                  id="projectWebsite"
-                  v-model="website"
-                  type="url"
-                  placeholder="Website"
-                  name="website"
-                  size="100"
-                >
-              </article>
-            </div>
-          </section>
-          <section>
-              <h3>
-                2 What is the scope of your project?
-              </h3>
-              <div class="project-services">
-                <div id="project-form-logo" class="service text-center" @click="addProjectType('project-form-logo', $event)">
-                  <input type="checkbox" id="form-logo" name="Scope" value="Logo">
-                  <label for="form-logo"><img src="/images/icons/Services-Logo.png" alt="Logo" name="Logo" @click="addProjectType('project-form-logo', $event)"></label>
-                  <h4>LOGO</h4>
-                </div>
-                <div id="project-form-branding" class="service text-center" @click="addProjectType('project-form-branding', $event)">
-                  <input type="checkbox" id="form-branding" name="Scope" value="Branding">
-                  <label for="form-branding"><img src="/images/icons/Services-Branding.png" alt="Branding" name="Branding" @click="addProjectType('project-form-branding', $event)"></label>
-                  <h4>BRANDING</h4>
-                </div>
-                <div id="project-form-webDesign" class="service text-center" @click="addProjectType('project-form-webDesign', $event)">
-                  <input type="checkbox" id="form-webdesign" name="Scope" value="Web Design">
-                  <label for="form-webdesign"><img src="/images/icons/Services-WebDesign.png" alt="Web Design" name="Web Design" @click="addProjectType('project-form-webDesign', $event)"></label>
-                  <h4>WEB DESIGN</h4>
-                </div>
-                <div id="project-form-development" class="service text-center" @click="addProjectType('project-form-development', $event)">
-                  <input type="checkbox" id="form-development" name="Scope" value="Development">
-                  <label for="form-development"><img src="/images/icons/Services-Development.png" alt="Development" name="Development" @click="addProjectType('project-form-development', $event)"></label>
-                <h4>DEVELOPMENT</h4>
-                </div>
-                <div id="project-form-printDesign" class="service text-center" @click="addProjectType('project-form-printDesign', $event)">
-                  <input type="checkbox" id="form-printdesign" name="Scope" value="Print Design">
-                  <label for="form-printdesign"><img src="/images/icons/Services-PrintDesign.png" alt="Print Design" name="Print Design" @click="addProjectType('project-form-printDesign', $event)"></label>
-                  <h4>PRINT DESIGN</h4>
-                </div>
-                <div id="project-form-consultation" class="service text-center" @click="addProjectType('project-form-consultation', $event)">
-                  <input type="checkbox" id="form-consultation" name="Scope" value="Consultation">
-                  <label for="form-consultation"><img src="/images/icons/Services-Consultation.png" alt="Consultation" name="Consultation" @click="addProjectType('project-form-consultation', $event)"></label>
-                  <h4>CONSULTATION</h4>
-              </div>
-              </div>
-            </section>
-          <section>
-            <h3>
-              3 When do you need the project to be completed?
-            </h3>
-            <input
-              id="t1"
-              v-model="timeframe"
-              type="radio"
-              name="timeframe"
-              value="In a week"
-            >
-            <label for="t1">In a week</label><br>
-            <input
-              id="t2"
-              v-model="timeframe"
-              type="radio"
-              name="timeframe"
-              value="In a month"
-            >
-            <label for="t2">In a month</label><br>
-            <input
-              id="t3"
-              v-model="timeframe"
-              type="radio"
-              name="timeframe"
-              value="3 months +"
-            >
-            <label for="t3">3 months+</label><br>
-          </section>
-          <section>
-            <h3>
-              4 Tell us about your company and the goal of the project
-            </h3>
-            <article>
-              <textarea id="projectMessage" placeholder="In less than 500 characters" name="message" cols="40" rows="4" />
-            </article>
-          </section>
-          <section>
-            <h3>
-              5 How did you hear about us?
-            </h3>
-            <input
-              id="h1"
-              v-model="hearAboutUs"
-              type="radio"
-              name="hearAboutUs"
-              value="Google"
-            >
-            <label for="h1">Google</label><br>
-            <input
-              id="h2"
-              v-model="hearAboutUs"
-              type="radio"
-              name="hearAboutUs"
-              value="Referral"
-            >
-            <label for="h2">Referral from a friend</label><br>
-            <input
-              id="h3"
-              v-model="hearAboutUs"
-              type="radio"
-              name="hearAboutUs"
-              value="Facebook"
-            >
-            <label for="h3">Facebook</label><br>
-            <input
-              id="h4"
-              v-model="hearAboutUs"
-              type="radio"
-              name="hearAboutUs"
-              value="LinkedIn"
-            >
-            <label for="h4">LinkedIn</label><br>
-            <input
-              id="h5"
-              v-model="hearAboutUs"
-              type="radio"
-              name="hearAboutUs"
-              value="Other"
-              @change="otherSelected = !otherSelected"
-            >
-            <label for="h5">Other</label><br>
-            <input
-              v-if="otherSelected"
-              id="hearAboutUs"
-              v-model="hearAboutUsOther"
-              type="text"
-              placeholder="Other"
-              name="hearAboutUs"
-              size="100"
-            >
-          </section>
-          <article>
-            <div class="btn-wrap  text-center">
-              <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
-                Submit
-              </button>
-            </div>
-          </article>
-        </form>
+<form id="startAProjectForm" action="/success" netlify-honeypot="bot-field" name="start-a-project" method="post"
+  data-netlify="true" class="col-md-12 col-lg-10 col-lg-offset-1">
+  <section><input type="hidden" name="form-name" value="startAProject">
+    <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
+    <h3>
+      1 Hello, nice to meet you!
+    </h3>
+    <div class="project-contact-info">
+      <article class="left"><input id="projectCompany" type="text" placeholder="Company" name="company" size="100">
+      </article>
+      <article class="right"><input id="projectEmail" type="email" placeholder="Email Address*" name="email" size="100"
+          required="required"></article>
+      <article class="left"><input id="projectName" type="text" placeholder="Your Name*" name="name" size="100"
+          required="required"></article>
+      <article class="right"><input id="projectPhone" type="tel" placeholder="Contact Number*" name="phone" size="30"
+          required="required"></article>
+      <article class="left"><input id="projectWebsite" type="url" placeholder="Website" name="website" size="100">
+      </article>
+    </div>
+  </section>
+  <section>
+    <h3>
+      2 What is the scope of your project?
+    </h3>
+    <div class="project-services">
+      <div id="project-form-LOGO" class="form-service text-center"><img id="tick-LOGO" src="/images/icons/Tick.png"
+          alt="ticked" class="tick invisible">
+        <div class="project-services-content"><input id="form-LOGO" type="checkbox" name="Scope" value="LOGO"> <label
+            for="form-LOGO"><img id="img-LOGO" src="/images/icons/Services-Logo.png" alt="LOGO" name="LOGO"></label>
+          <h4>LOGO</h4>
+        </div>
+      </div>
+      <div id="project-form-BRANDING" class="form-service text-center"><img id="tick-BRANDING"
+          src="/images/icons/Tick.png" alt="ticked" class="tick invisible">
+        <div class="project-services-content"><input id="form-BRANDING" type="checkbox" name="Scope" value="BRANDING">
+          <label for="form-BRANDING"><img id="img-BRANDING" src="/images/icons/Services-Branding.png" alt="BRANDING"
+              name="BRANDING"></label>
+          <h4>BRANDING</h4>
+        </div>
+      </div>
+      <div id="project-form-WEB DESIGN" class="form-service text-center"><img id="tick-WEB DESIGN"
+          src="/images/icons/Tick.png" alt="ticked" class="tick invisible">
+        <div class="project-services-content"><input id="form-WEB DESIGN" type="checkbox" name="Scope"
+            value="WEB DESIGN"> <label for="form-WEB DESIGN"><img id="img-WEB DESIGN"
+              src="/images/icons/Services-WebDesign.png" alt="WEB DESIGN" name="WEB DESIGN"></label>
+          <h4>WEB DESIGN</h4>
+        </div>
+      </div>
+      <div id="project-form-DEVELOPMENT" class="form-service text-center"><img id="tick-DEVELOPMENT"
+          src="/images/icons/Tick.png" alt="ticked" class="tick invisible">
+        <div class="project-services-content"><input id="form-DEVELOPMENT" type="checkbox" name="Scope"
+            value="DEVELOPMENT"> <label for="form-DEVELOPMENT"><img id="img-DEVELOPMENT"
+              src="/images/icons/Services-Development.png" alt="DEVELOPMENT" name="DEVELOPMENT"></label>
+          <h4>DEVELOPMENT</h4>
+        </div>
+      </div>
+      <div id="project-form-PRINT DESIGN" class="form-service text-center"><img id="tick-PRINT DESIGN"
+          src="/images/icons/Tick.png" alt="ticked" class="tick invisible">
+        <div class="project-services-content"><input id="form-PRINT DESIGN" type="checkbox" name="Scope"
+            value="PRINT DESIGN"> <label for="form-PRINT DESIGN"><img id="img-PRINT DESIGN"
+              src="/images/icons/Services-PrintDesign.png" alt="PRINT DESIGN" name="PRINT DESIGN"></label>
+          <h4>PRINT DESIGN</h4>
+        </div>
+      </div>
+      <div id="project-form-CONSULTATION" class="form-service text-center"><img id="tick-CONSULTATION"
+          src="/images/icons/Tick.png" alt="ticked" class="tick invisible">
+        <div class="project-services-content"><input id="form-CONSULTATION" type="checkbox" name="Scope"
+            value="CONSULTATION"> <label for="form-CONSULTATION"><img id="img-CONSULTATION"
+              src="/images/icons/Services-Consultation.png" alt="CONSULTATION" name="CONSULTATION"></label>
+          <h4>CONSULTATION</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h3>
+      3 When do you need the project to be completed?
+    </h3>
+    <div><input id="t0" type="radio" name="timeframe" value="In a week"> <label for="t0">In a week</label><br></div>
+    <div><input id="t1" type="radio" name="timeframe" value="In a month"> <label for="t1">In a month</label><br></div>
+    <div><input id="t2" type="radio" name="timeframe" value="3 months +"> <label for="t2">3 months +</label><br></div>
+  </section>
+  <section>
+    <h3>
+      4 Tell us about your company and the goal of the project
+    </h3>
+    <article><textarea id="projectMessage" placeholder="In less than 500 characters" name="message" cols="40"
+        rows="4"></textarea></article> <input id="brief" type="file" name="brief"> <label for="brief"><i
+        class="fa fa-upload"></i>
+      Upload project brief
+    </label>
+    <p class="inline">
+      File size max: 5mb
+    </p>
+  </section>
+  <section>
+    <h3>
+      5 How did you hear about us?
+    </h3>
+    <div><input id="h0" type="radio" name="hearAboutUs" value="Google"> <label for="h0">Google</label><br></div>
+    <div><input id="h1" type="radio" name="hearAboutUs" value="Referral from a friend"> <label for="h1">Referral from a
+        friend</label><br></div>
+    <div><input id="h2" type="radio" name="hearAboutUs" value="Facebook"> <label for="h2">Facebook</label><br></div>
+    <div><input id="h3" type="radio" name="hearAboutUs" value="LinkedIn"> <label for="h3">LinkedIn</label><br></div>
+    <div><input id="h4" type="radio" name="hearAboutUs" value="Other"> <label for="h4">Other</label><br></div>
+    <!---->
+  </section>
+  <article>
+    <div class="btn-wrap  text-center"><button id="submit" name="submit" type="submit"
+        class="btn btn-odin btn-odin-color">
+        SUBMIT
+      </button></div>
+  </article>
+</form>

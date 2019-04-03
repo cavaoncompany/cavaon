@@ -18,7 +18,7 @@
         <a class="scroll" href="#team-container" aria-label="Scroll to Team" @click="closeForm()">team</a>
       </li> -->
       <li>
-        <a class="scroll" href="#about" aria-label="Scroll to About" @click="closeForm()">about</a>
+        <a class="scroll" href="#about-mobile" aria-label="Scroll to About" @click="closeForm()">about</a>
       </li>
       <li>
         <a class="scroll" href="#contactForm" aria-label="Scroll to Contact Form" @click="closeForm()">contact</a>
