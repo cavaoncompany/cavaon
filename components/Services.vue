@@ -10,7 +10,7 @@
         </article>
       </div>
       <div class="row service-card-container">
-        <div v-for="(service, index) in services.services" :key="index" class="service-card col-12 col-md-6 col-lg-3">
+        <div v-for="(service, index) in services.services" :key="index" class="service-card col-12 col-md-3">
           <img :src="service.image" :alt="service.imageTitle" :title="service.imageTitle">
           <h3>{{ service.title }}</h3>
           <p>{{ service.description }}</p>

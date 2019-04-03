@@ -30,7 +30,7 @@
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1250.000000 272.000000"
+        viewBox="0 0 1281.000000 272.000000"
         preserveAspectRatio="xMidYMid meet"
       >
         <g
@@ -39,7 +39,7 @@
           stroke="none"
         >
           <path
-            d="M10 1374 c0 -1277 1 -1345 18 -1280 930 291 1857 460 3092 565 736
+            d="M10 1374 c0 -1277 1 -1345 18 -1340 930 291 1857 460 3092 565 736
             63 1316 86 2530 101 956 12 1423 30 2060 81 2201 174 3760 608 4590 1276 116
             93 255 235 334 341 66 87 166 271 166 305 0 16 -311 17 -6395 17 l-6395 0 0
             -1346z"
@@ -258,7 +258,7 @@
         <!-- inner-section:ends -->
 
         <!-- inner-section:starts -->
-        <section id="team" class="inner-section team-wrap">
+        <section id="team" class="inner-section team-wrap pad-bottom">
           <div class="container">
             <div class="row">
               <!-- item:starts -->
@@ -293,11 +293,11 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="about" class="contact page intermediate-section full-height parallax about-us-desktop">
+      <section id="about" class="contact page intermediate-section full-height parallax">
         <div class="overlay">
           <div class="container valign">
             <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center about-us-desktop">
                 <h3 class="white">
                   <span>{{ about.title }}</span>
                 </h3>
@@ -315,15 +315,7 @@
                   {{ about.desktopSection4 }}
                 </p>
               </article>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="about" class="contact page intermediate-section parallax about-us-mobile">
-        <div class="overlay">
-          <div class="container valign">
-            <div class="row">
-              <article class="col-md-12 text-center">
+              <article class="col-md-12 about-us-mobile text-center">
                 <h3 class="white">
                   <span>{{ about.title }}</span>
                 </h3>
@@ -474,7 +466,7 @@ export default {
       linesOfCode: 12538,
       windowWidth: 0,
       isMobile: false,
-      startVal: 3564,
+      startVal: 0,
       projectFormOpen: false
     }
   },
@@ -596,8 +588,9 @@ export default {
     padding-top: 50px;
   }
   svg {
-    margin-top: -3px;
+    margin-top: -2px;
     width: 100%;
+    margin-left: -2px;
   }
   #intro {
     background-color: #582C87;
