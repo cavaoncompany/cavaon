@@ -10,20 +10,20 @@
         },
         {
             "id": "2",
-            "title": "Meet the team & create solution",
+            "title": "Meet the team & create a solution",
             "description": "The team at Cavaon is full of creative, technical and business experts. We will work with you and create a perfect solution together.",
             "image": "/images/flowchart-plan.png"
         },
         {
             "id": "3",
-            "title": "Build highly qualified solution",
+            "title": "Build a highly qualified solution",
             "description": "Design and build in a timely and cost effective manner.",
             "image": "/images/flowchart-build.png"
         },
         {
             "id": "4",
             "title": "Success!",
-            "description": "For today and a platform to grow for the future.",
+            "description": "For today and a platform that allows you to grow in the future.",
             "image": "/images/flowchart-launch.png"
         }
     ]
