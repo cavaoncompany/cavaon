@@ -1,9 +1,34 @@
 {
-    "titleTop": "Your Complete Solution",
-    "titleBottom": "to Online Business",
-    "subHeader": "Digital business and platform solutions",
-    "buttonText": "START A PROJECT"
+    "banners": [
+        {
+            "image": "/images/Banner-Branding.png",
+            "top": "WE CREATE",
+            "bottom": "BRANDING"
+        },
+        {
+            "image": "/images/Banner-Logo.png",
+            "top": "WE CREATE",
+            "bottom": "LOGOS"
+        },
+        {
+            "image": "/images/Banner-Marketing.png",
+            "top": "WE PROVIDE",
+            "bottom": "MARKETING"
+        },
+        {
+            "image": "/images/Banner-Platform.png",
+            "top": "WE CREATE",
+            "bottom": "PLATFORMS"
+        },
+        {
+            "image": "/images/Banner-WebDesign.png",
+            "top": "WE CREATE",
+            "bottom": "WEB DESIGN"
+        },
+        {
+            "image": "/images/Banner-Consultation.png",
+            "top": "WE PROVIDE",
+            "bottom": "CONSULTATION"
+        }
+    ]
 }
-
-
- 

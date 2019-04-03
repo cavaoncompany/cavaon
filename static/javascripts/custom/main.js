@@ -19,8 +19,7 @@ $(function ($) {
     const vH = $(window).height()
     const vW = $(window).width()
     // Adjusting Intro Components Spacing based on detected screen resolution
-    $('#intro').css('height', (vH - (vH / 2.5)))
-    $('.full-height').css('height', vH)
+    $('#intro, .full-height').css('height', vH)
     $('.full-width').css('width', vW)
     $('.half-height').css('height', vH / 2)
     $('.rs-bg-img').css('max-height', vH)
@@ -69,31 +68,31 @@ $(function ($) {
 
     // Text Ticker
     $(window).load(function () {
-      // $('.text-rotator').each(function () {
-        // $(this).empty()
-        // $(this).html('<div class="rotator-wrap"></div>')
-        // const this_item = $(this).children('.rotator-wrap')
-        // $.getJSON('../content/banner.json', function (result) {
-        //   const text_rotator_content_array = result.banners.map(function (banner) {
-        //     return banner
-        //   })
-        //   const item_size = text_rotator_content_array.length
-        //   nova_text_rotator(text_rotator_content_array, this_item, item_size, 0)
-        // })
-      // })
+      $('.text-rotator').each(function () {
+        $(this).empty()
+        $(this).html('<div class="rotator-wrap"></div>')
+        const this_item = $(this).children('.rotator-wrap')
+        $.getJSON('../content/banner.json', function (result) {
+          const text_rotator_content_array = result.banners.map(function (banner) {
+            return banner
+          })
+          const item_size = text_rotator_content_array.length
+          nova_text_rotator(text_rotator_content_array, this_item, item_size, 0)
+        })        
+      })
 
-      // function nova_text_rotator(item_array, this_item, item_size, my_index) {
-      //   if (my_index >= item_size) {
-      //     my_index = 0
-      //   }
-      //   this_item.fadeOut(800, function () {
-      //     this_item.html('<h6 class="minimal white">' + item_array[my_index].top + '</h6><h1 class="white"><span>' + item_array[my_index].bottom + '</span></h1>')
-      //     this_item.fadeIn(800)
-      //   })
-      //   setTimeout(function () {
-      //     nova_text_rotator(item_array, this_item, item_size, my_index + 1)
-      //   }, 3750)
-      // }
+      function nova_text_rotator(item_array, this_item, item_size, my_index) {
+        if (my_index >= item_size) {
+          my_index = 0
+        }
+        this_item.fadeOut(800, function () {
+          this_item.html('<h6 class="minimal white">' + item_array[my_index].top + '</h6><h1 class="white"><span>' + item_array[my_index].bottom + '</span></h1>')
+          this_item.fadeIn(800)
+        })
+        setTimeout(function () {
+          nova_text_rotator(item_array, this_item, item_size, my_index + 1)
+        }, 3750)
+      }
     })
 
     // Features Switching - State Change
