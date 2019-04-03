@@ -325,7 +325,7 @@
           </div>
         </div>
       </section>
-      <section id="about" class="contact page intermediate-section parallax about-us-mobile">
+      <section id="about-mobile" class="contact page intermediate-section parallax about-us-mobile">
         <div class="overlay">
           <div class="container valign">
             <div class="row">
