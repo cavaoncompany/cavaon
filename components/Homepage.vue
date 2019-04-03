@@ -258,7 +258,7 @@
         <!-- inner-section:ends -->
 
         <!-- inner-section:starts -->
-        <section id="team" class="inner-section team-wrap pad-bottom">
+        <section id="team" class="inner-section team-wrap">
           <div class="container">
             <div class="row">
               <!-- item:starts -->
@@ -293,11 +293,11 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="about" class="contact page intermediate-section full-height parallax">
+      <section id="about" class="contact page intermediate-section full-height parallax about-us-desktop">
         <div class="overlay">
           <div class="container valign">
             <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center about-us-desktop">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
                 <h3 class="white">
                   <span>{{ about.title }}</span>
                 </h3>
@@ -315,7 +315,15 @@
                   {{ about.desktopSection4 }}
                 </p>
               </article>
-              <article class="col-md-12 about-us-mobile text-center">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="contact page intermediate-section parallax about-us-mobile">
+        <div class="overlay">
+          <div class="container valign">
+            <div class="row">
+              <article class="col-md-12 text-center">
                 <h3 class="white">
                   <span>{{ about.title }}</span>
                 </h3>
@@ -466,7 +474,7 @@ export default {
       linesOfCode: 12538,
       windowWidth: 0,
       isMobile: false,
-      startVal: 0,
+      startVal: 3564,
       projectFormOpen: false
     }
   },
@@ -588,7 +596,7 @@ export default {
     padding-top: 50px;
   }
   svg {
-    margin-top: -2px;
+    margin-top: -3px;
     width: 100%;
     margin-left: -2px;
   }
