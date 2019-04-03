@@ -17,13 +17,13 @@
 $(function ($) {
     // Detecting viewpot dimension
     const vH = $(window).height()
-    const sH = window.screen.height
     const vW = $(window).width()
-    const sW = window.screen.width
     // Adjusting Intro Components Spacing based on detected screen resolution
     let introvH
-    if (sH < vH) {
-      introvH = sH - (sH / 3.5)
+    if (vW < 320) {
+      introvH = vH - (vH / 3.5)
+    } else if (vW > 1920) {
+      introvH = vH - (vH / 2)
     } else {
       introvH = vH - (vH / 2.5)
     }
