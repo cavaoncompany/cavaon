@@ -6,20 +6,22 @@
     <section id="mastwrap">
       <section id="intro" class="intro">
         <HeaderTop :projectFormOpen="projectFormOpen" />
-        <div class="valignBanner">
-          <div class="hero-caps text-rotator text-center">
-            <h1 class="white">
-              <span>{{ banner.titleTop }}</span>
-              <br>{{ banner.titleBottom }}
-            </h1>
-            <h6 class="minimal white">
-              <span>{{ banner.subHeader }}</span>
-            </h6>
-            <div class="welcome-button">
-              <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ banner.buttonText }}</a>
+        <!-- <div class="valignBanner"> -->
+          <div class="container">
+            <div class="hero-caps text-rotator">
+              <h1 class="white">
+                <span>{{ banner.titleTop }}</span>
+                <br>{{ banner.titleBottom }}
+              </h1>
+              <h6 class="minimal white">
+                <span>{{ banner.subHeader }}</span>
+              </h6>
+              <div class="welcome-button">
+                <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ banner.buttonText }}</a>
+              </div>
             </div>
           </div>
-        </div>
+        <!-- </div> -->
         <!-- valignBanner:ends -->
         <a class="scroll" href="#flowchart" aria-label="Scroll to Projects">
           <div class="mouse-icon white hidden-xs" style="opacity: 1;">
@@ -30,7 +32,7 @@
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1250.000000 272.000000"
+        viewBox="1 0 1250.000000 272.000000"
         preserveAspectRatio="xMidYMid meet"
       >
         <g
@@ -65,7 +67,7 @@
                   id="number-desktop"
                   ref="codecounter"
                   class="color counter"
-                  :startVal="0"
+                  :startVal="startVal"
                   :endVal="linesOfCode"
                   :autoplay="false"
                   :duration="3000"
@@ -601,5 +603,8 @@ export default {
   }
   #intro {
     background-color: #582C87;
+  }
+  .text-rotator {
+    position: absolute;
   }
 </style>

@@ -142,8 +142,14 @@
 	#flowchart {
 		display: block;
 	}
+	.hero-caps h1 {
+		margin-top: 25%;
+	}
 	.hero-caps h6.minimal {
-	    margin-bottom: 90px;
+		margin-bottom: 65px;
+		text-align: left;
+		line-height: 39px;
+		margin-top: 45px;
 	}
 }
 
@@ -232,8 +238,14 @@
 	#flowchart {
 		display: block;
 	}
+	.hero-caps h1 {
+		margin-top: 25%;
+	}
 	.hero-caps h6.minimal {
-	    margin-bottom: 90px;
+		margin-bottom: 65px;
+		text-align: left;
+		line-height: 39px;
+		margin-top: 45px;
 	}
 }
 
@@ -305,9 +317,6 @@
 	.mob-add-bottom{
 		margin-bottom:30px;
 	}
-	.btn{
-		width: 100%;
-	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
 	}
@@ -335,9 +344,6 @@
 	}
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
-	}
-	.btn{
-		width: 100%;
 	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
@@ -369,9 +375,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	ul#portfolioFilter li{
 	width: 47%;
 	margin-bottom: 3px;
@@ -385,18 +388,15 @@
 	}
 	.hero-caps h6.minimal.white > span {
 	    font-size: 32px;
-	    line-height: 39px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
 	    font-size: 64px;
-		line-height: 87px;
+		line-height: 70px;
 		letter-spacing: 16px;
-		margin-top: 200px;
 	}
 	.hero-caps h6 {
 	    font-size: 24px;
-		line-height: 39px;
 	}
 	.hero-caps h5 {
 	    font-size: 28px;
@@ -415,7 +415,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 32px;
-	    line-height: 39px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 36px;
@@ -504,9 +503,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	ul#portfolioFilter li{
 	width: 47%;
 	margin-bottom: 3px;
@@ -520,18 +516,16 @@
 	}
 	.hero-caps h6.minimal.white > span {
 	    font-size: 32px;
-	    line-height: 39px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
 	    font-size: 50px;
-		line-height: 87px;
-		margin-top: 200px;
-		letter-spacing: 5px;
+		line-height: 53px;
+		letter-spacing: 4px;
+		margin-top: 20%;
 	}
 	.hero-caps h6 {
 	    font-size: 36px;
-	    line-height: 43px;
 	}
 	.hero-caps h5 {
 	    font-size: 28px;
@@ -551,7 +545,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 32px;
-	    line-height: 39px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 36px;
@@ -619,9 +612,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	img.img-responsive{
 		display: inline-block;
 	}
@@ -682,7 +672,6 @@
 	}
 	.hero-caps h6.minimal.white > span {
 	    font-size: 24px;
-	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
@@ -693,7 +682,6 @@
 	}
 	.hero-caps h6 {
 		font-size: 20px;
-		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -713,7 +701,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 24px;
@@ -760,9 +747,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	img.img-responsive{
 		display: inline-block;
 	}
@@ -823,7 +807,6 @@
 	}
 	.hero-caps h6.minimal.white > span {
 	    font-size: 24px;
-	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
@@ -834,7 +817,6 @@
 	}
 	.hero-caps h6 {
 		font-size: 20px;
-		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -854,7 +836,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 24px;
@@ -901,9 +882,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	img.img-responsive{
 		display: inline-block;
 	}
@@ -964,7 +942,6 @@
 	}
 	.hero-caps h6.minimal.white > span {
 	    font-size: 24px;
-	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
@@ -975,10 +952,11 @@
 	}
 	.hero-caps h6 {
 		font-size: 20px;
-		line-height: 33px;
 	}
 	.hero-caps h6.minimal {
-		margin-bottom: 0;
+		margin-bottom: 30px;
+		line-height: 24px;
+		margin-top: 25px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -998,7 +976,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 24px;
@@ -1045,9 +1022,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	img.img-responsive{
 		display: inline-block;
 	}
@@ -1108,18 +1082,16 @@
 	}
 	.hero-caps h6.minimal.white > span {
 	    font-size: 24px;
-	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 25px;
-		line-height: 38px;
-		letter-spacing: 7px;
-		margin-top: 190px;
+	    font-size: 30px;
+		line-height: 33px;
+		letter-spacing: 3px;
+		margin-top: 86px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
-		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -1139,7 +1111,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 24px;
@@ -1195,9 +1166,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	img.img-responsive{
 		display: inline-block;
 	}
@@ -1258,18 +1226,10 @@
 	}
 	.hero-caps h6.minimal.white > span {
 	    font-size: 24px;
-	    line-height: 31px;
 	    padding: 0;
-	}
-	.hero-caps h1 {
-	    font-size: 25px;
-		line-height: 38px;
-		letter-spacing: 7px;
-		margin-top: 160px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
-		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -1289,7 +1249,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 24px;
@@ -1339,9 +1298,6 @@
 	}
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
-	}
-	.btn{
-		width: 100%;
 	}
 	.page-section, .separator-section{
 		padding: 40px 0;
@@ -1406,18 +1362,10 @@
 	}
 	.hero-caps h6.minimal.white > span {
 	    font-size: 20px;
-	    line-height: 27px;
 	    padding: 0;
-	}
-	.hero-caps h1 {
-	    font-size: 25px;
-		line-height: 38px;
-		letter-spacing: 7px;
-		margin-top: 160px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
-		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 12px;
@@ -1437,7 +1385,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 16px;
-		line-height: 23px;
 		margin-bottom: 0;
 	}
 	.hero-caps h4 > span {
@@ -1489,9 +1436,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	.page-section, .separator-section{
 		padding: 40px 0;
 	}
@@ -1554,13 +1498,11 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    font-size: 20px;
-	    line-height: 27px;
+	    font-size: 17px;
 	    padding: 0;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
-		line-height: 33px;
 	}
 	.hero-caps h5 {
 	    font-size: 12px;
@@ -1580,7 +1522,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 16px;
-	    line-height: 23px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 18px;
@@ -1623,9 +1564,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	.page-section, .separator-section{
 		padding: 40px 0;
 	}
@@ -1688,8 +1626,7 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    font-size: 20px;
-	    line-height: 27px;
+	    font-size: 17px;
 	    padding: 0;
 	}
 	.hero-caps h5 {
@@ -1710,7 +1647,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 16px;
-	    line-height: 23px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 18px;
@@ -1752,9 +1688,6 @@
 	}
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
-	}
-	.btn{
-		width: 100%;
 	}
 	.page-section, .separator-section{
 		padding: 40px 0;
@@ -1822,7 +1755,6 @@
 	}
 	.hero-caps h6.minimal.white > span {
 	    font-size: 16px;
-	    line-height: 22px;
 	    padding: 0;
 	}
 	.hero-caps h5 {
@@ -1843,7 +1775,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 16px;
-	    line-height: 23px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 18px;

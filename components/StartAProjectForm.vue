@@ -89,10 +89,13 @@
               {{ startaprojectform.projectScopeTitle }}
             </h3>
             <div class="project-services">
-              <div v-for="(service, index) in startaprojectform.services" :id="'project-form-' + service.title" :key="index" class="form-service text-center" @click="addProjectType('project-form-' + service.title, $event)">
-                <input :id="'form-' + service.title" type="checkbox" name="Scope" :value="service.title">
-                <label :for="'form-' + service.title"><img :src="service.icon" :alt="service.title" :name="service.title" @click="addProjectType('project-form-' + service.title, $event)"></label>
-                <h4>{{ service.title }}</h4>
+              <div v-for="(service, index) in startaprojectform.services" :id="'project-form-' + service.title" :key="index" class="form-service text-center" @click="addProjectType(service, $event)">
+                <img :id="'tick-' + service.title" :src="startaprojectform.tick" alt="ticked" class="tick hidden">
+                <div class="project-services-content">
+                  <input :id="'form-' + service.title" type="checkbox" name="Scope" :value="service.title">
+                  <label :for="'form-' + service.title"><img :id="'img-' + service.title" :src="service.icon" :alt="service.title" :name="service.title" @click="addProjectType(service, $event)"></label>
+                  <h4>{{ service.title }}</h4>
+                </div>
               </div>
             </div>
           </section>
@@ -185,18 +188,25 @@ export default {
     }
   },
   methods: {
-    addProjectType: function (service, e) {
+    addProjectType: function (data, e) {
+      const service = 'project-form-' + data.title
+      const img = 'img-' + data.title
+      const tick = 'tick-' + data.title
       if (this.projectType.indexOf(service) > -1) {
         const index = this.projectType.indexOf(service)
         if (index !== -1) {
           this.projectType.splice(index, 1)
         }
+        document.getElementById(img).src = data.icon
         document.getElementById(service).classList.remove('projectSelected')
         document.getElementById(service).classList.add('projectDeselected')
+        document.getElementById(tick).classList.add('hidden')
       } else {
         this.projectType.push(service)
+        document.getElementById(img).src = data.yellowIcon
         document.getElementById(service).classList.remove('projectDeselected')
         document.getElementById(service).classList.add('projectSelected')
+        document.getElementById(tick).classList.remove('hidden')
       }
     },
     checkIfOther: function (value) {
@@ -319,14 +329,22 @@ export default {
     cursor: pointer;
     padding: 8px;
     margin-top: 10px;
-}
-
+  }
   #brief:focus + label,
   #brief + label:hover {
     background-color: #FFC716;
     color: #FFF;
-}
-.inline {
+  }
+  .project-services .tick {
+    height: 20px;
+    width: 20px;
+    float: right;
+  }
+  .inline {
   display: inline;
-}
+  }
+  .project-services-content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 </style>

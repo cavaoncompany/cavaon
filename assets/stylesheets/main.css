@@ -424,6 +424,7 @@ div#preloader {
 
 .btn-odin-color{
 	border:none;
+	width: fit-content;
 }
 .btn-odin-color:hover{
 }
@@ -446,7 +447,7 @@ div#preloader {
 	background-size: cover;
 }
 .hero-caps{
-	padding:  10%;
+	/* padding:  10%; */
 	overflow: hidden;
 }
 .hero-caps.one-half{
@@ -459,14 +460,13 @@ div#preloader {
 	font-family: 'Montserrat', sans-serif; font-weight:700;
 	font-size: 64px;
 	line-height: 87px;
-	margin-top: 20%;
+	text-align: left;
 }
 .hero-caps h6{
 	margin-top: 20px;
 	letter-spacing: 6px;
 	font-family: 'Raleway', sans-serif; font-weight:300;
 	font-size: 24px;
-	line-height: 30px;
 }
 .hero-caps h6.dark > span{
 	border-top:solid 2px #2D2D2D;
@@ -479,11 +479,12 @@ div#preloader {
 	margin-top: 20px;
 	letter-spacing: 3px;
 	font-family: 'Montserrat', sans-serif; font-weight:700;
-	line-height: 39px;
+	line-height: 24px;
 	border: none;
 }
 .hero-caps h6.minimal > span{
-	padding: 20px;
+	padding: 0px;
+	line-height: 24px;
 }
 .hero-caps h6.minimal.dark > span{
 	border:solid 4px;
