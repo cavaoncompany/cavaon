@@ -65,7 +65,7 @@
                   id="number-desktop"
                   ref="codecounter"
                   class="color counter"
-                  :startVal="0"
+                  :startVal="startVal"
                   :endVal="linesOfCode"
                   :autoplay="false"
                   :duration="3000"
