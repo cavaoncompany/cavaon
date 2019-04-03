@@ -130,10 +130,10 @@
 	.promo-article {
 		margin-top: 25%;
 	}
-	.mobile {
+	.mobile-banner {
 		display: none;
 	}
-	.desktop {
+	.desktop-banner {
 		display: block;
 	}
 	.service-card {
@@ -217,10 +217,10 @@
 	.about-us-mobile {
 		display: none;
 	}
-	.mobile {
+	.mobile-banner {
 		display: none;
 	}
-	.desktop {
+	.desktop-banner {
 		display: block;
 	}
 	.about-us-desktop {
@@ -565,10 +565,10 @@
 	.hero-caps h2 > span{
 	padding-top: 0px;
 	}
-	.mobile {
+	.mobile-banner {
 		display: block;
 	}
-	.desktop {
+	.desktop-banner {
 		display: none;
 	}
 	.standard-header{

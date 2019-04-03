@@ -9,11 +9,11 @@
         <!-- <div class="valignBanner"> -->
         <div class="container hero-container">
           <div class="hero-caps text-rotator">
-            <h1 class="white desktop">
+            <h1 class="white desktop-banner">
               <span>{{ banner.titleTop }}</span>
               <br>{{ banner.titleBottom }}
             </h1>
-            <h1 class="white mobile">
+            <h1 class="white mobile-banner">
               <span>{{ banner.titleTop }}</span>
               {{ banner.titleBottom }}
             </h1>
