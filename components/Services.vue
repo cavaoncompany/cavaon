@@ -1,5 +1,5 @@
 <template>
-  <section class="services">
+  <section class="services page page-section">
     <div class="container">
       <div class="row">
         <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">

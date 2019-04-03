@@ -1,5 +1,5 @@
 <template>
-  <section id="flowchart">
+  <section id="flowchart" class="page page-section">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-4 flowchart-left">
