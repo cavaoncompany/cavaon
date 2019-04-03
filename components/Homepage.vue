@@ -7,20 +7,20 @@
       <section id="intro" class="intro">
         <HeaderTop :projectFormOpen="projectFormOpen" />
         <!-- <div class="valignBanner"> -->
-          <div class="container">
-            <div class="hero-caps text-rotator">
-              <h1 class="white">
-                <span>{{ banner.titleTop }}</span>
-                <br>{{ banner.titleBottom }}
-              </h1>
-              <h6 class="minimal white">
-                <span>{{ banner.subHeader }}</span>
-              </h6>
-              <div class="welcome-button">
-                <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ banner.buttonText }}</a>
-              </div>
+        <div class="container">
+          <div class="hero-caps text-rotator">
+            <h1 class="white">
+              <span>{{ banner.titleTop }}</span>
+              <br>{{ banner.titleBottom }}
+            </h1>
+            <h6 class="minimal white">
+              <span>{{ banner.subHeader }}</span>
+            </h6>
+            <div class="welcome-button">
+              <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ banner.buttonText }}</a>
             </div>
           </div>
+        </div>
         <!-- </div> -->
         <!-- valignBanner:ends -->
         <a class="scroll" href="#flowchart" aria-label="Scroll to Projects">

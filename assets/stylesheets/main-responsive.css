@@ -1668,8 +1668,8 @@
 	
 	.container, .features-details {
 	    max-width: 280px;
-	    padding-left: 20px;
-	    padding-right: 20px;
+	    padding-left: 0;
+	    padding-right: 0;
 	}
 	.add-top-half{
 		padding-top: 35px;
