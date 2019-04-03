@@ -11,40 +11,37 @@ collections:
         format: "json"
         file: "/static/content/banner.json"
         fields:
-          - label: "Banners"
-            name: "banners"
-            widget: "list"
-            fields:
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Top line", name: "top", widget: "string"}
-              - {label: "Bottom line", name: "bottom", widget: "string"}
-      - label: "Projects"
-        name: "projects"
-        format: "json"
-        file: "/static/content/projects.json"
-        fields:
-          - label: "Title"
-            name: "title"
+          - label: "Title top line"
+            name: "titleTop"
             widget: "string"
-          - label: "Motto top line"
-            name: "mottoTop"
+          - label: "Title bottom line"
+            name: "titleBottom"
             widget: "string"
-          - label: "Motto bottom line"
-            name: "mottoBottom"
-            widget: "string"
-          - label: "Subtitle"
-            name: "subtitle"
+          - label: "Subheader"
+            name: "subHeader"
             widget: "string"
           - label: "Button text"
             name: "buttonText"
             widget: "string"
-          - label: "Projects"
-            name: "projects"
+      - label: "Flowchart"
+        name: "flowchart"
+        format: "json"
+        file: "/static/content/flowchart.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Image on left"
+            name: "leftImage"
+            widget: "image"
+          - label: "FLowchart steps"
+            name: "steps"
             widget: "list"
             fields:
-              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Number", name: "id", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
       - label: "Services"
         name: "services"
         format: "json"
@@ -52,9 +49,6 @@ collections:
         fields:
           - label: "Title"
             name: "title"
-            widget: "string"
-          - label: "Tagline"
-            name: "tagline"
             widget: "string"
           - label: "Services"
             name: "services"
@@ -64,7 +58,6 @@ collections:
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
-              - {label: "Animation", name: "animation", widget: "string"}
       - label: "Promo Text"
         name: "promo"
         format: "json"
@@ -252,6 +245,7 @@ collections:
             widget: "list"
             fields:
               - {label: "Icon", name: "icon", widget: "image"}
+              - {label: "Yellow icon", name: "yellowIcon", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
           - label: "Timeframe title"
             name: "timeframeTitle"
@@ -265,6 +259,12 @@ collections:
           - label: "Goal placeholder"
             name: "goalPlaceholder"
             widget: "string"
+          - label: "Brief upload button text"
+            name: "goalUploadButtonText"
+            widget: "string"
+          - label: "Upload max size"
+            name: "goalMaxLength"
+            widget: "string"
           - label: "How did you hear about us title"
             name: "hearAboutUsTitle"
             widget: "string"
@@ -274,6 +274,9 @@ collections:
           - label: "Button text"
             name: "buttonText"
             widget: "string"
+          - label: "Tick icon"
+            name: "tick"
+            widget: "image"
   - label: "Thank you" # Used in routes, e.g., /admin/collections/blog
     name: "success"
     files:

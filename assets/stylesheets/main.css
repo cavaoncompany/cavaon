@@ -162,6 +162,14 @@ h1,h2,h3,h4,h5,h6{
   	-o-transform: translateY(-50%);
   	transform: translateY(-50%);
 }
+.valignBanner {
+	position: relative;
+  	top: 40%;
+  	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	-o-transform: translateY(-50%);
+  	transform: translateY(-50%);
+}
 .parallax{
   background-repeat: repeat-y;
   background-size: cover;
@@ -193,9 +201,7 @@ h1,h2,h3,h4,h5,h6{
 .intro-header{
 	width: 100%;
 	height: 70px;
-	display: block;/*
-	padding-left: 10%;
-	padding-right:10%;*/
+	display: block;
 	position: absolute;
 	z-index: 100;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -210,12 +216,13 @@ h1,h2,h3,h4,h5,h6{
 	position: fixed;
 	top: 0;
 	width: 100%;
-    	z-index: 100;
+    z-index: 100;
 	background:#fff;
 }
 .main-logo{
 	margin-top: 28px;
 	margin-bottom: 10px;
+	width: 130px;
 }
 .standard-nav {
     float: right;
@@ -418,6 +425,7 @@ div#preloader {
 
 .btn-odin-color{
 	border:none;
+	width: fit-content;
 }
 .btn-odin-color:hover{
 }
@@ -440,7 +448,7 @@ div#preloader {
 	background-size: cover;
 }
 .hero-caps{
-	padding:  10%;
+	/* padding:  10%; */
 	overflow: hidden;
 }
 .hero-caps.one-half{
@@ -451,23 +459,17 @@ div#preloader {
 }
 .hero-caps h1{
 	font-family: 'Montserrat', sans-serif; font-weight:700;
-	text-transform: uppercase;
-	font-size: 100px;
-	line-height: 207px;
+	font-size: 64px;
+	line-height: 87px;
+	text-align: left;
 }
 .hero-caps h6{
 	margin-top: 20px;
-	letter-spacing: 12px;
 	font-family: 'Raleway', sans-serif; font-weight:300;
-	text-transform: uppercase;
-	font-size: 20px;
-	line-height: 30px;
+	font-size: 24px;
 }
 .hero-caps h6.dark > span{
 	border-top:solid 2px #2D2D2D;
-}
-.hero-caps h6.white > span{
-	border-top:solid 2px #fff;
 }
 .hero-caps h6 > span{
 	padding-top: 20px;
@@ -475,19 +477,16 @@ div#preloader {
 
 .hero-caps h6.minimal{
 	margin-top: 20px;
-	letter-spacing: 8px;
 	font-family: 'Montserrat', sans-serif; font-weight:700;
-	text-transform: uppercase;
-	font-size: 32px;
-	line-height: 39px;
+	line-height: 24px;
+	border: none;
+	font-weight: 300;
 }
 .hero-caps h6.minimal > span{
-	padding: 20px;
+	padding: 0px;
+	line-height: 24px;
 }
 .hero-caps h6.minimal.dark > span{
-	border:solid 4px;
-}
-.hero-caps h6.minimal.white > span{
 	border:solid 4px;
 }
 .hero-caps h6.minimal.black > span{
@@ -1587,17 +1586,17 @@ input:focus, textarea:focus {
 			transition: all .8s linear;
 }
 textarea {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid #656565 !important;
-    border-radius: 0px !important;
-    box-shadow: none !important;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #656565;
+    border-radius: 0px;
+    box-shadow: none;
     color: #fff;
-    font-family: 'Montserrat', sans-serif !important; font-weight:300 !important;
-    font-size: 14px !important;
-    line-height: 21px !important;
+    font-family: 'Montserrat', sans-serif; font-weight:300;
+    font-size: 14px;
+    line-height: 21px;
     margin-top: 0;
-    padding: 10px 0 !important;
+    padding: 10px 0;
     resize: none;
     width: 100%;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */

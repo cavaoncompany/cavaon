@@ -24,6 +24,12 @@
 	.promo-section {
 		min-height: 750px
 	}
+	.service-card {
+		height: 300px;
+	}
+	.service-card-container {
+	    margin-top: 60px;
+	}
 }
 
 /*Projector Screens and Ver Large Monitors*/
@@ -36,6 +42,12 @@
 	}
 	.promo-section {
 		min-height: 750px
+	}
+	.service-card {
+		height: 300px;
+	}
+	.service-card-container {
+	    margin-top: 60px;
 	}
 }
 
@@ -68,13 +80,16 @@
 	#mobile-services {
 		display: none;
 	}
+	#team {
+		padding-bottom: 120px;
+	}
 	.team-desktop {
 		display: block;
 	}
 	.team-mobile {
 		display: none;
 	}
-	.service {
+	.form-service {
 		width: 31%;
 		padding: 20px;
 		margin: 8px;
@@ -114,6 +129,33 @@
 	}
 	.promo-article {
 		margin-top: 25%;
+	}
+	.mobile-banner {
+		display: none;
+	}
+	.desktop-banner {
+		display: block;
+	}
+	.service-card {
+		height: 300px;
+	}
+	.service-card-container {
+	    margin-top: 60px;
+	}
+	#flowchart-mobile {
+		display: none
+	}
+	#flowchart {
+		display: block;
+	}
+	.hero-caps h1 {
+		margin-top: 35%;
+	}
+	.hero-caps h6.minimal {
+		margin-bottom: 65px;
+		text-align: left;
+		line-height: 39px;
+		margin-top: 45px;
 	}
 }
 
@@ -143,7 +185,7 @@
 	#mobile-services {
 		display: none;
 	}
-	.service {
+	.form-service {
 		width: 31%;
 		padding: 20px;
 		margin: 8px;
@@ -175,8 +217,17 @@
 	.about-us-mobile {
 		display: none;
 	}
+	.mobile-banner {
+		display: none;
+	}
+	.desktop-banner {
+		display: block;
+	}
 	.about-us-desktop {
 		display: block;
+	}
+	#team {
+		padding-bottom: 120px;
 	}
 	.team-desktop {
 		display: block;
@@ -186,6 +237,27 @@
 	}
 	#thumb-carousel-wrap {
 		display: block;
+	}
+	.service-card {
+		height: 300px;
+	}
+	.service-card-container {
+	    margin-top: 60px;
+	}
+	#flowchart-mobile {
+		display: none
+	}
+	#flowchart {
+		display: block;
+	}
+	.hero-caps h1 {
+		margin-top: 30%;
+	}
+	.hero-caps h6.minimal {
+		margin-bottom: 65px;
+		text-align: left;
+		line-height: 39px;
+		margin-top: 45px;
 	}
 }
 
@@ -257,9 +329,6 @@
 	.mob-add-bottom{
 		margin-bottom:30px;
 	}
-	.btn{
-		width: 100%;
-	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
 	}
@@ -287,9 +356,6 @@
 	}
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
-	}
-	.btn{
-		width: 100%;
 	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
@@ -321,9 +387,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	ul#portfolioFilter li{
 	width: 47%;
 	margin-bottom: 3px;
@@ -336,19 +399,15 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 32px;
-	    line-height: 39px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 54px;
-		line-height: 71px;
-		letter-spacing: 16px;
+	    font-size: 64px;
+		line-height: 70px;
 	}
 	.hero-caps h6 {
-	    font-size: 36px;
-	    line-height: 43px;
+	    font-size: 24px;
 	}
 	.hero-caps h5 {
 	    font-size: 28px;
@@ -367,7 +426,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 32px;
-	    line-height: 39px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 36px;
@@ -412,6 +470,9 @@
 	.about-us-desktop {
 		display: none;
 	}
+	#team {
+		padding-bottom: 60px;
+	}
 	.team-desktop {
 		display: none;
 	}
@@ -419,9 +480,9 @@
 		display: block;
 	}
 	.promo-article {
-		margin-top: 35%;
+		margin-top: 20%;
 	}
-	.service {
+	.form-service {
 		width: 46%;
 		padding: 5px;
 		margin: 5px;
@@ -453,9 +514,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	ul#portfolioFilter li{
 	width: 47%;
 	margin-bottom: 3px;
@@ -468,18 +526,15 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 32px;
-	    line-height: 39px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 54px;
-	    line-height: 71px;
+	    font-size: 48px;
+    	line-height: 56px;
 	}
 	.hero-caps h6 {
 	    font-size: 36px;
-	    line-height: 43px;
 	}
 	.hero-caps h5 {
 	    font-size: 28px;
@@ -499,7 +554,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 32px;
-	    line-height: 39px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 36px;
@@ -511,6 +565,12 @@
 	.hero-caps h2 > span{
 	padding-top: 0px;
 	}
+	.mobile-banner {
+		display: block;
+	}
+	.desktop-banner {
+		display: none;
+	}
 	.standard-header{
 		display: none !important;
 	}
@@ -518,7 +578,7 @@
 		margin-top: 20px;
 	}
 	.promo-section {
-		min-height: 750px;
+		min-height: 450px;
 	}
 	.testimonial-wrap {
 		width: 100%;
@@ -528,6 +588,15 @@
 	}
 	.testimonial-wrapper {
 		flex-direction: column;
+	}
+	.service-card {
+		text-align: center;
+	}
+	#flowchart .flowchart-left img {
+		opacity: 0;
+	}
+	.btn-odin-color {
+		width: fit-content;
 	}
 }
 
@@ -557,9 +626,6 @@
 	}
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
-	}
-	.btn{
-		width: 100%;
 	}
 	img.img-responsive{
 		display: inline-block;
@@ -620,18 +686,16 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 24px;
-	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 36px;
-	    line-height: 55px;
+	    font-size: 25px;
+		line-height: 38px;
+		margin-top: 200px;
 	}
 	.hero-caps h6 {
-	    font-size: 24px;
-	    line-height: 31px;
+		font-size: 20px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -651,7 +715,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 24px;
@@ -698,9 +761,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	img.img-responsive{
 		display: inline-block;
 	}
@@ -760,18 +820,16 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 24px;
-	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 36px;
-	    line-height: 55px;
+	    font-size: 25px;
+		line-height: 38px;
+		margin-top: 200px;
 	}
 	.hero-caps h6 {
-	    font-size: 24px;
-	    line-height: 31px;
+		font-size: 20px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -791,7 +849,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 24px;
@@ -838,9 +895,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	img.img-responsive{
 		display: inline-block;
 	}
@@ -900,18 +954,21 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 24px;
-	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 36px;
-	    line-height: 55px;
+	    font-size: 25px;
+		line-height: 38px;
+		margin-top: 190px;
 	}
 	.hero-caps h6 {
-	    font-size: 24px;
-	    line-height: 31px;
+		font-size: 20px;
+	}
+	.hero-caps h6.minimal {
+		margin-bottom: 30px;
+		line-height: 24px;
+		margin-top: 25px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -931,7 +988,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 24px;
@@ -978,9 +1034,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	img.img-responsive{
 		display: inline-block;
 	}
@@ -1040,18 +1093,16 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 24px;
-	    line-height: 31px;
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 22px;
-	    line-height: 55px;
+	    font-size: 30px;
+		line-height: 33px;
+		margin-top: 86px;
 	}
 	.hero-caps h6 {
-	    font-size: 24px;
-	    line-height: 31px;
+		font-size: 20px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -1071,7 +1122,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 24px;
@@ -1088,6 +1138,12 @@
 	}
 	.news-post{
 		margin-top: 20px;
+	}
+	#flowchart-mobile {
+		display: block
+	}
+	#flowchart {
+		display: none;
 	}
 }
 	
@@ -1116,13 +1172,10 @@
 		margin-bottom:30px;
 	}
 	.promo-article {
-		margin-top: 70%;
+		margin-top: 25%;
 	}
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
-	}
-	.btn{
-		width: 100%;
 	}
 	img.img-responsive{
 		display: inline-block;
@@ -1183,18 +1236,11 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 24px;
-	    line-height: 31px;
 	    padding: 0;
 	}
-	.hero-caps h1 {
-	    font-size: 36px;
-	    line-height: 55px;
-	}
 	.hero-caps h6 {
-	    font-size: 24px;
-	    line-height: 31px;
+		font-size: 20px;
 	}
 	.hero-caps h5 {
 	    font-size: 18px;
@@ -1214,7 +1260,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 24px;
@@ -1265,9 +1310,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	.page-section, .separator-section{
 		padding: 40px 0;
 	}
@@ -1330,18 +1372,11 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
 	    font-size: 20px;
-	    line-height: 27px;
 	    padding: 0;
 	}
-	.hero-caps h1 {
-	    font-size: 16px;
-	    line-height: 43px;
-	}
 	.hero-caps h6 {
-	    font-size: 16px;
-	    line-height: 23px;
+		font-size: 20px;
 	}
 	.hero-caps h5 {
 	    font-size: 12px;
@@ -1361,7 +1396,7 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 16px;
-	    line-height: 23px;
+		margin-bottom: 0;
 	}
 	.hero-caps h4 > span {
 	    font-size: 18px;
@@ -1375,6 +1410,12 @@
 	}
 	.news-post{
 		margin-top: 20px;
+	}
+	.service-card {
+		height: auto;
+	}
+	.service-card-container {
+	    margin-top: 10px;
 	}
 }
 
@@ -1406,9 +1447,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	.page-section, .separator-section{
 		padding: 40px 0;
 	}
@@ -1471,18 +1509,11 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
-	    font-size: 20px;
-	    line-height: 27px;
+	    font-size: 17px;
 	    padding: 0;
 	}
-	.hero-caps h1 {
-	    font-size: 16px;
-	    line-height: 43px;
-	}
 	.hero-caps h6 {
-	    font-size: 16px;
-	    line-height: 23px;
+		font-size: 20px;
 	}
 	.hero-caps h5 {
 	    font-size: 12px;
@@ -1502,7 +1533,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 16px;
-	    line-height: 23px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 18px;
@@ -1545,9 +1575,6 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
-	.btn{
-		width: 100%;
-	}
 	.page-section, .separator-section{
 		padding: 40px 0;
 	}
@@ -1610,19 +1637,8 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
-	    font-size: 20px;
-	    line-height: 27px;
+	    font-size: 17px;
 	    padding: 0;
-	}
-	.hero-caps h1 {
-	    font-size: 16px;
-		line-height: 43px;
-		letter-spacing: 8px;
-	}
-	.hero-caps h6 {
-	    font-size: 16px;
-	    line-height: 23px;
 	}
 	.hero-caps h5 {
 	    font-size: 12px;
@@ -1642,7 +1658,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 16px;
-	    line-height: 23px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 18px;
@@ -1664,8 +1679,8 @@
 	
 	.container, .features-details {
 	    max-width: 280px;
-	    padding-left: 20px;
-	    padding-right: 20px;
+	    padding-left: 0;
+	    padding-right: 0;
 	}
 	.add-top-half{
 		padding-top: 35px;
@@ -1684,9 +1699,6 @@
 	}
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
-	}
-	.btn{
-		width: 100%;
 	}
 	.page-section, .separator-section{
 		padding: 40px 0;
@@ -1715,7 +1727,7 @@
 	    font-size: 18px;
 	    line-height: 25px;
 	}
-	.service {
+	.form-service {
 		width: 100%;
 	}
 	.action-text h1 > span {
@@ -1753,19 +1765,8 @@
 		display: none !important;
 	}
 	.hero-caps h6.minimal.white > span {
-	    border:none !important;
-	    font-size: 20px;
-	    line-height: 27px;
+	    font-size: 16px;
 	    padding: 0;
-	}
-	.hero-caps h1 {
-	    font-size: 16px;
-		line-height: 43px;
-		letter-spacing: 8px;
-	}
-	.hero-caps h6 {
-	    font-size: 16px;
-	    line-height: 23px;
 	}
 	.hero-caps h5 {
 	    font-size: 12px;
@@ -1785,7 +1786,6 @@
 	.hero-caps h6 > span {
 	    border:none !important;
 	    font-size: 16px;
-	    line-height: 23px;
 	}
 	.hero-caps h4 > span {
 	    font-size: 18px;

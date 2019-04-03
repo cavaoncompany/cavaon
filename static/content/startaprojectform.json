@@ -1,5 +1,4 @@
 {
-  "goalPlaceholder": "In less than 500 characters",
   "timeframe": [
     "In a week",
     "In a month",
@@ -17,37 +16,48 @@
   "timeframeTitle": "3 When do you need the project to be completed?",
   "hearAboutUsTitle": "5 How did you hear about us?",
   "projectScopeTitle": "2 What is the scope of your project?",
+  "goalPlaceholder": "In less than 500 characters",
+  "goalUploadButtonText": "Upload project brief",
+  "goalMaxLength": "File size max: 5mb",
   "hearAboutUs": [
     "Google",
     "Referral from a friend",
     "Facebook",
-    "LinkedIn"
+    "LinkedIn",
+    "Other"
   ],
   "services": [
     {
       "icon": "/images/icons/Services-Logo.png",
+      "yellowIcon": "/images/icons/services-logo-yellow.png",
       "title": "LOGO"
     },
     {
       "icon": "/images/icons/Services-Branding.png",
+      "yellowIcon": "/images/icons/services-branding-yellow.png",
       "title": "BRANDING"
     },
     {
       "icon": "/images/icons/Services-WebDesign.png",
+      "yellowIcon": "/images/icons/services-webdesign-yellow.png",
       "title": "WEB DESIGN"
     },
     {
       "icon": "/images/icons/Services-Development.png",
+      "yellowIcon": "/images/icons/services-development-yellow.png",
       "title": "DEVELOPMENT"
     },
     {
       "icon": "/images/icons/Services-PrintDesign.png",
+      "yellowIcon": "/images/icons/services-printdesign-yellow.png",
       "title": "PRINT DESIGN"
     },
     {
       "icon": "/images/icons/Services-Consultation.png",
+      "yellowIcon": "/images/icons/services-consultation-yellow.png",
       "title": "CONSULTATION"
     }
   ],
-  "buttonText": "SUBMIT"
+  "buttonText": "SUBMIT",
+  "tick": "/images/icons/Tick.png"
 }
