@@ -19,7 +19,13 @@ $(function ($) {
     const vH = $(window).height()
     const vW = $(window).width()
     // Adjusting Intro Components Spacing based on detected screen resolution
-    $('#intro').css('height', (vH - (vH / 2.5)))
+    let introvH
+    if (vW < 350) {
+      introvH = vH - (vH / 3.5)
+    } else {
+      introvH = vH - (vH / 2.5)
+    }
+    $('#intro').css('height', (introvH))
     $('.full-height').css('height', vH)
     $('.full-width').css('width', vW)
     $('.half-height').css('height', vH / 2)

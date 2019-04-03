@@ -245,6 +245,7 @@ collections:
             widget: "list"
             fields:
               - {label: "Icon", name: "icon", widget: "image"}
+              - {label: "Yellow icon", name: "yellowIcon", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
           - label: "Timeframe title"
             name: "timeframeTitle"
@@ -273,6 +274,9 @@ collections:
           - label: "Button text"
             name: "buttonText"
             widget: "string"
+          - label: "Tick icon"
+            name: "tick"
+            widget: "image"
   - label: "Thank you" # Used in routes, e.g., /admin/collections/blog
     name: "success"
     files:
