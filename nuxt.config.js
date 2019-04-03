@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const pkg = require('./package')
+const metadata = require('./static/content/metadata.json')
 
 module.exports = {
   mode: 'universal',
@@ -12,8 +13,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'site_name', name: 'site_name', content: 'Cavaon' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'site_name', name: 'site_name', content: metadata.homepageTitle },
+      { hid: 'description', name: 'description', content: metadata.homepageDescription }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

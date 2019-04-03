@@ -7,7 +7,7 @@
       <section id="intro" class="intro">
         <HeaderTop :projectFormOpen="projectFormOpen" />
         <!-- <div class="valignBanner"> -->
-        <div class="container">
+        <div class="container hero-container">
           <div class="hero-caps text-rotator">
             <h1 class="white">
               <span>{{ banner.titleTop }}</span>
@@ -606,5 +606,8 @@ export default {
   }
   .text-rotator {
     position: absolute;
+  }
+  .hero-container {
+    position: relative;
   }
 </style>

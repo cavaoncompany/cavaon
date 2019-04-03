@@ -393,7 +393,6 @@
 	.hero-caps h1 {
 	    font-size: 64px;
 		line-height: 70px;
-		letter-spacing: 16px;
 	}
 	.hero-caps h6 {
 	    font-size: 24px;
@@ -521,8 +520,6 @@
 	.hero-caps h1 {
 	    font-size: 50px;
 		line-height: 53px;
-		letter-spacing: 4px;
-		margin-top: 20%;
 	}
 	.hero-caps h6 {
 	    font-size: 36px;
@@ -677,7 +674,6 @@
 	.hero-caps h1 {
 	    font-size: 25px;
 		line-height: 38px;
-		letter-spacing: 7px;
 		margin-top: 200px;
 	}
 	.hero-caps h6 {
@@ -812,7 +808,6 @@
 	.hero-caps h1 {
 	    font-size: 25px;
 		line-height: 38px;
-		letter-spacing: 7px;
 		margin-top: 200px;
 	}
 	.hero-caps h6 {
@@ -947,7 +942,6 @@
 	.hero-caps h1 {
 	    font-size: 25px;
 		line-height: 38px;
-		letter-spacing: 7px;
 		margin-top: 190px;
 	}
 	.hero-caps h6 {
@@ -1087,7 +1081,6 @@
 	.hero-caps h1 {
 	    font-size: 30px;
 		line-height: 33px;
-		letter-spacing: 3px;
 		margin-top: 86px;
 	}
 	.hero-caps h6 {
