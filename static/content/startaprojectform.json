@@ -1,4 +1,5 @@
 {
+  "goalPlaceholder": "In less than 500 characters",
   "timeframe": [
     "In a week",
     "In a month",
@@ -16,9 +17,6 @@
   "timeframeTitle": "3 When do you need the project to be completed?",
   "hearAboutUsTitle": "5 How did you hear about us?",
   "projectScopeTitle": "2 What is the scope of your project?",
-  "goalPlaceholder": "In less than 500 characters",
-  "goalUploadButtonText": "Upload project brief",
-  "goalMaxLength": "File size max: 5mb",
   "hearAboutUs": [
     "Google",
     "Referral from a friend",

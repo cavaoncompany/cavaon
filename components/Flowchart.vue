@@ -2,25 +2,25 @@
   <section id="flowchart">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-lg-4 flowchart-left">
+        <div class="col-12 col-md-4 flowchart-left">
           <article class="title">
             <h2>{{ flowchart.title }}</h2>
           </article>
           <img :src="flowchart.leftImage" alt="timeline">
         </div>
-        <div class="col-12 col-lg-8">
+        <div class="col-12 col-md-8">
           <div class="row flowchart-items">
             <div v-for="(item, index) in flowchart.steps" :key="index">
-              <div v-if="item.id % 2 === 0" class="col-12 col-sm-6">
+              <div v-if="item.id % 2 === 0" class="col-12 col-md-6">
                 <img :src="item.image" :alt="item.title">
               </div>
-              <div class="col-12 col-sm-6">
+              <div class="col-12 col-md-6">
                 <h3>{{ item.id }}</h3>
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.description }}</p>
                 <div v-if="index < (flowchart.steps.length - 1)" class="timeline" />
               </div>
-              <div v-if="item.id % 2 !== 0" class="col-12 col-sm-6">
+              <div v-if="item.id % 2 !== 0" class="col-12 col-md-6">
                 <img :src="item.image" :alt="item.title">
               </div>
             </div>
