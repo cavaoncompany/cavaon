@@ -481,6 +481,7 @@ div#preloader {
 	font-family: 'Montserrat', sans-serif; font-weight:700;
 	line-height: 24px;
 	border: none;
+	font-weight: 300;
 }
 .hero-caps h6.minimal > span{
 	padding: 0px;
