@@ -11,18 +11,13 @@ collections:
         format: "json"
         file: "/static/content/banner.json"
         fields:
-          - label: "Title top line"
-            name: "titleTop"
-            widget: "string"
-          - label: "Title bottom line"
-            name: "titleBottom"
-            widget: "string"
-          - label: "Subheader"
-            name: "subHeader"
-            widget: "string"
-          - label: "Button text"
-            name: "buttonText"
-            widget: "string"
+          - label: "Banners"
+            name: "banners"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Top line", name: "top", widget: "string"}
+              - {label: "Bottom line", name: "bottom", widget: "string"}
       - label: "Projects"
         name: "projects"
         format: "json"
@@ -58,6 +53,9 @@ collections:
           - label: "Title"
             name: "title"
             widget: "string"
+          - label: "Tagline"
+            name: "tagline"
+            widget: "string"
           - label: "Services"
             name: "services"
             widget: "list"
@@ -66,6 +64,7 @@ collections:
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
+              - {label: "Animation", name: "animation", widget: "string"}
       - label: "Promo Text"
         name: "promo"
         format: "json"
