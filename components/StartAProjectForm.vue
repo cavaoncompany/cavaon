@@ -90,7 +90,7 @@
             </h3>
             <div class="project-services">
               <div v-for="(service, index) in startaprojectform.services" :id="'project-form-' + service.title" :key="index" class="form-service text-center" @click="addProjectType(service, $event)">
-                <img :id="'tick-' + service.title" :src="startaprojectform.tick" alt="ticked" class="tick hidden">
+                <img :id="'tick-' + service.title" :src="startaprojectform.tick" alt="ticked" class="tick invisible">
                 <div class="project-services-content">
                   <input :id="'form-' + service.title" type="checkbox" name="Scope" :value="service.title">
                   <label :for="'form-' + service.title"><img :id="'img-' + service.title" :src="service.icon" :alt="service.title" :name="service.title" @click="addProjectType(service, $event)"></label>
@@ -200,13 +200,13 @@ export default {
         document.getElementById(img).src = data.icon
         document.getElementById(service).classList.remove('projectSelected')
         document.getElementById(service).classList.add('projectDeselected')
-        document.getElementById(tick).classList.add('hidden')
+        document.getElementById(tick).classList.add('invisible')
       } else {
         this.projectType.push(service)
         document.getElementById(img).src = data.yellowIcon
         document.getElementById(service).classList.remove('projectDeselected')
         document.getElementById(service).classList.add('projectSelected')
-        document.getElementById(tick).classList.remove('hidden')
+        document.getElementById(tick).classList.remove('invisible')
       }
     },
     checkIfOther: function (value) {
@@ -264,6 +264,7 @@ export default {
   }
   .form-service {
     border: 1px solid #E2E2E2;
+    position: relative;
   }
   .form-service:hover {
     cursor: pointer;
@@ -338,13 +339,13 @@ export default {
   .project-services .tick {
     height: 20px;
     width: 20px;
-    float: right;
+    position: absolute;
+    right: 10px;
   }
   .inline {
   display: inline;
   }
-  .project-services-content {
-    margin-left: 20px;
-    margin-right: 20px;
+  .invisible {
+    opacity: 0;
   }
 </style>
