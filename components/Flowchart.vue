@@ -68,6 +68,7 @@ export default {
   }
   .flowchart-items img {
     width: 100%;
+    height: auto;
   }
   .flowchart-items h3 {
       font-size: 16px;

@@ -77,6 +77,9 @@
 	.testimonial-wrapper {
 		flex-direction: row;
 	}
+	.team-stage > img{
+		padding: 0 40px;
+	}
 	#mobile-services {
 		display: none;
 	}
@@ -172,6 +175,9 @@
 	}
 	.promo-article {
 		margin-top: 25%;
+	}
+	.team-stage > img{
+		padding: 0 40px;
 	}
 	.testimonial-wrap {
 		margin-left: 20px;
@@ -329,6 +335,9 @@
 	.mob-add-bottom{
 		margin-bottom:30px;
 	}
+	.team-stage > img{
+		padding: 0 30px;
+	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
 	}
@@ -357,6 +366,9 @@
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
+	.team-stage > img{
+		padding: 0 25px;
+	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
 	}
@@ -365,6 +377,12 @@
 	}
 	.testimonial-wrap-right {
 		padding-top: 30px;
+	}
+	#flowchart .flowchart-left img {
+		opacity: 0;
+	}
+	.hero-caps h1 {
+		margin-top: 15%;
 	}
 }
 
@@ -397,6 +415,9 @@
 	}
 	.owl-buttons{
 		display: none !important;
+	}
+	.team-stage > img{
+		padding: 0 20px;
 	}
 	.hero-caps h6.minimal.white > span {
 	    font-size: 32px;
@@ -469,6 +490,9 @@
 	}
 	.about-us-desktop {
 		display: none;
+	}
+	.team-stage > img{
+		padding: 0 10px;
 	}
 	#team {
 		padding-bottom: 60px;
@@ -592,11 +616,14 @@
 	.service-card {
 		text-align: center;
 	}
-	#flowchart .flowchart-left img {
-		opacity: 0;
-	}
 	.btn-odin-color {
 		width: fit-content;
+	}
+	#flowchart-mobile {
+		display: block
+	}
+	#flowchart {
+		display: none;
 	}
 }
 
@@ -1099,7 +1126,7 @@
 	.hero-caps h1 {
 	    font-size: 30px;
 		line-height: 33px;
-		margin-top: 86px;
+		margin-top: 145px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -1138,12 +1165,6 @@
 	}
 	.news-post{
 		margin-top: 20px;
-	}
-	#flowchart-mobile {
-		display: block
-	}
-	#flowchart {
-		display: none;
 	}
 }
 	

@@ -10,16 +10,16 @@
         </div>
         <div class="col-12 col-lg-8">
           <div class="row flowchart-items-mobile">
-            <div v-for="(item, index) in flowchart.steps" :key="index">
-              <div class="col-12">
+            <div v-for="(item, index) in flowchart.steps" :key="index" class="row">
+              <div class="col-12 col-sm-6">
                 <h3>{{ item.id }}</h3>
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.description }}</p>
               </div>
-              <div class="col-12">
+              <div class="col-12 col-sm-6">
                 <img :src="item.image" :alt="item.title">
               </div>
-              <div v-if="item.id < flowchart.steps.length" class="timeline-mobile" />
+              <div v-if="item.id < flowchart.steps.length" class="timeline-mobile col-12" />
             </div>
           </div>
         </div>
@@ -68,6 +68,7 @@ export default {
   }
   .flowchart-items-mobile img {
     width: 100%;
+    height: auto;
   }
   .flowchart-items-mobile h3 {
     font-size: 16px;
