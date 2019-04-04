@@ -1,4 +1,5 @@
 {
+  "goalPlaceholder": "In less than 500 characters",
   "timeframe": [
     "In a week",
     "In a month",
@@ -7,18 +8,17 @@
   "goalTitle": "4 Tell us about your company and the goal of the project",
   "namePlaceholder": "Your Name*",
   "instruction": "Please fill in this form. We will contact you shortly to discuss the next steps.",
+  "goalUploadButtonText": "Upload project brief",
   "companyPlaceholder": "Company",
   "emailPlaceholder": "Email Address*",
+  "goalMaxLength": "File size max: 5mb",
   "websitePlaceholder": "Website",
   "contactTitle": "1 Hello, nice to meet you!",
   "title": "START A PROJECT",
   "telPlaceholder": "Contact Number*",
-  "timeframeTitle": "3 When do you need the project to be completed?",
+  "timeframeTitle": "3 When do you need to start the project?",
   "hearAboutUsTitle": "5 How did you hear about us?",
   "projectScopeTitle": "2 What is the scope of your project?",
-  "goalPlaceholder": "In less than 500 characters",
-  "goalUploadButtonText": "Upload project brief",
-  "goalMaxLength": "File size max: 5mb",
   "hearAboutUs": [
     "Google",
     "Referral from a friend",
@@ -26,6 +26,7 @@
     "LinkedIn",
     "Other"
   ],
+  "tick": "/images/icons/Tick.png",
   "services": [
     {
       "icon": "/images/icons/Services-Logo.png",
@@ -58,6 +59,5 @@
       "title": "CONSULTATION"
     }
   ],
-  "buttonText": "SUBMIT",
-  "tick": "/images/icons/Tick.png"
+  "buttonText": "SUBMIT"
 }
