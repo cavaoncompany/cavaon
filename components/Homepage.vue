@@ -268,7 +268,7 @@
           <div class="container">
             <div class="row">
               <!-- item:starts -->
-              <article v-for="(member, index) in team.team" :key="index" class="col-md-3 text-left">
+              <article v-for="(member, index) in team.team" :key="index" class="col-sm-6 col-md-3 text-left">
                 <div class="item team-carousel-item team-stage">
                   <img
                     :id="member.firstname"
