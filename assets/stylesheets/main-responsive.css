@@ -366,6 +366,9 @@
 	.testimonial-wrap-right {
 		padding-top: 30px;
 	}
+	#flowchart .flowchart-left img {
+		opacity: 0;
+	}
 }
 
 /*Medium Tablets */
@@ -591,9 +594,6 @@
 	}
 	.service-card {
 		text-align: center;
-	}
-	#flowchart .flowchart-left img {
-		opacity: 0;
 	}
 	.btn-odin-color {
 		width: fit-content;
