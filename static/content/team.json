@@ -1,54 +1,54 @@
 {
-    "title": "The Team",
-    "team": [
-        {
-            "firstname": "John",
-            "lastname": "Ho",
-            "img1": "/images/Team-John-1.png",
-            "img2": "/images/Team-John-2.png",
-            "title": "CO-FOUNDER & MANAGING DIRECTOR"
-        },
-        {
-            "firstname": "Wayne",
-            "lastname": "Wen",
-            "img1": "/images/Team-Wayne-1.png",
-            "img2": "/images/Team-Wayne-2.png",
-            "title": "CO-FOUNDER & CHIEF SYSTEM ARCHITECT"
-        },
-        {
-            "firstname": "Ruby",
-            "lastname": "Zhang",
-            "img1": "/images/Team-Ruby-1.png",
-            "img2": "/images/Team-Ruby-2.png",
-            "title": "UX & UI DESIGNER"
-        },
-        {
-            "firstname": "Madeline",
-            "lastname": "Hui",
-            "img1": "/images/Team-Madeline-1.png",
-            "img2": "/images/Team-Madeline-2.png",
-            "title": "GRPHIC & DIGITAL DESIGNER"
-        },
-        {
-            "firstname": "Daniel",
-            "lastname": "Shen",
-            "img1": "/images/Team-Daniel-1.png",
-            "img2": "/images/Team-Daniel-2.png",
-            "title": "SENIOR DEVELOPER"
-        },
-        {
-            "firstname": "Joe",
-            "lastname": "Situ",
-            "img1": "/images/Team-Joe-1.png",
-            "img2": "/images/Team-Joe-2.png",
-            "title": "FULL STACK DEVELOPER"
-        },
-        {
-            "firstname": "Cornelia",
-            "lastname": "Schulz",
-            "img1": "/images/Team-Cornelia-1.png",
-            "img2": "/images/Team-Cornelia-2.png",
-            "title": "FRONT-END DEVELOPER"
-        }
-    ]
+  "title": "The Team",
+  "team": [
+    {
+      "firstname": "John",
+      "lastname": "Ho",
+      "img1": "/images/Team-John-1.png",
+      "img2": "/images/Team-John-2.png",
+      "title": "CO-FOUNDER & MANAGING DIRECTOR"
+    },
+    {
+      "firstname": "Wayne",
+      "lastname": "Wen",
+      "img1": "/images/Team-Wayne-1.png",
+      "img2": "/images/Team-Wayne-2.png",
+      "title": "CO-FOUNDER & CHIEF SYSTEM ARCHITECT"
+    },
+    {
+      "firstname": "Ruby",
+      "lastname": "Zhang",
+      "img1": "/images/Team-Ruby-1.png",
+      "img2": "/images/Team-Ruby-2.png",
+      "title": "UX & UI DESIGNER"
+    },
+    {
+      "firstname": "Madeline",
+      "lastname": "Hui",
+      "img1": "/images/Team-Madeline-1.png",
+      "img2": "/images/Team-Madeline-2.png",
+      "title": "GRAPHIC & DIGITAL DESIGNER"
+    },
+    {
+      "firstname": "Daniel",
+      "lastname": "Shen",
+      "img1": "/images/Team-Daniel-1.png",
+      "img2": "/images/Team-Daniel-2.png",
+      "title": "SENIOR DEVELOPER"
+    },
+    {
+      "firstname": "Joe",
+      "lastname": "Situ",
+      "img1": "/images/Team-Joe-1.png",
+      "img2": "/images/Team-Joe-2.png",
+      "title": "FULL STACK DEVELOPER"
+    },
+    {
+      "firstname": "Cornelia",
+      "lastname": "Schulz",
+      "img1": "/images/Team-Cornelia-1.png",
+      "img2": "/images/Team-Cornelia-2.png",
+      "title": "FRONT-END DEVELOPER"
+    }
+  ]
 }
