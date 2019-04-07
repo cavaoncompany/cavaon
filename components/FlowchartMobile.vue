@@ -82,4 +82,8 @@ export default {
     margin-top: 5px;
     margin-bottom: -38px;
   }
+  .flowchart-items-mobile .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
 </style>
