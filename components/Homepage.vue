@@ -33,25 +33,6 @@
           </div>
         </a>
       </section>
-      <svg
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="1 0 1250.000000 272.000000"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        <g
-          transform="translate(0.000000,272.000000) scale(0.100000,-0.100000)"
-          fill="#582C87"
-          stroke="none"
-        >
-          <path
-            d="M10 1374 c0 -1277 1 -1345 18 -1280 930 291 1857 460 3092 565 736
-            63 1316 86 2530 101 956 12 1423 30 2060 81 2201 174 3760 608 4590 1276 116
-            93 255 235 334 341 66 87 166 271 166 305 0 16 -311 17 -6395 17 l-6395 0 0
-            -1346z"
-          />
-        </g>
-      </svg>
       <HeaderStandard :projectFormOpen="projectFormOpen" />
       <Flowchart />
       <FlowchartMobile />
@@ -605,9 +586,9 @@ export default {
     margin-top: -3px;
     width: 100%;
   }
-  #intro {
+  /* #intro {
     background-color: #582C87;
-  }
+  } */
   .text-rotator {
     position: absolute;
   }

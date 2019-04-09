@@ -2,7 +2,11 @@
 /*This is main CSS file that intializes BG Images used in this template*/
 /*--------------------------------------------------------------------------*/
 
-
+#intro{
+	background-image: url('/images/top-banner.png');
+	background-size: 100% 100%;
+	height: 110vh;
+}
 .promo-section{
 	background-image: url('/images/Code.jpg');
 }
