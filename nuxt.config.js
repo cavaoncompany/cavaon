@@ -1,6 +1,11 @@
+const path = require('path')
 const webpack = require('webpack')
+const glob = require('glob-all')
 const pkg = require('./package')
 const metadata = require('./static/content/metadata.json')
+const dynamicRoutes  = getDynamicPaths({
+  '/blog': 'blog/posts/*.json'
+})
 
 module.exports = {
   mode: 'universal',
@@ -84,13 +89,14 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/google-analytics',
-    'nuxtent'
+    '@nuxtjs/google-analytics'
   ],
   googleAnalytics: {
     id: 'UA-136678258-1'
   },
-
+  generate: {
+    routes: dynamicRoutes
+  },
   /*
   ** Build configuration
   */
@@ -121,4 +127,19 @@ module.exports = {
       }
     }
   }
+}
+
+/**
+ * Create an array of URLs from a list of files
+ * @param {*} urlFilepathTable
+ */
+function getDynamicPaths(urlFilepathTable) {
+  return [].concat(
+    ...Object.keys(urlFilepathTable).map((url) => {
+      const filepathGlob = urlFilepathTable[url]
+      return glob
+        .sync(filepathGlob, { cwd: 'content' })
+        .map(filepath => `${url}/${path.basename(filepath, '.json')}`)
+    })
+  )
 }
