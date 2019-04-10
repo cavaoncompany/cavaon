@@ -10,7 +10,7 @@
         </article>
         <article class="col-md-10 text-right">
           <ul class="standard-nav standard-nav-dark-text visible-lg">
-            <li><a id="flowchart-linker" href="#flowchart" class="scroll" aria-label="Scroll to Projects" @click="closeForm()">Projects</a></li>
+            <li><a id="flowchart-linker" href="#flowchart" class="scroll" aria-label="Scroll to Services" @click="closeForm()">Services</a></li>
             <!-- <li><a id="services-linker" href="#services" class="scroll" aria-label="Scroll to Services" @click="closeForm()">Services</a></li> -->
             <li><a id="caseStudies-linker" href="#caseStudies" class="scroll" aria-label="Scroll to Case Studies" @click="closeForm()">Case Studies</a></li>
             <!-- <li><a id="testimonials-linker" href="#testimonials" class="scroll" aria-label="Scroll to Testimonials" @click="closeForm()">Testimonials</a></li>
