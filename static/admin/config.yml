@@ -6,6 +6,8 @@ collections:
   - name: 'blog' # Used in routes, e.g., /admin/collections/blog
     label: 'Blog Posts' # Used in the UI
     folder: 'content/blog' # The path to the folder where the documents are stored
+    media_folder: "static/images/uploads" # override for blog collection
+    public_folder: "/images/uploads" # override for blog collection
     create: true # Allow users to create new documents in this collection
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     format: 'json'
