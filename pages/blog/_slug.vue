@@ -20,9 +20,7 @@
         <div class="blog-post-body">
           <h2>{{ post.subtitle }}</h2>
           <div class="spacer-red" />
-          <p class="body-text">
-            {{ post.body }}
-          </p>
+          <div v-html="parsedBody" class="body-text"></div>
         </div>
       </div>
     </div>
