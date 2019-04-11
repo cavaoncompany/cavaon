@@ -92,6 +92,7 @@ export default {
     const date = new Date(this.date)
     const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
+    this.thumbnail = this.thumbnail.replace('/static/', '/')
   },
   computed: {
     language() {
@@ -119,5 +120,8 @@ export default {
 }
 .card-title {
   font-size: 18px;
+  line-height: 1.3rem;
+  height: 2.6rem;
+  overflow: hidden;
 }
 </style>

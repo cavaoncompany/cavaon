@@ -7,13 +7,13 @@
         </article>
       </header> -->
       <h1>{{ title }}</h1>
-      <article-list :articles="posts" />
+      <blog-article-list :articles="posts" />
     </div>
   </section>
 </template>
 
 <script>
-import ArticleList from '../../components/blog/Article-list'
+import BlogArticleList from '../../components/blog/Article-list'
 const title = 'BLOG'
 export default {
   name: title,
@@ -28,7 +28,7 @@ export default {
     ]
   },
   components: {
-    ArticleList
+    BlogArticleList
   },
   data() {
     // Using webpacks context to gather all files from a folder
