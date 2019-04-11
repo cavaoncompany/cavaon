@@ -1,105 +1,120 @@
 <template>
   <div class="blog-post">
-    <HeaderStandard />
+    <!-- <HeaderStandard /> -->
     <div class="container">
       <div class="blog-content">
         <h1>{{ post.title }}</h1>
-        <h2>{{ post.summary }}</h2>
-        <p class="description-tag">
-          TL;DR:
+        <div class="spacer-red-big" />
+        <p class="date">
+          {{ blogDate }}
         </p>
-        <p class="description-text">
-          {{ post.description }}
+        <p class="tags">
+          <span v-for="(tag, i) in post.tags" :key="i">{{ tag }}</span>
         </p>
-        <hr>
-        <nuxtdown-body class="body" :body="post.body" />
+        <img :src="post.image" :alt="post.title">
+        <div class="blog-post-body">
+          <h2>{{ post.subtitle }}</h2>
+          <div class="spacer-red" />
+          <p class="body-text">
+            {{ post.body }}
+          </p>
+        </div>
       </div>
     </div>
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
 <script>
-import HeaderStandard from '../../components/HeaderStandard'
-import Footer from '../../components/Footer'
+import { markdown } from 'markdown'
+// import HeaderStandard from '../../components/HeaderStandard'
+// import Footer from '../../components/Footer'
 
 export default {
   components: {
-    HeaderStandard,
-    Footer
+    // HeaderStandard,
+    // Footer
   },
-  head: function () {
+  async asyncData({ params }) {
+    const post = await import('~/content/blog/' + params.slug + '.json')
+    return { post }
+  },
+  data() {
     return {
-      title: `${this.post.title}`,
+      blogDate: Date
+    }
+  },
+  computed: {
+    parsedBody() {
+      return markdown.toHTML(this.post.body)
+    },
+    trimmedDescription() {
+      return (this.post.description + '').slice(0, 150)
+    }
+  },
+  head() {
+    return {
+      title: `${ (this.post && this.post.title) || 'Post' }`,
       meta: [
         {
-          hid: 'description',
           name: 'description',
-          content: this.post.description
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: this.post.keywords
-        },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: this.fullURL
-        },
-        {
-          hid: 'og:type',
-          property: 'og:type',
-          content: 'article'
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: this.post.title
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.post.description
-        },
-        {
-          hid: 'og:image',
-          property: 'image',
-          content: this.imageURL
-        },
-        {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: 'summary_large_image'
-        },
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: this.post.title
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: this.post.description
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: this.imageURL
+          content: `${ (this.trimmedDescription) || '' }`,
+          hid: 'description'
         }
       ]
     }
   },
-  computed: {
-    imageURL: function () {
-      return `${process.env.BASE_URL}${this.post.thumbnail}`
-    },
-    fullURL: function () {
-      return `${process.env.BASE_URL}${this.$route.path}/`
-    }
-  },
-  asyncData: async ({ app, route }) => ({
-    post: await app.$content('posts').get(route.path)
-  })
+  created() {
+    const date = new Date(this.post.date)
+    const options = { year: 'numeric', month: 'short', day: 'numeric'}
+    this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
+  }
 }
 </script>
+
+<style>
+.spacer-red {
+  background-color: #FA4531;
+  width: 100px;
+  height: 3px;
+  margin: 0 auto;
+  margin-top: 22px;
+  margin-bottom: 25px;
+}
+.spacer-red-big {
+  background-color: #FA4531;
+  width: 250px;
+  height: 4px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.blog-post {
+  text-align: center;
+  margin-top: 80px;
+}
+.blog-post h1 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 10px;
+}
+.blog-post .tags {
+  margin-bottom: 50px;
+}
+.blog-post h2 {
+  color: #CCCCCE;
+  font-size: 24px;
+  line-height: 2.3rem;
+}
+.blog-post-body {
+  width: 80%;
+  margin: 0 auto;
+  letter-spacing: 10px;
+  margin-top: 80px;
+}
+.blog-post .body-text {
+  letter-spacing: normal;
+  color: black;
+}
+</style>
+

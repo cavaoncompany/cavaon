@@ -1,37 +1,36 @@
 <template>
   <div class="col-md-6">
-    <article class="article-card card">
-      <img :src="thumbnail" :alt="title">
-      <div class="card-body">
-        <div class="date">{{ blogDate }}</div>
-        <div class="card-spacer"/>
-        <!-- <h5 class="card-title">
-          <span
-            v-if="lang"
-            class="hidden bg-grey-light rounded p-1 mr-2 text-sm"
-            :title="language"
-          >
-            {{ langClean }}
-          </span>
-          <span v-if="!url">{{ title }}</span>
-          <nuxt-link
-            v-else
-            :to="url"
-            class="no-underline disable-underline transition:color"
-          >
-            {{ title }}
-          </nuxt-link>
-        </h5> -->
-        <p class="card-title">
-          {{ description }}
-        </p>
-        <p class="tags">
-          <span v-for="(tag, i) in tags" :key="i">
-            {{ tag }}
-          </span>
-        </p>
-      </div>
-    </article>
+    <!-- <a :href="$router.resolve({name:url,
+      params:
+        {
+          title: title,
+          subtitle: subtitle,
+          description: description,
+          tags: tags,
+          date: date,
+          thumbnail: thumbnail,
+          extract: extract,
+          lang: lang,
+          }}).href"
+    > -->
+    <nuxt-link :to="url">
+      <article class="article-card card">
+        <img :src="thumbnail" :alt="title">
+        <div class="card-body">
+          <div class="date">{{ blogDate }}</div>
+          <div class="card-spacer"/>
+          <p class="card-title">
+            {{ description }}
+          </p>
+          <p class="tags">
+            <span v-for="(tag, i) in tags" :key="i">
+              {{ tag }}
+            </span>
+          </p>
+        </div>
+      </article>
+    </nuxt-link>
+    <!-- </a> -->
   </div>
 </template>
 
