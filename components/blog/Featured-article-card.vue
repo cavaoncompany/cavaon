@@ -1,16 +1,23 @@
 <template>
-  <div>
+  <div class="col-12">
     <nuxt-link :to="url">
-      <article class="article-card card">
-        <img :src="thumbnail" :alt="title">
+      <article class="featured-article-card card">
+        <img :src="image" :alt="title">
         <div class="card-body">
-          <div class="date">{{ blogDate }}</div>
+          <div class="top-line">
+            <div class="date">{{ blogDate }}</div>
+            <div class="grey-spacer" />
+            <div class="read-time">1 minute read</div>
+          </div>
           <div class="card-spacer"/>
           <p class="card-title">
-            {{ description }}
+            {{ title }}
           </p>
           <p class="tags">
             <span v-for="(tag, i) in tags" :key="i">{{ tag }} </span>
+          </p>
+          <p class="seo-description">
+            {{ description }}
           </p>
         </div>
       </article>
@@ -56,6 +63,11 @@ export default {
       required: true,
       default: () => ''
     },
+    image: {
+      type: String,
+      required: true,
+      default: () => ''
+    },
     extract: {
       type: String,
       required: false,
@@ -90,25 +102,28 @@ export default {
 </script>
 
 <style>
-.article-card {
-  margin-bottom: 40px;
+.featured-article-card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+.featured-article-card img {
+  width: 60%;
+}
+.featured-article-card .card-title {
   color: #494949;
-  text-align: left;
-}
-.article-card img {
-  height: 171px;
-}
-.card-spacer {
-  background-color: #FFC716;
-  width: 40px;
-  height: 4px;
-  margin-top: 13px;
-  margin-bottom: 25px;
-}
-.card-title {
   font-size: 18px;
-  line-height: 1.3rem;
-  height: 2.6rem;
-  overflow: hidden;
+}
+.featured-article-card .top-line {
+  display: flex;
+  color: #494949;
+  font-weight: 500;
+}
+.featured-article-card .grey-spacer {
+  background-color: #494949;
+  width: 4px;
+  height: 4px;
+  border-radius: 50px;
+  margin: 7px;
 }
 </style>
