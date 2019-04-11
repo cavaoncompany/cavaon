@@ -14,7 +14,7 @@
           {{ blogDate }}
         </p>
         <p class="tags">
-          <span v-for="(tag, i) in post.tags" :key="i">{{ tag }}</span>
+          <span v-for="(tag, i) in post.tags" :key="i">{{ tag }} </span>
         </p>
         <img :src="post.image" :alt="post.title">
         <div class="blog-post-body">
@@ -57,11 +57,11 @@ export default {
   },
   head() {
     return {
-      title: `${ (this.post && this.post.title) || 'Post' }`,
+      title: `${(this.post && this.post.title) || 'Post'}`,
       meta: [
         {
           name: 'description',
-          content: `${ (this.trimmedDescription) || '' }`,
+          content: `${(this.trimmedDescription) || ''}`,
           hid: 'description'
         }
       ]
@@ -69,7 +69,7 @@ export default {
   },
   created() {
     const date = new Date(this.post.date)
-    const options = { year: 'numeric', month: 'short', day: 'numeric'}
+    const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
   }
 }
@@ -120,4 +120,3 @@ export default {
   color: black;
 }
 </style>
-

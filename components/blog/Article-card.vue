@@ -24,7 +24,7 @@
           </p>
           <p class="tags">
             <span v-for="(tag, i) in tags" :key="i">
-              {{ tag }}
+              {{ tag }} 
             </span>
           </p>
         </div>
@@ -90,7 +90,7 @@ export default {
   },
   created() {
     const date = new Date(this.date)
-    const options = { year: 'numeric', month: 'short', day: 'numeric'}
+    const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
   },
   computed: {
@@ -108,6 +108,7 @@ export default {
 .article-card {
   margin-bottom: 40px;
   color: #494949;
+  text-align: left;
 }
 .card-spacer {
   background-color: #FFC716;

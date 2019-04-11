@@ -280,6 +280,23 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
+      <section id="blog" class="page-section remove-pad-bottom white-bg">
+        <section class="inner-section text-center silver-bg row">
+          <div class="container">
+            <div class="row">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
+                <h3 class="dark">
+                  <span>{{ title }}</span>
+                </h3>
+              </article>
+              <article-list :articles="fourPosts" />
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- page-section : ends -->
+
+      <!-- page-section : starts -->
       <section id="about" class="contact page intermediate-section full-height parallax about-us-desktop">
         <div class="overlay">
           <div class="container valign">
@@ -424,6 +441,7 @@ import Flowchart from './Flowchart'
 import FlowchartMobile from './FlowchartMobile'
 import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
+import ArticleList from './blog/Article-list'
 // import MobileServices from './MobileServices'
 import StartAProjectForm from './StartAProjectForm'
 import Footer from './Footer'
@@ -438,6 +456,7 @@ export default {
     Services,
     ProjectWithSlider,
     // MobileServices,
+    ArticleList,
     countTo,
     StartAProjectForm,
     Footer
@@ -446,6 +465,12 @@ export default {
     showInstallMessage: Boolean
   },
   data() {
+    const context = require.context('~/content/blog/', false, /\.json$/)
+    const posts = context.keys().map(key => ({
+      ...context(key),
+      _path: `/blog/${key.replace('.json', '').replace('./', '')}`
+    }))
+    const fourPosts = this.prepareBlogs(posts)
     return {
       caseStudies: caseStudies,
       projectDetails: caseStudies.caseStudies[0],
@@ -462,28 +487,12 @@ export default {
       windowWidth: 0,
       isMobile: false,
       startVal: 3564,
-      projectFormOpen: false
+      projectFormOpen: false,
+      title: 'BLOG',
+      fourPosts
     }
   },
   created() {
-    // if (process.client) {
-    //   // eslint-disable-next-line
-    //   const backstretchScript = document.createElement('script')
-    //   let banners = ''
-    //   for (let i = 0; i < this.banner.banners.length; i++) {
-    //     if (i < this.banner.banners.length - 1) {
-    //       banners += '"' + this.banner.banners[i].image + '",'
-    //     } else {
-    //       banners += '"' + this.banner.banners[i].image + '"'
-    //     }
-    //   }
-    //   backstretchScript.innerHTML = '$.backstretch([' + banners + '], {duration: 3000, fade: 750})'
-    //   // eslint-disable-next-line
-    //   document.body.appendChild(backstretchScript)
-    //   // eslint-disable-next-line
-    //   this.windowWidth = window.innerWidth || document.documentElement.clientWidth
-    //   if (this.windowWidth < 576) { this.isMobile = true }
-    // }
     EventBus.$on('closeStartAProjectForm', (formOpen) => {
       this.closeStartAProjectForm()
     })
@@ -513,6 +522,13 @@ export default {
     },
     closeStartAProjectForm: function () {
       this.projectFormOpen = false
+    },
+    prepareBlogs: function(posts) {
+      const fourPosts = []
+      for(let i = 0; i < 4; i++) {
+      fourPosts.push(posts[i])
+      }
+      return fourPosts
     }
   }
 }
