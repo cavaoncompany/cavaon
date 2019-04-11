@@ -1,6 +1,11 @@
+const path = require('path')
 const webpack = require('webpack')
+const glob = require('glob-all')
 const pkg = require('./package')
 const metadata = require('./static/content/metadata.json')
+const dynamicRoutes  = getDynamicPaths({
+  '/blog': 'blog/posts/*.json'
+})
 
 module.exports = {
   mode: 'universal',
@@ -34,7 +39,7 @@ module.exports = {
       { rel: 'apple-touch-startup-image', href: 'LaunchImage-750@2x~iphone6-portrait_750x1334.png', sizes: '750x1334' },
       { rel: 'apple-touch-startup-image', href: 'LaunchImage-Portrait@2x~ipad_1536x2048.png', sizes: '1536x2048' },
       { rel: 'apple-touch-startup-image', href: ' LaunchImage-Portrait@2x~ipad_2048x2732.png', sizes: '2048x2732' },
-      { rel: 'apple-touch-startup-image', href: 'LaunchImage-Portrait@2x~ipad_1668x2224.png', sizes: '1668x2224' }     
+      { rel: 'apple-touch-startup-image', href: 'LaunchImage-Portrait@2x~ipad_1668x2224.png', sizes: '1668x2224' }
     ],
     script: [
       { src: '/javascripts/custom/jquery-2.2.4.min.js' },
@@ -84,13 +89,15 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/axios'
   ],
-
   googleAnalytics: {
     id: 'UA-136678258-1'
   },
-
+  generate: {
+    routes: dynamicRoutes
+  },
   /*
   ** Build configuration
   */
@@ -121,4 +128,19 @@ module.exports = {
       }
     }
   }
+}
+
+/**
+ * Create an array of URLs from a list of files
+ * @param {*} urlFilepathTable
+ */
+function getDynamicPaths(urlFilepathTable) {
+  return [].concat(
+    ...Object.keys(urlFilepathTable).map((url) => {
+      const filepathGlob = urlFilepathTable[url]
+      return glob
+        .sync(filepathGlob, { cwd: 'content' })
+        .map(filepath => `${url}/${path.basename(filepath, '.json')}`)
+    })
+  )
 }
