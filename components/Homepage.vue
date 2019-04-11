@@ -523,10 +523,10 @@ export default {
     closeStartAProjectForm: function () {
       this.projectFormOpen = false
     },
-    prepareBlogs: function(posts) {
+    prepareBlogs: function (posts) {
       const fourPosts = []
-      for(let i = 0; i < 4; i++) {
-      fourPosts.push(posts[i])
+      for (let i = 0; i < 4; i++) {
+        fourPosts.push(posts[i])
       }
       return fourPosts
     }

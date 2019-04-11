@@ -1,19 +1,18 @@
 <template>
   <section id="blog">
     <div class="container">
-      <!-- <header class="row">
-        <article class="col-md-2 text-left">
-          <a href="/"><img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="/images/Logo-colour.png" @click="closeForm()"></a>
-        </article>
-      </header> -->
+      <HeaderStandard />
       <h1>{{ title }}</h1>
+      <div class="card-spacer align-center"/>
       <blog-article-list :articles="posts" />
     </div>
   </section>
 </template>
 
 <script>
-import BlogArticleList from '../../components/blog/Article-list'
+import BlogArticleList from '../../components/blog/Blog-article-list'
+import HeaderStandard from '../../components/HeaderStandard'
+
 const title = 'BLOG'
 export default {
   name: title,
@@ -28,7 +27,8 @@ export default {
     ]
   },
   components: {
-    BlogArticleList
+    BlogArticleList,
+    HeaderStandard
   },
   data() {
     // Using webpacks context to gather all files from a folder
@@ -55,5 +55,8 @@ export default {
   font-size: 24px;
   font-weight: 600;
   text-align: center;
+}
+.align-center {
+  margin: 0 auto;
 }
 </style>

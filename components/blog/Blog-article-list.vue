@@ -3,6 +3,17 @@
     role="region"
   >
     <div class="row card-container">
+      <featured-article-card
+        :lang="featuredArticle.lang"
+        :title="featuredArticle.title"
+        :subtitle="featuredArticle.subtitle"
+        :description="featuredArticle.description"
+        :tags="featuredArticle.tags"
+        :date="featuredArticle.date"
+        :thumbnail="featuredArticle.thumbnail"
+        :image="featuredArticle.image"
+        :url="featuredArticle._path"
+        :extract="getExtract(featuredArticle.body)" />
       <article-card
         v-for="(article, i) in articles"
         :key="i"
@@ -23,16 +34,29 @@
 
 <script>
 import ArticleCard from './Article-card'
+import FeaturedArticleCard from './Featured-article-card'
 
 export default {
   components: {
-    ArticleCard
+    ArticleCard,
+    FeaturedArticleCard
   },
   props: {
     articles: {
       type: Array,
       required: true
     }
+  },
+  data() {
+    return {
+      featuredArticle: Object,
+      otherArticles: [],
+      keywords: []
+    }
+  },
+  created() {
+    this.featuredArticle = this.articles[0]
+    this.keywords = this.getKeywords(this.articles)
   },
   methods: {
     getExtract(text) {
@@ -56,6 +80,9 @@ export default {
         )
       }
       return ''
+    },
+    getKeywords: function(posts) {
+      
     }
   }
 }
