@@ -16,7 +16,7 @@
         <p class="tags">
           <span v-for="(tag, i) in post.tags" :key="i">{{ tag }} </span>
         </p>
-        <img :src="post.image" :alt="post.title">
+        <img :src="image" :alt="post.title">
         <div class="blog-post-body">
           <h2>{{ post.subtitle }}</h2>
           <div class="spacer-red" />
@@ -44,7 +44,8 @@ export default {
   },
   data() {
     return {
-      blogDate: Date
+      blogDate: Date,
+      image: ''
     }
   },
   computed: {
@@ -71,6 +72,7 @@ export default {
     const date = new Date(this.post.date)
     const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
+    this.image = this.post.image.replace('/static/', '/')
   }
 }
 </script>
