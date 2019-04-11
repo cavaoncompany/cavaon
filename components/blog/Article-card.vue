@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-6">
+  <div>
     <!-- <a :href="$router.resolve({name:url,
       params:
         {
