@@ -15,6 +15,7 @@
         :thumbnail="article.thumbnail"
         :url="article._path"
         :extract="getExtract(article.body)"
+        class="col-md-6"
       />
     </div>
   </section>
