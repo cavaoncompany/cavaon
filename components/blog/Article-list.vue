@@ -19,7 +19,6 @@
         <p class="keywords">
           <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
         </p>
-        <br>
       <article-card
         v-for="(article, i) in sortedArticles"
         :key="i"
@@ -178,8 +177,9 @@ export default {
   cursor: pointer;
 }
 .blog-inner-section .keywords {
-  margin: 0px 15px 30px 15px;
+  margin: 0px 15px 45px 15px;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 </style>

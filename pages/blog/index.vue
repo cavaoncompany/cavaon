@@ -1,17 +1,19 @@
 <template>
   <section id="blog">
+    <header-standard />
     <div class="container">
-      <HeaderStandard />
       <h1>{{ title }}</h1>
       <div class="card-spacer align-center"/>
       <article-list :articles="posts" page="blog" />
     </div>
+    <Footer />
   </section>
 </template>
 
 <script>
 import ArticleList from '../../components/blog/Article-list'
 import HeaderStandard from '../../components/HeaderStandard'
+import Footer from '../../components/Footer'
 
 const title = 'BLOG'
 export default {
@@ -28,7 +30,8 @@ export default {
   },
   components: {
     ArticleList,
-    HeaderStandard
+    HeaderStandard,
+    Footer
   },
   data() {
     // Using webpacks context to gather all files from a folder
@@ -49,7 +52,7 @@ export default {
 #blog {
   height: 100%;
   background: #f4f4f4;
-  padding-top: 80px;
+  padding-top: 130px;
 }
 #blog h1 {
   font-size: 24px;
@@ -58,5 +61,8 @@ export default {
 }
 .align-center {
   margin: 0 auto;
+}
+#blog .standard-header {
+  display: block;
 }
 </style>
