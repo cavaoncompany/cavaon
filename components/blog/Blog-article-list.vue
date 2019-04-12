@@ -14,6 +14,7 @@
         :thumbnail="featuredArticle.thumbnail"
         :image="featuredArticle.image"
         :url="featuredArticle._path"
+        :body="featuredArticle.body"
         :extract="getExtract(featuredArticle.body)" />
       <article-card
         v-for="(article, i) in articles"
@@ -26,6 +27,7 @@
         :date="article.date"
         :thumbnail="article.thumbnail"
         :url="article._path"
+        :body="article.body"
         :extract="getExtract(article.body)"
         class="col-md-4"
       />

@@ -15,6 +15,7 @@
         :date="article.date"
         :thumbnail="article.thumbnail"
         :url="article._path"
+        :body="article.body"
         :extract="getExtract(article.body)"
         class="col-md-6"
       />
