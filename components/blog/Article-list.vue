@@ -16,6 +16,9 @@
         :url="featuredArticle._path"
         :body="featuredArticle.body"
         :extract="getExtract(featuredArticle.body)" />
+        <p class="keywords">
+          <span v-for="(keyword, i) in keywords" :key="i">{{ keyword }}</span>
+        </p>
       <article-card
         v-for="(article, i) in sortedArticles"
         :key="i"
@@ -113,7 +116,16 @@ export default {
       return ''
     },
     getKeywords: function(posts) {
-      
+      let keywords = []
+      for (let i = 0; i < posts.length; i++) {
+        const tags = posts[i].tags
+        for (let j = 0; j < tags.length; j++) {
+          if ( keywords.indexOf(tags[j].toLowerCase()) === -1) {
+            keywords.push(tags[j])
+          }
+        }
+      }
+      return keywords
     },
     orderPostsByDate: function() {
       const sortedArticles = this.articles.sort(function(a,b){
@@ -138,5 +150,23 @@ export default {
 }
 .blog-inner-section {
   width: 100%;
+}
+.blog-inner-section .keywords span {
+  border: 1px solid #FFC716;
+  padding: 7px 14px;
+  margin-right: 12px;
+  font-size: 13px;
+  color: #808080;
+}
+.blog-inner-section .keywords span:hover,
+.blog-inner-section .keywords span.hover,
+.blog-inner-section .keywords span:active,
+.blog-inner-section .keywords span.active {
+  color: #FFF;
+  background-color: #FFC716;
+  cursor: pointer;
+}
+.blog-inner-section .keywords {
+  margin: -8px 15px 45px 15px;
 }
 </style>
