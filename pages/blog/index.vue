@@ -1,17 +1,73 @@
 <template>
   <section id="blog">
+    <header-mobile />
+    <header-standard />
     <div class="container">
-      <HeaderStandard />
-      <h1>{{ title }}</h1>
-      <div class="card-spacer align-center"/>
-      <blog-article-list :articles="posts" />
+      <h1>{{ blog.title }}</h1>
+      <div class="card-spacer align-center" />
+      <article-list :articles="posts" page="blog" />
     </div>
+    <div class="subscribe">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 subscribe-to-blog">
+            <h3>{{ blog.subscribeToOurBlog }}</h3>
+            <p>{{ blog.stayUpToDate }}</p>
+            <form
+              id="subscribeToBlogForm"
+              action="/success"
+              netlify-honeypot="bot-field"
+              name="subscribe-to-blog"
+              method="post"
+              data-netlify="true"
+              class="col-md-12"
+            >
+              <section>
+                <input type="hidden" name="form-name" value="startAProject">
+                <p class="hidden">
+                  <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                </p>
+              </section>
+              <section class="form-input">
+                <article>
+                  <input
+                    v-model="subscriberName"
+                    type="text"
+                    :placeholder="blog.namePlaceholder"
+                    name="subscriberName"
+                  >
+                </article>
+                <article>
+                  <input
+                    v-model="subscriberEmail"
+                    type="text"
+                    :placeholder="blog.emailPlaceholder"
+                    name="subscriberEmail"
+                  >
+                </article>
+              </section>
+              <article>
+                <div class="btn-wrap  text-center">
+                  <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
+                    {{ blog.buttonText }}
+                  </button>
+                </div>
+              </article>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <Footer />
   </section>
 </template>
 
 <script>
-import BlogArticleList from '../../components/blog/Blog-article-list'
+import blog from '../../static/content/blog.json'
+import ArticleList from '../../components/blog/Article-list'
 import HeaderStandard from '../../components/HeaderStandard'
+import HeaderMobile from '../../components/HeaderMobile'
+import Footer from '../../components/Footer'
 
 const title = 'BLOG'
 export default {
@@ -27,8 +83,10 @@ export default {
     ]
   },
   components: {
-    BlogArticleList,
-    HeaderStandard
+    ArticleList,
+    HeaderStandard,
+    HeaderMobile,
+    Footer
   },
   data() {
     // Using webpacks context to gather all files from a folder
@@ -38,8 +96,10 @@ export default {
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`
     }))
     return {
-      title,
-      posts
+      posts,
+      blog: blog,
+      subscriberName: '',
+      subscriberEmail: ''
     }
   }
 }
@@ -48,8 +108,8 @@ export default {
 <style>
 #blog {
   height: 100%;
-  background: #f1f1f1;
-  padding-top: 80px;
+  background: #f4f4f4;
+  padding-top: 130px;
 }
 #blog h1 {
   font-size: 24px;
@@ -58,5 +118,31 @@ export default {
 }
 .align-center {
   margin: 0 auto;
+}
+#blog .standard-header {
+  display: block;
+}
+#blog .subscribe {
+  background-color: #FFF;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+#subscribeToBlogForm {
+  padding-left: 0;
+  padding-right: 0;
+}
+#subscribeToBlogForm input {
+  border-color: #E2E2E2;
+}
+#subscribeToBlogForm input::placeholder {
+  color: #E2E2E2;
+}
+#subscribeToBlogForm h3 {
+  font-size: 18px;
+  color: #494949;
+  font-weight: 500;
+}
+#subscribeToBlogForm .btn {
+  width: 170px;
 }
 </style>

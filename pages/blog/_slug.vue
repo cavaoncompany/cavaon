@@ -97,6 +97,7 @@ export default {
 .blog-post {
   text-align: center;
   margin-top: 80px;
+  margin-bottom: 80px;
 }
 .blog-post h1 {
   font-size: 24px;
@@ -112,7 +113,6 @@ export default {
   line-height: 2.3rem;
 }
 .blog-post-body {
-  width: 80%;
   margin: 0 auto;
   letter-spacing: 10px;
   margin-top: 80px;
@@ -120,5 +120,8 @@ export default {
 .blog-post .body-text {
   letter-spacing: normal;
   color: black;
+}
+.blog-content img {
+  width: 100%;
 }
 </style>

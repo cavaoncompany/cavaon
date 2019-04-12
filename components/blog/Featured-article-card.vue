@@ -4,10 +4,10 @@
       <article class="featured-article-card card">
         <img :src="image" :alt="title">
         <div class="card-body">
-          <div class="top-line">
+          <div class="featured-top-line">
             <div class="date">{{ blogDate }}</div>
             <div class="grey-spacer" />
-            <div class="read-time">1 minute read</div>
+            <div class="read-time">{{ this.readTime }} min read</div>
           </div>
           <div class="card-spacer"/>
           <p class="card-title">
@@ -68,6 +68,11 @@ export default {
       required: true,
       default: () => ''
     },
+    body: {
+      type: String,
+      required: true,
+      default: () => ''
+    },
     extract: {
       type: String,
       required: false,
@@ -81,7 +86,8 @@ export default {
   },
   data() {
     return {
-      blogDate: Date
+      blogDate: Date,
+      readTime: 0
     }
   },
   created() {
@@ -89,6 +95,7 @@ export default {
     const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
     this.thumbnail = this.thumbnail.replace('/static/', '/')
+    this.readTime = this.calculateReadTime(this.body)
   },
   computed: {
     language() {
@@ -97,6 +104,13 @@ export default {
     langClean() {
       return (this.language + '').slice(0, 2).toUpperCase()
     }
+  },
+  methods: {
+    calculateReadTime: function (article) {
+      const words = article.split(' ').length
+      const readTime = Math.round(words / 200)
+      return readTime
+    }
   }
 }
 </script>
@@ -104,17 +118,13 @@ export default {
 <style>
 .featured-article-card {
   display: flex;
-  flex-direction: row;
-  margin-bottom: 50px;
-}
-.featured-article-card img {
-  width: 60%;
+  margin-bottom: 40px;
 }
 .featured-article-card .card-title {
   color: #494949;
   font-size: 18px;
 }
-.featured-article-card .top-line {
+.featured-article-card .featured-top-line {
   display: flex;
   color: #494949;
   font-weight: 500;

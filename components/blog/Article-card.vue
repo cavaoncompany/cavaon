@@ -4,7 +4,13 @@
       <article class="article-card card">
         <img :src="thumbnail" :alt="title">
         <div class="card-body">
-          <div class="date">{{ blogDate }}</div>
+          <div class="blog-card-top-line">
+            <div class="date">
+              {{ blogDate }}
+            </div>
+            <div class="grey-spacer" />
+            <div class="read-time">{{ this.readTime }} min read</div>
+          </div>
           <div class="card-spacer"/>
           <p class="card-title">
             {{ description }}
@@ -56,6 +62,11 @@ export default {
       required: true,
       default: () => ''
     },
+    body: {
+      type: String,
+      required: true,
+      default: () => ''
+    },
     extract: {
       type: String,
       required: false,
@@ -69,7 +80,8 @@ export default {
   },
   data() {
     return {
-      blogDate: Date
+      blogDate: Date,
+      readTime: 0
     }
   },
   created() {
@@ -77,6 +89,7 @@ export default {
     const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
     this.thumbnail = this.thumbnail.replace('/static/', '/')
+    this.readTime = this.calculateReadTime(this.body)
   },
   computed: {
     language() {
@@ -84,6 +97,13 @@ export default {
     },
     langClean() {
       return (this.language + '').slice(0, 2).toUpperCase()
+    }
+  },
+  methods: {
+    calculateReadTime: function (article) {
+      const words = article.split(' ').length
+      const readTime = Math.round(words / 200)
+      return readTime
     }
   }
 }
@@ -97,6 +117,7 @@ export default {
 }
 .article-card img {
   height: 171px;
+  width: 100%;
 }
 .card-spacer {
   background-color: #FFC716;
@@ -110,5 +131,17 @@ export default {
   line-height: 1.3rem;
   height: 2.6rem;
   overflow: hidden;
+}
+.blog-card-top-line {
+  display: flex;
+  color: #494949;
+  font-weight: 500;
+}
+.blog-card-top-line .grey-spacer {
+  background-color: #494949;
+  width: 4px;
+  height: 4px;
+  border-radius: 50px;
+  margin: 7px;
 }
 </style>

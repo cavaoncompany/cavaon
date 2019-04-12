@@ -3,6 +3,9 @@
   <nav class="mobile-nav hidden-lg">
     <ul class="slimmenu">
       <li>
+        <a href="/" aria-label="Go to Homepage">HOME</a>
+      </li>
+      <li>
         <a class="scroll" href="#flowchart-mobile" aria-label="Scroll to Services" @click="closeForm()">SERVICES</a>
       </li>
       <!-- <li>
