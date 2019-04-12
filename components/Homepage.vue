@@ -289,7 +289,7 @@
                   <span>{{ title }}</span>
                 </h3>
               </article>
-              <article-list :articles="fourPosts" />
+              <article-list :articles="posts" page="homepage" />
             </div>
           </div>
         </section>
@@ -470,7 +470,6 @@ export default {
       ...context(key),
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`
     }))
-    const fourPosts = this.prepareBlogs(posts)
     return {
       caseStudies: caseStudies,
       projectDetails: caseStudies.caseStudies[0],
@@ -489,7 +488,7 @@ export default {
       startVal: 3564,
       projectFormOpen: false,
       title: 'BLOG',
-      fourPosts
+      posts: posts
     }
   },
   created() {
@@ -522,13 +521,6 @@ export default {
     },
     closeStartAProjectForm: function () {
       this.projectFormOpen = false
-    },
-    prepareBlogs: function (posts) {
-      const fourPosts = []
-      for (let i = 0; i < 4; i++) {
-        fourPosts.push(posts[i])
-      }
-      return fourPosts
     }
   }
 }

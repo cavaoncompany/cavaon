@@ -4,13 +4,13 @@
       <HeaderStandard />
       <h1>{{ title }}</h1>
       <div class="card-spacer align-center"/>
-      <blog-article-list :articles="posts" />
+      <article-list :articles="posts" page="blog" />
     </div>
   </section>
 </template>
 
 <script>
-import BlogArticleList from '../../components/blog/Blog-article-list'
+import ArticleList from '../../components/blog/Article-list'
 import HeaderStandard from '../../components/HeaderStandard'
 
 const title = 'BLOG'
@@ -27,7 +27,7 @@ export default {
     ]
   },
   components: {
-    BlogArticleList,
+    ArticleList,
     HeaderStandard
   },
   data() {
