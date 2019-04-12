@@ -76,7 +76,7 @@
                 <input
                   id="projectWebsite"
                   v-model="website"
-                  type="url"
+                  type="text"
                   :placeholder="startaprojectform.websitePlaceholder"
                   name="website"
                   size="100"
@@ -121,10 +121,15 @@
             <article>
               <textarea id="projectMessage" :placeholder="startaprojectform.goalPlaceholder" name="message" cols="40" rows="4" />
             </article>
+            <div v-if="brief !== ''" class="uploaded-files">
+              <img :src="startaprojectform.yellowTick" alt="file uploaded">
+              <p>{{ brief }}</p>
+            </div>
             <input
               id="brief"
               type="file"
               name="brief"
+              @change="showUploadedFile($event)"
             >
             <label for="brief">
               <i class="fa fa-upload" />
@@ -189,7 +194,8 @@ export default {
       projectDescription: '',
       hearAboutUs: '',
       hearAboutUsOther: '',
-      otherSelected: false
+      otherSelected: false,
+      brief: ''
     }
   },
   methods: {
@@ -220,7 +226,11 @@ export default {
       } else {
         this.otherSelected = false
       }
-    }
+    },
+    showUploadedFile: function(e) {
+      const file = e.target.files[0]
+        this.brief = file.name
+    },
   }
 }
 </script>
@@ -352,5 +362,11 @@ export default {
   }
   .invisible {
     opacity: 0;
+  }
+  .uploaded-files {
+    display: flex;
+  }
+  .uploaded-files p {
+    margin-top: 11px;
   }
 </style>
