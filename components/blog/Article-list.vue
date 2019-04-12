@@ -34,6 +34,16 @@
         :extract="getExtract(article.body)"
         class="col-md-4"
       />
+      <article class="viewMore">
+        <div class="btn-wrap text-center">
+          <button v-if="viewAll === false" id="viewMore" class="btn" name="viewMore" type="button" @click="updateView()">
+            {{ blog.viewMore }}
+          </button>
+          <button v-if="viewAll === true" id="viewMore" class="btn" name="viewMore" type="button" @click="updateView()">
+            {{ blog.viewLess }}
+          </button>
+        </div>
+      </article>
     </div>
     <div v-if="page === 'homepage'" class="row card-container">
       <article-card
@@ -56,6 +66,7 @@
 </template>
 
 <script>
+import blog from '../../static/content/blog.json'
 import ArticleCard from './Article-card'
 import FeaturedArticleCard from './Featured-article-card'
 
@@ -80,18 +91,17 @@ export default {
       sortedArticles: [],
       homepagePosts: [],
       keywords: [],
-      filteredPosts: []
+      filteredPosts: [],
+      blog: blog,
+      viewAll: true
     }
   },
   created() {
-    // find all keywords used in the various articles
     this.keywords = this.getKeywords(this.articles)
-    // order list of articles by date
     this.sortedArticles = this.orderPostsByDate()
-    // use the latest article as feature
     this.featuredArticle = this.articles[0]
-    // only show six latest articles first
-    this.homepagePosts = this.prepareFourLatestPosts(this.sortedArticles)
+    this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, 4)
+    this.updateView()
   },
   methods: {
     getExtract(text) {
@@ -135,12 +145,12 @@ export default {
       })
       return sortedArticles
     },
-    prepareFourLatestPosts: function (sortedPosts) {
-      const fourPosts = []
-      for (let i = 0; i < 4; i++) {
-        fourPosts.push(sortedPosts[i])
+    prepareLatestPosts: function (sortedPosts, numberOfPosts) {
+      const limitedPosts = []
+      for (let i = 0; i < numberOfPosts; i++) {
+        limitedPosts.push(sortedPosts[i])
       }
-      return fourPosts
+      return limitedPosts
     },
     filterByKeyword: function (keyword) {
       this.sortedArticles = this.orderPostsByDate()
@@ -148,6 +158,15 @@ export default {
         result.tags = result.tags.filter(tag => tag.toLowerCase() === keyword.toLowerCase())
         return result.tags.length > 0
       })
+    },
+    updateView: function () {
+      this.viewAll = !this.viewAll
+      if (this.viewAll ===  true) {
+        this.sortedArticles = this.orderPostsByDate()
+      } else {
+        this.sortedArticles = this.orderPostsByDate()
+        this.sortedArticles = this.prepareLatestPosts(this.sortedArticles, 6)
+      }
     }
   }
 }
@@ -181,5 +200,13 @@ export default {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+}
+#viewMore {
+  border: 1px solid #FFC716;
+  color: #FFC716;
+}
+.viewMore {
+  width: 100%;
+  margin-bottom: 80px;
 }
 </style>
