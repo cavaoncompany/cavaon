@@ -48,7 +48,7 @@ export default {
 <style>
 #blog {
   height: 100%;
-  background: #f1f1f1;
+  background: #f4f4f4;
   padding-top: 80px;
 }
 #blog h1 {

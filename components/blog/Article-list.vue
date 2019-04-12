@@ -17,8 +17,9 @@
         :body="featuredArticle.body"
         :extract="getExtract(featuredArticle.body)" />
         <p class="keywords">
-          <span v-for="(keyword, i) in keywords" :key="i">{{ keyword }}</span>
+          <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
         </p>
+        <br>
       <article-card
         v-for="(article, i) in sortedArticles"
         :key="i"
@@ -79,7 +80,8 @@ export default {
       featuredArticle: Object,
       sortedArticles: [],
       homepagePosts: [],
-      keywords: []
+      keywords: [],
+      filteredPosts: []
     }
   },
   created() {
@@ -128,7 +130,8 @@ export default {
       return keywords
     },
     orderPostsByDate: function() {
-      const sortedArticles = this.articles.sort(function(a,b){
+      const currentArticles = JSON.parse(JSON.stringify(this.articles))
+      const sortedArticles = currentArticles.sort(function(a,b){
       return new Date(b.date) - new Date(a.date)
       })
       return sortedArticles
@@ -139,9 +142,16 @@ export default {
         fourPosts.push(sortedPosts[i])
       }
       return fourPosts
+    },
+    filterByKeyword: function(keyword) {
+      this.sortedArticles = this.orderPostsByDate()
+      this.sortedArticles = this.sortedArticles.filter(result => {
+        result.tags = result.tags.filter(tag => tag.toLowerCase() === keyword.toLowerCase())
+        return result.tags.length > 0
+      })
     }
   }
-}
+  }
 </script>
 
 <style>
@@ -155,6 +165,7 @@ export default {
   border: 1px solid #FFC716;
   padding: 7px 14px;
   margin-right: 12px;
+  margin-bottom: 12px;
   font-size: 13px;
   color: #808080;
 }
@@ -167,6 +178,8 @@ export default {
   cursor: pointer;
 }
 .blog-inner-section .keywords {
-  margin: -8px 15px 45px 15px;
+  margin: 0px 15px 30px 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>

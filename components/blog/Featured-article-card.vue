@@ -118,12 +118,7 @@ export default {
 <style>
 .featured-article-card {
   display: flex;
-  flex-direction: row;
-  margin-bottom: 50px;
-  max-height: 350px;
-}
-.featured-article-card img {
-  width: 60%;
+  margin-bottom: 40px;
 }
 .featured-article-card .card-title {
   color: #494949;
