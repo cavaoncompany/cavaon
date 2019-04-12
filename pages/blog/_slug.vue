@@ -1,12 +1,8 @@
 <template>
   <div class="blog-post">
-    <!-- <HeaderStandard /> -->
+    <header-mobile />
+    <header-standard />
     <div class="container">
-      <!-- <header class="row">
-        <article class="col-md-2 text-left">
-          <a href="/"><img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="/images/Logo-colour.png" @click="closeForm()"></a>
-        </article>
-      </header> -->
       <div class="blog-content">
         <h1>{{ post.title }}</h1>
         <div class="spacer-red-big" />
@@ -24,19 +20,21 @@
         </div>
       </div>
     </div>
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
 <script>
 import { markdown } from 'markdown'
-// import HeaderStandard from '../../components/HeaderStandard'
-// import Footer from '../../components/Footer'
+import HeaderStandard from '../../components/HeaderStandard'
+import HeaderMobile from '../../components/HeaderMobile'
+import Footer from '../../components/Footer'
 
 export default {
   components: {
-    // HeaderStandard,
-    // Footer
+    HeaderStandard,
+    HeaderMobile,
+    Footer
   },
   async asyncData({ params }) {
     const post = await import('~/content/blog/' + params.slug + '.json')
@@ -123,5 +121,8 @@ export default {
 }
 .blog-content img {
   width: 100%;
+}
+.blog-post .standard-header {
+  display: block;
 }
 </style>
