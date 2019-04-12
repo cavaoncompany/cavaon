@@ -1,0 +1,41 @@
+<form
+            id="subscribeToBlogForm"
+            action="/success"
+            netlify-honeypot="bot-field"
+            name="subscribe-to-blog"
+            method="post"
+            data-netlify="true"
+            class="col-md-12"
+          >
+            <section>
+              <input type="hidden" name="form-name" value="startAProject">
+              <p class="hidden">
+                <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+              </p>
+            </section>
+            <section class="form-input">
+              <article>
+                <input
+                  v-model="subscriberName"
+                  type="text"
+                  :placeholder="blog.namePlaceholder"
+                  name="subscriberName"
+                />
+              </article>
+              <article>
+                <input
+                  v-model="subscriberEmail"
+                  type="text"
+                  :placeholder="blog.emailPlaceholder"
+                  name="subscriberEmail"
+                />
+              </article>
+            </section>
+            <article>
+            <div class="btn-wrap  text-center">
+              <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
+                {{ blog.buttonText }}
+              </button>
+            </div>
+          </article>
+          </form>

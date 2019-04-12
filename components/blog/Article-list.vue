@@ -116,22 +116,22 @@ export default {
       }
       return ''
     },
-    getKeywords: function(posts) {
-      let keywords = []
+    getKeywords: function (posts) {
+      const keywords = []
       for (let i = 0; i < posts.length; i++) {
         const tags = posts[i].tags
         for (let j = 0; j < tags.length; j++) {
-          if ( keywords.indexOf(tags[j].toLowerCase()) === -1) {
+          if (keywords.indexOf(tags[j].toLowerCase()) === -1) {
             keywords.push(tags[j])
           }
         }
       }
       return keywords
     },
-    orderPostsByDate: function() {
+    orderPostsByDate: function () {
       const currentArticles = JSON.parse(JSON.stringify(this.articles))
-      const sortedArticles = currentArticles.sort(function(a,b){
-      return new Date(b.date) - new Date(a.date)
+      const sortedArticles = currentArticles.sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date)
       })
       return sortedArticles
     },
@@ -142,15 +142,15 @@ export default {
       }
       return fourPosts
     },
-    filterByKeyword: function(keyword) {
+    filterByKeyword: function (keyword) {
       this.sortedArticles = this.orderPostsByDate()
-      this.sortedArticles = this.sortedArticles.filter(result => {
+      this.sortedArticles = this.sortedArticles.filter((result) => {
         result.tags = result.tags.filter(tag => tag.toLowerCase() === keyword.toLowerCase())
         return result.tags.length > 0
       })
     }
   }
-  }
+}
 </script>
 
 <style>

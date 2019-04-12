@@ -5,7 +5,9 @@
         <img :src="thumbnail" :alt="title">
         <div class="card-body">
           <div class="blog-card-top-line">
-            <div class="date">{{ blogDate }}</div>
+            <div class="date">
+              {{ blogDate }}
+            </div>
             <div class="grey-spacer" />
             <div class="read-time">{{ this.readTime }} min read</div>
           </div>
@@ -98,11 +100,11 @@ export default {
     }
   },
   methods: {
-      calculateReadTime: function(article) {
-        const words = article.split(' ').length
-        const readTime = Math.round(words / 200)
-        return readTime
-      }
+    calculateReadTime: function (article) {
+      const words = article.split(' ').length
+      const readTime = Math.round(words / 200)
+      return readTime
+    }
   }
 }
 </script>
