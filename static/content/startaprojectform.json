@@ -59,5 +59,6 @@
       "title": "CONSULTATION"
     }
   ],
-  "buttonText": "SUBMIT"
+  "buttonText": "SUBMIT",
+  "yellowTick": "/images/yellow-tick.png"
 }
