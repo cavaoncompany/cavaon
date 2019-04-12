@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-post">
+  <div id="blog-post" class="blog-post">
     <header-mobile />
     <header-standard />
     <div class="container">
@@ -122,7 +122,7 @@ export default {
 .blog-content img {
   width: 100%;
 }
-.blog-post .standard-header {
+#blog-post .standard-header {
   display: block;
 }
 </style>
