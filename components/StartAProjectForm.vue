@@ -15,13 +15,13 @@
           id="startAProjectForm"
           action="/success"
           netlify-honeypot="bot-field"
-          name="start-a-project"
+          name="start-project"
           method="post"
           data-netlify="true"
           class="col-md-12 col-lg-10 col-lg-offset-1"
         >
           <section>
-            <input type="hidden" name="form-name" value="startAProject">
+            <input type="hidden" name="form-name" value="start-project">
             <p class="hidden">
               <label>Don’t fill this out if you're human: <input name="bot-field"></label>
             </p>
