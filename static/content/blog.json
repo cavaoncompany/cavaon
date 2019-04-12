@@ -4,5 +4,7 @@
   "stayUpToDate": "Stay up to date with the latest marketing, sales, service tips and news.",
   "namePlaceholder": "Name",
   "emailPlaceholder": "Email address",
-  "buttonText": "SUBMIT"
+  "buttonText": "SUBMIT",
+  "viewMore": "VIEW MORE",
+  "viewLess": "VIEW LESS"
 }
