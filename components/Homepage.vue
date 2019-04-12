@@ -281,7 +281,7 @@
 
       <!-- page-section : starts -->
       <section id="blog" class="page-section remove-pad-bottom white-bg">
-        <section class="inner-section text-center silver-bg row">
+        <section class="inner-section text-center silver-bg row blog-inner-section">
           <div class="container">
             <div class="row">
               <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
@@ -569,7 +569,7 @@ export default {
   .contact-info a:hover {
     color: #ffc716;
   }
-  #testimonials .inner-section {
+  #testimonials .inner-section, #blog .inner-section {
     width: 100%;
     margin-left: 0;
   }
@@ -594,6 +594,7 @@ export default {
   }
   .inner-section {
     margin: 0 auto;
+    width: 100%;
   }
   .featuress-expansion .container {
     padding-top: 50px;

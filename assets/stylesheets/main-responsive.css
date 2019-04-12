@@ -160,6 +160,9 @@
 		line-height: 39px;
 		margin-top: 45px;
 	}
+	.blog-post-body {
+		width: 80%;
+	}
 }
 
 /*Large Widescreen Monitors*/
@@ -264,6 +267,9 @@
 		text-align: left;
 		line-height: 39px;
 		margin-top: 45px;
+	}
+	.blog-post-body {
+		width: 80%;
 	}
 }
 
@@ -1301,6 +1307,9 @@
 	}
 	.news-post{
 		margin-top: 20px;
+	}
+	.blog-post-body {
+		width: 100%;
 	}
 }
 

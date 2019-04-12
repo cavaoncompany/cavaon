@@ -97,6 +97,7 @@ export default {
 }
 .article-card img {
   height: 171px;
+  width: 100%;
 }
 .card-spacer {
   background-color: #FFC716;

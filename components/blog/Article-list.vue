@@ -1,6 +1,7 @@
 <template>
   <section
     role="region"
+    class="blog-inner-section"
   >
     <div class="row card-container">
       <article-card
@@ -64,5 +65,8 @@ export default {
 <style>
 .card-container {
   margin-top: 70px;
+}
+.blog-inner-section {
+  width: 100%;
 }
 </style>
