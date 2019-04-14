@@ -78,7 +78,9 @@ module.exports = {
   */
   plugins: [
   ],
-
+  serverMiddleware: [
+    '~/api/nodemailer'
+  ],
   /*
   ** Nuxt.js modules
   */
@@ -99,6 +101,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     // analyze: true,
+    vendor: ['axios'],
     plugins: [
       new webpack.ProvidePlugin({
         '$': 'jquery'
