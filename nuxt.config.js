@@ -95,7 +95,7 @@ module.exports = {
     id: 'UA-136678258-1'
   },
   recaptcha: {
-    hideBadge: true,
+    hideBadge: false,
     siteKey: process.env.recaptchasitekey,
     version: 3
   },
