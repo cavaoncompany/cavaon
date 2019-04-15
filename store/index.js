@@ -47,11 +47,11 @@ export const actions = {
     await sendEmail({ state, commit }, payload, path)
   },
   async contactUs({ state, commit }, payload) {
-    const path = '/api/nodemailer/contactUs'
+    const path = '/.netlify/functions/contact'
     await sendEmail({ state, commit }, payload, path)
   },
   async subsribeTo({ state, commit }, payload) {
-    const path = '/api/nodemailer/subscribe'
+    const path = '/.netlify/functions/blog'
     await sendEmail({ state, commit }, payload, path)
   }
 }

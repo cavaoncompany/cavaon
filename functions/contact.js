@@ -50,15 +50,7 @@ const sendMail = (emailInfo, emailProvider) => {
       html: `<h2>The following enquiry has been received on www.cavaon.com</h2>
             <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
             <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
-            <p style="margin-bottom: 10px;"><b>Company:</b> ${emailInfo.company}</p>
-            <p style="margin-bottom: 10px;"><b>Phone:</b> ${emailInfo.phone}</p>
-            <p style="margin-bottom: 10px;"><b>Website:</b> ${emailInfo.website}</p>
-            <p style="margin-bottom: 10px;"><b>Project Type:</b> ${emailInfo.projectType}</p>
-            <p style="margin-bottom: 10px;"><b>Start:</b> ${emailInfo.timeframe}</p>
-            <p style="margin-bottom: 10px;"><b>Project Description:</b> ${emailInfo.projectDescription}</p>
-            <p style="margin-bottom: 10px;"><b>Where did you hear about us:</b> ${emailInfo.hearAboutUs}</p>
-            <p style="margin-bottom: 10px;"><b>Other:</b> ${emailInfo.hearAboutUsOther}</p>
-            <p style="margin-bottom: 10px;"><b>Brief:</b> ${emailInfo.brief}</p>`,
+            <p style="margin-bottom: 10px;"><b>Company:</b> ${emailInfo.message}</p>`,
       attachments: attachments
     })
   }, 100)
