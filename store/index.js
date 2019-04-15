@@ -43,7 +43,7 @@ async function sendEmail({ state, commit }, payload, path) {
 
 export const actions = {
   async newProject({ state, commit }, payload) {
-    const path = '/email'
+    const path = '/.netlify/functions/email'
     await sendEmail({ state, commit }, payload, path)
   },
   async contactUs({ state, commit }, payload) {
