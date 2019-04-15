@@ -503,10 +503,11 @@ export default {
         name: this.name,
         message: this.message
       }
-      this.$store.dispatch('newProject', emailData)
+      this.$store.dispatch('contactUs', emailData)
       this.name = ''
       this.email = ''
       this.message = ''
+      this.$router.replace({ path: 'success' })
     },
   }
 }
