@@ -86,16 +86,16 @@ const sendMail = (emailInfo, emailProvider) => {
       subject: `Enquiry to start a project through www.cavaon.com`,
       html: `<h2>The following enquiry has been received on www.cavaon.com</h2>
             <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
-            <p style="margin-bottom: 10px;">Email: ${emailInfo.email}</p>
-            <p style="margin-bottom: 10px;">Company: ${emailInfo.company}</p>
-            <p style="margin-bottom: 10px;">Phone: ${emailInfo.phone}</p>
-            <p style="margin-bottom: 10px;">Website: ${emailInfo.website}</p>
-            <p style="margin-bottom: 10px;">Project Type: ${emailInfo.projectType}</p>
-            <p style="margin-bottom: 10px;">Start: ${emailInfo.timeframe}</p>
-            <p style="margin-bottom: 10px;">Project Description: ${emailInfo.projectDescription}</p>
-            <p style="margin-bottom: 10px;">Where did you hear about us: ${emailInfo.hearAboutUs}</p>
-            <p style="margin-bottom: 10px;">Other: ${emailInfo.hearAboutUsOther}</p>
-            <p style="margin-bottom: 10px;">Brief: ${emailInfo.brief}</p>`,
+            <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
+            <p style="margin-bottom: 10px;"><b>Company:</b> ${emailInfo.company}</p>
+            <p style="margin-bottom: 10px;"><b>Phone:</b> ${emailInfo.phone}</p>
+            <p style="margin-bottom: 10px;"><b>Website:</b> ${emailInfo.website}</p>
+            <p style="margin-bottom: 10px;"><b>Project Type:</b> ${emailInfo.projectType}</p>
+            <p style="margin-bottom: 10px;"><b>Start:</b> ${emailInfo.timeframe}</p>
+            <p style="margin-bottom: 10px;"><b>Project Description:</b> ${emailInfo.projectDescription}</p>
+            <p style="margin-bottom: 10px;"><b>Where did you hear about us:</b> ${emailInfo.hearAboutUs}</p>
+            <p style="margin-bottom: 10px;"><b>Other:</b> ${emailInfo.hearAboutUsOther}</p>
+            <p style="margin-bottom: 10px;"><b>Brief:</b> ${emailInfo.brief}</p>`,
       attachments: attachments
     })
   }, 100)
