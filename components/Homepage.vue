@@ -358,10 +358,7 @@
                 <form
                   id="contact-form"
                   name="contact"
-                  action="/success"
-                  method="POST"
-                  netlify-honeypot="bot-field"
-                  data-netlify="true"
+                  @submit.prevent="sendEmail"
                 >
                   <input type="hidden" name="form-name" value="contact">
                   <p class="hidden">
