@@ -1,9 +1,16 @@
 const express = require('express')
-
+const bodyParser = require('body-parser')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
-const api = require('../api/nodemailer.js')
+
 const app = express()
+const api = require('../api/nodemailer.js')
+app.use('/api/nodemailer', api)
+
+app.use(bodyParser.json({ limit: '10mb' }))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true, parameterLimit: 10000 }))
+
+app.use(express.json())
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
