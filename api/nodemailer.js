@@ -6,10 +6,16 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
-app.use(bodyParser.json({ limit: '50mb' }))
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }))
+app.use(bodyParser.json({ limit: '10mb' }))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true, parameterLimit: 10000 }))
 
 app.use(express.json())
+
+const emailProviderDetails = {
+  service: process.env.emailhost,
+  username: process.env.emailusername,
+  password: process.env.emailpassword
+}
 
 // app.post('/', function (req, res) {
 //   const emailInfo = req.body.emailInfo
@@ -21,7 +27,7 @@ app.use(express.json())
 
 app.post('/contactUs', function (req, res) {
   const emailInfo = req.body.emailInfo
-  const emailProvider = req.body.emailProvider
+  const emailProvider = emailProviderDetails
   const attachment = req.body.emailInfo.file
   sendContactUsMail(emailInfo, emailProvider, attachment)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
@@ -29,7 +35,7 @@ app.post('/contactUs', function (req, res) {
 
 app.post('/subscribe', function (req, res) {
   const emailInfo = req.body.emailInfo
-  const emailProvider = req.body.emailProvider
+  const emailProvider = emailProviderDetails
   const attachment = req.body.emailInfo.file
   sendSubscribeMail(emailInfo, emailProvider, attachment)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
@@ -37,7 +43,7 @@ app.post('/subscribe', function (req, res) {
 
 app.post('/newProject', function (req, res) {
   const emailInfo = req.body.emailInfo
-  const emailProvider = req.body.emailProvider
+  const emailProvider = emailProviderDetails
   const attachment = req.body.emailInfo.file
   sendMail(emailInfo, emailProvider, attachment)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
@@ -55,11 +61,14 @@ const sendSubscribeMail = (emailInfo, emailProvider) => {
 
 const sendMail = (emailInfo, emailProvider) => {
   const transporter = nodemailer.createTransport({
-    host: 'secure.emailsrvr.com',
+    host: emailProvider.service,
     port: 465,
     auth: {
       user: emailProvider.username,
       pass: emailProvider.password
+    },
+    tls: {
+      rejectUnauthorized: false
     }
   })
   setTimeout(() => {
@@ -73,18 +82,20 @@ const sendMail = (emailInfo, emailProvider) => {
     transporter.sendMail({
       from: emailInfo.email,
       to: `${emailProvider.username}`,
-      subject: `Message from ${emailInfo.name}`,
-      html: `<p>Enquiry from: ${emailInfo.name}</p>
-            <p>Email: ${emailInfo.email}</p>
-            <p>Company: ${emailInfo.company}</p>
-            <p>Phone: ${emailInfo.phone}</p>
-            <p>Website: ${emailInfo.website}</p>
-            <p>Project Type: ${emailInfo.projectType}</p>
-            <p>Start: ${emailInfo.timeframe}</p>
-            <p>Project Description: ${emailInfo.projectDescription}</p>
-            <p>Where did you hear about us: ${emailInfo.hearAboutUs}</p>
-            <p>Other: ${emailInfo.hearAboutUsOther}</p>
-            <p>Brief: ${emailInfo.brief}</p>`,
+      // to: 'info@cavaon.com',
+      subject: `Enquiry to start a project through www.cavaon.com`,
+      html: `<h2>The following enquiry has been received on www.cavaon.com</h2>
+            <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
+            <p style="margin-bottom: 10px;">Email: ${emailInfo.email}</p>
+            <p style="margin-bottom: 10px;">Company: ${emailInfo.company}</p>
+            <p style="margin-bottom: 10px;">Phone: ${emailInfo.phone}</p>
+            <p style="margin-bottom: 10px;">Website: ${emailInfo.website}</p>
+            <p style="margin-bottom: 10px;">Project Type: ${emailInfo.projectType}</p>
+            <p style="margin-bottom: 10px;">Start: ${emailInfo.timeframe}</p>
+            <p style="margin-bottom: 10px;">Project Description: ${emailInfo.projectDescription}</p>
+            <p style="margin-bottom: 10px;">Where did you hear about us: ${emailInfo.hearAboutUs}</p>
+            <p style="margin-bottom: 10px;">Other: ${emailInfo.hearAboutUsOther}</p>
+            <p style="margin-bottom: 10px;">Brief: ${emailInfo.brief}</p>`,
       attachments: attachments
     })
   }, 100)

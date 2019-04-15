@@ -13,7 +13,7 @@
         </div>
         <form
           id="startAProjectForm"
-          @submit.prevent="sendEmail"
+          @submit.prevent="onSubmit"
           class="col-md-12 col-lg-10 col-lg-offset-1"
         >
           <section>
@@ -198,6 +198,9 @@ export default {
       file: {}
     }
   },
+  async mounted() {
+    await this.$recaptcha.init()
+  },
   methods: {
     addProjectType: function (data, e) {
       const service = 'project-form-' + data.title
@@ -239,17 +242,13 @@ export default {
     createFile: function(file) {
       const reader = new FileReader()
       const vm = this
-      console.log('here')
 
       reader.onload = (e) => {
-        console.log(e.target.result)
         this.file = e.target.result
       }
       reader.readAsDataURL(file)
     },
     sendEmail () {
-      debugger
-      console.log(this.file)
       const emailData = {
         email: this.email,
         name: this.name,
@@ -279,7 +278,16 @@ export default {
       this.brief = ''
       this.file = ''
       this.briefPath = ''
-    }
+      this.$router.replace({ path: 'success' })
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        this.sendEmail()
+      } catch (error) {
+        console.log('Submission error:', error)
+      }
+    },
   }
 }
 </script>

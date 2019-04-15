@@ -34,7 +34,7 @@ async function sendEmail({ state, commit }, payload, path) {
         emailInfo,
         emailProvider
       })
-      alert('Message sent successfully')
+      // alert('Message sent successfully')
     } catch (e) {
       alert(e)
     }

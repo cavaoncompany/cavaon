@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const pkg = require('./package')
 const metadata = require('./static/content/metadata.json')
+const env = require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -50,7 +51,7 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
-
+  env: env.parsed,
   /*
   ** Global CSS
   */
@@ -86,13 +87,18 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/recaptcha'
   ],
 
   googleAnalytics: {
     id: 'UA-136678258-1'
   },
-
+  recaptcha: {
+    hideBadge: true,
+    siteKey: process.env.recaptchasitekey,
+    version: 3
+  },
   /*
   ** Build configuration
   */
