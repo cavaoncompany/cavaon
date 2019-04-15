@@ -21,7 +21,7 @@ export const getters = {
 
 async function sendEmail({ state, commit }, payload, path) {
   // eslint-disable-next-line
-  path = path || '/api/nodemailer/newProject'
+  path = path || '/email'
 
   const emailInfo = payload
   const emailProvider = state.emailProvider
@@ -43,7 +43,7 @@ async function sendEmail({ state, commit }, payload, path) {
 
 export const actions = {
   async newProject({ state, commit }, payload) {
-    const path = '/api/nodemailer/newProject'
+    const path = '/email'
     await sendEmail({ state, commit }, payload, path)
   },
   async contactUs({ state, commit }, payload) {
