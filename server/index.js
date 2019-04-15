@@ -1,3 +1,4 @@
+const serverless = require('serverless-http')
 const express = require('express')
 const bodyParser = require('body-parser')
 const consola = require('consola')
@@ -42,3 +43,5 @@ async function start() {
   })
 }
 start()
+
+module.exports.handler = serverless(app)

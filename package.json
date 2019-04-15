@@ -25,6 +25,7 @@
     "jquery": "^3.3.1",
     "nodemailer": "^6.1.0",
     "nuxt": "^2.4.0",
+    "serverless-http": "^1.9.1",
     "vue-count-to": "^1.0.13"
   },
   "devDependencies": {
