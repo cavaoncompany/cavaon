@@ -24,6 +24,9 @@ const emailProviderDetails = {
 //   sendMail(emailInfo, emailProvider, attachment)
 //   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 // })
+app.get('/newProject', function (req, res) {
+  res.send('Hello')
+})
 
 app.post('/contactUs', function (req, res) {
   const emailInfo = req.body.emailInfo
