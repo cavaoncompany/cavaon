@@ -249,13 +249,17 @@ export default {
       reader.readAsDataURL(file)
     },
     sendEmail () {
+      const projects = []
+      for (let i = 0; i < this.projectType.length; i++){
+        projects.push(this.projectType[i].replace('project-form-', ''))
+      }
       const emailData = {
         email: this.email,
         name: this.name,
         company: this.company,
         phone: this.phone,
         website: this.website,
-        projectType: this.projectType,
+        projectType: projects,
         timeframe: this.timeframe,
         projectDescription: this.projectDescription,
         hearAboutUs: this.hearAboutUs,
