@@ -1,6 +1,8 @@
 const express = require('express')
+
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
+const api = require('../api/nodemailer.js')
 const app = express()
 
 // Import and Set Nuxt.js options
@@ -23,6 +25,7 @@ async function start() {
 
   // Give nuxt middleware to express
   app.use(nuxt.render)
+  // app.use('/api/nodemailer', api)
 
   // Listen the server
   app.listen(port, host)
