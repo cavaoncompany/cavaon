@@ -44,8 +44,8 @@ const sendMail = (emailInfo, emailProvider) => {
 
     transporter.sendMail({
       from: emailInfo.email,
-      to: `${emailProvider.username}`,
-      // to: 'info@cavaon.com',
+      // to: `${emailProvider.username}`,
+      to: 'info@cavaon.com',
       subject: `Contact Us Message received through www.cavaon.com`,
       html: `<h2>The following message has been received through the Contact us form on www.cavaon.com</h2>
             <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
