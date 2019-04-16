@@ -358,10 +358,7 @@
                 <form
                   id="contact-form"
                   name="contact"
-                  action="/success"
-                  method="POST"
-                  netlify-honeypot="bot-field"
-                  data-netlify="true"
+                  @submit.prevent="onSubmit"
                 >
                   <input type="hidden" name="form-name" value="contact">
                   <p class="hidden">
@@ -369,7 +366,7 @@
                   </p>
                   <article>
                     <label class="hidden" for="name">Name</label>
-                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" size="100">
+                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" v-model="name" size="100">
                   </article>
                   <article>
                     <label class="hidden" for="email">Email</label>
@@ -379,12 +376,13 @@
                       :placeholder="contact.emailPlaceholder"
                       name="email"
                       size="30"
+                      v-model="email"
                       required
                     >
                   </article>
                   <article>
                     <label for="msg" class="hidden">Message</label>
-                    <textarea id="msg" :placeholder="contact.messagePlaceholder" name="message" cols="40" rows="3" />
+                    <textarea id="msg" :placeholder="contact.messagePlaceholder" name="message" v-model="message" cols="40" rows="3" />
                     <div class="btn-wrap  text-center">
                       <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
                         {{ contact.buttonText }}
@@ -462,34 +460,22 @@ export default {
       windowWidth: 0,
       isMobile: false,
       startVal: 3564,
-      projectFormOpen: false
+      projectFormOpen: false,
+      name: '',
+      email: '',
+      message: ''
     }
   },
   created() {
-    // if (process.client) {
-    //   // eslint-disable-next-line
-    //   const backstretchScript = document.createElement('script')
-    //   let banners = ''
-    //   for (let i = 0; i < this.banner.banners.length; i++) {
-    //     if (i < this.banner.banners.length - 1) {
-    //       banners += '"' + this.banner.banners[i].image + '",'
-    //     } else {
-    //       banners += '"' + this.banner.banners[i].image + '"'
-    //     }
-    //   }
-    //   backstretchScript.innerHTML = '$.backstretch([' + banners + '], {duration: 3000, fade: 750})'
-    //   // eslint-disable-next-line
-    //   document.body.appendChild(backstretchScript)
-    //   // eslint-disable-next-line
-    //   this.windowWidth = window.innerWidth || document.documentElement.clientWidth
-    //   if (this.windowWidth < 576) { this.isMobile = true }
-    // }
     EventBus.$on('closeStartAProjectForm', (formOpen) => {
       this.closeStartAProjectForm()
     })
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
+  },
+  async mounted() {
+    await this.$recaptcha.init()
   },
   methods: {
     updateProjectDetails: function (project) {
@@ -513,7 +499,27 @@ export default {
     },
     closeStartAProjectForm: function () {
       this.projectFormOpen = false
-    }
+    },
+    sendEmail () {
+      const emailData = {
+        email: this.email,
+        name: this.name,
+        message: this.message
+      }
+      this.$store.dispatch('contactUs', emailData)
+      this.name = ''
+      this.email = ''
+      this.message = ''
+      this.$router.replace({ path: 'success' })
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        this.sendEmail()
+      } catch (error) {
+        console.log('Submission error:', error)
+      }
+    },
   }
 }
 </script>
@@ -586,9 +592,6 @@ export default {
     margin-top: -3px;
     width: 100%;
   }
-  /* #intro {
-    background-color: #582C87;
-  } */
   .text-rotator {
     position: absolute;
   }
