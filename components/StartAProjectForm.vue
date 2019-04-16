@@ -287,6 +287,7 @@ export default {
     async onSubmit() {
       try {
         const token = await this.$recaptcha.execute('login')
+        console.log('ReCaptcha token:', token)
         this.sendEmail()
       } catch (error) {
         console.log('Submission error:', error)

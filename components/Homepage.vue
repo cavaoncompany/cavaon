@@ -358,7 +358,7 @@
                 <form
                   id="contact-form"
                   name="contact"
-                  @submit.prevent="sendEmail"
+                  @submit.prevent="onSubmit"
                 >
                   <input type="hidden" name="form-name" value="contact">
                   <p class="hidden">
@@ -474,6 +474,9 @@ export default {
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
   },
+  async mounted() {
+    await this.$recaptcha.init()
+  },
   methods: {
     updateProjectDetails: function (project) {
       if (project === 'travelDream') {
@@ -508,6 +511,15 @@ export default {
       this.email = ''
       this.message = ''
       this.$router.replace({ path: 'success' })
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        console.log(token)
+        this.sendEmail()
+      } catch (error) {
+        console.log('Submission error:', error)
+      }
     },
   }
 }
