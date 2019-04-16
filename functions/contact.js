@@ -46,11 +46,11 @@ const sendMail = (emailInfo, emailProvider) => {
       from: emailInfo.email,
       to: `${emailProvider.username}`,
       // to: 'info@cavaon.com',
-      subject: `Enquiry to start a project through www.cavaon.com`,
-      html: `<h2>The following enquiry has been received on www.cavaon.com</h2>
+      subject: `Contact Us Message received through www.cavaon.com`,
+      html: `<h2>The following message has been received through the Contact us form on www.cavaon.com</h2>
             <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
             <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
-            <p style="margin-bottom: 10px;"><b>Company:</b> ${emailInfo.message}</p>`,
+            <p style="margin-bottom: 10px;"><b>Message:</b> ${emailInfo.message}</p>`,
       attachments: attachments
     })
   }, 100)
