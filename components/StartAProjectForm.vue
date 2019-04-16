@@ -13,7 +13,7 @@
         </div>
         <form
           id="startAProjectForm"
-          @submit.prevent="sendEmail"
+          @submit.prevent="onSubmit"
           class="col-md-12 col-lg-10 col-lg-offset-1"
         >
           <section>
