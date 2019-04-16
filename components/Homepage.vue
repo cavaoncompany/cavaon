@@ -375,10 +375,7 @@
                 <form
                   id="contact-form"
                   name="contact"
-                  action="/success"
-                  method="POST"
-                  netlify-honeypot="bot-field"
-                  data-netlify="true"
+                  @submit.prevent="onSubmit"
                 >
                   <input type="hidden" name="form-name" value="contact">
                   <p class="hidden">
@@ -386,7 +383,7 @@
                   </p>
                   <article>
                     <label class="hidden" for="name">Name</label>
-                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" size="100">
+                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" v-model="name" size="100">
                   </article>
                   <article>
                     <label class="hidden" for="email">Email</label>
@@ -396,12 +393,13 @@
                       :placeholder="contact.emailPlaceholder"
                       name="email"
                       size="30"
+                      v-model="email"
                       required
                     >
                   </article>
                   <article>
                     <label for="msg" class="hidden">Message</label>
-                    <textarea id="msg" :placeholder="contact.messagePlaceholder" name="message" cols="40" rows="3" />
+                    <textarea id="msg" :placeholder="contact.messagePlaceholder" name="message" v-model="message" cols="40" rows="3" />
                     <div class="btn-wrap  text-center">
                       <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
                         {{ contact.buttonText }}
@@ -442,7 +440,6 @@ import FlowchartMobile from './FlowchartMobile'
 import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
 import ArticleList from './blog/Article-list'
-// import MobileServices from './MobileServices'
 import StartAProjectForm from './StartAProjectForm'
 import Footer from './Footer'
 
@@ -455,7 +452,6 @@ export default {
     FlowchartMobile,
     Services,
     ProjectWithSlider,
-    // MobileServices,
     ArticleList,
     countTo,
     StartAProjectForm,
@@ -488,7 +484,10 @@ export default {
       startVal: 3564,
       projectFormOpen: false,
       title: 'BLOG',
-      posts: posts
+      posts: posts,
+      name: '',
+      email: '',
+      message: ''
     }
   },
   created() {
@@ -498,6 +497,9 @@ export default {
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
+  },
+  async mounted() {
+    await this.$recaptcha.init()
   },
   methods: {
     updateProjectDetails: function (project) {
@@ -521,7 +523,27 @@ export default {
     },
     closeStartAProjectForm: function () {
       this.projectFormOpen = false
-    }
+    },
+    sendEmail () {
+      const emailData = {
+        email: this.email,
+        name: this.name,
+        message: this.message
+      }
+      this.$store.dispatch('contactUs', emailData)
+      this.name = ''
+      this.email = ''
+      this.message = ''
+      this.$router.replace({ path: 'success' })
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        this.sendEmail()
+      } catch (error) {
+        console.log('Submission error:', error)
+      }
+    },
   }
 }
 </script>
@@ -595,9 +617,6 @@ export default {
     margin-top: -3px;
     width: 100%;
   }
-  /* #intro {
-    background-color: #582C87;
-  } */
   .text-rotator {
     position: absolute;
   }

@@ -3,9 +3,10 @@ const webpack = require('webpack')
 const glob = require('glob-all')
 const pkg = require('./package')
 const metadata = require('./static/content/metadata.json')
-const dynamicRoutes  = getDynamicPaths({
+const dynamicRoutes = getDynamicPaths({
   '/blog': 'blog/posts/*.json'
 })
+const env = require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -55,7 +56,7 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
-
+  env: env.parsed,
   /*
   ** Global CSS
   */
@@ -83,20 +84,28 @@ module.exports = {
   */
   plugins: [
   ],
-
+  serverMiddleware: [
+    '~/api/nodemailer'
+  ],
   /*
   ** Nuxt.js modules
   */
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/recaptcha'
   ],
   googleAnalytics: {
     id: 'UA-136678258-1'
   },
   generate: {
     routes: dynamicRoutes
+  },
+  recaptcha: {
+    hideBadge: true,
+    siteKey: process.env.recaptchasitekey,
+    version: 3
   },
   /*
   ** Build configuration
@@ -106,6 +115,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     // analyze: true,
+    vendor: ['axios'],
     plugins: [
       new webpack.ProvidePlugin({
         '$': 'jquery'

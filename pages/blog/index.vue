@@ -15,11 +15,7 @@
             <p>{{ blog.stayUpToDate }}</p>
             <form
               id="subscribeToBlogForm"
-              action="/success"
-              netlify-honeypot="bot-field"
-              name="subscribe-to-blog"
-              method="post"
-              data-netlify="true"
+              @submit.prevent="onSubmit"
               class="col-md-12"
             >
               <section>
@@ -88,6 +84,9 @@ export default {
     HeaderMobile,
     Footer
   },
+  async mounted() {
+    await this.$recaptcha.init()
+  },
   data() {
     // Using webpacks context to gather all files from a folder
     const context = require.context('~/content/blog/', false, /\.json$/)
@@ -101,7 +100,31 @@ export default {
       subscriberName: '',
       subscriberEmail: ''
     }
-  }
+  },
+  methods: {
+    sendEmail () {
+      const projects = []
+      for (let i = 0; i < this.projectType.length; i++){
+        projects.push(this.projectType[i].replace('project-form-', ''))
+      }
+      const emailData = {
+        email: this.subscriberEmail,
+        name: this.subscriberName,
+      }
+      this.$store.dispatch('subsribeTo', emailData)
+      this.name = ''
+      this.email = ''
+      this.$router.replace({ path: 'success' })
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        this.sendEmail()
+      } catch (error) {
+        console.log('Submission error:', error)
+      }
+    },
+  },
 }
 </script>
 

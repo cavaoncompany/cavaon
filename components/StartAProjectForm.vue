@@ -13,11 +13,7 @@
         </div>
         <form
           id="startAProjectForm"
-          action="/success"
-          netlify-honeypot="bot-field"
-          name="start-project"
-          method="post"
-          data-netlify="true"
+          @submit.prevent="onSubmit"
           class="col-md-12 col-lg-10 col-lg-offset-1"
         >
           <section>
@@ -76,7 +72,7 @@
                 <input
                   id="projectWebsite"
                   v-model="website"
-                  type="url"
+                  type="text"
                   :placeholder="startaprojectform.websitePlaceholder"
                   name="website"
                   size="100"
@@ -121,10 +117,16 @@
             <article>
               <textarea id="projectMessage" :placeholder="startaprojectform.goalPlaceholder" name="message" cols="40" rows="4" />
             </article>
+            <div v-if="brief !== ''" class="uploaded-files">
+              <img :src="startaprojectform.yellowTick" alt="file uploaded">
+              <p>{{ brief }}</p>
+            </div>
             <input
               id="brief"
+              ref="file"
               type="file"
               name="brief"
+              @change="showUploadedFile($event)"
             >
             <label for="brief">
               <i class="fa fa-upload" />
@@ -176,6 +178,7 @@
 import startaprojectform from '../static/content/startaprojectform.json'
 
 export default {
+  name: 'StartAProjectForm',
   data() {
     return {
       startaprojectform: startaprojectform,
@@ -189,8 +192,14 @@ export default {
       projectDescription: '',
       hearAboutUs: '',
       hearAboutUsOther: '',
-      otherSelected: false
+      otherSelected: false,
+      brief: '',
+      briefPath: '',
+      file: {}
     }
+  },
+  async mounted() {
+    await this.$recaptcha.init()
   },
   methods: {
     addProjectType: function (data, e) {
@@ -219,6 +228,68 @@ export default {
         this.otherSelected = true
       } else {
         this.otherSelected = false
+      }
+    },
+    showUploadedFile: function(e) {
+      this.file = this.$refs.file.files[0]
+      const file = e.target.files[0]
+      this.brief = file.name
+      if (!file) {
+        return
+      }
+      this.briefPath = this.createFile(file)
+    },
+    createFile: function(file) {
+      const reader = new FileReader()
+      const vm = this
+
+      reader.onload = (e) => {
+        this.file = e.target.result
+      }
+      reader.readAsDataURL(file)
+    },
+    sendEmail () {
+      const projects = []
+      for (let i = 0; i < this.projectType.length; i++){
+        projects.push(this.projectType[i].replace('project-form-', ''))
+      }
+      const emailData = {
+        email: this.email,
+        name: this.name,
+        company: this.company,
+        phone: this.phone,
+        website: this.website,
+        projectType: projects,
+        timeframe: this.timeframe,
+        projectDescription: this.projectDescription,
+        hearAboutUs: this.hearAboutUs,
+        hearAboutUsOther: this.hearAboutUsOther,
+        brief: this.brief,
+        file: this.file,
+        briefPath: this.briefPath
+      }
+      this.$store.dispatch('newProject', emailData)
+      this.name = ''
+      this.email = ''
+      this.company = ''
+      this.phone = ''
+      this.website = ''
+      this.projectType = ''
+      this.timeframe = ''
+      this.projectDescription = ''
+      this.hearAboutUs = ''
+      this.hearAboutUsOther = ''
+      this.brief = ''
+      this.file = ''
+      this.briefPath = ''
+      this.$router.replace({ path: 'success' })
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        this.sendEmail()
+      } catch (error) {
+        console.log('Submission error:', error)
       }
     }
   }
@@ -352,5 +423,11 @@ export default {
   }
   .invisible {
     opacity: 0;
+  }
+  .uploaded-files {
+    display: flex;
+  }
+  .uploaded-files p {
+    margin-top: 11px;
   }
 </style>
