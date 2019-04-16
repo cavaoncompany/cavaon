@@ -103,10 +103,6 @@ export default {
   },
   methods: {
     sendEmail () {
-      const projects = []
-      for (let i = 0; i < this.projectType.length; i++){
-        projects.push(this.projectType[i].replace('project-form-', ''))
-      }
       const emailData = {
         email: this.subscriberEmail,
         name: this.subscriberName,
