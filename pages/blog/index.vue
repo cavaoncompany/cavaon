@@ -110,7 +110,7 @@ export default {
       this.$store.dispatch('subsribeTo', emailData)
       this.name = ''
       this.email = ''
-      this.$router.replace({ path: 'success' })
+      // this.$router.replace({ path: 'success' })
     },
     async onSubmit() {
       try {
