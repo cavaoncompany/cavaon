@@ -30,6 +30,7 @@
     "netlify-lambda": "^1.4.3",
     "nodemailer": "^6.1.0",
     "nuxt": "^2.4.0",
+    "request-promise": "^4.2.4",
     "serverless-http": "^1.9.1",
     "vue-count-to": "^1.0.13"
   },
