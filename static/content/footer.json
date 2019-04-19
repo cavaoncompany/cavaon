@@ -1,15 +1,15 @@
 {
-    "socialIcons": [
-        {
-            "image": "/images/social/03.png",
-            "description": "Cavaon on Facebook",
-            "link": "https://www.facebook.com/cavaon.2010/"
-        },
-        {
-            "image": "/images/social/05.png",
-            "description": "Cavaon on LinkedIn",
-            "link": "https://www.linkedin.com/company/cavaon"
-        }
-    ],
-    "copyright": "2019 Cavaon. All rights reserved"
+  "socialIcons": [
+    {
+      "image": "/images/social/03.png",
+      "description": "Cavaon on Facebook",
+      "link": "https://www.facebook.com/cavaonptyltd"
+    },
+    {
+      "image": "/images/social/05.png",
+      "description": "Cavaon on LinkedIn",
+      "link": "https://www.linkedin.com/company/cavaon"
+    }
+  ],
+  "copyright": "2019 Cavaon. All rights reserved"
 }
