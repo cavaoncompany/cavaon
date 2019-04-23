@@ -118,6 +118,9 @@ export default {
         path: `${this.url}`,
         params: {
           filename: this.filename
+        },
+        props: {
+          filename: this.filename
         }
       })
     }

@@ -38,15 +38,25 @@ export default {
     Footer
   },
   async asyncData({ route }) {
-    console.log('params1:', route)
-    console.log('params: ', $nuxt.$route.params)
-    const post = await import('~/content/blog/' + route.params.url + '.json')
-    return { post }
+    let post = {}
+    const context = require.context('~/content/blog/', false, /\.json$/)
+    const posts = context.keys().map(key => ({
+      ...context(key),
+      _path: `/blog/${key.replace('.json', '').replace('./', '')}`,
+      filename: `${key}`
+    })).filter(a=> a.title.toLowerCase().replace(/ /g, '-') === route.params.url)
+
+    if(posts.length > 0){
+      post = posts[0]
+    }
+    // post = await import('~/content/blog/' + posts[0].filename + '.json')
+    return {post}
   },
   data() {
     return {
       blogDate: Date,
-      image: ''
+      image: '',
+      post: {}
     }
   },
   // mounted() {
@@ -77,10 +87,9 @@ export default {
     const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
     this.image = this.post.image.replace('/static/', '/')
-    console.log('created params: ', $nuxt.$route.params)
   },
   mounted() {
-    console.log('mounted params: ', $nuxt.$route.params)
+    // console.log('mounted params: ', $nuxt.$route.params)
   }
   // methods: {
   //   async asyncData({ route }) {
