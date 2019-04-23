@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- <nuxt-link :to="url" @click="openBlog()"> -->
-      <a @click="openBlog()">
+    <a @click="openBlog()">
       <article class="article-card card">
         <img :src="thumbnail" :alt="title">
         <div class="card-body">
@@ -21,7 +20,6 @@
           </p>
         </div>
       </article>
-    <!-- </nuxt-link> -->
     </a>
   </div>
 </template>
@@ -97,7 +95,6 @@ export default {
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
     this.thumbnail = this.thumbnail.replace('/static/', '/')
     this.readTime = this.calculateReadTime(this.body)
-    console.log(this.filename)
   },
   computed: {
     language() {

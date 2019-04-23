@@ -102,7 +102,7 @@ export default {
   created() {
     this.keywords = this.getKeywords(this.articles)
     this.sortedArticles = this.orderPostsByDate()
-    this.createPaths(this.sortedArticles)
+    // this.createPaths(this.sortedArticles)
     this.featuredArticle = this.sortedArticles[0]
     this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, 4)
     this.updateView()
@@ -144,11 +144,11 @@ export default {
     },
     orderPostsByDate: function () {
       const currentArticles = JSON.parse(JSON.stringify(this.articles))
-      const sortedArticles = currentArticles.sort(function (a, b) {
+      let sortedArticles = currentArticles.sort(function (a, b) {
         return new Date(b.date) - new Date(a.date)
       })
-
-      return sortedArticles
+      const newSortedArticles = this.createPaths(sortedArticles)
+      return newSortedArticles
     },
     prepareLatestPosts: function (sortedPosts, numberOfPosts) {
       const limitedPosts = []
@@ -178,6 +178,7 @@ export default {
         const path = articles[i].title.toLowerCase().replace(/ /g, '-')
         articles[i].url = '/blog/' + path
       }
+      return articles
     }
   }
 }

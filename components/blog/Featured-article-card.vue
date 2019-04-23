@@ -1,6 +1,6 @@
 <template>
   <div class="col-12">
-    <nuxt-link :to="url">
+    <a @click="openBlog()">
       <article class="featured-article-card card">
         <img :src="image" :alt="title">
         <div class="card-body">
@@ -21,7 +21,7 @@
           </p>
         </div>
       </article>
-    </nuxt-link>
+    </a>
   </div>
 </template>
 
@@ -83,7 +83,7 @@ export default {
       required: false,
       default: () => ''
     },
-    lang: { // TODO: https://github.com/nuxt-community/nuxt-i18n
+    lang: {
       type: String,
       required: true,
       default: () => 'EN'
@@ -101,7 +101,6 @@ export default {
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
     this.thumbnail = this.thumbnail.replace('/static/', '/')
     this.readTime = this.calculateReadTime(this.body)
-    console.log(this.filename)
   },
   computed: {
     language() {
@@ -116,6 +115,17 @@ export default {
       const words = article.split(' ').length
       const readTime = Math.round(words / 200)
       return readTime
+    },
+    openBlog: function () {
+      this.$router.push({
+        path: `${this.url}`,
+        params: {
+          filename: this.filename
+        },
+        props: {
+          filename: this.filename
+        }
+      })
     }
   }
 }
