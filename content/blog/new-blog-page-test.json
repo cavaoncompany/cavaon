@@ -10,5 +10,6 @@
     "#design"
   ],
   "image": "/images/uploads/blog-big.png",
-  "description": "In this post I will test whether everything uploads correctly"
+  "description": "In this post I will test whether everything uploads correctly",
+  "featured": "no"
 }

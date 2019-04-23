@@ -10,5 +10,6 @@
     "#creative"
   ],
   "image": "/static/images/uploads/blog-big.png",
-  "description": "Jelly apple pie biscuit cake. Cotton candy danish lollipop pudding toffee marshmallow bonbon gummies sugar plum. Muffin dragée brownie cake"
+  "description": "Jelly apple pie biscuit cake. Cotton candy danish lollipop pudding toffee marshmallow bonbon gummies sugar plum. Muffin dragée brownie cake",
+  "featured": "no"
 }

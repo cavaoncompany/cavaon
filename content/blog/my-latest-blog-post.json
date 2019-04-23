@@ -9,5 +9,6 @@
     "#marketing"
   ],
   "image": "/images/uploads/blog-big.png",
-  "description": "This  is the latest bacon ipsum post to show you what lorem ipsum bacon is all about."
+  "description": "This  is the latest bacon ipsum post to show you what lorem ipsum bacon is all about.",
+  "featured": "no"
 }

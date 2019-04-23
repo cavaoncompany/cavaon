@@ -99,7 +99,7 @@ export default {
   created() {
     this.keywords = this.getKeywords(this.articles)
     this.sortedArticles = this.orderPostsByDate()
-    this.featuredArticle = this.articles[0]
+    this.featuredArticle = this.sortedArticles[0]
     this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, 4)
     this.updateView()
   },

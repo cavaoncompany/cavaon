@@ -11,5 +11,6 @@
     "#marketing"
   ],
   "image": "/images/uploads/blog-big.png",
-  "description": "Tomato Technologies has been changed it's name to Cavaon"
+  "description": "Tomato Technologies changed its name to Cavaon",
+  "featured": "yes"
 }
