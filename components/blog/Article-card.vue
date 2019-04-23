@@ -1,6 +1,7 @@
 <template>
   <div>
-    <nuxt-link :to="url">
+    <!-- <nuxt-link :to="url" @click="openBlog()"> -->
+      <a @click="openBlog()">
       <article class="article-card card">
         <img :src="thumbnail" :alt="title">
         <div class="card-body">
@@ -9,7 +10,7 @@
               {{ blogDate }}
             </div>
             <div class="grey-spacer" />
-            <div class="read-time">{{ this.readTime }} min read</div>
+            <div class="read-time">{{ readTime }} min read</div>
           </div>
           <div class="card-spacer"/>
           <p class="card-title">
@@ -20,7 +21,8 @@
           </p>
         </div>
       </article>
-    </nuxt-link>
+    <!-- </nuxt-link> -->
+    </a>
   </div>
 </template>
 
@@ -67,6 +69,11 @@ export default {
       required: true,
       default: () => ''
     },
+    filename: {
+      type: String,
+      required: false,
+      default: () => ''
+    },
     extract: {
       type: String,
       required: false,
@@ -90,6 +97,7 @@ export default {
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
     this.thumbnail = this.thumbnail.replace('/static/', '/')
     this.readTime = this.calculateReadTime(this.body)
+    console.log(this.filename)
   },
   computed: {
     language() {
@@ -104,6 +112,14 @@ export default {
       const words = article.split(' ').length
       const readTime = Math.round(words / 200)
       return readTime
+    },
+    openBlog: function () {
+      $nuxt.$router.push({
+        path: `${this.url}`,
+        params: {
+          filename: this.filename
+        }
+      })
     }
   }
 }

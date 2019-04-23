@@ -13,8 +13,9 @@
         :date="featuredArticle.date"
         :thumbnail="featuredArticle.thumbnail"
         :image="featuredArticle.image"
-        :url="featuredArticle._path"
+        :url="featuredArticle.url"
         :body="featuredArticle.body"
+        :filename="featuredArticle.filename"
         :extract="getExtract(featuredArticle.body)" />
         <p class="keywords">
           <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
@@ -29,8 +30,9 @@
         :tags="article.tags"
         :date="article.date"
         :thumbnail="article.thumbnail"
-        :url="article._path"
+        :url="article.url"
         :body="article.body"
+        :filename="article.filename"
         :extract="getExtract(article.body)"
         class="col-md-4"
       />
@@ -56,8 +58,9 @@
         :tags="article.tags"
         :date="article.date"
         :thumbnail="article.thumbnail"
-        :url="article._path"
+        :url="article.url"
         :body="article.body"
+        :filename="article.filename"
         :extract="getExtract(article.body)"
         class="col-md-6"
       />
@@ -99,6 +102,7 @@ export default {
   created() {
     this.keywords = this.getKeywords(this.articles)
     this.sortedArticles = this.orderPostsByDate()
+    this.createPaths(this.sortedArticles)
     this.featuredArticle = this.sortedArticles[0]
     this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, 4)
     this.updateView()
@@ -143,6 +147,7 @@ export default {
       const sortedArticles = currentArticles.sort(function (a, b) {
         return new Date(b.date) - new Date(a.date)
       })
+
       return sortedArticles
     },
     prepareLatestPosts: function (sortedPosts, numberOfPosts) {
@@ -166,6 +171,12 @@ export default {
       } else {
         this.sortedArticles = this.orderPostsByDate()
         this.sortedArticles = this.prepareLatestPosts(this.sortedArticles, 6)
+      }
+    },
+    createPaths: function (articles) {
+      for(let i = 0; i < articles.length; i++) {
+        const path = articles[i].title.toLowerCase().replace(/ /g, '-')
+        articles[i].url = '/blog/' + path
       }
     }
   }

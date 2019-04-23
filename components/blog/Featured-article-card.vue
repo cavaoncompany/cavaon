@@ -73,6 +73,11 @@ export default {
       required: true,
       default: () => ''
     },
+    filename: {
+      type: String,
+      required: false,
+      default: () => ''
+    },
     extract: {
       type: String,
       required: false,
@@ -96,6 +101,7 @@ export default {
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
     this.thumbnail = this.thumbnail.replace('/static/', '/')
     this.readTime = this.calculateReadTime(this.body)
+    console.log(this.filename)
   },
   computed: {
     language() {

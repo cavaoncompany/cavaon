@@ -31,13 +31,16 @@ import HeaderMobile from '../../components/HeaderMobile'
 import Footer from '../../components/Footer'
 
 export default {
+  name: 'blog-post',
   components: {
     HeaderStandard,
     HeaderMobile,
     Footer
   },
-  async asyncData({ params }) {
-    const post = await import('~/content/blog/' + params.slug + '.json')
+  async asyncData({ route }) {
+    console.log('params1:', route)
+    console.log('params: ', $nuxt.$route.params)
+    const post = await import('~/content/blog/' + route.params.url + '.json')
     return { post }
   },
   data() {
@@ -46,6 +49,9 @@ export default {
       image: ''
     }
   },
+  // mounted() {
+  //   this.asyncData()
+  // },
   computed: {
     parsedBody() {
       return markdown.toHTML(this.post.body)
@@ -71,7 +77,19 @@ export default {
     const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
     this.image = this.post.image.replace('/static/', '/')
+    console.log('created params: ', $nuxt.$route.params)
+  },
+  mounted() {
+    console.log('mounted params: ', $nuxt.$route.params)
   }
+  // methods: {
+  //   async asyncData({ route }) {
+  //   console.log('params1:', params)
+  //   console.log('params: ', this.$route.params.filename)
+  //   const post = await import('~/content/blog/' + params.url + '.json')
+  //   return { post }
+  // },
+  // }
 }
 </script>
 

@@ -18,12 +18,6 @@
               @submit.prevent="onSubmit"
               class="col-md-12"
             >
-              <section>
-                <input type="hidden" name="form-name" value="startAProject">
-                <p class="hidden">
-                  <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-                </p>
-              </section>
               <section class="form-input">
                 <article>
                   <input
@@ -64,10 +58,9 @@ import ArticleList from '../../components/blog/Article-list'
 import HeaderStandard from '../../components/HeaderStandard'
 import HeaderMobile from '../../components/HeaderMobile'
 import Footer from '../../components/Footer'
-
 const title = 'BLOG'
 export default {
-  name: title,
+  name: 'blog',
   head: {
     title,
     meta: [
@@ -92,7 +85,8 @@ export default {
     const context = require.context('~/content/blog/', false, /\.json$/)
     const posts = context.keys().map(key => ({
       ...context(key),
-      _path: `/blog/${key.replace('.json', '').replace('./', '')}`
+      _path: `/blog/${key.replace('.json', '').replace('./', '')}`,
+      filename: `${key}`
     }))
     return {
       posts,
@@ -119,7 +113,7 @@ export default {
       } catch (error) {
         console.log('Submission error:', error)
       }
-    },
+    }
   },
 }
 </script>
