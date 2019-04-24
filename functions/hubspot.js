@@ -5,7 +5,18 @@ const api = new NodeHubSpotApi(process.env.hubspotapikey)
 exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body)
   const contactInfo = body.contactInfo
-  createContact(contactInfo)
+  console.log(contactInfo)
+  api.contacts.createContact({
+    email: 'h@h.com',
+    firstname: 'yabba',
+    lastname: 'Bond',
+    website: 'http://www.mycompany.com',
+    company: 'My Company'
+  })
+    // // eslint-disable-next-line
+    // .then(response => console.log(response.data.properties))
+    // // eslint-disable-next-line
+    // .catch(error => console.error(error))
 
   callback(null, {
     statusCode: 200,
@@ -13,20 +24,20 @@ exports.handler = function (event, context, callback) {
   })
 }
 
-const createContact = (contactInfo) => {
-  console.log('posting with this info: ', contactInfo)
-  api.contacts.createContact({
-    email: contactInfo.email,
-    firstname: contactInfo.name,
-    lastname: 'Bond',
-    website: 'http://www.mycompany.com',
-    company: 'My Company'
-  })
-    // eslint-disable-next-line
-    .then(response => console.log(response.data.properties))
-    // eslint-disable-next-line
-    .catch(error => console.error(error))
-}
+// const createContact = (contactInfo) => {
+//   console.log('posting with this info: ', contactInfo)
+//   api.contacts.createContact({
+//     email: 'h@h.com',
+//     firstname: 'yabba',
+//     lastname: 'Bond',
+//     website: 'http://www.mycompany.com',
+//     company: 'My Company'
+//   })
+//     // eslint-disable-next-line
+//     .then(response => console.log(response.data.properties))
+//     // eslint-disable-next-line
+//     .catch(error => console.error(error))
+// }
 
 // const getAllContacts = () => {
 //   api.contacts.getAll({
