@@ -4,6 +4,7 @@ const api = new NodeHubSpotApi(process.env.hubspotapikey)
 
 exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body)
+  let message = {}
   const contactInfo = body.contactInfo
   console.log('going going gone ', contactInfo)
   api.contacts.createContact({
@@ -13,14 +14,20 @@ exports.handler = function (event, context, callback) {
     website: 'http://www.mycompany.com',
     company: 'My Company'
   })
-  // eslint-disable-next-line
-  // .then(response => console.log(response.data.properties))
-  // eslint-disable-next-line
-  // .catch(error => console.error(error))
+    .then((response) => {
+      message = response
+      // eslint-disable-next-line
+      console.log(response.data.properties)
+    })
+    .catch((error) => {
+      message = error
+      // eslint-disable-next-line
+      console.error(error)
+    })
 
   callback(null, {
     statusCode: 200,
-    body: 'Received info'
+    body: JSON.stringify(message)
   })
 }
 
