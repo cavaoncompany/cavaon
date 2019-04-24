@@ -11,7 +11,7 @@
 //     count: 20,
 //     vidOffset: null,
 //     property: [
-//       'fistname', 'lastname', 'email',
+//       'fistname', 'lastname', 'email'
 //     ],
 //     showListMemberships: false
 //   })
@@ -27,10 +27,11 @@
 // })
 
 // router.post('/', function (req, res) {
+//   console.log(req.body)
 //   api.contacts.createContact({
-//     email: 'email@domain.com',
-//     firstname: 'James',
-//     lastname: 'Bond',
+//     email: 'emaail@email.com',
+//     firstname: 'Cornelia',
+//     lastname: 'Schulz',
 //     website: 'http://www.mycompany.com',
 //     company: 'My Company'
 //   })

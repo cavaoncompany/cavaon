@@ -27,17 +27,17 @@ const createContact = (contactInfo) => {
     .catch(error => console.error(error))
 }
 
-const getAllContacts = () => {
-  api.contacts.getAll({
-    count: 20,
-    vidOffset: null,
-    property: [
-      'fistname', 'lastname', 'email',
-    ],
-    showListMemberships: false
-  })
-    // eslint-disable-next-line
-    .then(response => console.log(response.data.contacts))
-    // eslint-disable-next-line
-    .catch(error => console.error(error))
-}
+// const getAllContacts = () => {
+//   api.contacts.getAll({
+//     count: 20,
+//     vidOffset: null,
+//     property: [
+//       'fistname', 'lastname', 'email',
+//     ],
+//     showListMemberships: false
+//   })
+//     // eslint-disable-next-line
+//     .then(response => console.log(response.data.contacts))
+//     // eslint-disable-next-line
+//     .catch(error => console.error(error))
+// }
