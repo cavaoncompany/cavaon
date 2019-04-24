@@ -6,6 +6,7 @@ exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body)
   let message = {}
   const contactInfo = body.contactInfo
+  // eslint-disable-next-line
   console.log('going going gone ', contactInfo)
   api.contacts.createContact({
     email: contactInfo.email,
