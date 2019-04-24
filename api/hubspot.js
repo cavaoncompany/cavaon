@@ -1,68 +1,52 @@
-// 'use strict'
-// const NodeHubSpotApi = require('node-hubspot-api')
-// const express = require('express')
-// const router = express.Router()
+import axios from 'axios'
 
-// require('dotenv').config()
-// const api = new NodeHubSpotApi(process.env.hubspotapikey)
+const API_ENDPOINT = 'https://api.hubapi.com'
 
-// router.get('/hubspot', function (req, res) {
-//   api.contacts.getAll({
-//     count: 20,
-//     vidOffset: null,
-//     property: [
-//       'fistname', 'lastname', 'email'
-//     ],
-//     showListMemberships: false
-//   })
-//     .then((response) => {
-//       // console.log(response.data.contacts)
-//       res.json(response.data.contacts)
-//     })
-//     .catch((error) => {
-//       // eslint-disable-next-line
-//       console.error(error)
-//       res.status(500).send('Unable to get contacts from Hubspot')
-//     })
-// })
+class Request {
+  constructor(apiKey = null) {
+    if (apiKey === null) throw new Error('Provide HubSpot API key.')
 
-// router.post('/', function (req, res) {
-//   console.log(req.body)
-//   api.contacts.createContact({
-//     email: 'emaail@email.com',
-//     firstname: 'Cornelia',
-//     lastname: 'Schulz',
-//     website: 'http://www.mycompany.com',
-//     company: 'My Company'
-//   })
-//     // eslint-disable-next-line
-//     .then(response => console.log(response.data.properties))
-//     // eslint-disable-next-line
-//     .catch(error => console.error(error))
-// })
+    this.apiKey = apiKey
+    this.apiInstance = axios.create({
+      baseURL: `${API_ENDPOINT}`,
+      timeout: 600000
+    })
+  }
 
-// exports.handler = function (event, context, callback) {
-//   // const body = JSON.parse(event.body)
-//   getAllContacts()
+  normalizeParams(params) {
+    return { hapikey: this.apiKey, ...params }
+  }
 
-//   callback(null, {
-//     statusCode: 200,
-//     body: 'Received info'
-//   })
-// }
+  serializeProperties({ properties = {}, property = {} }) {
 
-// const getAllContacts = () => {
-//   console.log('getAllContacts')
-//   api.contacts.getAll({
-//     count: 20,
-//     vidOffset: null,
-//     property: [
-//       'fistname', 'lastname', 'email',
-//     ],
-//     showListMemberships: false
-//   })
-//     .then(response => console.log(response.data.contacts))
-//     .catch(error => console.error(error))
-// }
+    let objParam = Object.keys(properties).length === 0
+      ? property
+      : properties
 
-// module.exports = router
+    let paramName = Object.keys(properties).length === 0
+      ? 'property'
+      : 'properties'
+
+    return Object.keys(objParam).map(key =>
+      `${paramName}=${encodeURIComponent(objParam[key])}`
+    ).join('&')
+  }
+
+  get(endPoint, params = {}) {
+
+    let serializedProperties = this.serializeProperties(params)
+
+    if (params.hasOwnProperty('properties')) { delete params.properties }
+
+    if (params.hasOwnProperty('property')) { delete params.property }
+
+    return this.apiInstance.get(`${endPoint}?${serializedProperties}`, {
+      params: this.normalizeParams(params)
+    })
+  }
+  post(endPoint, params = {}) {
+    return this.apiInstance.post(`${endPoint}?hapikey=${this.apiKey}`, this.normalizeParams(params))
+  }
+}
+
+export default Request
