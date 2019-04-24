@@ -7,16 +7,16 @@ exports.handler = function (event, context, callback) {
   const contactInfo = body.contactInfo
   console.log(contactInfo)
   api.contacts.createContact({
-    email: 'h@h.com',
-    firstname: 'yabba',
-    lastname: 'Bond',
+    email: contactInfo.email,
+    firstname: contactInfo.firstname,
+    lastname: contactInfo.lastname,
     website: 'http://www.mycompany.com',
     company: 'My Company'
   })
-    // // eslint-disable-next-line
-    // .then(response => console.log(response.data.properties))
-    // // eslint-disable-next-line
-    // .catch(error => console.error(error))
+  // eslint-disable-next-line
+  // .then(response => console.log(response.data.properties))
+  // eslint-disable-next-line
+  // .catch(error => console.error(error))
 
   callback(null, {
     statusCode: 200,

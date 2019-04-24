@@ -365,8 +365,12 @@
                     <label>Don’t fill this out if you're human: <input name="bot-field"></label>
                   </p>
                   <article>
-                    <label class="hidden" for="name">Name</label>
-                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" v-model="name" size="100">
+                    <label class="hidden" for="firstname">First Name</label>
+                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" v-model="firstname" size="100">
+                  </article>
+                  <article>
+                    <label class="hidden" for="lastname">Last Name</label>
+                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" v-model="lastname" size="100">
                   </article>
                   <article>
                     <label class="hidden" for="email">Email</label>
@@ -461,7 +465,8 @@ export default {
       isMobile: false,
       startVal: 3564,
       projectFormOpen: false,
-      name: '',
+      firstname: '',
+      lastname: '',
       email: '',
       message: ''
     }
@@ -503,11 +508,13 @@ export default {
     sendEmail () {
       const emailData = {
         email: this.email,
-        name: this.name,
+        firstname: this.firstname,
+        lastname: this.lastname,
         message: this.message
       }
       this.$store.dispatch('contactUs', emailData)
-      this.name = ''
+      this.firstname = ''
+      this.lastname = ''
       this.email = ''
       this.message = ''
       this.$router.replace({ path: 'success' })
@@ -515,7 +522,8 @@ export default {
     createContact () {
       const contactData = {
         email: this.email,
-        name: this.name,
+        firstname: this.firstname,
+        lastname: this.lastname,
         message: this.message
       }
       this.$store.dispatch('contactForm', contactData)
