@@ -70,7 +70,6 @@ export const actions = {
     await sendEmail({ state, commit }, payload, path)
   },
   async contactForm({ state, commit }, payload) {
-    console.log('passing data to store')
     const path = '/.netlify/functions/hubspot'
     await createContact({ state, commit }, payload, path)
   }

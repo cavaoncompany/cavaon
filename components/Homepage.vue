@@ -358,7 +358,7 @@
                 <form
                   id="contact-form"
                   name="contact"
-                  @submit.prevent="createContact"
+                  @submit.prevent="onSubmit"
                 >
                   <input type="hidden" name="form-name" value="contact">
                   <p class="hidden">
@@ -526,14 +526,13 @@ export default {
         lastname: this.lastname,
         message: this.message
       }
-      console.log('dispatching data')
       this.$store.dispatch('contactForm', contactData)
     },
     async onSubmit() {
       try {
         const token = await this.$recaptcha.execute('login')
         this.createContact()
-        // this.sendEmail()
+        this.sendEmail()
       } catch (error) {
         console.log('Submission error:', error)
       }
