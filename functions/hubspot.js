@@ -36,6 +36,8 @@ const getAllContacts = () => {
     ],
     showListMemberships: false
   })
+    // eslint-disable-next-line
     .then(response => console.log(response.data.contacts))
+    // eslint-disable-next-line
     .catch(error => console.error(error))
 }
