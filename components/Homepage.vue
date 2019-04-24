@@ -524,7 +524,7 @@ export default {
       try {
         const token = await this.$recaptcha.execute('login')
         this.createContact()
-        this.sendEmail()
+        // this.sendEmail()
       } catch (error) {
         console.log('Submission error:', error)
       }

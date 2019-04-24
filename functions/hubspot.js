@@ -14,6 +14,7 @@ exports.handler = function (event, context, callback) {
 }
 
 const createContact = (contactInfo) => {
+  console.log('posting with this info: ', contactInfo)
   api.contacts.createContact({
     email: contactInfo.email,
     firstname: contactInfo.name,
