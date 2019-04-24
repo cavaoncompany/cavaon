@@ -5,7 +5,7 @@ const api = new NodeHubSpotApi(process.env.hubspotapikey)
 exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body)
   const contactInfo = body.contactInfo
-  console.log(contactInfo)
+  console.log('going going gone ', contactInfo)
   api.contacts.createContact({
     email: contactInfo.email,
     firstname: contactInfo.firstname,

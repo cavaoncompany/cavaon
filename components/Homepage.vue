@@ -358,7 +358,7 @@
                 <form
                   id="contact-form"
                   name="contact"
-                  @submit.prevent="onSubmit"
+                  @submit.prevent="createContact"
                 >
                   <input type="hidden" name="form-name" value="contact">
                   <p class="hidden">
@@ -366,11 +366,11 @@
                   </p>
                   <article>
                     <label class="hidden" for="firstname">First Name</label>
-                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" v-model="firstname" size="100">
+                    <input id="name" type="text" :placeholder="contact.firstnamePlaceholder" name="name" v-model="firstname" size="100">
                   </article>
                   <article>
                     <label class="hidden" for="lastname">Last Name</label>
-                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" v-model="lastname" size="100">
+                    <input id="name" type="text" :placeholder="contact.lastnamePlaceholder" name="name" v-model="lastname" size="100">
                   </article>
                   <article>
                     <label class="hidden" for="email">Email</label>
@@ -526,6 +526,7 @@ export default {
         lastname: this.lastname,
         message: this.message
       }
+      console.log('dispatching data')
       this.$store.dispatch('contactForm', contactData)
     },
     async onSubmit() {

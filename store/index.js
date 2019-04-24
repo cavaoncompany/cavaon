@@ -45,6 +45,7 @@ async function sendEmail({ state, commit }, payload, path) {
 async function createContact({ state, commit }, payload, path) {
   path = path || '/hubspot'
   const contactInfo = payload
+  console.log('got data to send', contactInfo)
   try {
     // eslint-disable-next-line
     const { res } = await axios.post(path, {
@@ -69,6 +70,7 @@ export const actions = {
     await sendEmail({ state, commit }, payload, path)
   },
   async contactForm({ state, commit }, payload) {
+    console.log('passing data to store')
     const path = '/.netlify/functions/hubspot'
     await createContact({ state, commit }, payload, path)
   }
