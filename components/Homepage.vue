@@ -512,9 +512,18 @@ export default {
       this.message = ''
       this.$router.replace({ path: 'success' })
     },
+    createContact () {
+      const contactData = {
+        email: this.email,
+        name: this.name,
+        message: this.message
+      }
+      this.$store.dispatch('contactForm', contactData)
+    },
     async onSubmit() {
       try {
         const token = await this.$recaptcha.execute('login')
+        this.createContact()
         this.sendEmail()
       } catch (error) {
         console.log('Submission error:', error)
