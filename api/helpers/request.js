@@ -1,0 +1,50 @@
+import axios from 'axios'
+
+const API_ENDPOINT = 'https://api.hubapi.com'
+
+class Request {
+  constructor(apiKey = null) {
+    if (apiKey === null) throw new Error('Provide HubSpot API key.')
+
+    this.apiKey = apiKey
+    this.apiInstance = axios.create({
+      baseURL: `${API_ENDPOINT}`,
+      timeout: 600000
+    })
+  }
+
+  normalizeParams(params) {
+    return { hapikey: this.apiKey, ...params }
+  }
+
+  serializeProperties({ properties = {}, property = {} }) {
+    const objParam = Object.keys(properties).length === 0
+      ? property
+      : properties
+
+    const paramName = Object.keys(properties).length === 0
+      ? 'property'
+      : 'properties'
+
+    return Object.keys(objParam).map(key =>
+      `${paramName}=${encodeURIComponent(objParam[key])}`
+    ).join('&')
+  }
+
+  get(endPoint, params = {}) {
+    const serializedProperties = this.serializeProperties(params)
+
+    if (params.hasOwnProperty('properties')) { delete params.properties }
+
+    if (params.hasOwnProperty('property')) { delete params.property }
+
+    return this.apiInstance.get(`${endPoint}?${serializedProperties}`, {
+      params: this.normalizeParams(params)
+    })
+  }
+  post(endPoint, params = {}) {
+    return this.apiInstance.post(`${endPoint}?hapikey=${this.apiKey}`, this.normalizeParams(params))
+  }
+}
+
+export default Request

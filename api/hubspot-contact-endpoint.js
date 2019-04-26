@@ -1,13 +1,11 @@
-import errorHandler from '../helpers/errorHandler'
-import responseHandler from '../helpers/responseHandler'
+import errorHandler from './helpers/errorHandler'
+import responseHandler from './helpers/responseHandler'
 
 const Contacts = (api = null) => {
-
   if (api === null) throw new Error('Request instance must be provided on constructor.')
 
   return {
     mapProperties(properties) {
-
       return Object.keys(properties).map(property => ({
         property: property,
         value: properties[property]

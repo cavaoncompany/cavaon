@@ -1,4 +1,4 @@
-const NodeHubSpotApi = require('node-hubspot-api')
+const NodeHubSpotApi = require('../api/hubspot')
 require('dotenv').config()
 const api = new NodeHubSpotApi(process.env.hubspotapikey)
 

@@ -1,52 +1,22 @@
-import axios from 'axios'
+import Request from './helpers/request'
+import Contacts from './hubspot-contact-endpoint'
+import Blog from './hubspot-blog-endpoint'
+import Deals from './hubspot-deal-endpoint'
+import Tickets from './hubspot-ticket-endpoint'
 
-const API_ENDPOINT = 'https://api.hubapi.com'
+const NodeHubSpotApi = (apiKey = null) => {
+  const api = new Request(apiKey)
 
-class Request {
-  constructor(apiKey = null) {
-    if (apiKey === null) throw new Error('Provide HubSpot API key.')
-
-    this.apiKey = apiKey
-    this.apiInstance = axios.create({
-      baseURL: `${API_ENDPOINT}`,
-      timeout: 600000
-    })
-  }
-
-  normalizeParams(params) {
-    return { hapikey: this.apiKey, ...params }
-  }
-
-  serializeProperties({ properties = {}, property = {} }) {
-
-    let objParam = Object.keys(properties).length === 0
-      ? property
-      : properties
-
-    let paramName = Object.keys(properties).length === 0
-      ? 'property'
-      : 'properties'
-
-    return Object.keys(objParam).map(key =>
-      `${paramName}=${encodeURIComponent(objParam[key])}`
-    ).join('&')
-  }
-
-  get(endPoint, params = {}) {
-
-    let serializedProperties = this.serializeProperties(params)
-
-    if (params.hasOwnProperty('properties')) { delete params.properties }
-
-    if (params.hasOwnProperty('property')) { delete params.property }
-
-    return this.apiInstance.get(`${endPoint}?${serializedProperties}`, {
-      params: this.normalizeParams(params)
-    })
-  }
-  post(endPoint, params = {}) {
-    return this.apiInstance.post(`${endPoint}?hapikey=${this.apiKey}`, this.normalizeParams(params))
+  return {
+    calendar: null,
+    companies: null,
+    contacts: Contacts(api),
+    blog: Blog(api),
+    domains: null,
+    files: null,
+    deals: Deals(api),
+    tickets: Tickets(api)
   }
 }
 
-export default Request
+module.exports = NodeHubSpotApi
