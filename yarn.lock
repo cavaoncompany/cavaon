@@ -5614,10 +5614,9 @@ node-fetch@^2.3.0:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
   integrity sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
 
-node-hubspot-api@^1.3.1:
+"node-hubspot-api@git://github.com/cornelia-schulz/node-hubspot-api#ticket":
   version "1.3.1"
-  resolved "https://registry.yarnpkg.com/node-hubspot-api/-/node-hubspot-api-1.3.1.tgz#0bb450d539862278098b845bce270fb7fd54cb7d"
-  integrity sha512-g6rfrLt9Mwmx67p+48vSrooMbQWbf4VH0j31F2/0Cof1hja9ZCDQP0bE3CHdlgbDZQW8W79By6CDcUOACHR4Ow==
+  resolved "git://github.com/cornelia-schulz/node-hubspot-api#ad78f4a482744c1c0e9f1fcbc950e1f53e54caa1"
   dependencies:
     axios "^0.15.3"
 

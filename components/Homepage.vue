@@ -528,10 +528,20 @@ export default {
       }
       this.$store.dispatch('contactForm', contactData)
     },
+    createTicket () {
+      const ticketInfo = {
+        email: this.email,
+        firstname: this.firstname,
+        lastname: this.lastname,
+        message: this.message
+      }
+      this.$store.dispatch('contactTicket', ticketInfo)
+    },
     async onSubmit() {
       try {
         const token = await this.$recaptcha.execute('login')
         this.createContact()
+        this.createTicket()
         this.sendEmail()
       } catch (error) {
         console.log('Submission error:', error)

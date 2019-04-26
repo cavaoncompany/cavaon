@@ -28,7 +28,7 @@
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "netlify-lambda": "^1.4.3",
-    "node-hubspot-api": "^1.3.1",
+    "node-hubspot-api": "git://github.com/cornelia-schulz/node-hubspot-api#ticket",
     "nodemailer": "^6.1.0",
     "nuxt": "^2.4.0",
     "serverless-http": "^1.9.1",

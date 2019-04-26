@@ -1,6 +1,7 @@
-const NodeHubSpotApi = require('../api/hubspot')
+import NodeHubSpotApi from 'node-hubspot-api'
 require('dotenv').config()
-const api = new NodeHubSpotApi(process.env.hubspotapikey)
+const hubspotapikey = process.env.hubspotapikey
+const api = new NodeHubSpotApi(hubspotapikey)
 
 exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body)
