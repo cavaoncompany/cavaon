@@ -36,7 +36,10 @@ exports.handler = function (event, context, callback) {
           }
           api.associations.createAssociation(linkInfo)
             .then(() => {
-              return ('Ticket created')
+              callback(null, {
+                statusCode: 200,
+                body: 'Ticket created for existing contact'
+              })
             })
             .catch((error) => {
               return (error)
@@ -49,7 +52,17 @@ exports.handler = function (event, context, callback) {
     })
     .catch((error) => {
       // eslint-disable-next-line
+      console.log('Caught error checking contact exists')
+      // eslint-disable-next-line
       console.error(error)
+
+      if (!error.statusCode || error.statusCode !== 404) {
+        callback(null, {
+          statusCode: 500,
+          body: error
+        })
+        throw error
+      }
       api.contacts.createContact({
         email: email,
         firstname: firstname,
@@ -72,7 +85,10 @@ exports.handler = function (event, context, callback) {
               }
               api.associations.createAssociation(linkInfo)
                 .then(() => {
-                  return ('Ticket created')
+                  callback(null, {
+                    statusCode: 200,
+                    body: 'Ticket created for new contact'
+                  })
                 })
                 .catch((error) => {
                   return (error)
@@ -86,11 +102,10 @@ exports.handler = function (event, context, callback) {
         .catch((error) => {
           // eslint-disable-next-line
           console.error(error)
+          callback(null, {
+            statusCode: 400,
+            body: error
+          })
         })
     })
-
-  callback(null, {
-    statusCode: 200,
-    body: 'Getting contact'
-  })
 }

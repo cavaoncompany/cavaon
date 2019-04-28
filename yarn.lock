@@ -5648,7 +5648,7 @@ node-fetch@^2.3.0:
 
 "node-hubspot-api@git://github.com/cornelia-schulz/node-hubspot-api#ticket":
   version "1.3.1"
-  resolved "git://github.com/cornelia-schulz/node-hubspot-api#155fb03887d8cd74d0b80aa4330ab616fe748c83"
+  resolved "git://github.com/cornelia-schulz/node-hubspot-api#4bbd90ba05d31500e99f0e41b6657b75ff7ea847"
   dependencies:
     axios "^0.15.3"
 
