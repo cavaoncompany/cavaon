@@ -54,6 +54,8 @@ async function createTicket({ state, commit }, payload, path) {
     const { res } = await axios.post(path, {
       ticketInfo
     })
+    // eslint-disable-next-line
+    console.log('responding to createTicket:', res)
     return (res)
   } catch (e) {
     return (e)
