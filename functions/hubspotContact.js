@@ -5,7 +5,7 @@ const api = new NodeHubSpotApi(hubspotapikey)
 
 exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body)
-  const contactInfo = body.contactInfo
+  const contactInfo = body.ticketInfo
   const email = contactInfo.email
   const firstname = contactInfo.firstname
   const lastname = contactInfo.lastname
