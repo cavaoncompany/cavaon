@@ -275,7 +275,8 @@ export default {
       }
       const emailData = {
         email: this.email,
-        name: this.name,
+        firstname: this.firstname,
+        lastname: this.lastname,
         company: this.company,
         phone: this.phone,
         website: this.website,
@@ -304,14 +305,15 @@ export default {
       this.briefPath = ''
       this.$router.replace({ path: 'success' })
     },
-    sendEmail () {
+    createTicket () {
       const projects = []
       for (let i = 0; i < this.projectType.length; i++){
         projects.push(this.projectType[i].replace('project-form-', ''))
       }
       const ticketData = {
         email: this.email,
-        name: this.name,
+        firstname: this.firstname,
+        lastname: this.lastname,
         company: this.company,
         phone: this.phone,
         website: this.website,
@@ -329,6 +331,7 @@ export default {
     async onSubmit() {
       try {
         const token = await this.$recaptcha.execute('login')
+        this.createTicket()
         this.sendEmail()
       } catch (error) {
         console.log('Submission error:', error)
