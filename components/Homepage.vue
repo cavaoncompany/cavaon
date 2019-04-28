@@ -408,6 +408,7 @@
 
 <script>
 import countTo from 'vue-count-to'
+import { mapState } from 'vuex'
 import banner from '../static/content/banner.json'
 import contact from '../static/content/contact.json'
 import caseStudies from '../static/content/casestudies.json'
@@ -482,6 +483,14 @@ export default {
   async mounted() {
     await this.$recaptcha.init()
   },
+  computed: mapState(['ticketCreatedStatus']),
+  watch: {
+    ticketCreatedStatus(newValue, oldValue) {
+      if(newValue === 'success') {
+        this.$router.replace({ path: 'success' })
+      }
+    }
+  },
   methods: {
     updateProjectDetails: function (project) {
       if (project === 'travelDream') {
@@ -517,7 +526,6 @@ export default {
       this.lastname = ''
       this.email = ''
       this.message = ''
-      this.$router.replace({ path: 'success' })
     },
     createTicket () {
       const ticketInfo = {
