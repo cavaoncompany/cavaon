@@ -519,15 +519,6 @@ export default {
       this.message = ''
       this.$router.replace({ path: 'success' })
     },
-    createContact () {
-      const contactData = {
-        email: this.email,
-        firstname: this.firstname,
-        lastname: this.lastname,
-        message: this.message
-      }
-      this.$store.dispatch('contactForm', contactData)
-    },
     createTicket () {
       const ticketInfo = {
         email: this.email,
@@ -540,7 +531,6 @@ export default {
     async onSubmit() {
       try {
         const token = await this.$recaptcha.execute('login')
-        this.createContact()
         this.createTicket()
         this.sendEmail()
       } catch (error) {

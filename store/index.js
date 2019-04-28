@@ -42,18 +42,6 @@ async function sendEmail({ state, commit }, payload, path) {
   }
 }
 
-async function createContact({ state, commit }, payload, path) {
-  const contactInfo = payload
-  try {
-    // eslint-disable-next-line
-    const { res } = await axios.post(path, {
-      contactInfo
-    })
-  } catch (e) {
-    alert(e)
-  }
-}
-
 async function createTicket({ state, commit }, payload, path) {
   const ticketInfo = payload
   try {
@@ -61,6 +49,7 @@ async function createTicket({ state, commit }, payload, path) {
     const { res } = await axios.post(path, {
       ticketInfo
     })
+    return res
   } catch (e) {
     alert(e)
   }
@@ -79,12 +68,12 @@ export const actions = {
     const path = '/.netlify/functions/blog'
     await sendEmail({ state, commit }, payload, path)
   },
-  async contactForm({ state, commit }, payload) {
-    const path = '/.netlify/functions/addcontact'
-    await createContact({ state, commit }, payload, path)
-  },
   async contactTicket({ state, commit }, payload) {
-    const path = './.netlify/functions/addticket'
+    const path = './.netlify/functions/hubspotContact'
+    await createTicket({ state, commit }, payload, path)
+  },
+  async startAProjectTicket({ state, commit }, payload) {
+    const path = './.netlify/functions/hubspotStartAProject'
     await createTicket({ state, commit }, payload, path)
   }
 }
