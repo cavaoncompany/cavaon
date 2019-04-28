@@ -77,16 +77,17 @@
                   name="website"
                   size="100"
                 >
-                <article class="right">
-                <input
-                  id="projectPhone"
-                  v-model="phone"
-                  type="tel"
-                  :placeholder="startaprojectform.telPlaceholder"
-                  name="phone"
-                  size="30"
-                  required
-                >
+              </article>
+              <article class="right">
+              <input
+                id="projectPhone"
+                v-model="phone"
+                type="tel"
+                :placeholder="startaprojectform.telPlaceholder"
+                name="phone"
+                size="30"
+                required
+              >
               </article>
             </div>
           </section>
@@ -185,6 +186,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import startaprojectform from '../static/content/startaprojectform.json'
 
 export default {
