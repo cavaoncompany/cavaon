@@ -126,7 +126,7 @@
               {{ startaprojectform.goalTitle }}
             </h3>
             <article>
-              <textarea id="projectMessage" :placeholder="startaprojectform.goalPlaceholder" name="message" cols="40" rows="4" />
+              <textarea id="projectMessage" :placeholder="startaprojectform.goalPlaceholder" name="message" v-model="projectDescription" cols="40" rows="4" />
             </article>
             <div v-if="brief !== ''" class="uploaded-files">
               <img :src="startaprojectform.yellowTick" alt="file uploaded">
@@ -196,7 +196,8 @@ export default {
       startaprojectform: startaprojectform,
       company: '',
       email: '',
-      name: '',
+      firstname: '',
+      lastname: '',
       phone: '',
       website: '',
       projectType: [],
@@ -290,7 +291,8 @@ export default {
         briefPath: this.briefPath
       }
       this.$store.dispatch('newProject', emailData)
-      this.name = ''
+      this.firstname = ''
+      this.lastname = ''
       this.email = ''
       this.company = ''
       this.phone = ''
@@ -303,7 +305,6 @@ export default {
       this.brief = ''
       this.file = ''
       this.briefPath = ''
-      this.$router.replace({ path: 'success' })
     },
     createTicket () {
       const projects = []
