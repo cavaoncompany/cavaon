@@ -5,12 +5,22 @@ const api = new NodeHubSpotApi(hubspotapikey)
 
 exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body)
-  const contactInfo = body.ticketInfo
-  const email = contactInfo.email
-  const firstname = contactInfo.firstname
-  const lastname = contactInfo.lastname
-  const message = contactInfo.message
+  const startAProjectInfo = body.ticketInfo
+  const email = startAProjectInfo.email
+  const firstname = startAProjectInfo.firstname
+  const lastname = startAProjectInfo.lastname
+  const phone = startAProjectInfo.phone
+  const company = startAProjectInfo.company
+  const website = startAProjectInfo.website
+  const projectType = startAProjectInfo.projectType
+  const timeframe = startAProjectInfo.timeframe
+  const projectDescription = startAProjectInfo.projectDescription
+  const hearAboutUs = startAProjectInfo.hearAboutUs
+  const hearAboutUsOther = startAProjectInfo.hearAboutUsOther
+  const brief = startAProjectInfo.brief
+  const message = 'Project type: ' + projectType + '\nTimeframe: ' + timeframe + '\nProject description: ' + projectDescription + '\nHow did you hear about us: ' + hearAboutUs + '\nIf other: ' + hearAboutUsOther + '\nProject brief: ' + brief
   let vid = 0
+
   api.contacts.getContactByEmail(email, {
     property: [
       firstname, lastname, email
@@ -22,7 +32,7 @@ exports.handler = function (event, context, callback) {
     .then((response) => {
       vid = (response.data.vid)
       api.tickets.createTicket({
-        subject: 'Message from Contact us form',
+        subject: 'New project request',
         content: message,
         hs_pipeline: '0',
         hs_pipeline_stage: '1'
@@ -46,8 +56,8 @@ exports.handler = function (event, context, callback) {
             })
         })
         .catch((error) => {
-          // eslint-disable-next-line
-          console.error(error)
+        // eslint-disable-next-line
+        console.error(error)
         })
     })
     .catch((error) => {
@@ -61,7 +71,10 @@ exports.handler = function (event, context, callback) {
       api.contacts.createContact({
         email: email,
         firstname: firstname,
-        lastname: lastname
+        lastname: lastname,
+        company: company,
+        website: website,
+        phone: phone
       })
         .then((response) => {
           vid = response.data.vid

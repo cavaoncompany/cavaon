@@ -48,23 +48,23 @@
               </article>
               <article class="left">
                 <input
-                  id="projectName"
-                  v-model="name"
+                  id="projectFirstName"
+                  v-model="firstname"
                   type="text"
-                  :placeholder="startaprojectform.namePlaceholder"
-                  name="name"
+                  :placeholder="startaprojectform.firstnamePlaceholder"
+                  name="firstname"
                   size="100"
                   required
                 >
               </article>
               <article class="right">
                 <input
-                  id="projectPhone"
-                  v-model="phone"
-                  type="tel"
-                  :placeholder="startaprojectform.telPlaceholder"
-                  name="phone"
-                  size="30"
+                  id="projectLastName"
+                  v-model="lastname"
+                  type="text"
+                  :placeholder="startaprojectform.lastnamePlaceholder"
+                  name="lastname"
+                  size="100"
                   required
                 >
               </article>
@@ -76,6 +76,16 @@
                   :placeholder="startaprojectform.websitePlaceholder"
                   name="website"
                   size="100"
+                >
+                <article class="right">
+                <input
+                  id="projectPhone"
+                  v-model="phone"
+                  type="tel"
+                  :placeholder="startaprojectform.telPlaceholder"
+                  name="phone"
+                  size="30"
+                  required
                 >
               </article>
             </div>
@@ -201,6 +211,14 @@ export default {
   async mounted() {
     await this.$recaptcha.init()
   },
+  computed: mapState(['projectTicketCreatedStatus']),
+  watch: {
+    projectTicketCreatedStatus(newValue, oldValue) {
+      if(newValue === 'success') {
+        this.$router.replace({ path: 'success' })
+      }
+    }
+  },
   methods: {
     addProjectType: function (data, e) {
       const service = 'project-form-' + data.title
@@ -283,6 +301,28 @@ export default {
       this.file = ''
       this.briefPath = ''
       this.$router.replace({ path: 'success' })
+    },
+    sendEmail () {
+      const projects = []
+      for (let i = 0; i < this.projectType.length; i++){
+        projects.push(this.projectType[i].replace('project-form-', ''))
+      }
+      const ticketData = {
+        email: this.email,
+        name: this.name,
+        company: this.company,
+        phone: this.phone,
+        website: this.website,
+        projectType: projects,
+        timeframe: this.timeframe,
+        projectDescription: this.projectDescription,
+        hearAboutUs: this.hearAboutUs,
+        hearAboutUsOther: this.hearAboutUsOther,
+        brief: this.brief,
+        file: this.file,
+        briefPath: this.briefPath
+      }
+      this.$store.dispatch('startAProjectTicket', ticketData)
     },
     async onSubmit() {
       try {
