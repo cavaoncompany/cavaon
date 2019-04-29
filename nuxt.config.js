@@ -73,7 +73,41 @@ module.exports = {
       lang: 'less'
     }
   ],
+  router: {
+    linkActiveClass: 'active-link',
+    scrollBehavior: async (to, from, savedPosition) => {
+      if (savedPosition) {
+        return savedPosition
+      }
 
+      const findEl = async (hash, x) => {
+        return document.querySelector(hash) ||
+          new Promise((resolve, reject) => {
+            if (x > 50) {
+              return resolve()
+            }
+            setTimeout(() => { resolve(findEl(hash, ++x || 1)) }, 100)
+          })
+      }
+
+      if (to.hash) {
+        let el = await findEl(to.hash)
+        if ('scrollBehavior' in document.documentElement.style) {
+          return window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
+        } else {
+          return window.scrollTo(0, el.offsetTop)
+        }
+      }
+
+      return { x: 0, y: 0 }
+    },
+    extendRoutes(routes) {
+      routes.push({ name: 'About', path: '/about', component: '~/components/About.vue' })
+      routes.push({ name: 'Services', path: '/services', component: '~/components/Flowchart.vue' })
+      routes.push({ name: 'Contact', path: '/contact', component: '~/components/Contact.vue' })
+      routes.push({ name: 'CaseStudies', path: '/case-studies', component: '~/components/ProjectWithSlider.vue' })
+    }
+  },
   /*
   ** Plugins to load before mounting the App
   */

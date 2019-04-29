@@ -148,7 +148,7 @@
 	#flowchart-mobile {
 		display: none
 	}
-	#flowchart {
+	#services {
 		display: block;
 	}
 	.hero-caps h1 {
@@ -253,7 +253,7 @@
 	#flowchart-mobile {
 		display: none
 	}
-	#flowchart {
+	#services {
 		display: block;
 	}
 	.hero-caps h1 {
@@ -623,7 +623,7 @@
 	#flowchart-mobile {
 		display: block
 	}
-	#flowchart {
+	#services {
 		display: none;
 	}
 }

@@ -21,7 +21,7 @@
         <a class="scroll" href="#about-mobile" aria-label="Scroll to About" @click="closeForm()">ABOUT</a>
       </li>
       <li>
-        <a class="scroll" href="#contactForm" aria-label="Scroll to Contact Form" @click="closeForm()">CONTACT</a>
+        <a class="scroll" href="#contact" aria-label="Scroll to Contact Form" @click="closeForm()">CONTACT</a>
       </li>
     </ul>
   </nav>
