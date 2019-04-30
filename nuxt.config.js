@@ -38,12 +38,12 @@ module.exports = {
       { rel: 'apple-touch-startup-image', href: 'LaunchImage-Portrait@2x~ipad_1668x2224.png', sizes: '1668x2224' }     
     ],
     script: [
-      { src: '/javascripts/custom/jquery-2.2.4.min.js' },
-      { src: '/bootstrap/js/bootstrap.min.js' },
-      { src: '/less/less-1.5.0.min.js' },
-      { src: '/javascripts/libs/common-min.js' },
-      { src: '/javascripts/custom/main.js' },
-      { src: '/javascripts/custom/custom-init.js' }
+      { src: '/javascripts/custom/jquery-2.2.4.min.js', type: 'text/javascript', body: true, defer: true },
+      { src: '/bootstrap/js/bootstrap.min.js', type: 'text/javascript', body: true, defer: true },
+      { src: '/less/less-1.5.0.min.js', type: 'text/javascript', body: true, defer: true },
+      { src: '/javascripts/libs/common-min.js', type: 'text/javascript', body: true, defer: true },
+      { src: '/javascripts/custom/main.js', type: 'text/javascript', body: true, defer: true },
+      { src: '/javascripts/custom/custom-init.js', type: 'text/javascript', body: true, defer: true }
     ]
   },
 
@@ -76,36 +76,14 @@ module.exports = {
   router: {
     linkActiveClass: 'active-link',
     scrollBehavior: async (to, from, savedPosition) => {
-      if (savedPosition) {
-        return savedPosition
-      }
-
-      const findEl = async (hash, x) => {
-        return document.querySelector(hash) ||
-          new Promise((resolve, reject) => {
-            if (x > 50) {
-              return resolve()
-            }
-            setTimeout(() => { resolve(findEl(hash, ++x || 1)) }, 100)
-          })
-      }
-
       if (to.hash) {
-        let el = await findEl(to.hash)
-        if ('scrollBehavior' in document.documentElement.style) {
-          return window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
-        } else {
-          return window.scrollTo(0, el.offsetTop)
-        }
+        return { selector: to.hash }
+      } else {
+        return { x: 0, y: 0 }
       }
-
-      return { x: 0, y: 0 }
     },
-    extendRoutes(routes) {
-      routes.push({ name: 'About', path: '/about', component: '~/components/About.vue' })
-      routes.push({ name: 'Services', path: '/services', component: '~/components/Flowchart.vue' })
-      routes.push({ name: 'Contact', path: '/contact', component: '~/components/Contact.vue' })
-      routes.push({ name: 'CaseStudies', path: '/case-studies', component: '~/components/ProjectWithSlider.vue' })
+    extendRoutes(routes, resolve) {
+      routes.push({ name: 'custom', path: '*', component: resolve(__dirname, 'pages/index.vue') })
     }
   },
   /*

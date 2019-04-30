@@ -1,11 +1,11 @@
 <template>
   <div>
-    <HeaderMobile :projectFormOpen="projectFormOpen" />
+    <HeaderMobile />
     <div id="iosMessage" />
     <!-- Master Wrap : starts -->
     <section id="mastwrap">
       <section id="intro" class="intro">
-        <HeaderTop :projectFormOpen="projectFormOpen" />
+        <HeaderTop />
         <!-- <div class="valignBanner"> -->
         <div class="container hero-container" @mouseover="changeUrl('')">
           <div class="hero-caps text-rotator">
@@ -21,7 +21,7 @@
               <span>{{ banner.subHeader }}</span>
             </h6>
             <div class="welcome-button">
-              <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ banner.buttonText }}</a>
+              <a class="btn btn-odin btn-odin-color" href="/start-a-project">{{ banner.buttonText }}</a>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
           </div>
         </a>
       </section>
-      <HeaderStandard :projectFormOpen="projectFormOpen" />
+      <HeaderStandard />
       <Flowchart />
       <FlowchartMobile />
       <!-- page-section : starts -->
@@ -59,7 +59,7 @@
                 />
                 <h2><span class="white">{{ promo.promoText }}</span></h2>
                 <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ promo.buttonText }}</a>
+                  <a class="btn btn-odin btn-odin-color" href="/start-a-project">{{ promo.buttonText }}</a>
                 </div>
               </article>
             </div>
@@ -203,7 +203,7 @@
         <!-- inner-section:ends -->
 
         <!-- inner-section : starts -->
-        <section class="inner-section text-center silver-bg row"  @mouseover="changeUrl('testimonials')">
+        <section class="inner-section text-center silver-bg row" @mouseover="changeUrl('testimonials')">
           <!-- <div id="testimonial-carousel" class="testimonial-carousel owl-carousel"> -->
           <div class="container">
             <div class="testimonial-wrapper">
@@ -278,11 +278,8 @@
         <!-- inner-section:ends -->
       </section>
       <!-- page-section : ends -->
-
-      <!-- page-section : starts -->
       <About />
       <Contact />
-      <StartAProjectForm v-if="projectFormOpen === true" />
       <Footer />
     </section>
     <!-- Master Wrap : ends -->
@@ -310,8 +307,6 @@ import Flowchart from './Flowchart'
 import FlowchartMobile from './FlowchartMobile'
 import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
-// import MobileServices from './MobileServices'
-import StartAProjectForm from './StartAProjectForm'
 import Footer from './Footer'
 
 export default {
@@ -325,9 +320,7 @@ export default {
     FlowchartMobile,
     Services,
     ProjectWithSlider,
-    // MobileServices,
     countTo,
-    StartAProjectForm,
     Footer
   },
   props: {
@@ -355,6 +348,14 @@ export default {
       message: ''
     }
   },
+  computed: mapState(['ticketCreatedStatus']),
+  watch: {
+    ticketCreatedStatus(newValue, oldValue) {
+      if (newValue === 'success') {
+        this.$router.replace({ path: 'success' })
+      }
+    }
+  },
   created() {
     EventBus.$on('closeStartAProjectForm', (formOpen) => {
       this.closeStartAProjectForm()
@@ -365,14 +366,6 @@ export default {
   },
   async mounted() {
     await this.$recaptcha.init()
-  },
-  computed: mapState(['ticketCreatedStatus']),
-  watch: {
-    ticketCreatedStatus(newValue, oldValue) {
-      if(newValue === 'success') {
-        this.$router.replace({ path: 'success' })
-      }
-    }
   },
   methods: {
     updateProjectDetails: function (project) {

@@ -168,12 +168,12 @@ $(document).ready(function($) {
 	$(".error").hide();
 	$(".success").hide();
 	
-	$('#contact input').click(function(e) {
+	$('#contact-form input').click(function(e) {
         $(".error").fadeOut();
     });
 	
 	// on submit...
-	$("#contact #submit").click(function() {
+	$("#contact-form #submit").click(function() {
 		$(".error").hide();
 		
 		//required:
@@ -230,7 +230,7 @@ function isValidEmailAddress(emailAddress) {
 	// on success...
 	 function success(){
 	 	$("#success").fadeIn();
-	 	$("#contact").fadeOut();
+	 	$("#contact-form").fadeOut();
 	 }
 	
     return false;
@@ -301,20 +301,8 @@ if( !device.tablet() && !device.mobile() ) {
 // Animation Engine Init
 // ============================  
 
-
-  
-
 });
 // $(function ($)  : ends
 
 })();
 //  JSHint wrapper $(function ($)  : ends
-
-
-
-
-
-
-
-  
-

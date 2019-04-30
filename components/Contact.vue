@@ -36,27 +36,48 @@
               </p>
               <article>
                 <label class="hidden" for="firstname">First Name</label>
-                <input id="name" type="text" :placeholder="contact.firstnamePlaceholder" name="name" v-model="firstname" size="100">
+                <input
+                  id="name"
+                  v-model="firstname"
+                  type="text"
+                  :placeholder="contact.firstnamePlaceholder"
+                  name="firstname"
+                  size="100"
+                >
               </article>
               <article>
                 <label class="hidden" for="lastname">Last Name</label>
-                <input id="name" type="text" :placeholder="contact.lastnamePlaceholder" name="name" v-model="lastname" size="100">
+                <input
+                  id="name"
+                  v-model="lastname"
+                  type="text"
+                  :placeholder="contact.lastnamePlaceholder"
+                  name="lastname"
+                  size="100"
+                >
               </article>
               <article>
                 <label class="hidden" for="email">Email</label>
                 <input
                   id="email"
+                  v-model="email"
                   type="email"
                   :placeholder="contact.emailPlaceholder"
                   name="email"
                   size="30"
-                  v-model="email"
                   required
                 >
               </article>
               <article>
                 <label for="msg" class="hidden">Message</label>
-                <textarea id="msg" :placeholder="contact.messagePlaceholder" name="message" v-model="message" cols="40" rows="3" />
+                <textarea
+                  id="msg"
+                  v-model="message"
+                  :placeholder="contact.messagePlaceholder"
+                  name="message"
+                  cols="40"
+                  rows="3"
+                />
                 <div class="btn-wrap  text-center">
                   <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
                     {{ contact.buttonText }}
@@ -78,11 +99,15 @@ export default {
   name: 'Contact',
   data() {
     return {
-      contact: contact
+      contact: contact,
+      firstname: '',
+      lastname: '',
+      email: '',
+      message: ''
     }
   },
   methods: {
-    sendEmail () {
+    sendEmail: function () {
       const emailData = {
         email: this.email,
         firstname: this.firstname,
@@ -95,7 +120,7 @@ export default {
       this.email = ''
       this.message = ''
     },
-    createTicket () {
+    createTicket: function () {
       const ticketInfo = {
         email: this.email,
         firstname: this.firstname,
@@ -106,10 +131,12 @@ export default {
     },
     async onSubmit() {
       try {
+        // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
         this.createTicket()
         this.sendEmail()
       } catch (error) {
+        // eslint-disable-next-line
         console.log('Submission error:', error)
       }
     },

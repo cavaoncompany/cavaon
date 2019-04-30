@@ -13,8 +13,8 @@
         </div>
         <form
           id="startAProjectForm"
-          @submit.prevent="onSubmit"
           class="col-md-12 col-lg-10 col-lg-offset-1"
+          @submit.prevent="onSubmit"
         >
           <section>
             <input type="hidden" name="form-name" value="start-project">
@@ -79,15 +79,15 @@
                 >
               </article>
               <article class="right">
-              <input
-                id="projectPhone"
-                v-model="phone"
-                type="tel"
-                :placeholder="startaprojectform.telPlaceholder"
-                name="phone"
-                size="30"
-                required
-              >
+                <input
+                  id="projectPhone"
+                  v-model="phone"
+                  type="tel"
+                  :placeholder="startaprojectform.telPlaceholder"
+                  name="phone"
+                  size="30"
+                  required
+                >
               </article>
             </div>
           </section>
@@ -126,7 +126,14 @@
               {{ startaprojectform.goalTitle }}
             </h3>
             <article>
-              <textarea id="projectMessage" :placeholder="startaprojectform.goalPlaceholder" name="message" v-model="projectDescription" cols="40" rows="4" />
+              <textarea
+                id="projectMessage"
+                v-model="projectDescription"
+                :placeholder="startaprojectform.goalPlaceholder"
+                name="message"
+                cols="40"
+                rows="4"
+              />
             </article>
             <div v-if="brief !== ''" class="uploaded-files">
               <img :src="startaprojectform.yellowTick" alt="file uploaded">
@@ -211,16 +218,16 @@ export default {
       file: {}
     }
   },
-  async mounted() {
-    await this.$recaptcha.init()
-  },
   computed: mapState(['projectTicketCreatedStatus']),
   watch: {
     projectTicketCreatedStatus(newValue, oldValue) {
-      if(newValue === 'success') {
+      if (newValue === 'success') {
         this.$router.replace({ path: 'success' })
       }
     }
+  },
+  async mounted() {
+    await this.$recaptcha.init()
   },
   methods: {
     addProjectType: function (data, e) {
@@ -251,7 +258,7 @@ export default {
         this.otherSelected = false
       }
     },
-    showUploadedFile: function(e) {
+    showUploadedFile: function (e) {
       this.file = this.$refs.file.files[0]
       const file = e.target.files[0]
       this.brief = file.name
@@ -260,18 +267,17 @@ export default {
       }
       this.briefPath = this.createFile(file)
     },
-    createFile: function(file) {
+    createFile: function (file) {
       const reader = new FileReader()
-      const vm = this
 
       reader.onload = (e) => {
         this.file = e.target.result
       }
       reader.readAsDataURL(file)
     },
-    sendEmail () {
+    sendEmail: function () {
       const projects = []
-      for (let i = 0; i < this.projectType.length; i++){
+      for (let i = 0; i < this.projectType.length; i++) {
         projects.push(this.projectType[i].replace('project-form-', ''))
       }
       const emailData = {
@@ -306,9 +312,9 @@ export default {
       this.file = ''
       this.briefPath = ''
     },
-    createTicket () {
+    createTicket: function () {
       const projects = []
-      for (let i = 0; i < this.projectType.length; i++){
+      for (let i = 0; i < this.projectType.length; i++) {
         projects.push(this.projectType[i].replace('project-form-', ''))
       }
       const ticketData = {
@@ -331,13 +337,15 @@ export default {
     },
     async onSubmit() {
       try {
+        // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
         this.createTicket()
         this.sendEmail()
       } catch (error) {
+        // eslint-disable-next-line
         console.log('Submission error:', error)
       }
-    },
+    }
   }
 }
 </script>

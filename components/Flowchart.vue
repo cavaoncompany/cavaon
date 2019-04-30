@@ -44,7 +44,7 @@ export default {
   methods: {
     changeUrl: function (link) {
       history.pushState({}, null, '/' + link)
-    },
+    }
   }
 }
 </script>
