@@ -151,6 +151,17 @@ collections:
               - {label: "Image", name: "img1", widget: "image"}
               - {label: "Hover image", name: "img2", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
+      - label: "Blog"
+        name: "blog"
+        format: "json"
+        file: "/static/content/blog.json"
+        fields:
+          - label: "Title"
+            name: "homepageTitle"
+            widget: "string"
+          - label: "Button text"
+            name: "homepageButtonText"
+            widget: "string"
       - label: "About"
         name: "about"
         format: "json"

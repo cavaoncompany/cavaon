@@ -62,6 +62,7 @@
         :body="article.body"
         :filename="article.filename"
         :extract="getExtract(article.body)"
+        :blogcount="blogCount"
         class="col-md-6"
       />
     </div>
@@ -96,11 +97,13 @@ export default {
       keywords: [],
       filteredPosts: [],
       blog: blog,
-      viewAll: true
+      viewAll: true,
+      blogCount: 0
     }
   },
   created() {
     this.keywords = this.getKeywords(this.articles)
+    this.blogCount = this.articles.length
     this.sortedArticles = this.orderPostsByDate()
     // this.createPaths(this.sortedArticles)
     this.featuredArticle = this.sortedArticles[0]

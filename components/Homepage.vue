@@ -286,10 +286,13 @@
             <div class="row">
               <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
-                  <span>{{ title }}</span>
+                  <span>{{ blog.homepageTitle }}</span>
                 </h3>
               </article>
               <article-list :articles="posts" page="homepage" />
+              <div v-if="blogCount > 4" class="welcome-button blog-welcome-button">
+                  <a class="btn btn-odin btn-odin-color" href="/blog">{{ blog.homepageButtonText }}</a>
+                </div>
             </div>
           </div>
         </section>
@@ -430,6 +433,7 @@ import testimonials from '../static//content/testimonials.json'
 import services from '../static/content/services.json'
 import projects from '../static/content/projects.json'
 import promo from '../static/content/promo.json'
+import blog from '../static/content/blog.json'
 import messages from '../static/content/messages.json'
 import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
@@ -477,17 +481,18 @@ export default {
       projects: projects,
       messages: messages,
       promo: promo,
+      blog: blog,
       banner: banner,
       linesOfCode: 12538,
       windowWidth: 0,
       isMobile: false,
       startVal: 3564,
       projectFormOpen: false,
-      title: 'BLOG',
       posts: posts,
       name: '',
       email: '',
-      message: ''
+      message: '',
+      blogCount: 0
     }
   },
   created() {
@@ -497,6 +502,7 @@ export default {
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
+    this.blogCount = this.posts.length
   },
   async mounted() {
     await this.$recaptcha.init()
@@ -622,5 +628,9 @@ export default {
   }
   .hero-container {
     position: relative;
+  }
+  .blog-welcome-button {
+    margin: 0 auto;
+    margin-bottom: 50px;
   }
 </style>
