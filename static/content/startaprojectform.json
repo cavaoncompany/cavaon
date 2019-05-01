@@ -6,7 +6,8 @@
     "3 months +"
   ],
   "goalTitle": "4 Tell us about your company and the goal of the project",
-  "namePlaceholder": "Your Name*",
+  "firstnamePlaceholder": "Your First Name*",
+  "lastnamePlaceholder": "Your Last Name",
   "instruction": "Please fill in this form. We will contact you shortly to discuss the next steps.",
   "goalUploadButtonText": "Upload project brief",
   "companyPlaceholder": "Company",
