@@ -1,6 +1,7 @@
 {
     "lang": "EN",
     "title": "SAMPLE NEW TITLE GOES HERE",
+    "slug": "sample-new-title-goes-here",
     "subtitle": "NEWS HIGHLIGHT TEXT GOES HERE LIKE THIS",
     "description": "A simple blog title goes here and there should max of two lines...",
     "tags": ["#tech", "#design", "#marketing"],

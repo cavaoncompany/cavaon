@@ -178,7 +178,7 @@ export default {
     },
     createPaths: function (articles) {
       for(let i = 0; i < articles.length; i++) {
-        const path = articles[i].title.toLowerCase().replace(/ /g, '-')
+        const path = articles[i].slug.toLowerCase().replace(/ /g, '-')
         articles[i].url = '/blog/' + path
       }
       return articles

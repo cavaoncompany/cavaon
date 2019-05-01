@@ -13,13 +13,14 @@ collections:
     format: 'json'
     fields: # The fields for each document, usually in front matter
       - {label: "Lang", name: "lang", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string", required: true}
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Subtitle", name: "subtitle", widget: "string"}
       - {label: "SEO Description", name: "description", widget: "text", required: true, pattern: ["^.{50,300}$", "Must be within 50 and 300 chars"]}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Thumbnail Image", name: "thumbnail", widget: "image", required: true}
-      - {label: "Featured Blog Image", name: "image", widget: "image"}
+      - {label: "Featured Blog Image", name: "image", widget: "image", required: true}
       - {label: "Body", name: "body", widget: "markdown"}
       
   - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
@@ -323,6 +324,38 @@ collections:
             widget: "string"
           - label: "Button text"
             name: "buttonText"
+            widget: "string"
+  - label: "Blog page"
+    name: "blogpage"
+    files:
+      - label: "Blog page"
+        name: "blogpage"
+        format: "json"
+        file: "/static/content/blog.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Subscribe to blog"
+            name: "subscribeToOurBlog"
+            widget: "string"
+          - label: "Stay up to date"
+            name: "stayUpToDate"
+            widget: "string"
+          - label: "Name placeholder"
+            name: "namePlaceholder"
+            widget: "string"
+          - label: "Email placeholder"
+            name: "emailPlaceholder"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+          - label: "View more"
+            name: "viewMore"
+            widget: "string"
+          - label: "View less"
+            name: "viewLess"
             widget: "string"
   - label: "Meta data"
     name: "metadata"
