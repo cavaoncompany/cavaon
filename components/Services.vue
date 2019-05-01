@@ -30,7 +30,7 @@ export default {
     }
   },
   methods: {
-    changeUrl: (link) => {
+    changeUrl: function (link) {
       history.pushState({}, null, '/' + link)
     }
   }

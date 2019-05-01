@@ -83,7 +83,11 @@ module.exports = {
       }
     },
     extendRoutes(routes, resolve) {
-      routes.push({ name: 'custom', path: '*', component: resolve(__dirname, 'pages/index.vue') })
+      // routes.push({ name: 'custom', path: '*', component: resolve(__dirname, 'pages/index.vue') })
+      routes.push({ name: 'About', path: '/about', component: '~/components/About.vue' })
+      routes.push({ name: 'Services', path: '/services', component: '~/components/Flowchart.vue' })
+      routes.push({ name: 'Contact', path: '/contact', component: '~/components/Contact.vue' })
+      routes.push({ name: 'CaseStudies', path: '/case-studies', component: '~/components/ProjectWithSlider.vue' })
     }
   },
   /*

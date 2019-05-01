@@ -107,7 +107,7 @@ export default {
     }
   },
   methods: {
-    sendEmail: () => {
+    sendEmail: function () {
       const emailData = {
         email: this.email,
         firstname: this.firstname,
@@ -120,7 +120,7 @@ export default {
       this.email = ''
       this.message = ''
     },
-    createTicket: () => {
+    createTicket: function () {
       const ticketInfo = {
         email: this.email,
         firstname: this.firstname,

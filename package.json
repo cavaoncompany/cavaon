@@ -28,16 +28,13 @@
     "cross-env": "^5.2.0",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
-    "hoek": "^6.1.3",
-    "joi": "11.4.0",
     "jquery": "^3.3.1",
     "netlify-lambda": "^1.4.3",
     "node-hubspot-api": "git://github.com/cornelia-schulz/node-hubspot-api#ticket",
     "nodemailer": "^6.1.0",
     "nuxt": "^2.4.0",
     "serverless-http": "^1.9.1",
-    "vue-count-to": "^1.0.13",
-    "webpack": "^4.30.0"
+    "vue-count-to": "^1.0.13"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

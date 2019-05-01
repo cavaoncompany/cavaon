@@ -368,29 +368,29 @@ export default {
     await this.$recaptcha.init()
   },
   methods: {
-    updateProjectDetails: (project) => {
+    updateProjectDetails: function (project) {
       if (project === 'travelDream') {
         this.projectDetails = this.caseStudies.caseStudies[0]
       } else if (project === 'letsTravel') {
         this.projectDetails = this.caseStudies.caseStudies[1]
       }
     },
-    convertToMinutes: (duration) => {
+    convertToMinutes: function (duration) {
       return Math.floor(duration / (1000 * 60))
     },
-    counterMouseOver: () => {
+    counterMouseOver: function () {
       this.$refs.codecounter.start()
     },
-    changeUrl: (link) => {
+    changeUrl: function (link) {
       history.pushState({}, null, '/' + link)
     },
-    teamMouseOver: (name, image) => {
+    teamMouseOver: function (name, image) {
       document.getElementById(name).src = image
     },
-    openStartAProjectForm: () => {
+    openStartAProjectForm: function () {
       this.projectFormOpen = true
     },
-    closeStartAProjectForm: () => {
+    closeStartAProjectForm: function () {
       this.projectFormOpen = false
     }
   }
