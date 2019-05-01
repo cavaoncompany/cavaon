@@ -88,9 +88,18 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/recaptcha'
+    '@nuxtjs/recaptcha',
+    '@nuxtjs/sitemap'
   ],
-
+  sitemap: {
+    hostname: 'https://www.cavaon.com',
+    gzip: true,
+    routes: [
+      '/',
+      '/success',
+      '/services'
+    ]
+  },
   googleAnalytics: {
     id: 'UA-136678258-1'
   },
