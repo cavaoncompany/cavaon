@@ -230,7 +230,7 @@ export default {
     await this.$recaptcha.init()
   },
   methods: {
-    addProjectType: function (data, e) {
+    addProjectType: (data, e) => {
       const service = 'project-form-' + data.title
       const img = 'img-' + data.title
       const tick = 'tick-' + data.title
@@ -251,14 +251,14 @@ export default {
         document.getElementById(tick).classList.remove('invisible')
       }
     },
-    checkIfOther: function (value) {
+    checkIfOther: (value) => {
       if (value.toLowerCase() === 'other') {
         this.otherSelected = true
       } else {
         this.otherSelected = false
       }
     },
-    showUploadedFile: function (e) {
+    showUploadedFile: (e) => {
       this.file = this.$refs.file.files[0]
       const file = e.target.files[0]
       this.brief = file.name
@@ -267,7 +267,7 @@ export default {
       }
       this.briefPath = this.createFile(file)
     },
-    createFile: function (file) {
+    createFile: (file) => {
       const reader = new FileReader()
 
       reader.onload = (e) => {
@@ -275,7 +275,7 @@ export default {
       }
       reader.readAsDataURL(file)
     },
-    sendEmail: function () {
+    sendEmail: () => {
       const projects = []
       for (let i = 0; i < this.projectType.length; i++) {
         projects.push(this.projectType[i].replace('project-form-', ''))
@@ -312,7 +312,7 @@ export default {
       this.file = ''
       this.briefPath = ''
     },
-    createTicket: function () {
+    createTicket: () => {
       const projects = []
       for (let i = 0; i < this.projectType.length; i++) {
         projects.push(this.projectType[i].replace('project-form-', ''))

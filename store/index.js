@@ -47,7 +47,7 @@ async function createTicket({ state, commit }, payload, path) {
     })
     return ('success')
   } catch (e) {
-    return (e)
+    alert(e)
   }
 }
 

@@ -38,7 +38,7 @@ export default {
     }
   },
   methods: {
-    closeForm: function (link) {
+    closeForm: (link) => {
       history.pushState({}, null, '/' + link)
       this.projectForm = false
       EventBus.$emit('closeStartAProjectForm', this.projectForm)

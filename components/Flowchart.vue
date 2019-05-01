@@ -42,7 +42,7 @@ export default {
     }
   },
   methods: {
-    changeUrl: function (link) {
+    changeUrl: (link) => {
       history.pushState({}, null, '/' + link)
     }
   }

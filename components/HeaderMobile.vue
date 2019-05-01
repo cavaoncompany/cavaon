@@ -41,7 +41,7 @@ export default {
     }
   },
   methods: {
-    closeForm: function () {
+    closeForm: () => {
       this.projectForm = false
       EventBus.$emit('closeStartAProjectForm', this.projectForm)
     }
