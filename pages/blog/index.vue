@@ -43,6 +43,9 @@
                   </button>
                 </div>
               </article>
+              <article v-if="messageSent === true" class='successfully-subscribed'>
+                <p>{{ blog.messageSent }}</p>
+              </article>
             </form>
           </div>
         </div>
@@ -92,7 +95,8 @@ export default {
       posts,
       blog: blog,
       subscriberName: '',
-      subscriberEmail: ''
+      subscriberEmail: '',
+      messageSent: false
     }
   },
   methods: {
@@ -110,6 +114,7 @@ export default {
       try {
         const token = await this.$recaptcha.execute('login')
         this.sendEmail()
+        this.messageSent = true
       } catch (error) {
         console.log('Submission error:', error)
       }
@@ -157,5 +162,11 @@ export default {
 }
 #subscribeToBlogForm .btn {
   width: 170px;
+}
+#blog .successfully-subscribed p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: green;
 }
 </style>
