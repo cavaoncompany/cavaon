@@ -14,7 +14,8 @@
     "go": "npm run build & npm run start",
     "build:lambda": "netlify-lambda build functions",
     "start:lambda": "netlify-lambda serve functions",
-    "prod": "npm run generate & npm run build:lambda"
+    "prod": "npm run generate & npm run build:lambda",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.4.1",
