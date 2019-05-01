@@ -9,17 +9,8 @@
                 <span>{{ about.title }}</span>
               </h3>
               <div class="liner color-bg" />
-              <p class="white">
-                {{ about.desktopSection1 }}
-              </p>
-              <p class="white">
-                {{ about.desktopSection2 }}
-              </p>
-              <p class="white">
-                {{ about.desktopSection3 }}
-              </p>
-              <p class="white">
-                {{ about.desktopSection4 }}
+              <p v-for="(paragraph, i) in about.paragraphsDesktop" :key="i" class="white">
+                {{ paragraph }}
               </p>
             </article>
           </div>
@@ -35,14 +26,8 @@
                 <span>{{ about.title }}</span>
               </h3>
               <div class="liner color-bg" />
-              <p class="white">
-                {{ about.mobileSection1 }}
-              </p>
-              <p class="white vision">
-                {{ about.mobileSection2 }}
-              </p>
-              <p class="white mission">
-                {{ about.mobileSection3 }}
+              <p class="white" v-for="(paragraph, i) in about.paragraphsMobile" :key="i" >
+                {{ paragraph }}
               </p>
             </article>
           </div>
