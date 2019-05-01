@@ -2,7 +2,7 @@
   <div id="blog-post" class="blog-post">
     <header-mobile />
     <header-standard />
-    <div class="container">
+    <div class="container blog-container">
       <div class="blog-content">
         <h1>{{ post.title }}</h1>
         <div class="spacer-red-big" />
@@ -108,7 +108,6 @@ export default {
 .blog-post {
   text-align: center;
   margin-top: 80px;
-  margin-bottom: 80px;
 }
 .blog-post h1 {
   font-size: 24px;
@@ -131,6 +130,9 @@ export default {
 .blog-post .body-text {
   letter-spacing: normal;
   color: black;
+}
+.blog-post .blog-container {
+  margin-bottom: 80px;
 }
 .blog-content img {
   width: 100%;
