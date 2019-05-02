@@ -386,12 +386,6 @@ export default {
     },
     teamMouseOver: function (name, image) {
       document.getElementById(name).src = image
-    },
-    openStartAProjectForm: function () {
-      this.projectFormOpen = true
-    },
-    closeStartAProjectForm: function () {
-      this.projectFormOpen = false
     }
   }
 }

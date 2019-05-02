@@ -35,11 +35,13 @@ const sendMail = (emailInfo, emailProvider) => {
     }
   })
   setTimeout(() => {
-    const file = emailInfo.file
     const attachments = []
-    if (file) {
-      const buffer = Buffer.from(file.split('base64,')[1], 'base64')
-      attachments.push({ content: buffer, filename: emailInfo.brief })
+    if (emailInfo.brief !== '') {
+      const file = emailInfo.file
+      if (file !== null || file !== {} || file === undefined) {
+        const buffer = Buffer.from(file.split('base64,')[1], 'base64')
+        attachments.push({ content: buffer, filename: emailInfo.brief })
+      }
     }
 
     transporter.sendMail({
@@ -48,7 +50,7 @@ const sendMail = (emailInfo, emailProvider) => {
       to: 'info@cavaon.com',
       subject: `Enquiry to start a project through www.cavaon.com`,
       html: `<h2>The following enquiry has been received on www.cavaon.com</h2>
-            <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
+            <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.firstname} ${emailInfo.lastname}</p>
             <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
             <p style="margin-bottom: 10px;"><b>Company:</b> ${emailInfo.company}</p>
             <p style="margin-bottom: 10px;"><b>Phone:</b> ${emailInfo.phone}</p>
