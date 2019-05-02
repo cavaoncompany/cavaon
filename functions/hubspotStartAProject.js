@@ -110,12 +110,10 @@ exports.handler = function (event, context, callback) {
             })
           })
       } else if (!error.statusCode || error.statusCode !== 404) {
-        console.log('error: ', error)
         callback(null, {
           statusCode: 500,
           body: error
         })
-        console.log('error bottom ', error)
         throw error
       }
     })

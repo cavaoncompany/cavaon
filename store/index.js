@@ -61,12 +61,12 @@ export const actions = {
     await sendEmail({ state, commit }, payload, path)
   },
   async contactTicket({ state, commit }, payload) {
-    const path = './.netlify/functions/hubspotContact'
+    const path = '/.netlify/functions/hubspotContact'
     const result = await createTicket({ state, commit }, payload, path)
     commit('updateTicketCreatedStatus', result)
   },
   async startAProjectTicket({ state, commit }, payload) {
-    const path = './.netlify/functions/hubspotStartAProject'
+    const path = '/.netlify/functions/hubspotStartAProject'
     await createTicket({ state, commit }, payload, path)
     commit('updateProjectTicketCreatedStatus')
   }
