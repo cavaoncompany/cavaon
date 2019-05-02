@@ -14,7 +14,7 @@
         <form
           id="startAProjectForm"
           class="col-md-12 col-lg-10 col-lg-offset-1"
-          @submit.prevent="onSubmit"
+          @submit.prevent="createTicket"
         >
           <section>
             <input type="hidden" name="form-name" value="start-project">

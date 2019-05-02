@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style>
+.services .dark {
+  font-weight: 600;
+}
 .service-card-container {
   margin-top: 60px;
   margin-bottom: 60px;

@@ -110,10 +110,10 @@ exports.handler = function (event, context, callback) {
         .catch((error) => {
           // eslint-disable-next-line
           console.error(error)
-          callback(null, {
+          return {
             statusCode: 400,
             body: error
-          })
+          }
         })
     })
 }
