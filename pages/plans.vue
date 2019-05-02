@@ -10,7 +10,7 @@
         </h3>
         <p>{{ plans.intro }}</p>
       </div>
-      <div class="plan-wrapper">
+      <div class="plan-wrapper" />
         <div class="row plan-container">
           <div v-for="(plan, i) in plans.plans" :key="i" v-bind:class="{'border-right': i < 2}" class="col-md-4 plan-columns">
             <h4>{{ plan.title }}</h4>
@@ -27,7 +27,6 @@
             </div>
           </div>
         <div class="row cant-find-plan"></div>
-      </div>
       </div>
     <Footer />
   </div>
