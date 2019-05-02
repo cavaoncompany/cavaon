@@ -222,7 +222,7 @@ export default {
   watch: {
     projectTicketCreatedStatus(newValue, oldValue) {
       if (newValue === 'success') {
-        this.$router.push({ name: 'success'})
+        this.$router.push({ name: 'success' })
       }
     }
   },
