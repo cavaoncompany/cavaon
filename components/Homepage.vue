@@ -287,7 +287,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 import countTo from 'vue-count-to'
 import { mapState } from 'vuex'
 import banner from '../static/content/banner.json'
