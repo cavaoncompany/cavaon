@@ -23,6 +23,7 @@ import metadata from '../static/content/metadata.json'
 import Footer from '../components/Footer'
 
 export default {
+  name: 'success',
   components: {
     Footer
   },
