@@ -88,6 +88,7 @@ module.exports = {
       routes.push({ name: 'Services', path: '/services', component: '~/components/Flowchart.vue' })
       routes.push({ name: 'Contact', path: '/contact', component: '~/components/Contact.vue' })
       routes.push({ name: 'CaseStudies', path: '/case-studies', component: '~/components/ProjectWithSlider.vue' })
+      routes.push({ name: 'success', path: '/success', component: '~/pages/success.vue' })
     }
   },
   /*
