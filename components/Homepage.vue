@@ -363,6 +363,11 @@ export default {
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
+    if(process.client) {
+      window.onpopstate = function(event) {
+        history.back()
+      }
+    }
   },
   async mounted() {
     await this.$recaptcha.init()
