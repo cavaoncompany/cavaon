@@ -1,7 +1,7 @@
 [build]
   functions = "lambda"
 [[redirects]]
-  from = "/start-a-project"
+  from = "/start-a-project/.netlify/functions/hubspotStartAProject"
   to = "/.netlify/functions/hubspotStartAProject"
   status = 200
   force = true
