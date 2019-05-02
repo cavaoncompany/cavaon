@@ -68,6 +68,6 @@ export const actions = {
   async startAProjectTicket({ state, commit }, payload) {
     const path = '/.netlify/functions/hubspotStartAProject'
     await createTicket({ state, commit }, payload, path)
-    commit('updateProjectTicketCreatedStatus')
+    commit('updateProjectTicketCreatedStatus', result)
   }
 }
