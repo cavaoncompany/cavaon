@@ -35,12 +35,12 @@ const sendMail = (emailInfo, emailProvider) => {
     }
   })
   setTimeout(() => {
-    const file = emailInfo.file
-    const attachments = []
-    if (file) {
-      const buffer = Buffer.from(file.split('base64,')[1], 'base64')
-      attachments.push({ content: buffer, filename: emailInfo.brief })
-    }
+    // const file = emailInfo.file
+    // const attachments = []
+    // if (file) {
+    //   const buffer = Buffer.from(file.split('base64,')[1], 'base64')
+    //   attachments.push({ content: buffer, filename: emailInfo.brief })
+    // }
 
     transporter.sendMail({
       from: emailInfo.email,
@@ -50,8 +50,8 @@ const sendMail = (emailInfo, emailProvider) => {
       html: `<h2>The following message has been received through the Contact us form on www.cavaon.com</h2>
             <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
             <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
-            <p style="margin-bottom: 10px;"><b>Message:</b> ${emailInfo.message}</p>`,
-      attachments: attachments
+            <p style="margin-bottom: 10px;"><b>Message:</b> ${emailInfo.message}</p>`
+      // attachments: attachments
     })
   }, 100)
 }
