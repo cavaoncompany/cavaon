@@ -36,8 +36,9 @@ const sendMail = (emailInfo, emailProvider) => {
   })
   setTimeout(() => {
     const file = emailInfo.file
+    console.log(file)
     const attachments = []
-    if (file !== null || file !== {}) {
+    if (file || file !== null || file !== {} || file === undefined) {
       const buffer = Buffer.from(file.split('base64,')[1], 'base64')
       attachments.push({ content: buffer, filename: emailInfo.brief })
     }
