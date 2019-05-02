@@ -24,17 +24,13 @@ async function sendEmail({ state, commit }, payload, path) {
   // eslint-disable-next-line
   path = path || '/email'
   const emailInfo = payload
-  const emailProvider = state.emailProvider
-  if (emailProvider.username !== '' && emailProvider.password !== '') {
-    try {
-      // eslint-disable-next-line
-      const { res } = await axios.post(path, {
-        emailInfo,
-        emailProvider
-      })
-    } catch (e) {
-      alert(e)
-    }
+  try {
+    // eslint-disable-next-line
+    const { res } = await axios.post(path, {
+      emailInfo
+    })
+  } catch (e) {
+    alert(e)
   }
 }
 
@@ -47,7 +43,7 @@ async function createTicket({ state, commit }, payload, path) {
     })
     return ('success')
   } catch (e) {
-    alert(e)
+    return (e)
   }
 }
 
