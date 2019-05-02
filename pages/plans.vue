@@ -26,7 +26,13 @@
               <P v-for="(service, i) in plan.services" :key="i" class="service-list">{{ service }}</p>
             </div>
           </div>
-        <div class="row cant-find-plan"></div>
+        <div class="row cant-find-plan">
+          <h3>{{ plans.cantFindPlan }}</h3>
+          <p>{{ plans.blurb }}</p>
+          <div class="welcome-button">
+            <a class="btn btn-odin btn-odin-color" href="/start-a-project">{{ plans.buttonText }}</a>
+          </div>
+        </div>
       </div>
     <Footer />
   </div>
