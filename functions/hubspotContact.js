@@ -22,7 +22,7 @@ exports.handler = function (event, context, callback) {
     .then((response) => {
       vid = (response.data.vid)
       api.tickets.createTicket({
-        subject: 'Message from Contact us form',
+        subject: 'Contact Form',
         content: message,
         hs_pipeline: '0',
         hs_pipeline_stage: '1'
@@ -60,7 +60,7 @@ exports.handler = function (event, context, callback) {
           .then((response) => {
             vid = response.data.vid
             api.tickets.createTicket({
-              subject: 'Example subject',
+              subject: 'Contact Form Submission',
               content: message,
               hs_pipeline: '0',
               hs_pipeline_stage: '1'

@@ -364,13 +364,11 @@ export default {
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
     if(process.client) {
+      var that = this;
       window.onpopstate = function(event) {
-        // console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
         if (document.location.toString().indexOf('case-studies')) {
-          // console.log('yes')
-          history.pushState({}, null, '/')
+          window.location = '/'
         }
-        
       }
     }
   },
