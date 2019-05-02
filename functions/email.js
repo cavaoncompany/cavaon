@@ -35,18 +35,19 @@ const sendMail = (emailInfo, emailProvider) => {
     }
   })
   setTimeout(() => {
-    const file = emailInfo.file
-    console.log(file)
     const attachments = []
-    if (file || file !== null || file !== {} || file === undefined) {
-      const buffer = Buffer.from(file.split('base64,')[1], 'base64')
-      attachments.push({ content: buffer, filename: emailInfo.brief })
+    if (emailInfo.brief !== '') {
+      const file = emailInfo.file
+      if (file !== null || file !== {} || file === undefined) {
+        const buffer = Buffer.from(file.split('base64,')[1], 'base64')
+        attachments.push({ content: buffer, filename: emailInfo.brief })
+      }
     }
 
     transporter.sendMail({
       from: emailInfo.email,
-      // to: `${emailProvider.username}`,
-      to: 'info@cavaon.com',
+      to: `${emailProvider.username}`,
+      // to: 'info@cavaon.com',
       subject: `Enquiry to start a project through www.cavaon.com`,
       html: `<h2>The following enquiry has been received on www.cavaon.com</h2>
             <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
