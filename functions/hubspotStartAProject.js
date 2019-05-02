@@ -115,7 +115,7 @@ exports.handler = function (event, context, callback) {
           statusCode: 500,
           body: error
         })
-        console.log('error bottom 'error)
+        console.log('error bottom ', error)
         throw error
       }
     })
