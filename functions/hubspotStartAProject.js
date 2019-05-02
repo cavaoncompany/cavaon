@@ -32,7 +32,7 @@ exports.handler = function (event, context, callback) {
     .then((response) => {
       vid = (response.data.vid)
       api.tickets.createTicket({
-        subject: 'New project request',
+        subject: 'Quotation request',
         content: message,
         hs_pipeline: '0',
         hs_pipeline_stage: '1'
@@ -73,7 +73,7 @@ exports.handler = function (event, context, callback) {
           .then((response) => {
             vid = response.data.vid
             api.tickets.createTicket({
-              subject: 'Example subject',
+              subject: 'Quotation Request',
               content: message,
               hs_pipeline: '0',
               hs_pipeline_stage: '1'
