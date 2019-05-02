@@ -61,59 +61,60 @@ exports.handler = function (event, context, callback) {
         })
     })
     .catch((error) => {
-      if (!error.statusCode || error.statusCode !== 404) {
+      if (error.statusCode === 'contact does not exist') {
+        api.contacts.createContact({
+          email: email,
+          firstname: firstname,
+          lastname: lastname,
+          company: company,
+          website: website,
+          phone: phone
+        })
+          .then((response) => {
+            vid = response.data.vid
+            api.tickets.createTicket({
+              subject: 'Example subject',
+              content: message,
+              hs_pipeline: '0',
+              hs_pipeline_stage: '1'
+            })
+              .then((response) => {
+                const linkInfo = {
+                  'fromObjectId': response.data.objectId,
+                  'toObjectId': vid,
+                  'category': 'HUBSPOT_DEFINED',
+                  'definitionId': 16
+                }
+                api.associations.createAssociation(linkInfo)
+                  .then(() => {
+                    callback(null, {
+                      statusCode: 200,
+                      body: 'Ticket created for new contact'
+                    })
+                  })
+                  .catch((error) => {
+                    return (error)
+                  })
+              })
+              .catch((error) => {
+                // eslint-disable-next-line
+                console.error(error)
+              })
+          })
+          .catch((error) => {
+            // eslint-disable-next-line
+            console.error(error)
+            callback(null, {
+              statusCode: 400,
+              body: error
+            })
+          })
+      } else if (!error.statusCode || error.statusCode !== 404) {
         callback(null, {
           statusCode: 500,
           body: error
         })
         throw error
       }
-      api.contacts.createContact({
-        email: email,
-        firstname: firstname,
-        lastname: lastname,
-        company: company,
-        website: website,
-        phone: phone
-      })
-        .then((response) => {
-          vid = response.data.vid
-          api.tickets.createTicket({
-            subject: 'Example subject',
-            content: message,
-            hs_pipeline: '0',
-            hs_pipeline_stage: '1'
-          })
-            .then((response) => {
-              const linkInfo = {
-                'fromObjectId': response.data.objectId,
-                'toObjectId': vid,
-                'category': 'HUBSPOT_DEFINED',
-                'definitionId': 16
-              }
-              api.associations.createAssociation(linkInfo)
-                .then(() => {
-                  callback(null, {
-                    statusCode: 200,
-                    body: 'Ticket created for new contact'
-                  })
-                })
-                .catch((error) => {
-                  return (error)
-                })
-            })
-            .catch((error) => {
-              // eslint-disable-next-line
-              console.error(error)
-            })
-        })
-        .catch((error) => {
-          // eslint-disable-next-line
-          console.error(error)
-          return {
-            statusCode: 400,
-            body: error
-          }
-        })
     })
 }

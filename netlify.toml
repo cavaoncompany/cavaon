@@ -1,2 +1,19 @@
 [build]
   functions = "lambda"
+[[redirects]]
+  from = "/start-a-project/.netlify/functions/hubspotStartAProject"
+  to = "/.netlify/functions/hubspotStartAProject"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/case-studies/*"
+  to = "/"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
