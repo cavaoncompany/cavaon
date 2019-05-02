@@ -365,7 +365,12 @@ export default {
     this.linesOfCode = Number(randomnumber - 25868512)
     if(process.client) {
       window.onpopstate = function(event) {
-        history.back()
+        // console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+        if (document.location.toString().indexOf('case-studies')) {
+          // console.log('yes')
+          history.pushState({}, null, '/')
+        }
+        
       }
     }
   },
