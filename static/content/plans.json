@@ -5,7 +5,7 @@
     {
       "title": "Web Makeover Package",
       "description": "No need to look elsewhere! We provide graphic services, such as flyers, brochures.",
-      "image": "images/web-package.png",
+      "image": "/images/web-makeover-package.png",
       "from": "From",
       "price": "$1,800",
       "buttonText": "BUY NOW",
