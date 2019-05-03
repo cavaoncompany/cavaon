@@ -174,6 +174,7 @@ export default {
   }
   #plans .cant-find-plan .welcome-button {
     margin: 0 auto;
+    color: #582C87;
   }
   #plans .cant-find-plan p {
     width: 60%;
