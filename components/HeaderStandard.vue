@@ -4,28 +4,27 @@
     <div class="container">
       <div class="row">
         <article class="col-md-2 text-left">
-          <a href="#intro-header" class="scroll">
-            <img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="/images/Logo-colour.png" @click="closeForm('')">
+          <a v-if="page === 'home'" href="#intro-header" class="scroll">
+            <img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="/images/Logo-colour.png">
+          </a>
+          <a v-if="page !== 'home'" href="/">
+            <img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="/images/Logo-colour.png">
           </a>
         </article>
         <article class="col-md-10 text-right">
           <ul v-if="page === 'home'" class="standard-nav standard-nav-dark-text visible-lg">
-            <li><a id="flowchart-linker" href="#services" class="scroll" aria-label="Scroll to Services" @click="closeForm('services')">Services</a></li>
-            <!-- <li><a id="services-linker" href="#services" class="scroll" aria-label="Scroll to Services" @click="closeForm()">Services</a></li> -->
-            <li><a id="caseStudies-linker" href="#caseStudies" class="scroll" aria-label="Scroll to all Case Studies" @click="closeForm('case-studies')">Case Studies</a></li>
-            <!-- <li><a id="testimonials-linker" href="#testimonials" class="scroll" aria-label="Scroll to Testimonials" @click="closeForm()">Testimonials</a></li>
-            <li><a id="team-container-linker" href="#team-container" class="scroll" aria-label="Scroll to Team" @click="closeForm()">Team</a></li> -->
-            <li><a id="about-linker" href="#about" class="scroll" aria-label="Scroll to About" @click="closeForm('about')">About</a></li>
-            <li><a id="contact-linker" href="#contact" class="scroll" aria-label="Scroll to Contact Form" @click="closeForm('contact')">Contact</a></li>
+            <li><a id="flowchart-linker" href="#services" class="scroll" aria-label="Scroll to Services">Services</a></li>
+            <li><a id="caseStudies-linker" href="#caseStudies" class="scroll" aria-label="Scroll to all Case Studies">Case Studies</a></li>
+            <li><a id="plan-linker" href="/plans" aria-label="Explore plans">Plans</a></li>
+            <li><a id="about-linker" href="#about" class="scroll" aria-label="Scroll to About">About</a></li>
+            <li><a id="contact-linker" href="#contact" class="scroll" aria-label="Scroll to Contact Form">Contact</a></li>
           </ul>
           <ul v-if="page !== 'home'" class="standard-nav standard-nav-dark-text visible-lg">
-            <li><a id="flowchart-linker" href="/" aria-label="Scroll to Services" @click="closeForm('services')">Services</a></li>
-            <!-- <li><a id="services-linker" href="#services" class="scroll" aria-label="Scroll to Services" @click="closeForm()">Services</a></li> -->
-            <li><a id="caseStudies-linker" href="/" aria-label="Scroll to all Case Studies" @click="closeForm('case-studies')">Case Studies</a></li>
-            <!-- <li><a id="testimonials-linker" href="#testimonials" class="scroll" aria-label="Scroll to Testimonials" @click="closeForm()">Testimonials</a></li>
-            <li><a id="team-container-linker" href="#team-container" class="scroll" aria-label="Scroll to Team" @click="closeForm()">Team</a></li> -->
-            <li><a id="about-linker" href="/" aria-label="Scroll to About" @click="closeForm('about')">About</a></li>
-            <li><a id="contact-linker" href="/" aria-label="Scroll to Contact Form" @click="closeForm('contact')">Contact</a></li>
+            <li><a id="flowchart-linker" href="/" aria-label="Scroll to Services">Services</a></li>
+            <li><a id="caseStudies-linker" href="/" aria-label="Scroll to all Case Studies">Case Studies</a></li>
+            <li><a id="plan-linker" href="/plans" aria-label="Explore plans">Plans</a></li>
+            <li><a id="about-linker" href="/" aria-label="Scroll to About">About</a></li>
+            <li><a id="contact-linker" href="/" aria-label="Scroll to Contact Form">Contact</a></li>
           </ul>
         </article>
       </div>
@@ -35,7 +34,6 @@
 </template>
 
 <script>
-import EventBus from '../event-bus.js'
 
 export default {
   props: {

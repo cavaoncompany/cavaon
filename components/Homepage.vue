@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderMobile />
+    <HeaderMobile page="home" />
     <div id="iosMessage" />
     <!-- Master Wrap : starts -->
     <section id="mastwrap">

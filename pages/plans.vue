@@ -1,8 +1,7 @@
 <template>
   <div id="plans">
-    <HeaderTop />
     <HeaderStandard page="plans" />
-    <HeaderMobile />
+    <HeaderMobile page="plans" />
     <div class="container">
       <div class="row intro">
         <h3 class="dark">
@@ -43,7 +42,6 @@
 
 <script>
 import plans from '../static/content/plans.json'
-import HeaderTop from '../components/HeaderTop'
 import HeaderStandard from '../components/HeaderStandard'
 import HeaderMobile from '../components/HeaderMobile'
 import Footer from '../components/Footer'
@@ -51,7 +49,6 @@ import Footer from '../components/Footer'
 export default {
   name: 'plans',
   components: {
-    HeaderTop,
     HeaderStandard,
     HeaderMobile,
     Footer
