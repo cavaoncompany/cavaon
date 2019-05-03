@@ -1,7 +1,7 @@
 <template>
   <div id="plans">
     <HeaderTop />
-    <HeaderStandard />
+    <HeaderStandard page="plans" />
     <HeaderMobile />
     <div class="container">
       <div class="row intro">
