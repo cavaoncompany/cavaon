@@ -139,6 +139,10 @@
 		line-height: 39px;
 		margin-top: 45px;
 	}
+	#plans .intro p,
+	#plans .cant-find-plan p {
+		width: 60%;
+	  }
 }
 
 /*Large Widescreen Monitors*/
@@ -222,6 +226,10 @@
 		text-align: left;
 		line-height: 39px;
 		margin-top: 45px;
+	}
+	#plans .intro p,
+	#plans .cant-find-plan p {
+		width: 60%;
 	}
 }
 
@@ -1259,6 +1267,10 @@
 	}
 	.news-post{
 		margin-top: 20px;
+	}
+	#plans .intro p,
+	#plans .cant-find-plan p {
+		width: 100%;
 	}
 }
 

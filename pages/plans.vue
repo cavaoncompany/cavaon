@@ -79,7 +79,6 @@ export default {
     font-weight: 600;
   }
   #plans .intro p {
-    width: 60%;
     margin: 0 auto;
     margin-top: 30px;
   }
@@ -181,7 +180,6 @@ export default {
     color: #582C87;
   }
   #plans .cant-find-plan p {
-    width: 60%;
     margin: 0 auto;
     margin-bottom: 40px;
     color: #FFF;
