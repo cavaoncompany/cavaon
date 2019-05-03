@@ -153,7 +153,7 @@ export default {
     background-size: cover;
     position: absolute;
     bottom: 0;
-    height: 80%;
+    height: 100%;
     left: 0;
     width: 100%;
     z-index: -10;
@@ -175,7 +175,8 @@ export default {
     margin-bottom: 25px;
     color: #FFF;
   }
-  #plans .cant-find-plan .welcome-button {
+  #plans .cant-find-plan .welcome-button,
+  #plans .cant-find-plan .btn-odin-color {
     margin: 0 auto;
     color: #582C87;
   }
