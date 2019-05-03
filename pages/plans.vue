@@ -26,6 +26,7 @@
             </div>
               <p class="service-list" />
               <P v-for="(service, i) in plan.services" :key="i" class="service-list">{{ service }}</p>
+              <p class="service-list line-spacer" />
             </div>
           </div>
         <div class="row cant-find-plan">
@@ -108,6 +109,9 @@ export default {
     margin: 0;
     text-align: left;
     font-weight: 600;
+  }
+  #plans .line-spacer {
+    border: none;
   }
   #plans .btn-odin-color {
     width: 100%;
