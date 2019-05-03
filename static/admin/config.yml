@@ -278,6 +278,40 @@ collections:
           - label: "Tick icon"
             name: "tick"
             widget: "image"
+  - label: "Plans"
+    name: "plans"
+    files:
+      - label: "Plans"
+        name: "plans"
+        format: "json"
+        file: "/static/content/plans.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Intro"
+            name: "intro"
+            widget: "string"
+          - label: "Plans"
+            name: "plans"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "From", name: "from", widget: "string"}
+              - {label: "Price", name: "price", widget: "string"}
+              - {label: "Button text", name: "buttonText", widget: "string"}
+              - {label: "Services", name: "services", widget: "list"}
+          - label: "Can't find plan?"
+            name: "cantFindPlan"
+            widget: "string"
+          - label: "Description"
+            name: "blurb"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
   - label: "Thank you" # Used in routes, e.g., /admin/collections/blog
     name: "success"
     files:

@@ -10,7 +10,9 @@
         </h3>
         <p>{{ plans.intro }}</p>
       </div>
-      <div class="plan-wrapper" />
+      <div class="plan-wrapper">
+        <img src="/images/blank.png" alt="placeholder">
+      </div>
         <div class="row plan-container">
           <div v-for="(plan, i) in plans.plans" :key="i" v-bind:class="{'border-right': i < 2}" class="col-md-4 plan-columns">
             <h4>{{ plan.title }}</h4>
@@ -62,7 +64,7 @@ export default {
 </script>
 
 <style>
-  #plans .container {
+  #plans {
     position: relative;
   }
   #plans .intro {
@@ -84,18 +86,20 @@ export default {
     display: block;
   }
   #plans .image-container {
-    height: 180px;
+    height: 149px;
   }
   #plans .image-container img {
     height: 100%;
     max-width: 100%;
+    margin: 0 auto;
+    display: block;
   }
   #plans .plan-container {
     margin-top: 80px;
     box-shadow: 0 0 15px #e2e2e2;
     padding-top: 40px;
     padding-bottom: 40px;
-    position: relative;
+    background-color: #fff;
   }
   #plans .service-list {
     line-height: 40px;
@@ -142,7 +146,44 @@ export default {
   }
   #plans .plan-wrapper {
     background-image: url('/images/bottom-banner.png');
+    width: 100%;
+    background-size: cover;
     position: absolute;
+    bottom: 0;
+    height: 80%;
+    left: 0;
+    width: 100%;
+    z-index: -10;
+  }
+  #plans .plan-wrapper img {
     width: 100%;
   }
+  #plans .cant-find-plan {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+  }
+  #plans .cant-find-plan h3 {
+    font-size: 20px;
+    margin: 0 auto;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #FFF;
+  }
+  #plans .cant-find-plan .welcome-button {
+    margin: 0 auto;
+  }
+  #plans .cant-find-plan p {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    color: #FFF;
+  }
+  /* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  } */
 </style>
