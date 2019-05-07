@@ -1,5 +1,5 @@
 <template>
-  <section class="services page">
+  <section class="services page" @mouseover="changeUrl('services')">
     <div class="container">
       <div class="row">
         <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
@@ -28,11 +28,19 @@ export default {
     return {
       services: services
     }
+  },
+  methods: {
+    changeUrl: function (link) {
+      history.pushState({}, null, '/' + link)
+    }
   }
 }
 </script>
 
 <style>
+.services .dark {
+  font-weight: 600;
+}
 .service-card-container {
   margin-top: 60px;
   margin-bottom: 60px;

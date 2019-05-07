@@ -18,9 +18,11 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "@babel/core": "7.0.0",
     "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/recaptcha": "^0.2.2",
+    "@nuxtjs/sitemap": "^1.0.0",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
     "body-parser": "^1.18.3",
@@ -29,6 +31,7 @@
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "netlify-lambda": "^1.4.3",
+    "node-hubspot-api": "git://github.com/cornelia-schulz/node-hubspot-api#ticket",
     "nodemailer": "^6.1.0",
     "nuxt": "^2.4.0",
     "serverless-http": "^1.9.1",

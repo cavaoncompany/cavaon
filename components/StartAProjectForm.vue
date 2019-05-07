@@ -13,8 +13,8 @@
         </div>
         <form
           id="startAProjectForm"
-          @submit.prevent="onSubmit"
           class="col-md-12 col-lg-10 col-lg-offset-1"
+          @submit.prevent="createTicket"
         >
           <section>
             <input type="hidden" name="form-name" value="start-project">
@@ -48,23 +48,23 @@
               </article>
               <article class="left">
                 <input
-                  id="projectName"
-                  v-model="name"
+                  id="projectFirstName"
+                  v-model="firstname"
                   type="text"
-                  :placeholder="startaprojectform.namePlaceholder"
-                  name="name"
+                  :placeholder="startaprojectform.firstnamePlaceholder"
+                  name="firstname"
                   size="100"
                   required
                 >
               </article>
               <article class="right">
                 <input
-                  id="projectPhone"
-                  v-model="phone"
-                  type="tel"
-                  :placeholder="startaprojectform.telPlaceholder"
-                  name="phone"
-                  size="30"
+                  id="projectLastName"
+                  v-model="lastname"
+                  type="text"
+                  :placeholder="startaprojectform.lastnamePlaceholder"
+                  name="lastname"
+                  size="100"
                   required
                 >
               </article>
@@ -76,6 +76,17 @@
                   :placeholder="startaprojectform.websitePlaceholder"
                   name="website"
                   size="100"
+                >
+              </article>
+              <article class="right">
+                <input
+                  id="projectPhone"
+                  v-model="phone"
+                  type="tel"
+                  :placeholder="startaprojectform.telPlaceholder"
+                  name="phone"
+                  size="30"
+                  required
                 >
               </article>
             </div>
@@ -115,7 +126,14 @@
               {{ startaprojectform.goalTitle }}
             </h3>
             <article>
-              <textarea id="projectMessage" :placeholder="startaprojectform.goalPlaceholder" name="message" cols="40" rows="4" />
+              <textarea
+                id="projectMessage"
+                v-model="projectDescription"
+                :placeholder="startaprojectform.goalPlaceholder"
+                name="message"
+                cols="40"
+                rows="4"
+              />
             </article>
             <div v-if="brief !== ''" class="uploaded-files">
               <img :src="startaprojectform.yellowTick" alt="file uploaded">
@@ -175,6 +193,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import startaprojectform from '../static/content/startaprojectform.json'
 
 export default {
@@ -184,7 +203,8 @@ export default {
       startaprojectform: startaprojectform,
       company: '',
       email: '',
-      name: '',
+      firstname: '',
+      lastname: '',
       phone: '',
       website: '',
       projectType: [],
@@ -196,6 +216,14 @@ export default {
       brief: '',
       briefPath: '',
       file: {}
+    }
+  },
+  computed: mapState(['projectTicketCreatedStatus']),
+  watch: {
+    projectTicketCreatedStatus(newValue, oldValue) {
+      if (newValue === 'success') {
+        this.$router.push({ name: 'success' })
+      }
     }
   },
   async mounted() {
@@ -230,7 +258,7 @@ export default {
         this.otherSelected = false
       }
     },
-    showUploadedFile: function(e) {
+    showUploadedFile: function (e) {
       this.file = this.$refs.file.files[0]
       const file = e.target.files[0]
       this.brief = file.name
@@ -239,23 +267,23 @@ export default {
       }
       this.briefPath = this.createFile(file)
     },
-    createFile: function(file) {
+    createFile: function (file) {
       const reader = new FileReader()
-      const vm = this
 
       reader.onload = (e) => {
         this.file = e.target.result
       }
       reader.readAsDataURL(file)
     },
-    sendEmail () {
+    sendEmail: function () {
       const projects = []
-      for (let i = 0; i < this.projectType.length; i++){
+      for (let i = 0; i < this.projectType.length; i++) {
         projects.push(this.projectType[i].replace('project-form-', ''))
       }
       const emailData = {
         email: this.email,
-        name: this.name,
+        firstname: this.firstname,
+        lastname: this.lastname,
         company: this.company,
         phone: this.phone,
         website: this.website,
@@ -269,7 +297,8 @@ export default {
         briefPath: this.briefPath
       }
       this.$store.dispatch('newProject', emailData)
-      this.name = ''
+      this.firstname = ''
+      this.lastname = ''
       this.email = ''
       this.company = ''
       this.phone = ''
@@ -282,16 +311,41 @@ export default {
       this.brief = ''
       this.file = ''
       this.briefPath = ''
-      this.$router.replace({ path: 'success' })
+    },
+    createTicket: function () {
+      const projects = []
+      for (let i = 0; i < this.projectType.length; i++) {
+        projects.push(this.projectType[i].replace('project-form-', ''))
+      }
+      const ticketData = {
+        email: this.email,
+        firstname: this.firstname,
+        lastname: this.lastname,
+        company: this.company,
+        phone: this.phone,
+        website: this.website,
+        projectType: projects,
+        timeframe: this.timeframe,
+        projectDescription: this.projectDescription,
+        hearAboutUs: this.hearAboutUs,
+        hearAboutUsOther: this.hearAboutUsOther,
+        brief: this.brief,
+        file: this.file,
+        briefPath: this.briefPath
+      }
+      this.$store.dispatch('startAProjectTicket', ticketData)
     },
     async onSubmit() {
       try {
+        // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
+        this.createTicket()
         this.sendEmail()
       } catch (error) {
+        // eslint-disable-next-line
         console.log('Submission error:', error)
       }
-    },
+    }
   }
 }
 </script>

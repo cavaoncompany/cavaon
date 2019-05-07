@@ -86,9 +86,6 @@
 	#team {
 		padding-bottom: 120px;
 	}
-	.team-desktop {
-		display: block;
-	}
 	.team-mobile {
 		display: none;
 	}
@@ -112,32 +109,17 @@
 	#number-mobile {
 		display: none;
 	}
-	#number-desktop {
-		display: block;
-	}
-	.featuress-expansion {
-		display: block;
-	}
 	#mobile-projects {
 		display: none;
 	}
 	.about-us-mobile {
 		display: none;
 	}
-	.about-us-desktop {
-		display: block;
-	}
-	#thumb-carousel-wrap {
-		display: block;
-	}
 	.promo-article {
 		margin-top: 25%;
 	}
 	.mobile-banner {
 		display: none;
-	}
-	.desktop-banner {
-		display: block;
 	}
 	.service-card {
 		height: 300px;
@@ -147,9 +129,6 @@
 	}
 	#flowchart-mobile {
 		display: none
-	}
-	#flowchart {
-		display: block;
 	}
 	.hero-caps h1 {
 		margin-top: 35%;
@@ -211,12 +190,6 @@
 	#number-mobile {
 		display: none;
 	}
-	#number-desktop {
-		display: block;
-	}
-	.featuress-expansion {
-		display: block;
-	}
 	#mobile-projects {
 		display: none;
 	}
@@ -226,23 +199,11 @@
 	.mobile-banner {
 		display: none;
 	}
-	.desktop-banner {
-		display: block;
-	}
-	.about-us-desktop {
-		display: block;
-	}
 	#team {
 		padding-bottom: 120px;
 	}
-	.team-desktop {
-		display: block;
-	}
 	.team-mobile {
 		display: none;
-	}
-	#thumb-carousel-wrap {
-		display: block;
 	}
 	.service-card {
 		height: 300px;
@@ -252,9 +213,6 @@
 	}
 	#flowchart-mobile {
 		display: none
-	}
-	#flowchart {
-		display: block;
 	}
 	.hero-caps h1 {
 		margin-top: 30%;
@@ -623,7 +581,7 @@
 	#flowchart-mobile {
 		display: block
 	}
-	#flowchart {
+	#services {
 		display: none;
 	}
 }
