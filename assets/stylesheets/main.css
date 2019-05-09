@@ -474,7 +474,6 @@ div#preloader {
 .hero-caps h6 > span{
 	padding-top: 20px;
 }
-
 .hero-caps h6.minimal{
 	margin-top: 20px;
 	font-family: 'Montserrat', sans-serif; font-weight:700;
@@ -502,7 +501,6 @@ div#preloader {
 	font-size: 18px;
 	line-height: 28px;
 }
-
 .hero-caps h5 > span{
 	padding: 15px;
 	font-size: 20px;
@@ -543,15 +541,12 @@ div#preloader {
 	border-top:solid 1px #fff;
 	border-bottom:solid 1px #fff;
 }
-
 .hero-caps-button{
 	margin-top: 20px;
 }
-
 .intro-mock{
 	/*padding: 140px;*/
 }
-
 .main-caps{
 }
 .main-caps > h3{

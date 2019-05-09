@@ -130,9 +130,6 @@
 	#flowchart-mobile {
 		display: none
 	}
-	.hero-caps h1 {
-		margin-top: 35%;
-	}
 	.hero-caps h6.minimal {
 		margin-bottom: 65px;
 		text-align: left;
@@ -213,9 +210,6 @@
 	}
 	#flowchart-mobile {
 		display: none
-	}
-	.hero-caps h1 {
-		margin-top: 30%;
 	}
 	.hero-caps h6.minimal {
 		margin-bottom: 65px;
@@ -338,9 +332,6 @@
 	}
 	#flowchart .flowchart-left img {
 		opacity: 0;
-	}
-	.hero-caps h1 {
-		margin-top: 20%;
 	}
 }
 
@@ -514,7 +505,6 @@
 	.hero-caps h1 {
 	    font-size: 48px;
 		line-height: 56px;
-		margin-top: 30%;
 	}
 	.hero-caps h6 {
 	    font-size: 36px;
@@ -678,7 +668,6 @@
 	.hero-caps h1 {
 	    font-size: 25px;
 		line-height: 38px;
-		margin-top: 200px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -812,7 +801,6 @@
 	.hero-caps h1 {
 	    font-size: 25px;
 		line-height: 38px;
-		margin-top: 200px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -946,7 +934,6 @@
 	.hero-caps h1 {
 	    font-size: 25px;
 		line-height: 38px;
-		margin-top: 190px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -1085,7 +1072,6 @@
 	.hero-caps h1 {
 	    font-size: 30px;
 		line-height: 33px;
-		margin-top: 145px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
