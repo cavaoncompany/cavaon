@@ -14,7 +14,7 @@
 import StartAProjectForm from '../components/StartAProjectForm'
 import Footer from '../components/Footer'
 export default {
-  name: 'start-a-project',
+  name: 'StartAProject',
   components: {
     Footer,
     StartAProjectForm

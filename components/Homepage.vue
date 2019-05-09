@@ -52,8 +52,8 @@
                   id="number-desktop"
                   ref="codecounter"
                   class="color counter"
-                  :startVal="startVal"
-                  :endVal="linesOfCode"
+                  :start-val="startVal"
+                  :end-val="linesOfCode"
                   :autoplay="false"
                   :duration="3000"
                 />
@@ -122,7 +122,7 @@
           <div id="item_container" class="clearfix" />
         </section>
         <!-- inner-section:ends -->
-        <ProjectWithSlider :projectDetails="projectDetails" />
+        <ProjectWithSlider :project-details="projectDetails" />
         <!-- inner-section : starts -->
         <section class="inner-section add-top-quarter">
           <!-- Filter -->
@@ -363,10 +363,12 @@ export default {
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
-    if(process.client) {
-      var that = this;
+    if (process.client) {
+      // eslint-disable-next-line
       window.onpopstate = function(event) {
+        // eslint-disable-next-line
         if (document.location.toString().indexOf('case-studies')) {
+          // eslint-disable-next-line
           window.location = '/'
         }
       }
