@@ -357,9 +357,6 @@ export default {
     }
   },
   created() {
-    EventBus.$on('closeStartAProjectForm', (formOpen) => {
-      this.closeStartAProjectForm()
-    })
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
