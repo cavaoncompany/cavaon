@@ -1,9 +1,9 @@
 <template>
   <!-- mobile only navigation : starts -->
-  <nav class="mobile-nav hidden-lg">
+  <nav class="mobile-nav hidden-md hidden-lg">
     <ul class="slimmenu">
       <li>
-        <a class="scroll" href="#flowchart-mobile" aria-label="Scroll to Services">SERVICES</a>
+        <a class="scroll" href="#services" aria-label="Scroll to Services">SERVICES</a>
       </li>
       <li>
         <a class="scroll" href="#caseStudies" aria-label="Scroll to Case Studies">CASE STUDIES</a>
@@ -20,8 +20,6 @@
 </template>
 
 <script>
-import EventBus from '../event-bus.js'
-
 export default {
   props: {
     projectFormOpen: Boolean

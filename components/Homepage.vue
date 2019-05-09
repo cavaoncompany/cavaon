@@ -27,7 +27,7 @@
         </div>
         <!-- </div> -->
         <!-- valignBanner:ends -->
-        <a class="scroll" href="#services" aria-label="Scroll to Projects">
+        <a class="scroll" href="#flowchart" aria-label="Scroll to Projects">
           <div class="mouse-icon white hidden-xs" style="opacity: 1;">
             <div class="wheel" />
           </div>
@@ -67,38 +67,6 @@
         </div>
       </div>
 
-      <!-- inner-section:starts -->
-      <!-- <section class="inner-section clients-wrap black-bg">
-        <div class="container">
-          <div class="row">
-            <article class="col-md-12 text-center"> -->
-      <!-- carousel:starts -->
-      <!-- <div id="client-carousel" class="clients-carousel owl-carousel owl-nav-sticky-extra-wide owl-theme"> -->
-      <!-- item:starts -->
-      <!-- <div class="item client-carousel-item client-stage">
-        <img data-no-retina alt="Let's Travel" title="Let's Travel" src="/images/Client-logo-lets-travel.png">
-      </div> -->
-      <!-- item:ends -->
-
-      <!-- item:starts -->
-      <!-- <div class="item client-carousel-item client-stage">
-        <img data-no-retina alt="Travel Dream" title="Travel Dream" src="/images/Client-Logo-Travel-Dream.png">
-      </div> -->
-      <!-- item:ends -->
-
-      <!-- item:starts -->
-      <!-- <div class="item client-carousel-item client-stage">
-        <img data-no-retina alt="Inspiring Vacations" title="Inspiring Vacations" src="/images/Client-Logo-Inspiring-Vacations.png">
-      </div> -->
-      <!-- item:ends -->
-      <!-- </div> -->
-      <!-- carousel:ends -->
-      <!-- </article>
-          </div>
-        </div>
-      </section> -->
-      <!-- inner-section:ends -->
-
       <!-- page-section : starts -->
       <section id="caseStudies" class="page portfolio page-section remove-pad-bottom white-bg">
         <!-- inner-section:starts -->
@@ -127,19 +95,7 @@
         <section class="inner-section add-top-quarter">
           <!-- Filter -->
           <div id="filter" class="clearfix">
-            <div id="filter_wrapper">
-              <!-- <ul id="portfolioFilter">
-                <li class="filter" data-filter="all">
-                  All
-                </li>
-                <li class="filter" data-filter="category1">
-                  Let's Travel
-                </li>
-                <li class="filter" data-filter="category2">
-                  Travel Dream
-                </li>
-              </ul> -->
-            </div>
+            <div id="filter_wrapper" />
           </div>
           <!-- End: Filter -->
 
@@ -297,7 +253,6 @@ import services from '../static/content/services.json'
 import projects from '../static/content/projects.json'
 import promo from '../static/content/promo.json'
 import messages from '../static/content/messages.json'
-import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
 import HeaderStandard from './HeaderStandard'

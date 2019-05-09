@@ -1,5 +1,5 @@
 <template>
-  <section id="services" class="page page-section" @mouseover="changeUrl('services')">
+  <section id="flowchart" class="page page-section" @mouseover="changeUrl('services')">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-4 flowchart-left">
@@ -50,26 +50,26 @@ export default {
 </script>
 
 <style>
-  #services {
+  #flowchart {
     margin-top: 40px;
   }
-  #services article {
+  #flowchart article {
     border-left: 1px solid #FFC716;
     margin-top: -120px;
     padding-top: 140px;
     padding-left: 15px;
   }
-  #services article h2 {
+  #flowchart article h2 {
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 0;
   }
-  #services .flowchart-left {
+  #flowchart .flowchart-left {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  #services .flowchart-left img {
+  #flowchart .flowchart-left img {
     width: 60%;
   }
   .flowchart-items img {

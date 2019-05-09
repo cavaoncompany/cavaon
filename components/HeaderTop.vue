@@ -1,6 +1,6 @@
 <template>
   <!-- masthead-section (this nav bar is visible only on home page) : starts -->
-  <header id="intro-header" class="intro-header visible-lg scroll">
+  <header id="intro-header" class="intro-header visible-lg visible-md scroll">
     <div class="container">
       <div class="row">
         <article class="col-md-2 text-left">
@@ -15,7 +15,7 @@
           </a>
         </article>
         <article class="col-md-10 text-right">
-          <ul class="standard-nav  standard-nav-white-text visible-lg">
+          <ul class="standard-nav  standard-nav-white-text visible-md visible-lg">
             <li><a href="#services" class="scroll" aria-label="Scroll to Services">Services</a></li>
             <li><a href="#caseStudies" class="scroll" aria-label="Scroll to Case Studies">Case Studies</a></li>
             <li><a href="#about" class="scroll" aria-label="Scroll to About">About</a></li>
@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import EventBus from '../event-bus.js'
 
 export default {
   props: {

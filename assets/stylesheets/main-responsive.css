@@ -265,9 +265,6 @@
 	.container, .features-details {
 	    max-width: 960px;
 	}
-	.standard-header{
-		display: none !important;
-	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
 	}
@@ -292,9 +289,6 @@
 	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
-	}
-	.standard-header{
-		display: none !important;
 	}
 	.testimonial-wrap-right {
 		padding-top: 0;
@@ -571,7 +565,7 @@
 	#flowchart-mobile {
 		display: block
 	}
-	#services {
+	#flowchart {
 		display: none;
 	}
 }
