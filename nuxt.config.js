@@ -94,6 +94,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/tawkto.js', ssr: false }
   ],
   serverMiddleware: [
     '~/api/nodemailer'
