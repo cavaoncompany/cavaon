@@ -1,7 +1,7 @@
 const webpack = require('webpack')
+const env = require('dotenv').config()
 const pkg = require('./package')
 const metadata = require('./static/content/metadata.json')
-const env = require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -75,6 +75,7 @@ module.exports = {
   ],
   router: {
     linkActiveClass: 'active-link',
+    // eslint-disable-next-line
     scrollBehavior: async (to, from, savedPosition) => {
       if (to.hash) {
         return { selector: to.hash }
