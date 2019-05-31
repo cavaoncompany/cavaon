@@ -97,7 +97,7 @@ import caseStudies from '../../static/content/casestudies.json'
 
 export default {
   props: {
-    projectDetails: {
+    projectDetail: {
       type: Object,
       required: true
     }
