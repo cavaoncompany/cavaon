@@ -1,7 +1,7 @@
 const webpack = require('webpack')
+const env = require('dotenv').config()
 const pkg = require('./package')
 const metadata = require('./static/content/metadata.json')
-const env = require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -75,6 +75,7 @@ module.exports = {
   ],
   router: {
     linkActiveClass: 'active-link',
+    // eslint-disable-next-line
     scrollBehavior: async (to, from, savedPosition) => {
       if (to.hash) {
         return { selector: to.hash }
@@ -88,13 +89,13 @@ module.exports = {
       routes.push({ name: 'Services', path: '/services', component: '~/pages/index.vue' })
       routes.push({ name: 'Contact', path: '/contact', component: '~/pages/index.vue' })
       routes.push({ name: 'CaseStudies', path: '/case-studies', component: '~/pages/index.vue' })
-      routes.push({ name: 'success', path: '/success', component: '~/pages/success.vue' })
     }
   },
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/tawkto.js', ssr: false }
   ],
   serverMiddleware: [
     '~/api/nodemailer'

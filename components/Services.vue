@@ -1,5 +1,5 @@
 <template>
-  <section class="services page" @mouseover="changeUrl('services')">
+  <section id="services" class="services page page-section" @mouseover="changeUrl('services')">
     <div class="container">
       <div class="row">
         <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">

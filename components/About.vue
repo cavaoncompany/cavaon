@@ -26,7 +26,7 @@
                 <span>{{ about.title }}</span>
               </h3>
               <div class="liner color-bg" />
-              <p class="white" v-for="(paragraph, i) in about.paragraphsMobile" :key="i" >
+              <p v-for="(paragraph, i) in about.paragraphsMobile" :key="i" class="white">
                 {{ paragraph }}
               </p>
             </article>
