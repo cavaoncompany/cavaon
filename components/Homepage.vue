@@ -107,7 +107,7 @@
                 <li class="folio-thumb mix category1">
                   <a href="projects/project-slider" class="more_info" @click="updateProjectDetails('letsTravel')">
                     <!-- Thumbnail -->
-                    <img data-no-retina alt="odin" title="odin" src="/images/Case-studies-Lets-Travel.png" @click="updateProjectDetails('letsTravel')">
+                    <img data-no-retina alt="Let's-Travel" title="Let's Travel" src="/images/Case-studies-Lets-Travel.png" @click="updateProjectDetails('letsTravel')">
                     <!-- Info -->
                     <div class="item_info">
                       <div class="valign" @click="updateProjectDetails('letsTravel')">
@@ -122,7 +122,7 @@
                 <li class="folio-thumb mix category2">
                   <a href="projects/project-slider" class="more_info" @click="updateProjectDetails('travelDream')">
                     <!-- Thumbnail -->
-                    <img data-no-retina alt="odin" title="odin" src="/images/Case-Studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
+                    <img data-no-retina alt="Travel-Dream" title="Travel Dream" src="/images/Case-Studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
                     <!-- Info -->
                     <div class="item_info">
                       <div class="valign">
