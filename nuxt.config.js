@@ -1,7 +1,7 @@
 const webpack = require('webpack')
+const env = require('dotenv').config()
 const pkg = require('./package')
 const metadata = require('./static/content/metadata.json')
-const env = require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -41,7 +41,7 @@ module.exports = {
       { src: '/javascripts/custom/jquery-2.2.4.min.js', type: 'text/javascript', body: true, defer: true },
       { src: '/bootstrap/js/bootstrap.min.js', type: 'text/javascript', body: true, defer: true },
       { src: '/less/less-1.5.0.min.js', type: 'text/javascript', body: true, defer: true },
-      { src: '/javascripts/libs/common-min.js', type: 'text/javascript', body: true, defer: true },
+      { src: '/javascripts/libs/common.js', type: 'text/javascript', body: true, defer: true },
       { src: '/javascripts/custom/main.js', type: 'text/javascript', body: true, defer: true },
       { src: '/javascripts/custom/custom-init.js', type: 'text/javascript', body: true, defer: true }
     ]
@@ -75,6 +75,7 @@ module.exports = {
   ],
   router: {
     linkActiveClass: 'active-link',
+    // eslint-disable-next-line
     scrollBehavior: async (to, from, savedPosition) => {
       if (to.hash) {
         return { selector: to.hash }
@@ -88,13 +89,13 @@ module.exports = {
       routes.push({ name: 'Services', path: '/services', component: '~/pages/index.vue' })
       routes.push({ name: 'Contact', path: '/contact', component: '~/pages/index.vue' })
       routes.push({ name: 'CaseStudies', path: '/case-studies', component: '~/pages/index.vue' })
-      routes.push({ name: 'success', path: '/success', component: '~/pages/success.vue' })
     }
   },
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/tawkto.js', ssr: false }
   ],
   serverMiddleware: [
     '~/api/nodemailer'

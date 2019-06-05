@@ -122,36 +122,36 @@ $(window).load(function(){
 
      //Load and show portfolio pages
      $("div#portfolio_thumbs ul li a.more_info").click(function(){
-               var source = $(this).attr("href");
-               $('div#filter_wrapper').slideUp(300, function(){
-                         $('div#item_container').append('<div class="loading"></div>');
-                         // $('html,body').animate({scrollTop: $("#portfolio-wrap").offset().top - 150},'slow', function(){
-                               $('html, body').animate({scrollTop: ($('#item_container').offset().top - 0)},'slow', function(){
-                                   $('div#item_container').load(source, function(){
-                                             $('div.loading').remove();
-                                             $('#item_slider').flexslider({ controlNav: false, prevText: "<", nextText: ">" });
-                                             $('div#portfolio_item').slideDown(500, function(){
-                                                       $('#item_video iframe').css('visibility','visible');
-                                                       $('#control_buttons a#next').click(function(){
-                                                                 loadNextItem();
-                                                                 return false;
-                                                       });
-                                                       $('#control_buttons a#prev').click(function(){
-                                                                 loadPrevItem();
-                                                                 return false;
-                                                       });
-                                                       $('#control_buttons a#close').click(function(){
-                                                                 $('div#portfolio_item').slideUp(300, function(){
-                                                                           $('div#item_container').empty();
-                                                                           $("div#filter_wrapper").slideDown(300);
-                                                                 });
-                                                                  $('html, body').animate({scrollTop: ($('#item_container').offset().top - 0)});
-                                                       return false;
-                                                       });//End: click()
-                                             });//End:slideDown()
-                                   });//End:load()
-                         });//End:animate()
-               });//End:slideUp
+        var source = $(this).attr("href");
+        $('div#filter_wrapper').slideUp(300, function(){
+            $('div#item_container').append('<div class="loading"></div>');
+            // $('html,body').animate({scrollTop: $("#portfolio-wrap").offset().top - 150},'slow', function(){
+                $('html, body').animate({scrollTop: ($('#item_container').offset().top - 0)},'slow', function(){
+                    $('div#item_container').load(source, function(){
+                        $('div.loading').remove();
+                        $('#item_slider').flexslider({ controlNav: false, prevText: "<", nextText: ">" });
+                        $('div#portfolio_item').slideDown(500, function(){
+                            $('#item_video iframe').css('visibility','visible');
+                            $('#control_buttons a#next').click(function(){
+                                loadNextItem();
+                                return false;
+                            });
+                            $('#control_buttons a#prev').click(function(){
+                                loadPrevItem();
+                                return false;
+                            });
+                            $('#control_buttons a#close').click(function(){
+                                $('div#portfolio_item').slideUp(300, function(){
+                                    $('div#item_container').empty();
+                                    $("div#filter_wrapper").slideDown(300);
+                                });
+                                $('html, body').animate({scrollTop: ($('#item_container').offset().top - 0)});
+                            return false;
+                            });//End: click()
+                        });//End:slideDown()
+                    });//End:load()
+            });//End:animate()
+        });//End:slideUp
 
      return false;
      });
@@ -180,7 +180,7 @@ $(document).ready(function($) {
 		
 		//name
 		var name = $("input#name").val();
-		if(name == ""){
+		if (name == ""){
 			//$("#error").fadeIn().text("Name required.");
 			$('#fname').fadeIn('slow');
 			$("input#name").focus();
@@ -190,7 +190,7 @@ $(document).ready(function($) {
 		//email (check if entered anything)
 		var email = $("input#email").val();
 		//email (check if entered anything)
-		if(email == ""){
+		if (email == ""){
 			//$("#error").fadeIn().text("Email required");
 			$('#fmail').fadeIn('slow');
 			$("input#email").focus();
@@ -218,7 +218,7 @@ function isValidEmailAddress(emailAddress) {
 		// comments
 		var comments = $("#msg").val();
 		
-		if(comments == ""){
+		if (comments == ""){
 			//$("#error").fadeIn().text("Email required");
 			$('#fmsg').fadeIn('slow');
 			$("input#msg").focus();
@@ -251,7 +251,7 @@ function isValidEmailAddress(emailAddress) {
 
 
      	//Detecting mobile device (real platform detection - more accurate)
-	if( !device.tablet() && !device.mobile() ) {
+	if ( !device.tablet() && !device.mobile() ) {
 
 		/*  if non-mobile device is detected*/ 
 						
@@ -262,7 +262,7 @@ function isValidEmailAddress(emailAddress) {
 
 
 	//Detecting mobile device (viewport width detection)
-	if(vW <= 800) {
+	if (vW <= 800) {
 
 		/*  if mobile viewport width is detected*/ 
 		$('.features-icon .customLink').click(function(){
@@ -282,7 +282,7 @@ function isValidEmailAddress(emailAddress) {
 
 $(window).load(function() {
 
-if( !device.tablet() && !device.mobile() ) {
+if ( !device.tablet() && !device.mobile() ) {
 
 		$('.animated').appear(function() {
 		 $(this).each(function(){ 

@@ -852,14 +852,12 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
     
  * ============================================================= */
 
-(function($) {
     jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){ // When a link with the .scroll class is clicked
+        $("a.scroll").click(function(event){ // When a link with the .scroll class is clicked
             event.preventDefault(); // Prevent the default action from occurring
             $('html,body').animate({scrollTop:$(this.hash).offset().top}, 1000, 'easeInSine'); // Animate the scroll to this link's href value
         });
     });
-})(jQuery);
 
 /*
  * jQuery FlexSlider v1.8

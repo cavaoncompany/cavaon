@@ -1,6 +1,6 @@
 <template>
   <div id="plans">
-    <HeaderStandard page="plans" />
+    <HeaderStandard page="plans"/>
     <HeaderMobile page="plans" />
     <div class="container">
       <div class="row intro">
