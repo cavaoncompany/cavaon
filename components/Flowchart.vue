@@ -1,5 +1,5 @@
 <template>
-  <section id="flowchart" class="page page-section">
+  <section id="flowchart" class="page page-section" @mouseover="changeUrl('services')">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-4 flowchart-left">
@@ -35,9 +35,15 @@
 import flowchart from '../static/content/flowchart.json'
 
 export default {
+  name: 'Flowchart',
   data() {
     return {
       flowchart: flowchart
+    }
+  },
+  methods: {
+    changeUrl: function (link) {
+      history.pushState({}, null, '/' + link)
     }
   }
 }

@@ -86,9 +86,6 @@
 	#team {
 		padding-bottom: 120px;
 	}
-	.team-desktop {
-		display: block;
-	}
 	.team-mobile {
 		display: none;
 	}
@@ -112,32 +109,17 @@
 	#number-mobile {
 		display: none;
 	}
-	#number-desktop {
-		display: block;
-	}
-	.featuress-expansion {
-		display: block;
-	}
 	#mobile-projects {
 		display: none;
 	}
 	.about-us-mobile {
 		display: none;
 	}
-	.about-us-desktop {
-		display: block;
-	}
-	#thumb-carousel-wrap {
-		display: block;
-	}
 	.promo-article {
 		margin-top: 25%;
 	}
 	.mobile-banner {
 		display: none;
-	}
-	.desktop-banner {
-		display: block;
 	}
 	.service-card {
 		height: 300px;
@@ -147,12 +129,6 @@
 	}
 	#flowchart-mobile {
 		display: none
-	}
-	#flowchart {
-		display: block;
-	}
-	.hero-caps h1 {
-		margin-top: 35%;
 	}
 	.hero-caps h6.minimal {
 		margin-bottom: 65px;
@@ -224,12 +200,6 @@
 	#number-mobile {
 		display: none;
 	}
-	#number-desktop {
-		display: block;
-	}
-	.featuress-expansion {
-		display: block;
-	}
 	#mobile-projects {
 		display: none;
 	}
@@ -239,23 +209,11 @@
 	.mobile-banner {
 		display: none;
 	}
-	.desktop-banner {
-		display: block;
-	}
-	.about-us-desktop {
-		display: block;
-	}
 	#team {
 		padding-bottom: 120px;
 	}
-	.team-desktop {
-		display: block;
-	}
 	.team-mobile {
 		display: none;
-	}
-	#thumb-carousel-wrap {
-		display: block;
 	}
 	.service-card {
 		height: 300px;
@@ -265,12 +223,6 @@
 	}
 	#flowchart-mobile {
 		display: none
-	}
-	#flowchart {
-		display: block;
-	}
-	.hero-caps h1 {
-		margin-top: 30%;
 	}
 	.hero-caps h6.minimal {
 		margin-bottom: 65px;
@@ -339,9 +291,6 @@
 	.container, .features-details {
 	    max-width: 960px;
 	}
-	.standard-header{
-		display: none !important;
-	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
 	}
@@ -366,9 +315,6 @@
 	}
 	div#portfolio_thumbs ul li{
 	width: 33%;
-	}
-	.standard-header{
-		display: none !important;
 	}
 	.testimonial-wrap-right {
 		padding-top: 0;
@@ -406,9 +352,6 @@
 	}
 	#flowchart .flowchart-left img {
 		opacity: 0;
-	}
-	.hero-caps h1 {
-		margin-top: 20%;
 	}
 }
 
@@ -582,7 +525,6 @@
 	.hero-caps h1 {
 	    font-size: 48px;
 		line-height: 56px;
-		margin-top: 30%;
 	}
 	.hero-caps h6 {
 	    font-size: 36px;
@@ -746,7 +688,6 @@
 	.hero-caps h1 {
 	    font-size: 25px;
 		line-height: 38px;
-		margin-top: 200px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -880,7 +821,6 @@
 	.hero-caps h1 {
 	    font-size: 25px;
 		line-height: 38px;
-		margin-top: 200px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -1014,7 +954,6 @@
 	.hero-caps h1 {
 	    font-size: 25px;
 		line-height: 38px;
-		margin-top: 190px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;
@@ -1153,7 +1092,6 @@
 	.hero-caps h1 {
 	    font-size: 30px;
 		line-height: 33px;
-		margin-top: 145px;
 	}
 	.hero-caps h6 {
 		font-size: 20px;

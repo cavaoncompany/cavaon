@@ -93,18 +93,19 @@
 </template>
 
 <script>
-import caseStudies from '../static/content/casestudies.json'
+import caseStudies from '../../static/content/casestudies.json'
 
 export default {
   props: {
-    projectDetails: {
+    projectDetail: {
       type: Object,
       required: true
     }
   },
   data() {
     return {
-      caseStudies: caseStudies
+      caseStudies: caseStudies,
+      projectDetails: caseStudies.caseStudies[0]
     }
   },
   methods: {
