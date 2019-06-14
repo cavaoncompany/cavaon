@@ -4,7 +4,7 @@
       <div class="overlay">
         <div class="container valign">
           <div class="row">
-            <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
+            <article class="col-md-12 col-lg-8 col-md-offset-2 main-caps text-center">
               <h3 class="white">
                 <span>{{ about.title }}</span>
               </h3>
