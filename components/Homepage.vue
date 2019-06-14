@@ -73,7 +73,7 @@
         <section class="inner-section promo-text">
           <div class="container">
             <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
+              <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
                   <span>{{ caseStudies.title }}</span>
                 </h3>
@@ -148,7 +148,7 @@
         <section class="inner-section promo-text silver-bg row">
           <div class="container">
             <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
+              <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
                   <span>{{ testimonials.title }}</span>
                 </h3>
@@ -186,7 +186,7 @@
         <section class="inner-section promo-text">
           <div class="container">
             <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInDown">
+              <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInDown">
                 <h3 class="dark">
                   <span>{{ team.title }}</span>
                 </h3>

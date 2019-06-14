@@ -2,19 +2,19 @@
   <section id="contact" class="contact-form black-bg page page-section" @mouseover="changeUrl('contact')">
     <div class="container">
       <div class="row">
-        <div class="main-caps text-center col-md-12 col-lg-8 col-lg-offset-2">
+        <div class="main-caps text-center col-md-12 col-lg-8 col-md-offset-2">
           <h3 class="white">
             <span>{{ contact.title }}</span>
           </h3>
           <div class="liner color-bg" />
         </div>
-        <div class="contact-info text-center col-md-12 col-lg-8 col-lg-offset-2">
+        <div class="contact-info text-center col-md-12 col-lg-8 col-md-offset-2">
           <a href="tel:+61283797424" class="white contact-info-text">{{ contact.telephone }}</a>
           <p class="white">
             {{ contact.addressLine1 }}<br>{{ contact.addressLine2 }}
           </p>
         </div>
-        <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
+        <article class="col-md-12 col-lg-8 col-md-offset-2 main-caps text-center">
           <div class="contact-item pad-common ">
             <div id="fname" class="alert alert-error error ">
               <p>Name must not be empty</p>

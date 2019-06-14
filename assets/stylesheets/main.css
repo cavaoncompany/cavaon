@@ -1403,7 +1403,10 @@ div#portfolio_thumbs ul li a:hover{
 }
 .team-stage > h6{
 	margin-bottom: 20px;
-	border: 1px solid #FFC716
+	border: 1px solid #FFC716;
+	min-height: 2.3rem;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 .team-stage > h6 > span{
 	font-family: 'Montserrat', sans-serif; font-weight:400;
