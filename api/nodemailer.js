@@ -3,7 +3,7 @@
 const express = require('express')
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
-// const routes = express.Router()
+const router = express.Router()
 const app = express()
 
 app.use(bodyParser.json({ limit: '10mb' }))
@@ -24,11 +24,11 @@ app.post('/', function (req, res) {
   sendMail(emailInfo, emailProvider, attachment)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 })
-app.get('/newProject', function (req, res) {
+router.get('/newProject', function (req, res) {
   res.send('Hello')
 })
 
-// module.exports = routes
+module.exports = router
 
 app.post('/contactUs', function (req, res) {
   const emailInfo = req.body.emailInfo
