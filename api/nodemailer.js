@@ -28,7 +28,7 @@ routes.get('/newProject', function (req, res) {
   res.send('Hello')
 })
 
-module.exports = routes
+// module.exports = routes
 
 app.post('/contactUs', function (req, res) {
   const emailInfo = req.body.emailInfo
