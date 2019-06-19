@@ -97,6 +97,9 @@ module.exports = {
   plugins: [
     { src: '~/plugins/tawkto.js', ssr: false }
   ],
+  server: {
+    port: 3001 // default: 3000
+  },
   serverMiddleware: [
     '~/api/nodemailer'
   ],
