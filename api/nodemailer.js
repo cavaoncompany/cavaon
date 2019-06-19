@@ -33,8 +33,7 @@ module.exports = routes
 app.post('/contactUs', function (req, res) {
   const emailInfo = req.body.emailInfo
   const emailProvider = emailProviderDetails
-  const attachment = req.body.emailInfo.file
-  sendContactUsMail(emailInfo, emailProvider, attachment)
+  sendContactUsMail(emailInfo, emailProvider)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 })
 
@@ -60,6 +59,32 @@ module.exports = {
 }
 
 const sendContactUsMail = (emailInfo, emailProvider) => {
+  const transporter = nodemailer.createTransport({
+    host: emailProvider.service,
+    port: 465,
+    auth: {
+      user: emailProvider.username,
+      pass: emailProvider.password
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  })
+  setTimeout(() => {
+    transporter.sendMail({
+      from: emailInfo.email,
+      to: `${emailProvider.username}`,
+      // to: 'info@cavaon.com',
+      subject: `Enquiry to start a project through www.cavaon.com`,
+      html: `<table style="border: 4px solid #555555; padding: 8px;">
+            <h2>The following message has been received through the Contact us form on www.cavaon.com</h2>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Enquiry from:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.firstname} ${emailInfo.lastname}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Email:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.email}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Message:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.message}</td></tr>
+            </table>`
+      // attachments: attachments
+    })
+  }, 100)
 }
 const sendSubscribeMail = (emailInfo, emailProvider) => {
 }

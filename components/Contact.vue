@@ -133,7 +133,7 @@ export default {
       try {
         // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
-        this.createTicket()
+        // this.createTicket()
         this.sendEmail()
       } catch (error) {
         // eslint-disable-next-line

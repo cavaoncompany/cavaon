@@ -49,24 +49,36 @@ async function createTicket({ state, commit }, payload, path) {
 
 export const actions = {
   async newProject({ state, commit }, payload) {
-    const path = '/.netlify/functions/email'
+    // Netlify path
+    // const path = '/.netlify/functions/email'
+    // Express path
+    const path = 'api/nodemailer/'
     await sendEmail({ state, commit }, payload, path)
   },
   async contactUs({ state, commit }, payload) {
-    const path = '/.netlify/functions/contact'
+    // Netlify path
+    // const path = '/.netlify/functions/contact'
+    // Express path
+    const path = '/api/nodemailer/contactUs'
     await sendEmail({ state, commit }, payload, path)
   },
   async subsribeTo({ state, commit }, payload) {
+    // Netlify path
     const path = '/.netlify/functions/blog'
+    // Express path
     await sendEmail({ state, commit }, payload, path)
   },
   async contactTicket({ state, commit }, payload) {
+    // Netlify path
     const path = '/.netlify/functions/hubspotContact'
+    // Express path
     const result = await createTicket({ state, commit }, payload, path)
     commit('updateTicketCreatedStatus', result)
   },
   async startAProjectTicket({ state, commit }, payload) {
+    // Netlify path
     const path = '/.netlify/functions/hubspotStartAProject'
+    // Express path
     const result = await createTicket({ state, commit }, payload, path)
     commit('updateProjectTicketCreatedStatus', result)
   }
