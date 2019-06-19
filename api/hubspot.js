@@ -1,6 +1,7 @@
 'use strict'
 
 const express = require('express')
-const router = express.Router()
-
-module.exports = router
+const nodemailer = require('nodemailer')
+const bodyParser = require('body-parser')
+const routes = express.Router()
+const app = express()
