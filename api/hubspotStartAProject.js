@@ -1,6 +1,7 @@
 'use strict'
 
 import NodeHubSpotApi from 'node-hubspot-api'
+import { mapState } from 'vuex'
 require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -18,11 +19,14 @@ app.get('/hubspotStartAProject', function (req, res) {
 
 app.post('/hubspotStartAProject', function (req, res) {
   const startAProjectInfo = req.body.ticketInfo
-  createStartAProjectTicket(startAProjectInfo)
+  const attachment = mapState(['uploadFiles'])
+  // eslint-disable-next-line
+  console.log('express attachment: ', attachment)
+  createStartAProjectTicket(startAProjectInfo, attachment)
   res.status(200).json({ 'message': 'Your message has been sent' })
 })
 
-const createStartAProjectTicket = (startAProjectInfo) => {
+const createStartAProjectTicket = (startAProjectInfo, attachment) => {
   const email = startAProjectInfo.email
   const firstname = startAProjectInfo.firstname
   const lastname = startAProjectInfo.lastname
@@ -35,8 +39,14 @@ const createStartAProjectTicket = (startAProjectInfo) => {
   const hearAboutUs = startAProjectInfo.hearAboutUs
   const hearAboutUsOther = startAProjectInfo.hearAboutUsOther
   const brief = startAProjectInfo.brief
-  const message = 'Project type: ' + projectType + '\nTimeframe: ' + timeframe + '\nProject description: ' + projectDescription + '\nHow did you hear about us: ' + hearAboutUs + '\nIf other: ' + hearAboutUsOther + '\nProject brief: ' + brief
   let vid = 0
+  let fileUploadLocation = 'No file uploaded'
+  if (attachment.length > 0) {
+    // eslint-disable-next-line
+    console.log('has attachment: ', attachment[0])
+    fileUploadLocation = attachment[0]
+  }
+  const message = 'Project type: ' + projectType + '\nTimeframe: ' + timeframe + '\nProject description: ' + projectDescription + '\nHow did you hear about us: ' + hearAboutUs + '\nIf other: ' + hearAboutUsOther + '\nProject brief: ' + brief + '\nFile Location: ' + fileUploadLocation
 
   api.contacts.getContactByEmail(email, {
     property: [
