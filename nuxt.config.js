@@ -101,7 +101,9 @@ module.exports = {
     port: 3001 // default: 3000
   },
   serverMiddleware: [
-    '~/api/nodemailer'
+    '~/api/nodemailer',
+    '~/api/hubspotContact',
+    '~/api/hubspotStartAProject'
   ],
   /*
   ** Nuxt.js modules

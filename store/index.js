@@ -70,15 +70,17 @@ export const actions = {
   },
   async contactTicket({ state, commit }, payload) {
     // Netlify path
-    const path = '/.netlify/functions/hubspotContact'
+    // const path = '/.netlify/functions/hubspotContact'
     // Express path
+    const path = '/api/hubspotContact/hubspotContact'
     const result = await createTicket({ state, commit }, payload, path)
     commit('updateTicketCreatedStatus', result)
   },
   async startAProjectTicket({ state, commit }, payload) {
     // Netlify path
-    const path = '/.netlify/functions/hubspotStartAProject'
+    // const path = '/.netlify/functions/hubspotStartAProject'
     // Express path
+    const path = '/api/hubspotContact/hubspotContact'
     const result = await createTicket({ state, commit }, payload, path)
     commit('updateProjectTicketCreatedStatus', result)
   }
