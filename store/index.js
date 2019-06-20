@@ -52,7 +52,7 @@ export const actions = {
     // Netlify path
     // const path = '/.netlify/functions/email'
     // Express path
-    const path = 'api/nodemailer/'
+    const path = 'api/nodemailer/newProject'
     await sendEmail({ state, commit }, payload, path)
   },
   async contactUs({ state, commit }, payload) {

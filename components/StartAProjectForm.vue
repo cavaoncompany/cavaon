@@ -14,7 +14,7 @@
         <form
           id="startAProjectForm"
           class="col-md-12 col-lg-10 col-lg-offset-1"
-          @submit.prevent="createTicket"
+          @submit.prevent="onSubmit"
         >
           <section>
             <input type="hidden" name="form-name" value="start-project">
@@ -276,6 +276,7 @@ export default {
       reader.readAsDataURL(file)
     },
     sendEmail: function () {
+      console.log('Send email hit')
       const projects = []
       for (let i = 0; i < this.projectType.length; i++) {
         projects.push(this.projectType[i].replace('project-form-', ''))
@@ -313,6 +314,7 @@ export default {
       this.briefPath = ''
     },
     createTicket: function () {
+      console.log('createTicket hit')
       const projects = []
       for (let i = 0; i < this.projectType.length; i++) {
         projects.push(this.projectType[i].replace('project-form-', ''))
@@ -339,7 +341,7 @@ export default {
       try {
         // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
-        this.createTicket()
+        // this.createTicket()
         this.sendEmail()
       } catch (error) {
         // eslint-disable-next-line

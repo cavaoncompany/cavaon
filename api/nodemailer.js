@@ -70,9 +70,9 @@ const sendContactUsMail = (emailInfo, emailProvider) => {
       from: emailInfo.email,
       to: `${emailProvider.username}`,
       // to: 'info@cavaon.com',
-      subject: `Enquiry to start a project through www.cavaon.com`,
-      html: `<table style="border: 4px solid #555555; padding: 8px;">
-            <h2>The following message has been received through the Contact us form on www.cavaon.com</h2>
+      subject: `New Contact us message from www.cavaon.com`,
+      html: `<h2>The following message has been received through the Contact us form on www.cavaon.com</h2>
+            <table style="border: 4px solid #555555; padding: 8px;">
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Enquiry from:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.firstname} ${emailInfo.lastname}</td></tr>
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Email:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.email}</td></tr>
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Message:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.message}</td></tr>
@@ -110,17 +110,19 @@ const sendMail = (emailInfo, emailProvider) => {
       // to: 'info@cavaon.com',
       subject: `Enquiry to start a project through www.cavaon.com`,
       html: `<h2>The following enquiry has been received on www.cavaon.com</h2>
-            <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
-            <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
-            <p style="margin-bottom: 10px;"><b>Company:</b> ${emailInfo.company}</p>
-            <p style="margin-bottom: 10px;"><b>Phone:</b> ${emailInfo.phone}</p>
-            <p style="margin-bottom: 10px;"><b>Website:</b> ${emailInfo.website}</p>
-            <p style="margin-bottom: 10px;"><b>Project Type:</b> ${emailInfo.projectType}</p>
-            <p style="margin-bottom: 10px;"><b>Start:</b> ${emailInfo.timeframe}</p>
-            <p style="margin-bottom: 10px;"><b>Project Description:</b> ${emailInfo.projectDescription}</p>
-            <p style="margin-bottom: 10px;"><b>Where did you hear about us:</b> ${emailInfo.hearAboutUs}</p>
-            <p style="margin-bottom: 10px;"><b>Other:</b> ${emailInfo.hearAboutUsOther}</p>
-            <p style="margin-bottom: 10px;"><b>Brief:</b> ${emailInfo.brief}</p>`,
+            <table style="border: 4px solid #555555; padding: 8px;">
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Enquiry from:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.firstname} ${emailInfo.lastname}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Email:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.email}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Company:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.company}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Phone:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.phone}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Website:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.website}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Project Type:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.projectType}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Start:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.timeframe}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Project Description:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.projectDescription}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Where did you hear about us:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.hearAboutUs}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Other:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.hearAboutUsOther}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Brief:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.brief}</td></tr>
+            </table>`,
       attachments: attachments
     })
   }, 100)
