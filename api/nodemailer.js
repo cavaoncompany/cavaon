@@ -3,7 +3,7 @@
 const express = require('express')
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
-const router = express.Router()
+// const router = express.Router()
 const app = express()
 
 app.use(bodyParser.json({ limit: '10mb' }))
@@ -17,18 +17,18 @@ const emailProviderDetails = {
   password: process.env.emailpassword
 }
 
-app.post('/', function (req, res) {
-  const emailInfo = req.body.emailInfo
-  const emailProvider = req.body.emailProvider
-  const attachment = req.body.emailInfo.file
-  sendMail(emailInfo, emailProvider, attachment)
-  res.status(200).json({ 'message': 'Your mail was sent successfully' })
-})
-router.get('/newProject', function (req, res) {
+// app.post('/', function (req, res) {
+//   const emailInfo = req.body.emailInfo
+//   const emailProvider = req.body.emailProvider
+//   const attachment = req.body.emailInfo.file
+//   sendMail(emailInfo, emailProvider, attachment)
+//   res.status(200).json({ 'message': 'Your mail was sent successfully' })
+// })
+app.get('/newProject', function (req, res) {
   res.send('Hello')
 })
 
-module.exports = router
+// module.exports = router
 
 app.post('/contactUs', function (req, res) {
   const emailInfo = req.body.emailInfo
@@ -52,11 +52,6 @@ app.post('/newProject', function (req, res) {
   sendMail(emailInfo, emailProvider, attachment)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 })
-
-module.exports = {
-  path: '/api/nodemailer',
-  handler: app
-}
 
 const sendContactUsMail = (emailInfo, emailProvider) => {
   const transporter = nodemailer.createTransport({
@@ -129,4 +124,9 @@ const sendMail = (emailInfo, emailProvider) => {
       attachments: attachments
     })
   }, 100)
+}
+
+module.exports = {
+  path: '/api/nodemailer',
+  handler: app
 }

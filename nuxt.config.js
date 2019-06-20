@@ -108,6 +108,7 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
     '@nuxtjs/google-analytics',
     '@nuxtjs/recaptcha',
     '@nuxtjs/sitemap'
@@ -137,7 +138,6 @@ module.exports = {
     ** You can extend webpack config here
     */
     // analyze: true,
-    vendor: ['axios'],
     plugins: [
       new webpack.ProvidePlugin({
         '$': 'jquery'
