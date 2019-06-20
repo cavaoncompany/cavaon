@@ -1,5 +1,6 @@
 import fs from 'fs'
 import unirest from 'unirest'
+import { mutations } from '../store'
 require('dotenv').config()
 const hubspotapikey = process.env.hubspotapikey
 
@@ -49,12 +50,12 @@ export function uploadFile(filename, submittedFile) {
         .attach('file', fs.createReadStream(filename)) // Attachment
         .end(function (response) {
           const uploadFiles = []
-          uploadFiles.push(response.body)
-          this.$store.dispatch('uploadFiles', uploadFiles)
+          uploadFiles.push(response.body.friendly_url)
+          console.log(uploadFiles[0])
+          mutations.updateUploadFiles(uploadFiles)
           // eslint-disable-next-line
           console.log(response.body)
           resolve(response)
-          // other option is callback()?
         })
     })
   })

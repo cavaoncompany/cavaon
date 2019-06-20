@@ -1,6 +1,4 @@
-import axios from '~/plugins/axios'
-
-// import * as request from 'request'
+import axios from '../plugins/axios.js'
 
 export const state = () => ({
   ticketCreatedStatus: 'pending',

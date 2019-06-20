@@ -1,6 +1,7 @@
 'use strict'
 
 import NodeHubSpotApi from 'node-hubspot-api'
+import { uploadFile } from './uploadFile.js'
 import { mapState } from 'vuex'
 require('dotenv').config()
 const express = require('express')
@@ -39,6 +40,7 @@ const createStartAProjectTicket = (startAProjectInfo, attachment) => {
   const hearAboutUs = startAProjectInfo.hearAboutUs
   const hearAboutUsOther = startAProjectInfo.hearAboutUsOther
   const brief = startAProjectInfo.brief
+  const file = startAProjectInfo.file
   let vid = 0
   let fileUploadLocation = 'No file uploaded'
   if (attachment.length > 0) {
@@ -47,7 +49,7 @@ const createStartAProjectTicket = (startAProjectInfo, attachment) => {
     fileUploadLocation = attachment[0]
   }
   const message = 'Project type: ' + projectType + '\nTimeframe: ' + timeframe + '\nProject description: ' + projectDescription + '\nHow did you hear about us: ' + hearAboutUs + '\nIf other: ' + hearAboutUsOther + '\nProject brief: ' + brief + '\nFile Location: ' + fileUploadLocation
-
+  uploadFile(brief, file)
   api.contacts.getContactByEmail(email, {
     property: [
       firstname, lastname, email
