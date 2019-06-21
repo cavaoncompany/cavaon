@@ -180,7 +180,8 @@ const createStartAProjectTicket = (startAProjectInfo, attachment) => {
             lastname: lastname,
             company: company,
             website: website,
-            phone: phone
+            phone: phone,
+            lifecyclestage: 'lead'
           })
             .then((response) => {
               vid = response.data.vid

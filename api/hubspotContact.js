@@ -71,7 +71,8 @@ const createContactUsTicket = (ticketInfo) => {
         api.contacts.createContact({
           email: email,
           firstname: firstname,
-          lastname: lastname
+          lastname: lastname,
+          lifecyclestage: 'lead'
         })
           .then((response) => {
             vid = response.data.vid
