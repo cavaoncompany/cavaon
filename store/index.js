@@ -76,7 +76,7 @@ export const actions = {
     // Netlify path
     // const path = '/.netlify/functions/hubspotContact'
     // Express path
-    const path = '/api/hubspotContact/hubspotContact' || '/.netlify/functions/hubspotContact'
+    const path = '/.netlify/functions/hubspotContact' || '/api/hubspotContact/hubspotContact'
     const result = await createTicket({ state, commit }, payload, path)
     commit('updateTicketCreatedStatus', result)
   },
