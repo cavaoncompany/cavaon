@@ -50,11 +50,11 @@ export function uploadFile(filename, submittedFile) {
         .attach('file', fs.createReadStream(filename)) // Attachment
         .end(function (response) {
           const uploadFiles = []
-          uploadFiles.push(response.body.friendly_url)
-          console.log(uploadFiles[0])
+          uploadFiles.push(response.body.objects[0].friendly_url)
+          console.log('uploadfunction file log: ', uploadFiles[0])
           mutations.updateUploadFiles(uploadFiles)
           // eslint-disable-next-line
-          console.log(response.body)
+          console.log('response.body: ', response.body)
           resolve(response)
         })
     })

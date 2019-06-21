@@ -1,8 +1,8 @@
 'use strict'
 
 import NodeHubSpotApi from 'node-hubspot-api'
+import { getters } from '../store'
 import { uploadFile } from './uploadFile.js'
-import { mapState } from 'vuex'
 require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -20,7 +20,8 @@ app.get('/hubspotStartAProject', function (req, res) {
 
 app.post('/hubspotStartAProject', function (req, res) {
   const startAProjectInfo = req.body.ticketInfo
-  const attachment = mapState(['uploadFiles'])
+  const getAttachment = function () { return getters.uploadFiles }
+  const attachment = getAttachment()
   // eslint-disable-next-line
   console.log('express attachment: ', attachment)
   createStartAProjectTicket(startAProjectInfo, attachment)
