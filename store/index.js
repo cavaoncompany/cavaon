@@ -61,9 +61,9 @@ export const actions = {
   },
   async contactUs({ state, commit }, payload) {
     // Netlify path
-    const path = '/.netlify/functions/contact'
+    // const path = '/.netlify/functions/contact'
     // Express path
-    // const path = '/api/nodemailer/contactUs'
+    const path = '/api/nodemailer/contactUs'
     await sendEmail({ state, commit }, payload, path)
   },
   async subsribeTo({ state, commit }, payload) {
@@ -74,9 +74,9 @@ export const actions = {
   },
   async contactTicket({ state, commit }, payload) {
     // Netlify path
-    const path = '/.netlify/functions/hubspotContact'
+    // const path = '/.netlify/functions/hubspotContact'
     // Express path
-    // const path = '/api/hubspotContact/hubspotContact'
+    const path = '/api/hubspotContact/hubspotContact'
     const result = await createTicket({ state, commit }, payload, path)
     commit('updateTicketCreatedStatus', result)
   },
