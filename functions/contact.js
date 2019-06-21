@@ -48,7 +48,7 @@ const sendMail = (emailInfo, emailProvider) => {
       to: 'info@cavaon.com',
       subject: `Contact Us Message received through www.cavaon.com`,
       html: `<h2>The following message has been received through the Contact us form on www.cavaon.com</h2>
-            <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
+            <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.firstname} ${emailInfo.lastname}</p>
             <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
             <p style="margin-bottom: 10px;"><b>Message:</b> ${emailInfo.message}</p>`
       // attachments: attachments
