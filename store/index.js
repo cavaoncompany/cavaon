@@ -2,8 +2,7 @@ import axios from '../plugins/axios.js'
 
 export const state = () => ({
   ticketCreatedStatus: 'pending',
-  projectTicketCreatedStatus: 'pending',
-  uploadFiles: []
+  projectTicketCreatedStatus: 'pending'
 })
 
 export const mutations = {
@@ -20,13 +19,7 @@ export const mutations = {
 
 export const getters = {
   ticketCreatedStatus: state => state.ticketCreatedStatus,
-  projectTicketCreatedStatus: state => state.projectTicketCreatedStatus,
-  // uploadFiles: (state) => {
-  //   return state.uploadFiles
-  // },
-  uploadFiles() {
-    return state.uploadFiles
-  }
+  projectTicketCreatedStatus: state => state.projectTicketCreatedStatus
 }
 
 async function sendEmail({ state, commit }, payload, path) {
@@ -92,8 +85,5 @@ export const actions = {
     const path = '/api/hubspotStartAProject/hubspotStartAProject'
     const result = await createTicket({ state, commit }, payload, path)
     commit('updateProjectTicketCreatedStatus', result)
-  },
-  async uploadFiles({ state, commit }, payload) {
-    await commit('updateUploadFiles', payload)
   }
 }
