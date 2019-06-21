@@ -276,7 +276,6 @@ export default {
       reader.readAsDataURL(file)
     },
     sendEmail: function () {
-      console.log('Send email hit')
       const projects = []
       for (let i = 0; i < this.projectType.length; i++) {
         projects.push(this.projectType[i].replace('project-form-', ''))
@@ -314,7 +313,6 @@ export default {
       this.briefPath = ''
     },
     createTicket: function () {
-      console.log('createTicket hit')
       const projects = []
       for (let i = 0; i < this.projectType.length; i++) {
         projects.push(this.projectType[i].replace('project-form-', ''))

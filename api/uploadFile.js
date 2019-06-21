@@ -1,6 +1,5 @@
 import fs from 'fs'
 import unirest from 'unirest'
-import { mutations } from '../store'
 require('dotenv').config()
 const hubspotapikey = process.env.hubspotapikey
 
@@ -28,11 +27,6 @@ export function uploadFile(filename, submittedFile) {
         // eslint-disable-next-line
         return console.log(err)
       }
-      // eslint-disable-next-line
-            console.log("The file was saved!")
-      // eslint-disable-next-line
-            console.log('starting to upload file -> ' + filename)
-
       unirest.post('https://api.hubapi.com/filemanager/api/v2/files?hapikey=' + hubspotapikey)
         .headers({
           // 'Authorization': 'Bearer ' + hubspotParams['accessToken'],
@@ -49,12 +43,6 @@ export function uploadFile(filename, submittedFile) {
       // .attach('file', fs.createReadStream("test.txt")) // Attachment
         .attach('file', fs.createReadStream(filename)) // Attachment
         .end(function (response) {
-          const uploadFiles = []
-          uploadFiles.push(response.body.objects[0].friendly_url)
-          console.log('uploadfunction file log: ', uploadFiles[0])
-          mutations.updateUploadFiles(uploadFiles)
-          // eslint-disable-next-line
-          console.log('response.body: ', response.body)
           resolve(response)
         })
     })

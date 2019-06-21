@@ -21,7 +21,12 @@ export const mutations = {
 export const getters = {
   ticketCreatedStatus: state => state.ticketCreatedStatus,
   projectTicketCreatedStatus: state => state.projectTicketCreatedStatus,
-  uploadFiles: state => state.uploadFiles
+  // uploadFiles: (state) => {
+  //   return state.uploadFiles
+  // },
+  uploadFiles() {
+    return state.uploadFiles
+  }
 }
 
 async function sendEmail({ state, commit }, payload, path) {
@@ -88,7 +93,7 @@ export const actions = {
     const result = await createTicket({ state, commit }, payload, path)
     commit('updateProjectTicketCreatedStatus', result)
   },
-  uploadFiles({ state, commit }, payload) {
-    commit('updateUploadFiles', payload)
+  async uploadFiles({ state, commit }, payload) {
+    await commit('updateUploadFiles', payload)
   }
 }
