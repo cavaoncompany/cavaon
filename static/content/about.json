@@ -1,10 +1,18 @@
 {
-  "title": "A LITTLE MORE ABOUT US",
-  "desktopSection1": "We are a Sydney based digital business & platform solutions company specialised in building digital plans and products for clients who need help in reinventing their business model and move rapidly from ideas to plans which turn into competitive advantages.",
-  "desktopSection2": "With over 6 years experience of building digital platforms for international travel companies, Co-founders John & Wayne manage to have extensive insights of the travel industry and a team of developers with professional skills and experience to practice the most up to the minute digital building techniques.",
-  "desktopSection3": "The team have been very successful in building digital platforms for travel companies such as online booking systems, tour management systems and e-commerce travel platform. Moving forward, Cavaon is now became an integrated “one stop shop\" solution offering additional digital marketing, design, branding services.",
-  "desktopSection4": "We are a team of enthusiastic and motivated young developers who love to champion creative ideas and take down challenges. The core values of the Cavaon team are to be Professional, Passionate and Innovative.",
-  "mobileSection1": "We are a young, energetic, and motivated digital business and platform solutions company based in Sydney. We care about our customers and are focused on increasing your business value.",
-  "mobileSection2": "Our vision: Every business can change its success by turning digital.",
-  "mobileSection3": "Our mission: Helping businesses to find the perfect and most successful digital solution"
+  "title": "MORE ABOUT CAVAON",
+  "paragraphsDesktop": [
+    "We are a Sydney based digital business & platform solutions company specialised in building digital plans and products for clients who need help in reinventing their business model and move rapidly from ideas to plans which turn into competitive advantages.",
+    "With over 6 years experience of building digital platforms for international travel companies",
+    "Co-founders John & Wayne manage to have extensive insights of the travel industry and a team of developers with professional skills and experience to practice the most up to the minute digital building techniques.",
+    "The team have been very successful in building digital platforms for travel companies such as online booking systems",
+    "tour management systems and e-commerce travel platform. Moving forward",
+    "Cavaon is now an integrated “one stop shop offering additional digital marketing",
+    "design",
+    "branding services."
+  ],
+  "paragraphsMobile": [
+    "We are a young, energetic, and motivated digital business and platform solutions company based in Sydney. We care about our customers and are focused on increasing your business value.",
+    "Our vision: Every business can change its success by turning digital.",
+    "Our mission: Helping businesses to find the perfect and most successful digital solution"
+  ]
 }

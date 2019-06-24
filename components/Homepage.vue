@@ -1,13 +1,13 @@
 <template>
   <div>
-    <HeaderMobile :projectFormOpen="projectFormOpen" />
+    <HeaderMobile />
     <div id="iosMessage" />
     <!-- Master Wrap : starts -->
     <section id="mastwrap">
       <section id="intro" class="intro">
-        <HeaderTop :projectFormOpen="projectFormOpen" />
+        <HeaderTop />
         <!-- <div class="valignBanner"> -->
-        <div class="container hero-container">
+        <div class="container hero-container" @mouseover="changeUrl('')">
           <div class="hero-caps text-rotator">
             <h1 class="white desktop-banner">
               <span>{{ banner.titleTop }}</span>
@@ -21,7 +21,7 @@
               <span>{{ banner.subHeader }}</span>
             </h6>
             <div class="welcome-button">
-              <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ banner.buttonText }}</a>
+              <a class="btn btn-odin btn-odin-color" href="/start-a-project">{{ banner.buttonText }}</a>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
           </div>
         </a>
       </section>
-      <HeaderStandard :projectFormOpen="projectFormOpen" />
+      <HeaderStandard />
       <Flowchart />
       <FlowchartMobile />
       <!-- page-section : starts -->
@@ -52,14 +52,14 @@
                   id="number-desktop"
                   ref="codecounter"
                   class="color counter"
-                  :startVal="startVal"
-                  :endVal="linesOfCode"
+                  :start-val="startVal"
+                  :end-val="linesOfCode"
                   :autoplay="false"
                   :duration="3000"
                 />
                 <h2><span class="white">{{ promo.promoText }}</span></h2>
                 <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="#start-a-project" @click="openStartAProjectForm">{{ promo.buttonText }}</a>
+                  <a class="btn btn-odin btn-odin-color" href="/start-a-project">{{ promo.buttonText }}</a>
                 </div>
               </article>
             </div>
@@ -67,45 +67,13 @@
         </div>
       </div>
 
-      <!-- inner-section:starts -->
-      <!-- <section class="inner-section clients-wrap black-bg">
-        <div class="container">
-          <div class="row">
-            <article class="col-md-12 text-center"> -->
-      <!-- carousel:starts -->
-      <!-- <div id="client-carousel" class="clients-carousel owl-carousel owl-nav-sticky-extra-wide owl-theme"> -->
-      <!-- item:starts -->
-      <!-- <div class="item client-carousel-item client-stage">
-        <img data-no-retina alt="Let's Travel" title="Let's Travel" src="/images/Client-logo-lets-travel.png">
-      </div> -->
-      <!-- item:ends -->
-
-      <!-- item:starts -->
-      <!-- <div class="item client-carousel-item client-stage">
-        <img data-no-retina alt="Travel Dream" title="Travel Dream" src="/images/Client-Logo-Travel-Dream.png">
-      </div> -->
-      <!-- item:ends -->
-
-      <!-- item:starts -->
-      <!-- <div class="item client-carousel-item client-stage">
-        <img data-no-retina alt="Inspiring Vacations" title="Inspiring Vacations" src="/images/Client-Logo-Inspiring-Vacations.png">
-      </div> -->
-      <!-- item:ends -->
-      <!-- </div> -->
-      <!-- carousel:ends -->
-      <!-- </article>
-          </div>
-        </div>
-      </section> -->
-      <!-- inner-section:ends -->
-
       <!-- page-section : starts -->
       <section id="caseStudies" class="page portfolio page-section remove-pad-bottom white-bg">
         <!-- inner-section:starts -->
         <section class="inner-section promo-text">
           <div class="container">
             <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
+              <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
                   <span>{{ caseStudies.title }}</span>
                 </h3>
@@ -122,28 +90,16 @@
           <div id="item_container" class="clearfix" />
         </section>
         <!-- inner-section:ends -->
-        <ProjectWithSlider :projectDetails="projectDetails" />
+        <ProjectWithSlider :project-details="projectDetails" />
         <!-- inner-section : starts -->
         <section class="inner-section add-top-quarter">
           <!-- Filter -->
           <div id="filter" class="clearfix">
-            <div id="filter_wrapper">
-              <!-- <ul id="portfolioFilter">
-                <li class="filter" data-filter="all">
-                  All
-                </li>
-                <li class="filter" data-filter="category1">
-                  Let's Travel
-                </li>
-                <li class="filter" data-filter="category2">
-                  Travel Dream
-                </li>
-              </ul> -->
-            </div>
+            <div id="filter_wrapper" />
           </div>
           <!-- End: Filter -->
 
-          <section id="portfolio-wrap">
+          <section id="portfolio-wrap" @mouseover="changeUrl('case-studies')">
             <!-- Thumbnails -->
             <div id="portfolio_thumbs">
               <ul id="grid" class="sortablePortfolio clearfix">
@@ -151,7 +107,7 @@
                 <li class="folio-thumb mix category1">
                   <a href="projects/project-slider" class="more_info" @click="updateProjectDetails('letsTravel')">
                     <!-- Thumbnail -->
-                    <img data-no-retina alt="odin" title="odin" src="/images/Case-studies-Lets-Travel.png" @click="updateProjectDetails('letsTravel')">
+                    <img data-no-retina alt="Let's-Travel" title="Let's Travel" src="/images/Case-studies-Lets-Travel.png" @click="updateProjectDetails('letsTravel')">
                     <!-- Info -->
                     <div class="item_info">
                       <div class="valign" @click="updateProjectDetails('letsTravel')">
@@ -166,7 +122,7 @@
                 <li class="folio-thumb mix category2">
                   <a href="projects/project-slider" class="more_info" @click="updateProjectDetails('travelDream')">
                     <!-- Thumbnail -->
-                    <img data-no-retina alt="odin" title="odin" src="/images/Case-Studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
+                    <img data-no-retina alt="Travel-Dream" title="Travel Dream" src="/images/Case-Studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
                     <!-- Info -->
                     <div class="item_info">
                       <div class="valign">
@@ -192,7 +148,7 @@
         <section class="inner-section promo-text silver-bg row">
           <div class="container">
             <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
+              <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
                 <h3 class="dark">
                   <span>{{ testimonials.title }}</span>
                 </h3>
@@ -203,7 +159,7 @@
         <!-- inner-section:ends -->
 
         <!-- inner-section : starts -->
-        <section class="inner-section text-center silver-bg row">
+        <section class="inner-section text-center silver-bg row" @mouseover="changeUrl('testimonials')">
           <!-- <div id="testimonial-carousel" class="testimonial-carousel owl-carousel"> -->
           <div class="container">
             <div class="testimonial-wrapper">
@@ -225,12 +181,12 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="team-container" class="page team page-section remove-pad-bottom white-bg">
+      <section id="team-container" class="page team page-section remove-pad-bottom white-bg" @mouseover="changeUrl('team')">
         <!-- inner-section:starts -->
         <section class="inner-section promo-text">
           <div class="container">
             <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInDown">
+              <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInDown">
                 <h3 class="dark">
                   <span>{{ team.title }}</span>
                 </h3>
@@ -298,124 +254,8 @@
         </section>
       </section>
       <!-- page-section : ends -->
-
-      <!-- page-section : starts -->
-      <section id="about" class="contact page intermediate-section full-height parallax about-us-desktop">
-        <div class="overlay">
-          <div class="container valign">
-            <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
-                <h3 class="white">
-                  <span>{{ about.title }}</span>
-                </h3>
-                <div class="liner color-bg" />
-                <p class="white">
-                  {{ about.desktopSection1 }}
-                </p>
-                <p class="white">
-                  {{ about.desktopSection2 }}
-                </p>
-                <p class="white">
-                  {{ about.desktopSection3 }}
-                </p>
-                <p class="white">
-                  {{ about.desktopSection4 }}
-                </p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="about-mobile" class="contact page intermediate-section parallax about-us-mobile">
-        <div class="overlay">
-          <div class="container valign">
-            <div class="row">
-              <article class="col-md-12 text-center">
-                <h3 class="white">
-                  <span>{{ about.title }}</span>
-                </h3>
-                <div class="liner color-bg" />
-                <p class="white">
-                  {{ about.mobileSection1 }}
-                </p>
-                <p class="white vision">
-                  {{ about.mobileSection2 }}
-                </p>
-                <p class="white mission">
-                  {{ about.mobileSection3 }}
-                </p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="contactForm" class="contact-form black-bg page page-section">
-        <div class="container">
-          <div class="row">
-            <div class="main-caps text-center col-md-12 col-lg-8 col-lg-offset-2">
-              <h3 class="white">
-                <span>{{ contact.title }}</span>
-              </h3>
-              <div class="liner color-bg" />
-            </div>
-            <div class="contact-info text-center col-md-12 col-lg-8 col-lg-offset-2">
-              <a href="tel:+61283797424" class="white contact-info-text">{{ contact.telephone }}</a>
-              <p class="white">
-                {{ contact.addressLine1 }}<br>{{ contact.addressLine2 }}
-              </p>
-            </div>
-            <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
-              <div class="contact-item pad-common ">
-                <div id="fname" class="alert alert-error error ">
-                  <p>Name must not be empty</p>
-                </div>
-                <div id="fmail" class="alert alert-error  error">
-                  <p>Please provide a valid email</p>
-                </div>
-                <div id="fmsg" class="alert alert-error  error">
-                  <p>Message should not be empty</p>
-                </div>
-                <form
-                  id="contact-form"
-                  name="contact"
-                  @submit.prevent="onSubmit"
-                >
-                  <input type="hidden" name="form-name" value="contact">
-                  <p class="hidden">
-                    <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-                  </p>
-                  <article>
-                    <label class="hidden" for="name">Name</label>
-                    <input id="name" type="text" :placeholder="contact.namePlaceholder" name="name" v-model="name" size="100">
-                  </article>
-                  <article>
-                    <label class="hidden" for="email">Email</label>
-                    <input
-                      id="email"
-                      type="email"
-                      :placeholder="contact.emailPlaceholder"
-                      name="email"
-                      size="30"
-                      v-model="email"
-                      required
-                    >
-                  </article>
-                  <article>
-                    <label for="msg" class="hidden">Message</label>
-                    <textarea id="msg" :placeholder="contact.messagePlaceholder" name="message" v-model="message" cols="40" rows="3" />
-                    <div class="btn-wrap  text-center">
-                      <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
-                        {{ contact.buttonText }}
-                      </button>
-                    </div>
-                  </article>
-                </form>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-      <StartAProjectForm v-if="projectFormOpen === true" />
+      <About />
+      <Contact />
       <Footer />
     </section>
     <!-- Master Wrap : ends -->
@@ -424,10 +264,9 @@
 
 <script>
 import countTo from 'vue-count-to'
+import { mapState } from 'vuex'
 import banner from '../static/content/banner.json'
-import contact from '../static/content/contact.json'
 import caseStudies from '../static/content/casestudies.json'
-import about from '../static/content/about.json'
 import team from '../static/content/team.json'
 import testimonials from '../static//content/testimonials.json'
 import services from '../static/content/services.json'
@@ -435,16 +274,16 @@ import projects from '../static/content/projects.json'
 import promo from '../static/content/promo.json'
 import blog from '../static/content/blog.json'
 import messages from '../static/content/messages.json'
-import EventBus from '../event-bus.js'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
 import HeaderStandard from './HeaderStandard'
+import About from './About'
+import Contact from './Contact'
 import Flowchart from './Flowchart'
 import FlowchartMobile from './FlowchartMobile'
 import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
 import ArticleList from './blog/Article-list'
-import StartAProjectForm from './StartAProjectForm'
 import Footer from './Footer'
 
 export default {
@@ -452,13 +291,14 @@ export default {
     HeaderMobile,
     HeaderTop,
     HeaderStandard,
+    About,
+    Contact,
     Flowchart,
     FlowchartMobile,
     Services,
     ProjectWithSlider,
     ArticleList,
     countTo,
-    StartAProjectForm,
     Footer
   },
   props: {
@@ -473,8 +313,6 @@ export default {
     return {
       caseStudies: caseStudies,
       projectDetails: caseStudies.caseStudies[0],
-      contact: contact,
-      about: about,
       team: team,
       testimonials: testimonials,
       services: services,
@@ -489,20 +327,36 @@ export default {
       startVal: 3564,
       projectFormOpen: false,
       posts: posts,
-      name: '',
+      firstname: '',
+      lastname: '',
       email: '',
       message: '',
       blogCount: 0
     }
   },
+  computed: mapState(['ticketCreatedStatus']),
+  watch: {
+    ticketCreatedStatus(newValue, oldValue) {
+      if (newValue === 'success') {
+        this.$router.replace({ path: 'success' })
+      }
+    }
+  },
   created() {
-    EventBus.$on('closeStartAProjectForm', (formOpen) => {
-      this.closeStartAProjectForm()
-    })
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
     this.blogCount = this.posts.length
+    if (process.client) {
+      // eslint-disable-next-line
+      window.onpopstate = function(event) {
+        // eslint-disable-next-line
+        if (document.location.toString().indexOf('case-studies')) {
+          // eslint-disable-next-line
+          window.location = '/'
+        }
+      }
+    }
   },
   async mounted() {
     await this.$recaptcha.init()
@@ -521,47 +375,17 @@ export default {
     counterMouseOver: function () {
       this.$refs.codecounter.start()
     },
+    changeUrl: function (link) {
+      history.pushState({}, null, '/' + link)
+    },
     teamMouseOver: function (name, image) {
       document.getElementById(name).src = image
-    },
-    openStartAProjectForm: function () {
-      this.projectFormOpen = true
-    },
-    closeStartAProjectForm: function () {
-      this.projectFormOpen = false
-    },
-    sendEmail () {
-      const emailData = {
-        email: this.email,
-        name: this.name,
-        message: this.message
-      }
-      this.$store.dispatch('contactUs', emailData)
-      this.name = ''
-      this.email = ''
-      this.message = ''
-      this.$router.replace({ path: 'success' })
-    },
-    async onSubmit() {
-      try {
-        const token = await this.$recaptcha.execute('login')
-        this.sendEmail()
-      } catch (error) {
-        console.log('Submission error:', error)
-      }
-    },
+    }
   }
 }
 </script>
 
 <style>
-  #about p {
-    line-height: 1.5rem;
-    padding-top: 10px;
-  }
-  .contact {
-    position: relative;
-  }
   .promo-section {
     position: relative;
   }
@@ -576,20 +400,7 @@ export default {
   .avatar {
     width: 58px;
   }
-  .contact-form ::placeholder {
-    color: #FFF;
-  }
-  .contact-info-text {
-    line-height: 30px;
-  }
-  .contact-info {
-    margin-bottom: 60px;
-    margin-top: 15px;
-  }
-  .contact-info a:hover {
-    color: #ffc716;
-  }
-  #testimonials .inner-section, #blog .inner-section {
+  #testimonials .inner-section {
     width: 100%;
     margin-left: 0;
   }
@@ -625,9 +436,15 @@ export default {
   }
   .text-rotator {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
   }
   .hero-container {
     position: relative;
+    height: 100vh;
   }
   .blog-welcome-button {
     margin: 0 auto;

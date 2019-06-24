@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Homepage :showInstallMessage="showInstallMessage" />
+    <Homepage :show-install-message="showInstallMessage" />
   </div>
 </template>
 
@@ -9,6 +9,7 @@ import metadata from '../static/content/metadata.json'
 import Homepage from '../components/Homepage.vue'
 
 export default {
+  name: 'Home',
   components: {
     Homepage
   },

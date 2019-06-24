@@ -21,10 +21,18 @@
               <section class="form-input">
                 <article>
                   <input
-                    v-model="subscriberName"
+                    v-model="subscriberFirstname"
                     type="text"
-                    :placeholder="blog.namePlaceholder"
-                    name="subscriberName"
+                    :placeholder="blog.firstnamePlaceholder"
+                    name="subscriberFirstname"
+                  >
+                </article>
+                <article>
+                  <input
+                    v-model="subscriberLastname"
+                    type="text"
+                    :placeholder="blog.lastnamePlaceholder"
+                    name="subscriberLastname"
                   >
                 </article>
                 <article>
@@ -94,7 +102,8 @@ export default {
     return {
       posts,
       blog: blog,
-      subscriberName: '',
+      subscriberFirstame: '',
+      subscriberLastname: '',
       subscriberEmail: '',
       messageSent: false
     }
@@ -103,11 +112,13 @@ export default {
     sendEmail () {
       const emailData = {
         email: this.subscriberEmail,
-        name: this.subscriberName,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname,
       }
       this.$store.dispatch('subsribeTo', emailData)
-      this.name = ''
-      this.email = ''
+      this.subscriberFirstame = '',
+      this.subscriberLastname = '',
+      this.subscriberEmail = ''
       // this.$router.replace({ path: 'success' })
     },
     async onSubmit() {
