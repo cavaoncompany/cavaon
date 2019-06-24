@@ -9,7 +9,7 @@ const hubspotapikey = process.env.hubspotapikey
 const api = new NodeHubSpotApi(hubspotapikey)
 
 app.use(bodyParser.json({ limit: '10mb' }))
-app.use(bodyParser.urlencoded({ limit: '10mb' }))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 app.use(express.json())
 
 app.get('/createSubscriber', function (req, res) {
@@ -37,31 +37,33 @@ const createSubscriber = (subscriberInfo) => {
     showListMemberships: false
   })
     .then((response) => {
-      // update contact lifecycle
       vid = response.data.vid
-      api.uptactContactById({
+      api.contacts.updateContactById({
         email: email,
         firstname: firstname,
         lastname: lastname,
-        lifecyclestage: 'subscriber'
+        blogsubscriber: 'Yes'
       }, vid)
     })
-    .catch((error) => {
-      return error
+    .then(() => {
+      // eslint-disable-next-line
+      console.log('Contact updated.')
     })
     .catch((error) => {
       if (error.statusCode === 'contact does not exist') {
+        // eslint-disable-next-line
+        console.log('Creating contact')
         api.contacts.createContact({
           email: email,
           firstname: firstname,
           lastname: lastname,
-          lifecyclestage: 'subscriber'
+          blogsubscriber: 'Yes'
         })
       }
     })
     .catch((error) => {
       // eslint-disable-next-line
-      console.error(error)
+      console.error('An error occured while creating a new contact', error)
     })
 }
 

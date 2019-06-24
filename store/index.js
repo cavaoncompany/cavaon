@@ -81,7 +81,7 @@ export const actions = {
     // Netlify path
     // const path = '/.netlify/functions/blog'
     // Express path
-    const path = '/api/hubspotBlogSignup/createSubscriber'
+    const path = '/api/nodemailer/blog'
     await sendEmail({ state, commit }, payload, path)
   },
   async contactTicket({ state, commit }, payload) {

@@ -21,10 +21,10 @@
               <section class="form-input">
                 <article>
                   <input
-                    v-model="subscriberFirstname"
+                    v-model="subscriberFirstame"
                     type="text"
                     :placeholder="blog.firstnamePlaceholder"
-                    name="subscriberFirstname"
+                    name="subscriberFirstame"
                   >
                 </article>
                 <article>
@@ -113,17 +113,25 @@ export default {
       const emailData = {
         email: this.subscriberEmail,
         firstname: this.subscriberFirstame,
-        lastname: this.subscriberLastname,
+        lastname: this.subscriberLastname
       }
       this.$store.dispatch('subsribeTo', emailData)
       this.subscriberFirstame = '',
       this.subscriberLastname = '',
       this.subscriberEmail = ''
-      // this.$router.replace({ path: 'success' })
+    },
+    createSubscriber () {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createSubscriber', subscriberInfo)
     },
     async onSubmit() {
       try {
         const token = await this.$recaptcha.execute('login')
+        this.createSubscriber()
         this.sendEmail()
         this.messageSent = true
       } catch (error) {
