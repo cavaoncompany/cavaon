@@ -99,16 +99,19 @@ module.exports = {
     { src: '~/plugins/tawkto.js', ssr: false }
   ],
   server: {
-    port: 3002 // default: 3000
+    port: 3001 // default: 3000
   },
   serverMiddleware: [
-    '~/api/nodemailer'
+    '~/api/nodemailer',
+    '~/api/hubspotContact',
+    '~/api/hubspotStartAProject'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
     '@nuxtjs/google-analytics',
     '@nuxtjs/recaptcha',
     '@nuxtjs/sitemap'
@@ -138,7 +141,6 @@ module.exports = {
     ** You can extend webpack config here
     */
     // analyze: true,
-    vendor: ['axios'],
     plugins: [
       new webpack.ProvidePlugin({
         '$': 'jquery'

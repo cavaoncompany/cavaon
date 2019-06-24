@@ -6,7 +6,7 @@
         <div class=" folio-align">
           <div class="container">
             <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center">
+              <article class="col-md-12 col-lg-8 col-md-offset-2 text-center">
                 <div class="project-page-caps remove-pad-top remove-pad-bottom  add-top-quarter text-center">
                   <h2 class="dark">
                     {{ projectDetails.projectTitle }}
@@ -37,7 +37,7 @@
           <div class="container pad-top-half pad-bottom-half">
             <div class="item about-carousel-item">
               <div class="row">
-                <article class="col-md-12 col-lg-8 col-lg-offset-2 main-caps text-center">
+                <article class="col-md-12 col-lg-8 col-md-offset-2 main-caps text-center">
                   <h3 class="dark">
                     <span>{{ caseStudies.introTitle }}</span>
                   </h3>
