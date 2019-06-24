@@ -10,7 +10,7 @@ const hubspotapikey = process.env.hubspotapikey
 const api = new NodeHubSpotApi(hubspotapikey)
 
 app.use(bodyParser.json({ limit: '10mb' }))
-app.use(bodyParser.urlencoded({ limit: '10mb' }))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 app.use(express.json())
 
 app.get('/hubspotStartAProject', function (req, res) {
