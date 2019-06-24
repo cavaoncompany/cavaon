@@ -28,9 +28,7 @@ app.post('/contactUs', function (req, res) {
 })
 
 app.post('/blog', function (req, res) {
-  console.log('req: ', req.body)
   const subscriberInfo = req.body.emailInfo
-  console.log('subscriberInfo: ', subscriberInfo)
   const emailProvider = emailProviderDetails
   sendSubscribeMail(subscriberInfo, emailProvider)
   res.status(200).json({ 'message': 'Your subscription was set up successfully' })

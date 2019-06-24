@@ -48,7 +48,8 @@ module.exports = {
       { src: '/less/less-1.5.0.min.js', type: 'text/javascript', body: true, defer: true },
       { src: '/javascripts/libs/common-min.js', type: 'text/javascript', body: true, defer: true },
       { src: '/javascripts/custom/main.js', type: 'text/javascript', body: true, defer: true },
-      { src: '/javascripts/custom/custom-init.js', type: 'text/javascript', body: true, defer: true }
+      { src: '/javascripts/custom/custom-init.js', type: 'text/javascript', body: true, defer: true },
+      { src: '//js.hs-scripts.com/5765560.js', type: 'text/javascript', body: true, defer: true }
     ]
   },
 
