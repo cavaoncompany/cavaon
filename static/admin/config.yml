@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: cavaoncompany/cavaon
+  identifier_field: body
   branch: master # Branch to update (optional; defaults to master)
+  site_domain: zealous-colden-167811.netlify.com
 media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
 public_folder: "/uploads"
 collections: 
