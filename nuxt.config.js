@@ -96,7 +96,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/tawkto.js', ssr: false }
+    { src: '~/plugins/tawkto.js', ssr: false },
+    { src: '~/plugins/hotjar.js' }
   ],
   server: {
     port: 3002 // default: 3000
