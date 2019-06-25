@@ -3,7 +3,7 @@
 const express = require('express')
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
-// const router = express.Router()
+const emailData = require('../static/content/metadata.json')
 const app = express()
 
 app.use(bodyParser.json({ limit: '10mb' }))
@@ -16,19 +16,6 @@ const emailProviderDetails = {
   username: process.env.emailusername,
   password: process.env.emailpassword
 }
-
-// app.post('/', function (req, res) {
-//   const emailInfo = req.body.emailInfo
-//   const emailProvider = req.body.emailProvider
-//   const attachment = req.body.emailInfo.file
-//   sendMail(emailInfo, emailProvider, attachment)
-//   res.status(200).json({ 'message': 'Your mail was sent successfully' })
-// })
-app.get('/newProject', function (req, res) {
-  res.send('Hello')
-})
-
-// module.exports = router
 
 app.post('/contactUs', function (req, res) {
   const emailInfo = req.body.emailInfo
@@ -68,8 +55,8 @@ const sendContactUsMail = (emailInfo, emailProvider) => {
   setTimeout(() => {
     transporter.sendMail({
       from: emailInfo.email,
-      to: `${emailProvider.username}`,
-      // to: 'info@cavaon.com',
+      to: `${emailData.email}`,
+      cc: `${emailData.cc}`,
       subject: `New Contact us message from www.cavaon.com`,
       html: `<h2>The following message has been received through the Contact us form on www.cavaon.com</h2>
             <table style="border: 4px solid #555555; padding: 8px;">
@@ -106,8 +93,8 @@ const sendMail = (emailInfo, emailProvider) => {
 
     transporter.sendMail({
       from: emailInfo.email,
-      to: `${emailProvider.username}`,
-      // to: 'info@cavaon.com',
+      to: `${emailData.email}`,
+      cc: `${emailData.cc}`,
       subject: `Enquiry to start a project through www.cavaon.com`,
       html: `<h2>The following enquiry has been received on www.cavaon.com</h2>
             <table style="border: 4px solid #555555; padding: 8px;">
