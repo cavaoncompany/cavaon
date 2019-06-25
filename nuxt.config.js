@@ -97,7 +97,7 @@ module.exports = {
   */
   plugins: [
     { src: '~/plugins/tawkto.js', ssr: false },
-    { src: '~/plugins/hotjar.js' }
+    { src: '~/plugins/hotjar.js', ssr: false }
   ],
   server: {
     port: 3002 // default: 3000
