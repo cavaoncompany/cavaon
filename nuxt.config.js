@@ -115,8 +115,13 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/google-analytics',
     '@nuxtjs/recaptcha',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ],
+  robots: {
+    UserAgent: '*',
+    Disallow: '/'
+  },
   sitemap: {
     hostname: 'https://www.cavaon.com',
     gzip: true,
