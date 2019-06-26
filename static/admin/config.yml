@@ -383,6 +383,12 @@ collections:
           - label: "Start a project form meta description"
             name: "startaprojectformDescription"
             widget: "string"
+          - label: "Form forwarding email address"
+            name: "email"
+            widget: "string"
+          - label: "Form forwarding email cc address"
+            name: "cc"
+            widget: "string"
   - label: "Messages"
     name: "messages"
     files: 

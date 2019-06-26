@@ -89,6 +89,9 @@ export default {
 </script>
 
 <style>
+#standard-header {
+  display: block;
+}
 .spacer-red {
   background-color: #FA4531;
   width: 100px;
