@@ -1,7 +1,8 @@
 // eslint-disable-next-line
 const Tawk_API = Tawk_API || {}
 // eslint-disable-next-line
-const Tawk_LoadStart = new Date();
+const Tawk_LoadStart = new Date()
+// eslint-disable-next-line
 (function () {
   const s1 = document.createElement('script')
   s1.async = true
