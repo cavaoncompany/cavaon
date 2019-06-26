@@ -25,7 +25,6 @@ collections:
       - {label: "Featured Thumbnail Image", name: "thumbnail", widget: "image", required: true}
       - {label: "Featured Blog Image", name: "image", widget: "image", required: true}
       - {label: "Body", name: "body", widget: "markdown"}
-      
   - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
     name: "Homepage"
     files:
