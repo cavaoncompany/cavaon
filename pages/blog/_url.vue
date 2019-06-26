@@ -12,7 +12,8 @@
         <p class="tags">
           <span v-for="(tag, i) in post.tags" :key="i">{{ tag }} </span>
         </p>
-        <img :src="image" :alt="post.title">
+        <div class="blog-top-image" :style="`background-image:url('` + image + `')`"></div>
+        <!-- <img class="" :src="image" :alt="post.title"> -->
         <div class="blog-post-body">
           <h2>{{ post.subtitle }}</h2>
           <div class="spacer-red" />
@@ -107,6 +108,11 @@ export default {
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 25px;
+}
+.blog-top-image {
+  overflow: hidden;
+  height: 0;
+  padding-top: 56.25%;
 }
 .blog-post {
   text-align: center;
