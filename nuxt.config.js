@@ -120,7 +120,7 @@ module.exports = {
   ],
   robots: {
     UserAgent: '*',
-    Disallow: '/'
+    Disallow: '/projects/project-slider/'
   },
   sitemap: {
     hostname: 'https://www.cavaon.com',
