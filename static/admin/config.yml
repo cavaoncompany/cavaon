@@ -4,7 +4,7 @@ backend:
   identifier_field: body
   branch: master # Branch to update (optional; defaults to master)
   site_domain: zealous-colden-167811.netlify.com
-media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
+media_folder: "/images/uploads" # Media files will be stored in the repo under images/uploads
 public_folder: "/uploads"
 collections: 
   - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
