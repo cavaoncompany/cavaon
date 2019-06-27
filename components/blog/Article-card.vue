@@ -111,7 +111,7 @@ export default {
       return readTime
     },
     openBlog: function () {
-      console.log('url: ', this.url, 'filename: ', this.filename)
+      console.log('file in articla:', this.filename)
       $nuxt.$router.push({name: 'blog-url', params: {filename: this.filename, url: this.url}})
     }
   }

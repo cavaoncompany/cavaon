@@ -1,7 +1,7 @@
 <template>
   <div id="blog-post" class="blog-post">
     <header-mobile />
-    <header-standard />
+    <header-standard page="blog-detail" />
     <div class="container blog-container">
       {{ post }}
       <div class="blog-content">
@@ -18,7 +18,7 @@
         <div class="blog-post-body">
           <h2>{{ post.subtitle }}</h2>
           <div class="spacer-red" />
-          <div v-html="parsedBody" class="body-text"></div>
+          <div v-html="$md.render(post.body)" class="body-text"></div>
         </div>
       </div>
     </div>

@@ -107,7 +107,7 @@ export default {
       return (this.lang + '').toLowerCase() === 'en' && 'English'
     },
     langClean() {
-      // return (this.language + '').slice(0, 2).toUpperCase()
+      return (this.language + '').slice(0, 2).toUpperCase()
     }
   },
   methods: {
@@ -117,15 +117,7 @@ export default {
       return readTime
     },
     openBlog: function () {
-      this.$router.push({
-        path: `${this.url}`,
-        params: {
-          filename: this.filename
-        },
-        props: {
-          filename: this.filename
-        }
-      })
+      $nuxt.$router.push({name: 'blog-url', params: {filename: this.filename, url: this.url}})
     }
   }
 }

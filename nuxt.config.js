@@ -121,7 +121,8 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/google-analytics',
     '@nuxtjs/recaptcha',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/markdownit'
   ],
   sitemap: {
     hostname: 'https://www.cavaon.com',
@@ -131,6 +132,9 @@ module.exports = {
       '/success',
       '/services'
     ]
+  },
+  markdownit: {
+    injected: true
   },
   googleAnalytics: {
     id: 'UA-136678258-1'

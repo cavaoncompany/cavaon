@@ -33,7 +33,7 @@
           </div>
         </a>
       </section>
-      <HeaderStandard />
+      <HeaderStandard page="home" />
       <Flowchart />
       <FlowchartMobile />
       <!-- page-section : starts -->

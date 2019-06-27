@@ -1,7 +1,7 @@
 <template>
   <section id="blog">
     <header-mobile />
-    <header-standard />
+    <header-standard page="blog" />
     <div class="container">
       <h1>{{ blog.title }}</h1>
       <div class="card-spacer align-center" />

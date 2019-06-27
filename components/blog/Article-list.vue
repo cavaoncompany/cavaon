@@ -106,10 +106,7 @@ export default {
     this.keywords = this.getKeywords(this.articles)
     this.blogCount = this.articles.length
     this.sortedArticles = this.orderPostsByDate()
-    console.log(this.sortedArticles)
-    // this.createPaths(this.sortedArticles)
     this.featuredArticle = this.sortedArticles[0]
-    console.log(this.featuredArticle)
     this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, 4)
     this.updateView()
   },
