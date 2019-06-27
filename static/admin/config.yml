@@ -5,6 +5,9 @@ backend:
   branch: blog # Branch to update (optional; defaults to master)
   site_domain: zealous-colden-167811.netlify.com
 media_folder: "/images/uploads" # Media files will be stored in the repo under images/uploads
+media_library:
+  name: uploadcare
+  config: 5a053d62f7b2f4d032f2
 collections:
   - name: 'blog' # Used in routes, e.g., /admin/collections/blog
     label: 'Blog Post' # Used in the UI
