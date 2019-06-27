@@ -65,6 +65,7 @@
 
 <script>
 import blog from '../../static/content/blog.json'
+import metadata from '../../static/content.metadata.json'
 import ArticleList from '../../components/blog/Article-list'
 import HeaderStandard from '../../components/HeaderStandard'
 import HeaderMobile from '../../components/HeaderMobile'
