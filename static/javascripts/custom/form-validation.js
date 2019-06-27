@@ -4,12 +4,12 @@ $(document).ready(function($) {
 	$(".error").hide();
 	$(".success").hide();
 	
-	$('#contactForm input').click(function(e) {
+	$('#contact input').click(function(e) {
         $(".error").fadeOut();
     });
 	
 	// on submit...
-	$("#contactForm #submit").click(function() {
+	$("#contact #submit").click(function() {
 		$(".error").hide();
 		
 		//required:
@@ -66,7 +66,7 @@ function isValidEmailAddress(emailAddress) {
 	// on success...
 	 function success(){
 	 	$("#success").fadeIn();
-	 	$("#contactForm").fadeOut();
+	 	$("#contact").fadeOut();
 	 }
 	
     return false;

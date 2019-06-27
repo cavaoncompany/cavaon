@@ -5,8 +5,9 @@ const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 
 const app = express()
-const api = require('../api/nodemailer.js')
-app.use('/api/nodemailer', api)
+// const api = require('../api/hubspot.js')
+// app.use('/api/nodemailer', api)
+// app.use('/api/hubspot', api)
 
 app.use(bodyParser.json({ limit: '10mb' }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true, parameterLimit: 10000 }))
