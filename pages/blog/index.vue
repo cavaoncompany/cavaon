@@ -139,6 +139,18 @@ export default {
       }
     }
   },
+  head() {
+    return {
+      title: `${this.metadata.blogTitle}`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${this.metadata.blogDescription}`
+        }
+      ]
+    }
+  }
 }
 </script>
 
