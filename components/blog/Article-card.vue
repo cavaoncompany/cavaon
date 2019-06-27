@@ -77,6 +77,11 @@ export default {
       required: false,
       default: () => ''
     },
+    page: {
+      type: String,
+      required: true,
+      default: () => ''
+    },
     lang: { // TODO: https://github.com/nuxt-community/nuxt-i18n
       type: String,
       required: true,
@@ -111,8 +116,11 @@ export default {
       return readTime
     },
     openBlog: function () {
-      console.log('file in articla:', this.filename)
-      $nuxt.$router.push({name: 'blog-url', params: {filename: this.filename, url: this.url}})
+      if(this.page === 'homepage') {
+        $nuxt.$router.push({name: 'blog'})
+      } else {
+        $nuxt.$router.push({name: 'blog-url', params: {filename: this.filename, url: this.url}})
+      }
     }
   }
 }

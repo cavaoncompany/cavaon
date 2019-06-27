@@ -3,7 +3,7 @@
     role="region"
     class="blog-inner-section"
   >
-    <div v-if="page === 'blog'" class="row card-container">
+    <div v-if="page === 'blog' && sortedArticles.length > 0 && featuredArticle" class="row card-container">
       <featured-article-card
         :lang="featuredArticle.lang"
         :title="featuredArticle.title"
@@ -34,6 +34,7 @@
         :url="article.url"
         :body="article.body"
         :filename="article.filename"
+        :page="page"
         :extract="getExtract(article.body)"
         class="col-md-4"
       />
@@ -48,7 +49,7 @@
         </div>
       </article>
     </div>
-    <div v-if="page === 'homepage'" class="row card-container">
+    <div v-if="page === 'homepage' && homepagePosts.length > 0" class="row card-container">
       <article-card
         v-for="(article, i) in homepagePosts"
         :key="i"
@@ -64,6 +65,7 @@
         :filename="article.filename"
         :extract="getExtract(article.body)"
         :blogcount="blogCount"
+        :page="page"
         class="col-md-6"
       />
     </div>
@@ -107,7 +109,11 @@ export default {
     this.blogCount = this.articles.length
     this.sortedArticles = this.orderPostsByDate()
     this.featuredArticle = this.sortedArticles[0]
-    this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, 4)
+    if(this.sortedArticles.length >= 4 ) {
+      this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, 4)
+    } else {
+      this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, this.sortedArticles.length)
+    }
     this.updateView()
   },
   methods: {
@@ -173,7 +179,11 @@ export default {
         this.sortedArticles = this.orderPostsByDate()
       } else {
         this.sortedArticles = this.orderPostsByDate()
-        this.sortedArticles = this.prepareLatestPosts(this.sortedArticles, 6)
+        if(this.sortedArticles.length >= 6) {
+          this.sortedArticles = this.prepareLatestPosts(this.sortedArticles, 6)
+        } else {
+          this.sortedArticles = this.prepareLatestPosts(this.sortedArticles, this.sortedArticles.length)
+        }
       }
     },
     createPaths: function (articles) {

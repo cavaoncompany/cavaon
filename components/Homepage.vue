@@ -236,7 +236,7 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="blog" class="page-section remove-pad-bottom white-bg">
+      <section id="blog" class="page-section remove-pad-bottom white-bg" @mouseover="changeUrl('')" >
         <section class="inner-section text-center silver-bg row blog-inner-section">
           <div class="container">
             <div class="row">

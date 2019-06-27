@@ -4,7 +4,7 @@
     <div class="container">
       <div v-if="page !== 'home'" class="row">
         <article class="col-md-2 text-left">
-          <a href="/" class="scroll">
+          <a href="/">
             <img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="/images/Logo-colour.png">
           </a>
         </article>

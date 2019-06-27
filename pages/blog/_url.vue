@@ -3,7 +3,6 @@
     <header-mobile />
     <header-standard page="blog-detail" />
     <div class="container blog-container">
-      {{ post }}
       <div class="blog-content">
         <h1>{{ post.title }}</h1>
         <div class="spacer-red-big" />
@@ -42,10 +41,7 @@ export default {
   async asyncData({ route }) {
     let post = {}
     const context = require.context('~/content/blog/', false, /\.json$/)
-    console.log('context:', context.keys())
-    console.log('params: ', route.params)
     const file = route.params.filename.replace('.json', '').replace('./', '').replace(/ /g, '-')
-    console.log('filename: ', file)
     const postie = context.keys().map(key => ({
       ...context(key),
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`,
