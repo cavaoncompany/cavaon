@@ -49,6 +49,19 @@ async function createTicket({ state, commit }, payload, path) {
   }
 }
 
+async function createBlogSubscriber({ state, commit }, payload, path) {
+  const subscriberInfo = payload
+  try {
+    // eslint-disable-next-line
+    const { res } = await axios.post(path, {
+      subscriberInfo
+    })
+    return ('success')
+  } catch (e) {
+    return (e)
+  }
+}
+
 export const actions = {
   async newProject({ state, commit }, payload) {
     // Netlify path
@@ -66,8 +79,9 @@ export const actions = {
   },
   async subsribeTo({ state, commit }, payload) {
     // Netlify path
-    const path = '/.netlify/functions/blog'
+    // const path = '/.netlify/functions/blog'
     // Express path
+    const path = '/api/nodemailer/blog'
     await sendEmail({ state, commit }, payload, path)
   },
   async contactTicket({ state, commit }, payload) {
@@ -85,5 +99,12 @@ export const actions = {
     const path = '/api/hubspotStartAProject/hubspotStartAProject'
     const result = await createTicket({ state, commit }, payload, path)
     commit('updateProjectTicketCreatedStatus', result)
+  },
+  async createSubscriber({ state, commit }, payload) {
+    // Netlify path
+    // const path = '/.netlify/functions/hubspotCreateSubscriber'
+    // Express path
+    const path = 'api/hubspotBlogSignup/createSubscriber'
+    await createBlogSubscriber({ state, commit }, payload, path)
   }
 }

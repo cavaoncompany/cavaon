@@ -107,7 +107,7 @@ export default {
       return (this.lang + '').toLowerCase() === 'en' && 'English'
     },
     langClean() {
-      return (this.language + '').slice(0, 2).toUpperCase()
+      // return (this.language + '').slice(0, 2).toUpperCase()
     }
   },
   methods: {

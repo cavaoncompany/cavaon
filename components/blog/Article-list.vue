@@ -16,7 +16,8 @@
         :url="featuredArticle.url"
         :body="featuredArticle.body"
         :filename="featuredArticle.filename"
-        :extract="getExtract(featuredArticle.body)" />
+        :extract="getExtract(featuredArticle.body)"
+      />
         <p class="keywords">
           <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
         </p>
@@ -105,8 +106,10 @@ export default {
     this.keywords = this.getKeywords(this.articles)
     this.blogCount = this.articles.length
     this.sortedArticles = this.orderPostsByDate()
+    console.log(this.sortedArticles)
     // this.createPaths(this.sortedArticles)
     this.featuredArticle = this.sortedArticles[0]
+    console.log(this.featuredArticle)
     this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, 4)
     this.updateView()
   },
@@ -179,7 +182,7 @@ export default {
     createPaths: function (articles) {
       for(let i = 0; i < articles.length; i++) {
         const path = articles[i].slug.toLowerCase().replace(/ /g, '-')
-        articles[i].url = '/blog/' + path
+        articles[i].url = path
       }
       return articles
     }

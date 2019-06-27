@@ -1,7 +1,14 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: cavaoncompany/cavaon
+  identifier_field: body
   branch: blog # Branch to update (optional; defaults to master)
+  site_domain: zealous-colden-167811.netlify.com
 media_folder: "/images/uploads" # Media files will be stored in the repo under images/uploads
+media_library:
+  name: uploadcare
+  config: 
+    publicKey: b07bf62713e6f2fb3ef2
 collections:
   - name: 'blog' # Used in routes, e.g., /admin/collections/blog
     label: 'Blog Post' # Used in the UI
@@ -22,7 +29,6 @@ collections:
       - {label: "Featured Thumbnail Image", name: "thumbnail", widget: "image", required: true}
       - {label: "Featured Blog Image", name: "image", widget: "image", required: true}
       - {label: "Body", name: "body", widget: "markdown"}
-      
   - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
     name: "Homepage"
     files:
@@ -382,6 +388,12 @@ collections:
             widget: "string"
           - label: "Start a project form meta description"
             name: "startaprojectformDescription"
+            widget: "string"
+          - label: "Form forwarding email address"
+            name: "email"
+            widget: "string"
+          - label: "Form forwarding email cc address"
+            name: "cc"
             widget: "string"
   - label: "Messages"
     name: "messages"

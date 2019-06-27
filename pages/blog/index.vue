@@ -21,10 +21,18 @@
               <section class="form-input">
                 <article>
                   <input
-                    v-model="subscriberName"
+                    v-model="subscriberFirstame"
                     type="text"
-                    :placeholder="blog.namePlaceholder"
-                    name="subscriberName"
+                    :placeholder="blog.firstnamePlaceholder"
+                    name="subscriberFirstame"
+                  >
+                </article>
+                <article>
+                  <input
+                    v-model="subscriberLastname"
+                    type="text"
+                    :placeholder="blog.lastnamePlaceholder"
+                    name="subscriberLastname"
                   >
                 </article>
                 <article>
@@ -57,6 +65,7 @@
 
 <script>
 import blog from '../../static/content/blog.json'
+import metadata from '../../static/content/metadata.json'
 import ArticleList from '../../components/blog/Article-list'
 import HeaderStandard from '../../components/HeaderStandard'
 import HeaderMobile from '../../components/HeaderMobile'
@@ -94,25 +103,37 @@ export default {
     return {
       posts,
       blog: blog,
-      subscriberName: '',
+      subscriberFirstame: '',
+      subscriberLastname: '',
       subscriberEmail: '',
-      messageSent: false
+      messageSent: false,
+      metadata: metadata
     }
   },
   methods: {
     sendEmail () {
       const emailData = {
         email: this.subscriberEmail,
-        name: this.subscriberName,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
       }
       this.$store.dispatch('subsribeTo', emailData)
-      this.name = ''
-      this.email = ''
-      // this.$router.replace({ path: 'success' })
+      this.subscriberFirstame = '',
+      this.subscriberLastname = '',
+      this.subscriberEmail = ''
+    },
+    createSubscriber () {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createSubscriber', subscriberInfo)
     },
     async onSubmit() {
       try {
         const token = await this.$recaptcha.execute('login')
+        this.createSubscriber()
         this.sendEmail()
         this.messageSent = true
       } catch (error) {
@@ -120,6 +141,18 @@ export default {
       }
     }
   },
+  head() {
+    return {
+      title: `${this.metadata.blogTitle}`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${this.metadata.blogDescription}`
+        }
+      ]
+    }
+  }
 }
 </script>
 

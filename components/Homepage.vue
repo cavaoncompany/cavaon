@@ -234,6 +234,26 @@
         <!-- inner-section:ends -->
       </section>
       <!-- page-section : ends -->
+
+      <!-- page-section : starts -->
+      <section id="blog" class="page-section remove-pad-bottom white-bg">
+        <section class="inner-section text-center silver-bg row blog-inner-section">
+          <div class="container">
+            <div class="row">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
+                <h3 class="dark">
+                  <span>{{ blog.homepageTitle }}</span>
+                </h3>
+              </article>
+              <article-list :articles="posts" page="homepage" />
+              <div v-if="blogCount > 4" class="welcome-button blog-welcome-button">
+                  <a class="btn btn-odin btn-odin-color" href="/blog">{{ blog.homepageButtonText }}</a>
+                </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- page-section : ends -->
       <About />
       <Contact />
       <Footer />
@@ -307,7 +327,8 @@ export default {
       startVal: 3564,
       projectFormOpen: false,
       posts: posts,
-      name: '',
+      firstname: '',
+      lastname: '',
       email: '',
       message: '',
       blogCount: 0

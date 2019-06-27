@@ -32,7 +32,7 @@
     "jquery": "^3.3.1",
     "markdown": "^0.5.0",
     "netlify-lambda": "^1.4.3",
-    "node-hubspot-api": "git://github.com/cornelia-schulz/node-hubspot-api#ticket",
+    "node-hubspot-api": "https://github.com/cavaoncompany/node-hubspot-api",
     "nodemailer": "^6.1.0",
     "nuxt": "^2.8.0",
     "serverless-http": "^1.9.1",
