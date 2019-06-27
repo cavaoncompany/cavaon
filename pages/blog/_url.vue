@@ -3,6 +3,7 @@
     <header-mobile />
     <header-standard />
     <div class="container blog-container">
+      {{ post }}
       <div class="blog-content">
         <h1>{{ post.title }}</h1>
         <div class="spacer-red-big" />
@@ -12,8 +13,8 @@
         <p class="tags">
           <span v-for="(tag, i) in post.tags" :key="i">{{ tag }} </span>
         </p>
-        <div class="blog-top-image" :style="`background-image:url('` + image + `')`"></div>
-        <!-- <img class="" :src="image" :alt="post.title"> -->
+        {{this.image}}
+        <div class="blog-top-image" :style="`background-image:url(` + post.image + `)`"></div>
         <div class="blog-post-body">
           <h2>{{ post.subtitle }}</h2>
           <div class="spacer-red" />
@@ -41,12 +42,17 @@ export default {
   async asyncData({ route }) {
     let post = {}
     const context = require.context('~/content/blog/', false, /\.json$/)
-    const posts = context.keys().map(key => ({
+    console.log('context:', context.keys())
+    console.log('params: ', route.params)
+    const file = route.params.filename.replace('.json', '').replace('./', '').replace(/ /g, '-')
+    console.log('filename: ', file)
+    const postie = context.keys().map(key => ({
       ...context(key),
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`,
       filename: `${key}`
-    })).filter(a=> a.title.toLowerCase().replace(/ /g, '-') === route.params.url)
-
+    // })).filter(a=> a.title.toLowerCase().replace(/ /g, '-') === file)
+    }))
+    const posts = postie.filter(a => a.filename === route.params.filename)
     if(posts.length > 0){
       post = posts[0]
     }
@@ -65,7 +71,11 @@ export default {
       return markdown.toHTML(this.post.body)
     },
     trimmedDescription() {
-      return (this.post.description + '').slice(0, 150)
+      if(typeof(this.post.description) !== "undefined") {
+        return (this.post.description + '').slice(0, 150)
+      } else {
+        return ('Cavaon blog post ')
+      }
     }
   },
   head() {
@@ -84,7 +94,11 @@ export default {
     const date = new Date(this.post.date)
     const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
-    this.image = this.post.image.replace('/static/', '/')
+    if(this.post.image && this.post.image.includes('/static/')) {
+      this.image = this.post.image.replace('/static/', '/')
+    } else {
+      this.image = post.image
+    }
   }
 }
 </script>
