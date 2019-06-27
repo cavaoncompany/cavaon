@@ -8,7 +8,7 @@ media_folder: "/images/uploads" # Media files will be stored in the repo under i
 media_library:
   name: uploadcare
   config: 
-    publicKey: 5a053d62f7b2f4d032f2
+    publicKey: b07bf62713e6f2fb3ef2
 collections:
   - name: 'blog' # Used in routes, e.g., /admin/collections/blog
     label: 'Blog Post' # Used in the UI
