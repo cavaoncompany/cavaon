@@ -314,10 +314,14 @@
 		padding: 0 30px;
 	}
 	div#portfolio_thumbs ul li{
-	width: 33%;
+		width: 33%;
 	}
 	.testimonial-wrap-right {
 		padding-top: 0;
+	}
+	.featured-article-card .seo-description {
+		max-height: 147px;
+		overflow: hidden;
 	}
 }
 
@@ -592,6 +596,9 @@
 		display: block
 	}
 	#flowchart {
+		display: none;
+	}
+	.featured-article-card .tags {
 		display: none;
 	}
 }
@@ -1415,6 +1422,9 @@
 	  }
 	  .blog-inner-section .keywords {
 		justify-content: center;
+	  }
+	  .featured-article-card .tags {
+		  display: block;
 	  }
 }
 
