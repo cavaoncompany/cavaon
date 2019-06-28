@@ -101,8 +101,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/tawkto.js', ssr: false },
-    { src: '~/plugins/hotjar.js', ssr: false }
+    { src: '~/plugins/hotjar.js', ssr: false },
+    { src: '~/plugins/tawkto.js', ssr: false }
   ],
   server: {
     port: 3002 // default: 3000
@@ -122,8 +122,13 @@ module.exports = {
     '@nuxtjs/google-analytics',
     '@nuxtjs/recaptcha',
     '@nuxtjs/sitemap',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/robots'
   ],
+  robots: {
+    UserAgent: '*',
+    Disallow: '/projects/project-slider/'
+  },
   sitemap: {
     hostname: 'https://www.cavaon.com',
     gzip: true,
