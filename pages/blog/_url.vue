@@ -1,7 +1,7 @@
 <template>
   <div id="blog-post" class="blog-post">
-    <header-mobile />
-    <header-standard page="blog-detail" />
+    <header-mobile page="blog-detail" />
+    <header-standard id="blog-post-standard-header" page="blog-detail" />
     <div class="container blog-container">
       <div class="blog-content">
         <h1>{{ post.title }}</h1>
@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style>
-#standard-header {
+#blog-post-standard-header {
   display: block;
 }
 .spacer-red {
@@ -115,6 +115,7 @@ export default {
   overflow: hidden;
   height: 0;
   padding-top: 56.25%;
+  background-size: cover;
 }
 .blog-post {
   text-align: justify;
