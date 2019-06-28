@@ -1,6 +1,6 @@
 <template>
   <section id="blog">
-    <header-mobile />
+    <header-mobile page="blog" />
     <header-standard page="blog" />
     <div class="container">
       <h1>{{ blog.title }}</h1>
