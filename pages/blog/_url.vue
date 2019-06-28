@@ -41,18 +41,15 @@ export default {
   async asyncData({ route }) {
     let post = {}
     const context = require.context('~/content/blog/', false, /\.json$/)
-    // const file = route.params.filename.replace('.json', '').replace('./', '').replace(/ /g, '-')
     const postie = context.keys().map(key => ({
       ...context(key),
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`,
       filename: `${key}`
-    // })).filter(a=> a.title.toLowerCase().replace(/ /g, '-') === file)
     }))
-    const posts = postie.filter(a => a.filename === route.params.filename)
+    const posts = postie.filter(a => a.slug.toLowerCase().replace(/ /g, '-') === route.params.url)
     if(posts.length > 0){
       post = posts[0]
     }
-    // post = await import('~/content/blog/' + posts[0].filename + '.json')
     return {post}
   },
   data() {
@@ -90,11 +87,6 @@ export default {
     const date = new Date(this.post.date)
     const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
-    // if(this.post.image && this.post.image.includes('/static/')) {
-    //   this.image = this.post.image.replace('/static/', '/')
-    // } else {
-    //   this.image = post.image
-    // }
   }
 }
 </script>

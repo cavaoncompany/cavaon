@@ -116,11 +116,7 @@ export default {
       return readTime
     },
     openBlog: function () {
-      if(this.page === 'homepage') {
-        $nuxt.$router.push({name: 'blog'})
-      } else {
-        $nuxt.$router.push({name: 'blog-url', params: {filename: this.filename, url: this.url}})
-      }
+      $nuxt.$router.push({name: 'blog-url', params: {filename: this.filename, url: this.url}})
     }
   }
 }
