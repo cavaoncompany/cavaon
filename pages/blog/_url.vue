@@ -41,7 +41,7 @@ export default {
   async asyncData({ route }) {
     let post = {}
     const context = require.context('~/content/blog/', false, /\.json$/)
-    const file = route.params.filename.replace('.json', '').replace('./', '').replace(/ /g, '-')
+    // const file = route.params.filename.replace('.json', '').replace('./', '').replace(/ /g, '-')
     const postie = context.keys().map(key => ({
       ...context(key),
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`,
@@ -90,11 +90,11 @@ export default {
     const date = new Date(this.post.date)
     const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
-    if(this.post.image && this.post.image.includes('/static/')) {
-      this.image = this.post.image.replace('/static/', '/')
-    } else {
-      this.image = post.image
-    }
+    // if(this.post.image && this.post.image.includes('/static/')) {
+    //   this.image = this.post.image.replace('/static/', '/')
+    // } else {
+    //   this.image = post.image
+    // }
   }
 }
 </script>
@@ -125,21 +125,30 @@ export default {
   padding-top: 56.25%;
 }
 .blog-post {
-  text-align: center;
+  text-align: justify;
   margin-top: 80px;
+}
+.blog-post p {
+  margin-bottom: 25px;
 }
 .blog-post h1 {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 10px;
+  text-align: center;
+}
+.blog-post .date {
+  text-align: center;
 }
 .blog-post .tags {
   margin-bottom: 50px;
+  text-align: center;
 }
 .blog-post h2 {
   color: #CCCCCE;
   font-size: 24px;
   line-height: 2.3rem;
+  text-align: center;
 }
 .blog-post-body {
   margin: 0 auto;
