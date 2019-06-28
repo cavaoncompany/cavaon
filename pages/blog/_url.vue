@@ -136,6 +136,7 @@ export default {
   font-weight: 600;
   letter-spacing: 10px;
   text-align: center;
+  line-height: 35px;
 }
 .blog-post .date {
   text-align: center;
@@ -148,7 +149,7 @@ export default {
   color: #CCCCCE;
   font-size: 24px;
   line-height: 2.3rem;
-  text-align: center;
+  text-align: left;
 }
 .blog-post-body {
   margin: 0 auto;
