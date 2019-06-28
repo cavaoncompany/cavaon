@@ -33,7 +33,7 @@
           </div>
         </a>
       </section>
-      <HeaderStandard />
+      <HeaderStandard page="home" />
       <Flowchart />
       <FlowchartMobile />
       <!-- page-section : starts -->
@@ -234,6 +234,26 @@
         <!-- inner-section:ends -->
       </section>
       <!-- page-section : ends -->
+
+      <!-- page-section : starts -->
+      <section id="blog" class="page-section remove-pad-bottom white-bg" @mouseover="changeUrl('')" >
+        <section class="inner-section text-center silver-bg row blog-inner-section">
+          <div class="container">
+            <div class="row">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
+                <h3 class="dark">
+                  <span>{{ blog.homepageTitle }}</span>
+                </h3>
+              </article>
+              <article-list :articles="posts" page="homepage" />
+              <div v-if="blogCount > 4" class="welcome-button blog-welcome-button">
+                  <a class="btn btn-odin btn-odin-color" href="/blog">{{ blog.homepageButtonText }}</a>
+                </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- page-section : ends -->
       <About />
       <Contact />
       <Footer />
@@ -252,6 +272,7 @@ import testimonials from '../static//content/testimonials.json'
 import services from '../static/content/services.json'
 import projects from '../static/content/projects.json'
 import promo from '../static/content/promo.json'
+import blog from '../static/content/blog.json'
 import messages from '../static/content/messages.json'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
@@ -262,6 +283,7 @@ import Flowchart from './Flowchart'
 import FlowchartMobile from './FlowchartMobile'
 import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
+import ArticleList from './blog/Article-list'
 import Footer from './Footer'
 
 export default {
@@ -275,6 +297,7 @@ export default {
     FlowchartMobile,
     Services,
     ProjectWithSlider,
+    ArticleList,
     countTo,
     Footer
   },
@@ -282,6 +305,11 @@ export default {
     showInstallMessage: Boolean
   },
   data() {
+    const context = require.context('~/content/blog/', false, /\.json$/)
+    const posts = context.keys().map(key => ({
+      ...context(key),
+      _path: `/blog/${key.replace('.json', '').replace('./', '')}`
+    }))
     return {
       caseStudies: caseStudies,
       projectDetails: caseStudies.caseStudies[0],
@@ -291,16 +319,19 @@ export default {
       projects: projects,
       messages: messages,
       promo: promo,
+      blog: blog,
       banner: banner,
       linesOfCode: 12538,
       windowWidth: 0,
       isMobile: false,
       startVal: 3564,
       projectFormOpen: false,
+      posts: posts,
       firstname: '',
       lastname: '',
       email: '',
-      message: ''
+      message: '',
+      blogCount: 0
     }
   },
   computed: mapState(['ticketCreatedStatus']),
@@ -315,6 +346,7 @@ export default {
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
+    this.blogCount = this.posts.length
     if (process.client) {
       // eslint-disable-next-line
       window.onpopstate = function(event) {
@@ -393,6 +425,7 @@ export default {
   }
   .inner-section {
     margin: 0 auto;
+    width: 100%;
   }
   .featuress-expansion .container {
     padding-top: 50px;
@@ -412,5 +445,9 @@ export default {
   .hero-container {
     position: relative;
     height: 100vh;
+  }
+  .blog-welcome-button {
+    margin: 0 auto;
+    margin-bottom: 50px;
   }
 </style>

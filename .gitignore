@@ -83,4 +83,5 @@ dist
 # Service worker
 sw.*
 
+# Lambda functions
 /lambda/*
