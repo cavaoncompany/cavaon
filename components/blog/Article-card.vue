@@ -2,7 +2,8 @@
   <div>
     <a @click="openBlog()">
       <article class="article-card card">
-        <img :src="thumbnail" :alt="title">
+        <div class="card-image" :style="`background-image:url(` + thumbnail + `)`"></div>
+        <!-- <img :src="thumbnail" :alt="title"> -->
         <div class="card-body">
           <div class="blog-card-top-line">
             <div class="date">
@@ -13,7 +14,7 @@
           </div>
           <div class="card-spacer"/>
           <p class="card-title">
-            {{ description }}
+            {{ title }}
           </p>
           <p class="tags">
             <span v-for="(tag, i) in tags" :key="i">{{ tag }} </span>
@@ -139,11 +140,19 @@ export default {
   margin-top: 13px;
   margin-bottom: 25px;
 }
+.card-image {
+  overflow: hidden;
+  height: 0;
+  padding-top: 56.25%;
+  background-size: cover;
+}
 .card-title {
   font-size: 18px;
   line-height: 1.3rem;
   height: 2.6rem;
   overflow: hidden;
+  font-weight: 700;
+  color: #494949;
 }
 .blog-card-top-line {
   display: flex;
