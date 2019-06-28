@@ -115,6 +115,7 @@ export default {
   overflow: hidden;
   height: 0;
   padding-top: 56.25%;
+  background-size: cover;
 }
 .blog-post {
   text-align: justify;
