@@ -81,8 +81,8 @@ const sendSubscribeMail = (subscriberInfo, emailProvider) => {
   setTimeout(() => {
     transporter.sendMail({
       from: subscriberInfo.email,
-      to: `${emailProvider.username}`,
-      // to: 'info@cavaon.com',
+      to: `${emailData.email}`,
+      cc: `${emailData.cc}`,
       subject: `New blog signup message from www.cavaon.com`,
       html: `<h2>The following contact would like to subscribe to the Cavaon blog:</h2>
             <table style="border: 4px solid #555555; padding: 8px;">
