@@ -8,9 +8,9 @@
           </h3>
           <div class="liner color-bg" />
         </div>
-        <div class="contact-info text-center col-md-12 col-lg-8 col-md-offset-2">
-          <a href="tel:+61283797424" class="white contact-info-text">{{ contact.telephone }}</a>
-          <p class="white">
+        <div itemscope itemtype="https://schema.org/Organization" class="contact-info text-center col-md-12 col-lg-8 col-md-offset-2">
+          <a itemprop="telephone" href="tel:+61283797424" class="white contact-info-text">{{ contact.telephone }}</a>
+          <p itemprop="address" class="white">
             {{ contact.addressLine1 }}<br>{{ contact.addressLine2 }}
           </p>
         </div>

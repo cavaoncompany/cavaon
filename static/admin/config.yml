@@ -2,11 +2,33 @@ backend:
   name: github
   repo: cavaoncompany/cavaon
   identifier_field: body
-  branch: master # Branch to update (optional; defaults to master)
+  branch: blog # Branch to update (optional; defaults to master)
   site_domain: zealous-colden-167811.netlify.com
 media_folder: "/images/uploads" # Media files will be stored in the repo under images/uploads
-public_folder: "/uploads"
-collections: 
+media_library:
+  name: uploadcare
+  config: 
+    publicKey: b07bf62713e6f2fb3ef2
+collections:
+  - name: 'blog' # Used in routes, e.g., /admin/collections/blog
+    label: 'Blog Post' # Used in the UI
+    folder: 'content/blog' # The path to the folder where the documents are stored
+    media_folder: "/images/uploads" # override for blog collection
+    public_folder: "/images/uploads" # override for blog collection
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md {{year}}-{{month}}-{{day}}-{{slug}}
+    format: 'json'
+    fields: # The fields for each document, usually in front matter
+      - {label: "Language, e.g. EN for English", name: "lang", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string", required: true}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "SEO Description, please enter between 50 - 300 characters", name: "description", widget: "text", required: true, pattern: ["^.{50,300}$", "Must be within 50 and 300 chars"]}
+      - {label: "Tags - please separate tags with comma", name: "tags", widget: "list"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Thumbnail Image", name: "thumbnail", widget: "image", required: true}
+      - {label: "Blog Image", name: "image", widget: "image", required: true}
+      - {label: "Body", name: "body", widget: "markdown"}
   - label: "Homepage" # Used in routes, e.g., /admin/collections/blog
     name: "Homepage"
     files:
@@ -145,6 +167,17 @@ collections:
               - {label: "Image", name: "img1", widget: "image"}
               - {label: "Hover image", name: "img2", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
+      - label: "Blog"
+        name: "blog"
+        format: "json"
+        file: "/static/content/blog.json"
+        fields:
+          - label: "Title"
+            name: "homepageTitle"
+            widget: "string"
+          - label: "Button text"
+            name: "homepageButtonText"
+            widget: "string"
       - label: "About"
         name: "about"
         format: "json"
@@ -297,6 +330,38 @@ collections:
             widget: "string"
           - label: "Button text"
             name: "buttonText"
+            widget: "string"
+  - label: "Blog page"
+    name: "blogpage"
+    files:
+      - label: "Blog page"
+        name: "blogpage"
+        format: "json"
+        file: "/static/content/blog.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Subscribe to blog"
+            name: "subscribeToOurBlog"
+            widget: "string"
+          - label: "Stay up to date"
+            name: "stayUpToDate"
+            widget: "string"
+          - label: "Name placeholder"
+            name: "namePlaceholder"
+            widget: "string"
+          - label: "Email placeholder"
+            name: "emailPlaceholder"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+          - label: "View more"
+            name: "viewMore"
+            widget: "string"
+          - label: "View less"
+            name: "viewLess"
             widget: "string"
   - label: "Meta data"
     name: "metadata"

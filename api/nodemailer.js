@@ -24,12 +24,11 @@ app.post('/contactUs', function (req, res) {
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 })
 
-app.post('/subscribe', function (req, res) {
-  const emailInfo = req.body.emailInfo
+app.post('/blog', function (req, res) {
+  const subscriberInfo = req.body.emailInfo
   const emailProvider = emailProviderDetails
-  const attachment = req.body.emailInfo.file
-  sendSubscribeMail(emailInfo, emailProvider, attachment)
-  res.status(200).json({ 'message': 'Your mail was sent successfully' })
+  sendSubscribeMail(subscriberInfo, emailProvider)
+  res.status(200).json({ 'message': 'Your subscription was set up successfully' })
 })
 
 app.post('/newProject', function (req, res) {
@@ -64,11 +63,34 @@ const sendContactUsMail = (emailInfo, emailProvider) => {
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Email:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.email}</td></tr>
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Message:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.message}</td></tr>
             </table>`
-      // attachments: attachments
     })
   }, 100)
 }
-const sendSubscribeMail = (emailInfo, emailProvider) => {
+const sendSubscribeMail = (subscriberInfo, emailProvider) => {
+  const transporter = nodemailer.createTransport({
+    host: emailProvider.service,
+    port: 465,
+    auth: {
+      user: emailProvider.username,
+      pass: emailProvider.password
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  })
+  setTimeout(() => {
+    transporter.sendMail({
+      from: subscriberInfo.email,
+      to: `${emailProvider.username}`,
+      // to: 'info@cavaon.com',
+      subject: `New blog signup message from www.cavaon.com`,
+      html: `<h2>The following contact would like to subscribe to the Cavaon blog:</h2>
+            <table style="border: 4px solid #555555; padding: 8px;">
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Name:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.firstname} ${subscriberInfo.lastname}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Email:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.email}</td></tr>
+            </table>`
+    })
+  }, 100)
 }
 
 const sendMail = (emailInfo, emailProvider) => {
