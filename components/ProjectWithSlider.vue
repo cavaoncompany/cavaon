@@ -27,7 +27,7 @@
             <!-- Slider -->
             <div id="item_slider" class="top-frame">
               <ul class="slides">
-                <li><img :src="projectDetails.projectImage"></li>
+                <li><img :src="projectDetails.projectImage" :alt="projectDetails.projectTitle"></li>
               </ul>
             </div>
           </article>

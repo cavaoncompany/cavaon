@@ -33,7 +33,7 @@
           </div>
         </a>
       </section>
-      <HeaderStandard />
+      <HeaderStandard page="home" />
       <Flowchart />
       <FlowchartMobile />
       <!-- page-section : starts -->
@@ -163,14 +163,14 @@
           <!-- <div id="testimonial-carousel" class="testimonial-carousel owl-carousel"> -->
           <div class="container">
             <div class="testimonial-wrapper">
-              <div v-for="(testimonial, index) in testimonials.testimonials" :key="index" class="item stats-carousel-item testimonial-wrap testimonial-wrap-right">
-                <h3 class="main-caps">
+              <div itemprop="review" itemscope itemtype="http://schema.org/Review" v-for="(testimonial, index) in testimonials.testimonials" :key="index" class="item stats-carousel-item testimonial-wrap testimonial-wrap-right">
+                <h3 itemprop="description" class="main-caps">
                   {{ testimonial.title }}
                 </h3>
-                <h6 class="dark">
+                <h6 itemprop="reviewRating" class="dark">
                   {{ testimonial.testimonial }}
                 </h6>
-                <p><span class="testimonial-name">{{ testimonial.name }}</span><br><span><i>{{ testimonial.jobtitle }}<br>{{ testimonial.company }}</i></span></p>
+                <p><span itemprop="author" class="testimonial-name">{{ testimonial.name }}</span><br><span><i>{{ testimonial.jobtitle }}<br>{{ testimonial.company }}</i></span></p>
               </div>
             </div>
           </div>
@@ -206,7 +206,7 @@
             <div class="row">
               <!-- item:starts -->
               <article v-for="(member, index) in team.team" :key="index" class="col-sm-6 col-md-3 text-left">
-                <div class="item team-carousel-item team-stage">
+                <div itemscope itemtype="https://schema.org/Person" class="item team-carousel-item team-stage">
                   <img
                     :id="member.firstname"
                     data-no-retina
@@ -214,13 +214,14 @@
                     :title="member.firstname + ' ' + member.lastname"
                     class="img-responsive"
                     :src="member.img1"
+                    itemprop="image"
                     @mouseover="teamMouseOver(member.firstname, member.img2)"
                     @mouseleave="teamMouseOver(member.firstname, member.img1)"
                   >
-                  <h3 class="dark team-desktop">
+                  <h3 itemprop="name" class="dark team-desktop">
                     {{ member.firstname }}<br>{{ member.lastname }}
                   </h3>
-                  <h3 class="team-mobile">
+                  <h3 itemprop="name" class="team-mobile">
                     {{ member.firstname }} {{ member.lastname }}
                   </h3>
                   <h6>
@@ -232,6 +233,26 @@
           </div>
         </section>
         <!-- inner-section:ends -->
+      </section>
+      <!-- page-section : ends -->
+
+      <!-- page-section : starts -->
+      <section id="blog" class="page-section remove-pad-bottom white-bg" @mouseover="changeUrl('')" >
+        <section class="inner-section text-center silver-bg row blog-inner-section">
+          <div class="container">
+            <div class="row">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
+                <h3 class="dark">
+                  <span>{{ blog.homepageTitle }}</span>
+                </h3>
+              </article>
+              <article-list :articles="posts" page="homepage" />
+              <div v-if="blogCount > 4" class="welcome-button blog-welcome-button">
+                  <a class="btn btn-odin btn-odin-color" href="/blog">{{ blog.homepageButtonText }}</a>
+                </div>
+            </div>
+          </div>
+        </section>
       </section>
       <!-- page-section : ends -->
       <About />
@@ -252,6 +273,7 @@ import testimonials from '../static//content/testimonials.json'
 import services from '../static/content/services.json'
 import projects from '../static/content/projects.json'
 import promo from '../static/content/promo.json'
+import blog from '../static/content/blog.json'
 import messages from '../static/content/messages.json'
 import HeaderMobile from './HeaderMobile'
 import HeaderTop from './HeaderTop'
@@ -262,6 +284,7 @@ import Flowchart from './Flowchart'
 import FlowchartMobile from './FlowchartMobile'
 import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
+import ArticleList from './blog/Article-list'
 import Footer from './Footer'
 
 export default {
@@ -275,6 +298,7 @@ export default {
     FlowchartMobile,
     Services,
     ProjectWithSlider,
+    ArticleList,
     countTo,
     Footer
   },
@@ -291,16 +315,19 @@ export default {
       projects: projects,
       messages: messages,
       promo: promo,
+      blog: blog,
       banner: banner,
       linesOfCode: 12538,
       windowWidth: 0,
       isMobile: false,
       startVal: 3564,
       projectFormOpen: false,
+      posts: posts,
       firstname: '',
       lastname: '',
       email: '',
-      message: ''
+      message: '',
+      blogCount: 0
     }
   },
   computed: mapState(['ticketCreatedStatus']),
@@ -315,6 +342,7 @@ export default {
     const date = new Date()
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
+    this.blogCount = this.posts.length
     if (process.client) {
       // eslint-disable-next-line
       window.onpopstate = function(event) {
@@ -413,5 +441,9 @@ export default {
   .hero-container {
     position: relative;
     height: 100vh;
+  }
+  .blog-welcome-button {
+    margin: 0 auto;
+    margin-bottom: 50px;
   }
 </style>

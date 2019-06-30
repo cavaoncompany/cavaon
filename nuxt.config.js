@@ -1,7 +1,12 @@
+const path = require('path')
 const webpack = require('webpack')
-const env = require('dotenv').config()
+const glob = require('glob-all')
 const pkg = require('./package')
 const metadata = require('./static/content/metadata.json')
+const dynamicRoutes = getDynamicPaths({
+  '/blog': 'blog/posts/*.json'
+})
+const env = require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -43,7 +48,8 @@ module.exports = {
       { src: '/less/less-1.5.0.min.js', type: 'text/javascript', body: true, defer: true },
       { src: '/javascripts/libs/common-min.js', type: 'text/javascript', body: true, defer: true },
       { src: '/javascripts/custom/main.js', type: 'text/javascript', body: true, defer: true },
-      { src: '/javascripts/custom/custom-init.js', type: 'text/javascript', body: true, defer: true }
+      { src: '/javascripts/custom/custom-init.js', type: 'text/javascript', body: true, defer: true },
+      { src: '//js.hs-scripts.com/5765560.js', type: 'text/javascript', body: true, defer: true }
     ]
   },
 
@@ -95,20 +101,34 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/hotjar.js', ssr: false },
     { src: '~/plugins/tawkto.js', ssr: false }
   ],
+  server: {
+    port: 3002 // default: 3000
+  },
   serverMiddleware: [
-    '~/api/nodemailer'
+    '~/api/nodemailer',
+    '~/api/hubspotContact',
+    '~/api/hubspotStartAProject',
+    '~/api/hubspotBlogSignup'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
     '@nuxtjs/google-analytics',
     '@nuxtjs/recaptcha',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/markdownit',
+    '@nuxtjs/robots'
   ],
+  robots: {
+    UserAgent: '*',
+    Disallow: '/projects/project-slider/'
+  },
   sitemap: {
     hostname: 'https://www.cavaon.com',
     gzip: true,
@@ -118,8 +138,14 @@ module.exports = {
       '/services'
     ]
   },
+  markdownit: {
+    injected: true
+  },
   googleAnalytics: {
     id: 'UA-136678258-1'
+  },
+  generate: {
+    routes: dynamicRoutes
   },
   recaptcha: {
     hideBadge: true,
@@ -134,7 +160,6 @@ module.exports = {
     ** You can extend webpack config here
     */
     // analyze: true,
-    vendor: ['axios'],
     plugins: [
       new webpack.ProvidePlugin({
         '$': 'jquery'
@@ -157,4 +182,19 @@ module.exports = {
       }
     }
   }
+}
+
+/**
+ * Create an array of URLs from a list of files
+ * @param {*} urlFilepathTable
+ */
+function getDynamicPaths(urlFilepathTable) {
+  return [].concat(
+    ...Object.keys(urlFilepathTable).map((url) => {
+      const filepathGlob = urlFilepathTable[url]
+      return glob
+        .sync(filepathGlob, { cwd: 'content' })
+        .map(filepath => `${url}/${path.basename(filepath, '.json')}`)
+    })
+  )
 }
