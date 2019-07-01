@@ -12,12 +12,12 @@
         <p class="tags">
           <span v-for="(tag, i) in post.tags" :key="i">{{ tag }} </span>
         </p>
-        {{this.image}}
-        <div class="blog-top-image" :style="`background-image:url(` + post.image + `)`"></div>
+        {{ image }}
+        <div class="blog-top-image" :style="`background-image:url(` + post.image + `)`" />
         <div class="blog-post-body">
           <h2>{{ post.subtitle }}</h2>
           <div class="spacer-red" />
-          <div v-html="$md.render(post.body)" class="body-text"></div>
+          <div v-html="$md.render(post.body)" class="body-text" />
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
         </div>
       </div>
     </div>
-    <div v-if="showModal === true" class="modal-overlay" @click="closeModal()"></div>
+    <div v-if="showModal === true" class="modal-overlay" @click="closeModal()" />
   </div>
 </template>
 

@@ -260,7 +260,7 @@
       <Footer />
     </section>
     <!-- Master Wrap : ends -->
-    <div v-if="showModal === true" id="newsletter-homepage-modal" class="modal showModal" tabindex="-1" role="dialog" @click="closeIfOutsideModal($event)">
+    <div v-if="showHomepageModal === true" id="newsletter-homepage-modal" class="modal showModal" tabindex="-1" role="dialog" @click="closeIfOutsideModal($event)">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
@@ -311,7 +311,7 @@
           </div>
         </div>
       </div>
-    <div v-if="showModal === true" class="modal-overlay" @click="closeModal()"></div>
+    <div v-if="showHomepageModal === true" class="modal-overlay" @click="closeModal()"></div>
   </div>
 </template>
 
@@ -385,7 +385,7 @@ export default {
       email: '',
       message: '',
       blogCount: 0,
-      showModal: false
+      showHomepageModal: false
     }
   },
   computed: mapState(['ticketCreatedStatus']),
@@ -402,7 +402,7 @@ export default {
     this.linesOfCode = Number(randomnumber - 25868512)
     this.blogCount = this.posts.length
     if (this.$route.query.fb === 'true') {
-      this.showModal = true
+      this.showHomepageModal = true
     }
     if (process.client) {
       // eslint-disable-next-line
