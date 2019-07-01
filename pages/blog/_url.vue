@@ -22,6 +22,58 @@
       </div>
     </div>
     <Footer />
+    <div v-if="showModal === true" id="newsletter-modal" class="modal showModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="btn btn-light btn-close" data-target="#newsletter-modal" @click="closeModal()">
+                <img src="/images/icon-close-128.png" alt="close modal" />
+              </button>
+              <h3>{{ blog.subscribeToOurNewsletter }}</h3>
+              <form
+              id="subscribeToNewsletterForm"
+              @submit.prevent="onSubmit"
+              class="col-md-12"
+            >
+              <section class="form-input">
+                <article>
+                  <input
+                    v-model="subscriberFirstame"
+                    type="text"
+                    :placeholder="blog.firstnamePlaceholder"
+                    name="subscriberFirstame"
+                  >
+                </article>
+                <article>
+                  <input
+                    v-model="subscriberLastname"
+                    type="text"
+                    :placeholder="blog.lastnamePlaceholder"
+                    name="subscriberLastname"
+                  >
+                </article>
+                <article>
+                  <input
+                    v-model="subscriberEmail"
+                    type="text"
+                    :placeholder="blog.emailPlaceholder"
+                    name="subscriberEmail"
+                  >
+                </article>
+              </section>
+              <article>
+                <div class="btn-wrap  text-center">
+                  <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
+                    {{ blog.buttonText }}
+                  </button>
+                </div>
+              </article>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -30,6 +82,7 @@ import { markdown } from 'markdown'
 import HeaderStandard from '../../components/HeaderStandard'
 import HeaderMobile from '../../components/HeaderMobile'
 import Footer from '../../components/Footer'
+import blog from '../../static/content/blog.json'
 
 export default {
   name: 'blog-post',
@@ -37,6 +90,9 @@ export default {
     HeaderStandard,
     HeaderMobile,
     Footer
+  },
+  async mounted() {
+    await this.$recaptcha.init()
   },
   async asyncData({ route }) {
     let post = {}
@@ -56,7 +112,12 @@ export default {
     return {
       blogDate: Date,
       image: '',
-      post: {}
+      post: {},
+      subscriberFirstame: '',
+      subscriberLastname: '',
+      subscriberEmail: '',
+      blog: blog,
+      showModal: false
     }
   },
   computed: {
@@ -87,6 +148,51 @@ export default {
     const date = new Date(this.post.date)
     const options = { year: 'numeric', month: 'short', day: 'numeric' }
     this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
+    if (this.$route.query.fb === 'true') {
+      this.showModal = true
+    }
+  },
+  watch: {
+    showModal: function () {
+      this.openModal()
+    }
+  },
+  methods: {
+    openModal() {
+      document.getElementById('newsletter-modal').classList.add('showModal')
+    },
+    closeModal() {
+      document.getElementById('newsletter-modal').classList.remove('showModal')
+    },
+    sendEmail () {
+      const emailData = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('subsribeTo', emailData)
+      this.subscriberFirstame = '',
+      this.subscriberLastname = '',
+      this.subscriberEmail = ''
+    },
+    createSubscriber () {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createSubscriber', subscriberInfo)
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        this.createSubscriber()
+        this.sendEmail()
+        this.closeModal()
+      } catch (error) {
+        console.log('Submission error:', error)
+      }
+    }
   }
 }
 </script>
@@ -161,5 +267,49 @@ export default {
 }
 #blog-post .standard-header {
   display: block;
+}
+.form-input {
+  width: 90%;
+  margin: 0 auto;
+}
+#blog-post .showModal {
+  display: block;
+}
+#blog-post .btn-close {
+  float: right;
+  background: transparent;
+  width: 40px;
+  padding: 5px;
+}
+#blog-post .btn-close img {
+  height: 20px;
+}
+#subscribeToNewsletterForm {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 15px 0;
+}
+#subscribeToNewsletterForm .modal-header,
+#subscribeToNewsletterForm .modal-body {
+  border: none;
+}
+#newsletter-modal .modal-body h3 {
+  margin-top: 15px;
+  text-align: center;
+}
+#subscribeToNewsletterForm input {
+  border-color: #E2E2E2;
+  color: #494949;
+}
+#subscribeToNewsletterForm input::placeholder {
+  color: #E2E2E2;
+}
+#subscribeToNewsletterForm h3 {
+  font-size: 18px;
+  color: #494949;
+  font-weight: 500;
+}
+#subscribeToNewsletterForm .btn {
+  width: 170px;
 }
 </style>

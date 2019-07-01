@@ -260,6 +260,57 @@
       <Footer />
     </section>
     <!-- Master Wrap : ends -->
+    <div v-if="showModal === true" id="newsletter-homepage-modal" class="modal showModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="btn btn-light btn-close" data-target="#newsletter-homepage-modal" @click="closeModal()">
+                <img src="/images/icon-close-128.png" alt="close modal" />
+              </button>
+              <h3>{{ blog.subscribeToOurNewsletter }}</h3>
+              <form
+              id="subscribeToNewsletterHomepageForm"
+              @submit.prevent="onSubmit"
+              class="col-md-12"
+            >
+              <section class="form-input">
+                <article>
+                  <input
+                    v-model="subscriberFirstame"
+                    type="text"
+                    :placeholder="blog.firstnamePlaceholder"
+                    name="subscriberFirstame"
+                  >
+                </article>
+                <article>
+                  <input
+                    v-model="subscriberLastname"
+                    type="text"
+                    :placeholder="blog.lastnamePlaceholder"
+                    name="subscriberLastname"
+                  >
+                </article>
+                <article>
+                  <input
+                    v-model="subscriberEmail"
+                    type="text"
+                    :placeholder="blog.emailPlaceholder"
+                    name="subscriberEmail"
+                  >
+                </article>
+              </section>
+              <article>
+                <div class="btn-wrap  text-center">
+                  <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
+                    {{ blog.buttonText }}
+                  </button>
+                </div>
+              </article>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -332,7 +383,8 @@ export default {
       lastname: '',
       email: '',
       message: '',
-      blogCount: 0
+      blogCount: 0,
+      showModal: false
     }
   },
   computed: mapState(['ticketCreatedStatus']),
@@ -348,6 +400,9 @@ export default {
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
     this.blogCount = this.posts.length
+    if (this.$route.query.fb === 'true') {
+      this.showModal = true
+    }
     if (process.client) {
       // eslint-disable-next-line
       window.onpopstate = function(event) {
@@ -363,6 +418,12 @@ export default {
     await this.$recaptcha.init()
   },
   methods: {
+    openModal() {
+      document.getElementById('newsletter-homepage-modal').classList.add('showModal')
+    },
+    closeModal() {
+      document.getElementById('newsletter-homepage-modal').classList.remove('showModal')
+    },
     updateProjectDetails: function (project) {
       if (project === 'travelDream') {
         this.projectDetails = this.caseStudies.caseStudies[0]
@@ -381,6 +442,35 @@ export default {
     },
     teamMouseOver: function (name, image) {
       document.getElementById(name).src = image
+    },
+    sendEmail () {
+      const emailData = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('subsribeTo', emailData)
+      this.subscriberFirstame = '',
+      this.subscriberLastname = '',
+      this.subscriberEmail = ''
+    },
+    createSubscriber () {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createSubscriber', subscriberInfo)
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        this.createSubscriber()
+        this.sendEmail()
+        this.closeModal()
+      } catch (error) {
+        console.log('Submission error:', error)
+      }
     }
   }
 }
@@ -451,4 +541,44 @@ export default {
     margin: 0 auto;
     margin-bottom: 50px;
   }
+.showModal {
+  display: block;
+}
+#newsletter-homepage-modal .btn-close {
+  float: right;
+  background: transparent;
+  width: 40px;
+  padding: 5px;
+}
+#newsletter-homepage-modal .btn-close img {
+  height: 20px;
+}
+#subscribeToNewsletterHomepageForm {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 15px 0;
+}
+#subscribeToNewsletterHomepageForm .modal-header,
+#subscribeToNewsletterHomepageForm .modal-body {
+  border: none;
+}
+#newsletter-homepage-modal .modal-body h3 {
+  margin-top: 15px;
+  text-align: center;
+}
+#subscribeToNewsletterHomepageForm input {
+  border-color: #E2E2E2;
+      color: #494949;
+}
+#subscribeToNewsletterHomepageForm input::placeholder {
+  color: #E2E2E2;
+}
+#subscribeToNewsletterHomepageForm h3 {
+  font-size: 18px;
+  color: #494949;
+  font-weight: 500;
+}
+#subscribeToNewsletterHomepageForm .btn {
+  width: 170px;
+}
 </style>

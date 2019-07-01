@@ -19,7 +19,7 @@ app.get('/createSubscriber', function (req, res) {
 app.post('/createSubscriber', function (req, res) {
   const subscriberInfo = req.body.subscriberInfo
   createSubscriber(subscriberInfo)
-  res.status(200).json({ 'messsage': 'You have been subscribed to the Cavaon blog' })
+  res.status(200).json({ 'messsage': 'You have been subscribed to the Cavaon newsletter' })
 })
 
 const createSubscriber = (subscriberInfo) => {
