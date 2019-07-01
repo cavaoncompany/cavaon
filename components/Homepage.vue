@@ -260,7 +260,7 @@
       <Footer />
     </section>
     <!-- Master Wrap : ends -->
-    <div v-if="showModal === true" id="newsletter-homepage-modal" class="modal showModal" tabindex="-1" role="dialog">
+    <div v-if="showModal === true" id="newsletter-homepage-modal" class="modal showModal" tabindex="-1" role="dialog" @click="closeIfOutsideModal($event)">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
@@ -311,6 +311,7 @@
           </div>
         </div>
       </div>
+    <div v-if="showModal === true" class="modal-overlay" @click="closeModal()"></div>
   </div>
 </template>
 
@@ -423,6 +424,7 @@ export default {
     },
     closeModal() {
       document.getElementById('newsletter-homepage-modal').classList.remove('showModal')
+      document.getElementsByClassName('modal-overlay')[0].classList.add('hidden')
     },
     updateProjectDetails: function (project) {
       if (project === 'travelDream') {
@@ -442,6 +444,12 @@ export default {
     },
     teamMouseOver: function (name, image) {
       document.getElementById(name).src = image
+    },
+    closeIfOutsideModal (e) {
+      const modal = document.getElementsByClassName('modal-body')[0].getBoundingClientRect()
+      if(e.offsetX < modal.left || e.offsetX > modal.right || e.offsetY < modal.top || e.offsetY > modal.bottom) {
+        this.closeModal()
+      }
     },
     sendEmail () {
       const emailData = {
@@ -580,5 +588,14 @@ export default {
 }
 #subscribeToNewsletterHomepageForm .btn {
   width: 170px;
+}
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
 }
 </style>
