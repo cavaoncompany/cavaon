@@ -275,17 +275,17 @@ import projects from '../static/content/projects.json'
 import promo from '../static/content/promo.json'
 import blog from '../static/content/blog.json'
 import messages from '../static/content/messages.json'
-import HeaderMobile from './HeaderMobile'
-import HeaderTop from './HeaderTop'
-import HeaderStandard from './HeaderStandard'
-import About from './About'
-import Contact from './Contact'
-import Flowchart from './Flowchart'
-import FlowchartMobile from './FlowchartMobile'
+import HeaderMobile from './HeaderMobile.vue'
+import HeaderTop from './HeaderTop.vue'
+import HeaderStandard from './HeaderStandard.vue'
+import About from './About.vue'
+import Contact from './Contact.vue'
+import Flowchart from './Flowchart.vue'
+import FlowchartMobile from './FlowchartMobile.vue'
 import Services from './Services'
-import ProjectWithSlider from './ProjectWithSlider'
-import ArticleList from './blog/Article-list'
-import Footer from './Footer'
+import ProjectWithSlider from './ProjectWithSlider.vue'
+import ArticleList from './blog/Article-list.vue'
+import Footer from './Footer.vue'
 
 export default {
   components: {
@@ -306,6 +306,11 @@ export default {
     showInstallMessage: Boolean
   },
   data() {
+    const context = require.context('~/content/blog/', false, /\.json$/)
+    const posts = context.keys().map(key => ({
+      ...context(key),
+      _path: `/blog/${key.replace('.json', '').replace('./', '')}`
+    }))
     return {
       caseStudies: caseStudies,
       projectDetails: caseStudies.caseStudies[0],
