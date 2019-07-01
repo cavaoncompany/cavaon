@@ -83,8 +83,8 @@ const sendSubscribeMail = (subscriberInfo, emailProvider) => {
       from: subscriberInfo.email,
       to: `${emailData.email}`,
       cc: `${emailData.cc}`,
-      subject: `New blog signup message from www.cavaon.com`,
-      html: `<h2>The following contact would like to subscribe to the Cavaon blog:</h2>
+      subject: `New newsletter signup message from www.cavaon.com`,
+      html: `<h2>The following contact would like to subscribe to the Cavaon newsletter:</h2>
             <table style="border: 4px solid #555555; padding: 8px;">
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Name:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.firstname} ${subscriberInfo.lastname}</td></tr>
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Email:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.email}</td></tr>

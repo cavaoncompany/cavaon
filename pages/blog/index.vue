@@ -11,7 +11,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 subscribe-to-blog">
-            <h3>{{ blog.subscribeToOurBlog }}</h3>
+            <h3>{{ blog.subscribeToOurNewsletter }}</h3>
             <p>{{ blog.stayUpToDate }}</p>
             <form
               id="subscribeToBlogForm"
