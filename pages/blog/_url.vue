@@ -218,7 +218,7 @@ export default {
 
 <style>
 #blog-post-standard-header {
-  display: block;
+  display: block !important;
 }
 .spacer-red {
   background-color: #FA4531;
