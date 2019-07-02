@@ -2,7 +2,7 @@
   <div>
     <a @click="openBlog()">
       <article class="article-card card">
-        <div class="card-image" :style="`background-image:url(` + thumbnail + `)`"></div>
+        <div class="card-image" :style="`background-image:url(` + thumbnail + `)`" />
         <!-- <img :src="thumbnail" :alt="title"> -->
         <div class="card-body">
           <div class="blog-card-top-line">
@@ -12,7 +12,7 @@
             <div class="grey-spacer" />
             <div class="read-time">{{ readTime }} min read</div>
           </div>
-          <div class="card-spacer"/>
+          <div class="card-spacer" />
           <p class="card-title">
             {{ title }}
           </p>
@@ -95,13 +95,6 @@ export default {
       readTime: 0
     }
   },
-  created() {
-    const date = new Date(this.date)
-    const options = { year: 'numeric', month: 'short', day: 'numeric' }
-    this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
-    this.thumbnail = this.thumbnail.replace('/static/', '/')
-    this.readTime = this.calculateReadTime(this.body)
-  },
   computed: {
     language() {
       return (this.lang + '').toLowerCase() === 'en' && 'English'
@@ -110,6 +103,13 @@ export default {
       return (this.language + '').slice(0, 2).toUpperCase()
     }
   },
+  created() {
+    const date = new Date(this.date)
+    const options = { year: 'numeric', month: 'short', day: 'numeric' }
+    this.blogDate = date.toLocaleDateString('en-AU', options).toUpperCase()
+    this.thumbnail = this.thumbnail.replace('/static/', '/')
+    this.readTime = this.calculateReadTime(this.body)
+  },
   methods: {
     calculateReadTime: function (article) {
       const words = article.split(' ').length
@@ -117,7 +117,7 @@ export default {
       return readTime
     },
     openBlog: function () {
-      $nuxt.$router.push({name: 'blog-url', params: {filename: this.filename, url: this.url}})
+      this.$router.push({ name: 'blog-url', params: { filename: this.filename, url: this.url } })
     }
   }
 }

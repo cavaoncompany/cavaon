@@ -19,7 +19,7 @@
           <ul class="standard-nav standard-nav-white-text visible-md visible-lg">
             <li><a href="#services" class="scroll" aria-label="Scroll to Services">Services</a></li>
             <li><a href="#caseStudies" class="scroll" aria-label="Scroll to Case Studies">Case Studies</a></li>
-            <li><a @click.prevent="goToPage('/blog')" href="/blog" aria-label="Go to blog">Blog</a></li>
+            <li><a href="/blog" aria-label="Go to blog" @click.prevent="goToPage('/blog')">Blog</a></li>
             <li><a href="#about" class="scroll" aria-label="Scroll to About">About</a></li>
             <li><a href="#contact" class="scroll" aria-label="Scroll to Contact Form">Contact</a></li>
           </ul>
@@ -34,8 +34,8 @@
 
 export default {
   methods: {
-    goToPage: function(page) {
-      $nuxt.$router.push({name: 'blog'})
+    goToPage: function (page) {
+      this.$router.push({ name: 'blog' })
     }
   }
 }
