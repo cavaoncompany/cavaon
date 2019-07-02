@@ -501,7 +501,7 @@ export default {
       const mailchimpConfig = {
         baseUrl: 'mc.us18.list-manage.com',
         uuid: '35f22d84b4fdb209da5977e3b',
-        lid: 'd5263ee7ce'
+        lid: '1a284e2d50'
       }
 
       const chimpPopupLoader = document.createElement('script')

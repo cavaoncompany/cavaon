@@ -74,10 +74,6 @@ async function createMailChimpMember({ state, commit }, payload, path) {
     }
   }
   try {
-    // async asyncData({ $axios }) {
-    //   const ip = await $axios.$get('http://icanhazip.com')
-    //   return { ip }
-    // }
     const res = await axios.post(path, {
       headers: {
         auth: {
