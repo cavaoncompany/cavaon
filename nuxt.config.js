@@ -50,7 +50,7 @@ module.exports = {
       { src: '/javascripts/custom/main.js', type: 'text/javascript', body: true, defer: true },
       { src: '/javascripts/custom/custom-init.js', type: 'text/javascript', body: true, defer: true },
       { src: '//js.hs-scripts.com/5765560.js', type: 'text/javascript', body: true, defer: true },
-      { src: 'https://chimpstatic.com/mcjs-connected/js/users/35f22d84b4fdb209da5977e3b/f0b9d56258b2270bb2a2cd520.js', type: 'text/javascript' }
+      { src: 'https://chimpstatic.com/mcjs-connected/js/users/35f22d84b4fdb209da5977e3b/eac28fbc3c5fe0a8ba79b9d01.js', type: 'text/javascript' }
     ]
   },
 
