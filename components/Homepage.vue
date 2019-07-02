@@ -352,6 +352,7 @@ import Services from './Services'
 import ProjectWithSlider from './ProjectWithSlider'
 import ArticleList from './blog/Article-list'
 import Footer from './Footer'
+import { setupMailchimpSignup } from '../api/mailchimpSignup.js'
 
 export default {
   components: {
@@ -431,6 +432,9 @@ export default {
   },
   async mounted() {
     await this.$recaptcha.init()
+  },
+  mounted() {
+    this.setupMailchimpSignup()
   },
   methods: {
     openModal() {
