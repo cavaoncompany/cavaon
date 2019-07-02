@@ -487,6 +487,16 @@ export default {
       }
       this.$store.dispatch('createSubscriber', subscriberInfo)
     },
+    createMailchimpSubscriber() {
+      // eslint-disable-next-line
+      console.log('1 calling store')
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createMailchimpSubscriber', subscriberInfo)
+    },
     setupMailchimpPopup() {
       const mailchimpConfig = {
         baseUrl: 'mc.us18.list-manage.com',
@@ -509,8 +519,9 @@ export default {
       try {
         // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
-        this.createSubscriber()
-        this.sendEmail()
+        this.createMailchimpSubscriber()
+        // this.createSubscriber()
+        // this.sendEmail()
         this.closeModal()
       } catch (error) {
         // eslint-disable-next-line

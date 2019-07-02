@@ -104,7 +104,8 @@ module.exports = {
   plugins: [
     { src: '~/plugins/hotjar.js', ssr: false },
     { src: '~/plugins/tawkto.js', ssr: false },
-    { src: '~/plugins/mailchimp.js', ssr: false }
+    { src: '~/plugins/mailchimp.js', ssr: false },
+    { src: '~/plugins/tagmanager.js', ssr: false }
   ],
   server: {
     port: 3002 // default: 3000
@@ -115,6 +116,9 @@ module.exports = {
     '~/api/hubspotStartAProject',
     '~/api/hubspotBlogSignup'
   ],
+  axios: {
+    // proxyHeaders: false
+  },
   /*
   ** Nuxt.js modules
   */

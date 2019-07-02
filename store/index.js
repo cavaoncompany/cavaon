@@ -62,6 +62,39 @@ async function createBlogSubscriber({ state, commit }, payload, path) {
   }
 }
 
+async function createMailChimpMember({ state, commit }, payload, path) {
+  // eslint-disable-next-line
+  console.log('3', payload)
+  const subscriberInfo = {
+    email_address: payload.email,
+    status: 'subscribed',
+    merge_fields: {
+      FIRSTNAME: payload.firstname,
+      LASTNAME: payload.lastname
+    }
+  }
+  try {
+    const { res } = await axios.post(path, {
+      headers: {
+        auth: {
+          username: 'anystring',
+          password: process.env.mailchimpapikey
+        }
+      },
+      subscriberInfo
+    })
+      .then((res) => {
+        // eslint-disable-next-line
+        console.log(res)
+      })
+    // eslint-disable-next-line
+      console.log(res)
+  } catch (err) {
+    // eslint-disable-next-line
+    console.error(err)
+  }
+}
+
 export const actions = {
   async newProject({ state, commit }, payload) {
     // Netlify path
@@ -106,5 +139,11 @@ export const actions = {
     // Express path
     const path = 'api/hubspotBlogSignup/createSubscriber'
     await createBlogSubscriber({ state, commit }, payload, path)
+  },
+  async createMailchimpSubscriber({ state, commit }, payload) {
+    const path = 'https://us18.api.mailchimp.com/3.0/lists/d5263ee7ce/members'
+    // eslint-disable-next-line
+    console.log('2 calling axios', path)
+    await createMailChimpMember({ state, commit }, payload, path)
   }
 }
