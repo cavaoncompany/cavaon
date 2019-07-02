@@ -17,23 +17,33 @@
         <div class="blog-post-body">
           <h2>{{ post.subtitle }}</h2>
           <div class="spacer-red" />
-          <div v-html="$md.render(post.body)" class="body-text" />
+          <div
+            class="body-text"
+            v-html="$md.render(post.body)"
+          />
         </div>
       </div>
     </div>
     <Footer />
-    <div v-if="showModal === true" id="newsletter-modal" class="modal showModal" tabindex="-1" role="dialog" @click="closeIfOutsideModal($event)">
+    <div
+      v-if="showModal === true"
+      id="newsletter-modal"
+      class="modal showModal"
+      tabindex="-1"
+      role="dialog"
+      @click="closeIfOutsideModal($event)"
+    >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-body">
-              <button type="button" class="btn btn-light btn-close" data-target="#newsletter-modal" @click="closeModal()">
-                <img src="/images/icon-close-128.png" alt="close modal" />
-              </button>
-              <h3>{{ blog.subscribeToOurNewsletter }}</h3>
-              <form
+          <div class="modal-body">
+            <button type="button" class="btn btn-light btn-close" data-target="#newsletter-modal" @click="closeModal()">
+              <img src="/images/icon-close-128.png" alt="close modal">
+            </button>
+            <h3>{{ blog.subscribeToOurNewsletter }}</h3>
+            <form
               id="subscribeToNewsletterForm"
-              @submit.prevent="onSubmit"
               class="col-md-12"
+              @submit.prevent="onSubmit"
             >
               <section class="form-input">
                 <article>
@@ -69,7 +79,6 @@
                 </div>
               </article>
             </form>
-            </div>
           </div>
         </div>
       </div>
@@ -86,28 +95,10 @@ import Footer from '../../components/Footer'
 import blog from '../../static/content/blog.json'
 
 export default {
-  name: 'blog-post',
   components: {
     HeaderStandard,
     HeaderMobile,
     Footer
-  },
-  async mounted() {
-    await this.$recaptcha.init()
-  },
-  async asyncData({ route }) {
-    let post = {}
-    const context = require.context('~/content/blog/', false, /\.json$/)
-    const postie = context.keys().map(key => ({
-      ...context(key),
-      _path: `/blog/${key.replace('.json', '').replace('./', '')}`,
-      filename: `${key}`
-    }))
-    const posts = postie.filter(a => a.slug.toLowerCase().replace(/ /g, '-') === route.params.url)
-    if(posts.length > 0){
-      post = posts[0]
-    }
-    return {post}
   },
   data() {
     return {
@@ -126,12 +117,35 @@ export default {
       return markdown.toHTML(this.post.body)
     },
     trimmedDescription() {
-      if(typeof(this.post.description) !== "undefined") {
+      if (typeof (this.post.description) !== 'undefined') {
         return (this.post.description + '').slice(0, 150)
       } else {
         return ('Cavaon blog post ')
       }
     }
+  },
+  watch: {
+    showModal: function () {
+      this.openModal()
+    }
+  },
+  async mounted() {
+    await this.$recaptcha.init()
+  },
+  // eslint-disable-next-line
+  async asyncData({ route }) {
+    let post = {}
+    const context = require.context('~/content/blog/', false, /\.json$/)
+    const postie = context.keys().map(key => ({
+      ...context(key),
+      _path: `/blog/${key.replace('.json', '').replace('./', '')}`,
+      filename: `${key}`
+    }))
+    const posts = postie.filter(a => a.slug.toLowerCase().replace(/ /g, '-') === route.params.url)
+    if (posts.length > 0) {
+      post = posts[0]
+    }
+    return { post }
   },
   head() {
     return {
@@ -153,11 +167,6 @@ export default {
       this.showModal = true
     }
   },
-  watch: {
-    showModal: function () {
-      this.openModal()
-    }
-  },
   methods: {
     openModal() {
       document.getElementById('newsletter-modal').classList.add('showModal')
@@ -166,24 +175,24 @@ export default {
       document.getElementById('newsletter-modal').classList.remove('showModal')
       document.getElementsByClassName('modal-overlay')[0].classList.add('hidden')
     },
-    closeIfOutsideModal (e) {
+    closeIfOutsideModal(e) {
       const modal = document.getElementsByClassName('modal-body')[0].getBoundingClientRect()
-      if(e.offsetX < modal.left || e.offsetX > modal.right || e.offsetY < modal.top || e.offsetY > modal.bottom) {
+      if (e.offsetX < modal.left || e.offsetX > modal.right || e.offsetY < modal.top || e.offsetY > modal.bottom) {
         this.closeModal()
       }
     },
-    sendEmail () {
+    sendEmail() {
       const emailData = {
         email: this.subscriberEmail,
         firstname: this.subscriberFirstame,
         lastname: this.subscriberLastname
       }
       this.$store.dispatch('subsribeTo', emailData)
-      this.subscriberFirstame = '',
-      this.subscriberLastname = '',
+      this.subscriberFirstame = ''
+      this.subscriberLastname = ''
       this.subscriberEmail = ''
     },
-    createSubscriber () {
+    createSubscriber() {
       const subscriberInfo = {
         email: this.subscriberEmail,
         firstname: this.subscriberFirstame,
@@ -193,11 +202,13 @@ export default {
     },
     async onSubmit() {
       try {
+        // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
         this.createSubscriber()
         this.sendEmail()
         this.closeModal()
       } catch (error) {
+        // eslint-disable-next-line
         console.log('Submission error:', error)
       }
     }

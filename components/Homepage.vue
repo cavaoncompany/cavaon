@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderMobile />
+    <HeaderMobile page="home" />
     <div id="iosMessage" />
     <!-- Master Wrap : starts -->
     <section id="mastwrap">
@@ -163,7 +163,14 @@
           <!-- <div id="testimonial-carousel" class="testimonial-carousel owl-carousel"> -->
           <div class="container">
             <div class="testimonial-wrapper">
-              <div itemprop="review" itemscope itemtype="http://schema.org/Review" v-for="(testimonial, index) in testimonials.testimonials" :key="index" class="item stats-carousel-item testimonial-wrap testimonial-wrap-right">
+              <div
+                v-for="(testimonial, index) in testimonials.testimonials"
+                :key="index"
+                itemprop="review"
+                itemscope
+                itemtype="http://schema.org/Review"
+                class="item stats-carousel-item testimonial-wrap testimonial-wrap-right"
+              >
                 <h3 itemprop="description" class="main-caps">
                   {{ testimonial.title }}
                 </h3>
@@ -237,7 +244,7 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="blog" class="page-section remove-pad-bottom white-bg" @mouseover="changeUrl('')" >
+      <section id="blog" class="page-section remove-pad-bottom white-bg" @mouseover="changeUrl('')">
         <section class="inner-section text-center silver-bg row blog-inner-section">
           <div class="container">
             <div class="row">
@@ -248,8 +255,8 @@
               </article>
               <article-list :articles="posts" page="homepage" />
               <div v-if="blogCount > 4" class="welcome-button blog-welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="/blog">{{ blog.homepageButtonText }}</a>
-                </div>
+                <a class="btn btn-odin btn-odin-color" href="/blog">{{ blog.homepageButtonText }}</a>
+              </div>
             </div>
           </div>
         </section>
@@ -260,18 +267,25 @@
       <Footer />
     </section>
     <!-- Master Wrap : ends -->
-    <div v-if="showHomepageModal === true" id="newsletter-homepage-modal" class="modal showModal" tabindex="-1" role="dialog" @click="closeIfOutsideModal($event)">
+    <div
+      v-if="showHomepageModal === true"
+      id="newsletter-homepage-modal"
+      class="modal showModal"
+      tabindex="-1"
+      role="dialog"
+      @click="closeIfOutsideModal($event)"
+    >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-body">
-              <button type="button" class="btn btn-light btn-close" data-target="#newsletter-homepage-modal" @click="closeModal()">
-                <img src="/images/icon-close-128.png" alt="close modal" />
-              </button>
-              <h3>{{ blog.subscribeToOurNewsletter }}</h3>
-              <form
+          <div class="modal-body">
+            <button type="button" class="btn btn-light btn-close" data-target="#newsletter-homepage-modal" @click="closeModal()">
+              <img src="/images/icon-close-128.png" alt="close modal">
+            </button>
+            <h3>{{ blog.subscribeToOurNewsletter }}</h3>
+            <form
               id="subscribeToNewsletterHomepageForm"
-              @submit.prevent="onSubmit"
               class="col-md-12"
+              @submit.prevent="onSubmit"
             >
               <section class="form-input">
                 <article>
@@ -307,11 +321,11 @@
                 </div>
               </article>
             </form>
-            </div>
           </div>
         </div>
       </div>
-    <div v-if="showHomepageModal === true" class="modal-overlay" @click="closeModal()"></div>
+    </div>
+    <div v-if="showHomepageModal === true" class="modal-overlay" @click="closeModal()" />
   </div>
 </template>
 
@@ -445,24 +459,24 @@ export default {
     teamMouseOver: function (name, image) {
       document.getElementById(name).src = image
     },
-    closeIfOutsideModal (e) {
+    closeIfOutsideModal(e) {
       const modal = document.getElementsByClassName('modal-body')[0].getBoundingClientRect()
-      if(e.offsetX < modal.left || e.offsetX > modal.right || e.offsetY < modal.top || e.offsetY > modal.bottom) {
+      if (e.offsetX < modal.left || e.offsetX > modal.right || e.offsetY < modal.top || e.offsetY > modal.bottom) {
         this.closeModal()
       }
     },
-    sendEmail () {
+    sendEmail() {
       const emailData = {
         email: this.subscriberEmail,
         firstname: this.subscriberFirstame,
         lastname: this.subscriberLastname
       }
       this.$store.dispatch('subsribeTo', emailData)
-      this.subscriberFirstame = '',
-      this.subscriberLastname = '',
+      this.subscriberFirstame = ''
+      this.subscriberLastname = ''
       this.subscriberEmail = ''
     },
-    createSubscriber () {
+    createSubscriber() {
       const subscriberInfo = {
         email: this.subscriberEmail,
         firstname: this.subscriberFirstame,
@@ -472,11 +486,13 @@ export default {
     },
     async onSubmit() {
       try {
+        // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
         this.createSubscriber()
         this.sendEmail()
         this.closeModal()
       } catch (error) {
+        // eslint-disable-next-line
         console.log('Submission error:', error)
       }
     }

@@ -10,10 +10,14 @@
         </article>
       </div>
       <div class="row service-card-container">
-        <div itemscope itemtype="https://schema.org/Service" v-for="(service, index) in services.services" :key="index" class="service-card col-12 col-md-6 col-lg-3">
+        <div v-for="(service, index) in services.services" :key="index" itemscope itemtype="https://schema.org/Service" class="service-card col-12 col-md-6 col-lg-3">
           <img :src="service.image" :alt="service.imageTitle" :title="service.imageTitle">
-          <h3 itemprop="serviceType">{{ service.title }}</h3>
-          <p itemprop="itemOffered">{{ service.description }}</p>
+          <h3 itemprop="serviceType">
+            {{ service.title }}
+          </h3>
+          <p itemprop="itemOffered">
+            {{ service.description }}
+          </p>
         </div>
       </div>
     </div>
