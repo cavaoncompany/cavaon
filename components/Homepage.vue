@@ -518,6 +518,8 @@ export default {
     async onSubmit() {
       try {
         // eslint-disable-next-line
+        console.log('0 hitting submit')
+        // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
         this.createMailchimpSubscriber()
         // this.createSubscriber()
