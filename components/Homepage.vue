@@ -434,7 +434,7 @@ export default {
     await this.$recaptcha.init()
   },
   mounted() {
-    this.setupMailchimpSignup()
+    setupMailchimpSignup()
   },
   methods: {
     openModal() {
