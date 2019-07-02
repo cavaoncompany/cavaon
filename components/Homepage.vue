@@ -277,7 +277,7 @@
     >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-body">
+          <div id="newsletter-homepage-modal-body" class="modal-body">
             <button type="button" class="btn btn-light btn-close" data-target="#newsletter-homepage-modal" @click="closeModal()">
               <img src="/images/icon-close-128.png" alt="close modal">
             </button>
@@ -460,8 +460,8 @@ export default {
       document.getElementById(name).src = image
     },
     closeIfOutsideModal(e) {
-      const modal = document.getElementsByClassName('modal-body')[0].getBoundingClientRect()
-      if (e.offsetX < modal.left || e.offsetX > modal.right || e.offsetY < modal.top || e.offsetY > modal.bottom) {
+      const modal = document.getElementById('newsletter-homepage-modal-body').getBoundingClientRect()
+      if (e.pageX < modal.left || e.pageX > modal.right || e.pageY < modal.top || e.pageY > modal.bottom) {
         this.closeModal()
       }
     },

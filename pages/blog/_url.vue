@@ -177,7 +177,7 @@ export default {
     },
     closeIfOutsideModal(e) {
       const modal = document.getElementsByClassName('modal-body')[0].getBoundingClientRect()
-      if (e.offsetX < modal.left || e.offsetX > modal.right || e.offsetY < modal.top || e.offsetY > modal.bottom) {
+      if (e.pageX < modal.left || e.pageX > modal.right || e.pageY < modal.top || e.pageY > modal.bottom) {
         this.closeModal()
       }
     },
