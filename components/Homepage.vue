@@ -524,7 +524,7 @@ export default {
         this.createMailchimpSubscriber()
         // this.createSubscriber()
         // this.sendEmail()
-        this.closeModal()
+        // this.closeModal()
       } catch (error) {
         // eslint-disable-next-line
         console.log('Submission error:', error)
