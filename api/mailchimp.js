@@ -24,33 +24,22 @@ app.post('/createMailchimpContact', function (req, res) {
 const createContact = (subscriberInfo) => {
   const lid = process.env.mailchimplid
   const path = 'https://us18.api.mailchimp.com/3.0/lists/' + lid + '/members'
-  const data = {
-    email_address: subscriberInfo.email,
-    status: 'subscribed',
-    merge_fields: {
-      FNAME: subscriberInfo.firstname,
-      LNAME: subscriberInfo.lastname
-    }
-  }
-  const mailChimpRes = axios.post(path, {
-    data,
-    withCredentials: true,
+  axios({
+    method: 'post',
+    url: path,
+    data: {
+      email_address: subscriberInfo.email,
+      status: 'subscribed',
+      merge_fields: {
+        FNAME: subscriberInfo.firstname,
+        LNAME: subscriberInfo.lastname
+      }
+    },
     auth: {
       username: 'anystring',
       password: process.env.mailchimpapikey
-    },
-    headers: {
-      'Content-Type': 'application/json'
     }
   })
-    .then((res) => {
-      // eslint-disable-next-line
-      console.log(mailChimpRes, res)
-    })
-    .catch((err) => {
-      // eslint-disable-next-line
-      console.error(err)
-    })
 }
 
 module.exports = {
