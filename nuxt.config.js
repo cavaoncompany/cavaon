@@ -114,7 +114,8 @@ module.exports = {
     '~/api/nodemailer',
     '~/api/hubspotContact',
     '~/api/hubspotStartAProject',
-    '~/api/hubspotBlogSignup'
+    '~/api/hubspotBlogSignup',
+    '~/api/mailchimp'
   ],
   axios: {
     // proxyHeaders: false

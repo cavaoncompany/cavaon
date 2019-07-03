@@ -488,8 +488,6 @@ export default {
       this.$store.dispatch('createSubscriber', subscriberInfo)
     },
     createMailchimpSubscriber() {
-      // eslint-disable-next-line
-      console.log('1 calling store')
       const subscriberInfo = {
         email: this.subscriberEmail,
         firstname: this.subscriberFirstame,
@@ -518,13 +516,11 @@ export default {
     async onSubmit() {
       try {
         // eslint-disable-next-line
-        console.log('0 hitting submit')
-        // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
         this.createMailchimpSubscriber()
-        // this.createSubscriber()
-        // this.sendEmail()
-        // this.closeModal()
+        this.createSubscriber()
+        this.sendEmail()
+        this.closeModal()
       } catch (error) {
         // eslint-disable-next-line
         console.log('Submission error:', error)
