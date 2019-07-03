@@ -200,10 +200,19 @@ export default {
       }
       this.$store.dispatch('createSubscriber', subscriberInfo)
     },
+    createMailchimpSubscriber() {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createMailchimpSubscriber', subscriberInfo)
+    },
     async onSubmit() {
       try {
         // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
+        this.createMailchimpSubscriber()
         this.createSubscriber()
         this.sendEmail()
         this.closeModal()

@@ -63,5 +63,6 @@ const createSubscriber = (subscriberInfo) => {
 
 module.exports = {
   path: '/api/hubspotBlogSignup',
-  handler: app
+  handler: app,
+  prefix: false
 }

@@ -68,8 +68,7 @@ async function createMailChimpMember({ state, commit }, payload, path) {
     const res = await axios.post(path, {
       subscriberInfo
     })
-    // eslint-disable-next-line
-      console.log({ res })
+    return ({ res })
   } catch (err) {
     // eslint-disable-next-line
     console.error(err)
@@ -118,11 +117,11 @@ export const actions = {
     // Netlify path
     // const path = '/.netlify/functions/hubspotCreateSubscriber'
     // Express path
-    const path = 'api/hubspotBlogSignup/createSubscriber'
+    const path = '/api/hubspotBlogSignup/createSubscriber'
     await createBlogSubscriber({ state, commit }, payload, path)
   },
   async createMailchimpSubscriber({ state, commit }, payload) {
-    const path = 'api/mailchimp/createMailchimpContact'
+    const path = '/api/mailchimp/createMailchimpContact'
     await createMailChimpMember({ state, commit }, payload, path)
   }
 }
