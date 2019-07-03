@@ -12,10 +12,6 @@ app.use(bodyParser.json({ limit: '10mb' }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 app.use(express.json())
 
-app.get('/createSubscriber', function (req, res) {
-  res.send('hubspotbloghello')
-})
-
 app.post('/createSubscriber', function (req, res) {
   const subscriberInfo = req.body.subscriberInfo
   createSubscriber(subscriberInfo)

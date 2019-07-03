@@ -487,11 +487,19 @@ export default {
       }
       this.$store.dispatch('createSubscriber', subscriberInfo)
     },
+    createMailchimpSubscriber() {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createMailchimpSubscriber', subscriberInfo)
+    },
     setupMailchimpPopup() {
       const mailchimpConfig = {
         baseUrl: 'mc.us18.list-manage.com',
         uuid: '35f22d84b4fdb209da5977e3b',
-        lid: 'd5263ee7ce'
+        lid: '1a284e2d50'
       }
 
       const chimpPopupLoader = document.createElement('script')
@@ -509,6 +517,7 @@ export default {
       try {
         // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
+        this.createMailchimpSubscriber()
         this.createSubscriber()
         this.sendEmail()
         this.closeModal()
