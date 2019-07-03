@@ -47,8 +47,6 @@ const createSubscriber = (subscriberInfo) => {
     })
     .catch((error) => {
       if (error.statusCode === 'contact does not exist') {
-        // eslint-disable-next-line
-        console.log('Creating contact')
         api.contacts.createContact({
           email: email,
           firstname: firstname,
