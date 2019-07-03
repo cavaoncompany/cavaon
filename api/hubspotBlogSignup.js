@@ -12,14 +12,10 @@ app.use(bodyParser.json({ limit: '10mb' }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 app.use(express.json())
 
-app.get('/createSubscriber', function (req, res) {
-  res.send('hubspotbloghello')
-})
-
 app.post('/createSubscriber', function (req, res) {
   const subscriberInfo = req.body.subscriberInfo
   createSubscriber(subscriberInfo)
-  res.status(200).json({ 'messsage': 'You have been subscribed to the Cavaon blog' })
+  res.status(200).json({ 'messsage': 'You have been subscribed to the Cavaon newsletter' })
 })
 
 const createSubscriber = (subscriberInfo) => {
@@ -51,8 +47,6 @@ const createSubscriber = (subscriberInfo) => {
     })
     .catch((error) => {
       if (error.statusCode === 'contact does not exist') {
-        // eslint-disable-next-line
-        console.log('Creating contact')
         api.contacts.createContact({
           email: email,
           firstname: firstname,
@@ -69,5 +63,6 @@ const createSubscriber = (subscriberInfo) => {
 
 module.exports = {
   path: '/api/hubspotBlogSignup',
-  handler: app
+  handler: app,
+  prefix: false
 }

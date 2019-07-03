@@ -180,10 +180,12 @@
             >
           </section>
           <article>
-            <p class="form-errors" v-if="errors.length">
+            <p v-if="errors.length" class="form-errors">
               <b>Please correct the following error(s):</b>
               <ul>
-                <li v-for="error in errors">{{ error }}</li>
+                <li v-for="(error, i) in errors" :key="i">
+                  {{ error }}
+                </li>
               </ul>
             </p>
             <div class="btn-wrap  text-center">
@@ -203,7 +205,6 @@ import { mapState } from 'vuex'
 import startaprojectform from '../static/content/startaprojectform.json'
 
 export default {
-  name: 'StartAProjectForm',
   data() {
     return {
       startaprojectform: startaprojectform,
@@ -257,7 +258,7 @@ export default {
       e.preventDefault()
     },
     validEmail: function (email) {
-      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email)
     },
     addProjectType: function (data, e) {

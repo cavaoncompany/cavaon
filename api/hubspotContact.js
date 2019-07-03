@@ -12,10 +12,6 @@ app.use(bodyParser.json({ limit: '10mb' }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 app.use(express.json())
 
-app.get('/hubspotContact', function (req, res) {
-  res.send('hubspothello')
-})
-
 app.post('/hubspotContact', function (req, res) {
   const ticketInfo = req.body.ticketInfo
   createContactUsTicket(ticketInfo)

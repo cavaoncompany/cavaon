@@ -44,10 +44,10 @@
 export default {
   props: {
     page: {
-        type: String,
-        required: true,
-        default: () => ''
-      }
+      type: String,
+      required: true,
+      default: () => ''
+    }
   }
 }
 </script>

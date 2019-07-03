@@ -11,12 +11,12 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 subscribe-to-blog">
-            <h3>{{ blog.subscribeToOurBlog }}</h3>
+            <h3>{{ blog.subscribeToOurNewsletter }}</h3>
             <p>{{ blog.stayUpToDate }}</p>
             <form
               id="subscribeToBlogForm"
-              @submit.prevent="onSubmit"
               class="col-md-12"
+              @submit.prevent="onSubmit"
             >
               <section class="form-input">
                 <article>
@@ -51,7 +51,7 @@
                   </button>
                 </div>
               </article>
-              <article v-if="messageSent === true" class='successfully-subscribed'>
+              <article v-if="messageSent === true" class="successfully-subscribed">
                 <p>{{ blog.messageSent }}</p>
               </article>
             </form>
@@ -70,27 +70,12 @@ import ArticleList from '../../components/blog/Article-list'
 import HeaderStandard from '../../components/HeaderStandard'
 import HeaderMobile from '../../components/HeaderMobile'
 import Footer from '../../components/Footer'
-const title = 'BLOG'
 export default {
-  name: 'blog',
-  head: {
-    title,
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Blog - Web development related posts by Cavaon.'
-      }
-    ]
-  },
   components: {
     ArticleList,
     HeaderStandard,
     HeaderMobile,
     Footer
-  },
-  async mounted() {
-    await this.$recaptcha.init()
   },
   data() {
     // Using webpacks context to gather all files from a folder
@@ -110,19 +95,22 @@ export default {
       metadata: metadata
     }
   },
+  async mounted() {
+    await this.$recaptcha.init()
+  },
   methods: {
-    sendEmail () {
+    sendEmail() {
       const emailData = {
         email: this.subscriberEmail,
         firstname: this.subscriberFirstame,
         lastname: this.subscriberLastname
       }
       this.$store.dispatch('subsribeTo', emailData)
-      this.subscriberFirstame = '',
-      this.subscriberLastname = '',
+      this.subscriberFirstame = ''
+      this.subscriberLastname = ''
       this.subscriberEmail = ''
     },
-    createSubscriber () {
+    createSubscriber() {
       const subscriberInfo = {
         email: this.subscriberEmail,
         firstname: this.subscriberFirstame,
@@ -130,13 +118,24 @@ export default {
       }
       this.$store.dispatch('createSubscriber', subscriberInfo)
     },
+    createMailchimpSubscriber() {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createMailchimpSubscriber', subscriberInfo)
+    },
     async onSubmit() {
       try {
+        // eslint-disable-next-line
         const token = await this.$recaptcha.execute('login')
+        this.createMailchimpSubscriber()
         this.createSubscriber()
         this.sendEmail()
         this.messageSent = true
       } catch (error) {
+        // eslint-disable-next-line
         console.log('Submission error:', error)
       }
     }

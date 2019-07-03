@@ -15,5 +15,6 @@ describe('HeaderStandard.vue', () => {
       }
     })
     expect(wrapper.html()).toMatch(/<ul/)
+    expect(wrapper.props('page')).toBe('blog')
   })
 })

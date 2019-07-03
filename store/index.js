@@ -62,6 +62,19 @@ async function createBlogSubscriber({ state, commit }, payload, path) {
   }
 }
 
+async function createMailChimpMember({ state, commit }, payload, path) {
+  const subscriberInfo = payload
+  try {
+    const res = await axios.post(path, {
+      subscriberInfo
+    })
+    return ({ res })
+  } catch (err) {
+    // eslint-disable-next-line
+    console.error(err)
+  }
+}
+
 export const actions = {
   async newProject({ state, commit }, payload) {
     // Netlify path
@@ -104,7 +117,11 @@ export const actions = {
     // Netlify path
     // const path = '/.netlify/functions/hubspotCreateSubscriber'
     // Express path
-    const path = 'api/hubspotBlogSignup/createSubscriber'
+    const path = '/api/hubspotBlogSignup/createSubscriber'
     await createBlogSubscriber({ state, commit }, payload, path)
+  },
+  async createMailchimpSubscriber({ state, commit }, payload) {
+    const path = '/api/mailchimp/createMailchimpContact'
+    await createMailChimpMember({ state, commit }, payload, path)
   }
 }

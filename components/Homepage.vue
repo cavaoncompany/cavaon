@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderMobile />
+    <HeaderMobile page="home" />
     <div id="iosMessage" />
     <!-- Master Wrap : starts -->
     <section id="mastwrap">
@@ -163,7 +163,14 @@
           <!-- <div id="testimonial-carousel" class="testimonial-carousel owl-carousel"> -->
           <div class="container">
             <div class="testimonial-wrapper">
-              <div itemprop="review" itemscope itemtype="http://schema.org/Review" v-for="(testimonial, index) in testimonials.testimonials" :key="index" class="item stats-carousel-item testimonial-wrap testimonial-wrap-right">
+              <div
+                v-for="(testimonial, index) in testimonials.testimonials"
+                :key="index"
+                itemprop="review"
+                itemscope
+                itemtype="http://schema.org/Review"
+                class="item stats-carousel-item testimonial-wrap testimonial-wrap-right"
+              >
                 <h3 itemprop="description" class="main-caps">
                   {{ testimonial.title }}
                 </h3>
@@ -237,7 +244,7 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="blog" class="page-section remove-pad-bottom white-bg" @mouseover="changeUrl('')" >
+      <section id="blog" class="page-section remove-pad-bottom white-bg" @mouseover="changeUrl('')">
         <section class="inner-section text-center silver-bg row blog-inner-section">
           <div class="container">
             <div class="row">
@@ -248,8 +255,8 @@
               </article>
               <article-list :articles="posts" page="homepage" />
               <div v-if="blogCount > 4" class="welcome-button blog-welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="/blog">{{ blog.homepageButtonText }}</a>
-                </div>
+                <a class="btn btn-odin btn-odin-color" href="/blog">{{ blog.homepageButtonText }}</a>
+              </div>
             </div>
           </div>
         </section>
@@ -260,6 +267,65 @@
       <Footer />
     </section>
     <!-- Master Wrap : ends -->
+    <div
+      v-if="showHomepageModal === true"
+      id="newsletter-homepage-modal"
+      class="modal showModal"
+      tabindex="-1"
+      role="dialog"
+      @click="closeIfOutsideModal($event)"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div id="newsletter-homepage-modal-body" class="modal-body">
+            <button type="button" class="btn btn-light btn-close" data-target="#newsletter-homepage-modal" @click="closeModal()">
+              <img src="/images/icon-close-128.png" alt="close modal">
+            </button>
+            <h3>{{ blog.subscribeToOurNewsletter }}</h3>
+            <form
+              id="subscribeToNewsletterHomepageForm"
+              class="col-md-12"
+              @submit.prevent="onSubmit"
+            >
+              <section class="form-input">
+                <article>
+                  <input
+                    v-model="subscriberFirstame"
+                    type="text"
+                    :placeholder="blog.firstnamePlaceholder"
+                    name="subscriberFirstame"
+                  >
+                </article>
+                <article>
+                  <input
+                    v-model="subscriberLastname"
+                    type="text"
+                    :placeholder="blog.lastnamePlaceholder"
+                    name="subscriberLastname"
+                  >
+                </article>
+                <article>
+                  <input
+                    v-model="subscriberEmail"
+                    type="text"
+                    :placeholder="blog.emailPlaceholder"
+                    name="subscriberEmail"
+                  >
+                </article>
+              </section>
+              <article>
+                <div class="btn-wrap  text-center">
+                  <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
+                    {{ blog.buttonText }}
+                  </button>
+                </div>
+              </article>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-if="showHomepageModal === true" class="modal-overlay" @click="closeModal()" />
   </div>
 </template>
 
@@ -332,7 +398,8 @@ export default {
       lastname: '',
       email: '',
       message: '',
-      blogCount: 0
+      blogCount: 0,
+      showHomepageModal: false
     }
   },
   computed: mapState(['ticketCreatedStatus']),
@@ -348,6 +415,9 @@ export default {
     const randomnumber = this.convertToMinutes(date)
     this.linesOfCode = Number(randomnumber - 25868512)
     this.blogCount = this.posts.length
+    if (this.$route.query.fb === 'true') {
+      this.showHomepageModal = true
+    }
     if (process.client) {
       // eslint-disable-next-line
       window.onpopstate = function(event) {
@@ -363,6 +433,13 @@ export default {
     await this.$recaptcha.init()
   },
   methods: {
+    openModal() {
+      document.getElementById('newsletter-homepage-modal').classList.add('showModal')
+    },
+    closeModal() {
+      document.getElementById('newsletter-homepage-modal').classList.remove('showModal')
+      document.getElementsByClassName('modal-overlay')[0].classList.add('hidden')
+    },
     updateProjectDetails: function (project) {
       if (project === 'travelDream') {
         this.projectDetails = this.caseStudies.caseStudies[0]
@@ -381,6 +458,70 @@ export default {
     },
     teamMouseOver: function (name, image) {
       document.getElementById(name).src = image
+    },
+    closeIfOutsideModal(e) {
+      const modal = document.getElementById('newsletter-homepage-modal-body').getBoundingClientRect()
+      if (e.pageX < modal.left || e.pageX > modal.right || e.pageY < modal.top || e.pageY > modal.bottom) {
+        this.closeModal()
+      }
+    },
+    sendEmail() {
+      const emailData = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('subsribeTo', emailData)
+      this.subscriberFirstame = ''
+      this.subscriberLastname = ''
+      this.subscriberEmail = ''
+    },
+    createSubscriber() {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createSubscriber', subscriberInfo)
+    },
+    createMailchimpSubscriber() {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstame,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createMailchimpSubscriber', subscriberInfo)
+    },
+    setupMailchimpPopup() {
+      const mailchimpConfig = {
+        baseUrl: 'mc.us18.list-manage.com',
+        uuid: '35f22d84b4fdb209da5977e3b',
+        lid: '1a284e2d50'
+      }
+
+      const chimpPopupLoader = document.createElement('script')
+      chimpPopupLoader.src = '//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js'
+      chimpPopupLoader.setAttribute('data-dojo-config', 'usePlainJson: true, isDebug: false')
+      const chimpPopup = document.createElement('script')
+      chimpPopup.appendChild(document.createTextNode('require(["mojo/signup-forms/Loader"], function (L) { L.start({"baseUrl": "' + mailchimpConfig.baseUrl + '", "uuid": "' + mailchimpConfig.uuid + '", "lid": "' + mailchimpConfig.lid + '"})});'))
+
+      chimpPopupLoader.onload = function () {
+        document.body.appendChild(chimpPopup)
+      }
+      document.body.appendChild(chimpPopupLoader)
+    },
+    async onSubmit() {
+      try {
+        // eslint-disable-next-line
+        const token = await this.$recaptcha.execute('login')
+        this.createMailchimpSubscriber()
+        this.createSubscriber()
+        this.sendEmail()
+        this.closeModal()
+      } catch (error) {
+        // eslint-disable-next-line
+        console.log('Submission error:', error)
+      }
     }
   }
 }
@@ -451,4 +592,53 @@ export default {
     margin: 0 auto;
     margin-bottom: 50px;
   }
+.showModal {
+  display: block;
+}
+#newsletter-homepage-modal .btn-close {
+  float: right;
+  background: transparent;
+  width: 40px;
+  padding: 5px;
+}
+#newsletter-homepage-modal .btn-close img {
+  height: 20px;
+}
+#subscribeToNewsletterHomepageForm {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 15px 0;
+}
+#subscribeToNewsletterHomepageForm .modal-header,
+#subscribeToNewsletterHomepageForm .modal-body {
+  border: none;
+}
+#newsletter-homepage-modal .modal-body h3 {
+  margin-top: 15px;
+  text-align: center;
+}
+#subscribeToNewsletterHomepageForm input {
+  border-color: #E2E2E2;
+      color: #494949;
+}
+#subscribeToNewsletterHomepageForm input::placeholder {
+  color: #E2E2E2;
+}
+#subscribeToNewsletterHomepageForm h3 {
+  font-size: 18px;
+  color: #494949;
+  font-weight: 500;
+}
+#subscribeToNewsletterHomepageForm .btn {
+  width: 170px;
+}
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
 </style>

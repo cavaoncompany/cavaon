@@ -10,6 +10,6 @@ describe('Homepage.vue', () => {
 // describe('Homepage.vue', () => {
 //   test('Homepage has h1', () => {
 //     const wrapper = mount(Homepage)
-//     expect(wrapper.html()).toContain('<h1>')
+//     expect(wrapper.html()).toMatch(/<h1 class="white desktop-banner">/)
 //   })
 // })

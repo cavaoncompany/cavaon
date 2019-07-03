@@ -18,9 +18,9 @@
         :filename="featuredArticle.filename"
         :extract="getExtract(featuredArticle.body)"
       />
-        <p class="keywords">
-          <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
-        </p>
+      <p class="keywords">
+        <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
+      </p>
       <article-card
         v-for="(article, i) in sortedArticles"
         :key="i"
@@ -40,10 +40,24 @@
       />
       <article class="viewMore">
         <div class="btn-wrap text-center">
-          <button v-if="viewAll === false" id="viewMore" class="btn" name="viewMore" type="button" @click="updateView()">
+          <button
+            v-if="viewAll === false"
+            id="viewMore"
+            class="btn"
+            name="viewMore"
+            type="button"
+            @click="updateView()"
+          >
             {{ blog.viewMore }}
           </button>
-          <button v-if="viewAll === true" id="viewMore" class="btn" name="viewMore" type="button" @click="updateView()">
+          <button
+            v-if="viewAll === true"
+            id="viewMore"
+            class="btn"
+            name="viewMore"
+            type="button"
+            @click="updateView()"
+          >
             {{ blog.viewLess }}
           </button>
         </div>
@@ -74,8 +88,8 @@
 
 <script>
 import blog from '../../static/content/blog.json'
-import ArticleCard from './Article-card'
-import FeaturedArticleCard from './Featured-article-card'
+import ArticleCard from './Article-card.vue'
+import FeaturedArticleCard from './Featured-article-card.vue'
 
 export default {
   components: {
@@ -109,7 +123,7 @@ export default {
     this.blogCount = this.articles.length
     this.sortedArticles = this.orderPostsByDate()
     this.featuredArticle = this.sortedArticles[0]
-    if(this.sortedArticles.length >= 4 ) {
+    if (this.sortedArticles.length >= 4) {
       this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, 4)
     } else {
       this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, this.sortedArticles.length)
@@ -153,7 +167,7 @@ export default {
     },
     orderPostsByDate: function () {
       const currentArticles = JSON.parse(JSON.stringify(this.articles))
-      let sortedArticles = currentArticles.sort(function (a, b) {
+      const sortedArticles = currentArticles.sort(function (a, b) {
         return new Date(b.date) - new Date(a.date)
       })
       const newSortedArticles = this.createPaths(sortedArticles)
@@ -175,11 +189,11 @@ export default {
     },
     updateView: function () {
       this.viewAll = !this.viewAll
-      if (this.viewAll ===  true) {
+      if (this.viewAll === true) {
         this.sortedArticles = this.orderPostsByDate()
       } else {
         this.sortedArticles = this.orderPostsByDate()
-        if(this.sortedArticles.length >= 6) {
+        if (this.sortedArticles.length >= 6) {
           this.sortedArticles = this.prepareLatestPosts(this.sortedArticles, 6)
         } else {
           this.sortedArticles = this.prepareLatestPosts(this.sortedArticles, this.sortedArticles.length)
@@ -187,7 +201,7 @@ export default {
       }
     },
     createPaths: function (articles) {
-      for(let i = 0; i < articles.length; i++) {
+      for (let i = 0; i < articles.length; i++) {
         const path = articles[i].slug.toLowerCase().replace(/ /g, '-')
         articles[i].url = path
       }
