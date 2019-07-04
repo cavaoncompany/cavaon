@@ -8,20 +8,22 @@
         <HeaderTop />
         <!-- <div class="valignBanner"> -->
         <div class="container hero-container" @mouseover="changeUrl('')">
-          <div class="hero-caps text-rotator">
-            <h1 class="white desktop-banner">
-              <span>{{ banner.titleTop }}</span>
-              <br>{{ banner.titleBottom }}
-            </h1>
-            <h1 class="white mobile-banner">
-              <span>{{ banner.titleTop }}</span>
-              {{ banner.titleBottom }}
-            </h1>
-            <h6 class="minimal white">
-              <span>{{ banner.subHeader }}</span>
-            </h6>
-            <div class="welcome-button">
-              <a class="btn btn-odin btn-odin-color" href="/start-a-project">{{ banner.buttonText }}</a>
+          <div class="hero-caps text-rotator row">
+            <div class="col-md-8 banner-text">
+              <h1 class="white desktop-banner">
+                <span>{{ banner.titleTop }}</span>
+                <br>{{ banner.titleBottom }}
+              </h1>
+              <h1 class="white mobile-banner">
+                <span>{{ banner.titleTop }}</span>
+                {{ banner.titleBottom }}
+              </h1>
+              <h6 class="minimal white">
+                <span>{{ banner.subHeader }}</span>
+              </h6>
+            </div>
+            <div class="banner-image-container col-md-4">
+              <img :src="banner.heroImage" alt="Welcome to Cavaon">
             </div>
           </div>
         </div>
@@ -577,12 +579,26 @@ export default {
     width: 100%;
   }
   .text-rotator {
-    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  .banner-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
     width: 100%;
+  }
+  .banner-image-container img {
+    margin-top: auto;
+    margin-bottom: 70px;
+  }
+  .banner-image-container {
+    display: flex;
+    justify-content: flex-end;
   }
   .hero-container {
     position: relative;

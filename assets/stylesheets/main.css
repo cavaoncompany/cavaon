@@ -223,7 +223,7 @@ h1,h2,h3,h4,h5,h6{
 .main-logo{
 	margin-top: 28px;
 	margin-bottom: 10px;
-	width: 130px;
+	width: 200px;
 }
 .standard-nav {
     float: right;
@@ -232,13 +232,16 @@ h1,h2,h3,h4,h5,h6{
     padding: 0;
 }
 .standard-nav li {
-    display: inline-block;
+    display: flex;
     float: left;
-    margin-left: 30px;
+	margin-left: 30px;
+	height: 36px;
+    justify-content: center;
+    flex-direction: column;
 }
 .standard-nav li > a {
 font-family: 'Montserrat', sans-serif; font-weight:200;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 100;
     letter-spacing: 2px;
     line-height: 19px;
@@ -465,7 +468,7 @@ div#preloader {
 }
 .hero-caps h1{
 	font-family: 'Montserrat', sans-serif; font-weight:700;
-	font-size: 64px;
+	font-size: 58px;
 	line-height: 87px;
 	text-align: left;
 }
@@ -473,6 +476,7 @@ div#preloader {
 	margin-top: 20px;
 	font-family: 'Raleway', sans-serif; font-weight:300;
 	font-size: 24px;
+	color: #F8C2D9;
 }
 .hero-caps h6.dark > span{
 	border-top:solid 2px #2D2D2D;

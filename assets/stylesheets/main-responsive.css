@@ -154,7 +154,7 @@
 /*Large Widescreen Monitors*/
 @media (max-width: 1920px) {
 	.container, .features-details {
-	    max-width: 960px;
+	    max-width: 1500px;
 	}
 	div#portfolio_thumbs ul li{
 		width: 20%;
@@ -248,7 +248,7 @@
 /*Medium Widescreen Monitors*/
 @media (max-width: 1680px) {
 	.container, .features-details {
-	    max-width: 960px;
+	    max-width: 1500px;
 	}
 	div#portfolio_thumbs ul li{
 	width: 20%;
@@ -258,7 +258,7 @@
 /*Large Widescreen Laptops*/
 @media (max-width: 1440px) {
 	.container, .features-details {
-	    max-width: 960px;
+	    max-width: 1200px;
 	}
 	div#portfolio_thumbs ul li{
 	width: 25%;
@@ -268,7 +268,7 @@
 /*Common Widescreen Laptops*/
 @media (max-width: 1366px) {
 	.container, .features-details {
-	    max-width: 960px;
+	    max-width: 1200px;
 	}
 	div#portfolio_thumbs ul li{
 	width: 25%;
@@ -397,7 +397,7 @@
 	    padding: 0;
 	}
 	.hero-caps h1 {
-	    font-size: 64px;
+	    font-size: 58px;
 		line-height: 70px;
 	}
 	.hero-caps h6 {
