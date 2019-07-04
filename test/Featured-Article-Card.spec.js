@@ -22,7 +22,8 @@ describe('Article-card.vue', () => {
         page: 'home',
         thumbnail: '/somepath',
         body: 'text',
-        lang: 'en'
+        lang: 'en',
+        image: 'path'
       }
     })
     expect(wrapper.html()).toMatch(/<article class="featured-article-card card">/)

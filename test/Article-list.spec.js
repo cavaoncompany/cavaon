@@ -11,7 +11,12 @@ describe('Article-list.vue', () => {
 
 describe('Article-list.vue', () => {
   test('has a class blog-inner-section', () => {
-    const wrapper = mount(ArticleList)
+    const wrapper = mount(ArticleList, {
+      propsData: {
+        articles: [],
+        page: 'home'
+      }
+    })
     expect(wrapper.html()).toMatch(/class="blog-inner-section"/)
   })
 })
