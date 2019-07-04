@@ -2,7 +2,7 @@ import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 // eslint-disable-next-line
 import regeneratorRuntime from 'regenerator-runtime'
-import StartAProjectForm from '../components/StartAProjectForm.vue'
+import StartAProjectForm from '../../components/StartAProjectForm.vue'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)

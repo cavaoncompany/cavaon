@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import HeaderStandard from '../components/HeaderStandard.vue'
+import HeaderStandard from '../../components/HeaderStandard.vue'
 
 describe('HeaderStandard.vue', () => {
   test('Set up correctly', () => {

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import MobileServices from '../components/MobileServices.vue'
+import MobileServices from '../../components/MobileServices.vue'
 
 describe('MobileServices.vue', () => {
   test('Set up correctly', () => {

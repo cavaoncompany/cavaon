@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Services from '../components/Services.vue'
+import Services from '../../components/Services.vue'
 
 describe('Services.vue', () => {
   test('Set up correctly', () => {

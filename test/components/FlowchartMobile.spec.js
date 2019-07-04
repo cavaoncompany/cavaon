@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import FlowchartMobile from '../components/FlowchartMobile.vue'
+import FlowchartMobile from '../../components/FlowchartMobile.vue'
 
 describe('FlowchartMobile.vue', () => {
   test('Set up correctly', () => {

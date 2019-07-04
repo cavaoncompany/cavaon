@@ -348,7 +348,7 @@ import About from './About.vue'
 import Contact from './Contact.vue'
 import Flowchart from './Flowchart.vue'
 import FlowchartMobile from './FlowchartMobile.vue'
-import Services from './Services'
+import Services from './Services.vue'
 import ProjectWithSlider from './ProjectWithSlider.vue'
 import ArticleList from './blog/Article-list.vue'
 import Footer from './Footer.vue'
@@ -372,7 +372,7 @@ export default {
     showInstallMessage: Boolean
   },
   data() {
-    const context = require.context('~/content/blog/', false, /\.json$/)
+    const context = require('../assets/context-loader')
     const posts = context.keys().map(key => ({
       ...context(key),
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`

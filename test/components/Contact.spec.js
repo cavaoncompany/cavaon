@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 // eslint-disable-next-line
 import regeneratorRuntime from 'regenerator-runtime'
-import Contact from '../components/Contact.vue'
+import Contact from '../../components/Contact.vue'
 
 describe('Contact.vue', () => {
   test('Set up correctly', () => {

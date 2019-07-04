@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Flowchart from '../components/Flowchart.vue'
+import Flowchart from '../../components/Flowchart.vue'
 
 describe('Flowchart.vue', () => {
   test('Set up correctly', () => {

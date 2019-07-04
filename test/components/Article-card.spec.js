@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 // eslint-disable-next-line
 import regeneratorRuntime from 'regenerator-runtime'
-import ArticleCard from '../components/blog/Article-card.vue'
+import ArticleCard from '../../components/blog/Article-card.vue'
 
 describe('Article-card.vue', () => {
   test('Set up correctly', () => {

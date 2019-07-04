@@ -1,17 +1,17 @@
 import { mount } from '@vue/test-utils'
-import HeaderTop from '../components/HeaderTop.vue'
+import HeaderMobile from '../../components/HeaderMobile.vue'
 
-describe('HeaderTop.vue', () => {
+describe('HeaderMobile.vue', () => {
   test('Set up correctly', () => {
     expect(true).toBe(true)
   })
 })
 
-describe('HeaderTop.vue', () => {
+describe('HeaderMobile.vue', () => {
   test('Has ul', () => {
-    const wrapper = mount(HeaderTop, {
+    const wrapper = mount(HeaderMobile, {
       propsData: {
-        page: 'blog'
+        page: 'home'
       }
     })
     expect(wrapper.html()).toMatch(/<ul/)

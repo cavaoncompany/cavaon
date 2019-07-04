@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Footer from '../components/Footer.vue'
+import Footer from '../../components/Footer.vue'
 
 describe('Footer.vue', () => {
   test('Set up correctly', () => {

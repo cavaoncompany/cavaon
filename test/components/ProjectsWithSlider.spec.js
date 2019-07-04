@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import ProjectWithSlider from '../components/ProjectWithSlider.vue'
+import ProjectWithSlider from '../../components/ProjectWithSlider.vue'
 
 describe('ProjectWithSlider.vue', () => {
   test('Set up correctly', () => {

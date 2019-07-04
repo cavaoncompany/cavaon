@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 // eslint-disable-next-line
 import regeneratorRuntime from 'regenerator-runtime'
-import ArticleList from '../components/blog/Article-list.vue'
+import ArticleList from '../../components/blog/Article-list.vue'
 
 describe('Article-list.vue', () => {
   test('Set up correctly', () => {

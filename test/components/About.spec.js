@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import About from '../components/About.vue'
+import About from '../../components/About.vue'
 
 describe('About.vue', () => {
   test('Set up correctly', () => {
