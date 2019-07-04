@@ -159,6 +159,9 @@ module.exports = {
     siteKey: process.env.recaptchasitekey,
     version: 3
   },
+  presets: [
+    ['@babel/preset-env', { targets: { node: 'current' } }]
+  ],
   /*
   ** Build configuration
   */

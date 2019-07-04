@@ -88,8 +88,8 @@
 
 <script>
 import blog from '../../static/content/blog.json'
-import ArticleCard from './Article-card'
-import FeaturedArticleCard from './Featured-article-card'
+import ArticleCard from './Article-card.vue'
+import FeaturedArticleCard from './Featured-article-card.vue'
 
 export default {
   components: {
