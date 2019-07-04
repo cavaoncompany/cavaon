@@ -54,7 +54,7 @@
 /*iMac 27, HD Screens and Large Monitors*/
 @media (min-width: 1921px) and (max-width: 2560px) {
 	.container, .features-details {
-	    max-width: 960px;
+	    max-width: 1500px;
 	}
 	div#portfolio_thumbs ul li{
 	width: 20%;

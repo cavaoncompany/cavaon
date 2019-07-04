@@ -23,7 +23,7 @@
             <li><a href="#caseStudies" class="scroll" aria-label="Scroll to Case Studies">Case Studies</a></li>
             <li><a href="/blog" aria-label="Go to blog" @click.prevent="goToPage('/blog')">Blog</a></li>
             <li><a href="#contact" class="scroll" aria-label="Scroll to Contact Form">Contact</a></li>
-            <li><button class="btn btn-light contact-btn">GET IN TOUCH</button></li>
+            <li><button class="btn btn-light top-contact-btn">GET IN TOUCH</button></li>
           </ul>
         </article>
       </div>
@@ -44,14 +44,18 @@ export default {
 </script>
 
 <style>
-.header-container {
+#intro-header .header-container {
   width: 100%;
   padding: 0 40px;
 }
-.contact-btn {
+.top-contact-btn {
   border-radius: 50px;
+  background-color: #fff;
   color: #582C87;
   font-weight: 500;
   width: 150px;
+}
+.top-contact-btn:hover {
+  background-color: #ffc716;
 }
 </style>
