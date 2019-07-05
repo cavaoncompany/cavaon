@@ -29,6 +29,7 @@ module.exports = {
         href:
           'https://fonts.googleapis.com/css?family=Raleway:400,300,700%7COpen+Sans:400,300,700%7CMontserrat:400,500,700'
       },
+      { rel: 'stylesheet', href: 'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' },
       { rel: 'apple-touch-icon', href: '/apple-icon-180x180.png', sizes: '180x180' },
       { rel: 'apple-touch-icon', href: '/apple-icon-152x152.png', sizes: '152x152' },
       { rel: 'apple-touch-icon', href: '/apple-icon-57x57.png', sizes: '57x57' },
