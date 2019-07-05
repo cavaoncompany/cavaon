@@ -13,7 +13,10 @@
             <li><a id="about-linker" href="/">About</a></li>
             <li>
               <a id="flowchart-linker" @click="toggleDropdown('services')">Services <i class="fa fa-chevron-down"></i></a>
-              <div class="dropdown-menu services-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <div class="standard-services-dropdown-menu hidden" aria-labelledby="standardServicesNavbarDropdown">
+                <div class="triangle-container">
+                  <div class="triangle-up" />
+                </div>
                 <a class="dropdown-item" href="/">Digital Marketing</a>
                 <a class="dropdown-item" href="/">Branding Design</a>
                 <a class="dropdown-item" href="/">E-commerce Platform</a>
@@ -21,7 +24,10 @@
             </li>
             <li>
               <a id="solutions-linker" @click="toggleDropdown('solutions')">Solutions <i class="fa fa-chevron-down"></i></a>
-              <div class="dropdown-menu solutions-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <div class="standard-solutions-dropdown-menu hidden" aria-labelledby="standardSolutionsNavbarDropdown">
+                <div class="triangle-container">
+                  <div class="triangle-up" />
+                </div>
                 <a class="dropdown-item" href="/">IT Support and Development</a>
                 <a class="dropdown-item" href="/">Business Productivity</a>
                 <a class="dropdown-item" href="/">Graphic & Web Design</a>
@@ -41,6 +47,33 @@
 
 <script>
 export default {
+  methods: {
+    toggleDropdown: function (menu) {
+      const services = document.getElementsByClassName('services-dropdown-menu')[0]
+      const solutions = document.getElementsByClassName('solutions-dropdown-menu')[0]
+      if (process.client) {
+        if (menu === 'services') {
+          if (services.classList.contains('hidden')) {
+            if (!solutions.classList.contains('hidden')) {
+              solutions.classList.add('hidden')
+            }
+            services.classList.remove('hidden')
+          } else {
+            services.classList.add('hidden')
+          }
+        } else if (menu === 'solutions') {
+          if (solutions.classList.contains('hidden')) {
+            if (!services.classList.contains('hidden')) {
+              services.classList.add('hidden')
+            }
+            solutions.classList.remove('hidden')
+          } else {
+            solutions.classList.add('hidden')
+          }
+        }
+      }
+    }
+  }
 }
 </script>
 
