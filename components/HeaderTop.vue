@@ -118,6 +118,7 @@ export default {
   text-align: left;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .services-dropdown-menu a, .solutions-dropdown-menu a {
   color: #494949;
@@ -127,11 +128,10 @@ export default {
   color: #ffc716;
 }
 .triangle-up {
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 100px solid #fff;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.25);
 }
 .triangle-container {
   height: 50px;
@@ -141,4 +141,15 @@ export default {
   left: 0px;
   z-index: -1;
 }
+.triangle-up:after, .triangle-up::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  transform: rotate(45deg); /* Prefixes... */
+  top: 10px;
+  left: 15px;
+  box-shadow: 4px 3px 15px 0px rgba(0,0,0,.25);
+  }
 </style>

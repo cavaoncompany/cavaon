@@ -17,9 +17,9 @@
                 <div class="triangle-container">
                   <div class="triangle-up" />
                 </div>
-                <a class="dropdown-item" href="/">Digital Marketing</a>
-                <a class="dropdown-item" href="/">Branding Design</a>
-                <a class="dropdown-item" href="/">E-commerce Platform</a>
+                <a class="services-dropdown-item" href="/">Digital Marketing</a>
+                <a class="services-dropdown-item" href="/">Branding Design</a>
+                <a class="services-dropdown-item" href="/">E-commerce Platform</a>
               </div>
             </li>
             <li>
@@ -28,9 +28,9 @@
                 <div class="triangle-container">
                   <div class="triangle-up" />
                 </div>
-                <a class="dropdown-item" href="/">IT Support and Development</a>
-                <a class="dropdown-item" href="/">Business Productivity</a>
-                <a class="dropdown-item" href="/">Graphic & Web Design</a>
+                <a class="solutions-dropdown-item" href="/">IT Support and Development</a>
+                <a class="solutionsdropdown-item" href="/">Business Productivity</a>
+                <a class="solutionsdropdown-item" href="/">Graphic & Web Design</a>
               </div>
             </li>
             <li><a id="caseStudies-linker" href="/">Case Studies</a></li>
@@ -49,8 +49,8 @@
 export default {
   methods: {
     toggleDropdown: function (menu) {
-      const services = document.getElementsByClassName('services-dropdown-menu')[0]
-      const solutions = document.getElementsByClassName('solutions-dropdown-menu')[0]
+      const services = document.getElementsByClassName('standard-services-dropdown-menu')[0]
+      const solutions = document.getElementsByClassName('standard-solutions-dropdown-menu')[0]
       if (process.client) {
         if (menu === 'services') {
           if (services.classList.contains('hidden')) {
@@ -99,4 +99,47 @@ export default {
   vertical-align: top;
   padding-top: 4px;
 }
+.standard-services-dropdown-menu, .standard-solutions-dropdown-menu {
+  position: absolute;
+  top: 70px;
+  background:#fff;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 4px rgba(0,0,0,.25);
+}
+.standard-services-dropdown-menu a, .standard-solutions-dropdown-menu a {
+  color: #494949;
+  line-height: 2rem;
+}
+.standard-services-dropdown-menu a:hover, .standard-solutions-dropdown-menu a:hover {
+  color: #ffc716;
+}
+.triangle-up {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.25);
+}
+.triangle-container {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  z-index: -1;
+}
+.triangle-up:after, .triangle-up::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  transform: rotate(45deg); /* Prefixes... */
+  top: 10px;
+  left: 15px;
+  box-shadow: 4px 3px 15px 0px rgba(0,0,0,.25);
+  }
 </style>
