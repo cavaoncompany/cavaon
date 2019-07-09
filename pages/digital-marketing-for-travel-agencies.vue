@@ -101,13 +101,13 @@ export default {
     sendEmail() {
       const emailData = {
         email: this.subscriberEmail,
-        firstname: this.subscriberFirstame,
+        firstname: this.subscriberFirstname,
         lastname: this.subscriberLastname,
         telephone: this.subscriberTelephone,
         company: this.subscriberCompany
       }
       this.$store.dispatch('subsribeTo', emailData)
-      this.subscriberFirstame = ''
+      this.subscriberFirstname = ''
       this.subscriberLastname = ''
       this.subscriberEmail = ''
       this.subscriberCompany = ''
@@ -116,7 +116,7 @@ export default {
     createSubscriber() {
       const subscriberInfo = {
         email: this.subscriberEmail,
-        firstname: this.subscriberFirstame,
+        firstname: this.subscriberFirstname,
         lastname: this.subscriberLastname,
         telephone: this.subscriberTelephone,
         company: this.subscriberCompany
@@ -126,7 +126,7 @@ export default {
     createMailchimpSubscriber() {
       const subscriberInfo = {
         email: this.subscriberEmail,
-        firstname: this.subscriberFirstame,
+        firstname: this.subscriberFirstname,
         lastname: this.subscriberLastname,
         telephone: this.subscriberTelephone,
         company: this.subscriberCompany
