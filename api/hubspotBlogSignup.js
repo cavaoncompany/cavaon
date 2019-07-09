@@ -22,6 +22,14 @@ const createSubscriber = (subscriberInfo) => {
   const email = subscriberInfo.email
   const firstname = subscriberInfo.firstname
   const lastname = subscriberInfo.lastname
+  let telephone = ''
+  let company = ''
+  if (subscriberInfo.telephone) {
+    telephone = subscriberInfo.telephone
+  }
+  if (subscriberInfo.company) {
+    company = subscriberInfo.company
+  }
   let vid = 0
 
   api.contacts.getContactByEmail(email, {
@@ -38,6 +46,8 @@ const createSubscriber = (subscriberInfo) => {
         email: email,
         firstname: firstname,
         lastname: lastname,
+        company: company,
+        phone: telephone,
         blogsubscriber: 'Yes'
       }, vid)
     })
@@ -51,6 +61,8 @@ const createSubscriber = (subscriberInfo) => {
           email: email,
           firstname: firstname,
           lastname: lastname,
+          company: company,
+          phone: telephone,
           blogsubscriber: 'Yes'
         })
       }

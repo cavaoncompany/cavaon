@@ -88,6 +88,8 @@ const sendSubscribeMail = (subscriberInfo, emailProvider) => {
             <table style="border: 4px solid #555555; padding: 8px;">
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Name:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.firstname} ${subscriberInfo.lastname}</td></tr>
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Email:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.email}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Phone:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.telephone}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Company:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.company}</td></tr>
             </table>`
     })
   }, 100)
