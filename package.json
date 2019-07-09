@@ -49,7 +49,6 @@
     "@babel/runtime": "^7.4.5",
     "@nuxtjs/eslint-config": "^0.0.1",
     "@vue/test-utils": "^1.0.0-beta.29",
-    "babel-core": "npm:@babel/core",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^24.8.0",
     "babel-preset-env": "^1.7.0",
