@@ -21,6 +21,9 @@
               <h6 class="minimal white">
                 <span>{{ banner.subHeader }}</span>
               </h6>
+              <div class="play-video">
+                <div class="play" />
+              </div>
             </div>
             <div class="banner-image-container col-md-4">
               <img :src="banner.heroImage" alt="Welcome to Cavaon">
@@ -656,5 +659,22 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 20;
+}
+.play-video {
+  height: 40px;
+  width: 40px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.play {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  margin: 0 auto;
 }
 </style>
