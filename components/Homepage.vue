@@ -595,14 +595,6 @@ export default {
     height: 100%;
     width: 100%;
   }
-  .banner-image-container img {
-    margin-top: auto;
-    margin-bottom: 70px;
-  }
-  .banner-image-container {
-    display: flex;
-    justify-content: flex-end;
-  }
   .hero-container {
     position: relative;
     height: 100vh;

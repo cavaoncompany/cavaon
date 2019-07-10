@@ -601,6 +601,13 @@
 	.featured-article-card .tags {
 		display: none;
 	}
+	.banner-image-container img {
+		width: 70%;
+		height: 85%;
+	}
+	.banner-image-container {
+		margin-top: -249px;
+	}
 }
 
 /*iPhone 6Plus Landscape Mode*/

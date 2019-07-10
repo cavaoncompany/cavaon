@@ -249,6 +249,15 @@ font-family: 'Montserrat', sans-serif; font-weight:200;
     text-transform: uppercase;
 }
 
+.banner-image-container img {
+    margin-top: auto;
+    margin-bottom: 70px;
+}
+.banner-image-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 /* 03 - COMMON ELEMENTS & TYPOGRAPHY */
 /*-------------------------------------------------------------------------------------------------------------------------------*/

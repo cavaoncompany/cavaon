@@ -1,6 +1,7 @@
 <template>
   <div>
-    <section id="about" class="contact page intermediate-section full-height parallax about-us-desktop" @mouseover="changeUrl('about')">
+    <h2>ABOUT US</h2>
+    <!-- <section id="about" class="contact page intermediate-section full-height parallax about-us-desktop" @mouseover="changeUrl('about')">
       <div class="overlay">
         <div class="container valign">
           <div class="row">
@@ -33,7 +34,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 

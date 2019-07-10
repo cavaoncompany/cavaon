@@ -42,3 +42,9 @@
 .menu-collapser {
     background-image: url('/images/Logo-colour.png');
 }
+
+@media (max-width: 768px) {
+	#intro{
+		background-image: url('/images/top-banner-mobile.png');
+	}
+}
