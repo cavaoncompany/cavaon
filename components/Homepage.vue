@@ -292,10 +292,10 @@
               <section class="form-input">
                 <article>
                   <input
-                    v-model="subscriberFirstame"
+                    v-model="subscriberFirstname"
                     type="text"
                     :placeholder="blog.firstnamePlaceholder"
-                    name="subscriberFirstame"
+                    name="subscriberFirstname"
                   >
                 </article>
                 <article>
@@ -470,18 +470,18 @@ export default {
     sendEmail() {
       const emailData = {
         email: this.subscriberEmail,
-        firstname: this.subscriberFirstame,
+        firstname: this.subscriberFirstname,
         lastname: this.subscriberLastname
       }
       this.$store.dispatch('subsribeTo', emailData)
-      this.subscriberFirstame = ''
+      this.subscriberFirstname = ''
       this.subscriberLastname = ''
       this.subscriberEmail = ''
     },
     createSubscriber() {
       const subscriberInfo = {
         email: this.subscriberEmail,
-        firstname: this.subscriberFirstame,
+        firstname: this.subscriberFirstname,
         lastname: this.subscriberLastname
       }
       this.$store.dispatch('createSubscriber', subscriberInfo)
@@ -489,7 +489,7 @@ export default {
     createMailchimpSubscriber() {
       const subscriberInfo = {
         email: this.subscriberEmail,
-        firstname: this.subscriberFirstame,
+        firstname: this.subscriberFirstname,
         lastname: this.subscriberLastname
       }
       this.$store.dispatch('createMailchimpSubscriber', subscriberInfo)
