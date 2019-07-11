@@ -1,19 +1,30 @@
 {
     "title": "TESTIMONIALS",
+    "stars": "/images/testimonials-star-rating.png",
     "testimonials": [
         {
-            "title": "Always quick to understand requirements and outcomes",
+            "title": "Peace of mind with Cavaon",
             "testimonial": "\"Cavaon provides us peace of mind, daily IT support, maintenance and consulting. With several years of experience in Australia's travel industry, every time we request new functionalities or upgrades to the system, they understood the requirements quickly and outcomes were always satisfying.\"",
             "name": "Charles",
             "jobtitle": "Founder and Managing Director",
-            "company": "Let's Travel"
+            "company": "Let's Travel",
+            "avatar": "/images/testimonials-avatar-male-1.png"
+        },
+        {
+            "title": "Extensive technical knowledge",
+            "testimonial": "\"Working with Cavaon and the team has enabled us to get to market much quicker than with other providers. Their deep understanding of the travel industry is obvious and really shows in their work.\"",
+            "name": "Paul Mercuri",
+            "jobtitle": "Founder and Managing Director",
+            "company": "Travel Dream",
+            "avatar": "/images/testimonials-avatar-male-2.png"
         },
         {
             "title": "Much quicker than other providers",
             "testimonial": "\"Working with Cavaon and the team has enabled us to get to market much quicker than with other providers. Their deep understanding of the travel industry is obvious and really shows in their work.\"",
             "name": "Paul Mercuri",
             "jobtitle": "Founder and Managing Director",
-            "company": "Travel Dream"
+            "company": "Travel Dream",
+            "avatar": "/images/testimonials-avatar-male-1.png"
         }
     ]
 }

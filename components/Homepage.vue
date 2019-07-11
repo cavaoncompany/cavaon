@@ -503,13 +503,6 @@ export default {
   .avatar {
     width: 58px;
   }
-  #testimonials .inner-section {
-    width: 100%;
-    margin-left: 0;
-  }
-  .testimonial-wrapper {
-    display: flex;
-  }
   .stats-carousel-item h3 {
     font-size: 1.1rem;
     font-family: 'Montserrat', sans-serif; font-weight: 700;

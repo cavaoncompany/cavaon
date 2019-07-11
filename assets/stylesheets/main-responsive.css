@@ -68,9 +68,6 @@
 		width: 50%;
 		min-height: 438px;
 	}
-	.testimonial-wrapper {
-		flex-direction: row;
-	}
 	.team-stage > img{
 		padding: 0 40px;
 	}
@@ -164,9 +161,6 @@
 		margin-right: 20px;
 		width: 50%;
 		min-height: 438px;
-	}
-	.testimonial-wrapper {
-		flex-direction: row;
 	}
 	#mobile-services {
 		display: none;
@@ -570,9 +564,6 @@
 		min-height: 0px;
 		margin-left: 0px;
 		margin-right: 0px;
-	}
-	.testimonial-wrapper {
-		flex-direction: column;
 	}
 	.service-card {
 		text-align: center;
