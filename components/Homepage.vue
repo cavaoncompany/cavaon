@@ -46,6 +46,10 @@
       <Services />
       <!-- page-section : ends -->
 
+      <!-- page-section : starts -->
+      <Testimonials />
+      <!-- page-section : ends -->
+
       <div class="promo-section intermediate-section action-text parallax" @mouseenter.once="counterMouseOver()">
         <div class="overlay">
           <div class="container">
@@ -145,51 +149,6 @@
         <!-- End: Portfolio Wrap -->
         </section>
         <!-- inner-section : ends-->
-      </section>
-      <!-- page-section : ends -->
-
-      <!-- page-section : starts -->
-      <section id="testimonials" class="page testimonials page-section remove-pad-bottom white-bg">
-        <!-- inner-section:starts -->
-        <section class="inner-section promo-text silver-bg row">
-          <div class="container">
-            <div class="row">
-              <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
-                <h3 class="dark">
-                  <span>{{ testimonials.title }}</span>
-                </h3>
-              </article>
-            </div>
-          </div>
-        </section>
-        <!-- inner-section:ends -->
-
-        <!-- inner-section : starts -->
-        <section class="inner-section text-center silver-bg row">
-          <!-- <div id="testimonial-carousel" class="testimonial-carousel owl-carousel"> -->
-          <div class="container">
-            <div class="testimonial-wrapper">
-              <div
-                v-for="(testimonial, index) in testimonials.testimonials"
-                :key="index"
-                itemprop="review"
-                itemscope
-                itemtype="http://schema.org/Review"
-                class="item stats-carousel-item testimonial-wrap testimonial-wrap-right"
-              >
-                <h3 itemprop="description" class="main-caps">
-                  {{ testimonial.title }}
-                </h3>
-                <h6 itemprop="reviewRating" class="dark">
-                  {{ testimonial.testimonial }}
-                </h6>
-                <p><span itemprop="author" class="testimonial-name">{{ testimonial.name }}</span><br><span><i>{{ testimonial.jobtitle }}<br>{{ testimonial.company }}</i></span></p>
-              </div>
-            </div>
-          </div>
-          <!-- carousel:ends -->
-        </section>
-        <!-- inner-section : ends -->
       </section>
       <!-- page-section : ends -->
 
@@ -340,7 +299,6 @@ import { mapState } from 'vuex'
 import banner from '../static/content/banner.json'
 import caseStudies from '../static/content/casestudies.json'
 import team from '../static/content/team.json'
-import testimonials from '../static//content/testimonials.json'
 import services from '../static/content/services.json'
 import projects from '../static/content/projects.json'
 import promo from '../static/content/promo.json'
@@ -354,6 +312,7 @@ import Contact from './Contact.vue'
 import Flowchart from './Flowchart.vue'
 import FlowchartMobile from './FlowchartMobile.vue'
 import Services from './Services.vue'
+import Testimonials from './Testimonials.vue'
 import ProjectWithSlider from './ProjectWithSlider.vue'
 import ArticleList from './blog/Article-list.vue'
 import Footer from './Footer.vue'
@@ -368,6 +327,7 @@ export default {
     Flowchart,
     FlowchartMobile,
     Services,
+    Testimonials,
     ProjectWithSlider,
     ArticleList,
     countTo,
@@ -386,7 +346,6 @@ export default {
       caseStudies: caseStudies,
       projectDetails: caseStudies.caseStudies[0],
       team: team,
-      testimonials: testimonials,
       services: services,
       projects: projects,
       messages: messages,
