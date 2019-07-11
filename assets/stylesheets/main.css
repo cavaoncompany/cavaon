@@ -1454,13 +1454,6 @@ div#portfolio_thumbs ul li a:hover{
 	padding-left: 20px;
 	padding-right: 20px;
 }
-.testimonial-wrap > h6{
-	margin-top: 30px;
-	letter-spacing: 1px;
-	font-family: 'Montserrat', sans-serif; font-weight:500;
-	font-size: 18px;
-	line-height: 20px;
-}
 .testimonial-wrap > p{
 	margin-top: 5px;
 	padding-top: 3px;
@@ -1472,7 +1465,6 @@ div#portfolio_thumbs ul li a:hover{
 	font-size: 12px;
     letter-spacing: 2px;
     line-height: 19px;
-    text-transform: uppercase;
     padding: 3px 5px;
 }
 

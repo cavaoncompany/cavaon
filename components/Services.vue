@@ -1,12 +1,12 @@
 <template>
-  <section id="services" class="services page page-section">
+  <section id="services" class="services page purple-bg page-section">
     <div class="container">
       <div class="row">
         <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
           <h3 class="dark">
             <span>{{ services.title }}</span>
           </h3>
-          <div class="liner color-bg" />
+          <div class="liner purple-bg" />
         </article>
       </div>
       <div class="row service-card-container">
@@ -40,9 +40,6 @@ export default {
 </script>
 
 <style>
-#services {
-  background-color: #F0EDF7;
-}
 #services .liner {
   background-color: #A265A9;
 }

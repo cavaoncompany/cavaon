@@ -49,7 +49,25 @@
       <!-- page-section : starts -->
       <Testimonials />
       <!-- page-section : ends -->
-
+      <!-- page-section : starts -->
+      <section id="blog" class="page-section purple-bg">
+        <section class="inner-section text-center purple-bg row blog-inner-section">
+          <div class="container">
+            <div class="row">
+              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
+                <h3>
+                  <span>{{ blog.homepageTitle }}</span>
+                </h3>
+              </article>
+              <article-list :articles="posts" page="homepage" />
+              <div v-if="blogCount > 4" class="welcome-button blog-welcome-button">
+                <a class="btn btn-odin btn-odin-color" href="/blog">{{ blog.homepageButtonText }}</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- page-section : ends -->
       <div class="promo-section intermediate-section action-text parallax" @mouseenter.once="counterMouseOver()">
         <div class="overlay">
           <div class="container">
@@ -205,26 +223,6 @@
           </div>
         </section>
         <!-- inner-section:ends -->
-      </section>
-      <!-- page-section : ends -->
-
-      <!-- page-section : starts -->
-      <section id="blog" class="page-section remove-pad-bottom white-bg">
-        <section class="inner-section text-center silver-bg row blog-inner-section">
-          <div class="container">
-            <div class="row">
-              <article class="col-md-12 col-lg-8 col-lg-offset-2 text-center animated" data-fx="fadeInUp">
-                <h3 class="dark">
-                  <span>{{ blog.homepageTitle }}</span>
-                </h3>
-              </article>
-              <article-list :articles="posts" page="homepage" />
-              <div v-if="blogCount > 4" class="welcome-button blog-welcome-button">
-                <a class="btn btn-odin btn-odin-color" href="/blog">{{ blog.homepageButtonText }}</a>
-              </div>
-            </div>
-          </div>
-        </section>
       </section>
       <!-- page-section : ends -->
       <Contact />
@@ -547,6 +545,9 @@ export default {
   .hero-container {
     position: relative;
     height: 100vh;
+  }
+  #blog {
+    text-align: center;
   }
   .blog-welcome-button {
     margin: 0 auto;

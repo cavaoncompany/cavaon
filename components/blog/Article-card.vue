@@ -166,4 +166,7 @@ export default {
   border-radius: 50px;
   margin: 7px;
 }
+.card {
+  height: 100%;
+}
 </style>

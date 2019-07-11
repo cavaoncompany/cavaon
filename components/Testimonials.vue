@@ -43,7 +43,7 @@
               <p>
                 <span itemprop="author" class="testimonial-name">{{ testimonial.name }}</span>
                 <br>
-                <span><i>{{ testimonial.jobtitle }}<br>{{ testimonial.company }}</i></span>
+                <span>{{ testimonial.jobtitle }}<br>{{ testimonial.company }}</span>
               </p>
             </div>
           </div>
@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import testimonials from '../static//content/testimonials.json'
+import testimonials from '../static/content/testimonials.json'
 
 export default {
   data() {
@@ -117,5 +117,8 @@ export default {
   margin: 0 auto;
   position: absolute;
   bottom: -10px;
+}
+#testimonials .testimonial-name {
+  font-weight: 500;
 }
 </style>
