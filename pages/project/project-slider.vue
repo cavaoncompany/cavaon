@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!-- page-section : starts -->
-    <div id="portfolio_item" class="add-top-half" @mouseover="changeUrl('case-studies/' + projectDetails.projectTitle.replace(/ /g, '-').replace(/'/g, '').toLowerCase())">
+    <div id="portfolio_item" class="add-top-half">
       <section class="folio-head silver-bg">
         <div class=" folio-align">
           <div class="container">
@@ -106,11 +106,6 @@ export default {
     return {
       caseStudies: caseStudies,
       projectDetails: caseStudies.caseStudies[0]
-    }
-  },
-  methods: {
-    changeUrl: function (link) {
-      history.pushState({}, null, '/' + link)
     }
   }
 }

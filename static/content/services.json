@@ -6,15 +6,12 @@
             "title": "Branding and graphic design"
         },
         {
-            "image": "/images/icons/services-branding-2.png",
-            "title": "IT Support and Development",
-            "description": "Creating a strong brand to make a great impression on your customers."
+            "image": "/images/services-development.png",
+            "title": "IT Support and Development"
         },
         {
-            "imageTitle": "Web design",
-            "image": "/images/icons/services-web-design.png",
-            "title": "Digital Marketing and Strategy",
-            "description": "Designing and creating a web presence that is appealing, engaging and provides an enjoyable and profitable client experience. Our web designs are also built to increase business productivity and facilitate growth."
+            "image": "/images/services-marketing.png",
+            "title": "Digital Marketing and Strategy"
         }
     ]
 }

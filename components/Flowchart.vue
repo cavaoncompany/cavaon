@@ -1,5 +1,5 @@
 <template>
-  <section id="flowchart" class="page page-section" @mouseover="changeUrl('services')">
+  <section id="flowchart" class="page page-section">
     <div class="container">
       <h2>{{ flowchart.title }}</h2>
       <div class="liner color-bg" />

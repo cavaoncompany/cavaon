@@ -7,7 +7,7 @@
       <section id="intro" class="intro">
         <HeaderTop />
         <!-- <div class="valignBanner"> -->
-        <div class="container hero-container" @mouseover="changeUrl('')">
+        <div class="container hero-container">
           <div class="hero-caps text-rotator row">
             <div class="col-md-8 banner-text">
               <h1 class="white desktop-banner">
@@ -105,7 +105,7 @@
           </div>
           <!-- End: Filter -->
 
-          <section id="portfolio-wrap" @mouseover="changeUrl('case-studies')">
+          <section id="portfolio-wrap">
             <!-- Thumbnails -->
             <div id="portfolio_thumbs">
               <ul id="grid" class="sortablePortfolio clearfix">
@@ -165,7 +165,7 @@
         <!-- inner-section:ends -->
 
         <!-- inner-section : starts -->
-        <section class="inner-section text-center silver-bg row" @mouseover="changeUrl('testimonials')">
+        <section class="inner-section text-center silver-bg row">
           <!-- <div id="testimonial-carousel" class="testimonial-carousel owl-carousel"> -->
           <div class="container">
             <div class="testimonial-wrapper">
@@ -194,7 +194,7 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="team-container" class="page team page-section remove-pad-bottom white-bg" @mouseover="changeUrl('team')">
+      <section id="team-container" class="page team page-section remove-pad-bottom white-bg">
         <!-- inner-section:starts -->
         <section class="inner-section promo-text">
           <div class="container">
@@ -250,7 +250,7 @@
       <!-- page-section : ends -->
 
       <!-- page-section : starts -->
-      <section id="blog" class="page-section remove-pad-bottom white-bg" @mouseover="changeUrl('')">
+      <section id="blog" class="page-section remove-pad-bottom white-bg">
         <section class="inner-section text-center silver-bg row blog-inner-section">
           <div class="container">
             <div class="row">
@@ -457,9 +457,6 @@ export default {
     },
     counterMouseOver: function () {
       this.$refs.codecounter.start()
-    },
-    changeUrl: function (link) {
-      history.pushState({}, null, '/' + link)
     },
     teamMouseOver: function (name, image) {
       document.getElementById(name).src = image

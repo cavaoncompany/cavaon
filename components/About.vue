@@ -37,11 +37,6 @@ export default {
     return {
       about: about
     }
-  },
-  methods: {
-    changeUrl: function (link) {
-      history.pushState({}, null, '/' + link)
-    }
   }
 }
 </script>

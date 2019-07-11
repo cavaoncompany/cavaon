@@ -24,9 +24,6 @@
 	.promo-section {
 		min-height: 750px
 	}
-	.service-card {
-		height: 300px;
-	}
 	.service-card-container {
 	    margin-top: 60px;
 	}
@@ -42,9 +39,6 @@
 	}
 	.promo-section {
 		min-height: 750px
-	}
-	.service-card {
-		height: 300px;
 	}
 	.service-card-container {
 	    margin-top: 60px;
@@ -120,9 +114,6 @@
 	}
 	.mobile-banner {
 		display: none;
-	}
-	.service-card {
-		height: 300px;
 	}
 	.service-card-container {
 	    margin-top: 60px;
@@ -214,9 +205,6 @@
 	}
 	.team-mobile {
 		display: none;
-	}
-	.service-card {
-		height: 300px;
 	}
 	.service-card-container {
 	    margin-top: 60px;
@@ -1413,9 +1401,6 @@
 	}
 	.news-post{
 		margin-top: 20px;
-	}
-	.service-card {
-		height: auto;
 	}
 	.service-card-container {
 	    margin-top: 10px;

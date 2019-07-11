@@ -1,5 +1,5 @@
 <template>
-  <section id="services" class="services page page-section" @mouseover="changeUrl('services')">
+  <section id="services" class="services page page-section">
     <div class="container">
       <div class="row">
         <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
@@ -10,14 +10,17 @@
         </article>
       </div>
       <div class="row service-card-container">
-        <div v-for="(service, index) in services.services" :key="index" itemscope itemtype="https://schema.org/Service" class="service-card col-12 col-md-6 col-lg-3">
-          <img :src="service.image" :alt="service.imageTitle" :title="service.imageTitle">
-          <h3 itemprop="serviceType">
-            {{ service.title }}
-          </h3>
-          <p itemprop="itemOffered">
-            {{ service.description }}
-          </p>
+        <div v-for="(service, index) in services.services" :key="index" itemscope itemtype="https://schema.org/Service" class="service-card col-12 col-md-6 col-lg-4">
+          <a :href="service.link">
+            <div class="card">
+              <img class="card-img-top" :src="service.image" :alt="service.title">
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ service.title }}
+                </h5>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -32,32 +35,49 @@ export default {
     return {
       services: services
     }
-  },
-  methods: {
-    changeUrl: function (link) {
-      history.pushState({}, null, '/' + link)
-    }
   }
 }
 </script>
 
 <style>
+#services {
+  background-color: #F0EDF7;
+}
+#services .liner {
+  background-color: #A265A9;
+}
 .services .dark {
-  font-weight: 600;
+  font-size: 24px;
 }
 .service-card-container {
   margin-top: 60px;
   margin-bottom: 60px;
 }
-.service-card {
-  margin: 30px 0px;
+#services .card:hover {
+  background: linear-gradient(179.89deg, rgba(70, 45, 133, 0.95) 17.82%, rgba(101, 45, 144, 0.95) 107.71%);
+}
+#services .card:hover h5{
+  color: #FFF;
 }
 .service-card h3 {
   color: #582C87;
   font-size: 16px;
 }
-.service-card img {
-  height: 58px;
+#services .card {
+  padding: 20px;
+  border: none;
+  height: 100%;
+  color: #494949;
+}
+#services h5 {
+  font-size: 16px;
+  font-weight: 500;
+}
+#services .card-img-top {
+  height: 300px;
   margin-bottom: 20px;
+}
+#services .card-body {
+  padding: 0;
 }
 </style>

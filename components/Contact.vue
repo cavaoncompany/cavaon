@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="contact-form black-bg page page-section" @mouseover="changeUrl('contact')">
+  <section id="contact" class="contact-form black-bg page page-section">
     <div class="container">
       <div class="row">
         <div class="main-caps text-center col-md-12 col-lg-8 col-md-offset-2">
@@ -139,9 +139,6 @@ export default {
         // eslint-disable-next-line
         console.log('Submission error:', error)
       }
-    },
-    changeUrl: function (link) {
-      history.pushState({}, null, '/' + link)
     }
   }
 }
