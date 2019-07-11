@@ -388,7 +388,7 @@ div#preloader {
 
 /*Buttons*/
 .btn-odin{
-	border-radius: 0px;
+	border-radius: 50px;
 	text-decoration: none;
 	padding: 15px 20px;
 	font-size: 12px;
@@ -599,6 +599,7 @@ font-family: 'Montserrat', sans-serif; font-weight:300;
 }
 .welcome-button{
 	margin-top: 20px;
+	border-radius: 50%;
 }
 /*mouse scroll indicator icon*/
 .intro .mouse-icon {

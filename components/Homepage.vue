@@ -39,6 +39,7 @@
         </a>
       </section>
       <HeaderStandard page="home" />
+      <About />
       <Flowchart />
       <FlowchartMobile />
       <!-- page-section : starts -->
@@ -267,7 +268,6 @@
         </section>
       </section>
       <!-- page-section : ends -->
-      <About />
       <Contact />
       <Footer />
     </section>
