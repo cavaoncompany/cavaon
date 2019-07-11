@@ -1,29 +1,24 @@
 {
-    "title": "From Ideas to Implementation",
-    "leftImage": "/images/flowchart-left.png",
+    "title": "FROM IDEAS TO IMPLEMENTATION",
     "steps": [
         {
-            "id": "1",
-            "title": "An idea to grow your business",
-            "description": "Want to start and grow your business? Got an idea or don’t know what to do?",
+            "title": "Got an idea?",
+            "description": "Want to start and grow your business? Got an amazing idea but don’t know how to execute?",
+            "image": "/images/flowchart-idea.png"
+        },
+        {
+            "title": "Meet the team",
+            "description": "Our team is full of creative, strategic and technical experts. We will help you to create a perfect solution for your business.",
             "image": "/images/flowchart-greet.png"
         },
         {
-            "id": "2",
-            "title": "Meet the team & create a solution",
-            "description": "The team at Cavaon is full of creative, technical and business experts. We will work with you and create a perfect solution together.",
-            "image": "/images/flowchart-plan.png"
-        },
-        {
-            "id": "3",
-            "title": "Build a highly qualified solution",
-            "description": "Design and build in a timely and cost effective manner.",
+            "title": "Create",
+            "description": "We design and build your product in a timely and cost-effective manner.",
             "image": "/images/flowchart-build.png"
         },
         {
-            "id": "4",
             "title": "Success!",
-            "description": "For today and a platform that allows you to grow in the future.",
+            "description": "Get ready to see the benefits of the platform that allows you to launch and grow your business to success!",
             "image": "/images/flowchart-launch.png"
         }
     ]
