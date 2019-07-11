@@ -1,53 +1,20 @@
 {
-    "title": "SERVICES",
+    "title": "WHY DO CUSTOMERS PARTNER WITH US",
     "services": [
         {
-            "imageTitle": "Idea and concept",
-            "image": "/images/icons/services-idea-and-concepts.png",
-            "title": "IDEA AND CONCEPT",
-            "description": "We work with you to take your ideas and goals and create clear concepts that we can both work towards."
+            "image": "/images/services-branding.png",
+            "title": "Branding and graphic design"
         },
         {
-            "imageTitle": "Branding",
             "image": "/images/icons/services-branding-2.png",
-            "title": "BRANDING",
+            "title": "IT Support and Development",
             "description": "Creating a strong brand to make a great impression on your customers."
         },
         {
             "imageTitle": "Web design",
             "image": "/images/icons/services-web-design.png",
-            "title": "DEVELOPMENT",
+            "title": "Digital Marketing and Strategy",
             "description": "Designing and creating a web presence that is appealing, engaging and provides an enjoyable and profitable client experience. Our web designs are also built to increase business productivity and facilitate growth."
-        },
-        {
-            "imageTitle": "Business productivity",
-            "image": "/images/icons/services-business-productivity.png",
-            "title": "BUSINESS PRODUCTIVITY",
-            "description": "We can provide you with a solution to keep your manage your business growth."
-        },
-        {
-            "imageTitle": "Marketing",
-            "image": "/images/icons/services-marketing-2.png",
-            "title": "MARKETING",
-            "description": "When ready we will help get your message out to tell the world you are here and why it should choose to drive traffic to your site."
-        },
-        {
-            "imageTitle": "Graphic support",
-            "image": "/images/icons/services-graphic-support.png",
-            "title": "GRAPHIC SUPPORT",
-            "description": "No need to look elsewhere! We provide graphic services such as flyers, brochures, posters and digital banner design to support your growing business."
-        },
-        {
-            "imageTitle": "Technical support",
-            "image": "/images/icons/services-technical-support.png",
-            "title": "TECHNICAL SUPPORT",
-            "description": "As you grow you will need ancillary services such as laptops, PCs, email hosting, NAS, cloud phone system, software, etc. With our support teams and partners we will be able to service your needs in these areas."
-        },
-        {
-            "imageTitle": "E-commerce and platform",
-            "image": "/images/icons/service-ecommerce-and-platform.png",
-            "title": "E-COMMERCE & PLATFORM",
-            "description": "We will integrate an E-Commerce platform into your site to provide a seamless and enjoyable flow for your devoted customers."
         }
     ]
 }

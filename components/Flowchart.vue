@@ -47,9 +47,6 @@ export default {
   #flowchart h2 {
     font-size: 24px;
   }
-  #flowchart .flowchart-content {
-    margin-top: 40px;
-  }
   #flowchart .flowchart-content .liner {
     width: 39px;
   }
