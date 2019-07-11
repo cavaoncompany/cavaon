@@ -492,6 +492,7 @@ export default {
       }
       this.$store.dispatch('createMailchimpSubscriber', subscriberInfo)
     }
+  }
 }
 </script>
 
