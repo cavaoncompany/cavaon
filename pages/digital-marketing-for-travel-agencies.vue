@@ -64,10 +64,10 @@
       </form>
     </div>
     <div v-if="messageSent === true" class="download-pdf container">
-        <h1>{{ landingpage.title }}</h1>
-        <a href="/Marketing_for_travel_agencies.pdf" target="_blank">
-            <img src="/images/digital-marketing-for-travel-agencies.png" alt="download your copy of digital marketing for travel agencies">
-        </a>
+      <h1>{{ landingpage.title }}</h1>
+      <a href="/Marketing_for_travel_agencies.pdf" target="_blank">
+        <img src="/images/digital-marketing-for-travel-agencies.png" alt="download your copy of digital marketing for travel agencies">
+      </a>
     </div>
     <Footer />
   </div>

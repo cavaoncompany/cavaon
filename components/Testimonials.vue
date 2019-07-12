@@ -28,16 +28,16 @@
             itemtype="http://schema.org/Review"
             class="col-md-4"
           >
-          <div class="speech">
+            <div class="speech">
               <h5 itemprop="description" class="main-caps">
-              {{ testimonial.title }}
-            </h5>
-            <div class="liner color-bg" />
-            <p itemprop="reviewRating" class="dark">
-              {{ testimonial.testimonial }}
-            </p>
-            <div class="triangle" />
-          </div>
+                {{ testimonial.title }}
+              </h5>
+              <div class="liner color-bg" />
+              <p itemprop="reviewRating" class="dark">
+                {{ testimonial.testimonial }}
+              </p>
+              <div class="triangle" />
+            </div>
             <div class="speaker">
               <img :src="testimonial.avatar" :alt="testimonial.name">
               <p>

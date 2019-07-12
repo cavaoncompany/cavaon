@@ -27,7 +27,7 @@
               <span class="footer-contact-initial">
                 {{ item.initial }}
               </span>
-                {{item.content}}
+              {{ item.content }}
             </li>
           </ul>
         </div>
@@ -35,9 +35,9 @@
           <h3>{{ footer.subscribeTitle }}</h3>
           <p>{{ footer.subscribeText }}</p>
           <form id="footer-subscribe" class="footer-subscribe-form" @submit.prevent="onSubmit">
-              <section class="form-input">
-                <div class="footer-subscribe-name">
-                  <article>
+            <section class="form-input">
+              <div class="footer-subscribe-name">
+                <article>
                   <input
                     v-model="subscriberFirstname"
                     type="text"
@@ -52,7 +52,7 @@
                     :placeholder="footer.lastnamePlaceholder"
                     name="subscriberLastname"
                   >
-                  </article>
+                </article>
                 </div>
                 <article>
                   <input
@@ -99,10 +99,18 @@ export default {
 #mastfoot {
   position: relative;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
 }
 .footer-background {
-  width: 100%;
+  min-width: 100%;
+  height: 100%;
   position: absolute;
+  z-index: -10;
+  bottom: 0;
+  background: linear-gradient(179.96deg, rgba(70, 45, 133, 0.95) 17.82%, rgba(101, 45, 144, 0.95) 107.71%);
 }
 .footer-background img {
   width: 100%;
@@ -116,9 +124,6 @@ export default {
 }
 #mastfoot li {
   list-style-type: none;
-}
-#mastfoot .footer-logo {
-  margin: 45px 0 0;
 }
 #mastfoot .footer-logo img {
   width: 25%;
@@ -143,7 +148,7 @@ export default {
   color: #fff;
 }
 #mastfoot .footer-hero {
-  height: 100%;
+  text-align: center;
 }
 #mastfoot .footer-hero img {
   margin-bottom: 50px;
@@ -174,8 +179,11 @@ export default {
 #footer-subscribe #footer-submit {
   height: 2.2rem;
   border-radius: 49px;
-  font-size: 14px;
+  font-size: 13px;
   padding: 0 20px;
   float: left;
+}
+#footer-subscribe .form-input article ::placeholder {
+  font-size: 13px;
 }
 </style>

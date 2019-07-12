@@ -62,6 +62,9 @@
 	.promo-section {
 		min-height: 750px
 	}
+	#mastfoot .footer-logo {
+	    margin: 110px 0 0;
+	}
 	.testimonial-wrap {
 		margin-left: 20px;
 		margin-right: 20px;
@@ -143,6 +146,9 @@
 @media (max-width: 1920px) {
 	.container, .features-details {
 	    max-width: 1500px;
+	}
+	#mastfoot .footer-logo {
+		margin: 110px 0 0;
 	}
 	div#portfolio_thumbs ul li{
 		width: 20%;
@@ -265,6 +271,12 @@
 	}
 	div#portfolio_thumbs ul li{
 	width: 25%;
+	}
+	#mastfoot .footer-logo {
+		margin: 45px 0 0;
+	  }
+	  .standard-nav li {
+		margin-left: 10px;
 	}
 }
 

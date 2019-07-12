@@ -60,6 +60,9 @@ export default {
   color: #582C87;
   font-size: 16px;
 }
+#services .service-card {
+  margin-top: 15px;
+}
 #services .card {
   padding: 20px;
   border: none;
@@ -72,6 +75,7 @@ export default {
 }
 #services .card-img-top {
   height: 300px;
+  width: auto;
   margin-bottom: 20px;
 }
 #services .card-body {
