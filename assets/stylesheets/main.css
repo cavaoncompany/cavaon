@@ -1563,17 +1563,17 @@ div#portfolio_thumbs ul li a:hover{
 }
 
 input {
-    background: transparent !important;
+    background: transparent;
     border: none;
     border-bottom: 1px solid #656565;
-    border-radius: 0px !important;
-    box-shadow: none !important;
+    border-radius: 0px;
+    box-shadow: none;
     color: #fff;
-    font-family: 'Montserrat', sans-serif !important; font-weight:300 !important;
+    font-family: 'Montserrat', sans-serif; font-weight:300;
     height: 50px;
-    font-size: 14px !important;
-    line-height: 21px !important;
-    margin-bottom: 10px !important;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 10px;
     padding: 10px 0;
     width: 100%;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */

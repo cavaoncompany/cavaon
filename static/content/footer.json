@@ -1,15 +1,41 @@
 {
+  "logo": "/images/Logo-colour.png",
+  "hero": "/images/hero-image.png",
+  "banner": "/images/footer-banner.png",
   "socialIcons": [
     {
-      "image": "/images/social/03.png",
+      "image": "/images/social/06.png",
       "description": "Cavaon on Facebook",
       "link": "https://www.facebook.com/cavaonptyltd"
     },
     {
-      "image": "/images/social/05.png",
+      "image": "/images/social/07.png",
       "description": "Cavaon on LinkedIn",
       "link": "https://www.linkedin.com/company/cavaon"
     }
   ],
+  "aboutTitle": "ABOUT",
+  "aboutText": "Cavaon is Sydney based online business solution specialised in building digital strategy and products to clients in need to reinvent their business model, moving rapidly from ideas to plans, and growing their competitive advantages.",
+  "contact": [
+    {
+      "initial": "P",
+      "content": "+61 2 8379 7424"
+    },
+    {
+      "initial": "E",
+      "content": "info@cavaon.com"
+    },
+    {
+      "initial": "A",
+      "content": "L1, 403 Elizabeth St. Surry Hills NSW 2010"
+    }
+  ],
+  "subscribeTitle": "SUBSCRIBE",
+  "subscribeText": "Subscribe to receive the latest news about events/workshops, company updates, and blog posts.",
+  "firstnamePlaceholder": "First name",
+  "lastnamePlaceholder": "Last name",
+  "emailPlaceholder": "Email",
+  "buttonText": "SUBMIT",
+  "messageSent": "Thank you for subscribing, you will hear from us soon.",
   "copyright": "2019 Cavaon Pty Ltd. All rights reserved"
 }

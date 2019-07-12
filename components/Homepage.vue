@@ -41,14 +41,8 @@
       <HeaderStandard page="home" />
       <About />
       <Flowchart />
-      <FlowchartMobile />
-      <!-- page-section : starts -->
       <Services />
-      <!-- page-section : ends -->
-
-      <!-- page-section : starts -->
       <Testimonials />
-      <!-- page-section : ends -->
       <!-- page-section : starts -->
       <section id="blog" class="page-section purple-bg">
         <section class="inner-section text-center purple-bg row blog-inner-section">
@@ -68,164 +62,7 @@
         </section>
       </section>
       <!-- page-section : ends -->
-      <div class="promo-section intermediate-section action-text parallax" @mouseenter.once="counterMouseOver()">
-        <div class="overlay">
-          <div class="container">
-            <div class="row">
-              <article class="promo-article col-md-12 text-center">
-                <h1 id="number-mobile">
-                  <span class="color">{{ linesOfCode.toLocaleString() }}</span>
-                </h1>
-                <count-to
-                  id="number-desktop"
-                  ref="codecounter"
-                  class="color counter"
-                  :start-val="startVal"
-                  :end-val="linesOfCode"
-                  :autoplay="false"
-                  :duration="3000"
-                />
-                <h2><span class="white">{{ promo.promoText }}</span></h2>
-                <div class="welcome-button">
-                  <a class="btn btn-odin btn-odin-color" href="/start-a-project">{{ promo.buttonText }}</a>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- page-section : starts -->
-      <section id="caseStudies" class="page portfolio page-section remove-pad-bottom white-bg">
-        <!-- inner-section:starts -->
-        <section class="inner-section promo-text">
-          <div class="container">
-            <div class="row">
-              <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInUp">
-                <h3 class="dark">
-                  <span>{{ caseStudies.title }}</span>
-                </h3>
-                <div class="liner color-bg" />
-              </article>
-            </div>
-          </div>
-        </section>
-        <!-- inner-section:ends -->
-
-        <!-- inner-section:starts -->
-        <section class="inner-section">
-          <!-- Container element for a single portfolio item. Do not remove! -->
-          <div id="item_container" class="clearfix" />
-        </section>
-        <!-- inner-section:ends -->
-        <ProjectWithSlider :project-details="projectDetails" />
-        <!-- inner-section : starts -->
-        <section class="inner-section add-top-quarter">
-          <!-- Filter -->
-          <div id="filter" class="clearfix">
-            <div id="filter_wrapper" />
-          </div>
-          <!-- End: Filter -->
-
-          <section id="portfolio-wrap">
-            <!-- Thumbnails -->
-            <div id="portfolio_thumbs">
-              <ul id="grid" class="sortablePortfolio clearfix">
-                <!-- 1st thumb -->
-                <li class="folio-thumb mix category1">
-                  <a href="projects/project-slider" class="more_info" @click="updateProjectDetails('letsTravel')">
-                    <!-- Thumbnail -->
-                    <img data-no-retina alt="Let's-Travel" title="Let's Travel" src="/images/Case-studies-Lets-Travel.png" @click="updateProjectDetails('letsTravel')">
-                    <!-- Info -->
-                    <div class="item_info">
-                      <div class="valign" @click="updateProjectDetails('letsTravel')">
-                        <h3><span @click="updateProjectDetails('letsTravel')">Let's Travel</span></h3>
-                        <p><span @click="updateProjectDetails('letsTravel')">Let's Travel</span></p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-
-                <!-- 2nd thumb -->
-                <li class="folio-thumb mix category2">
-                  <a href="projects/project-slider" class="more_info" @click="updateProjectDetails('travelDream')">
-                    <!-- Thumbnail -->
-                    <img data-no-retina alt="Travel-Dream" title="Travel Dream" src="/images/Case-Studies-Travel-Dream.png" @click="updateProjectDetails('travelDream')">
-                    <!-- Info -->
-                    <div class="item_info">
-                      <div class="valign">
-                        <h3><span @click="updateProjectDetails('travelDream')">Travel Dream</span></h3>
-                        <p><span @click="updateProjectDetails('travelDream')">Traveldream</span></p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <!-- End: Thumbnails -->
-          </section>
-        <!-- End: Portfolio Wrap -->
-        </section>
-        <!-- inner-section : ends-->
-      </section>
-      <!-- page-section : ends -->
-
-      <!-- page-section : starts -->
-      <section id="team-container" class="page team page-section remove-pad-bottom white-bg">
-        <!-- inner-section:starts -->
-        <section class="inner-section promo-text">
-          <div class="container">
-            <div class="row">
-              <article class="col-md-12 col-lg-8 col-md-offset-2 text-center animated" data-fx="fadeInDown">
-                <h3 class="dark">
-                  <span>{{ team.title }}</span>
-                </h3>
-                <div class="liner color-bg" />
-                <!-- <p class="grey">
-                  Cavaon is a ditial business and platform solution company from Sydney.
-                </p> -->
-              </article>
-            </div>
-          </div>
-        </section>
-        <!-- inner-section:ends -->
-
-        <!-- inner-section:starts -->
-        <section id="team" class="inner-section team-wrap">
-          <div class="container">
-            <div class="row">
-              <!-- item:starts -->
-              <article v-for="(member, index) in team.team" :key="index" class="col-sm-6 col-md-3 text-left">
-                <div itemscope itemtype="https://schema.org/Person" class="item team-carousel-item team-stage">
-                  <img
-                    :id="member.firstname"
-                    data-no-retina
-                    :alt="member.firstname + ' ' + member.lastname"
-                    :title="member.firstname + ' ' + member.lastname"
-                    class="img-responsive"
-                    :src="member.img1"
-                    itemprop="image"
-                    @mouseover="teamMouseOver(member.firstname, member.img2)"
-                    @mouseleave="teamMouseOver(member.firstname, member.img1)"
-                  >
-                  <h3 itemprop="name" class="dark team-desktop">
-                    {{ member.firstname }}<br>{{ member.lastname }}
-                  </h3>
-                  <h3 itemprop="name" class="team-mobile">
-                    {{ member.firstname }} {{ member.lastname }}
-                  </h3>
-                  <h6>
-                    <span>{{ member.title }}</span>
-                  </h6>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-        <!-- inner-section:ends -->
-      </section>
-      <!-- page-section : ends -->
-      <Contact />
+      <GoogleReviews />
       <Footer />
     </section>
     <!-- Master Wrap : ends -->
@@ -292,7 +129,6 @@
 </template>
 
 <script>
-import countTo from 'vue-count-to'
 import { mapState } from 'vuex'
 import banner from '../static/content/banner.json'
 import caseStudies from '../static/content/casestudies.json'
@@ -306,13 +142,11 @@ import HeaderMobile from './HeaderMobile.vue'
 import HeaderTop from './HeaderTop.vue'
 import HeaderStandard from './HeaderStandard.vue'
 import About from './About.vue'
-import Contact from './Contact.vue'
 import Flowchart from './Flowchart.vue'
-import FlowchartMobile from './FlowchartMobile.vue'
 import Services from './Services.vue'
 import Testimonials from './Testimonials.vue'
-import ProjectWithSlider from './ProjectWithSlider.vue'
 import ArticleList from './blog/Article-list.vue'
+import GoogleReviews from './GoogleReviews.vue'
 import Footer from './Footer.vue'
 
 export default {
@@ -321,14 +155,11 @@ export default {
     HeaderTop,
     HeaderStandard,
     About,
-    Contact,
     Flowchart,
-    FlowchartMobile,
     Services,
     Testimonials,
-    ProjectWithSlider,
     ArticleList,
-    countTo,
+    GoogleReviews,
     Footer
   },
   props: {
