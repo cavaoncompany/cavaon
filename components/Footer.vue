@@ -16,10 +16,10 @@
         </a>
       </nav>
       <div class="row footer-content">
-        <div class="col-md-4 footer-hero">
+        <div class="col-md-6 col-lg-4 footer-hero">
           <img :src="footer.hero" alt="Cavaon Mascot">
         </div>
-        <div class="col-md-4 footer-about">
+        <div class="col-md-6 col-lg-4 footer-about">
           <h3>{{ footer.aboutTitle }}</h3>
           <p>{{ footer.aboutText }}</p>
           <ul class="footer-contact">
@@ -31,7 +31,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-md-4 footer-subscribe">
+        <div class="col-md-6 col-lg-4 footer-subscribe">
           <h3>{{ footer.subscribeTitle }}</h3>
           <p>{{ footer.subscribeText }}</p>
           <form id="footer-subscribe" class="footer-subscribe-form" @submit.prevent="onSubmit">

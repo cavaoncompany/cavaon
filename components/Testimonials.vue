@@ -26,7 +26,7 @@
             itemprop="review"
             itemscope
             itemtype="http://schema.org/Review"
-            class="col-md-4"
+            class="col-md-4 testimonial-card"
           >
             <div class="speech">
               <h5 itemprop="description" class="main-caps">
@@ -78,6 +78,10 @@ export default {
 #testimonials h5 {
   font-size: 14px;
   font-weight: 500;
+  text-align: left;
+}
+#testimonials .testimonial-card {
+  margin-bottom: 25px;
 }
 #testimonials .speech {
   box-shadow: 2px 2px 10px rgba(228, 214, 233, 0.8);

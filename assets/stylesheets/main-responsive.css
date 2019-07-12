@@ -458,6 +458,9 @@
 	.about-us-desktop {
 		display: none;
 	}
+	.footer-hero {
+		display: none;
+	}
 	.team-stage > img{
 		padding: 0 10px;
 	}
