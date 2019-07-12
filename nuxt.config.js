@@ -115,6 +115,7 @@ module.exports = {
     '~/api/hubspotContact',
     '~/api/hubspotStartAProject',
     '~/api/hubspotBlogSignup',
+    '~/api/hubspotReferral',
     '~/api/mailchimp'
   ],
   axios: {

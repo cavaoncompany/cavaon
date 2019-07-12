@@ -39,6 +39,13 @@ app.post('/newProject', function (req, res) {
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 })
 
+app.post('/emailReferral', function (req, res) {
+  const emailInfo = req.body.emailInfo
+  const emailProvider = emailProviderDetails
+  sendReferral(emailInfo, emailProvider)
+  res.status(200).json({ 'message': 'Your mail was sent successfully.' })
+})
+
 const sendContactUsMail = (emailInfo, emailProvider) => {
   const transporter = nodemailer.createTransport({
     host: emailProvider.service,
@@ -90,6 +97,40 @@ const sendSubscribeMail = (subscriberInfo, emailProvider) => {
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Email:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.email}</td></tr>
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Phone:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.telephone}</td></tr>
             <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Company:</b></td><td style="border: 2px solid #555555; padding: 8px;">${subscriberInfo.company}</td></tr>
+            </table>`
+    })
+  }, 100)
+}
+
+const sendReferral = (emailInfo, emailProvider) => {
+  const transporter = nodemailer.createTransport({
+    host: emailProvider.service,
+    port: 465,
+    auth: {
+      user: emailProvider.username,
+      pass: emailProvider.password
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  })
+  setTimeout(() => {
+    transporter.sendMail({
+      from: emailInfo.email,
+      to: `${emailData.email}`,
+      cc: `${emailData.cc}`,
+      subject: `New referral submitted to www.cavaon.com`,
+      html: `<h2>The following contact would like to subscribe to the Cavaon newsletter:</h2>
+            <table style="border: 4px solid #555555; padding: 8px;">
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Referrer Name:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.referrerFirstname} ${emailInfo.referrerLastname}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Referrer Email:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.referrerEmail}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Referrer Phone:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.referrerTelephone}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Referrer Company:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.referrerCompany}</td></tr>
+            <tr></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Referred Contact Name:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.firstname} ${emailInfo.lastname}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Referred Contact Email:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.email}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Referred Contact Phone:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.telephone}</td></tr>
+            <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Referred Contact Company:</b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.company}</td></tr>
             </table>`
     })
   }, 100)
