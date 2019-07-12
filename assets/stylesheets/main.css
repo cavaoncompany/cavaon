@@ -446,8 +446,6 @@ div#preloader {
 	border:none;
 	width: fit-content;
 }
-.btn-odin-color:hover{
-}
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 /* 04 - PAGES & SECTIONS SETUP */
@@ -563,11 +561,6 @@ div#preloader {
 }
 .hero-caps-button{
 	margin-top: 20px;
-}
-.intro-mock{
-	/*padding: 140px;*/
-}
-.main-caps{
 }
 .main-caps > h3{
 	font-family: 'Montserrat', sans-serif; font-weight:700;
@@ -800,8 +793,7 @@ font-family: 'Montserrat', sans-serif; font-weight:300;
 	text-transform: uppercase;
 	padding: 8px 15px;
 }
-.item:hover > a > .thumb-title{
-}
+
 .item:hover > a > .thumb-title > h5{
 	opacity: 1;
 	-webkit-transition: all .4s ease-in-out;
@@ -861,9 +853,6 @@ font-family: 'Montserrat', sans-serif; font-weight:300;
 }
 
 /*PROCESS*/
-.process{
-
-}
 .process-stage{
 	padding: 0 20px;
 }
@@ -1043,8 +1032,6 @@ div#portfolio_thumbs ul li:hover div.item_info {
 		-ms-transition: all .4s ease-in-out;
 		 -o-transition: all .4s ease-in-out;
 			transition: all .4s ease-in-out;
-}
-div#portfolio_thumbs ul li div.item_info h3 {
 }
 div#portfolio_thumbs ul li div.item_info h3  > span{
 	color: #fff;
@@ -1544,10 +1531,7 @@ div#portfolio_thumbs ul li a:hover{
 	font-size: 24px;
 	line-height: 31px;
 }
-.contact-form{
-}
 /*contact form*/
-
 .contact-mail-wrap{
 	padding: 20px 0;
 }

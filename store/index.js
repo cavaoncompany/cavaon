@@ -62,6 +62,19 @@ async function createBlogSubscriber({ state, commit }, payload, path) {
   }
 }
 
+async function createHubspotReferral({ state, commit }, payload, path) {
+  const ticketInfo = payload
+  try {
+    // eslint-disable-next-line
+    const { res } = await axios.post(path, {
+      ticketInfo
+    })
+    return ('success')
+  } catch (e) {
+    return (e)
+  }
+}
+
 async function createMailChimpMember({ state, commit }, payload, path) {
   const subscriberInfo = payload
   try {
@@ -123,5 +136,13 @@ export const actions = {
   async createMailchimpSubscriber({ state, commit }, payload) {
     const path = '/api/mailchimp/createMailchimpContact'
     await createMailChimpMember({ state, commit }, payload, path)
+  },
+  async createReferral({ state, commit }, payload) {
+    const path = 'api/hubspotReferral/createReferral'
+    await createHubspotReferral({ state, commit }, payload, path)
+  },
+  async referralSubmission({ state, commit }, payload) {
+    const path = 'api/nodemailer/emailReferral'
+    await sendEmail({ state, commit }, payload, path)
   }
 }
