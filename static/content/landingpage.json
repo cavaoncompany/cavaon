@@ -1,0 +1,23 @@
+{
+  "title": "Digital Marketing for Travel Agencies",
+  "intro": "Fill in your details below to receive your free informative copy!",
+  "firstnamePlaceholder": "First name*",
+  "lastnamePlaceholder": "Last name*",
+  "companyPlaceholder": "Company",
+  "emailPlaceholder": "Email address*",
+  "telephonePlaceholder": "Telephone",
+  "buttonText": "GET MY FREE INFORMATIVE COPY",
+  "referralTitle": "Welcome to Cavaon's Referral Program!",
+  "referralIntro": "To receive your incentive, fill out the details in the form below and one of us will get in touch with you shortly.",
+  "referralFirstnamePlaceholder": "Your first name*",
+  "referralLastnamePlaceholder": "Your last name*",
+  "referralCompanyPlaceholder": "Your company",
+  "referralEmailPlaceholder": "Your email address*",
+  "referralTelephonePlaceholder": "Your telephone",
+  "referredFirstnamePlaceholder": "Referred contact first name*",
+  "referredLastnamePlaceholder": "Referred contact last name*",
+  "referredCompanyPlaceholder": "Referred company",
+  "referredEmailPlaceholder": "Referred contact email address*",
+  "referredTelephonePlaceholder": "Referred contact telephone",
+  "referralButtonText": "Submit your referral"
+}

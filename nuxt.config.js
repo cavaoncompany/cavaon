@@ -44,12 +44,13 @@ module.exports = {
     ],
     script: [
       { src: '/javascripts/custom/jquery-2.2.4.min.js', type: 'text/javascript', body: true, defer: true },
-      { src: '/bootstrap/js/bootstrap.min.js', type: 'text/javascript', body: true, defer: true },
       { src: '/less/less-1.5.0.min.js', type: 'text/javascript', body: true, defer: true },
       { src: '/javascripts/libs/common-min.js', type: 'text/javascript', body: true, defer: true },
+      { src: '/bootstrap/js/bootstrap.min.js', type: 'text/javascript', body: true, defer: true },
       { src: '/javascripts/custom/main.js', type: 'text/javascript', body: true, defer: true },
       { src: '/javascripts/custom/custom-init.js', type: 'text/javascript', body: true, defer: true },
-      { src: '//js.hs-scripts.com/5765560.js', type: 'text/javascript', body: true, defer: true }
+      { src: '//js.hs-scripts.com/5765560.js', type: 'text/javascript', body: true, defer: true },
+      { src: 'https://chimpstatic.com/mcjs-connected/js/users/35f22d84b4fdb209da5977e3b/eac28fbc3c5fe0a8ba79b9d01.js', type: 'text/javascript' }
     ]
   },
 
@@ -102,7 +103,9 @@ module.exports = {
   */
   plugins: [
     { src: '~/plugins/hotjar.js', ssr: false },
-    { src: '~/plugins/tawkto.js', ssr: false }
+    { src: '~/plugins/tawkto.js', ssr: false },
+    { src: '~/plugins/mailchimp.js', ssr: false },
+    { src: '~/plugins/tagmanager.js', ssr: false }
   ],
   server: {
     port: 3002 // default: 3000
@@ -111,8 +114,13 @@ module.exports = {
     '~/api/nodemailer',
     '~/api/hubspotContact',
     '~/api/hubspotStartAProject',
-    '~/api/hubspotBlogSignup'
+    '~/api/hubspotBlogSignup',
+    '~/api/hubspotReferral',
+    '~/api/mailchimp'
   ],
+  axios: {
+    // proxyHeaders: false
+  },
   /*
   ** Nuxt.js modules
   */
@@ -152,6 +160,9 @@ module.exports = {
     siteKey: process.env.recaptchasitekey,
     version: 3
   },
+  presets: [
+    ['@babel/preset-env', { targets: { node: 'current' } }]
+  ],
   /*
   ** Build configuration
   */

@@ -4,8 +4,8 @@
     <div class="container">
       <div v-if="page !== 'home'" class="row">
         <article class="col-md-2 text-left">
-          <a href="/">
-            <img alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="/images/Logo-colour.png">
+          <a itemscope itemtype="https://schema.org/Organization" href="/">
+            <img itemprop="logo" alt="Cavaon Logo" title="Cavaon Logo" class="main-logo img-responsive" src="/images/Logo-colour.png">
           </a>
         </article>
         <article class="col-md-10 text-right">

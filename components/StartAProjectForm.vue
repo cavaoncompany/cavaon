@@ -180,6 +180,14 @@
             >
           </section>
           <article>
+            <p v-if="errors.length" class="form-errors">
+              <b>Please correct the following error(s):</b>
+              <ul>
+                <li v-for="(error, i) in errors" :key="i">
+                  {{ error }}
+                </li>
+              </ul>
+            </p>
             <div class="btn-wrap  text-center">
               <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
                 {{ startaprojectform.buttonText }}
@@ -197,7 +205,6 @@ import { mapState } from 'vuex'
 import startaprojectform from '../static/content/startaprojectform.json'
 
 export default {
-  name: 'StartAProjectForm',
   data() {
     return {
       startaprojectform: startaprojectform,
@@ -215,7 +222,8 @@ export default {
       otherSelected: false,
       brief: '',
       briefPath: '',
-      file: {}
+      file: {},
+      errors: []
     }
   },
   computed: mapState(['projectTicketCreatedStatus']),
@@ -230,6 +238,30 @@ export default {
     await this.$recaptcha.init()
   },
   methods: {
+    checkForm: function (e) {
+      this.errors = []
+
+      // if (!this.name) {
+      //   this.errors.push("Name required.")
+      // }
+      if (!this.email) {
+        this.errors.push('Email required.')
+      } else if (!this.validEmail(this.email)) {
+        this.errors.push('Valid email required.')
+      }
+
+      if (!this.errors.length) {
+        this.createTicket()
+        return true
+      }
+
+      e.preventDefault()
+    },
+    validEmail: function (email) {
+      // eslint-disable-next-line
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email)
+    },
     addProjectType: function (data, e) {
       const service = 'project-form-' + data.title
       const img = 'img-' + data.title
@@ -483,5 +515,8 @@ export default {
   }
   .uploaded-files p {
     margin-top: 11px;
+  }
+  .form-errors {
+    color: red;
   }
 </style>
