@@ -80,7 +80,7 @@
 }
 
 @media (min-width: 1921px) {
-	.contact-us #standard-header {
+	.contact-us #standard-header, .start-a-project #standard-header {
 		display: block;
 	}
 	.contact-us .contact-us-banner, .start-a-project-banner {
@@ -184,7 +184,7 @@
 
 /*Large Widescreen Monitors*/
 @media (max-width: 1920px) {
-	.contact-us #standard-header {
+	.contact-us #standard-header, .start-a-project #standard-header {
 		display: block;
 	}
 	.container, .features-details {
@@ -354,7 +354,7 @@
 
 /*iPad Landscape Mode and Large Tablets */
 @media (max-width: 1024px) {
-	.contact-us #standard-header {
+	.contact-us #standard-header, .start-a-project #standard-header {
 		display: none;
 	}
 	.container, .features-details {

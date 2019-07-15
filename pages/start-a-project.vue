@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="start-a-project">
     <header-standard />
     <header-mobile />
     <div class="start-a-project-banner">
