@@ -80,8 +80,14 @@
 }
 
 @media (min-width: 1921px) {
+	.contact-us #standard-header {
+		display: block;
+	}
 	.contact-us .contact-us-banner {
 		min-height: 316px;
+	}
+	.contact-us .contact-us-banner {
+		margin-top: 70px;
 	}
 	.promo-section {
 		min-height: 750px
@@ -178,8 +184,14 @@
 
 /*Large Widescreen Monitors*/
 @media (max-width: 1920px) {
+	.contact-us #standard-header {
+		display: block;
+	}
 	.container, .features-details {
 	    max-width: 1500px;
+	}
+	.contact-us .contact-us-banner {
+		margin-top: 70px;
 	}
 	.contact-us .contact-us-banner {
 		min-height: 316px;
@@ -342,6 +354,9 @@
 
 /*iPad Landscape Mode and Large Tablets */
 @media (max-width: 1024px) {
+	.contact-us #standard-header {
+		display: none;
+	}
 	.container, .features-details {
 	    max-width: 800px;
 	}
@@ -378,6 +393,9 @@
 	}
 	#mastfoot {
 		padding-bottom: 25px;
+	}
+	.contact-us .contact-us-banner {
+		margin-top: 48px;
 	}
 }
 

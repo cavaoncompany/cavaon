@@ -117,12 +117,8 @@ export default {
 </script>
 
 <style>
-.contact-us #standard-header {
-    display: block;
-}
 .contact-us .contact-us-banner {
     position: relative;
-    margin-top: 70px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -144,7 +140,7 @@ export default {
     color: #fff;
     font-size: 30px;
     text-align: center;
-    margin-top: -10px;
+    margin-top: -20px;
 }
 .contact-us .liner {
     width: 52px;
@@ -157,10 +153,12 @@ export default {
     border-radius: 5px;
     padding: 60px 25px;
     height: 100%;
+    margin-top: 25px;
 }
 .contact-us .contact-us-form {
     box-shadow: 2px 2px 10px rgba(228, 214, 233, 0.8);
     border-radius: 5px;
+    margin-top: 25px;
 }
 .contact-us h2 {
     font-size: 15px;

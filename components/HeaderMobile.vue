@@ -1,6 +1,6 @@
 <template>
   <!-- mobile only navigation : starts -->
-  <nav class="mobile-nav hidden-md hidden-lg">
+  <nav class="mobile-nav hidden-lg">
     <ul v-if="page !== 'homepage'" class="slimmenu">
       <li>
         <a href="/" aria-label="Scroll to About">ABOUT</a>
