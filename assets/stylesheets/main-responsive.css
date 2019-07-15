@@ -81,7 +81,7 @@
 
 @media (min-width: 1921px) {
 	.contact-us .contact-us-banner {
-		min-height: 700px;
+		min-height: 316px;
 	}
 	.promo-section {
 		min-height: 750px
@@ -182,7 +182,7 @@
 	    max-width: 1500px;
 	}
 	.contact-us .contact-us-banner {
-		min-height: 600px;
+		min-height: 316px;
 	}
 	#mastfoot .footer-logo {
 		margin: 110px 0 0;
@@ -326,7 +326,7 @@
 		margin-left: 10px;
 	}
 	.contact-us .contact-us-banner {
-		min-height: 500px;
+		min-height: 316px;
 	}
 }
 
