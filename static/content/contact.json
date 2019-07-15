@@ -1,11 +1,16 @@
 {
-    "title": "SAY HELLO",
+    "title": "CONTACT US",
+    "subtitle": "SEND US A MESSAGE",
+    "phone": "PHONE",
+    "phonePlaceholder": "Phone",
     "telephone": "+61 2 8379 7424",
+    "address": "ADDRESS",
     "addressLine1": "L1, 403 Elizabeth St.",
     "addressLine2": "Surry Hills NSW 2010",
-    "firstnamePlaceholder": "Your first name",
-    "lastnamePlaceholder": "Your last name",
-    "emailPlaceholder": "Your email",
-    "messagePlaceholder": "Your message",
-    "buttonText": "Send Message"
+    "namePlaceholder": "Full name",
+    "email": "EMAIL",
+    "emailAddress": "info@cavaon.com",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Message",
+    "buttonText": "SUBMIT"
 }

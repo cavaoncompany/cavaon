@@ -10,7 +10,7 @@
       <nav class="row footer-links">
         <a href="#">AFFILIATE</a>
         <a href="#">CAREER</a>
-        <a href="#">CONTACT US</a>
+        <a href="/contact-us">CONTACT US</a>
         <a v-for="(link, i) in footer.socialIcons" :key="i" :href="link.link" target="_blank">
           <img :src="link.image" :alt="link.description">
         </a>
@@ -23,7 +23,7 @@
         </div>
         <a href="#">AFFILIATE</a>
         <a href="#">CAREER</a>
-        <a href="#">CONTACT US</a>
+        <a href="/contact-us">CONTACT US</a>
       </nav>
       <div class="row footer-content">
         <div class="col-md-6 col-lg-4 footer-hero">
@@ -99,7 +99,8 @@ export default {
       footer: footer,
       subscriberFirstname: '',
       lastnamePlaceholder: '',
-      emailPlaceholder: ''
+      emailPlaceholder: '',
+      messageSent: false
     }
   }
 }

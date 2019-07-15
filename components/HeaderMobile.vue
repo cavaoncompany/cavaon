@@ -21,7 +21,7 @@
         <a href="/" aria-label="Scroll to About">ABOUT</a>
       </li>
       <li>
-        <a href="/" aria-label="Scroll to Contact Form">CONTACT</a>
+        <a href="/contact-us" aria-label="Scroll to Contact Form">CONTACT</a>
       </li>
     </ul>
 
@@ -42,7 +42,7 @@
         <a href="/blog" aria-label="Go to blog">BLOG</a>
       </li>
       <li>
-        <a class="scroll" href="#contact" aria-label="Scroll to Contact Form">CONTACT</a>
+        <a class="scroll" href="/contact-us" aria-label="Scroll to Contact Form">CONTACT</a>
       </li>
     </ul>
   </nav>

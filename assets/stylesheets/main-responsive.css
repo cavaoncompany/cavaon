@@ -80,6 +80,9 @@
 }
 
 @media (min-width: 1921px) {
+	.contact-us .contact-us-banner {
+		min-height: 700px;
+	}
 	.promo-section {
 		min-height: 750px
 	}
@@ -168,12 +171,18 @@
 	.footer-links-mobile {
 		display: none;
 	}
+	.contact-us .contact-us-form {
+		padding: 60px;
+	}
 }
 
 /*Large Widescreen Monitors*/
 @media (max-width: 1920px) {
 	.container, .features-details {
 	    max-width: 1500px;
+	}
+	.contact-us .contact-us-banner {
+		min-height: 600px;
 	}
 	#mastfoot .footer-logo {
 		margin: 110px 0 0;
@@ -266,6 +275,9 @@
 	.footer-links-mobile {
 		display: none;
 	}
+	.contact-us .contact-us-form {
+		padding: 60px;
+	}
 }
 
 /*Medium Widescreen Monitors*/
@@ -313,6 +325,9 @@
 	  .standard-nav li {
 		margin-left: 10px;
 	}
+	.contact-us .contact-us-banner {
+		min-height: 500px;
+	}
 }
 
 /*Notebooks and Small Laptops*/
@@ -351,6 +366,9 @@
 	.featured-article-card .seo-description {
 		max-height: 147px;
 		overflow: hidden;
+	}
+	.standard-nav li {
+		margin-left: 8px;
 	}
 }
 
@@ -480,6 +498,9 @@
 @media (max-width: 768px) {
 	#mobile-services {
 		display: block;
+	}
+	.contact-us .contact-us-banner {
+		min-height: 300px;
 	}
 	.featuress-expansion {
 		display: none;
@@ -641,6 +662,9 @@
 	}
 	.banner-image-container img {
 		margin-top: -579px;
+	}
+	.contact-us .contact-us-form {
+		padding: 60px 15px;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -1648,7 +1672,9 @@
 
 /*Other Major Small Smart Phones*/
 @media screen and (max-width: 360px) {
-	
+	.contact-us .contact-us-banner {
+		min-height: 250px;
+	}
 	.container, .features-details {
 	    max-width: 320px;
 	    padding-left: 20px;

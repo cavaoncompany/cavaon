@@ -167,6 +167,6 @@ export default {
   margin: 7px;
 }
 .card {
-  height: 100%;
+  height: 97%;
 }
 </style>
