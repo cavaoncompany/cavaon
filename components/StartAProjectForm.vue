@@ -2,15 +2,6 @@
   <div id="start-a-project">
     <div class="container">
       <div class="row">
-        <div class="main-caps text-center col-md-12 col-lg-10 col-lg-offset-1">
-          <h2 class="dark main-caps project-top-header">
-            <span>{{ startaprojectform.title }}</span>
-          </h2>
-          <div class="liner color-bg" />
-          <p class="grey fill-form">
-            {{ startaprojectform.instruction }}
-          </p>
-        </div>
         <form
           id="startAProjectForm"
           class="col-md-12 col-lg-10 col-lg-offset-1"
@@ -188,7 +179,7 @@
                 </li>
               </ul>
             </p>
-            <div class="btn-wrap  text-center">
+            <div class="btn-wrap">
               <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
                 {{ startaprojectform.buttonText }}
               </button>
@@ -487,7 +478,6 @@ export default {
     font-weight: 600;
     color: #111;
     background-color: transparent;
-    border: 1px solid #FFC716;
     display: inline-block;
     cursor: pointer;
     padding: 8px;
@@ -518,5 +508,8 @@ export default {
   }
   .form-errors {
     color: red;
+  }
+  #startAProjectForm .btn-odin-color {
+    width: 199px;
   }
 </style>

@@ -83,10 +83,10 @@
 	.contact-us #standard-header {
 		display: block;
 	}
-	.contact-us .contact-us-banner {
+	.contact-us .contact-us-banner, .start-a-project-banner {
 		min-height: 316px;
 	}
-	.contact-us .contact-us-banner {
+	.contact-us .contact-us-banner, .start-a-project-banner {
 		margin-top: 70px;
 	}
 	.promo-section {
@@ -190,10 +190,10 @@
 	.container, .features-details {
 	    max-width: 1500px;
 	}
-	.contact-us .contact-us-banner {
+	.contact-us .contact-us-banner, .start-a-project-banner {
 		margin-top: 70px;
 	}
-	.contact-us .contact-us-banner {
+	.contact-us .contact-us-banner, .start-a-project-banner {
 		min-height: 316px;
 	}
 	#mastfoot .footer-logo {
@@ -337,7 +337,7 @@
 	  .standard-nav li {
 		margin-left: 10px;
 	}
-	.contact-us .contact-us-banner {
+	.contact-us .contact-us-banner, .start-a-project-banner {
 		min-height: 316px;
 	}
 }
@@ -394,7 +394,7 @@
 	#mastfoot {
 		padding-bottom: 25px;
 	}
-	.contact-us .contact-us-banner {
+	.contact-us .contact-us-banner, .start-a-project-banner {
 		margin-top: 48px;
 	}
 }
@@ -517,7 +517,7 @@
 	#mobile-services {
 		display: block;
 	}
-	.contact-us .contact-us-banner {
+	.contact-us .contact-us-banner, .start-a-project-banner {
 		min-height: 300px;
 	}
 	.featuress-expansion {
@@ -1690,7 +1690,7 @@
 
 /*Other Major Small Smart Phones*/
 @media screen and (max-width: 360px) {
-	.contact-us .contact-us-banner {
+	.contact-us .contact-us-banner, .start-a-project-banner {
 		min-height: 250px;
 	}
 	.container, .features-details {
