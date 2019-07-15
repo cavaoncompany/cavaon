@@ -15,6 +15,16 @@
           <img :src="link.image" :alt="link.description">
         </a>
       </nav>
+      <nav class="row footer-links-mobile">
+        <div class="social-media-icons">
+          <a v-for="(link, i) in footer.socialIcons" :key="i" :href="link.link" target="_blank">
+          <img :src="link.image" :alt="link.description">
+        </a>
+        </div>
+        <a href="#">AFFILIATE</a>
+        <a href="#">CAREER</a>
+        <a href="#">CONTACT US</a>
+      </nav>
       <div class="row footer-content">
         <div class="col-md-6 col-lg-4 footer-hero">
           <img :src="footer.hero" alt="Cavaon Mascot">
@@ -23,7 +33,7 @@
           <h3>{{ footer.aboutTitle }}</h3>
           <p>{{ footer.aboutText }}</p>
           <ul class="footer-contact">
-            <li v-for="(item, i) in footer.contact" :key="i">
+            <li v-for="(item, i) in footer.contact" :key="i" style="li:before">
               <span class="footer-contact-initial">
                 {{ item.initial }}
               </span>
@@ -129,18 +139,28 @@ export default {
   width: 25%;
   height: auto;
 }
-#mastfoot .footer-links {
-  display: flex;
-  justify-content: flex-end;
+#mastfoot .footer-links,
+#mastfoot .footer-links-mobile {
   margin-top: 40px;
 }
-#mastfoot .footer-links a {
+#mastfoot .footer-links-mobile {
+  text-align: center;
+}
+#mastfoot .footer-links a,
+#mastfoot .footer-links-mobile a {
   color: #fff;
   margin: 0 15px;
   margin-top: auto;
   margin-bottom: auto;
 }
-#mastfoot .footer-links a img {
+#mastfoot .footer-links-mobile a {
+  margin: 10px 10px;
+}
+#mastfoot .footer-links-mobile .social-media-icons {
+  margin-bottom: 15px;
+}
+#mastfoot .footer-links a img,
+#mastfoot .footer-links-mobile a img {
   height: 25px;
 }
 #mastfoot .footer-content {

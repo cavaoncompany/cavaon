@@ -27,6 +27,13 @@
 	.service-card-container {
 	    margin-top: 60px;
 	}
+	.footer-links {
+		display: flex;
+  		justify-content: flex-end;
+	}
+	.footer-links-mobile {
+		display: none;
+	}
 }
 
 /*Projector Screens and Ver Large Monitors*/
@@ -43,6 +50,13 @@
 	.service-card-container {
 	    margin-top: 60px;
 	}
+	.footer-links {
+		display: flex;
+  		justify-content: flex-end;
+	}
+	.footer-links-mobile {
+		display: none;
+	}
 }
 
 /*iMac 27, HD Screens and Large Monitors*/
@@ -55,6 +69,13 @@
 	}
 	.promo-section {
 		min-height: 750px
+	}
+	.footer-links {
+		display: flex;
+  		justify-content: flex-end;
+	}
+	.footer-links-mobile {
+		display: none;
 	}
 }
 
@@ -139,6 +160,13 @@
 	}
 	.blog-inner-section .keywords {
 		justify-content: start;
+	}
+	.footer-links {
+		display: flex;
+  		justify-content: flex-end;
+	}
+	.footer-links-mobile {
+		display: none;
 	}
 }
 
@@ -230,6 +258,13 @@
 	}
 	.blog-inner-section .keywords {
 		justify-content: start;
+	}
+	.footer-links {
+		display: flex;
+  		justify-content: flex-end;
+	}
+	.footer-links-mobile {
+		display: none;
 	}
 }
 
@@ -596,11 +631,10 @@
 		display: none;
 	}
 	.banner-image-container img {
-		width: 70%;
-		height: 85%;
+		width: 65%;
 	}
-	.banner-image-container {
-		margin-top: -249px;
+	.banner-image-container img {
+		margin-top: -579px;
 	}
 }
 
@@ -1168,6 +1202,10 @@
 	.promo-article {
 		margin-top: 25%;
 	}
+	.hero-container {
+		width: 100%;
+		padding: 0;
+	}
 	.text-left, .text-right, p, h1, h2, h3, h4, h5{
 		text-align: center;
 	}
@@ -1268,6 +1306,9 @@
 	.standard-header{
 		display: none !important;
 	}
+	.banner-image-container img {
+		margin-top: -249px;
+	}
 	.about{
 		padding: 40px 0;
 	}
@@ -1277,6 +1318,25 @@
 	.blog-post-body {
 		width: 100%;
 	}
+	#mastfoot h3, .footer-contact-initial {
+		text-align: left;
+	}
+	#mastfoot p, #mastfoot li {
+		text-align: left;
+	}
+	#mastfoot {
+		padding-bottom: 25px;
+	}
+	.footer-links {
+		display: none;
+	}
+	.footer-links-mobile {
+		display: flex;
+		flex-direction: column;
+	}
+	#mastfoot .footer-logo {
+		margin: 18px 0 0;
+	  }
 }
 
 

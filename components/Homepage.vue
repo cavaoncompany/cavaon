@@ -9,7 +9,7 @@
         <!-- <div class="valignBanner"> -->
         <div class="container hero-container">
           <div class="hero-caps text-rotator row">
-            <div class="col-md-8 banner-text">
+            <div class="col-lg-8 banner-text">
               <h1 class="white desktop-banner">
                 <span>{{ banner.titleTop }}</span>
                 <br>{{ banner.titleBottom }}
@@ -25,7 +25,7 @@
                 <div class="play" />
               </div>
             </div>
-            <div class="banner-image-container col-md-4">
+            <div class="banner-image-container col-lg-4">
               <img :src="banner.heroImage" alt="Welcome to Cavaon">
             </div>
           </div>
