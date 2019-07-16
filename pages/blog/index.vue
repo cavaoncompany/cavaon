@@ -41,56 +41,7 @@ export default {
     return {
       posts,
       blog: blog,
-      subscriberFirstname: '',
-      subscriberLastname: '',
-      subscriberEmail: '',
-      messageSent: false,
       metadata: metadata
-    }
-  },
-  async mounted() {
-    await this.$recaptcha.init()
-  },
-  methods: {
-    sendEmail() {
-      const emailData = {
-        email: this.subscriberEmail,
-        firstname: this.subscriberFirstname,
-        lastname: this.subscriberLastname
-      }
-      this.$store.dispatch('subsribeTo', emailData)
-      this.subscriberFirstname = ''
-      this.subscriberLastname = ''
-      this.subscriberEmail = ''
-    },
-    createSubscriber() {
-      const subscriberInfo = {
-        email: this.subscriberEmail,
-        firstname: this.subscriberFirstname,
-        lastname: this.subscriberLastname
-      }
-      this.$store.dispatch('createSubscriber', subscriberInfo)
-    },
-    createMailchimpSubscriber() {
-      const subscriberInfo = {
-        email: this.subscriberEmail,
-        firstname: this.subscriberFirstname,
-        lastname: this.subscriberLastname
-      }
-      this.$store.dispatch('createMailchimpSubscriber', subscriberInfo)
-    },
-    async onSubmit() {
-      try {
-        // eslint-disable-next-line
-        const token = await this.$recaptcha.execute('login')
-        this.createMailchimpSubscriber()
-        this.createSubscriber()
-        this.sendEmail()
-        this.messageSent = true
-      } catch (error) {
-        // eslint-disable-next-line
-        console.log('Submission error:', error)
-      }
     }
   },
   head() {
@@ -143,34 +94,5 @@ export default {
 }
 #blog .standard-header {
   display: block;
-}
-#blog .subscribe {
-  background-color: #FFF;
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-#subscribeToBlogForm {
-  padding-left: 0;
-  padding-right: 0;
-}
-#subscribeToBlogForm input {
-  border-color: #E2E2E2;
-}
-#subscribeToBlogForm input::placeholder {
-  color: #E2E2E2;
-}
-#subscribeToBlogForm h3 {
-  font-size: 18px;
-  color: #494949;
-  font-weight: 500;
-}
-#subscribeToBlogForm .btn {
-  width: 170px;
-}
-#blog .successfully-subscribed p {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 12px;
-  color: green;
 }
 </style>

@@ -54,7 +54,10 @@
         <p class="blog-about">{{ blog.blogAbout }}</p>
         <a href="/about">{{ blog.aboutLink }}</a>
         <div class="spacer" />
-        <h3>{{ blog.topics }}</h3>
+        <div class="blog-wrapper">
+          <h3>{{ blog.topics }}</h3>
+          <div class="btn btn-view-all">{{ blog.clearSelection }}</div>
+        </div>
         <p class="keywords">
           <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
         </p>
@@ -256,6 +259,7 @@ export default {
 .blog-sidebar a, .blog-sidebar .btn-view-all {
   color: #FFC615;
   font-size: 14px;
+  font-weight: 500;
 }
 .blog-sidebar .btn-view-all {
   padding: 0;
@@ -289,6 +293,16 @@ export default {
 .blog-inner-section .keywords span.hover,
 .blog-inner-section .keywords span:active,
 .blog-inner-section .keywords span.active {
+  color: #FFF;
+  background-color: #582C87;
+  cursor: pointer;
+}
+.blog-sidebar .blog-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.active-topic {
   color: #FFF;
   background-color: #582C87;
   cursor: pointer;

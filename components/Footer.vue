@@ -18,8 +18,8 @@
       <nav class="row footer-links-mobile">
         <div class="social-media-icons">
           <a v-for="(link, i) in footer.socialIcons" :key="i" :href="link.link" target="_blank">
-          <img :src="link.image" :alt="link.description">
-        </a>
+            <img :src="link.image" :alt="link.description">
+          </a>
         </div>
         <a href="#">AFFILIATE</a>
         <a href="#">CAREER</a>
@@ -63,26 +63,26 @@
                     name="subscriberLastname"
                   >
                 </article>
-                </div>
-                <article>
-                  <input
-                    v-model="subscriberEmail"
-                    type="text"
-                    :placeholder="footer.emailPlaceholder"
-                    name="subscriberEmail"
-                  >
-                </article>
-              </section>
+              </div>
               <article>
-                <div class="btn-wrap-small  text-center">
-                  <button id="footer-submit" class="btn-odin-color" name="submit" type="submit">
-                    {{ footer.buttonText }}
-                  </button>
-                </div>
+                <input
+                  v-model="subscriberEmail"
+                  type="text"
+                  :placeholder="footer.emailPlaceholder"
+                  name="subscriberEmail"
+                >
               </article>
-              <article v-if="messageSent === true" class="successfully-subscribed">
-                <p>{{ footer.messageSent }}</p>
-              </article>
+            </section>
+            <article>
+              <div class="btn-wrap-small  text-center">
+                <button id="footer-submit" class="btn-odin-color" name="submit" type="submit">
+                  {{ footer.buttonText }}
+                </button>
+              </div>
+            </article>
+            <article v-if="messageSent === true" class="successfully-subscribed">
+              <p>{{ footer.messageSent }}</p>
+            </article>
           </form>
         </div>
       </div>
@@ -98,9 +98,54 @@ export default {
     return {
       footer: footer,
       subscriberFirstname: '',
-      lastnamePlaceholder: '',
-      emailPlaceholder: '',
+      subscriberLastname: '',
+      subscriberEmail: '',
       messageSent: false
+    }
+  },
+  async mounted() {
+    await this.$recaptcha.init()
+  },
+  methods: {
+    sendEmail() {
+      const emailData = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstname,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('subsribeTo', emailData)
+      this.subscriberFirstname = ''
+      this.subscriberLastname = ''
+      this.subscriberEmail = ''
+    },
+    createSubscriber() {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstname,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createSubscriber', subscriberInfo)
+    },
+    createMailchimpSubscriber() {
+      const subscriberInfo = {
+        email: this.subscriberEmail,
+        firstname: this.subscriberFirstname,
+        lastname: this.subscriberLastname
+      }
+      this.$store.dispatch('createMailchimpSubscriber', subscriberInfo)
+    },
+    async onSubmit() {
+      try {
+        // eslint-disable-next-line
+        const token = await this.$recaptcha.execute('login')
+        this.createMailchimpSubscriber()
+        this.createSubscriber()
+        this.sendEmail()
+        this.messageSent = true
+      } catch (error) {
+        // eslint-disable-next-line
+        console.log('Submission error:', error)
+      }
     }
   }
 }
@@ -203,6 +248,9 @@ export default {
   font-size: 13px;
   padding: 0 20px;
   float: left;
+}
+#footer-subscribe .form-input {
+  width: 100%;
 }
 #footer-subscribe .form-input article ::placeholder {
   font-size: 13px;
