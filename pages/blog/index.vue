@@ -2,61 +2,14 @@
   <section id="blog">
     <header-mobile page="blog" />
     <header-standard page="blog" />
-    <div class="container">
+    <div class="blog-banner">
+      <img src="/images/banner-blog.png" alt="Traffic">
       <h1>{{ blog.title }}</h1>
-      <div class="card-spacer align-center" />
-      <article-list :articles="posts" page="blog" />
+      <div class="liner color-bg" />
     </div>
-    <div class="subscribe">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 subscribe-to-blog">
-            <h3>{{ blog.subscribeToOurNewsletter }}</h3>
-            <p>{{ blog.stayUpToDate }}</p>
-            <form
-              id="subscribeToBlogForm"
-              class="col-md-12"
-              @submit.prevent="onSubmit"
-            >
-              <section class="form-input">
-                <article>
-                  <input
-                    v-model="subscriberFirstname"
-                    type="text"
-                    :placeholder="blog.firstnamePlaceholder"
-                    name="subscriberFirstname"
-                  >
-                </article>
-                <article>
-                  <input
-                    v-model="subscriberLastname"
-                    type="text"
-                    :placeholder="blog.lastnamePlaceholder"
-                    name="subscriberLastname"
-                  >
-                </article>
-                <article>
-                  <input
-                    v-model="subscriberEmail"
-                    type="text"
-                    :placeholder="blog.emailPlaceholder"
-                    name="subscriberEmail"
-                  >
-                </article>
-              </section>
-              <article>
-                <div class="btn-wrap  text-center">
-                  <button id="submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
-                    {{ blog.buttonText }}
-                  </button>
-                </div>
-              </article>
-              <article v-if="messageSent === true" class="successfully-subscribed">
-                <p>{{ blog.messageSent }}</p>
-              </article>
-            </form>
-          </div>
-        </div>
+    <div class="container">
+      <div class="row">
+        <article-list :articles="posts" page="blog" />
       </div>
     </div>
     <Footer />
@@ -158,13 +111,32 @@ export default {
 <style>
 #blog {
   height: 100%;
-  background: #f4f4f4;
   padding-top: 130px;
 }
-#blog h1 {
-  font-size: 24px;
-  font-weight: 600;
-  text-align: center;
+#blog .blog-banner {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#blog .blog-banner .liner {
+    text-align: center;
+    margin: 0 auto;
+}
+#blog .blog-banner img {
+    position: absolute;
+    width: 100%;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+#blog .blog-banner h1 {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    margin-top: -70px;
 }
 .align-center {
   margin: 0 auto;

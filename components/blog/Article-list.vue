@@ -4,24 +4,9 @@
     class="blog-inner-section"
   >
     <div v-if="page === 'blog' && sortedArticles.length > 0 && featuredArticle" class="row card-container">
-      <featured-article-card
-        :lang="featuredArticle.lang"
-        :title="featuredArticle.title"
-        :subtitle="featuredArticle.subtitle"
-        :description="featuredArticle.description"
-        :tags="featuredArticle.tags"
-        :date="featuredArticle.date"
-        :thumbnail="featuredArticle.thumbnail"
-        :image="featuredArticle.image"
-        :url="featuredArticle.url"
-        :body="featuredArticle.body"
-        :filename="featuredArticle.filename"
-        :extract="getExtract(featuredArticle.body)"
-      />
-      <p class="keywords">
-        <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
-      </p>
-      <article-card
+      <div class="articles col-md-8">
+        <h2>{{ blogSubheader }}</h2>
+        <article-card
         v-for="(article, i) in sortedArticles"
         :key="i"
         :lang="article.lang"
@@ -36,14 +21,14 @@
         :filename="article.filename"
         :page="page"
         :extract="getExtract(article.body)"
-        class="col-md-4"
+        class="col-md-6"
       />
-      <article class="viewMore">
+      <article v-if="showMoreVisible === true" class="viewMore">
         <div class="btn-wrap text-center">
           <button
             v-if="viewAll === false"
             id="viewMore"
-            class="btn"
+            class="btn btn-purple"
             name="viewMore"
             type="button"
             @click="updateView()"
@@ -53,7 +38,7 @@
           <button
             v-if="viewAll === true"
             id="viewMore"
-            class="btn"
+            class="btn btn-purple"
             name="viewMore"
             type="button"
             @click="updateView()"
@@ -62,6 +47,20 @@
           </button>
         </div>
       </article>
+      </div>
+      <div class="blog-sidebar col-md-4">
+        <input v-model="search" :placeholder="blog.search"/>
+        <img src="/images/avatar-blog.png">
+        <p class="blog-about">{{ blog.blogAbout }}</p>
+        <a href="/about">{{ blog.aboutLink }}</a>
+        <div class="spacer" />
+        <h3>{{ blog.topics }}</h3>
+        <p class="keywords">
+          <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
+        </p>
+        <div class="btn btn-view-all">{{ blog.viewAll }}</div>
+        <div class="spacer" />
+      </div>
     </div>
     <div v-if="page === 'homepage' && homepagePosts.length > 0" class="row card-container">
       <article-card
@@ -89,12 +88,10 @@
 <script>
 import blog from '../../static/content/blog.json'
 import ArticleCard from './Article-card.vue'
-import FeaturedArticleCard from './Featured-article-card.vue'
 
 export default {
   components: {
-    ArticleCard,
-    FeaturedArticleCard
+    ArticleCard
   },
   props: {
     articles: {
@@ -115,7 +112,10 @@ export default {
       filteredPosts: [],
       blog: blog,
       viewAll: true,
-      blogCount: 0
+      blogCount: 0,
+      showMoreVisible: false,
+      blogSubheader: blog.latest,
+      search: ''
     }
   },
   created() {
@@ -195,8 +195,10 @@ export default {
         this.sortedArticles = this.orderPostsByDate()
         if (this.sortedArticles.length >= 6) {
           this.sortedArticles = this.prepareLatestPosts(this.sortedArticles, 6)
+          this.showMoreVisible = true
         } else {
           this.sortedArticles = this.prepareLatestPosts(this.sortedArticles, this.sortedArticles.length)
+          this.showMoreVisible = false
         }
       }
     },
@@ -218,8 +220,65 @@ export default {
 .blog-inner-section {
   width: 100%;
 }
+.blog-inner-section h2 {
+  font-size: 15px;
+  width: 100%;
+  font-weight: 500;
+  padding: 7px 14px;
+}
+#viewMore {
+  background-color: #472D86;
+  color: #FFF;
+  border-radius: 49px;
+  font-size: 13px;
+  width: 176px;
+}
+.viewMore {
+  width: 100%;
+  margin-bottom: 80px;
+}
+.blog-sidebar input {
+  height: 40px;
+  border: 1px solid #E2E2E2;
+  border-radius: 49px;
+  background-image: url('/images/magnify.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  padding-left: 35px;
+}
+.blog-sidebar img {
+  margin: 25px 0 35px;
+}
+.blog-sidebar p {
+  margin-bottom: 25px;
+  color: #494949;
+}
+.blog-sidebar a, .blog-sidebar .btn-view-all {
+  color: #FFC615;
+  font-size: 14px;
+}
+.blog-sidebar .btn-view-all {
+  padding: 0;
+  margin-top: 20px;
+}
+.blog-sidebar .spacer {
+  border-bottom: 1px solid #E2E2E2;
+  height: 20px;
+}
+.blog-sidebar h3 {
+ font-size: 15px;
+ font-weight: 500;
+ margin: 25px 0;
+}
+.blog-sidebar .keywords {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  color: #808080
+}
 .blog-inner-section .keywords span {
-  border: 1px solid #FFC716;
+  border: 1px solid #E2E2E2;
   padding: 7px 14px;
   margin-right: 12px;
   margin-bottom: 12px;
@@ -231,21 +290,7 @@ export default {
 .blog-inner-section .keywords span:active,
 .blog-inner-section .keywords span.active {
   color: #FFF;
-  background-color: #FFC716;
+  background-color: #582C87;
   cursor: pointer;
-}
-.blog-inner-section .keywords {
-  margin: 0px 15px 45px 15px;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-#viewMore {
-  border: 1px solid #FFC716;
-  color: #FFC716;
-}
-.viewMore {
-  width: 100%;
-  margin-bottom: 80px;
 }
 </style>
