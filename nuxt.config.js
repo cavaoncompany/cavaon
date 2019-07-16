@@ -10,7 +10,6 @@ const env = require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
-
   /*
   ** Headers of the page
   */
@@ -106,7 +105,8 @@ module.exports = {
     { src: '~/plugins/hotjar.js', ssr: false },
     { src: '~/plugins/tawkto.js', ssr: false },
     { src: '~/plugins/mailchimp.js', ssr: false },
-    { src: '~/plugins/tagmanager.js', ssr: false }
+    { src: '~/plugins/tagmanager.js', ssr: false },
+    { src: '~/plugins/socialsharing.js' }
   ],
   server: {
     port: 3001 // default: 3000
@@ -133,7 +133,8 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
     '@nuxtjs/robots',
-    'nuxt-leaflet'
+    'nuxt-leaflet',
+    'nuxt-svg'
   ],
   robots: {
     UserAgent: '*',

@@ -82,7 +82,8 @@
 @media (min-width: 1921px) {
 	.contact-us #standard-header,
 	.start-a-project #standard-header,
-	#blog #standard-header {
+	#blog #standard-header,
+	#blog-post #standard-header {
 		display: block;
 	}
 	.contact-us .contact-us-banner,
@@ -194,7 +195,8 @@
 @media (max-width: 1920px) {
 	.contact-us #standard-header,
 	.start-a-project #standard-header,
-	#blog #standard-header {
+	#blog #standard-header,
+	#blog-post #standard-header {
 		display: block;
 	}
 	.container, .features-details {
@@ -361,7 +363,8 @@
 @media (max-width: 1199px) {
 	.contact-us #standard-header,
 	.start-a-project #standard-header,
-	#blog #standard-header {
+	#blog #standard-header,
+	#blog-post #standard-header {
 		display: none;
 	}
 	#blog .blog-banner {

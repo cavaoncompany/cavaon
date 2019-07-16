@@ -38,10 +38,12 @@
     "nodemailer": "^6.1.0",
     "nuxt": "^2.8.0",
     "nuxt-leaflet": "^0.0.19",
+    "nuxt-svg": "^0.1.6",
     "serverless-http": "^1.9.1",
     "unirest": "^0.6.0",
     "vue-count-to": "^1.0.13",
-    "vue-pdf": "^4.0.7"
+    "vue-pdf": "^4.0.7",
+    "vue-social-sharing": "^2.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

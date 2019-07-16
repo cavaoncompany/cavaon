@@ -9,83 +9,83 @@
     </div>
     <main class="contact-us-main container">
       <div class="row">
-          <form class="contact-us-form col-md-6">
-              <h2>{{ contact.subtitle }}</h2>
-              <div class="liner color-bg" />
-              <section class="form-input">
-              <div class="footer-subscribe-name">
-                <article>
-                  <label for="name">{{ contact.namePlaceholder }}</label>
-                  <input
-                    v-model="name"
-                    type="text"
-                    :placeholder="contact.namePlaceholder"
-                    name="name"
-                  >
-                </article>
-                <article>
-                  <label for="email">{{ contact.emailPlaceholder }}</label>
-                  <input
-                    v-model="email"
-                    type="text"
-                    :placeholder="contact.emailPlaceholder"
-                    name="email"
-                  >
-                </article>
-                </div>
-                <article>
-                  <label for="phone">{{ contact.phonePlaceholder }}</label>
-                  <input
-                    v-model="phone"
-                    type="text"
-                    :placeholder="contact.phonePlaceholder"
-                    name="phone"
-                  >
-                </article>
-                <article>
-                  <label for="contact-message">{{ contact.messagePlaceholder }}</label>
-                  <textarea
-                    id="contact-message"
-                    v-model="message"
-                    name="message"
-                    tabindex="5"
-                    cols="40"
-                    rows="10"
-                    class="contact-us-message"
-                    :placeholder="contact.messagePlaceholder"
-                    required
-                  />
-                </article>
-              </section>
+        <form class="contact-us-form col-md-6">
+          <h2>{{ contact.subtitle }}</h2>
+          <div class="liner color-bg" />
+          <section class="form-input">
+            <div class="footer-subscribe-name">
               <article>
-                <div class="btn-wrap-small">
-                  <button id="contact-us-submit" class="btn-odin-color" name="submit" type="submit">
-                    {{ contact.buttonText }}
-                  </button>
-                </div>
+                <label for="name">{{ contact.namePlaceholder }}</label>
+                <input
+                  v-model="name"
+                  type="text"
+                  :placeholder="contact.namePlaceholder"
+                  name="name"
+                >
               </article>
-              <article v-if="messageSent === true" class="successfully-subscribed">
-                <p>{{ footer.messageSent }}</p>
+              <article>
+                <label for="email">{{ contact.emailPlaceholder }}</label>
+                <input
+                  v-model="email"
+                  type="text"
+                  :placeholder="contact.emailPlaceholder"
+                  name="email"
+                >
               </article>
-          </form>
-          <div class="contact-us-info col-md-5 offset-md-1">
-              <h2>{{ contact.title }}</h2>
-              <div class="liner color-bg" />
-              <h3>{{ contact.phone }}</h3>
-              <p>{{ contact.telephone }}</p>
-              <h3>{{ contact.email }}</h3>
-              <p>{{ contact.emailAddress }}</p>
-              <h3>{{ contact.address }}</h3>
-              <p>{{ contact.addressLine1 }} {{contact.addressLine2 }}</p>
-              <div id="map-wrap" style="height: 178px">
-                <no-ssr>
-                  <l-map :zoom=13 :center="[-33.884472, 151.207955]">
-                    <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
-                    <l-marker :lat-lng="[-33.884472, 151.207955]"></l-marker>
-                  </l-map>
-                </no-ssr>
-              </div>
+            </div>
+            <article>
+              <label for="phone">{{ contact.phonePlaceholder }}</label>
+              <input
+                v-model="phone"
+                type="text"
+                :placeholder="contact.phonePlaceholder"
+                name="phone"
+              >
+            </article>
+            <article>
+              <label for="contact-message">{{ contact.messagePlaceholder }}</label>
+              <textarea
+                id="contact-message"
+                v-model="message"
+                name="message"
+                tabindex="5"
+                cols="40"
+                rows="10"
+                class="contact-us-message"
+                :placeholder="contact.messagePlaceholder"
+                required
+              />
+            </article>
+          </section>
+          <article>
+            <div class="btn-wrap-small">
+              <button id="contact-us-submit" class="btn-odin-color" name="submit" type="submit">
+                {{ contact.buttonText }}
+              </button>
+            </div>
+          </article>
+          <article v-if="messageSent === true" class="successfully-subscribed">
+            <p>{{ footer.messageSent }}</p>
+          </article>
+        </form>
+        <div class="contact-us-info col-md-5 offset-md-1">
+          <h2>{{ contact.title }}</h2>
+          <div class="liner color-bg" />
+          <h3>{{ contact.phone }}</h3>
+          <p>{{ contact.telephone }}</p>
+          <h3>{{ contact.email }}</h3>
+          <p>{{ contact.emailAddress }}</p>
+          <h3>{{ contact.address }}</h3>
+          <p>{{ contact.addressLine1 }} {{ contact.addressLine2 }}</p>
+          <div id="map-wrap" style="height: 178px">
+            <no-ssr>
+              <l-map :zoom=13 :center="[-33.884472, 151.207955]">
+                <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
+                <l-marker :lat-lng="[-33.884472, 151.207955]" />
+              </l-map>
+            </no-ssr>
           </div>
+        </div>
       </div>
     </main>
     <Footer />

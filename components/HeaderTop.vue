@@ -19,7 +19,7 @@
           <ul class="standard-nav standard-nav-white-text visible-md visible-lg">
             <li><a href="#about" aria-label="Go to About">About</a></li>
             <li aria-haspopup="true" aria-expanded="false">
-              <a href="#" id="topServicesNavbarDropdown" aria-label="Go to Services" @click="toggleDropdown('services')">Services <i class="fa fa-chevron-down"></i></a>
+              <a id="topServicesNavbarDropdown" href="#" aria-label="Go to Services" @click="toggleDropdown('services')">Services <i class="fa fa-chevron-down" /></a>
               <div class="services-dropdown-menu hidden" aria-labelledby="topServicesNavbarDropdown">
                 <div class="triangle-container">
                   <div class="triangle-up" />
@@ -28,9 +28,9 @@
                 <a class="services-dropdown-item" href="/">Branding Design</a>
                 <a class="services-dropdown-item" href="/">E-commerce Platform</a>
               </div>
-            </li >
+            </li>
             <li aria-haspopup="true" aria-expanded="false">
-              <a href="#" id="topSolutionsNavbarDropdown" aria-label="Go to Solutions" @click="toggleDropdown('solutions')">Solutions <i class="fa fa-chevron-down"></i></a>
+              <a id="topSolutionsNavbarDropdown" href="#" aria-label="Go to Solutions" @click="toggleDropdown('solutions')">Solutions <i class="fa fa-chevron-down" /></a>
               <div class="solutions-dropdown-menu hidden" aria-labelledby="topSolutionsNavbarDropdown">
                 <div class="triangle-container">
                   <div class="triangle-up" />
@@ -43,7 +43,11 @@
             <li><a href="#caseStudies" aria-label="Go to Case Studies">Case Studies</a></li>
             <li><a href="/blog" aria-label="Go to blog" @click.prevent="goToPage('/blog')">Blog</a></li>
             <li><a href="#contact" aria-label="Go to Contact Form">Contact</a></li>
-            <li><button class="btn btn-light top-contact-btn">GET IN TOUCH</button></li>
+            <li>
+              <button class="btn btn-light top-contact-btn">
+                GET IN TOUCH
+              </button>
+            </li>
           </ul>
         </article>
       </div>

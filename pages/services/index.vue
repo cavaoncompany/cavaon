@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Homepage :showInstallMessage="showInstallMessage" />
+    <Homepage :show-install-message="showInstallMessage" />
   </div>
 </template>
 
