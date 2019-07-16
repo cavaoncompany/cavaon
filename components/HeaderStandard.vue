@@ -12,7 +12,7 @@
           <ul class="standard-nav standard-nav-dark-text visible-lg visible-md">
             <li><a id="about-linker" href="/">About</a></li>
             <li>
-              <a id="flowchart-linker" @click="toggleDropdown('services')">Services <i class="fa fa-chevron-down"></i></a>
+              <a id="flowchart-linker" @click="toggleDropdown('services')">Services <i class="fa fa-chevron-down" /></a>
               <div class="standard-services-dropdown-menu hidden" aria-labelledby="standardServicesNavbarDropdown">
                 <div class="triangle-container">
                   <div class="triangle-up" />
@@ -23,7 +23,7 @@
               </div>
             </li>
             <li>
-              <a id="solutions-linker" @click="toggleDropdown('solutions')">Solutions <i class="fa fa-chevron-down"></i></a>
+              <a id="solutions-linker" @click="toggleDropdown('solutions')">Solutions <i class="fa fa-chevron-down" /></a>
               <div class="standard-solutions-dropdown-menu hidden" aria-labelledby="standardSolutionsNavbarDropdown">
                 <div class="triangle-container">
                   <div class="triangle-up" />
@@ -36,7 +36,11 @@
             <li><a id="caseStudies-linker" href="/">Case Studies</a></li>
             <li><a id="blog-linker" href="/blog">Blog</a></li>
             <li><a id="contact-linker" href="/">Contact</a></li>
-            <li><button class="btn btn-light contact-btn">GET IN TOUCH</button></li>
+            <li>
+              <button class="btn btn-light contact-btn">
+                GET IN TOUCH
+              </button>
+            </li>
           </ul>
         </article>
       </div>

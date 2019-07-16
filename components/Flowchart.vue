@@ -8,7 +8,9 @@
           <div class="card">
             <img class="card-img-top" :src="item.image" :alt="item.title">
             <div class="card-body">
-              <h5 class="card-title">{{ item.title }}</h5>
+              <h5 class="card-title">
+                {{ item.title }}
+              </h5>
               <div class="liner color-bg" />
               <p class="card-text">
                 {{ item.description }}
@@ -16,7 +18,7 @@
             </div>
           </div>
           <div v-if="i < flowchart.steps.length - 1" class="next-item">
-            <i class="fa fa-chevron-right"></i>
+            <i class="fa fa-chevron-right" />
           </div>
         </div>
       </div>

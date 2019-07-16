@@ -348,6 +348,9 @@ export default {
   text-align: justify;
   margin-top: 80px;
 }
+.social-media, .blog-post-sidebar {
+  margin-top: 80px;
+}
 .blog-post p {
   margin-bottom: 15px;
 }
