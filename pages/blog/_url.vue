@@ -91,6 +91,7 @@
             </p>
             <a href="/about">{{ blog.aboutLink }}</a>
             <div class="spacer" />
+            <article-list :articles="posts" page="blog-post" />
           </div>
         </div>
       </div>
@@ -160,8 +161,9 @@
 
 <script>
 import { markdown } from 'markdown'
-import HeaderStandard from '../../components/HeaderStandard'
-import HeaderMobile from '../../components/HeaderMobile'
+import HeaderStandard from '../../components/HeaderStandard.vue'
+import HeaderMobile from '../../components/HeaderMobile.vue'
+import ArticleList from '../../components/blog/Article-list.vue'
 import Footer from '../../components/Footer'
 import blog from '../../static/content/blog.json'
 
@@ -169,10 +171,18 @@ export default {
   components: {
     HeaderStandard,
     HeaderMobile,
+    ArticleList,
     Footer
   },
   data() {
+    const context = require.context('~/content/blog/', false, /\.json$/)
+    const posts = context.keys().map(key => ({
+      ...context(key),
+      _path: `/blog/${key.replace('.json', '').replace('./', '')}`,
+      filename: `${key}`
+    }))
     return {
+      posts,
       blogDate: Date,
       image: '',
       post: {},

@@ -16,7 +16,7 @@
           <p class="card-title">
             {{ title }}
           </p>
-          <p class="tags">
+          <p v-if="page !== blog-post" class="tags">
             <span v-for="(tag, i) in tags" :key="i">{{ tag }} </span>
           </p>
         </div>

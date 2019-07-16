@@ -91,6 +91,25 @@
         class="col-md-6"
       />
     </div>
+    <div v-if="page === 'blog-post' && blogPostPosts.length > 0" class="card-container">
+      <article-card
+        v-for="(article, i) in blogPostPosts"
+        :key="i"
+        :lang="article.lang"
+        :title="article.title"
+        :subtitle="article.subtitle"
+        :description="article.description"
+        :tags="article.tags"
+        :date="article.date"
+        :thumbnail="article.thumbnail"
+        :url="article.url"
+        :body="article.body"
+        :filename="article.filename"
+        :extract="getExtract(article.body)"
+        :blogcount="blogCount"
+        :page="page"
+      />
+    </div>
   </section>
 </template>
 
@@ -117,6 +136,7 @@ export default {
       featuredArticle: Object,
       sortedArticles: [],
       homepagePosts: [],
+      blogPostPosts: [],
       keywords: [],
       filteredPosts: [],
       blog: blog,
@@ -134,8 +154,10 @@ export default {
     this.featuredArticle = this.sortedArticles[0]
     if (this.sortedArticles.length >= 4) {
       this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, 4)
+      this.blogPostPosts = this.prepareLatestPosts(this.sortedArticles, 3)
     } else {
       this.homepagePosts = this.prepareLatestPosts(this.sortedArticles, this.sortedArticles.length)
+      this.blogPostPosts = this.prepareLatestPosts(this.sortedArticles, this.sortedArticles.length)
     }
     this.updateView()
   },
