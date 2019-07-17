@@ -13,15 +13,15 @@
           <div class="btn btn-filter mobile-banner" @click="openFilter()">
             <img src="/images/filter.svg" alt="filter results">
           </div>
-          <div v-if="searchOpen === true" class="search-box">
-            <input v-model="search" :placeholder="blog.search">
-            <button class="btn btn-search-now"></button>
-          </div>
-          <div v-if="filterOpen === true" class="filter-box">
-            <p class="keywords">
-              <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
-            </p>
-          </div>
+        </div>
+        <div v-if="searchOpen === true" class="search-box">
+          <input v-model="search" :placeholder="blog.search">
+          <button class="btn btn-search-now">{{ blog.searchButtonText }}</button>
+        </div>
+        <div v-if="filterOpen === true" class="filter-box">
+          <p class="keywords">
+            <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
+          </p>
         </div>
         <article-card
           v-for="(article, i) in sortedArticles"
@@ -304,7 +304,8 @@ export default {
   width: 100%;
   margin-bottom: 80px;
 }
-.blog-sidebar input {
+.blog-sidebar input,
+.search-box input {
   height: 40px;
   border: 1px solid #E2E2E2;
   border-radius: 49px;
@@ -373,5 +374,8 @@ export default {
 }
 .blog-home .articles h2 _{
   text-align: left;
+}
+.search-box, .filter-box {
+  width: 100%;
 }
 </style>
