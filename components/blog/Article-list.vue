@@ -3,9 +3,26 @@
     role="region"
     class="blog-inner-section"
   >
-    <div v-if="page === 'blog' && sortedArticles.length > 0 && featuredArticle" class="row card-container">
+    <div v-if="page === 'blog' && sortedArticles.length > 0" class="row blog-home card-container">
       <div class="articles col-md-8">
-        <h2>{{ blogSubheader }}</h2>
+        <div class="blog-header">
+          <h2>{{ blogSubheader }}</h2>
+          <div class="btn btn-search mobile-banner" @click="openSearch()">
+            <img src="/images/magnify.png" alt="search">
+          </div>
+          <div class="btn btn-filter mobile-banner" @click="openFilter()">
+            <img src="/images/filter.svg" alt="filter results">
+          </div>
+          <div v-if="searchOpen === true" class="search-box">
+            <input v-model="search" :placeholder="blog.search">
+            <button class="btn btn-search-now"></button>
+          </div>
+          <div v-if="filterOpen === true" class="filter-box">
+            <p class="keywords">
+              <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
+            </p>
+          </div>
+        </div>
         <article-card
           v-for="(article, i) in sortedArticles"
           :key="i"
@@ -144,7 +161,9 @@ export default {
       blogCount: 0,
       showMoreVisible: false,
       blogSubheader: blog.latest,
-      search: ''
+      search: '',
+      searchOpen: true,
+      filterOpen: false
     }
   },
   created() {
@@ -162,6 +181,20 @@ export default {
     this.updateView()
   },
   methods: {
+    openSearch() {
+      if (this.searchOpen === false) {
+        this.searchOpen = true
+      } else {
+        this.searchOpen = false
+      }
+    },
+    openFilter() {
+      if (this.filterOpen === false) {
+        this.filterOpen = true
+      } else {
+        this.filterOpen = false
+      }
+    },
     getExtract(text) {
       if (text && typeof text === 'string') {
         const trimmedText = text.slice(0, 100)
@@ -257,6 +290,9 @@ export default {
   font-weight: 500;
   padding: 7px 14px;
 }
+.blog-header {
+  display: flex;
+}
 #viewMore {
   background-color: #472D86;
   color: #FFF;
@@ -334,5 +370,8 @@ export default {
   color: #FFF;
   background-color: #582C87;
   cursor: pointer;
+}
+.blog-home .articles h2 _{
+  text-align: left;
 }
 </style>

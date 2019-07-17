@@ -3,7 +3,8 @@
     <header-mobile page="blog" />
     <header-standard page="blog" />
     <div class="blog-banner">
-      <img src="/images/banner-blog.png" alt="Traffic">
+      <img class="desktop-banner" src="/images/banner-blog.png" alt="Traffic">
+      <img class="mobile-banner" src="/images/banner-blog-mobile.png" alt="traffic">
       <h1>{{ blog.title }}</h1>
       <div class="liner color-bg" />
     </div>

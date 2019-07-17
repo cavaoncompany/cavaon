@@ -34,6 +34,12 @@
 	.footer-links-mobile {
 		display: none;
 	}
+	.banner-mobile {
+		display: none;
+	}
+	.banner-desktop {
+		display: block;
+	}
 }
 
 /*Projector Screens and Ver Large Monitors*/
@@ -94,6 +100,12 @@
 	.contact-us .contact-us-banner,
 	.start-a-project-banner{
 		margin-top: 70px;
+	}
+	.banner-mobile {
+		display: none;
+	}
+	.banner-desktop {
+		display: block;
 	}
 	#blog .blog-banner {
 		margin-top: -70px;
@@ -205,6 +217,12 @@
 	.contact-us .contact-us-banner,
 	.start-a-project-banner{
 		margin-top: 70px;
+	}
+	.banner-mobile {
+		display: none;
+	}
+	.banner-desktop {
+		display: block;
 	}
 	#blog .blog-banner {
 		margin-top: -70px;
@@ -1298,6 +1316,12 @@
 	.add-bottom-half{
 		padding-bottom: 35px;
 	}
+	.banner-mobile {
+		display: block;
+	}
+	.banner-desktop {
+		display: none;
+	}
 	.mob-center{
 		text-align: center;
 	}
@@ -1439,6 +1463,14 @@
 	#mastfoot .footer-logo {
 		margin: 18px 0 0;
 	  }
+	.blog-home .blog-sidebar {
+		display: none;
+	}
+	.contact-us .contact-us-banner,
+	.start-a-project-banner,
+	#blog .blog-banner {
+		min-height: 188px;
+	}
 }
 
 
@@ -1586,6 +1618,9 @@
 	  .featured-article-card .tags {
 		  display: block;
 	  }
+	  .blog-home h2 {
+		  text-align: left;
+	  }
 }
 
 
@@ -1613,7 +1648,7 @@
 	.mob-add-bottom{
 		margin-bottom:30px;
 	}
-	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+	.text-left, .text-right, p, h1, h3, h4, h5{
 		text-align: center;
 	}
 	.page-section, .separator-section{
@@ -1743,7 +1778,7 @@
 	.mob-add-bottom{
 		margin-bottom:30px;
 	}
-	.text-left, .text-right, p, h1, h2, h3, h4, h5{
+	.text-left, .text-right, p, h1, h3, h4, h5{
 		text-align: center;
 	}
 	.page-section, .separator-section{
