@@ -3,7 +3,7 @@
     role="region"
     class="blog-inner-section"
   >
-    <div v-if="page === 'blog' && sortedArticles.length > 0" class="row blog-home card-container">
+    <div v-if="page === 'blog'" class="row blog-home card-container">
       <div class="articles col-md-8">
         <div class="blog-header">
           <h2>{{ blogSubheader }}</h2>
@@ -25,11 +25,14 @@
         </div>
         <div v-if="filterOpen === true" class="filter-box">
           <p class="keywords">
-            <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeywords(keyword)">{{ keyword }}</span>
+            <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeywords($event, keyword)">{{ keyword }}</span>
           </p>
           <button class="btn btn-filter-now" @click="filterByKeyword(keyword)">
             {{ filterButtonText }}
           </button>
+        </div>
+        <div v-if="sortedArticles.length === 0" class="no-posts">
+          <p>Sorry, there are no posts that match your criteria</p>
         </div>
         <article-card
           v-for="(article, i) in sortedArticles"
@@ -263,22 +266,25 @@ export default {
         return result.tags.length > 0
       })
     },
-    filterByKeywords: function (keyword) {
+    filterByKeywords: function (e, keyword) {
+      this.sortedArticles = this.orderPostsByDate()
+      let filteredArticles = []
       if (!this.filterSelection.includes(keyword)) {
-        // eslint-disable-next-line
-        console.log('does not contain ' + keyword)
         this.filterSelection.push(keyword)
+        e.target.classList.add('active')
       } else {
-        // eslint-disable-next-line
-        console.log('does contain ' + keyword)
         for (let i = 0; i < this.filterSelection.length; i++) {
           if (this.filterSelection[i] === keyword) {
             this.filterSelection.splice(i, 1)
+            e.target.classList.remove('active')
           }
         }
       }
-      // eslint-disable-next-line
-      console.log('filterSelection: ' + this.filterSelection)
+      for (let i = 0; i < this.filterSelection.length; i++) {
+        this.sortedArticles = this.sortedArticles.filter((result) => {
+          return result.tags.filter(tag => tag.toLowerCase() === this.filterSelection[i].toLowerCase()).length > 0
+        })
+      }
     },
     updateView: function () {
       this.viewAll = !this.viewAll
@@ -388,6 +394,11 @@ export default {
 .blog-inner-section .keywords span.hover,
 .blog-inner-section .keywords span:active,
 .blog-inner-section .keywords span.active {
+  color: #FFF;
+  background-color: #582C87;
+  cursor: pointer;
+}
+.active {
   color: #FFF;
   background-color: #582C87;
   cursor: pointer;
