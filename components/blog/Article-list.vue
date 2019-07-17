@@ -77,7 +77,7 @@
         </article>
       </div>
       <div class="blog-sidebar col-md-4">
-        <input v-model="search" :placeholder="blog.search">
+        <input v-model="search" :placeholder="blog.search" @submit="searchBlog()">
         <img src="/images/avatar-blog.png">
         <p class="blog-about">
           {{ blog.blogAbout }}
@@ -262,18 +262,22 @@ export default {
     filterByKeyword: function (keyword) {
       this.sortedArticles = this.orderPostsByDate()
       this.sortedArticles = this.sortedArticles.filter((result) => {
-        result.tags = result.tags.filter(tag => tag.toLowerCase() === keyword.toLowerCase())
-        return result.tags.length > 0
+        return result.tags.filter(tag => tag.toLowerCase() === keyword.toLowerCase()) > 0
+      })
+    },
+    searchBlog: function () {
+      this.sortedArticles = this.orderPostsByDate()
+      this.sortedArticles = this.sortedArticles.filter((result) => {
+        return result.tags.filter(tag => tag.toLowerCase() === this.search[i].toLowerCase()).length > 0
       })
     },
     filterByKeywords: function (e, keyword) {
       this.sortedArticles = this.orderPostsByDate()
-      let filteredArticles = []
       if (!this.filterSelection.includes(keyword)) {
         this.filterSelection.push(keyword)
         e.target.classList.add('active')
       } else {
-        for (let i = 0; i < this.filterSelection.length; i++) {
+        for (let i = 0; i < this.filterSelection.length; i--) {
           if (this.filterSelection[i] === keyword) {
             this.filterSelection.splice(i, 1)
             e.target.classList.remove('active')
