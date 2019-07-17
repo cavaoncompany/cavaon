@@ -7,10 +7,10 @@
       <div class="articles col-md-8">
         <div class="blog-header">
           <h2>{{ blogSubheader }}</h2>
-          <div class="btn btn-search mobile-banner" @click="openSearch()">
+          <div class="btn btn-search mobile-only" @click="openSearch()">
             <img src="/images/magnify.png" alt="search">
           </div>
-          <div class="btn btn-filter mobile-banner" @click="openFilter()">
+          <div class="btn btn-filter mobile-only" @click="openFilter()">
             <img src="/images/filter.svg" alt="filter results">
           </div>
           <div v-if="selectedFilters > 0" class="filters-selected">
@@ -25,6 +25,7 @@
           <p class="keywords">
             <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
           </p>
+          <button class="btn btn-filter-now">{{ filterButtonText }}</button>
         </div>
         <article-card
           v-for="(article, i) in sortedArticles"
@@ -41,7 +42,7 @@
           :filename="article.filename"
           :page="page"
           :extract="getExtract(article.body)"
-          class="col-md-6"
+          class="col-lg-6"
         />
         <article v-if="showMoreVisible === true" class="viewMore">
           <div class="btn-wrap text-center">

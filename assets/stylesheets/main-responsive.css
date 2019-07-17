@@ -201,6 +201,12 @@
 	.contact-us .contact-us-form {
 		padding: 60px;
 	}
+	.mobile-only {
+		display: none;
+	}
+	.blog-header h2, .blog-about {
+		text-align: left;
+	}
 }
 
 /*Large Widescreen Monitors*/
@@ -325,6 +331,12 @@
 	}
 	.contact-us .contact-us-form {
 		padding: 60px;
+	}
+	.mobile-only {
+		display: none;
+	}
+	.blog-header h2, .blog-about {
+		text-align: left;
 	}
 }
 
@@ -731,6 +743,9 @@
 	}
 	.contact-us .contact-us-form {
 		padding: 60px 15px;
+	}
+	.blog-header h2, .blog-about {
+		text-align: left;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -1322,6 +1337,9 @@
 	.banner-desktop {
 		display: none;
 	}
+	.mobile-only {
+		display: block;
+	}
 	.mob-center{
 		text-align: center;
 	}
@@ -1470,6 +1488,9 @@
 	.start-a-project-banner,
 	#blog .blog-banner {
 		min-height: 188px;
+	}
+	.blog-inner-section .card-container {
+		margin-top: 20px;
 	}
 }
 

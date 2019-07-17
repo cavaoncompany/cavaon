@@ -18,5 +18,6 @@
   "aboutLink": "LEARN MORE",
   "topics": "TOPICS",
   "search": "Search for...",
-  "searchButtonText": "SEARCH"
+  "searchButtonText": "SEARCH",
+  "filterButtonText": "APPLY"
 }
