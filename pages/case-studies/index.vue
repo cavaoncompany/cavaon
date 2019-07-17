@@ -10,20 +10,20 @@
     </div>
     <main class="container case-studies-container">
       <div class="row">
-          <div v-for="(study, i) in caseStudies.caseStudies" :key="i" class="col-md-4 case-study-container">
-            <a @click="openCaseStudy(study)" @mouseenter="showLayover('layover' + i)" @mouseleave="hideLayover('layover' + i)">
-              <img :src="study.projectImage" :alt="study.projectTitle">
-              <div class="case-studies-layover hidden" :class="'layover' + i">
-                <p>
-                  <span v-for="(project, j) in study.typeOfProject" :key="j">
-                    {{ project }}
-                  </span>
-                </p>
-                <div class="liner color-bg" />
-                <h2>{{ study.projectTitle }}</h2>
-              </div>
-            </a>
-          </div>
+        <div v-for="(study, i) in caseStudies.caseStudies" :key="i" class="col-md-4 case-study-container">
+          <a @click="openCaseStudy(study)" @mouseenter="showLayover('layover' + i)" @mouseleave="hideLayover('layover' + i)">
+            <img :src="study.projectImage" :alt="study.projectTitle">
+            <div class="case-studies-layover hidden" :class="'layover' + i">
+              <p>
+                <span v-for="(project, j) in study.typeOfProject" :key="j">
+                  {{ project }}
+                </span>
+              </p>
+              <div class="liner color-bg" />
+              <h2>{{ study.projectTitle }}</h2>
+            </div>
+          </a>
+        </div>
       </div>
     </main>
     <Footer />

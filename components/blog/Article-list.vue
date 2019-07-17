@@ -19,13 +19,17 @@
         </div>
         <div v-if="searchOpen === true" class="search-box">
           <input v-model="search" :placeholder="blog.search">
-          <button class="btn btn-search-now">{{ blog.searchButtonText }}</button>
+          <button class="btn btn-search-now">
+            {{ blog.searchButtonText }}
+          </button>
         </div>
         <div v-if="filterOpen === true" class="filter-box">
           <p class="keywords">
-            <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
+            <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeywords(keyword)">{{ keyword }}</span>
           </p>
-          <button class="btn btn-filter-now">{{ filterButtonText }}</button>
+          <button class="btn btn-filter-now" @click="filterByKeyword(keyword)">
+            {{ filterButtonText }}
+          </button>
         </div>
         <article-card
           v-for="(article, i) in sortedArticles"
@@ -168,7 +172,8 @@ export default {
       search: '',
       searchOpen: false,
       filterOpen: false,
-      selectedFilters: 0
+      selectedFilters: 0,
+      filterSelection: []
     }
   },
   created() {
@@ -257,6 +262,23 @@ export default {
         result.tags = result.tags.filter(tag => tag.toLowerCase() === keyword.toLowerCase())
         return result.tags.length > 0
       })
+    },
+    filterByKeywords: function (keyword) {
+      if (!this.filterSelection.includes(keyword)) {
+        // eslint-disable-next-line
+        console.log('does not contain ' + keyword)
+        this.filterSelection.push(keyword)
+      } else {
+        // eslint-disable-next-line
+        console.log('does contain ' + keyword)
+        for (let i = 0; i < this.filterSelection.length; i++) {
+          if (this.filterSelection[i] === keyword) {
+            this.filterSelection.splice(i, 1)
+          }
+        }
+      }
+      // eslint-disable-next-line
+      console.log('filterSelection: ' + this.filterSelection)
     },
     updateView: function () {
       this.viewAll = !this.viewAll
