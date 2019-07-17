@@ -13,6 +13,9 @@
           <div class="btn btn-filter mobile-banner" @click="openFilter()">
             <img src="/images/filter.svg" alt="filter results">
           </div>
+          <div v-if="selectedFilters > 0" class="filters-selected">
+            {{ selectedFilters }}
+          </div>
         </div>
         <div v-if="searchOpen === true" class="search-box">
           <input v-model="search" :placeholder="blog.search">
@@ -162,8 +165,9 @@ export default {
       showMoreVisible: false,
       blogSubheader: blog.latest,
       search: '',
-      searchOpen: true,
-      filterOpen: false
+      searchOpen: false,
+      filterOpen: false,
+      selectedFilters: 0
     }
   },
   created() {
@@ -183,6 +187,7 @@ export default {
   methods: {
     openSearch() {
       if (this.searchOpen === false) {
+        this.filterOpen = false
         this.searchOpen = true
       } else {
         this.searchOpen = false
@@ -190,6 +195,7 @@ export default {
     },
     openFilter() {
       if (this.filterOpen === false) {
+        this.searchOpen = false
         this.filterOpen = true
       } else {
         this.filterOpen = false
@@ -292,6 +298,7 @@ export default {
 }
 .blog-header {
   display: flex;
+  position: relative;
 }
 #viewMore {
   background-color: #472D86;
@@ -377,5 +384,32 @@ export default {
 }
 .search-box, .filter-box {
   width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.search-box .btn-search-now {
+  background-color: #582C87;
+  color: #FFF;
+  border-radius: 49px;
+  width: 125px;
+}
+.filter-box .keywords {
+  display: flex;
+  flex-wrap: wrap;
+}
+.blog-header .filters-selected {
+  background-color: #582C87;
+  color: #FFF;
+  border-radius: 49px;
+  min-width: 20px;
+  height: 20px;
+  font-size: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  right: 10px;
+  position: absolute;
 }
 </style>
