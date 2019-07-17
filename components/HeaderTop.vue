@@ -40,9 +40,9 @@
                 <a class="solutions-dropdown-item" href="/">Graphic & Web Design</a>
               </div>
             </li>
-            <li><a href="#caseStudies" aria-label="Go to Case Studies">Case Studies</a></li>
+            <li><a href="/case-studies" aria-label="Go to Case Studies">Case Studies</a></li>
             <li><a href="/blog" aria-label="Go to blog" @click.prevent="goToPage('/blog')">Blog</a></li>
-            <li><a href="#contact" aria-label="Go to Contact Form">Contact</a></li>
+            <li><a href="/contact-us" aria-label="Go to Contact Form">Contact</a></li>
             <li>
               <button class="btn btn-light top-contact-btn">
                 GET IN TOUCH

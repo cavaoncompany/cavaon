@@ -33,9 +33,9 @@
                 <a class="solutionsdropdown-item" href="/">Graphic & Web Design</a>
               </div>
             </li>
-            <li><a id="caseStudies-linker" href="/">Case Studies</a></li>
+            <li><a id="caseStudies-linker" href="/case-studies">Case Studies</a></li>
             <li><a id="blog-linker" href="/blog">Blog</a></li>
-            <li><a id="contact-linker" href="/">Contact</a></li>
+            <li><a id="contact-linker" href="/contact-us">Contact</a></li>
             <li>
               <button class="btn btn-light contact-btn">
                 GET IN TOUCH

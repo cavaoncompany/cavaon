@@ -12,7 +12,7 @@
         <a href="/" aria-label="Scroll to Solutions">SOLUTIONS</a>
       </li>
       <li>
-        <a href="/" aria-label="Scroll to Case Studies">CASE STUDIES</a>
+        <a href="/case-studies" aria-label="Scroll to Case Studies">CASE STUDIES</a>
       </li>
       <li>
         <a href="/blog" aria-label="Go to blog">BLOG</a>
