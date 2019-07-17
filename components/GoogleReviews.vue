@@ -20,4 +20,7 @@
 #google-reviews {
   margin: 70px 0;
 }
+#google-reviews .reviews img {
+  max-width: 100%;
+}
 </style>
