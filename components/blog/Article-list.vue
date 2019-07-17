@@ -27,7 +27,7 @@
           <p class="keywords">
             <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeywords($event, keyword)">{{ keyword }}</span>
           </p>
-          <button class="btn btn-filter-now" @click="filterByKeyword(keyword)">
+          <button class="btn btn-filter-now" @click="this.filterOpen = false">
             {{ filterButtonText }}
           </button>
         </div>
@@ -91,7 +91,7 @@
           </div>
         </div>
         <p class="keywords">
-          <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeyword(keyword)">{{ keyword }}</span>
+          <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeywords($event, keyword)">{{ keyword }}</span>
         </p>
         <div class="btn btn-view-all">
           {{ blog.viewAll }}
