@@ -8,7 +8,7 @@
       "info1": "Working with Cavaon and the team has enabled us to get to market much quicker than with other providers.",
       "info2": "Their deep understanding of the <a href=\"#\">travel industry</a> is obvious and really shows in their work.",
       "topImage": "images/Case-Studies-Travel-Dream1.png",
-      "typeOfProject": "Web / Brand",
+      "typeOfProject": ["Web", "Brand"],
       "logo": "images/Case-Studies-Travel-Dream2.png",
       "screenshot1": "images/Case-Studies-Travel-Dream5.png",
       "screenshot2": "/images/uploads/blog-img.png",
@@ -17,7 +17,8 @@
       "result1": "It has enabled us to quickly add new products, transact and manage large volumes of orders.",
       "result2": "It has also been able to scale with the team and continuing demands of the business.",
       "subTitle": "Travel Dream",
-      "ingro": "Hello",
+      "intro": "Hello",
+      "slug": "travel-dream",
       "projectTitle": "Travel Dream"
     },
     {
@@ -27,7 +28,7 @@
       "info1": "Since using the new booking system, sales increased by 62.7% over the last 12 months.",
       "info2": "Hello",
       "topImage": "images/Case-Studies-Lets-Travel1.png",
-      "typeOfProject": "Web / Brand",
+      "typeOfProject": ["Web", "Brand"],
       "logo": "images/Case-Studies-Lets-Travel2.png",
       "screenshot1": "images/Case-Studies-Lets-Travel5.png",
       "screenshot2": "images/Case-Studies-Lets-Travel6.png",
@@ -36,7 +37,8 @@
       "result1": "Cavaon tailor made an online booking system that dramatically improved the efficiency and accuracy and helped increase sales. Now travel agents make bookings directly through the system and cut out any manual data entry that produced errors and therefore increased customer satisfaction. Processes were streamlined and the multi step manual entry system was turned into a one click system, increasing staff efficiency and productivity.",
       "result2": "The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which has a direct impact on sales.",
       "subTitle": "Let's Travel",
-      "ingro": "Hello",
+      "intro": "Hello",
+      "slug": "lets-travel",
       "projectTitle": "Let's Travel"
     }
   ]

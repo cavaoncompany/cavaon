@@ -94,7 +94,8 @@
 	}
 	.contact-us .contact-us-banner,
 	.start-a-project-banner,
-	#blog .blog-banner {
+	#blog .blog-banner,
+	.case-studies .case-studies-banner {
 		min-height: 316px;
 	}
 	.contact-us .contact-us-banner,
@@ -235,7 +236,8 @@
 	}
 	.contact-us .contact-us-banner,
 	.start-a-project-banner,
-	#blog .blog-banner {
+	#blog .blog-banner,
+	.case-studies .case-studies-banner {
 		min-height: 316px;
 	}
 	#mastfoot .footer-logo {
@@ -1486,7 +1488,8 @@
 	}
 	.contact-us .contact-us-banner,
 	.start-a-project-banner,
-	#blog .blog-banner {
+	#blog .blog-banner,
+	.case-studies .case-studies-banner {
 		min-height: 188px;
 	}
 	.blog-inner-section .card-container {
