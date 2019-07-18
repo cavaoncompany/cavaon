@@ -271,8 +271,8 @@ export default {
       }
     },
     searchBlog: function () {
-        this.sortedArticles = this.orderPostsByDate()
-        this.sortedArticles = this.sortedArticles.filter((result) => {
+      this.sortedArticles = this.orderPostsByDate()
+      this.sortedArticles = this.sortedArticles.filter((result) => {
         return result.body.toLowerCase().indexOf(this.search.toLowerCase()) > 0
       })
     },
