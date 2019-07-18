@@ -19,45 +19,13 @@
       </p>
       <img :src="services.image1" :alt="services.title">
       <div class="service-web-details row">
-        <div class="col-md-6">
-          <img :src="services.image2" :alt="services.header1">
-        </div>
-        <div class="col-md-6 service-web-details-text">
-          <h3>
-            {{ services.header1 }}
-          </h3>
-          <p>
-            {{ services.box1 }}
-          </p>
-        </div>
-        <div class="col-md-6 service-web-details-text">
-          <h3>
-            {{ services.header2 }}
-          </h3>
-          <p>
-            {{ services.box2 }}
-          </p>
-        </div>
-        <div class="col-md-6">
-          <img :src="services.image3" :alt="services.header1">
+        <p class="shorter-paragraph">{{ services.box1 }}</p>
+        <div v-for="(service, i) in services.services" :key="i" class="col-md-6">
+          <div class="service-productivity-box">
+            <p>{{ service.description }}</p>
+          </div>
         </div>
       </div>
-      </div>
-      <div class="purple-bg row">
-        <div class="container">
-          <div v-for="(box, i) in services.services" :key="i" class="service-web-box col-md-6">
-            <div class="service-web-border-box">
-              <img :src="box.image" :alt="box.header">
-              <h3>
-                {{ box.header }}
-              </h3>
-              <div class="liner color-bg" />
-              <p>
-                {{ box.description }}
-              </p>
-            </div>
-        </div>
-        </div>
       </div>
       <div class="meeting-form">
         <img :src="services.formImage" :alt="services.title">
@@ -130,6 +98,10 @@ export default {
 .services-business-intro {
   margin-bottom: 70px;
 }
+.services-business-productivity .shorter-paragraph {
+  margin-left: 30px;
+  width: 67%;
+}
 .services-business-productivity main {
   margin-top: 70px;
   font-size: 16px;
@@ -139,10 +111,18 @@ export default {
   font-weight: 500;
   width: 60%;
 }
-.services-business-productivity main h3,
-.service-web-box h3 {
-  font-size: 16px;
-  font-weight: 500;
+.service-productivity-box {
+  background: #FFFFFF;
+  box-shadow: 2px 2px 10px rgba(228, 214, 233, 0.8);
+  border-radius: 5px;
+  height: 4.5rem;
+  width: 95%;
+  margin: 15px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px 10px;
 }
 .services-business-productivity main .liner {
   width: 36px;
@@ -158,25 +138,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   margin-bottom: 70px;
-}
-.service-web-box {
-  margin: 70px 0;
-  height: 80%;
-}
-.service-web-box .service-web-border-box {
-  background-color: #fff;
-  width: 90%;
-  padding: 30px;
-  height: 100%;
-  box-shadow: 2px 2px 10px rgba(228, 214, 233, 0.8);
-  border-radius: 5px;
-}
-.services-business-productivity main .service-web-box img {
-  margin-bottom: 40px;
-}
-.services-business-productivity main .service-web-box .liner {
-  width: 36px;
-  margin: 10px 0 25px;
 }
 .meeting-form {
   margin: 70px 0;

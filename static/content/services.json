@@ -3,15 +3,18 @@
     "services": [
         {
             "image": "/images/services-branding.png",
-            "title": "Branding and graphic design"
+            "title": "Branding and graphic design",
+            "link": "/services/branding-design"
         },
         {
             "image": "/images/services-development.png",
-            "title": "Web Development and Technical Support"
+            "title": "Web Development and Technical Support",
+            "link": "/services/web-development-and-technical-support"
         },
         {
             "image": "/images/services-marketing.png",
-            "title": "Digital Marketing and Strategy"
+            "title": "Digital Marketing and Strategy",
+            "link": "/solutions/digital-marketing"
         }
     ],
     "serviceDetails": [
@@ -45,25 +48,45 @@
             "category": "SERVICES",
             "title":  "Business Productivity",
             "subtitle": "We believe in the power of digital communications to generate business.",
-            "intro": "Cavaon is a Sydney based company, specialised in website development and applications. We believe in the power of digital communications to generate business. Therefore, we have developed much more than websites, blogs, landing pages or e-commerce platforms, we have created web business centres that has become a differentiator for our partners.",
-            "image1": "/images/services-1.png",
-            "image2": "/images/services-2.png",
-            "image3": "/images/services-3.png",
-            "header1": "You can leave best standards",
-            "box1": "All our projects are developed within the best international standards. Our products are adaptive and responsive to all platforms.",
-            "header2": "Productivity and growth",
-            "box2": "Our web designs are also built to increase business productivity and facilitate growth. As you grow you will need ancillary services such as laptops, PCs, email hosting, NAS, cloud phone system, software, amongst others.",
+            "intro": "Increasing productivity in companies is the greater challenge of many business managers. To achieve the expected results, many companies are looking to generate more results using the same or (preferably) less resources.",
+            "image1": "/images/services-6.png",
+            "image2": "",
+            "image3": "",
+            "header1": "",
+            "box1": "Cavaon offers a simplified solution to keep and manage your business growth. In the business productivity solution, you can:",
+            "header2": "",
+            "box2": "and many others...",
             "formImage": "/images/services-development.png",
             "services": [
                 {
-                    "image": "/images/services-4.png",
-                    "header": "Websites",
-                    "description": "Development of corporate websites and portals focusing on the company's institutional presentation, history of operations, product and services portfolio, case studies, partners, and CTAs."
+                    "image": "",
+                    "header": "",
+                    "description": "Organize and manage all your tasks in one place"
                 },
                 {
-                    "image": "/images/services-5.png",
-                    "header": "Landing Pages",
-                    "description": "Development of landing pages focused on conversion, aimed at promoting specific products and services, or collecting relevant information from potential customers."
+                    "image": "",
+                    "header": "",
+                    "description": "Build automated processes"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Time and resources optimisation"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Increase employees focus"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Team management"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Increase productivity indicators "
                 }
             ]
         },

@@ -81,19 +81,6 @@ ul.slimmenu li {
     display: inline-block;
     background-color: #fff;
 }
-ul.slimmenu .with-submenu {
-    color: #666;
-    display: block;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 21px;
-    padding: 6px 0;
-    text-shadow: none;
-    transition: background-color 0.5s ease-out;
-    -o-transition: background-color 0.5s ease-out;
-    -moz-transition: background-color 0.5s ease-out;
-    -webkit-transition: background-color 0.5s ease-out;
-}
 ul.slimmenu > li {
     margin-right: -5px;
 }

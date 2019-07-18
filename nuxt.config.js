@@ -18,6 +18,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'google-site-verification', content: 'Amd0w2AuOzM45VQ1csjEb8aXyl0pjEeXwcGFLIy_W9A' },
       { hid: 'site_name', name: 'site_name', content: metadata.homepageTitle },
       { hid: 'description', name: 'description', content: metadata.homepageDescription }
     ],
@@ -105,7 +106,6 @@ module.exports = {
     { src: '~/plugins/hotjar.js', ssr: false },
     { src: '~/plugins/tawkto.js', ssr: false },
     { src: '~/plugins/mailchimp.js', ssr: false },
-    { src: '~/plugins/tagmanager.js', ssr: false },
     { src: '~/plugins/socialsharing.js' }
   ],
   server: {
