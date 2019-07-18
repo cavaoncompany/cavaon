@@ -107,7 +107,7 @@ module.exports = {
     { src: '~/plugins/mailchimp.js', ssr: false }
   ],
   server: {
-    port: 3001 // default: 3000
+    port: 3002 // default: 3000
   },
   serverMiddleware: [
     '~/api/nodemailer',
