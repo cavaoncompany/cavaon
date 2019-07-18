@@ -131,8 +131,7 @@ module.exports = {
     '@nuxtjs/recaptcha',
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
-    '@nuxtjs/robots',
-    'nuxt-svg'
+    '@nuxtjs/robots'
   ],
   robots: {
     UserAgent: '*',
