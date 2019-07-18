@@ -104,8 +104,7 @@ module.exports = {
   plugins: [
     { src: '~/plugins/hotjar.js', ssr: false },
     { src: '~/plugins/tawkto.js', ssr: false },
-    { src: '~/plugins/mailchimp.js', ssr: false },
-    { src: '~/plugins/socialsharing.js' }
+    { src: '~/plugins/mailchimp.js', ssr: false }
   ],
   server: {
     port: 3001 // default: 3000
