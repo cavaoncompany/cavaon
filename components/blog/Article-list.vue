@@ -19,7 +19,7 @@
         </div>
         <div v-if="searchOpen === true" class="search-box">
           <input v-model="search" :placeholder="blog.search">
-          <button class="btn btn-search-now">
+          <button class="btn btn-search-now" @click="searchBlog()">
             {{ blog.searchButtonText }}
           </button>
         </div>
@@ -77,7 +77,7 @@
         </article>
       </div>
       <div class="blog-sidebar col-md-4">
-        <input v-model="search" :placeholder="blog.search" @submit="searchBlog()">
+        <input v-model="search" :placeholder="blog.search" @keyup="searchBlogOnEnter($event)">
         <img src="/images/avatar-blog.png">
         <p class="blog-about">
           {{ blog.blogAbout }}
@@ -265,10 +265,15 @@ export default {
         return result.tags.filter(tag => tag.toLowerCase() === keyword.toLowerCase()) > 0
       })
     },
+    searchBlogOnEnter(e) {
+      if (e.keyCode === 13) {
+        this.searchBlog()
+      }
+    },
     searchBlog: function () {
-      this.sortedArticles = this.orderPostsByDate()
-      this.sortedArticles = this.sortedArticles.filter((result) => {
-        return result.tags.filter(tag => tag.toLowerCase() === this.search.toLowerCase()).length > 0
+        this.sortedArticles = this.orderPostsByDate()
+        this.sortedArticles = this.sortedArticles.filter((result) => {
+        return result.body.toLowerCase().indexOf(this.search.toLowerCase()) > 0
       })
     },
     filterByKeywords: function (e, keyword) {
