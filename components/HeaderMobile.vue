@@ -18,8 +18,8 @@
           </li>
         </ul>
       </li>
-      <li>
-        <ul>SOLUTIONS
+      <li class="with-submenu">SOLUTIONS
+        <ul>
           <li>
             <a class="solutions-dropdown-item" href="/">Digital Marketing</a>
           </li>
