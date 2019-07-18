@@ -17,7 +17,7 @@
         {{ services.intro }}
       </p>
       <img :src="services.image1" :alt="services.title">
-      <div class="service-details row">
+      <div class="service-web-details row">
         <div class="col-md-6">
           <img :src="services.image2" :alt="services.header1">
         </div>
@@ -126,5 +126,9 @@ export default {
 .services-web-development main .liner {
   width: 36px;
   margin: 25px 0;
+}
+.services-web-development main img {
+  width: 100%;
+  margin-bottom: 70px;
 }
 </style>
