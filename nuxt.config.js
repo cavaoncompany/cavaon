@@ -132,7 +132,6 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
     '@nuxtjs/robots',
-    'nuxt-leaflet',
     'nuxt-svg'
   ],
   robots: {
