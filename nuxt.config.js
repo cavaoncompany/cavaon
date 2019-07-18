@@ -131,7 +131,8 @@ module.exports = {
     '@nuxtjs/recaptcha',
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-XXXXXXX' }]
   ],
   robots: {
     UserAgent: '*',
