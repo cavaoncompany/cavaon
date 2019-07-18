@@ -24,9 +24,9 @@
                 <div class="triangle-container">
                   <div class="triangle-up" />
                 </div>
-                <a class="services-dropdown-item" href="/">Digital Marketing</a>
-                <a class="services-dropdown-item" href="/">Branding Design</a>
-                <a class="services-dropdown-item" href="/">E-commerce Platform</a>
+                <a class="services-dropdown-item" href="/services/web-development-and-technical-support">Web Development & Technical Support</a>
+                <a class="services-dropdown-item" href="/services/business-productivity">Business Productivity</a>
+                <a class="services-dropdown-item" href="/graphic-and-web-design">Graphic & Web Design</a>
               </div>
             </li>
             <li aria-haspopup="true" aria-expanded="false">
@@ -35,9 +35,9 @@
                 <div class="triangle-container">
                   <div class="triangle-up" />
                 </div>
-                <a class="solutions-dropdown-item" href="/">IT Support and Development</a>
-                <a class="solutions-dropdown-item" href="/">Business Productivity</a>
-                <a class="solutions-dropdown-item" href="/">Graphic & Web Design</a>
+                <a class="solutions-dropdown-item" href="/">Digital Marketing</a>
+                <a class="solutions-dropdown-item" href="/">Branding Design</a>
+                <a class="solutions-dropdown-item" href="/">E-commerce Platform</a>
               </div>
             </li>
             <li><a href="/case-studies" aria-label="Go to Case Studies">Case Studies</a></li>

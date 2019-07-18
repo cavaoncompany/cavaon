@@ -7,11 +7,96 @@
         },
         {
             "image": "/images/services-development.png",
-            "title": "IT Support and Development"
+            "title": "Web Development and Technical Support"
         },
         {
             "image": "/images/services-marketing.png",
             "title": "Digital Marketing and Strategy"
         }
-    ]
+    ],
+    "serviceDetails": [
+        {
+            "category": "SERVICES",
+            "title":  "Web Development and Technical Support",
+            "subtitle": "We believe in the power of digital communications to generate business.",
+            "intro": "Cavaon is a Sydney based company, specialised in website development and applications. We believe in the power of digital communications to generate business. Therefore, we have developed much more than websites, blogs, landing pages or e-commerce platforms, we have created web business centres that has become a differentiator for our partners.",
+            "image1": "/images/services-1.png",
+            "image2": "/images/services-2.png",
+            "image3": "/images/services-3.png",
+            "header1": "You can leave best standards",
+            "box1": "All our projects are developed within the best international standards. Our products are adaptive and responsive to all platforms.",
+            "header2": "Productivity and growth",
+            "box2": "Our web designs are also built to increase business productivity and facilitate growth. As you grow you will need ancillary services such as laptops, PCs, email hosting, NAS, cloud phone system, software, amongst others.",
+            "services": [
+                {
+                    "image": "/images/services-4.png",
+                    "header": "Websites",
+                    "description": "Development of corporate websites and portals focusing on the company's institutional presentation, history of operations, product and services portfolio, case studies, partners, and CTAs."
+                },
+                {
+                    "image": "/images/services-5.png",
+                    "header": "Landing Pages",
+                    "description": "Development of landing pages focused on conversion, aimed at promoting specific products and services, or collecting relevant information from potential customers."
+                }
+            ]
+        },
+        {
+            "category": "SERVICES",
+            "title":  "Business Productivity",
+            "subtitle": "We believe in the power of digital communications to generate business.",
+            "intro": "Cavaon is a Sydney based company, specialised in website development and applications. We believe in the power of digital communications to generate business. Therefore, we have developed much more than websites, blogs, landing pages or e-commerce platforms, we have created web business centres that has become a differentiator for our partners.",
+            "image1": "/images/services-1.png",
+            "image2": "/images/services-2.png",
+            "image3": "/images/services-3.png",
+            "header1": "You can leave best standards",
+            "box1": "All our projects are developed within the best international standards. Our products are adaptive and responsive to all platforms.",
+            "header2": "Productivity and growth",
+            "box2": "Our web designs are also built to increase business productivity and facilitate growth. As you grow you will need ancillary services such as laptops, PCs, email hosting, NAS, cloud phone system, software, amongst others.",
+            "services": [
+                {
+                    "image": "/images/services-4.png",
+                    "header": "Websites",
+                    "description": "Development of corporate websites and portals focusing on the company's institutional presentation, history of operations, product and services portfolio, case studies, partners, and CTAs."
+                },
+                {
+                    "image": "/images/services-5.png",
+                    "header": "Landing Pages",
+                    "description": "Development of landing pages focused on conversion, aimed at promoting specific products and services, or collecting relevant information from potential customers."
+                }
+            ]
+        },
+        {
+            "category": "SERVICES",
+            "title":  "Graphic and Web Design",
+            "subtitle": "We believe in the power of digital communications to generate business.",
+            "intro": "Cavaon is a Sydney based company, specialised in website development and applications. We believe in the power of digital communications to generate business. Therefore, we have developed much more than websites, blogs, landing pages or e-commerce platforms, we have created web business centres that has become a differentiator for our partners.",
+            "image1": "/images/services-1.png",
+            "image2": "/images/services-2.png",
+            "image3": "/images/services-3.png",
+            "header1": "You can leave best standards",
+            "box1": "All our projects are developed within the best international standards. Our products are adaptive and responsive to all platforms.",
+            "header2": "Productivity and growth",
+            "box2": "Our web designs are also built to increase business productivity and facilitate growth. As you grow you will need ancillary services such as laptops, PCs, email hosting, NAS, cloud phone system, software, amongst others.",
+            "services": [
+                {
+                    "image": "/images/services-4.png",
+                    "header": "Websites",
+                    "description": "Development of corporate websites and portals focusing on the company's institutional presentation, history of operations, product and services portfolio, case studies, partners, and CTAs."
+                },
+                {
+                    "image": "/images/services-5.png",
+                    "header": "Landing Pages",
+                    "description": "Development of landing pages focused on conversion, aimed at promoting specific products and services, or collecting relevant information from potential customers."
+                }
+            ]
+        }
+    ],
+    "bookAMeeting": "BOOK A MEETING",
+    "firstname": "First name",
+    "lastname": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "buttonText": "SUBMIT",
+    "formImage": "/images/services-development.png"
 }
