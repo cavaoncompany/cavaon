@@ -17,6 +17,7 @@
               <p>
                 <span v-for="(project, j) in study.typeOfProject" :key="j">
                   {{ project }}
+                  <div v-if="j < study.typeOfProject.length - 1" class="grey-spacer" />
                 </span>
               </p>
               <div class="liner color-bg" />
@@ -99,6 +100,8 @@ export default {
 }
 .case-study-container {
   position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .case-studies-layover {
   background: rgba(0, 0, 0, 0.79);
@@ -124,6 +127,14 @@ export default {
 }
 .case-studies-layover .liner {
   width: 36px;
-  margin: 0 auto 15px;;
+  margin: 0 auto 15px;
+}
+.case-studies-layover .grey-spacer {
+  background-color: #494949;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50px;
+  margin: 4px;
 }
 </style>

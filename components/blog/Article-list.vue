@@ -27,7 +27,7 @@
           <p class="keywords">
             <span v-for="(keyword, i) in keywords" :key="i" @click="filterByKeywords($event, keyword)">{{ keyword }}</span>
           </p>
-          <button class="btn btn-filter-now" @click="this.filterOpen = false">
+          <button class="btn btn-filter-now" @click="filterOpen = false">
             {{ filterButtonText }}
           </button>
         </div>
@@ -268,7 +268,7 @@ export default {
     searchBlog: function () {
       this.sortedArticles = this.orderPostsByDate()
       this.sortedArticles = this.sortedArticles.filter((result) => {
-        return result.tags.filter(tag => tag.toLowerCase() === this.search[i].toLowerCase()).length > 0
+        return result.tags.filter(tag => tag.toLowerCase() === this.search.toLowerCase()).length > 0
       })
     },
     filterByKeywords: function (e, keyword) {

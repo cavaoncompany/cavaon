@@ -4,6 +4,7 @@
     {
       "centreImage": "/images/case-studies-travel-dream3.png",
       "projectImage": "/images/case-studies-travel-dream.png",
+      "challengeTitle": "The Challenge",
       "challenge": "To create a website with time and budget constraints, with the goal of increasing functional complexity over time.",
       "title1": "The Challenge",
       "title2": "The Result",
@@ -16,6 +17,7 @@
       "screenshot2": "/images/uploads/blog-img.png",
       "challenge1": "Hello",
       "font": "/images/case-studies-travel-dream4.png",
+      "resultTitle": "The Result",
       "result1": "It has enabled us to quickly add new products, transact and manage large volumes of orders.",
       "result2": "It has also been able to scale with the team and continuing demands of the business.",
       "subTitle": "Travel Dream",
@@ -26,6 +28,7 @@
     {
       "centreImage": "/images/Case-Studies-Lets-Travel3.png",
       "projectImage": "/images/Case-Studies-Lets-Travel.png",
+      "challengeTitle": "The Challenge",
       "challenge": "The challenge was keeping up standards to handle daily operations, we were losing clients because of bad procedures. The company came to a point where future growth wasn't possible because of the existing technical infrastructure",
       "info1": "Since using the new booking system, sales increased by 62.7% over the last 12 months.",
       "info2": "Hello",
@@ -38,6 +41,7 @@
       "screenshot2": "/images/Case-Studies-Lets-Travel6.png",
       "challenge1": "Let’s Travel has finally got to a point with the software that they were using which was limiting their growth and a high level of manual labour was necessarey for data entry, issuing invoices and vouchers which in turn starting causing accuracy issues.",
       "font": "/images/Case-Studies-Lets-Travel4.png",
+      "resultTitle": "The Result",
       "result1": "Cavaon tailor made an online booking system that dramatically improved the efficiency and accuracy and helped increase sales. Now travel agents make bookings directly through the system and cut out any manual data entry that produced errors and therefore increased customer satisfaction. Processes were streamlined and the multi step manual entry system was turned into a one click system, increasing staff efficiency and productivity.",
       "result2": "The fresh and user-friendly customer-facing website clearly presents all products and detailed information, which has a direct impact on sales.",
       "subTitle": "Let's Travel",
