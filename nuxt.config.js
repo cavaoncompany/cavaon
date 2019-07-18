@@ -132,7 +132,7 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
     '@nuxtjs/robots',
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-XXXXXXX' }]
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-P5DGDRS' }]
   ],
   robots: {
     UserAgent: '*',
