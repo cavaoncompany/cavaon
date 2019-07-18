@@ -27,6 +27,7 @@
             "box1": "All our projects are developed within the best international standards. Our products are adaptive and responsive to all platforms.",
             "header2": "Productivity and growth",
             "box2": "Our web designs are also built to increase business productivity and facilitate growth. As you grow you will need ancillary services such as laptops, PCs, email hosting, NAS, cloud phone system, software, amongst others.",
+            "formImage": "/images/services-development.png",
             "services": [
                 {
                     "image": "/images/services-4.png",
@@ -52,6 +53,7 @@
             "box1": "All our projects are developed within the best international standards. Our products are adaptive and responsive to all platforms.",
             "header2": "Productivity and growth",
             "box2": "Our web designs are also built to increase business productivity and facilitate growth. As you grow you will need ancillary services such as laptops, PCs, email hosting, NAS, cloud phone system, software, amongst others.",
+            "formImage": "/images/services-development.png",
             "services": [
                 {
                     "image": "/images/services-4.png",
@@ -77,6 +79,7 @@
             "box1": "All our projects are developed within the best international standards. Our products are adaptive and responsive to all platforms.",
             "header2": "Productivity and growth",
             "box2": "Our web designs are also built to increase business productivity and facilitate growth. As you grow you will need ancillary services such as laptops, PCs, email hosting, NAS, cloud phone system, software, amongst others.",
+            "formImage": "/images/services-development.png",
             "services": [
                 {
                     "image": "/images/services-4.png",
@@ -97,6 +100,5 @@
     "email": "Email",
     "phone": "Phone",
     "message": "Message",
-    "buttonText": "SUBMIT",
-    "formImage": "/images/services-development.png"
+    "buttonText": "SUBMIT"
 }

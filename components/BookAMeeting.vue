@@ -123,5 +123,7 @@ export default {
   .book-a-meeting {
     display: flex;
     flex-direction: column;
+    z-index: 10;
+    background: #fff;
   }
 </style>

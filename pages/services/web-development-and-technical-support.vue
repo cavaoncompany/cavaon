@@ -60,8 +60,11 @@
         </div>
       </div>
       <div class="meeting-form">
+        <img :src="services.formImage" :alt="services.title">
         <div class="container">
-          <BookAMeeting />
+          <div class="row">
+            <BookAMeeting class="col-md-9" />
+          </div>
         </div>
       </div>
     </main>
@@ -177,5 +180,13 @@ export default {
 }
 .meeting-form {
   margin: 70px 0;
+  position: relative;
+}
+.meeting-form img {
+  position: absolute;
+  right: 35px;
+  top: 213px;
+  height: 374px;
+  z-index: -20;
 }
 </style>
