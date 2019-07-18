@@ -59,7 +59,11 @@
         </div>
         </div>
       </div>
-      <!-- <BookAMeeting /> -->
+      <div class="meeting-form">
+        <div class="container">
+          <BookAMeeting />
+        </div>
+      </div>
     </main>
     <Footer />
   </div>
@@ -69,14 +73,14 @@
 import HeaderStandard from '../../components/HeaderStandard.vue'
 import HeaderMobile from '../../components/HeaderMobile.vue'
 import Footer from '../../components/Footer'
-// import BookAMeeting from '../../components/BookAMeeting.vue'
+import BookAMeeting from '../../components/BookAMeeting.vue'
 import services from '../../static/content/services.json'
 
 export default {
   components: {
     HeaderStandard,
     HeaderMobile,
-    // BookAMeeting,
+    BookAMeeting,
     Footer
   },
   data() {
@@ -144,6 +148,7 @@ export default {
 .services-web-development main img {
   width: 100%;
   margin-bottom: 70px;
+  border-radius: 5px;
 }
 .service-web-details-text {
   display: flex;
@@ -160,6 +165,8 @@ export default {
   width: 90%;
   padding: 30px;
   height: 100%;
+  box-shadow: 2px 2px 10px rgba(228, 214, 233, 0.8);
+  border-radius: 5px;
 }
 .services-web-development main .service-web-box img {
   margin-bottom: 40px;
@@ -167,5 +174,8 @@ export default {
 .services-web-development main .service-web-box .liner {
   width: 36px;
   margin: 10px 0 25px;
+}
+.meeting-form {
+  margin: 70px 0;
 }
 </style>

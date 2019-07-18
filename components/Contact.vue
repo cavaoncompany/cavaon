@@ -16,15 +16,6 @@
         </div>
         <article class="col-md-12 col-lg-8 col-md-offset-2 main-caps text-center">
           <div class="contact-item pad-common ">
-            <div id="fname" class="alert alert-error error ">
-              <p>Name must not be empty</p>
-            </div>
-            <div id="fmail" class="alert alert-error  error">
-              <p>Please provide a valid email</p>
-            </div>
-            <div id="fmsg" class="alert alert-error  error">
-              <p>Message should not be empty</p>
-            </div>
             <form
               id="contact-form"
               name="contact"
