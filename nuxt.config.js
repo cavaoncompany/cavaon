@@ -10,7 +10,6 @@ const env = require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
-
   /*
   ** Headers of the page
   */
@@ -29,6 +28,7 @@ module.exports = {
         href:
           'https://fonts.googleapis.com/css?family=Raleway:400,300,700%7COpen+Sans:400,300,700%7CMontserrat:400,500,700'
       },
+      { rel: 'stylesheet', href: 'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' },
       { rel: 'apple-touch-icon', href: '/apple-icon-180x180.png', sizes: '180x180' },
       { rel: 'apple-touch-icon', href: '/apple-icon-152x152.png', sizes: '152x152' },
       { rel: 'apple-touch-icon', href: '/apple-icon-57x57.png', sizes: '57x57' },
@@ -92,10 +92,10 @@ module.exports = {
     },
     extendRoutes(routes, resolve) {
       // routes.push({ name: 'custom', path: '*', component: resolve(__dirname, 'pages/index.vue') })
-      routes.push({ name: 'About', path: '/about', component: '~/pages/index.vue' })
-      routes.push({ name: 'Services', path: '/services', component: '~/pages/index.vue' })
-      routes.push({ name: 'Contact', path: '/contact', component: '~/pages/index.vue' })
-      routes.push({ name: 'CaseStudies', path: '/case-studies', component: '~/pages/index.vue' })
+      // routes.push({ name: 'About', path: '/about', component: '~/pages/index.vue' })
+      // routes.push({ name: 'Services', path: '/services', component: '~/pages/index.vue' })
+      // routes.push({ name: 'Contact', path: '/contact', component: '~/pages/index.vue' })
+      // routes.push({ name: 'CaseStudies', path: '/case-studies', component: '~/pages/index.vue' })
     }
   },
   /*
@@ -105,10 +105,10 @@ module.exports = {
     { src: '~/plugins/hotjar.js', ssr: false },
     { src: '~/plugins/tawkto.js', ssr: false },
     { src: '~/plugins/mailchimp.js', ssr: false },
-    { src: '~/plugins/tagmanager.js', ssr: false }
+    { src: '~/plugins/socialsharing.js' }
   ],
   server: {
-    port: 3002 // default: 3000
+    port: 3001 // default: 3000
   },
   serverMiddleware: [
     '~/api/nodemailer',
@@ -132,7 +132,8 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
     '@nuxtjs/robots',
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-P5DGDRS' }]
+    'nuxt-leaflet',
+    'nuxt-svg'
   ],
   robots: {
     UserAgent: '*',
