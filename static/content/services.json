@@ -30,6 +30,7 @@
             "box1": "All our projects are developed within the best international standards. Our products are adaptive and responsive to all platforms.",
             "header2": "Productivity and growth",
             "box2": "Our web designs are also built to increase business productivity and facilitate growth. As you grow you will need ancillary services such as laptops, PCs, email hosting, NAS, cloud phone system, software, amongst others.",
+            "box": "",
             "formImage": "/images/services-development.png",
             "services": [
                 {
@@ -56,6 +57,7 @@
             "box1": "Cavaon offers a simplified solution to keep and manage your business growth. In the business productivity solution, you can:",
             "header2": "",
             "box2": "and many others...",
+            "box3": "",
             "formImage": "/images/services-development.png",
             "services": [
                 {
@@ -94,26 +96,38 @@
             "category": "SERVICES",
             "title":  "Graphic and Web Design",
             "subtitle": "We believe in the power of digital communications to generate business.",
-            "intro": "Cavaon is a Sydney based company, specialised in website development and applications. We believe in the power of digital communications to generate business. Therefore, we have developed much more than websites, blogs, landing pages or e-commerce platforms, we have created web business centres that has become a differentiator for our partners.",
-            "image1": "/images/services-1.png",
-            "image2": "/images/services-2.png",
-            "image3": "/images/services-3.png",
-            "header1": "You can leave best standards",
-            "box1": "All our projects are developed within the best international standards. Our products are adaptive and responsive to all platforms.",
-            "header2": "Productivity and growth",
-            "box2": "Our web designs are also built to increase business productivity and facilitate growth. As you grow you will need ancillary services such as laptops, PCs, email hosting, NAS, cloud phone system, software, amongst others.",
-            "formImage": "/images/services-development.png",
+            "intro": "Graphic design covers all types of visual communication designs, such as a logo, a business card, the interface of a website, an advertisement, a banner, the cover of a book, etc. It is a very wide area of ​​knowledge that, from the point of view of its application, can be divided into two main strands: print media and digital media.",
+            "image1": "/images/services-7.png",
+            "image2": "",
+            "image3": "",
+            "header1": "",
+            "box1": "Regardless of the piece that the designer is creating, in all cases, it will always be up to the professional to define and reproduce the best balance between concept, aesthetics and functionality.",
+            "header2": "",
+            "box2": "Each project has its own requirements and restrictions, which vary according to the media, product, audience, competitors, funding, among many other factors.",
+            "box3": "At Cavaon, we offer the services of:",
+            "formImage": "/images/services-web-design.png",
             "services": [
                 {
-                    "image": "/images/services-4.png",
-                    "header": "Websites",
-                    "description": "Development of corporate websites and portals focusing on the company's institutional presentation, history of operations, product and services portfolio, case studies, partners, and CTAs."
+                    "image": "/images/services-8.png",
+                    "header": "Web Design",
+                    "description": "Website Layout, blogs and landing pages: We build interfaces consistent with your brand’s visual Identity."
                 },
                 {
-                    "image": "/images/services-5.png",
-                    "header": "Landing Pages",
-                    "description": "Development of landing pages focused on conversion, aimed at promoting specific products and services, or collecting relevant information from potential customers."
+                    "image": "/images/services-9.png",
+                    "header": "E-mail marketing / Newsletters",
+                    "description": "We build professional and responsive templates and layouts for your email marketing strategy, in perfect agreement with General Data Protection Regulation best practices."
+                },
+                {
+                    "image": "/images/services-10.png",
+                    "header": "Graphic Design",
+                    "description": "Our design team creates the most impressive set of flyers, brochures, logos, social media pieces, posters and digital banner design to support your growing business."
                 }
+            ],
+            "box4": "We have designed website for companies from different industries, including:",
+            "logos": [
+                "/images/services-11.png",
+                "/images/services-12.png",
+                "/images/services-13.png"
             ]
         }
     ],

@@ -18,35 +18,19 @@
         {{ services.intro }}
       </p>
       <img :src="services.image1" :alt="services.title">
-      <div class="service-web-details row">
-        <div class="col-md-6">
-          <img :src="services.image2" :alt="services.header1">
-        </div>
-        <div class="col-md-6 service-web-details-text">
-          <h3>
-            {{ services.header1 }}
-          </h3>
-          <p>
-            {{ services.box1 }}
-          </p>
-        </div>
-        <div class="col-md-6 service-web-details-text">
-          <h3>
-            {{ services.header2 }}
-          </h3>
-          <p>
-            {{ services.box2 }}
-          </p>
-        </div>
-        <div class="col-md-6">
-          <img :src="services.image3" :alt="services.header1">
-        </div>
+      <div class="service-graphic-details">
+        <p>
+          {{ services.box1 }}
+        </p>
+        <p>
+          {{ services.box2 }}
+        </p>
       </div>
       </div>
       <div class="purple-bg row">
         <div class="container">
-          <div v-for="(box, i) in services.services" :key="i" class="service-web-box col-md-6">
-            <div class="service-web-border-box">
+          <div v-for="(box, i) in services.services" :key="i" class="service-graphic-box col-md-4">
+            <div class="service-graphic-border-box">
               <img :src="box.image" :alt="box.header">
               <h3>
                 {{ box.header }}
@@ -127,6 +111,10 @@ export default {
     margin: 0 auto;
     width: 350px;
 }
+.services-graphic-web-main-content p,
+ .services-graphic-web-main-content h2 {
+  text-align: left;
+}
 .services-graphic-intro {
   margin-bottom: 70px;
 }
@@ -153,28 +141,31 @@ export default {
   margin-bottom: 70px;
   border-radius: 5px;
 }
+.service-graphic-details {
+  margin-bottom: 40px;
+}
 .service-web-details-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 70px;
 }
-.service-web-box {
+.service-graphic-box {
   margin: 70px 0;
   height: 80%;
 }
-.service-web-box .service-web-border-box {
+.service-graphic-box .service-graphic-border-box {
   background-color: #fff;
-  width: 90%;
-  padding: 30px;
+  width: 99%;
+  padding: 20px;
   height: 100%;
   box-shadow: 2px 2px 10px rgba(228, 214, 233, 0.8);
   border-radius: 5px;
 }
-.services-graphic-web main .service-web-box img {
+.services-graphic-web main .service-graphic-box img {
   margin-bottom: 40px;
 }
-.services-graphic-web main .service-web-box .liner {
+.services-graphic-web main .service-graphic-box .liner {
   width: 36px;
   margin: 10px 0 25px;
 }
@@ -182,8 +173,9 @@ export default {
   margin: 70px 0;
   position: relative;
 }
-.meeting-form img {
+.services-graphic-web-main-content .meeting-form img {
   position: absolute;
+  width: auto;
   right: 35px;
   top: 213px;
   height: 374px;
