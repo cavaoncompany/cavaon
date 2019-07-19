@@ -11,37 +11,37 @@
     <main class="services-web-development-main-content">
       <div class="container">
         <h2>
-        {{ services.subtitle }}
-      </h2>
-      <div class="liner color-bg" />
-      <p class="services-web-intro">
-        {{ services.intro }}
-      </p>
-      <img :src="services.image1" :alt="services.title">
-      <div class="service-web-details row">
-        <div class="col-md-6">
-          <img :src="services.image2" :alt="services.header1">
+          {{ services.subtitle }}
+        </h2>
+        <div class="liner color-bg" />
+        <p class="services-web-intro">
+          {{ services.intro }}
+        </p>
+        <img :src="services.image1" :alt="services.title">
+        <div class="service-web-details row">
+          <div class="col-md-6">
+            <img :src="services.image2" :alt="services.header1">
+          </div>
+          <div class="col-md-6 service-web-details-text">
+            <h3>
+              {{ services.header1 }}
+            </h3>
+            <p>
+              {{ services.box1 }}
+            </p>
+          </div>
+          <div class="col-md-6 service-web-details-text">
+            <h3>
+              {{ services.header2 }}
+            </h3>
+            <p>
+              {{ services.box2 }}
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img :src="services.image3" :alt="services.header1">
+          </div>
         </div>
-        <div class="col-md-6 service-web-details-text">
-          <h3>
-            {{ services.header1 }}
-          </h3>
-          <p>
-            {{ services.box1 }}
-          </p>
-        </div>
-        <div class="col-md-6 service-web-details-text">
-          <h3>
-            {{ services.header2 }}
-          </h3>
-          <p>
-            {{ services.box2 }}
-          </p>
-        </div>
-        <div class="col-md-6">
-          <img :src="services.image3" :alt="services.header1">
-        </div>
-      </div>
       </div>
       <div class="purple-bg row">
         <div class="container">
@@ -56,7 +56,7 @@
                 {{ box.description }}
               </p>
             </div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="meeting-form">
@@ -182,11 +182,34 @@ export default {
   margin: 70px 0;
   position: relative;
 }
-.meeting-form img {
+.services-web-development .meeting-form img {
   position: absolute;
   right: 35px;
   top: 213px;
   height: 374px;
   z-index: -20;
+}
+@media (max-width: 480px) {
+  .services-web-development .meeting-form img {
+    display: none;
+  }
+  .service-web-box {
+    height: auto;
+  }
+  .service-web-box .service-web-border-box {
+    height: auto;
+  }
+  .service-web-box .service-web-border-box p,
+  .service-web-box .service-web-border-box h3 {
+    text-align: left;
+  }
+  .services-web-development p,
+  .services-web-development h2,
+  .services-web-development h3 {
+    text-align: left;
+  }
+  .services-web-development main h2 {
+    width: 100%;
+  }
 }
 </style>

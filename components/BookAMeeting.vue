@@ -79,7 +79,12 @@ import services from '../static/content/services.json'
 export default {
   data() {
     return {
-      services: services
+      services: services,
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone: '',
+      message: ''
     }
   }
 }
@@ -125,5 +130,19 @@ export default {
     flex-direction: column;
     z-index: 10;
     background: #fff;
+  }
+  @media (max-width: 480px) {
+    #book-a-meeting-form .textarea-holder {
+    width: 100%;
+    }
+    #book-a-meeting-form article {
+      padding: 0;
+    }
+    #book-a-meeting-form {
+      padding: 20px;
+    }
+    .book-a-meeting {
+      margin: 0 auto;
+    }
   }
 </style>

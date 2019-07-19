@@ -11,21 +11,23 @@
     <main class="services-business-productivity-main-content">
       <div class="container">
         <h2>
-        {{ services.subtitle }}
-      </h2>
-      <div class="liner color-bg" />
-      <p class="services-business-intro">
-        {{ services.intro }}
-      </p>
-      <img :src="services.image1" :alt="services.title">
-      <div class="service-web-details row">
-        <p class="shorter-paragraph">{{ services.box1 }}</p>
-        <div v-for="(service, i) in services.services" :key="i" class="col-md-6">
-          <div class="service-productivity-box">
-            <p>{{ service.description }}</p>
+          {{ services.subtitle }}
+        </h2>
+        <div class="liner color-bg" />
+        <p class="services-business-intro">
+          {{ services.intro }}
+        </p>
+        <img :src="services.image1" :alt="services.title">
+        <div class="service-web-details row">
+          <p class="shorter-paragraph">
+            {{ services.box1 }}
+          </p>
+          <div v-for="(service, i) in services.services" :key="i" class="col-md-6">
+            <div class="service-productivity-box">
+              <p>{{ service.description }}</p>
+            </div>
           </div>
         </div>
-      </div>
       </div>
       <div class="meeting-form">
         <img :src="services.formImage" :alt="services.title">
@@ -105,11 +107,16 @@ export default {
 .services-business-productivity main {
   margin-top: 70px;
   font-size: 16px;
+  text-align: left;
 }
 .services-business-productivity main h2 {
   font-size: 24px;
   font-weight: 500;
   width: 60%;
+  text-align: left;
+}
+.services-business-productivity main p {
+  text-align: left;
 }
 .service-productivity-box {
   background: #FFFFFF;
@@ -150,5 +157,16 @@ export default {
   height: 374px;
   z-index: -20;
   width: auto;
+}
+@media (max-width: 480px) {
+  .services-business-productivity main h2 {
+  width: 100%;
+  }
+  .services-business-productivity .shorter-paragraph {
+    width: 100%;
+  }
+  .services-business-productivity-main-content .meeting-form img {
+    display: none;
+  }
 }
 </style>

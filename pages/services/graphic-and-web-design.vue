@@ -11,21 +11,21 @@
     <main class="services-graphic-web-main-content">
       <div class="container">
         <h2>
-        {{ services.subtitle }}
-      </h2>
-      <div class="liner color-bg" />
-      <p class="services-graphic-intro">
-        {{ services.intro }}
-      </p>
-      <img :src="services.image1" :alt="services.title">
-      <div class="service-graphic-details">
-        <p>
-          {{ services.box1 }}
+          {{ services.subtitle }}
+        </h2>
+        <div class="liner color-bg" />
+        <p class="services-graphic-intro">
+          {{ services.intro }}
         </p>
-        <p>
-          {{ services.box2 }}
-        </p>
-      </div>
+        <img :src="services.image1" :alt="services.title">
+        <div class="service-graphic-details">
+          <p>
+            {{ services.box1 }}
+          </p>
+          <p>
+            {{ services.box2 }}
+          </p>
+        </div>
       </div>
       <div class="purple-bg row">
         <div class="container">
@@ -40,7 +40,17 @@
                 {{ box.description }}
               </p>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="services-graphic-logo">
+        <div class="row logo-squares-container">
+          <p>{{ services.box4 }}</p>
+          <div v-for="(logo, i) in services.logos" :key="i" class="logo-square-container col-md-4">
+            <div class="service-logo">
+              <img :src="logo" alt="partner logo">
+            </div>
+          </div>
         </div>
       </div>
       <div class="meeting-form">
@@ -180,5 +190,24 @@ export default {
   top: 213px;
   height: 374px;
   z-index: -20;
+}
+.logo-squares-container {
+  width: 70%;
+  margin: 70px auto;
+}
+.logo-squares-container p {
+  width: 100%;
+  margin-bottom: 40px;
+}
+@media (max-width: 480px) {
+  .service-graphic-box .service-graphic-border-box {
+    height: auto;
+  }
+  .service-graphic-box {
+    height: auto;
+  }
+  .services-graphic-web-main-content .meeting-form img {
+    display: none;
+  }
 }
 </style>
