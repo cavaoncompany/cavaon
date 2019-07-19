@@ -94,7 +94,10 @@
 	.case-study #standard-header,
 	.services-web-development #standard-header,
 	.services-business-productivity #standard-header,
-	.services-graphic-web #standard-header {
+	.services-graphic-web #standard-header,
+	.solutions-e-commerce-platform #standard-header,
+	.solutions-branding #standard-header,
+	.solutions-digital-marketing #standard-header {
 		display: block;
 	}
 	.contact-us .contact-us-banner,
@@ -103,7 +106,10 @@
 	.case-studies .case-studies-banner,
 	.services-web-development .services-web-development-banner,
 	.services-graphic-web .services-graphic-web-banner,
-	.services-business-productivity .services-business-productivity-banner {
+	.services-business-productivity .services-business-productivity-banner,
+	.solutions-e-commerce-platform .solutions-e-commerce-platform-banner,
+	.solutions-branding .solutions-branding-banner,
+	.solutions-digital-marketing .solutions-digital-marketing-banner {
 		min-height: 316px;
 	}
 	.contact-us .contact-us-banner,
@@ -228,7 +234,10 @@
 	.case-study #standard-header,
 	.services-web-development #standard-header,
 	.services-business-productivity #standard-header,
-	.services-graphic-web #standard-header {
+	.services-graphic-web #standard-header,
+	.solutions-e-commerce-platform #standard-header,
+	.solutions-branding #standard-header,
+	.solutions-digital-marketing #standard-header {
 		display: block;
 	}
 	.container, .features-details {
@@ -253,7 +262,10 @@
 	.case-studies .case-studies-banner,
 	.services-web-development .services-web-development-banner,
 	.services-graphic-web .services-graphic-web-banner,
-	.services-business-productivity .services-business-productivity-banner {
+	.services-business-productivity .services-business-productivity-banner,
+	.solutions-e-commerce-platform .solutions-e-commerce-platform-banner,
+	.solutions-branding .solutions-branding-banner,
+	.solutions-digital-marketing .solutions-digital-marketing-banner {
 		min-height: 316px;
 	}
 	#mastfoot .footer-logo {
@@ -417,7 +429,10 @@
 	.case-study #standard-header,
 	.services-web-development #standard-header,
 	.services-business-productivity #standard-header,
-	.services-graphic-web #standard-header {
+	.services-graphic-web #standard-header,
+	.solutions-e-commerce-platform #standard-header,
+	.solutions-branding #standard-header,
+	.solutions-digital-marketing #standard-header {
 		display: none;
 	}
 	#blog .blog-banner {
@@ -443,7 +458,10 @@
 	.case-study #standard-header,
 	.services-web-development #standard-header,
 	.services-business-productivity #standard-header,
-	.services-graphic-web #standard-header {
+	.services-graphic-web #standard-header,
+	.solutions-e-commerce-platform #standard-header,
+	.solutions-branding #standard-header,
+	.solutions-digital-marketing #standard-header {
 		display: none;
 	}
 	.container, .features-details {
@@ -1519,7 +1537,10 @@
 	.case-studies .case-studies-banner,
 	.services-web-development .services-web-development-banner,
 	.services-graphic-web .services-graphic-web-banner,
-	.services-business-productivity .services-business-productivity-banner {
+	.services-business-productivity .services-business-productivity-banner,
+	.solutions-e-commerce-platform .solutions-e-commerce-platform-banner,
+	.solutions-branding .solutions-branding-banner,
+	.solutions-digital-marketing .solutions-digital-marketing-banner {
 		min-height: 188px;
 	}
 	.blog-inner-section .card-container {

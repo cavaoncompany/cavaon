@@ -1,0 +1,131 @@
+{
+    "solutions": [
+        {
+            "title": "Digital Marketing",
+            "area": "SOLUTIONS",
+            "subheader": "We believe in the power of digital communications to generate business.",
+            "intro": "Invest in digital marketing and get ahead of your competitors, achieving effective and permanent results. We are the ideal agency to take care of the online presence of your company. We will help get your message out there and tell your customers why they should drive traffic to your website.",
+            "image1": "/images/solutions-1.png",
+            "subheader2": "At Cavaon, we can help you with:",
+            "text1": "",
+            "text2": "",
+            "list": [
+                {
+                    "image": "/images/solutions-2.png",
+                    "header": "Marketing strategy",
+                    "description": "Development of the most adequate marketing plan to your business, creation and management of campaigns, advertisements, events and content."
+                },
+                {
+                    "image": "/images/solutions-3.png",
+                    "header": "Social Networking Management",
+                    "description": "Social media management will bring more visibility to your brand, make it easier to reach out to customers, and help you stand out from the competition."
+                },
+                {
+                    "image": "/images/solutions-4.png",
+                    "header": "SEO (Website Optimization)",
+                    "description": "Achieve even more results by optimizing sites for search engines like Google, thus increasing organic traffic to your website."
+                },
+                {
+                    "image": "/images/solutions-5.png",
+                    "header": "Blog Management",
+                    "description": "Blog management ensures that your page is always up to date with relevant content for your target audience, increasing the number of visits and conversions."
+                }
+            ],
+            "andMore": "",
+            "formImage": "/images/services-marketing.png"
+        },
+        {
+            "title": "Branding",
+            "area": "SOLUTIONS",
+            "subheader": "We believe in the power of digital communications to generate business.",
+            "intro": "Creating a strong brand to make a great impression on your customers. We work with you to take your ideas and goals and create clear concepts that we can both work towards. Want to renew the image of your company or start investing in the branding of a new business?",
+            "image1": "/images/solutions-6.png",
+            "subheader2": "We can also help you define the entire visual identity of your brand with:",
+            "text1": "",
+            "text2": "",
+            "list": [
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Logo creation and redesign"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Colour Psychology"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Font Styling"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Brand Strategy"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Target Audience Research"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Tagline"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Name Assistant"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Logo Design"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Website Design"
+                },
+                {
+                    "image": "",
+                    "header": "",
+                    "description": "Stationary Design"
+                }
+            ],
+            "andMore": "and many others...",
+            "formImage": "/images/services-branding.png"
+        },
+        {
+            "title": "E-Commerce Platform",
+            "area": "SOLUTIONS",
+            "subheader": "We believe in the power of digital communications to generate business.",
+            "intro": "A well-crafted e-commerce project can reduce the costs of your entire business cycle in a surprising way. Bring consumer service to levels you've never imagined. Enter markets that were distant. Create new revenue possibilities. And, finally, redefine the very nature of your business. We will integrate an E-Commerce platform into your website to provide a seamless and enjoyable flow for your devoted customers.",
+            "image1": "/images/solutions-7.png",
+            "subheader2": "",
+            "text1": "At Cavaon, we take steps such as planning, store deployment, operation, means of payment, logistics, marketing, technology, customer service and other services related to the operation of an e-commerce, out of our customers hands. Thus, you gain time to focus your efforts on other aspects of the business.",
+            "text2": "We have built many e-commerce platforms and booking systems for travel companies, including:",
+            "list": [
+                {
+                    "image": "/images/solutions-logo1.png",
+                    "header": "",
+                    "description": ""
+                },
+                {
+                    "image": "/images/solutions-logo2.png",
+                    "header": "",
+                    "description": ""
+                },
+                {
+                    "image": "/images/solutions-logo3.png",
+                    "header": "",
+                    "description": ""
+                }
+            ],
+            "andMore": "",
+            "formImage": "/images/solutions-e-commerce.png"
+        }
+    ]
+}
