@@ -35,9 +35,9 @@
                 <div class="triangle-container">
                   <div class="triangle-up" />
                 </div>
-                <a class="solutions-dropdown-item" href="/">Digital Marketing</a>
-                <a class="solutions-dropdown-item" href="/">Branding Design</a>
-                <a class="solutions-dropdown-item" href="/">E-commerce Platform</a>
+                <a class="solutions-dropdown-item" href="/solutions/digital-marketing">Digital Marketing</a>
+                <a class="solutions-dropdown-item" href="/solutions/branding-design">Branding Design</a>
+                <a class="solutions-dropdown-item" href="/solutions/e-commerce-platform">E-commerce Platform</a>
               </div>
             </li>
             <li><a href="/case-studies" aria-label="Go to Case Studies">Case Studies</a></li>

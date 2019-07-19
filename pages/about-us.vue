@@ -104,6 +104,7 @@ export default {
 }
 .about-us-wrapper img {
     margin-bottom: 70px;
+    width: 100%;
 }
 .about-us-details-text {
   display: flex;

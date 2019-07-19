@@ -23,13 +23,13 @@
         SOLUTIONS
         <ul>
           <li>
-            <a class="solutions-dropdown-item" href="/">Digital Marketing</a>
+            <a class="solutions-dropdown-item" href="/solutions/digital-marketing">Digital Marketing</a>
           </li>
           <li>
-            <a class="solutions-dropdown-item" href="/">Branding Design</a>
+            <a class="solutions-dropdown-item" href="/solutions/branding-design">Branding Design</a>
           </li>
           <li>
-            <a class="solutions-dropdown-item" href="/">E-commerce Platform</a>
+            <a class="solutions-dropdown-item" href="/solutions/e-commerce-platform">E-commerce Platform</a>
           </li>
         </ul>
       </li>
