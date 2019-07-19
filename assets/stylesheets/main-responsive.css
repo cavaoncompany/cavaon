@@ -91,7 +91,10 @@
 	#blog #standard-header,
 	#blog-post #standard-header,
 	.case-studies #standard-header,
-	.case-study #standard-header {
+	.case-study #standard-header,
+	.services-web-development #standard-header,
+	.services-business-productivity #standard-header,
+	.services-graphic-web #standard-header {
 		display: block;
 	}
 	.contact-us .contact-us-banner,
@@ -222,7 +225,10 @@
 	#blog #standard-header,
 	#blog-post #standard-header,
 	.case-studies #standard-header,
-	.case-study #standard-header {
+	.case-study #standard-header,
+	.services-web-development #standard-header,
+	.services-business-productivity #standard-header,
+	.services-graphic-web #standard-header {
 		display: block;
 	}
 	.container, .features-details {
@@ -408,7 +414,10 @@
 	#blog #standard-header,
 	#blog-post #standard-header,
 	.case-studies #standard-header,
-	.case-study #standard-header {
+	.case-study #standard-header,
+	.services-web-development #standard-header,
+	.services-business-productivity #standard-header,
+	.services-graphic-web #standard-header {
 		display: none;
 	}
 	#blog .blog-banner {
@@ -431,7 +440,10 @@
 	.contact-us #standard-header,
 	.start-a-project #standard-header,
 	.case-studies #standard-header,
-	.case-study #standard-header {
+	.case-study #standard-header,
+	.services-web-development #standard-header,
+	.services-business-productivity #standard-header,
+	.services-graphic-web #standard-header {
 		display: none;
 	}
 	.container, .features-details {
