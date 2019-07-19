@@ -1,0 +1,56 @@
+{
+    "title": "JOIN OUR TEAM",
+    "subtitle": "CURRENT OPPORTUNITIES",
+    "jobs": [
+        {
+            "category": "Technology",
+            "title": "Web Developer",
+            "time": "Full-time",
+            "role": [
+                "You will be responsible for building, enhancing and deploying web applications according to business requirements, wireframe and the designs from designers.",
+                "The awareness and knowledge of industry best practices and technology trends is paramount to the success in this role."
+            ],
+            "responsibilities": [
+                "Delivering web applications",
+                "Modify and improve existing website and web applications",
+                "Build reusable, maintainable and testable code and libraries for future use",
+                "Optimize code for maximum speed and scalability",
+                "Managing websites and web applications"
+            ],
+            "requirements": [
+                "Cross platform HTML5 and CSS3 development experience",
+                "Solid experience in Responsive web design",
+                "Previous experience in Framework-based development (AngularJS, ReactJS, VueJS, Bootstrap, JQuery etc…)",
+                "API development and integrations (REST/SOAP)",
+                "Previous experience working with PHP and related back-end technologies",
+                "Source control experience - Git",
+                "Good communication skills",
+                "Strong eye for detail and commitment to quality",
+                "Great, pro-active attitude",
+                "Passionate in learning new technologies",
+                "An ability to think outside the square and problem solve"
+            ]
+        }
+    ],
+    "contact": [
+        "If this sounds like you, or if you are interested in hearing more, then please apply today.",
+        "Please email your CV to john.h@cavaon.com or call 02 8379 7424"
+    ],
+    "jobDescription": "JOB DESCRIPTION",
+    "role": "Role",
+    "responsibilities": "Responsibilities",
+    "requirements": "Requirements",
+    "thankYou": "We thank you for your interest in working with us. ",
+    "apply": "APPLY FOR THIS POSITION",
+    "hearFromYou": "We would like to hear from you, please e-mail your resume along with your salary expectation to london@nexusholidays.com or fill in this application form below.",
+    "firstname": "First name*",
+    "lastname": "Last name*",
+    "email": "Email*",
+    "validEmail": "Please enter a valid email address.",
+    "phone": "Phone",
+    "personalWebsite": "Personal website",
+    "salaryExpectation": "Salary expectation",
+    "resume": "Resume",
+    "attachResume": "Attach resume",
+    "coverLetter"
+}
