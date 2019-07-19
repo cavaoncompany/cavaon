@@ -98,7 +98,9 @@
 	.start-a-project-banner,
 	#blog .blog-banner,
 	.case-studies .case-studies-banner,
-	.services-web-development .services-web-development-banner {
+	.services-web-development .services-web-development-banner,
+	.services-graphic-web .services-graphic-web-banner,
+	.services-business-productivity .services-business-productivity-banner {
 		min-height: 316px;
 	}
 	.contact-us .contact-us-banner,
@@ -243,7 +245,9 @@
 	.start-a-project-banner,
 	#blog .blog-banner,
 	.case-studies .case-studies-banner,
-	.services-web-development .services-web-development-banner {
+	.services-web-development .services-web-development-banner,
+	.services-graphic-web .services-graphic-web-banner,
+	.services-business-productivity .services-business-productivity-banner {
 		min-height: 316px;
 	}
 	#mastfoot .footer-logo {
@@ -1501,7 +1505,9 @@
 	.start-a-project-banner,
 	#blog .blog-banner,
 	.case-studies .case-studies-banner,
-	.services-web-development .services-web-development-banner {
+	.services-web-development .services-web-development-banner,
+	.services-graphic-web .services-graphic-web-banner,
+	.services-business-productivity .services-business-productivity-banner {
 		min-height: 188px;
 	}
 	.blog-inner-section .card-container {

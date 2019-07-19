@@ -143,11 +143,12 @@ export default {
   margin: 70px 0;
   position: relative;
 }
-.meeting-form img {
+.services-business-productivity-main-content .meeting-form img {
   position: absolute;
   right: 35px;
   top: 213px;
   height: 374px;
   z-index: -20;
+  width: auto;
 }
 </style>
