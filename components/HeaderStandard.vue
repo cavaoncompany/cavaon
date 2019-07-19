@@ -10,7 +10,7 @@
         </article>
         <article class="col-md-10 text-right">
           <ul class="standard-nav standard-nav-dark-text visible-lg visible-md">
-            <li><a id="about-linker" href="/">About</a></li>
+            <li><a id="about-linker" href="/about-us">About</a></li>
             <li>
               <a id="flowchart-linker" @click="toggleDropdown('services')">Services <i class="fa fa-chevron-down" /></a>
               <div class="standard-services-dropdown-menu hidden" aria-labelledby="standardServicesNavbarDropdown">

@@ -132,7 +132,6 @@
 import { mapState } from 'vuex'
 import banner from '../static/content/banner.json'
 import caseStudies from '../static/content/casestudies.json'
-import team from '../static/content/team.json'
 import services from '../static/content/services.json'
 import projects from '../static/content/projects.json'
 import promo from '../static/content/promo.json'
@@ -174,7 +173,6 @@ export default {
     return {
       caseStudies: caseStudies,
       projectDetails: caseStudies.caseStudies[0],
-      team: team,
       services: services,
       projects: projects,
       messages: messages,
@@ -245,9 +243,6 @@ export default {
     },
     counterMouseOver: function () {
       this.$refs.codecounter.start()
-    },
-    teamMouseOver: function (name, image) {
-      document.getElementById(name).src = image
     },
     closeIfOutsideModal(e) {
       const modal = document.getElementById('newsletter-homepage-modal-body').getBoundingClientRect()

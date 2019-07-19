@@ -28,7 +28,9 @@
             </div>
           </div>
         </div>
-        <p class="text-center">{{ solutions.andMore }}</p>
+        <p class="text-center">
+          {{ solutions.andMore }}
+        </p>
       </div>
       <div class="meeting-form">
         <img :src="solutions.formImage" :alt="solutions.title">

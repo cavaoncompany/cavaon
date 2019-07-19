@@ -17,7 +17,7 @@
         </article>
         <article class="col-md-10 text-right">
           <ul class="standard-nav standard-nav-white-text visible-md visible-lg">
-            <li><a href="#about" aria-label="Go to About">About</a></li>
+            <li><a href="/about-us" aria-label="Go to About">About</a></li>
             <li aria-haspopup="true" aria-expanded="false">
               <a id="topServicesNavbarDropdown" href="#" aria-label="Go to Services" @click="toggleDropdown('services')">Services <i class="fa fa-chevron-down" /></a>
               <div class="services-dropdown-menu hidden" aria-labelledby="topServicesNavbarDropdown">

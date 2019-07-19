@@ -3,9 +3,10 @@
   <nav class="mobile-nav hidden-lg">
     <ul class="slimmenu">
       <li>
-        <a href="/" aria-label="Go to About">ABOUT</a>
+        <a href="/about-us" aria-label="Go to About">ABOUT</a>
       </li>
-      <li class="with-submenu">SERVICES
+      <li class="with-submenu">
+        SERVICES
         <ul>
           <li>
             <a class="services-dropdown-item" href="/services/web-development-and-technical-support">Web Development and Technical Support</a>
@@ -18,7 +19,8 @@
           </li>
         </ul>
       </li>
-      <li class="with-submenu">SOLUTIONS
+      <li class="with-submenu">
+        SOLUTIONS
         <ul>
           <li>
             <a class="solutions-dropdown-item" href="/">Digital Marketing</a>

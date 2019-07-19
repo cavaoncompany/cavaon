@@ -6,6 +6,28 @@
   "paragraphsMobile": [
     "Cavaon is a Sydney based online business solution specialised in building digital strategy and products to clients in need to reinvent their business model, moving rapidly from ideas to plans, and growing their competitive advantages."
   ],
+  "introParagraphs": [
+    "Cavaon is a Sydney based online business solution specialised in building digital strategy and products to clients in need to reinvent their business model, moving rapidly from ideas to plans, and growing their competitive advantages.",
+    "Building digital platforms for international companies since 2012, Co-founders John Ho and Wayne Wen focus their expertise in the travel industry. Along with a team of highly skilled developers, they decided to create Cavaon to meet the market needs in terms of digital solutions.",
+    "Moving forward, Cavaon is now an integrated one stop shop for online business, providing additional digital marketing, branding and design services."
+  ],
+  "list": [
+    {
+        "image": "/images/solutions-2.png",
+        "header": "Our Mission",
+        "description": "Development of the most adequate marketing plan to your business, creation and management of campaigns, advertisements, events and content."
+    },
+    {
+        "image": "/images/solutions-3.png",
+        "header": "Our Values",
+        "description": "Social media management will bring more visibility to your brand, make it easier to reach out to customers, and help you stand out from the competition."
+    },
+    {
+        "image": "/images/solutions-4.png",
+        "header": "How we help customers",
+        "description": "We understand every business has unique needs and for that we offer an unique service. Cavaon provides tailored solutions to each business within the online space, all the way from digital marketing strategy, IT development and support to branding and design services."
+    }
+],
   "buttonText": "LEARN MORE",
   "video": "https://vimeo.com/347212128"
 }

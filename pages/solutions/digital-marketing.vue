@@ -18,11 +18,13 @@
           {{ solutions.intro }}
         </p>
         <img :src="solutions.image1" :alt="solutions.title">
-        <p class="solutions-digital-intro">{{ solutions.subheader2 }}</p>
+        <p class="solutions-digital-intro">
+          {{ solutions.subheader2 }}
+        </p>
         <div v-for="(solution, i) in solutions.list" :key="i" class="solutions-digital-details row">
           <div v-if="i % 2 === 0" class="solutions-wrapper">
             <div class="col-md-6">
-                <img :src="solution.image" :alt="solution.header">
+              <img :src="solution.image" :alt="solution.header">
             </div>
             <div class="col-md-6 solutions-digital-details-text">
               <h3>

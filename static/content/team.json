@@ -37,10 +37,17 @@
       "title": "FULL STACK DEVELOPER"
     },
     {
-      "firstname": "Cornelia",
-      "lastname": "Schulz",
-      "img1": "/images/Team-Cornelia-1.png",
-      "img2": "/images/Team-Cornelia-2.png",
+      "firstname": "Emily",
+      "lastname": "Ferreira",
+      "img1": "/images/Team-Emily-1.png",
+      "img2": "/images/Team-Emily-1.png",
+      "title": "MARKETING SPECIALIST"
+    },
+    {
+      "firstname": "Ellie",
+      "lastname": "",
+      "img1": "/images/Team-Ellie-1.png",
+      "img2": "/images/Team-Ellie-1.png",
       "title": "FRONT-END DEVELOPER"
     }
   ]

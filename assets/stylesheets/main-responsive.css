@@ -87,6 +87,7 @@
 
 @media (min-width: 1921px) {
 	.contact-us #standard-header,
+	.about-us #standard-header,
 	.start-a-project #standard-header,
 	#blog #standard-header,
 	#blog-post #standard-header,
@@ -101,6 +102,7 @@
 		display: block;
 	}
 	.contact-us .contact-us-banner,
+	.about-us .about-us-banner,
 	.start-a-project-banner,
 	#blog .blog-banner,
 	.case-studies .case-studies-banner,
@@ -227,6 +229,7 @@
 /*Large Widescreen Monitors*/
 @media (max-width: 1920px) {
 	.contact-us #standard-header,
+	.about-us #standard-header,
 	.start-a-project #standard-header,
 	#blog #standard-header,
 	#blog-post #standard-header,
@@ -244,7 +247,7 @@
 	    max-width: 1500px;
 	}
 	.contact-us .contact-us-banner,
-	.start-a-project-banner{
+	.start-a-project-banner {
 		margin-top: 70px;
 	}
 	.banner-mobile {
@@ -257,6 +260,7 @@
 		margin-top: -70px;
 	}
 	.contact-us .contact-us-banner,
+	.about-us .about-us-banner,
 	.start-a-project-banner,
 	#blog .blog-banner,
 	.case-studies .case-studies-banner,
@@ -422,6 +426,7 @@
 }
 @media (max-width: 1199px) {
 	.contact-us #standard-header,
+	.about-us #standard-header,
 	.start-a-project #standard-header,
 	#blog #standard-header,
 	#blog-post #standard-header,
@@ -453,6 +458,7 @@
 /*iPad Landscape Mode and Large Tablets */
 @media (max-width: 1024px) {
 	.contact-us #standard-header,
+	.about-us #standard-header,
 	.start-a-project #standard-header,
 	.case-studies #standard-header,
 	.case-study #standard-header,
@@ -1533,6 +1539,7 @@
 	}
 	.contact-us .contact-us-banner,
 	.start-a-project-banner,
+	.about-us .about-us-banner,
 	#blog .blog-banner,
 	.case-studies .case-studies-banner,
 	.services-web-development .services-web-development-banner,

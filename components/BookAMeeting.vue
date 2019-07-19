@@ -7,68 +7,68 @@
       name="book-a-meeting"
       @submit.prevent="onSubmit"
     >
-        <article class="col-md-6">
+      <article class="col-md-6">
         <label for="firstname">First Name</label>
         <input
-            id="book-a-meeting-firstname"
-            v-model="firstname"
-            type="text"
-            :placeholder="services.firstname"
-            name="firstname"
-            size="100"
+          id="book-a-meeting-firstname"
+          v-model="firstname"
+          type="text"
+          :placeholder="services.firstname"
+          name="firstname"
+          size="100"
         >
-        </article>
-        <article class="col-md-6">
+      </article>
+      <article class="col-md-6">
         <label for="lastname">{{ services.lastname }}</label>
         <input
-            id="book-a-meeting-lastname"
-            v-model="lastname"
-            type="text"
-            :placeholder="services.lastname"
-            name="lastname"
-            size="100"
+          id="book-a-meeting-lastname"
+          v-model="lastname"
+          type="text"
+          :placeholder="services.lastname"
+          name="lastname"
+          size="100"
         >
-        </article>
-        <article class="col-md-6">
+      </article>
+      <article class="col-md-6">
         <label for="email">{{ services.email }}</label>
         <input
-            id="book-a-meeting-email"
-            v-model="email"
-            type="email"
-            :placeholder="services.email"
-            name="email"
-            size="30"
-            required
+          id="book-a-meeting-email"
+          v-model="email"
+          type="email"
+          :placeholder="services.email"
+          name="email"
+          size="30"
+          required
         >
-        </article>
-        <article class="col-md-6">
+      </article>
+      <article class="col-md-6">
         <label for="email">{{ services.phone }}</label>
         <input
-            id="book-a-meeting-phone"
-            v-model="phone"
-            type="email"
-            :placeholder="services.phone"
-            name="email"
-            size="30"
-            required
+          id="book-a-meeting-phone"
+          v-model="phone"
+          type="email"
+          :placeholder="services.phone"
+          name="email"
+          size="30"
+          required
         >
-        </article>
-        <article class="textarea-holder">
+      </article>
+      <article class="textarea-holder">
         <label for="msg">{{ services.message }}</label>
         <textarea
-            id="msg"
-            v-model="message"
-            :placeholder="services.message"
-            name="message"
-            cols="40"
-            rows="3"
+          id="msg"
+          v-model="message"
+          :placeholder="services.message"
+          name="message"
+          cols="40"
+          rows="3"
         />
         <div class="btn-wrap  text-center">
-            <button id="book-a-meeting-submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
+          <button id="book-a-meeting-submit" class="btn btn-odin btn-odin-color" name="submit" type="submit">
             {{ services.buttonText }}
-            </button>
+          </button>
         </div>
-        </article>
+      </article>
     </form>
   </div>
 </template>
