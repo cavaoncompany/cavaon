@@ -32,7 +32,7 @@
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "dotenv": "^7.0.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "markdown": "^0.5.0",
     "netlify-lambda": "^1.4.3",
     "node-hubspot-api": "https://github.com/cavaoncompany/node-hubspot-api",
